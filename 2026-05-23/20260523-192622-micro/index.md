@@ -1,4 +1,4 @@
-# rohitg00/ai-engineering-from-scratch — Learn it. Build it. Ship it for others.
+# GitHub项目ai-engineering从零手搓AI：435节课，耗时320小时
 
 > ai-daily · 2026 年 5 月 23 日 19:27 · 来源：GitHub Trending any
 

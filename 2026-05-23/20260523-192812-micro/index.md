@@ -1,4 +1,4 @@
-# presenton/presenton — Open-Source AI Presentation Generator and API (Gamma, Beautiful AI, Decktopus Alternative)
+# 无需月费！Presenton 开源 PPT 工厂：可接 OpenAI/Claude，支持导出 PPTX 和 PDF
 
 > ai-daily · 2026 年 5 月 23 日 19:28 · 来源：GitHub Trending any
 

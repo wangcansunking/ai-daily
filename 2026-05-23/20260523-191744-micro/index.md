@@ -1,4 +1,4 @@
-# multica-ai/multica — The open-source managed agents platform. Turn coding agents into real teammates — assign tasks, track progress, compound skills.
+# 告别手动派活：Multica如何将Claude Code等AI变成项目同事？
 
 > ai-daily · 2026 年 5 月 23 日 19:18 · 来源：GitHub Trending any
 

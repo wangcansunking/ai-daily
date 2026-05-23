@@ -1,4 +1,4 @@
-# crewAIInc/crewAI — Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tackling complex tasks.
+# CrewAI框架崛起：企业版AMP Suite瞄准自动化，获Claude Code集成
 
 > ai-daily · 2026 年 5 月 23 日 19:24 · 来源：GitHub Trending python
 
@@ -11,7 +11,5 @@ CrewAI 这个 Python 框架，**完全从零构建，不依赖 LangChain 或任�
 ![crewAIInc/crewAI — Framework for orchestrating role-playing, autonomous AI agent](content-1.png)
 
 让我愣神的是社区数据：**超过 10 万名开发者用了他们的认证课程**，这转化率对于一个框架项目来说相当夸张。企业版「AMP Suite」已经打包了追踪监控、统一控制面板、本地/云端混合部署那一整套，明显是奔着拿下企业自动化市场去的。Claude Code 和 Cursor 也接入了官方技能插件，输入一行命令就能让 AI 编程助手直接按 CrewAI 的最佳实践写代码。
-
-![GitHub forks](content-2.jpg)
 
 #Framework #AI #By #CrewAI #科技

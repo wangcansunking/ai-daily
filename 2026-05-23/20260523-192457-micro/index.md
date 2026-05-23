@@ -1,4 +1,4 @@
-# Lum1104/Understand-Anything — Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.
+# 支持Claude/Cursor/Copilot：一个命令将任何代码转为可问答的知识图谱
 
 > ai-daily · 2026 年 5 月 23 日 19:25 · 来源：GitHub Trending any
 

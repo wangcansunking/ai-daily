@@ -1,4 +1,4 @@
-# google-research/timesfm — TimesFM (Time Series Foundation Model) is a pretrained time-series foundation model developed by Google Research for time-series forecasting.
+# 谷歌TimesFM开源2.5版：砍掉六成参数，预测能力反增数倍
 
 > ai-daily · 2026 年 5 月 23 日 19:23 · 来源：GitHub Trending python
 

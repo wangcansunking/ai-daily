@@ -12,8 +12,6 @@
 
 他们在 VS Code（TypeScript，约 1 万文件）上跑了一遍，没开 CodeGraph 时 AI 调了 23 次工具、烧掉 140 万 token；开了之后 7 次工具搞定，39 万 token 收工。Tokio（Rust）更夸张，**81% token 省下来了**。唯一例外是那种 150 文件的小项目，原生搜索本来就够快，差距不明显。
 
-![Claude Code](content-2.jpg)
-
 安装就一行 curl 命令，100% 本地跑，数据不出机器。现在支持 19 种语言和 14 个 Web 框架的路由识别，开源即装即用。
 
 #Preindexed #Claude #Code #Codex #Cursor

@@ -1,4 +1,4 @@
-# databricks-solutions/ai-dev-kit — Databricks Toolkit for Coding Agents provided by Field Engineering
+# Databricks AI Dev Kit 发布：75个工具让 Claude Code 直接连接数据平台
 
 > ai-daily · 2026 年 5 月 23 日 19:21 · 来源：GitHub Trending python
 
@@ -8,11 +8,7 @@
 
 Databricks 的用户应该深有体会。你让 Claude Code 或 Cursor 帮你写一段 Spark 流处理，它给你生成了完美语法，但 Unity Catalog 的表名是编的，集群配置是猜的，最后你得手动改 20 处才能跑通。这种感觉就像你雇了个天才程序员，但他既没 VPN 也没权限，全靠蒙。
 
-![Databricks Certified Gold Project](content-1.jpg)
-
 Databricks 的现场工程团队显然也被这事折磨够了。他们没等产品部门慢慢规划，直接自己动手，在 GitHub 上扔出了一个叫 AI Dev Kit 的工具箱。
-
-![Cursor](content-2.jpg)
 
 **让 AI 编码助手真正认识你的数据平台，这件事本不该由用户来填坑。**
 
@@ -24,11 +20,7 @@ Databricks 的现场工程团队显然也被这事折磨够了。他们没等产
 
 换句话说，你的 AI 助手不再是给你“建议一段代码”，而是可以直接执行 SQL 查询、创建表、部署应用。`execute_sql("SELECT * FROM my_catalog.schema.table LIMIT 10")` 这种调用，它真能帮你跑通。
 
-
-
 ![75+ MCP 工具覆盖 Databricks 平台的各模块关系图，从数据管道到模型服务](schematic-1.png)
-
-
 
 ## 两条路选一条，但“白嫖党”这次赢了
 

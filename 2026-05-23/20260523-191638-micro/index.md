@@ -1,4 +1,4 @@
-# dotnet/skills — Repository for skills to assist AI coding agents with .NET and C#
+# 微软开源 12 个 .NET AI 技能：Copilot 和 Cursor 可直接调用
 
 > ai-daily · 2026 年 5 月 23 日 19:17 · 来源：GitHub Trending any
 
