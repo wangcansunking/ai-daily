@@ -1,0 +1,47 @@
+# 全球缺口480万人：这套754技能库能让AI接手安全运维吗？
+
+> ai-daily · 2026 年 5 月 23 日 19:12 · 来源：GitHub Trending any
+
+![](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/mukul975-anthropic-cybersecurity-skills-article/head.png)
+
+我看到这个项目的时候，第一反应是：终于有人把「安全技能包」这种东西给 AI 准备好了。
+
+先别急着理解成又一个工具合集。它不是 payload 仓库，不是漏洞 PoC 收集站，也不是那种让你手动翻的 Wiki。它是一套专门写给 AI 读的、结构化的安全操作手册——754 个技能，每一个都告诉你「什么情况下用什么技术，前置条件是什么，分几步走，怎么验证结果」。换句话说，它把安全分析师脑子里的决策流程，翻译成了 AI 能消化的格式。
+
+![mukul975/Anthropic-Cybersecurity-Skills — 754 structured cybersecurity skills fo](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/mukul975-anthropic-cybersecurity-skills-article/content-1.png)
+
+而现状是，全球网络安全岗位缺口在 2024 年已经干到了 480 万（ISC2 数据）。你指望靠招人填上这个坑，不如指望 AI 学会干活。问题在于，现在的 AI 写代码行、搜网页行，但你要它处理一次云环境跨三个服务商的入侵排查，它缺的不是算力，是剧本。
+
+**给 AI 一把瑞士军刀不算本事，给它一本 754 页的作战手册才是。**
+
+## 一套技能，五张考卷全交
+
+这个项目最让我愣神的设计，不是技能多——754 条分散在 26 个域里，从云安全、威胁狩猎到 OT/ICS 工控安全，覆盖面确实广。真正狠的是，每一条技能都同时映射到了五套框架：MITRE ATT&CK v18、NIST CSF 2.0、MITRE ATLAS v5.4、MITRE D3FEND v1.3 和 NIST AI RMF 1.0。
+
+举个例子，`analyzing-network-traffic-of-malware` 这条技能，在 ATT&CK 里对应 T1071（应用层协议），在 NIST CSF 里落在 DE.CM（持续监控），ATLAS 标记为 AML.T0047，D3FEND 给的是 D3-NTA（网络流量分析），AI RMF 归到 MEASURE-2.6。一条技能，五个合规复选框全点亮。
+
+这意味着什么？你让 AI 执行一次恶意软件流量分析，它同时产出了五套框架的审计证据。以前这种事得靠安全团队手动对齐，现在技能文件里 YAML 头一写，机器自动对。我甚至觉得这不叫「技能库」，这叫「合规加速器」。
+
+
+
+![一条技能同时映射到 MITRE ATT&CK / NIST CSF / MITRE ATLAS / D3FEND / NIST AI RMF 五层框架的放射状关系图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/mukul975-anthropic-cybersecurity-skills-article/schematic-1.png)
+
+
+
+## 26+ 个平台直接吃，开箱即用
+
+另一个让我觉得有意思的点：它不是那种需要你专门去适配的工具。遵循 agentskills.io 开放标准，意味着你一条 `npx skills add mukul975/Anthropic-Cybersecurity-Skills` 下去，Claude Code、GitHub Copilot、OpenAI Codex CLI、Cursor、Gemini CLI 全部能用——官方说支持 20+ 平台，我数了数列出来的已经超过 26 个。
+
+这解决了一个很实际的痛点：你不需要在每个 AI 编码助手里重新训练安全上下文。技能库是外挂的，AI 启动时加载就行。一个初级分析师可能不知道 Volatility3 哪个插件适合处理可疑内存转储，也不知道哪条 Sigma 规则能抓 Kerberoasting 攻击，但加载了这个技能包的 AI 知道——而且它会告诉你为什么选这个，不是吐一个命令了事。
+
+（值得一提的是，项目作者正在同步跑一个叫 GARS-2026 的全球调研，想搞清楚安全从业者到底对 agentic AI 准备好了没有。问卷 60 题，10 分钟，填完送 50 个 Casky Token 能提前玩他们的 casky.ai 沙盒。这算是个有趣的附加项——你在用他的技能库武装 AI，他在用你的反馈测量整个行业的脉搏。）
+
+## 不是「又一个安全工具」，是 AI 的操作系统思维
+
+说到底，这个项目的野心不在「工具」层面。现有的安全仓库给你的是词表、payload、漏洞利用代码，这些东西 AI 搜得到。但搜得到不等于会用——「什么时候该用」「用之前查什么」「做完怎么确认」这套决策链，才是资深分析师和脚本小子的分界线。
+
+Anthropic Cybersecurity Skills 做的事，是把这层隐性知识显性化了。754 条技能不是从文档里抓取生成的摘要，作者强调每一条都编码了真实从业者的操作流程。YAML 前端元数据负责毫秒级发现，结构化 Markdown 负责分步执行，reference 文件提供深度技术上下文——这更像是给 AI 装了一套安全分析的操作系统，而不是塞了一堆 PDF。
+
+我的判断很简单：AI 不会取代安全分析师，但会用这种技能库的 AI 会取代不用它的分析师。480 万的缺口摆在那里，谁先把决策流程结构化，谁就能让机器填上这个坑的一角。这个项目未必是最终答案，但它开了一个正确的头——让 AI 不再靠通用推理硬猜，而是带着剧本上战场。
+
+#Anthropic #CybersecuritySkills #AI #Mapped #MITRE
