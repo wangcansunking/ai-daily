@@ -1,0 +1,62 @@
+# 独立开发者Leonxlnx的Taste-Skill：一个文件让ChatGPT/Cursor告别廉价UI
+
+> ai-daily · 2026 年 5 月 26 日 11:34 · 来源：GitHub Trending any
+
+![](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/leonxlnx-taste-skill-micro/head.png)
+
+凌晨三点，一个独立开发者在终端敲下 `npx skills add https://github.com/Leonxlnx/taste-skill`。回车之后，他的 AI 编码代理突然不再吐出那些千篇一律的蓝紫色渐变按钮、居中 Hero 区和呆板的 Grid 布局。屏幕上的界面开始有了骨骼——不对称的留白、经过计算的字体层级、微妙的 Spring 动效。这个开发者叫 Leonxlnx，他给这个项目起的名字直白到近乎挑衅：Taste-Skill。品味技能。仿佛在说，AI 生成的前端代码之所以看着廉价，不是因为技术不行，而是因为没品味。
+
+这个仓库 2026 年 5 月突然在 GitHub Trending 上冒头，README 第一句话就定调了：**“反 Slop 前端框架，给 AI 代理用的。”** Slop 这个词在 AI 圈已经成了一个专门术语，特指那些大模型批量产出的、看着像模板拼接的视觉垃圾——按钮圆角永远 8px，配色永远是 Tailwind 的默认蓝色，动效永远是 fade-in。Taste-Skill 的野心，就是用一个可移植的技能文件，把这种局面干掉。
+
+![Leonxlnx/taste-skill — Taste-Skill - gives your AI good taste. stops the AI from](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/leonxlnx-taste-skill-micro/content-1.jpg)
+
+**给 AI 装品味，本质上是在教机器理解“贵”这个字。**
+
+## 一个 SKILL.md 文件，十几个设计人格
+
+Taste-Skill 的核心机制出奇地简单。它不是一个 npm 包，不注入任何运行时依赖，也不绑定 React、Vue 或 Svelte 的特定 API。整个项目就是一组放在 `skills/` 目录下的 Markdown 文件，每个文件定义了一套前端做到规则。用 `npx skills add` 命令，开发者可以把这些规则注入到 ChatGPT、Codex、Cursor 或 Claude Code 的对话上下文中，AI 代理读取后，输出的代码就会带上特定的设计语言。
+
+
+
+![Taste-Skill 的 CLI 安装流程示意，终端输入 npx skills add 命令后，skills/ 目录下的 SKILL.md 文件被加载到 AI 代理的上下文中](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/leonxlnx-taste-skill-micro/schematic-1.png)
+
+
+
+让我觉得最有意思的是，Leonxlnx 没有试图做一个“万能设计系统”，而是拆成了十几个独立技能，每个技能只做一件事。`design-taste-frontend` 是默认推荐，目前已经迭代到 v2 实验版，能自动读取产品 Brief、推断设计语言、调节三个核心旋钮：VARIANCE（布局实验性）、MOTION（动效强度）、VISUAL_DENSITY（信息密度）。这三个参数都是 1-10 的刻度，开发者可以像调音响均衡器一样调 UI 的性格。
+
+除此之外还有 `gpt-taste`（GPT/Codex 专用严格版，更高布局方差、更强 GSAP 动效方向）、`soft-skill`（高端视觉设计，柔和对比度、大量留白、精品字体、Spring 动画）、`minimalist-skill`（Notion/Linear 风格，克制调色板、清晰结构）、`brutalist-skill`（工业机械语言，瑞士字体、锐利对比、实验性布局）。甚至还有一个 `output-skill`，专门解决 AI 代理输出截断、留 `// TODO` 占位符的毛病。
+
+
+
+![Taste-Skill 技能矩阵图，横轴从“激进/实验”到“克制/经典”，纵轴从“代码输出”到“图像参考”，十几个技能分布在四个象限](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/leonxlnx-taste-skill-micro/schematic-2.png)
+
+
+
+这种设计思路让我想起前端圈一个老梗：**“Tailwind 让所有人都能写出看得过去的 UI，但也让所有人写出来的 UI 长得一模一样。”** Taste-Skill 的解法不是推翻工具链，而是在指令层注入差异性。它不碰你的 CSS 框架，但告诉 AI“别用 em-dash”、“GSAP 动效要用这个骨架”、“同一个设计系统内不要重复使用相同的间距值”。这些规则细碎到几乎像是设计师给 junior 改稿时的批注，但正是这种细碎，区分了“能用的界面”和“让人想截图发 Dribbble 的界面”。
+
+## 图像先行，代码后行——一套反直觉的 Pipeline
+
+Taste-Skill 里最反常规的设计，是 `image-to-code-skill` 和三个图像生成技能（`imagegen-frontend-web`、`imagegen-frontend-mobile`、`brandkit`）。它们不输出代码，只输出参考图像。工作流是这样的：先把设计需求喂给 ChatGPT Images 或 Codex 的图像模式，生成网站 Comps、移动端 Mockup 或品牌 Kit 图板，然后把这些图丢给 Cursor 或 Claude Code，让代码代理照着做到。
+
+
+
+![image-to-code 管道流程图，左侧“Brief 输入”→中间“AI 生成参考图像（Hero/Landing/Mobile/Brand Kit）”→右侧“Coding Agent 根据图像做到前端代码”](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/leonxlnx-taste-skill-micro/schematic-3.png)
+
+
+
+这完全颠倒了目前的主流做法。大多数开发者的流程是“先让 AI 写代码，生成了什么算什么，不好看再微调 Prompt”。Taste-Skill 的主张是：**先确定长什么样，再让 AI 写代码去匹配。** 这更接近真实的设计-开发协作模式——设计师出图，前端切图。只不过现在设计师也是 AI，前端也是 AI，中间需要一个翻译层，而这个翻译层就是 `SKILL.md` 里的那些规则。
+
+据 README 披露，这些技能的背景研究放在 `research/` 目录下，Leonxlnx 称之为“反重复规则”，是在大量观察 AI 生成 UI 的常见模式后对性设计的。比如“硬 em-dash 禁令”——大模型特别喜欢在标题里用 em-dash 做分隔符，导致视觉上到处都是横线；“GSAP 规范骨架”——AI 写的动效代码往往能用但僵硬，Taste-Skill 直接给了规范化的 GSAP 代码模板，让动效从“能跑”升级到“有手感”。
+
+（值得一提的是，Taste-Skill 的 License 是 MIT，完全开源。但 README 里专门加了一行 Disclaimer：“本项目没有官方 Token、代币或加密项目，任何使用我的名字、形象或项目的代币都与我无关。” 在 2026 年这个时间点，任何一个有点星标的开源项目都会被蹭热度发币，Leonxlnx 显然已经遇到过这种事。）
+
+这些技能各自独立，互不依赖。你可以只用 `design-taste-frontend` 改善日常输出，也可以在明确视觉方向后叠加上 `soft-skill` 或 `brutalist-skill` 做风格锁定。如果 AI 老是把代码截断，就加一个 `output-skill`。这种模块化设计很像 Vim 的插件哲学：每个插件只做一件事，但组合起来能覆盖复杂工作流。
+
+**说到底，Taste-Skill 做的事情其实很简单：它把“好品味”从隐性知识变成了显式规则。** 资深设计师看一个界面一眼就知道哪里不对——字重没层次、间距没节奏、动效没缓动曲线。但这些判断很难用语言描述。Leonxlnx 把这些判断拆解成了 AI 能执行的约束条件，然后打包成一个可移植文件。这可能是 AI 辅助编程走向成熟的必经之路：不是让模型变得更大，而是让指令变得更精确。
+
+至于这些规则到底能不能让 AI 产出“有品味”的界面——那取决于你怎么定义品味。至少，它能让 AI 不再生成那些让你看一眼就想关掉浏览器的 Slop。在一个 AI 生成内容即将淹没互联网的时代，这已经算是一种抵抗了。
+
+## 参考来源
+- https://github.com/Leonxlnx/taste-skill
+
+#Leonxlnx #TasteSkill #AI #科技
