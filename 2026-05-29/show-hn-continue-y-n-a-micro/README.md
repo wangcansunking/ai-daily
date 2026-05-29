@@ -1,7 +1,5 @@
 # Anthropic 与 OpenAI 的难题：AI 权限弹窗正引发集体决策疲劳
 
-> ai-daily · 2026 年 5 月 29 日 02:47 · 来源：Hacker News Frontpage
-
 ![](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/show-hn-continue-y-n-a-micro/head.png)
 
 我盯着屏幕右下角的弹窗，已经第 17 次了。

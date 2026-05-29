@@ -1,7 +1,5 @@
 # 微软与哲学教授新论文：AI是人类智能的语言延伸吗？
 
-> ai-daily · 2026 年 5 月 28 日 21:46 · 来源：Microsoft Research AI
-
 ![](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/extending-human-intelligence-through-ai-micro/head.png)
 
 2026 年 5 月 27 日，微软研究院发布了一篇博客。标题听起来温和得像一杯温水——《Extending Human Intelligence Through AI》。没有炸裂的产品发布，没有百亿参数的新模型，没有跑分屠榜的喧嚣。两位作者，Ken Archer 和 Harald Wiltsche，一个是微软负责任 AI 团队的产品经理，一个是瑞典林雪平大学的哲学教授。

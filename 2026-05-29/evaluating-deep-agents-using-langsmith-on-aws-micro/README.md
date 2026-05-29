@@ -1,7 +1,5 @@
 # LangChain与Anthropic联手：如何阻止AI Agent误删20万行数据？
 
-> ai-daily · 2026 年 5 月 29 日 02:54 · 来源：AWS ML Blog
-
 <!-- head fallback: head.html -->
 
 凌晨两点，一个 text-to-SQL agent 在生产环境里悄悄执行了一条 DELETE 语句。

@@ -1,7 +1,5 @@
 # 初创公司用3天迁移至Twenty，CRM为何需要“代码化”管理？
 
-> ai-daily · 2026 年 5 月 28 日 21:36 · 来源：GitHub Trending any
-
 ![](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/twentyhq-twenty-article/head.png)
 
 2025 年 7 月某天深夜，旧金山 SOMA 区一间共享办公室里，三块屏幕同时亮着。左边是 Salesforce 的 Classic 界面，卡在加载状态；中间是终端窗口，`npx create-twenty-app` 刚跑完；右边的 Discord 频道里，有人丢了一句话：“我们团队用 3 天把整个销售流程搬到了 Twenty，现在法务部问我们有没有买 license。”

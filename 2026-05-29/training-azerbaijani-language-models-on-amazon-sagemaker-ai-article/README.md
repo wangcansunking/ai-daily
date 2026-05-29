@@ -1,7 +1,5 @@
 # 巴库团队破解低资源语言难题：Llama 3.2如何理解阿塞拜疆语？
 
-> ai-daily · 2026 年 5 月 29 日 02:41 · 来源：AWS ML Blog
-
 ![](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/training-azerbaijani-language-models-on-amazon-sagemaker-ai-article/head.png)
 
 巴库时间凌晨两点，Sabir Mardanov 的 Slack 频道还在跳动。屏幕上是一串阿塞拜疆语测试 prompt，对应的英文翻译在旁边标注着——“学习一门新语言不仅扩展了沟通机会”。这条看似无害的句子，在原始 Llama 3.2 1B 模型手里变成了一场灾难：模型开始循环输出“学习一门新语言不仅扩展了沟通机会……语言学习也贡献了方向和经验的扩展……在扩展了这些方向和经验之后，方向和经验的扩展继续发展……”就像一台卡带的录音机，在同一个语义轨道上无限打滑。
