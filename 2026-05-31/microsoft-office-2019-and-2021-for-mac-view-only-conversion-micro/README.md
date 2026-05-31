@@ -6,11 +6,11 @@
 
 八年后的 2026 年 7 月 13 日，这份契约将被微软单方面作废。不是通过合同修订，不是通过弹窗告知，而是靠一个在服务器端预设的数字证书——它在那天准时过期，你的 Word、Excel、PowerPoint 图标依然亮着，文档依然能打开，文字图表清晰可见，但编辑、保存按钮全部灰掉。微软把这种状态称为“reduced functionality mode”，科技媒体 AppleInsider 在 5 月 28 日的报道中说得更直白：“微软将在那天彻底砖化 Office 2019。”砖化——bricking——这个词通常只用来描述硬件变废铁，现在微软把它带到了你“买断”的软件上。
 
-![The same Microsoft URL captured on May 30, 2026, re-dated Published: May 15th, 2026.[4]](content-1.png)
+![The same Microsoft URL captured on May 30, 2026, re-dated Published: May 15th, 2026.[4]](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/microsoft-office-2019-and-2021-for-mac-view-only-conversion-micro/content-1.png)
 
 **证书可以续签，微软选择不续。这不是技术故障，这是一次经过精心计算的产品报废决策。**
 
-![Internet Archive snapshot of the page from June 3, 2023; originally published April 12, 2023.[2]](content-2.png)
+![Internet Archive snapshot of the page from June 3, 2023; originally published April 12, 2023.[2]](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/microsoft-office-2019-and-2021-for-mac-view-only-conversion-micro/content-2.png)
 
 
 
