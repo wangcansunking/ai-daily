@@ -63,8 +63,3 @@ Deep Eye 的 README 底部有一段 Legal Disclaimer，措辞标准但语气严�
 有意思的是，Deep Eye 的 CLl 设计刻意做得极简，所有复杂逻辑都藏在 `config/config.yaml` 里，命令行只有 `-u`、`-c`、`-v`、`--formats` 这几个参数。作者显然希望降低使用门槛——一个初级安全研究员花 5 分钟配好 API Key，就能跑出以前需要高级渗透测试工程师花一天才能完成的工作量。
 
 AI 没有让安全行业消失，它只是把攻击能力的基线往上抬了一大截。Deep Eye 就是这截新基线的刻度尺。
-
-## 参考来源
-- https://github.com/zakirkun/deep-eye
-
-#Deep #Eye #AI #OpenAI #Claude

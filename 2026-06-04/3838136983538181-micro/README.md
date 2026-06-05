@@ -64,16 +64,3 @@ ST 的 10 亿美元小目标，是在一群巨兽的夹缝里抢出来的。
 
 
 ![全球数据中心电源管理芯片市场份额对比，TI vs ST vs Infineon vs onsemi，2024 vs 2027 预测](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/3838136983538181-micro/schematic-3.png)
-
-
-
-## 参考来源
-
-- 36 氪快讯：意法半导体上调数据中心收入预期 — https://36kr.com/newsflashes/3838136983538181?f=rss
-- STMicroelectronics 2024 Annual Report
-- ST Q1 2025 Earnings Call Transcript
-- EU Chips Act: STMicroelectronics Catania SiC fab approval — European Commission, May 2024
-- Infineon Q2 2025 Investor Presentation — Data Center SiC Allocation
-- NXP Q1 2025 Earnings Release — Data Center Segment Growth
-
-#AI #科技

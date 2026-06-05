@@ -59,8 +59,3 @@ v7.0 预告里有一条值得注意："Bypassing Limitations - Fixed limited all
 项目由 LeaksAPI 赞助（一个暗网数据泄露实时检测服务），作者 m0x4m4 同时运营着 hexstrike.com。这让我想起一个趋势：安全工具正在从"社区维护的脚本集合"变成"有商业赞助的产品化平台"，而 MCP 协议恰好给了这种转型一个标准化的接口层。你不需要自己写 VS Code 插件、Claude 集成、Cursor 配置——MCP Server 一次写完，所有 AI 客户端都能用。
 
 HexStrike AI 不是第一个把安全工具和 LLM 结合的项目，但它可能是目前把"工具数量 × Agent 数量 × MCP 兼容性"三个维度同时拉满的那一个。v6.0 还在 GitHub Trending 上挂着，v7.0 已经在 README 里画好了蓝图。这种发布节奏，更像是在告诉同行：安全工具的 AI 化不是要不要做的问题，而是你打算用多少工具、接多少 Agent、跑多快的问题。
-
-## 参考来源
-- https://github.com/0x4m4/hexstrike-ai
-
-#HexStrike #AI #MCP #Agents #Claude

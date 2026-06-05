@@ -65,10 +65,3 @@ Uber 的 1500 美元上限，相当于给这个试探过程扔了一面镜子回
 这大概是 2026 年上半年最清醒的一笔企业 IT 决策。不是因为它省了多少钱，而是因为它承认了一个被行业狂热掩盖的事实：AI 编码 Agent 的价值不是无限的，它有一个边界，而这个边界大概就在月薪 11% 的那个位置。
 
 等下一轮 AI 厂商的定价更新出来，应该会很有意思。毕竟 Uber 已经把底牌亮出来了。
-
-## 参考来源
-- Simon Willison's blog: Uber's $1,500/month AI limit is a useful signal for AI tool pricing — https://simonwillison.net/2026/Jun/3/uber-caps-usage/
-- Bloomberg: Uber Caps Usage of AI Tools Like Claude Code to Manage Costs — https://www.bloomberg.com/news/articles/2026-06-02/uber-caps-usage-of-ai-tools-like-claude-code-to-cut-costs (archive: https://archive.ph/ZrwAy)
-- Levels.fyi: Uber Software Engineer Salary — https://www.levels.fyi/companies/uber/salaries/software-engineer
-
-#Uber #AI #科技
