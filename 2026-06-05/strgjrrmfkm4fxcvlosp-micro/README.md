@@ -73,10 +73,3 @@ Scout 的定价还没公布，但微软企业副总裁 Omar Shahine 明确说了
 Suleyman 在台上反复念叨的那个词——“人本主义超级智能（humanist superintelligence）”——听起来像某种哲学主张，但翻译成商业语言其实很简单：我们不做替代人类的 AI，我们做帮人类干活还能让合规部门签字用的 AI。
 
 从零训练、干净 IP、企业级安全、Entra 身份治理，这些词叠在一起，指向的不是 AGI 的星辰大海，而是 CIO 和 CISO 们的采购清单。微软不再试图在模型能力上跟 OpenAI 和 Anthropic 争第一，而是在“谁能被大企业放心采购”这个维度上，悄悄把自己摆到了最前面。
-
-## 参考来源
-- InfoQ 中国报道：https://www.infoq.cn/article/StrGjRRmFKm4fXCvLOSP
-- 微软 Build 2026 主题演讲文字稿：https://microsoft.ai/news/microsoft-build-2026-mai-keynote-transcript/
-- Semafor 对 Mustafa Suleyman 的专访：https://www.semafor.com/article/06/02/2026/microsofts-ai-chief-on-the-greatest-game-of-catchup-ever-played
-
-#Thinking #Opus #AI #科技
