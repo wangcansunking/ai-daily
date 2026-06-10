@@ -1,4 +1,4 @@
-# 华为何庭波发布“韬定律”：美国七年制裁如何倒逼出中国半导体全产业链
+# 华为“感谢”美国制裁：七年封锁，倒逼出一条半导体全产业链
 
 ![](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/3824528065155459-article/head.png)
 
