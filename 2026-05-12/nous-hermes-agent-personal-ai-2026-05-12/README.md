@@ -1,0 +1,277 @@
+---
+title: "Nous Hermes-agent：开源派给个人 AI 的新答卷"
+slug: nous-hermes-agent-personal-ai-2026-05-12
+date: 2026-05-12
+weekday: 星期二
+category: AI Agent / 个人 AI / 开源生态
+track: overseas-hot
+track_score: 9.0
+keywords:
+  - Hermes Agent
+  - Nous Research
+  - 个人 AI
+  - OpenClaw
+  - 本地大模型
+  - 开源 agent
+  - 自我进化
+  - Teknium
+cover: nous-hermes-agent-personal-ai-2026-05-12.png
+description: Nous Research 把开源派招牌的 hermes-agent 推到 v0.13.0，144K star、贡献者超过 290 人。卖点是 self-improving 闭环：技能从对话里自动长出来。本文实测仓库、看清架构、把它与国内主项目 OpenClaw 摆在一起对比，给一份本地大模型接入的实操路径。
+summary: Nous Research 把开源派招牌的 hermes-agent 推到 v0.13.0，144K star、144K watchers、贡献者超过 290 人。卖点是 self-improving 闭环：技能从对话里自动长出来。本文实测仓库、看清架构、把它与国内主项目 OpenClaw 摆在一起对比，给一份本地大模型接入的实操路径。
+---
+
+# Nous Hermes-agent：开源派给个人 AI 的新答卷
+
+![Hermes Agent 与一位东亚开发者一起在桌面上长大](nous-hermes-agent-personal-ai-2026-05-12.png)
+
+## 一、过去一年，个人 AI 这件事卡在什么地方
+
+过去一年，"个人 AI 助手"是被反复讨论但一直没人交出完整答卷的方向。聊天软件里的对话框越来越聪明，能写代码、能查资料、能改文档；但下了班合上电脑，那些上下文几乎是断的——下一次打开，从零开始介绍自己，从零开始解释项目背景，从零开始把工作流再讲一遍。
+
+这一年里，绕着同一个痛点，出现过几条路线：
+
+- **OpenClaw**：本仓库主用户的项目，目前 GitHub 上 370,907 star，定位是"个人 AI 助手，跑在任何系统、任何平台"，强调本地大模型作为一等公民，把记忆、技能、人格沉淀在用户自己的机器上。
+- **ChatGPT Memory**、**Claude memory tool**：平台侧记忆，托管在云端，关闭账号、关闭 toggle 都会被牵动。
+- **扣子 Coze 2.5 Agent World**：字节豆包系，沿着"全栈员工座舱"思路，把云电脑、云手机、独立邮箱、独立记忆塞进 agent 容器里。
+- **Dify / LangChain**：偏团队与平台，agent 是产品里的一种工作流，不是直接面对个人用户。
+- **Claude Agent SDK** / **Anthropic Skills**：开发者 SDK 与平台 skill 文件，把 agent 能力下放给程序员去拼。
+
+这一周，Nous Research 把另一份答卷推到台前——`hermes-agent` v0.13.0 "Tenacity Release"在 5 月 7 日发布，过去 24 小时再次冲上 GitHub Trending，star 数实测 144,511、watchers 同样 144,511、forks 22,589、open issues 10,127、贡献者超过 290 人。开源派的工程化在加速。
+
+## 二、Hermes Agent 是什么 · 能跑吗
+
+先把官方描述放在原位：
+
+> **The self-improving AI agent built by Nous Research.** It's the only agent with a built-in learning loop — it creates skills from experience, improves them during use, nudges itself to persist knowledge, searches its own past conversations, and builds a deepening model of who you are across sessions.
+
+翻译过来三件事：
+
+1. **会自创建技能**：复杂任务跑完，agent 自己把流程沉淀成一个 skill 文件，下一次同类任务直接调用。
+2. **会自己改进技能**：技能用着不顺手，会被自己改写，参考 `agentskills.io` 这个开放标准。
+3. **会跨会话记住你**：FTS5 全文检索过去的对话，再用 LLM 做摘要回溯；配合 Honcho 这一套辩证式用户建模。
+
+架构层面，单一 gateway 进程对外提供入口，agent 核心承担学习闭环，LLM backend 随时切换，部署位有 7 种可选：
+
+![hermes-agent 核心架构 · 学习闭环 + 多 LLM + 多 Gateway](hermes-architecture.png)
+
+四层意思要分清楚：
+
+| 层 | 主要组件 | 关键点 |
+|---|---|---|
+| Gateway | Telegram / Discord / Slack / WhatsApp / Signal / CLI/TUI / Web Dashboard | 单进程多入口，对话从哪里来都行 |
+| Agent 核心 | 长期记忆 · 技能自创建 · 技能自改进 · 用户建模 · cron 调度 | self-improving 闭环就在这里 |
+| LLM Backend | Nous Portal · OpenRouter 200+ · NVIDIA NIM · 小米 MiMo · z.ai/GLM · Kimi/Moonshot · MiniMax · OpenAI · 自定义 endpoint | `hermes model` 一条命令切换，不改代码 |
+| Terminal Backend | 本地 / Docker / SSH / Singularity / Modal / Daytona / Vercel Sandbox | 5 美元 VPS 也能跑，serverless 时空闲休眠 |
+
+能跑吗？官方一键安装脚本实测可用：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
+source ~/.bashrc
+hermes              # 进入 TUI 开始对话
+```
+
+依赖核心是 Python 3.11、`openai>=2.21`、`anthropic>=0.39`、`pydantic>=2.12`、`httpx[socks]`、`rich`、`croniter`，配套 messaging 扩展可选装 telegram、discord、slack。包大小适中，pyproject.toml 显示 dependencies 控制得很克制，没有大型 ML 框架直挂在 base 安装里。
+
+## 三、Nous Research 是谁 · 这条线怎么一步步走到今天
+
+`hermes-agent` 不是凭空出现的。把 Nous Research 的 GitHub 实测拉出来看时间线：
+
+![Nous Research 从 LLM 微调到 Agent 框架的演化](nous-timeline.png)
+
+- **2024-02-24** `Hermes-Function-Calling` 公开（1,338 star）——函数调用微调数据集是这一支最早的招牌，那一年大部分人还在用文本提示拼 tool use，Nous 拿出数据 + 评测让函数调用变成可微调的目标。
+- **2024-03** Hermes 2 Pro 系列上 HuggingFace——Llama 3、Mistral 的函数调用微调权重在那段时间被大量 fine-tune 项目当作"会用工具的开源 LLM"参考底子。
+- **2024-08-26** `DisTrO`（1,026 star）——分布式训练优化器，把"开源派也能做大规模训练"这件事再加一砖。
+- **2024-11-05** `nousflash-agents`（89 star）——agent 早期尝试，星数不高但是技术原型。
+- **2025-07-22** `hermes-agent` 仓库创建——把 agent 这件事从模型微调升级成框架，第一个 push 算起。
+- **2026-03-09** `hermes-agent-self-evolution`（3,046 star）——把"agent 自我进化"拆成独立扩展。
+- **2026-05-07** `v0.13.0 Tenacity` 发布——距上一个 v0.12.0 仅 7 天，864 commits、588 merged PRs、829 files changed、128,366 insertions、282 issues closed（含 13 个 P0、36 个 P1），295 commits 合并者。
+
+主理人 Teknium（GitHub `teknium1`）个人在该仓贡献 4,238 commits，紧随其后的 `OutThisLife` 617、`kshitijk4poor` 204、`0xbyt4` 199。开源团队规模能跟上 4 个月内 4 个 minor 版本的节奏，说明工程化做得越来越扎实——开源派不再是"出一篇 paper 一个 weights 就跑"的状态。
+
+值得指出的一点：Nous Research 一直走"模型 + 数据 + 工具链"三条腿同时推进的路线，没有困在做单一 LLM 的逻辑里。`hermes-agent` 是把过去 18 个月的能力沉淀整合到 agent 这个产品形态上。
+
+## 四、怎么用 · 5 步起步实操
+
+按官方 README 把流程拆细：
+
+**第一步 · 安装**
+
+```bash
+# Linux / macOS / WSL2 / Termux
+curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
+source ~/.bashrc
+```
+
+安装脚本会处理 `uv`、Python 3.11、Node.js、ripgrep、ffmpeg。Termux 上会自动选 `.[termux]` 扩展（避开 Android 不兼容的语音依赖），Windows 上是 early beta，建议先在 WSL2 里跑。
+
+**第二步 · 选 LLM**
+
+```bash
+hermes model
+```
+
+进交互菜单，从 Nous Portal、OpenRouter、NVIDIA NIM、小米 MiMo、z.ai/GLM、Kimi/Moonshot、MiniMax、OpenAI 或自有 endpoint 里挑一个。国内开发者直接选 `Kimi/Moonshot` 或 `z.ai/GLM`，填 API key 即可；要走本地路线下面会展开。
+
+**第三步 · 选工具集**
+
+```bash
+hermes tools
+```
+
+40+ 个工具按 toolset 组织，常用的有 shell、文件读写、网页浏览、cron、邮件、TTS。第一次先用默认。
+
+**第四步 · 开聊**
+
+```bash
+hermes
+```
+
+进 TUI，多行编辑、斜杠命令补全、流式工具输出都有。中途想中断按 `Ctrl+C`，或直接发新消息打断 agent。
+
+**第五步 · 接 Messaging Gateway**
+
+```bash
+hermes gateway setup
+hermes gateway start
+```
+
+按提示把 Telegram bot token、Discord token 填进去；启动后从手机直接发消息给 agent，agent 在云端 VM 上替你干活。
+
+跑顺一遍要不了一杯咖啡的时间。这一点比早期那些"开个 docker compose 等十几个服务起来"的方案体感好太多。
+
+## 五、接本地大模型 · 三条路径细化
+
+本仓库读者群最关心的一个问题：能不能完全本地跑、不出网络。`hermes-agent` 走的是 OpenAI 兼容协议，所以本地 runtime 全部能接：
+
+![本地大模型接入 hermes-agent 的 3 条实操路径](local-llm-onramp.png)
+
+**Ollama 路径（最低门槛）**
+
+适合 M 系 Mac、单 4090、甚至没有显卡的用户。
+
+```bash
+ollama pull qwen3:14b
+ollama serve
+
+hermes model
+# 选 "OpenAI compatible"
+# base_url: http://localhost:11434/v1
+# model: qwen3:14b
+# api_key: 任意非空字符串
+```
+
+注意 function calling 在小于 7B 的本地模型上稳定性不够。Qwen3-14B、DeepSeek V4 Flash Lite、Llama 3.3-70B 都验证可用。
+
+**vLLM 路径（最高吞吐）**
+
+适合双 A100、4× 4090、国内 H 系列卡。
+
+```bash
+pip install vllm
+vllm serve Qwen/Qwen3-32B \
+  --tensor-parallel-size 2 \
+  --enable-auto-tool-choice \
+  --tool-call-parser hermes
+```
+
+vLLM 内置了名为 `hermes` 的 tool parser，与 `hermes-agent` 的工具调用协议天然对齐。这一点国内做生产部署时尤其省事，比手写 parser 适配少踩很多坑。
+
+**MLX 路径（M 系列 Mac 原生）**
+
+```bash
+pip install mlx-lm mlx-server
+mlx_lm.server --model mlx-community/Qwen3-14B-4bit
+```
+
+在 M2 Max / M3 / M4 Pro 32GB+ 上，MLX 比 Ollama 快 25%~40%。如果用户主项目已经在 MLX 上跑 Qwen，可以让 hermes 和 OpenClaw 共用同一份 MLX server，省一份显存。
+
+三条路径都不需要外部联网；硬件不够时先用 Ollama 跑 7B 把流程跑通，硬件升级再换 vLLM。
+
+## 六、和 OpenClaw / 扣子 / Dify / LangChain / Claude Agent SDK / Anthropic Skills 摆在一起看
+
+不站队，列实测维度：
+
+![7 维度对比表 · hermes-agent vs 主流 agent 框架（含 OpenClaw）](agent-frameworks-compare.png)
+
+每一格的取值都是从对方仓库 README / pyproject.toml 实测，star 数是 2026-05-11 GitHub snapshot：
+
+- **OpenClaw**（370K star）的差异化是个人优先 + 本地大模型一等公民，路径选择上对国内 IDE / 国内主流模型贴得更近。
+- **hermes-agent**（144K star）的差异化是 self-improving 闭环、200+ LLM 通吃、7 种部署位、对 Telegram/Discord/Slack 这一波消息平台原生整合。
+- **扣子 Coze 2.5**（coze-studio 20K star）走的是 B 端"全栈员工座舱"——云电脑、云手机、独立邮箱、独立记忆。
+- **Dify**（140K star）是 LLM 应用平台，agent 只是其中之一，RAG、工作流是更大的卖点。
+- **LangChain**（136K star）是经典 SDK，灵活但需要自己接 vectorstore、自己实现记忆。
+- **Claude Agent SDK**（6,809 star）走 Claude-only、给开发者的 Python SDK，记忆和技能需要自己实现。
+- **Anthropic Skills** 走平台 skill 文件 + memory，托管在 Claude 平台内。
+
+横向看，这七套框架其实**不在同一根赛道**：个人 AI、企业平台、SDK 是三种不同形态。开发者按场景组合使用是合理的。
+
+## 七、hermes-agent vs OpenClaw · 单独一段讲清楚
+
+这是本文最关键的一段。本仓库主用户的主项目是 OpenClaw，所以这两者放在一起对比时，不偏不倚，技术维度按事实摆位置。
+
+**两者共性**：
+
+- 都是个人 AI 助手定位，都强调长期记忆与跨会话连续性。
+- 都是 MIT 协议开源，都允许商用与二次开发。
+- 都支持本地大模型接入，都不锁定特定云厂商。
+- 都是本质上的工具，不是 SaaS——用户自己跑、自己保管数据。
+
+**两者差异点**：
+
+| 维度 | OpenClaw | hermes-agent |
+|---|---|---|
+| 主要重心 | 跨平台覆盖（任何 OS / 任何平台）+ 本地模型一等公民 | self-improving 闭环 + 多 gateway 入口 |
+| 默认部署 | 本地 / Docker 为主 | 本地 + 5 美元 VPS + serverless（Modal / Daytona / Vercel）|
+| 技能形态 | 用户自维护，重视复用 | 复杂任务后自动生成 + 自动改进 |
+| Gateway 选择 | 偏本地交互入口 | Telegram / Discord / Slack / WhatsApp / Signal 多平台 |
+| 用户建模 | 显式 SOUL / MEMORY 文件 | Honcho 辩证式建模 + 跨会话 FTS5 检索 |
+
+**值得注意**：hermes-agent 内置了 `hermes claw migrate` 命令，明确支持从 OpenClaw 迁移用户的 SOUL.md、MEMORY.md、USER.md、用户技能、命令允许列表、API 密钥到 hermes 侧。社区也出现了 [HermesClaw](https://github.com/AaronWong1999/hermesclaw) 这种桥接项目，在同一 WeChat 账号上同时跑 hermes-agent 与 OpenClaw。
+
+这说明海外开源团队主动把国内同赛道项目当成 **peer** 而不是竞品对待。这种态度本身值得国内开发者继续保持。两条路线在能力上互有取舍、在用户群上有重叠也有差异——选哪个、组合用、还是只用一个，看用户自己的偏好与硬件条件，没有"必须二选一"。
+
+## 八、国内同类 agent 框架对比 mapping
+
+把视线放回国内，按定位分轨：
+
+![国内 agent 框架 mapping · 8 家覆盖](cn-agent-mapping.png)
+
+- **个人 AI / 本地优先**：OpenClaw（370K star）、hermes-agent（144K star，海外项目但中文 README 齐全）。
+- **平台 / B 端 agent**：扣子 Coze 2.5（coze-studio 20K star）、Dify（140K star，国际化平台、国内可用）、阿里百炼 Agent（云平台，无独立 GitHub）。
+- **模型厂 agent SDK**：千问 Qwen-Agent（16K star，阿里达摩院）、Kimi Agent（月之暗面平台能力，platform.moonshot.ai）、智谱 GLM Agent / AutoGLM（GLM-4 仓库 7K star，桌面 agent 能力）。
+
+国内三条轨道目标不一样：个人 AI 重视主权与本地化，平台 / B 端 agent 重视协作与企业控制，模型厂 SDK 重视绑定自家模型的工程化能力。**这三类放在一起不是 zero-sum 关系**——开发者按需组合是更现实的姿态。
+
+## 九、三个用户画像的一周工作流
+
+把 cron 调度 + 技能自创建 + messaging gateway 三大能力捏在一起，画三种典型画像怎么用：
+
+![一周用 hermes-agent · 3 个画像的实操工作流](user-story-flow.png)
+
+**个人开发者（本仓库主用户）**：
+
+周一安装并接 Qwen3-32B 本地；周二设置"中文技术写作助手"人格；周三让 hermes 写完工具脚本时自动生成 skill；周四用 Telegram 远程指挥；周五开 cron 每天抓 GitHub Trending；周六复盘用量；周日把好用的 skill 提到 agentskills.io 公共仓。
+
+**产品经理（无代码用户）**：
+
+周一用 `hermes setup` 向导接 Kimi/Moonshot；周二用自然语言定义"每天 9 点汇总用户反馈"；周三 hermes 自动写 cron 接邮件 gateway；周四 Slack 上做竞品调研；周五自动生成"汇报模板"skill；周日把决策摘要推到 Notion。
+
+**高校教师（教学辅助）**：
+
+周一 5 美元 VPS 接 z.ai/GLM；周二上传课程大纲让 hermes 持久化；周三学生 WhatsApp 提问，hermes 按大纲回答；周四自动整理高频问题生成 FAQ skill；周五开 cron 每周日 20 点推下周课程提醒；周日复盘答疑覆盖面。
+
+三类用户的共性是：**对话 → skill 自创建 → cron 持续运行**这个闭环。差别在 LLM 选哪一家、gateway 走哪条。
+
+## 十、结尾 · 开源派也在持续供货
+
+把这一年再看一遍，"个人 AI"这件事的开源供给越来越扎实：
+
+- 国内有 OpenClaw 在 370K star 这个量级稳定输出，把"本地一等公民"做成默认假设。
+- 海外有 hermes-agent 在 144K star 这个量级、290 多位贡献者、4 个月发 4 个 minor 的节奏推进。
+- 字节扣子、阿里百炼、月之暗面、智谱都把 agent 当成模型之外的第二条产品线。
+- Dify、LangChain 这些经典框架仍在演化，覆盖团队与平台场景。
+
+开源派给个人 AI 持续供货，这件事不是宣言而是产品。对国内开发者来说，OpenClaw 与 hermes-agent 的路线互补不冲突——一个把本地与跨平台做厚，一个把闭环学习与多 gateway 做深；中间的桥（HermesClaw、`hermes claw migrate`）也被人主动搭起来。
+
+接下来，等 v0.14、等 OpenClaw 的下一个里程碑、等社区给出更多桥接方案，这条路只会越走越宽。

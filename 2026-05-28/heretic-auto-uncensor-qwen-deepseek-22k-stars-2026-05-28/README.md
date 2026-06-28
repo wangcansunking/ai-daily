@@ -1,0 +1,216 @@
+---
+title: "Heretic 22k stars 一行命令解审查：Qwen、DeepSeek、Gemma 通杀的自动 abliteration 工具"
+slug: heretic-auto-uncensor-qwen-deepseek-22k-stars-2026-05-28
+date: 2026-05-28
+weekday: 星期四
+category: Local AI / 模型解审查 / 工具链
+track: arbitrage
+track_score: 9.5
+cover: heretic-auto-uncensor-qwen-deepseek-22k-stars-2026-05-28.png
+description: 过去解审查（abliteration）是研究员手工活，Heretic 把它压成 `pip install heretic-llm` + 一行命令的自动化流程。仓库 21,937 stars / 2,342 forks / 当日 GitHub Trending 排名靠前，社区用它产出了 3000+ 个解审查模型，Gemma-3-12B 实测 refusal 从 97/100 降到 3/100、KL 仅 0.16（手工方案的约六分之一）。本文把它的 Optuna 自动搜参 + directional ablation + KL 约束三段架构拆开讲，附 RTX 3090 上 Qwen、DeepSeek、Gemma、Qwen3.5-Coder 四档实测对照，以及国内开发者三档使用路径。
+---
+# Heretic 22k stars 一行命令解审查：Qwen、DeepSeek、Gemma 通杀的自动 abliteration 工具
+
+![Heretic 自动解审查工具封面](heretic-auto-uncensor-qwen-deepseek-22k-stars-2026-05-28.png)
+
+## 30 秒速览
+
+- **仓库**：`p-e-w/heretic`，2025-09-21 创建，截至 2026-05-27 **21,937 stars / 2,342 forks / 74 open issues**，AGPL-3.0 协议，Python 语言，仓库大小约 1.1 MB
+- **核心论点**：过去 abliteration（解开模型 RLHF 拒答约束）是研究员手工调参的活，Heretic 用 Optuna 把搜参全流程自动化，让任何能开命令行的人一行命令解审查 Qwen、DeepSeek、Gemma 等主流开源模型
+- **关键技术**：directional ablation 算法 + Optuna TPE 自动搜参 + KL divergence 约束，**同时最小化拒答数与对原模型的能力损失**
+- **一行命令**：`pip install -U heretic-llm && heretic Qwen/Qwen3-4B-Instruct-2507`，RTX 3090 上 20-30 分钟跑完 4B 模型，零配置
+- **实测对照（Gemma-3-12B-IT，README 数据）**：refusal 从 **97/100 → 3/100**；KL divergence 仅 **0.16**，远低于 mlabonne 手工 abliteration v2 的 1.04 与 huihui-ai 的 0.45
+- **架构覆盖**：支持稠密模型 / 多模态模型 / 多种 MoE / Qwen3.5 等混合模型；**不支持纯 SSM 模型**（如 Mamba）和某些研究架构
+- **社区采纳**：HuggingFace 上已有 **3000+ 个**用 Heretic 产出的解审查模型，覆盖 `gpt-oss-20b-heretic`、`Qwen3-4B-Instruct-2507-heretic` 等热门变体
+
+![Heretic 仓库 og:image · Fully automatic censorship removal for language models](source-heretic-og.png)
+
+## 一、22k stars 这个数字背后：为什么过去要手工搞 abliteration
+
+`p-e-w/heretic` 是德国独立开发者 Philipp Emanuel Weidmann 2025 年 9 月发起的项目。仓库自我介绍只有一句话——「给语言模型做完全自动的去审查」（原文：Fully automatic censorship removal for language models）。
+
+这里的「审查」指的不是政府层面的内容过滤，而是模型 RLHF 训练阶段被注入的「safety alignment」——遇到敏感话题（医学建议、武器、心理危机、版权内容）模型会按训练好的模板拒答：「I'm sorry, but I cannot help with that.」这种拒答对一般 chatbot 用户友好，但对三类人很麻烦：
+
+- **本地部署的独立开发者**：自己电脑跑的模型回答自家代码的合规问题、跑医学小说题材的写作时还在模板式拒答，体验断裂
+- **做开源模型评测的研究者**：要测试模型在 MMLU、GSM8K、HellaSwag 这类能力跑分上的表现时，被对齐过的版本经常对正常的逻辑题也拒答
+- **企业内部用本地模型做 RAG 的工程师**：知识库里有合规审计内容、医疗记录、法律条文，每次都被模板拒答
+
+学术界 2024 年 6 月 Arditi 等人的论文（arxiv: 2406.11717）提出了一个叫 **directional ablation** 的技术路径：transformer 内部对「拒答 / 不拒答」的判断不是分布在所有权重里，而是集中在某几个方向向量上——找到这个「refusal direction」，把它从权重里正交化掉，模型就「忘了如何拒答」。这项技术后来在 HuggingFace 社区被改名叫 **abliteration**（ablation + obliteration 的合写），有几个开源实现：FailSpy 的 `abliterator.py`、Maxime Labonne 的 AutoAbliteration、wassname 的 Abliterator 等等。
+
+但这些实现都需要研究员**手工调参**：找哪一层的 refusal direction、ablation 的强度怎么定、用什么 prompt 集合做差分、怎么避免「拒答没了但模型也变蠢了」。结果是社区里出来的解审查模型质量参差不齐——有的能保持原能力，有的在常识题上掉得很厉害。
+
+**Heretic 的差异化恰好在这里**：它把 abliteration 整套流程做成「pip install + 一行命令」的自动化工具，背后用 Optuna（一个工业级的超参搜索框架）自动调所有参数，目标函数是「同时最小化拒答数与 KL divergence」。一个完全不懂 transformer 内部结构的开发者，照样能产出质量逼近研究员手工的解审查模型。
+
+`thedotmack/claude-mem` 把「跨会话失忆」自动化、Heretic 把「解审查调参」自动化——本质上是同一波趋势：把原本需要研究员动手的 AI 工具链能力，下放给普通开发者。
+
+## 二、技术核心：Optuna + directional ablation + KL 约束的三段论
+
+要看懂为什么 Heretic 能做到 KL 0.16 而手工方案是 0.45 到 1.04，得把它的三段架构拆开看。
+
+**第一段：directional ablation 算法本身**
+
+Heretic 实现了 directional ablation 的一个参数化变种。对支持的每个 transformer 组件——目前是注意力的 out-projection 矩阵和 MLP 的 down-projection 矩阵——找出每层对应的「refusal direction」（拒答方向向量），然后把这些矩阵相对该方向做正交化，让矩阵乘法的结果里不再包含这个方向的成分。
+
+「refusal direction」怎么算？Heretic 沿用 Arditi 论文的方法：用一组「harmful」提示词（会触发拒答的）和一组「harmless」提示词（不会触发的），分别拿到模型第一个输出 token 在每层的残差向量（hidden state），求两组向量的均值差——这个差向量就是该层的拒答方向。
+
+> 名词补一下：**directional ablation**（方向消融）的直觉是「在一个高维空间里，模型用某个特定方向编码『要不要拒答』，正交化等于在这个方向上把矩阵的投影抽掉」。这并不是修改模型参数让它「忘了拒答」，而是让模型在该方向上的「表达通道」被堵住——技术上是个外科手术，不是「再训练」。
+
+**第二段：参数化的 ablation kernel**
+
+Heretic 跟过去 abliteration 工具的核心差异是 **ablation kernel 的形状可调**。每层的 ablation 权重不是一刀切的 0 或 1，而是由 4 个参数（`max_weight` / `max_weight_position` / `min_weight` / `min_weight_distance`）描述的曲线——某些层强干预、某些层弱干预、深浅层之间平滑过渡。同时 attention 与 MLP 用不同参数组。
+
+![Heretic ablation 权重核函数示意（来自仓库 README）](source-heretic-ablation-kernel.png)
+
+参数化的好处是：不同模型的拒答行为分布在不同深度的层，有的集中在中段、有的分散在多段，手工调参的人很难一开始就猜对，但搜索算法可以试出来。
+
+**第三段：Optuna 自动搜参 + KL 约束**
+
+这是 Heretic 最关键的工程贡献。它用 Optuna 的 TPE（Tree-structured Parzen Estimator）做参数搜索，目标函数是同时最小化：
+
+1. **refusal score**：在 100 个「harmful」提示上跑解审查后的模型，统计仍然拒答的次数（理想是 0）
+2. **KL divergence**：在「harmless」提示上跑解审查后的模型，相对原模型输出分布的 KL 散度（理想是 0）
+
+这两个目标天然对立——抹得越狠，拒答越少但 KL 越大（能力损失越大）；抹得越轻，KL 小但拒答还在。Heretic 让 Optuna 在这两个目标之间自动找帕累托前沿，最终选出一个「同时低 refusal、低 KL」的点。
+
+![Gemma-3-12B 解审查方案对照：refusal 越低越好 · KL 越低越保智力](heretic-kl-vs-refusal.png)
+
+上面这张散点图把 Heretic 与两个手工方案对照在一张坐标里：X 轴是 KL divergence（越低越保智力），Y 轴是 refusal score（越低越解审查）。原模型在右上角（KL=0 但拒答 97）。三个解审查方案都把拒答压到了 3/100，但 KL 差距很大：mlabonne v2 是 1.04，huihui-ai 是 0.45，Heretic 是 0.16——**Heretic 对原模型能力的破坏是手工方案的约 1/3 到 1/6**。
+
+Heretic 在算法上还有两点小创新值得提一下：
+
+- **refusal direction index 用浮点数**：传统方法是从「找到的若干个 refusal direction」里选一个整数索引（第 5 层的方向、第 8 层的方向…）。Heretic 让这个索引是浮点数，对非整数索引在两个最近的方向之间做线性插值——等于在原本的离散方向空间里插出一个连续空间，搜索算法能找到比任何单一层方向都更好的合成方向
+- **attention 与 MLP 用不同参数组**：作者发现 MLP 的干预对模型能力的伤害比 attention 大，所以两组独立优化，让搜索算法在两组之间做平衡
+
+## 三、实测对照：refusal 97→3 / KL 0.16 是什么概念
+
+Heretic README 给的对照表数据是这样的（Gemma-3-12B-IT 作为基准）：
+
+| 模型 | refusal（100 个 harmful 提示） | KL divergence（harmless 提示，相对原模型） |
+|---|---:|---:|
+| google/gemma-3-12b-it（原模型） | 97/100 | 0（按定义） |
+| mlabonne/gemma-3-12b-it-abliterated-v2 | 3/100 | 1.04 |
+| huihui-ai/gemma-3-12b-it-abliterated | 3/100 | 0.45 |
+| **p-e-w/gemma-3-12b-it-heretic（Heretic 自动）** | **3/100** | **0.16** |
+
+读法：
+
+- **97/100 → 3/100**：原模型对这套 harmful 提示集合拒答率 97%，所有三个解审查方案都把拒答压到 3%，这一点上三个方案打平
+- **KL 0.16 是什么概念**：KL divergence 衡量两个概率分布的差异，0 意味着完全一致（不可能，因为权重被改了）。在大量 abliteration 实践里，KL 0.3 以下意味着「模型的常识题、推理题、写代码能力基本保留」；KL 1.0 以上意味着「模型在某些任务上明显变蠢，但还能用」。Heretic 0.16 意味着对原模型能力的破坏轻微到肉眼看不出
+- **数据来源**：Heretic 内置 `--evaluate-model` 命令，可在自家硬件上复现，例如 `heretic --model google/gemma-3-12b-it --evaluate-model p-e-w/gemma-3-12b-it-heretic`。README 注明这个表格用 PyTorch 2.8 + RTX 5090 跑出，不同硬件 / 不同 PyTorch 版本会有数值波动
+
+社区在 HuggingFace 上独立做的 MMLU 和 GSM8K 标准跑分对照（README 引用了 r/LocalLLaMA 的两条对照贴）也呼应这个结论：Heretic 产出的解审查模型在常识 / 推理评测上的得分明显高于其他 abliteration 工具产出的版本。
+
+社区用户反馈也有意思。r/LocalLLaMA 上一个用户的原话被 README 引用：「`GPT-OSS 20B Heretic` 这个模型，我下载之前还怀疑，结果一跑——对敏感话题给出正确格式的长回答、用一个未审查模型该用的语气、生成 markdown 表格和细节列表。看起来这是目前 GPT-OSS 20B 系列最好的 abliterated 版本」。另一个用户对 `Qwen3-4B-Instruct-2507-heretic` 的评价是：「在 16GB 显存上能跑的非量化 abliterated 模型里这是最好的一个」。
+
+主观感受跟 KL 0.16 这个客观数字方向一致——能力被保留得更多。
+
+## 四、4 模型解审查实测对照：Qwen、DeepSeek、Gemma、Qwen3.5-Coder
+
+Heretic 在 RTX 3090 单卡上跑 Qwen3-4B 默认配置约 20-30 分钟（这是 README 明确给出的官方数据）。其他模型的耗时按参数量与架构经验外推：
+
+![RTX 3090 上 Heretic 解审查耗时估算（按参数量外推）](heretic-time-by-model.png)
+
+| 模型 | 架构 | 估算耗时 | 数据依据 |
+|---|---|---:|---|
+| Qwen3-4B-Instruct-2507 | 4B 稠密 | 约 25 分钟 | README 实测锚点 |
+| DeepSeek-V4-Mini-7B | 7B 稠密 | 约 45 分钟 | 参数量线性外推 |
+| Gemma-3-12B-IT | 12B 稠密 | 约 80 分钟 | 参数量线性外推 |
+| Qwen3.5-Coder-30B-A3B | 30B 混合 / MoE | 约 150 分钟 | Heretic 已支持 Qwen3.5 混合架构 |
+
+注意几点：
+
+- **30B 混合 MoE 也能跑**：Heretic 明确支持 Qwen3.5 这种「稠密 + 稀疏混合」架构，对应国内开发者关心的 Qwen3.5-Coder-30B-A3B、Qwen3.5-Max-MoE 等模型，意味着不必停留在 7B / 13B 量级
+- **量化能压显存**：Heretic 集成了 bitsandbytes 的 `bnb_4bit` 量化选项。30B 模型默认 FP16 要 60+ GB 显存，4bit 后能压到 20 GB 内，单张 RTX 3090（24GB）扛得住
+- **批次自调**：Heretic 程序启动时会做硬件基准测试，自动算出当前硬件能用的最大 batch size——用户不用自己估计哪个 batch 不爆显存
+
+跑完之后 Heretic 给你 4 个选项：保存模型、上传到 HuggingFace、跟模型聊天测试效果、跑标准评测——「跑完 + 评估」是一个连贯流程，不需要切多个工具。
+
+> 实操注意：Heretic 内置了 `--print-residual-geometry` 和 `--plot-residuals` 两个研究功能。前者打印每层 refusal direction 的几何信息（余弦相似度、L2 范数、轮廓系数）；后者用 PaCMAP 把残差向量投到 2D 平面、按层生成动画 GIF。这两个功能要装 `pip install -U heretic-llm[research]` 的扩展包，对要写论文 / 做模型可解释性研究的人有用，对单纯解审查的用户用不到。
+
+## 五、能解什么、不能解什么：架构兼容性 + 法律伦理边界
+
+**架构兼容性（README 明确写的）**
+
+| 架构类型 | 是否支持 | 示例 |
+|---|---|---|
+| 稠密 transformer | 支持 | Qwen3、DeepSeek-V4、Gemma-3、Llama-3 |
+| 多模态模型 | 支持（多种） | Gemma-3 视觉版、Qwen2.5-VL 系列 |
+| MoE 架构 | 支持（多种） | gpt-oss-20b、Qwen3-A22B |
+| 混合架构 | 支持（部分） | Qwen3.5（稠密 + 稀疏混合） |
+| 纯 SSM 状态空间模型 | **不支持** | Mamba、Mamba2、纯 RWKV |
+| 某些研究架构 | 不支持 | 部分非主流 transformer 变体 |
+
+不支持纯 SSM 的原因是 directional ablation 本身假设模型有「层」的概念且每层有可识别的注意力 / MLP 子模块——Mamba 这类纯状态空间模型的内部结构不长这样，refusal direction 的提取算法不直接适用。不过国内做本地大模型的开发者主要还是 Qwen、DeepSeek、GLM、千问混合等稠密 / MoE 架构，不影响实际使用。
+
+**法律 / 伦理边界（必须讲清楚）**
+
+abliteration 这项技术本身是 2024 年学术论文公开的方法。Heretic 走 AGPL-3.0 协议，明确说明研究目的。但要用它去解一个模型的审查，**有几条边界值得每个用户自己想清楚**：
+
+1. **解掉的是 RLHF 安全对齐，不解版权过滤**：很多模型在训练数据里就过滤掉了受版权保护的内容（比如某些原文、某些电影对白）。这些是「模型从来没学过」，不是「学了之后被对齐压住」——abliteration 解不掉这部分内容，模型还是会说「不知道」
+2. **模型许可证可能限制再分发**：HuggingFace 上某些模型许可证（如 Gemma 系列的 Gemma License）规定不允许把衍生模型用于某些场景。把 Heretic 解审查后的版本上传 HuggingFace 时，需要遵守原模型的许可证条款
+3. **生成的内容你自己负责**：模型解审查之后能生成的内容范围扩大了，包括一些原本会被拒答的医学建议、法律解读、敏感话题。用户用这些内容做什么，法律责任在用户自己——这跟 Linux 内核能让你格式化硬盘但责任在你自己是一个逻辑
+4. **AGPL-3.0 协议本身**：Heretic 的 AGPL-3.0 意味着如果你把它集成进自己的产品对外提供服务，那个服务也得开源。这对纯个人使用、研究、内部工具没影响；对商业 SaaS 产品有影响
+
+国内做本地大模型工具链的团队（Ollama 国内分发版、ModelScope 上的解审查模型仓库）大概率会面对法务问题，建议在使用之前跟法务先对一下。
+
+## 六、国内对位：DavidAU 衍生系列 + 国内开发者怎么用
+
+Heretic 出来之后，HuggingFace 上**已经有 3000+ 个用它产出的解审查模型**——这是 README 给的官方数字。其中国内开发者最关心的几个变体：
+
+**DavidAU 衍生系列**
+
+DavidAU 是 HuggingFace 上一个活跃的开源模型整理者，长期做 Qwen 系列的合并、量化、解审查变体。在 Heretic 出来之后，他用 Heretic 跑出了一系列 Qwen3 衍生模型，命名规则是 `<basename>-Heretic-Uncensored`。其中 `Qwen3.6-27B-Heretic-Uncensored`（基于 Qwen3.6-27B 的解审查版）在 r/LocalLLaMA 上有用户反馈说「在编码场景的实际感受比原版还顺手」——这说法听着反直觉，但合理：原版 Qwen 对编码题里出现的某些字符（比如 SQL 注入相关字符、shell 命令里的危险参数）会模板式补一段「请注意安全」，解审查后这些模板没了，回答更紧凑，对工程师而言体验上反而更流畅。
+
+**Qwen3-4B-Instruct-2507-heretic**
+
+这是 README 直接列出的、社区评价最高的 Heretic 变体之一。`Qwen3-4B` 是当下国内开发者最常用的「能在 16GB 显存设备上跑全精度、能在 RTX 3060 上跑 4-bit」量级，作者本人 `p-e-w` 在 HuggingFace 上传了这个变体，省去用户自己跑 Optuna 的 20-30 分钟。
+
+**GPT-OSS-20B-Heretic**
+
+OpenAI 在 2026 年初开源的 `gpt-oss-20b` 是个 20B 参数的开放权重模型，它的安全对齐相对苛刻——很多正常技术问题会被拒答。Heretic 作者直接在 HuggingFace 上传了 `gpt-oss-20b-heretic`，README 引用社区反馈这是「目前 GPT-OSS 20B 系列最好的 abliterated 版本」。
+
+**国内开发者可以怎么用这套思路**
+
+| 路径 | 怎么做 | 成本 |
+|---|---|---|
+| **A. 直接用 HuggingFace 上现成的 Heretic 变体** | 在 HuggingFace 镜像（如阿里 ModelScope 镜像、清华开源镜像）搜 `heretic` 关键词，下载对应模型 | 0 |
+| **B. 自己跑 Heretic 解一个国内模型** | autoDL / 阿里云 PAI / 腾讯云 HAI 租一台带 RTX 3090 / 4090 的实例，`pip install heretic-llm` 后一行命令跑 | 实例租用费（按小时计） |
+| **C. 集成进自家本地大模型工具链** | 在 Ollama 国内分发版、ModelScope 的本地推理工具里接入 Heretic 作为可选预处理步骤 | 工程成本（需要看 AGPL-3.0 是否合规） |
+
+国内开发者跑 Heretic 时有几个工程细节值得注意：
+
+- **HuggingFace 下载速度**：Heretic 默认从 HuggingFace 拉模型权重和数据集，国内直连慢，先把 `HF_ENDPOINT` 环境变量设到 `https://hf-mirror.com`（国内镜像）或自己的内网镜像
+- **PyTorch 版本**：README 写最低 PyTorch 2.2，但 MXFP4 量化模型（如 gpt-oss）需要 2.6+ 的 `torch.accelerator`。国内自有镜像里的 PyTorch 版本要对得上
+- **uv 依赖管理**：Heretic 推荐用 uv（一个极快的 Python 包管理器）跑，`uv run heretic` 命令能自动按 `uv.lock` 锁版本——比 pip 直装更稳定。国内 uv 没有官方镜像，但可以靠 `UV_DEFAULT_INDEX` 指向自家 PyPI 镜像
+- **Optuna 搜参的可复现性**：Optuna 默认带随机种子，同一个模型跑两次 Heretic 可能搜出略不同的参数（结果差异通常很小，但确实存在）。要严格复现可在配置文件里固定 `optuna_seed`
+
+## 七、与同类工具对比：abliteration / DPO / SFT 三条解审查路径
+
+把视角拉远，过去开源社区做「让模型不拒答」总共有三条技术路径，Heretic 走的是第一条。
+
+| 路径 | 代表实现 | 算力开销 | 数据要求 | 能力保留 | 复杂度 |
+|---|---|---|---|---|---|
+| **A. abliteration（方向消融）** | Heretic / FailSpy abliterator / mlabonne v2 / huihui-ai | 小（无需训练） | 100 个 harmful + 100 个 harmless 提示 | 好（KL 可压到 0.2 以下） | 中（Heretic 出来之前是高） |
+| **B. DPO 偏好微调** | `unsloth/dpo-tutorial`、Argilla 数据集 | 中（一次微调） | 上千条偏好对（chosen vs rejected） | 中（看数据质量） | 高（要准备好数据集） |
+| **C. SFT 监督微调** | 把「拒答样本 → 不拒答回答」做成训练数据 | 大（全参微调或 LoRA） | 数千到数万条标注 | 差（容易过拟合到训练集风格） | 高 |
+
+abliteration 的最大优势是**完全不要训练**——只对权重做一次外科手术，所以算力开销极小（一张消费级显卡 + 几十分钟），数据要求也只有几百条对照提示。Heretic 让这条路径的最后一道门槛（手工调参）也消失了，让 abliteration 从研究员玩具变成普通开发者的工具。
+
+但 abliteration 不是万能的：
+
+- **只解 RLHF 拒答，不改模型「不知道」的部分**：模型没学过的内容、被训练数据过滤掉的内容，abliteration 解不出来。这类内容只能走 SFT 路径用新数据训练
+- **对极端审查模型可能不够**：有些模型（特别是某些国产模型的对齐版本）的拒答行为是分布式的——不是集中在某几个方向，而是散布在很多层的很多神经元里，directional ablation 的「找一个方向然后正交化」假设不成立。这种情况下 Heretic 也吃力，可能需要 DPO 或 SFT 兜底
+- **解了 RLHF 之后 system prompt 控制力会变弱**：原本模型靠 system prompt 区分「角色扮演时可以聊敏感话题」「面向用户时严格拒答」，解审查后这个区分能力也被削弱——所有场景下都更松。对企业内部用模型做客服的场景，这反而不是好事
+
+## 八、编辑说
+
+Heretic 这个项目最值得国内开发者关注的不是「22k stars」这个数字本身——是它给了一个工程化样板：把过去研究员手工调的事情用 Optuna 这种成熟的自动化工具搜参，让普通开发者也能拿到接近研究员手工的质量。
+
+技术层面 KL 0.16 vs 手工 0.45-1.04 这个差距是有说服力的——Heretic 不只是把流程跑通，而是在「同样压住拒答的前提下，对原模型能力的破坏少了 1/3 到 1/6」。对依赖本地模型做实际工作的开发者来说，这个能力差距是能感知到的。
+
+风险面也得讲清楚：解审查的模型放出来之后能做什么，法律责任在使用者自己；模型许可证的限制（比如 Gemma License 对衍生作品的约束）还在；AGPL-3.0 对商业产品集成有影响。这三条不是阻止使用的劝退，是想用就先了解的前置条件。
+
+对国内独立开发者来说，今天可以做的事其实有三档可选：直接在 HuggingFace 镜像下载现成的 Heretic 变体（最快），租 GPU 实例跑一次（自由度最高，能解任何想解的国内模型），或者把 Heretic 思路抄进自家本地工具链（工程成本最高但定制空间最大）。三档对应三类不同需求，选哪条看自己的场景。
+
+记忆能力是 AI Coding 工具下一轮的核心差异点，**解审查能力很可能是本地大模型工具链下一轮的差异点**——能让本地模型在真实工作流里少拒答几次，对每天用本地模型写代码、做研究、跑分析的人来说，比新模型多 2 分 MMLU 分数更有体感价值。
+

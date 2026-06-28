@@ -1,0 +1,287 @@
+---
+title: "Needle 26M：Gemini tool call 装进手机"
+slug: needle-26m-tool-call-distill-2026-05-14
+date: 2026-05-14
+weekday: 星期四
+category: 端侧 AI / 模型蒸馏 / 国产对位
+cover: needle-26m-tool-call-distill-2026-05-14.png
+track: arbitrage
+domain: edge-ai-tool-calling
+tags:
+  - Needle
+  - Gemini 蒸馏
+  - tool calling
+  - 端侧 AI
+  - Qwen3-0.6B
+  - MiniCPM
+  - GLM-Edge
+  - FunctionGemma
+  - 函数调用
+description: "Cactus Compute 把 Gemini 3.1 Pro 的 tool calling 行为蒸馏到 26M 参数的 Simple Attention Network，INT4 量化后只有 14MB，Cactus 引擎上 prefill 6000 tok/s · decode 1200 tok/s ·单轮~200ms 完成。HN 当天冲到 607 分、175 条评论，cactus-compute/needle 仓库 1234 star。把这个极端解放到国内端侧 tool call 的桌面上对照：千问 Qwen3-0.6B + Qwen-Agent、面壁 MiniCPM-V 4.6（1.3B 多模态 + 262K 上下文）、智谱 GLM-Edge-1.5B（骁龙 8 Elite 上 60+ tok/s）、Google FunctionGemma-270M（mobile actions 85% 准确率），各家定位都不一样。"
+---
+
+# Needle 26M：Gemini tool call 装进手机
+
+![Needle 26M tool call 蒸馏封面](needle-26m-tool-call-distill-2026-05-14.png)
+
+5 月 13 日 Hacker News 首页一条 Show HN（开发者秀作品） 帖子顶到 607 分、175 条评论：「Needle: We Distilled Gemini Tool Calling into a 26M Model」。发帖人是 YC 投的 cactus-compute 团队，他们在 GitHub 上开了一个 1234 star 的仓（MIT 协议），把 Google 自家 Gemini 3.1 Pro 这个大约 1500B 参数级别的云端模型，蒸馏到一个 26M 参数的「简化注意力网络」上。INT4 量化后整套权重 14MB，能塞进手表、眼镜、蓝牙耳机里跑。
+
+> **本文要回答的事**：(1) Cactus Compute 把 60GB 的 Gemini Pro 砍到 14MB 的 Needle，技术上做对了什么；(2)单轮tool call 上「26M 优于 FunctionGemma-270M、Qwen-0.6B、Granite-350M、LFM2.5-350M」这个说法值不值得当真；(3) 国内端侧 tool call 同档 —— 千问 Qwen3-0.6B、面壁 MiniCPM-V 4.6、智谱 GLM-Edge-1.5B —— 各自占住的位置在哪；(4) 同阵营的国内 AI 开发者读完该把哪条路径放进自己的技术栈。
+
+## 一、为什么 26M 这件事比想象的更重要
+
+先把数字摊开。Gemini 3.1 Pro 在 Google 数据中心上跑，单次 tool call 经过云端推理 + 网络往返，对手机端 App 来说意味着一次完整请求至少要 600-1500ms 才能收到 JSON，要联网，要 API key，要按 token 计费。这个延迟和成本结构注定了一件事 —— 端侧能做的 AI agent 只能是「告诉远端我想干什么」，真正的 路由、planning、tool selection 全部发生在云上。
+
+cactus-compute 的判断是：tool calling 这件事其实根本不需要那么大的模型。
+
+![Needle 蒸馏体量对比：从 60GB 到 14MB](needle-size-collapse.png)
+
+把对比拉平来看：
+
+- **Gemini 3.1 Pro（教师模型）**：约 1500B 参数 / 约 60GB 权重 / 云端 TPU
+- **Qwen3-0.6B（FP16）**：600M 参数 / 约 1.2GB / 国内端侧 基线
+- **FunctionGemma-270M**：270M 参数 / 约 540MB / Google 自家边端基线
+- **Granite-350M / LFM2.5-350M**：350M 参数 / 约 700MB / 同档对手
+- **Needle 26M（INT4 量化）**：26M 参数 / 约 14MB / 装进任何手机
+
+26M 仅为 270M 的 1/10、600M 的 1/23——拉到 1500B 教师参数级别，差距更达到 5.8 万倍。INT4 量化后整套权重 14MB，相当于手机里一段 30 秒 1080p 视频或一首 3 分钟无损单曲，普通 iOS App 安装包随手就能内置一份。
+
+数据来源：cactus-compute/needle README、各模型 HuggingFace model card（2026-05-14 实查）。
+
+更关键的不是数字，而是 cactus-compute 这套打法背后的判断：**tool call 不是 reasoning，不需要 reasoning 模型的体量**。这个判断如果成立，国产端侧 AI 的整张技术地图都需要重新排版。
+
+## 二、Simple Attention Network：把 transformer 的 FFN 全砍掉
+
+Needle 没有用市面上常见的 SmolLM、Phi-2、Qwen-mini 任何一个做基座，而是从头训练了一个新架构 —— cactus-compute 称之为 Simple Attention Network（SAN）。
+
+![Needle SAN 架构对比图](needle-san-architecture.png)
+
+它和标准 transformer 的差异只有一处，但很大：**砍掉了 FFN（feed-forward network）**。
+
+标准 transformer 一层里有四个模块：self-attention、LayerNorm、FFN、LayerNorm。FFN 占整层约 2/3 的参数，被 NLP 圈普遍认为是「存储事实知识」的地方 —— 比如 GPT 知道埃菲尔铁塔在巴黎，这个事实就是写在 FFN 权重里的。
+
+Needle 的判断反过来：
+
+- **attention 本身已经是非线性**：softmax(QK^T/√d)·V 是一个数据相关的非线性混合操作，attention 不是线性的
+- **tool call 不是 reasoning，是路由**：用户说「告诉老板我会迟到」，需要做的事是把这句话「对齐」到 send_email 这个工具上，attention 天然就是干这个的
+- **小模型上 FFN 浪费严重**：26M 这种体量，FFN 学不到什么有用模式
+- **推理带宽是真正瓶颈**：砍掉 FFN 直接降低每层显存带宽压力，是手机/手表上推理速度的根本来源
+
+Needle 的最终结构：12 层 encoder（self-attention + RoPE + GQA 8H/4KV + 门控残差，**无 FFN**） + 8 层 decoder（self-attention + cross-attention + 门控残差，**无 FFN**） + ZCRMSNorm 零中心初始化层，d_model=512，词表 8192（SentencePiece BPE）。
+
+这套架构的细节有几个值得国内做端侧的开发者抄一下作业的点：
+
+- **门控残差**：每层残差不是直接加，而是 `gate = σ(W·x) · attn + x`，gate 的初始化为 0，意味着开训时 attention 完全不发挥作用，模型先学 identity，然后逐渐学会「这一层的 attention 有用」
+- **Muon 优化器**：cactus-compute 在 attention projection 上用了 Muon 而不是 AdamW，目的是防止 attention 权重的 representation collapse
+- **INT4 量化感知训练（QAT）**：训练时就用 INT4 当作正则项，避免训练后量化丢失精度
+- **token-level 损失加权**：参数 value 的损失权重是 ×4，工具名错可以容忍，参数值错直接 fail 整个调用
+
+注意一个事实 —— SAN 这个架构判断对不对，cactus-compute 自己也承认是「在 26M 这个尺度上」成立。换到 1B、3B、7B 这种尺度，FFN 的存在感是不是还是同样可以砍，还没有人系统地验证过。这一点对国内做小模型的团队尤其重要：**不要拿 Needle 的结论去给 Qwen3-0.6B、MiniCPM-V 这种通用对话模型做架构改造**，会翻车。
+
+## 三、蒸馏 pipeline：27 小时 + 45 分钟做完
+
+如果 Needle 只是「架构妙」，国内复刻起来其实并不难。真正硬的是它的蒸馏数据 + 训练成本 —— cactus-compute 把这条路径压到了一个让人意外的低限。
+
+![Needle 蒸馏 pipeline 五阶段](needle-distill-pipeline.png)
+
+五个阶段，从 Gemini 3.1 Pro 当老师到 INT4 量化导出，全套流程的算力账：
+
+- **第一阶段**：Gemini 3.1 Pro（教师模型，闭源，云端调用）
+- **第二阶段**：合成 tool call 数据集 —— 让 Gemini 自动生成 2B token 的函数调用样本，覆盖 15 个工具类别（定时器、消息、导航、智能家居等）。这一步**没有人工标注**
+- **第三阶段**：预训练 Needle 26M，200B token，16 块 TPU v6e，27 小时
+- **第四阶段**：后训练（蒸馏），2B token 的 function call 数据，45 分钟跑完
+- **第五阶段**：INT4 QAT 量化 + 多格式导出，权重压到 ~14MB，MIT 协议公开
+
+对照国内做小模型的常规账：训练一个 0.5B 量级的模型，通常需要数千张 A100/H100 GPU、数月时间、数百万美元算力。Needle 把这条路径砍到 16 块 TPU + 28 小时，不是因为更聪明，**而是因为只学了一件事**。
+
+cactus-compute 在论文式说明文档里把这件事讲得很清楚：他们没打算让 Needle 会聊天、会写代码、会做数学题，全部任务窄化成单轮function call。这个窄化才是 26M 能站住的根本原因。
+
+三个对国内开发者最有参考价值的细节：
+
+1. **数据生成全自动化**：teacher 自己写训练样本，零人工标注。国内复刻 Needle 路径的最大障碍不是算力而是是否拿得到一个足够强的 teacher 来生成 2B 高质量 tool call 样本 —— 千问、Kimi、DeepSeek、智谱 GLM-4.6 都够格当 teacher
+2. **单一任务窄化**：只学单轮tool call，不学 chat 不学 reasoning。这个判断给国内做垂类 agent 的团队（医疗问诊路由、客服分流、智能家居语音控制）一个很现实的启发 —— 不需要通用大模型，只需要把一个动作学到位
+3. **参数 value 损失加权 ×4**：工具名错可以容忍，参数值错就废了。这一点是从生产环境反推回来的设计判断，国内做语音控制（家电、车机）的同行可以直接照搬
+
+## 四、Tool call 在 Needle 上长什么样
+
+cactus-compute 给的官方调用示例非常简洁。
+
+![Needle tool call JSON 示例](needle-tool-call-json.png)
+
+输入是用户的自然语言 + 可用工具的 JSON schema，输出是结构化 JSON tool call。整个流程 ~200ms 在 Cactus 引擎上跑完。
+
+```python
+from needle import load_checkpoint, generate, SimpleAttentionNetwork, get_tokenizer
+
+params, config = load_checkpoint("checkpoints/needle.pkl")
+model = SimpleAttentionNetwork(config)
+tokenizer = get_tokenizer()
+
+result = generate(
+    model, params, tokenizer,
+    query="What's the weather in San Francisco?",
+    tools='[{"name":"get_weather","parameters":{"location":"string"}}]',
+    stream=False,
+)
+print(result)
+# [{"name":"get_weather","arguments":{"location":"San Francisco"}}]
+```
+
+吞吐数据来自 cactus-compute README：Cactus 引擎上 prefill 6000 tok/s、decode 1200 tok/s、单次响应约 200ms 完成。
+
+HN 评论区有几条很有价值的吐槽，国内开发者读完应该先冷静一下：
+
+- **错配 case**：有用户测了「我得跟我老板说一声我要迟到了」（原句 i need to contact my boss i will be late），Needle 只返回了一个 timer 工具调用，不是 send_email。也就是说在「联系老板」这种需要语义槽位推理的场景下，26M 还撑不住
+- **多轮 + 有状态弱**：cactus-compute 自己承认 Needle 擅长 单轮，多轮对话 + 有状态 agentic 工作流「正在做中」
+- **上下文学习 几乎为零**：26M 模型记不下足够多的 schema，复杂工具描述只能靠 微调
+
+这三点放在一起，结论很明确 —— **Needle 是一个执行器不是大脑**。在一个完整 agent 架构里，它的位置是「最后一公里 路由」：上游已经决定了「用户在问天气」，Needle 把这个意图翻译成精确的 JSON 调用；它不负责决定「用户到底在问什么」。
+
+## 五、cactus-compute 自报的评测怎么读
+
+cactus-compute README 给出的对比是「Needle 在单轮function call 上优于 FunctionGemma-270M、Qwen-0.6B、Granite-350M、LFM2.5-350M」。但 README 里**没有给出具体的数字百分比**，只是一句定性结论。这一点诚实地讲，是 Needle 这个项目目前最大的硬伤之一。
+
+把已知数据整理到同一张图上看：
+
+![Needle accuracy speed 准确率速度图谱](needle-accuracy-speed.png)
+
+把这张图当作粗略的形势图，不要当作精确评测来用 —— Needle 在「小且快」这个角落几乎独占，但**只在单轮function call 这一条具体任务上**；离开这条窄道，国内的 0.6B-1.3B 通用小模型立刻夺回主场。
+
+值得对照的 Google 官方数字：FunctionGemma-270M 在 Mobile Actions 评测上，基座模型准确率 58%，微调 之后能到 85%；经过 distil labs 多轮调优可以到 90-97%，匹敌 120B 教师。这是一个清晰、可重复、有具体数字的 基线。Needle 想真正确立自己的位置，最缺的就是把同一套评测数据跑出来贴上去。
+
+国内同档目前的硬数据：
+
+- **Qwen3-0.6B**：在某独立开发者跑的 2026 tool calling 评测（21 个开源权重模型）里，0.6B 拿到 0.880 Agent Score 并列第一。注意 —— 这是用 Ollama 跑的，单次推理约 3.6 秒，**比 Needle 慢 18 倍**，但准确率显著更高
+- **MiniCPM-V 4.6**：2026 年 5 月 11 日发布，1.3B 参数，262K 上下文，多模态 + tool call。具体 function call评测数据 OpenBMB 还没单独发，但能力维度比 Needle 宽
+- **GLM-Edge-1.5B-Chat**：在骁龙 8 Elite 上混合量化方案下解码速度 60+ tok/s（投机采样 100+ tok/s），偏向通用对话而非纯 tool call
+
+## 六、国内端侧 tool calling 同档对比：四家定位差异化
+
+把镜头从 Needle 拉回国内，桌面摊开看：
+
+![Needle 与国内 china lineup 端侧 tool calling 对位](needle-china-lineup.png)
+
+| 模型 | 参数 | 厂商 | tool call 路径 | 端侧形态 | 开源协议 |
+|---|---|---|---|---|---|
+| **Needle 26M** | 26M | Cactus Compute | Gemini 3.1 Pro 蒸馏 · 单轮函数调用 | iOS / Android / 手表 / 眼镜 | MIT |
+| **Qwen3-0.6B** | 0.6B | 阿里千问 | Qwen-Agent 内置 tool 解析模板 | FP8 约 600MB · 手机可跑 | Apache-2.0 |
+| **MiniCPM-V 4.6** | 1.3B | 面壁 / OpenBMB | 多模态 + tool call · 262K 上下文 | iOS / Android / 鸿蒙原生 | Apache-2.0 |
+| **GLM-Edge-1.5B-Chat** | 1.5B | 智谱 AI | GLM-4 同源 · 端侧定制对话 | 骁龙 8 Elite · 60+ tok/s | Apache-2.0 |
+| **FunctionGemma-270M** | 270M | Google（对照） | Gemma 3 270M 微调 · 边端 agent | AI Edge Function Calling lib | Gemma 协议 |
+
+每一家的差异化判断都很清楚：
+
+- **Cactus Compute 走极小化路线**：26M 是 Needle 的终点不是起点，目标是手表、眼镜、蓝牙耳机这种连 540MB 的 FunctionGemma 都装不下的设备
+- **千问走通用路线**：Qwen3-0.6B 是一个完整对话模型，Qwen-Agent 框架已经把 tool call 模板和解析器封好，对中文场景做了大量优化
+- **面壁走「多模态 + 长上下文」**：MiniCPM-V 4.6 在 1.3B 这个体量同时塞进了视觉理解 + 262K 上下文窗口 + tool call，目标是「一个模型搞定手机上所有 AI 交互」，不只是 路由
+- **智谱走「速率优先」**：GLM-Edge 联合骁龙 8 Elite 的混合量化方案是当前国产端侧速率最快的，60+ tok/s 解码意味着输出体验流畅
+
+这四条路线对应了四种不同的应用场景：
+
+1. **想最小体积装进手表 / 眼镜 / 蓝牙耳机** → Needle 26M。国内目前**没有同档对手**，这是阿里、面壁、智谱都应该认真考虑要不要补的一格
+2. **想中文能力 + 多模态 + 长上下文** → MiniCPM-V 4.6（1.3B 多模态，对话场景全能）
+3. **想纯 agent / 函数路由 + 国产生态** → Qwen3-0.6B + Qwen-Agent 模板（中文 tool call 任务的最稳基线）
+4. **想骁龙 8 Elite 上跑高并发推理** → GLM-Edge-1.5B（速率优化做得最深，国内安卓旗舰首选）
+
+## 七、部署矩阵：iOS / Android / 浏览器，各走各路
+
+Needle 公开发布的权重有几种格式选择，每条路径都有不同的国内对应技术栈。
+
+![Needle 部署版图：iOS / Android / 通用嵌入式](needle-deploy-matrix.png)
+
+三大端侧推理路线：
+
+- **iOS / macOS**：Core ML / MLX 格式。iPhone 14 Pro 起的 Neural Engine、Apple Watch S9/Ultra 2、AirPods 内置 H2 芯片都能跑。Xcode 15+ 集成 3-5 行代码即可，首选格式 .mlpackage（INT4 量化）
+- **Android / 鸿蒙**：GGUF / ONNX Runtime 格式。骁龙 8 Gen 3 / 8 Elite 的 NPU、天玑 9300+ 的 APU，联发科 / 高通 SDK 都在适配 llama.cpp 的 ARM kernel 优化，首选格式 .gguf Q4_K_M
+- **通用嵌入式 / 浏览器**：ONNX Runtime Web 格式。RISC-V 单片机、Raspberry Pi、ESP32 系列（极限场景）、浏览器 WebAssembly 推理都能跑。Cactus 自己出了一个私有的 .cact 格式做进一步优化，首选格式 .onnx INT8
+
+需要说明 —— HuggingFace 上 cactus-compute/needle 仓主要提供的是 PyTorch 权重（`needle.pkl`）+ INT4 量化权重，**GGUF / ONNX / Core ML 三种格式更多是社区贡献**而不是官方一发布就齐齐整整。社区在 HN 帖发出后几小时内就跑出了浏览器版本（ONNX Runtime Web + Hugging Face Spaces）。
+
+对国内开发者来说，最容易上手的三条路径：
+
+1. **已用 llama.cpp 跑 Qwen / 通义千问的同行** → 直接 GGUF 路径跑 Needle，几行 prompt 模板调整就能切换，对照实测延迟
+2. **iOS App 开发者** → Core ML / MLX 双格式都行，Apple Silicon 上 Cactus 实测 sub-50ms TTFT
+3. **Web / 浏览器场景** → ONNX Runtime Web，14MB 的体积让 Hugging Face Spaces 几分钟搭起来，前端原型最快
+
+## 八、cactus-compute 是谁，YC 怎么看
+
+cactus-compute 是 Y Combinator 2025 批次的 初创公司，主业不是 Needle 而是 Cactus —— 一个号称「为手机、可穿戴、自定义硬件从零写的低延迟 AI 推理引擎」，GitHub 上 4846 star，NOASSERTION 协议（半开源），2025 年 4 月开仓。
+
+Cactus 引擎和 llama.cpp 的关系类似 —— 都是端侧推理，但 Cactus 强调几点差异化：
+
+- 子 50ms TTFT（time-to-first-token）on-device，对照 llama.cpp 在同硬件上一般是 100-300ms
+- 自研 ARM CPU kernel，跨 iOS / Android / wearables 统一抽象
+- v1 版本从 GGUF 迁到了私有 .cact 格式（向 llama.cpp 兼容性可能下降，换来端侧性能）
+- 同时兼容 HuggingFace 上任意 GGUF 模型（不强制用自家格式）
+
+Needle 是 cactus-compute 在自家引擎上的「能力证明」—— 你看，在我们这套引擎上跑一个 26M 模型，是真的能达到 6000 tok/s prefill + 1200 tok/s decode 的。这种打法很 YC：先做一个让所有人看到的极端 演示，再用 演示 反哺主营引擎产品的认知度。
+
+国内有没有同模式的对手？严格意义上没有完全等价的。最接近的有：
+
+- **MNN（阿里淘系）**：端侧推理框架，长期沉淀，但缺少 Needle 这种「极小化蒸馏模型 + 自家引擎」的组合打法
+- **ncnn（腾讯）**：偏视觉模型推理，对 LLM 端侧支持在迭代但不是主线
+- **OpenBMB 的 llama.cpp 兼容栈**：MiniCPM 系列直接走 llama.cpp / Ollama 生态，没有自研推理引擎
+
+从这个角度看，Cactus + Needle 这套「自家引擎 + 极小化蒸馏模型」的组合，是端侧 AI 这个赛道目前最完整的一个垂直整合方案。国内做端侧推理的同行，特别值得看一眼这套打法 —— **不是去抄 26M 这个数字，而是抄「引擎 + 模型一起做」这个组合策略**。
+
+## 九、HN 评论区的真实反馈
+
+把 175 条评论里有信息量的几条摘出来，对照看：
+
+- **正向**：「14MB 的 INT4 quant 居然能跑出像样的单轮tool call，浏览器版本几小时就有人复刻了出来」
+- **怀疑**：「Show HN（开发者秀作品） 帖子的评测是 cherry-pick 的吗？没看到完整 evaluation 数据集」
+- **场景质疑**：「我测了 「我得跟我老板说一声我要迟到了」（原句 i need to contact my boss i will be late），它只返回了 timer 工具，没识别出 send_email」
+- **架构辩论**：「砍掉 FFN 这件事在 LLM scaling 上一直有研究，Needle 是把这个判断在端侧验证的第一个清晰例子」
+- **生态期待**：「希望出个 LoRA 微调 教程，让我们能在自己的 schema 上 微调」
+- **国内开发者视角**：「Qwen3-0.6B + Qwen-Agent 中文 tool call 已经做得很完整了，Needle 这种极小化思路对手表/眼镜场景是补位，不是替代」
+
+整体语气是「兴奋 + 期待 + 想要看更多数据」，不是一边倒的鼓掌。这种讨论氛围对 cactus-compute 来说反而是好事 —— 它把 Needle 推进到了一个有严肃技术讨论的位置，而不是「又一个 Show HN（开发者秀作品） 玩具」。
+
+## 十、同阵营开发者怎么用这个信息
+
+把这一切收回到读这篇文章的同行身上 —— 国内做 AI 应用的工程师，读完这篇能往自己的技术栈里加什么。
+
+**情景一：做语音控制类 App（家电、车机、智能音箱）**
+
+这个场景最适合 Needle 的定位。语音转文字之后，需要做的是把意图准确路由到一组有限的工具上（开空调、调温度、定时、播放歌曲）。这种场景：
+
+- 工具集合是封闭的（5-50 个）
+- 大部分调用是 单轮
+- 延迟越低体验越好
+- 离线可用是加分项
+
+可以同时拉 Needle 和 Qwen3-0.6B + Qwen-Agent 跑同一套 schema，对照延迟、准确率、内存占用，选适合自家硬件的。如果硬件极受限（手表、AirPods 类），Needle 是目前唯一能塞下的选项。
+
+**情景二：做手机 App 内置 AI 助手**
+
+中文场景、需要多轮对话、可能涉及 RAG、内容生成 —— Needle 在这里完全不是首选。MiniCPM-V 4.6（1.3B 多模态 + 262K 上下文 + tool call）是更合理的选择，它在一个模型里同时解决了视觉理解、长文档、对话和工具调用。
+
+**情景三：做 Web 端 AI Demo / 原型**
+
+最快上手路径是 Needle ONNX Runtime Web 版本 + Hugging Face Spaces，14MB 权重直接发布到 CDN，前端调用零基础设施。Demo 阶段 Needle 的单轮限制不会暴露，反而能凸显「在浏览器里跑 LLM」的视觉冲击力。
+
+**情景四：做端侧 LLM 推理引擎自研**
+
+cactus-compute 是教科书级的参考。引擎 + 模型一起做这条路，国内目前 阿里 MNN、腾讯 ncnn 都没走完。能从这家公司学到的：(1) 选一个足够窄的任务做切入点；(2) 自家引擎要有一个数据漂亮的 演示 模型在上面跑；(3) 不要试图和 llama.cpp 在通用性上拼，要在垂直场景上拼出绝对优势。
+
+## 结语：一个简短的判断
+
+26M 干掉 60GB 这件事的真实价值，不是「小模型也能很强」这种泛泛的判断，而是把一个具体动作做到了硬件上最远的角落。Cactus Compute 的判断是：tool calling 是端侧 AI 这张图里最先该被解决的最后一公里路由问题。
+
+这个判断是对是错，国内做端侧的同行有十几个角度可以验证：在手表上跑、在 AirPods 上跑、在车机上跑、在智能家居控制盒上跑。如果国内能在 Needle 这条窄道上做出一个中文 + 多语种支持更好的对位版本（比如用千问 / Kimi 当 teacher 蒸出一个 China-edge-26M），整个国产端侧 AI 的故事就完整了一格。
+
+26M 不是终点，是一道门 —— 这道门后面是把 AI 装进所有有电的设备这件事。
+
+---
+
+**主要参考与数据来源**
+
+- cactus-compute/needle GitHub 仓（1234 star · MIT · 创建 2026-02-24 · 实查 2026-05-14）
+- cactus-compute/cactus 推理引擎仓（4846 star · 创建 2025-04-23）
+- Cactus Compute 在 HuggingFace 的 Needle model card
+- Hacker News Show HN（开发者秀作品） 帖子 #48111896（607 分 · 175 评论 · 2026-05-13）
+- Google FunctionGemma 270M 官方公告（Mobile Actions评测58% → 85% → 90-97%）
+- 阿里千问 Qwen3-0.6B HuggingFace card（FP8 ~600MB · Qwen-Agent 框架）
+- OpenBMB MiniCPM-V 4.6 发布（2026-05-11 · 1.3B 多模态 + 262K context · Apache-2.0）
+- 智谱 GLM-Edge 仓（zai-org/GLM-Edge · 骁龙 8 Elite 60+ tok/s 实测）
+- 第三方 Local Agent Bench（21 模型 · 4,836 推理 · Qwen3-0.6B 拿 0.880 Agent Score）

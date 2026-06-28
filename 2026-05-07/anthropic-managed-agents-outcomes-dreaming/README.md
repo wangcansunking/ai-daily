@@ -1,0 +1,280 @@
+---
+title: "Anthropic 接手 agent 基础设施那一天"
+date: 2026-05-07
+slug: anthropic-managed-agents-outcomes-dreaming
+type: deep-dive
+track: overseas-hot
+cover: anthropic-managed-agents-outcomes-dreaming.png
+description: "Anthropic 在 Code w/ Claude 2026 大会发布 Managed Agents 平台，引入 Outcomes（目标驱动迭代）和 Dreaming（复盘自省）两个 agent 编排原语，Anthropic 服务端接管 agent 长跑基础设施。HN 首页、Simon Willison live blog 现场跟进。"
+tags:
+  - Anthropic
+  - Managed Agents
+  - Outcomes
+  - Dreaming
+  - Agent 平台
+  - Code w/ Claude
+---
+# Anthropic 接手 agent 基础设施那一天
+
+![Anthropic 接手 agent 基础设施那一天](anthropic-managed-agents-outcomes-dreaming.png)
+
+## 一、5 月 6 日早上九点，Anthropic 不再只卖 API
+
+旧金山时间 2026 年 5 月 6 日上午 9 点 28 分，Code w/ Claude 大会主舞台上，演讲人在 Simon Willison 的 live blog 里被记下一句话——"Claude 可以审视它过去的 session，搞清楚自己漏掉了什么，然后自我改进"。这句话对应的产品名叫 **Dreaming**。
+
+往前 12 分钟，演讲人刚宣布 Multiagent orchestration（多 agent 编排）和 **Outcomes**（目标驱动迭代）正式公测。再往前一个月——2026 年 4 月 8 日——Anthropic 已经悄悄把 **Claude Managed Agents** 主体端点放进公开 beta，beta header `managed-agents-2026-04-01` 是当天上线的。
+
+把这三件事放在一起看，结论很清楚：**Anthropic 不再只卖 API，开始接管 agent 基础设施**。
+
+过去一年所有写过 agent 的人都干过同一套脏活：自己拼 agent 循环、自己跑容器、自己接重试、自己拼 trace、自己挂 cron、自己刷 OAuth token。模型公司只管出模型，框架公司（LangChain、LlamaIndex、CrewAI、AutoGen）只管出 SDK，跑在哪里、怎么持久化、谁负责长跑——是开发者自己的事。
+
+5 月 6 日这一天，Anthropic 把那条线往上挪了一格。**agent 不再是你写在自己服务器上的循环，而是在 Anthropic 服务端里的一个 session 资源**。这是 agent 平台战的关键转折，也是接下来这篇文章想讲清楚的事。
+
+> 论点先放这里：Anthropic 这次发布让 agent 平台战进入新阶段——把 agent 编排提升到「目标驱动 + 自我反思」级抽象。国产 agent 平台这一边，阿里百炼、字节扣子、腾讯元器+元宝、智谱 AutoGLM 已经在长跑托管和多 agent 编排上各占一段位次，下一步比拼的是谁先把 Outcomes 这种「rubric + grader」抽象做成自己的原语。中国云的家底已经具备，窗口在打开。
+
+![你自管 Agent SDK vs Claude Managed Agents](managed-agents-vs-sdk.png)
+
+## 二、事件三段事实：大会发布 / Managed Agents 是什么 / 两个新原语
+
+### 2.1 Code w/ Claude 2026：keynote 干货清单
+
+这场大会本身的密度比去年高一档。Simon Willison 现场记录的几条硬指标：
+
+- **API 调用量同比 17 倍**：Anthropic 平台过去 12 个月调用量增长 17×。
+- **Pro / Max / Enterprise 的 5 小时窗口翻倍**：Claude Code 把每 5 小时的速率限制窗口直接 ×2。
+- **数据中心扩容**：Anthropic 宣布与 SpaceX 合作，使用孟菲斯 Colossus 数据中心容量。
+- **客户站台**：Shopify、Mercado Libre 上台，后者放话「23000 名工程师 Q3 实现 90% autonomous coding」。
+
+这些数据反映一个判断：**模型推理基建已经到瓶颈**——再翻一倍的需求只能靠新数据中心和新原语去吸收。Outcomes、Dreaming、Multiagent 三件套不是「nice to have」，是用来把单次 task 的 wall-clock time 压下去、把人类 review 量压下去的杠杆。
+
+### 2.2 Managed Agents 到底是什么：四个核心概念
+
+Anthropic 官方文档把 Managed Agents 抽成四个核心概念，每一个都对应一组 API：
+
+| 概念 | 一句话定义 | 类比 |
+|---|---|---|
+| **Agent** | 模型 + system prompt + tools + MCP + skills 的可版本化定义 | 「一个 Lambda function 的代码」 |
+| **Environment** | 配置好的容器模板（Python/Node/Go 包、网络规则、挂载点） | 「Lambda runtime + layers」 |
+| **Session** | agent 在 environment 里跑起来的一次实例，状态机管全程 | 「Lambda 一次调用 + 持久 FS」 |
+| **Events** | 你和 agent 之间的双向消息流（user.message / agent.tool_use / span.outcome_evaluation_*） | 「SSE 双向通道」 |
+
+这套抽象的关键不在「容器即服务」——AWS、GCP、阿里云全都有。关键在 **agent 是一个可版本化的资源**：`agent_id` + `version`，session 创建时可以 pin 版本，灰度发布、回滚、AB test 都按这个粒度走。
+
+支持的工具是 `agent_toolset_20260401`（一次启用全套）：bash、文件读写、glob、grep、web search、web fetch、MCP server。容器内有 `/mnt/session/outputs/`（产物落点）和 `/mnt/memory/<store_name>/`（持久化记忆挂载点）两个固定路径。
+
+会话状态机四档：`idle`（等待）、`running`（执行中）、`rescheduling`（瞬态错误自动重试中）、`terminated`（不可恢复）。这是 agent 长跑路径上一直让人头疼的状态——现在 Anthropic 帮你管。
+
+模型这一档目前只列出 `claude-opus-4-7`（Quickstart 文档示例），但 Anthropic 后台显然支持 4.6 / Sonnet 4.6（pricing 文档涉及）。
+
+### 2.3 Outcomes 和 Dreaming：两个新原语怎么改变 agent 写法
+
+**Outcomes 把 agent 从「对话」升级到「干活」**。原话来自官方文档：「The `outcome` elevates a session from *conversation* to *work*.」
+
+机制简洁但抽象层级高：
+
+1. 你写一个 markdown 格式的 **rubric**（评分细则），可以 inline 也可以从 Files API 上传（`files-api-2025-04-14` beta header）。
+2. 创建 session，然后发一个 `user.define_outcome` 事件，带 description + rubric + 可选 `max_iterations`（默认 3，最大 20）。
+3. agent 立刻开始干活。同时 Anthropic 自动 **provision a grader**——在独立 context window 里跑的副 agent，专门按 rubric 一条一条打分。
+4. grader 返回四种结果之一：`satisfied`（达成，session 转 idle）/ `needs_revision`（带 explanation 反馈给主 agent，再来一轮）/ `max_iterations_reached`（用尽轮次，最多再来一次最终修订）/ `failed`（rubric 与任务根本对不上）。
+
+事件流上多出一组 `span.outcome_evaluation_*` 事件，主 agent 的 reasoning 和 grader 的 reasoning 互相隔离——文档原话："a separate context window to avoid being influenced by the main agent's implementation choices"。这是把 LLM-as-judge 这套学术方法做成了产品级原语。
+
+Anthropic 自己披露的效果数字：「Outcomes 把任务成功率比标准 prompting loop 提高最多 10 个百分点；docx 生成 +8.4%，pptx 生成 +10.1%。」（来源：claude.com/blog/new-in-claude-managed-agents）
+
+**Dreaming 把 agent 从「执行」升级到「自反思」**。
+
+Simon Willison 的 live blog 在 09:32 记下：「让 Claude 跑一个 over-night 任务，审视过去的 session，写出新 memory。」keynote 上的演示场景是一个虚构的「月球着陆探测器」多 agent 项目，dreaming 跑完之后写出了一个叫 `descent-playbook.md` 的文件。
+
+落到产品定义上：**Dreaming 是一个定时调度的进程**——读 agent 过去的 session 历史和 memory store，识别出（a）反复出现的错误、（b）已经收敛的稳定 workflow、（c）团队偏好，然后把高信噪比的内容写回 memory store。可以全自动更新，也可以加一道人工审核闸。
+
+Memory store 这一层 4 月就上线了：每个 store 是 workspace 范围内的文本文档集合，session 创建时 mount 到 `/mnt/memory/<store>/`，每次写入产生不可变 memory version（`memver_*`，30 天保留 + 最近版本永留），有完整 audit trail。单个 memory ≤100KB（≈25K token），单 session 最多 mount 8 个 store。
+
+把 memory store + Dreaming 拼在一起，agent 第一次有了「跨 session 沉淀经验」的固定写法。
+
+> Harvey（律所工具）披露的数据：dreaming 让任务完成率涨了约 **6 倍**。Netflix 把它用在跨数百次构建的 log 分析里，找出反复出现的 pattern。Spiral / Every 用 Haiku 当 lead agent、Opus 当 specialist subagent，Outcomes 强制编辑标准。Wisedocs 用它做文档质检，「review 速度快 50%，团队标准不丢」。
+
+![Outcomes：从 conversation 升级到 work](managed-agents-outcomes-loop.png)
+
+## 三、和老 SDK 的差异：你少写多少代码
+
+把 Managed Agents 和传统 Agent SDK 路线（Anthropic 自家的 `claude-agent-sdk`、LangChain、LlamaIndex、CrewAI、AutoGen 都算）摆在一起对比：
+
+| 关注点 | 传统 Agent SDK | Claude Managed Agents |
+|---|---|---|
+| **agent loop** | 你写 while 循环、调度工具、处理错误 | Anthropic 跑 |
+| **容器 / 沙箱** | 你起 Docker / Firecracker / k8s pod | environment 一行 config |
+| **持久文件系统** | 你挂卷、自己 sync | session 自带 `/mnt/session/outputs/` |
+| **记忆跨 session** | 你写 vector DB / SQL / KV | memory store 8 个/session，挂载即用 |
+| **MCP / OAuth** | 你装 server，自己刷 token | vault 资源管 token，Anthropic 自动 refresh |
+| **目标驱动迭代** | 你自己写 self-critique 循环 | Outcomes 一个事件搞定 |
+| **跨 session 自学** | 极少有人做，做也是手工脚本 | Dreaming 调度进程 |
+| **观测 / trace** | 你接 OpenTelemetry / Langfuse | Console 自带，事件流可订阅 |
+| **计费模型** | 自己付云账单 + 工程师工资 | API token 标价 + $0.08 per session-hour |
+| **Batch API 折扣** | 多数 SDK 没接 | **不适用**（Anthropic 文档明确不享 Batch 50% 折扣） |
+| **rate limit** | 你控 | Create endpoint 300 RPM、Read 600 RPM（per org） |
+
+**少写多少代码**这件事可以量化。Quickstart 文档里一个完整的 fibonacci 任务，Python SDK 总共 4 步：`agents.create` → `environments.create` → `sessions.create` → `events.send`。前两步加起来 8 行，session 创建 5 行，发 message + 流式处理事件不到 20 行。
+
+如果用传统 SDK，光是一个安全沙箱就要 100 行起步——还不算异常处理、超时回收、cron。
+
+但**少写代码 ≠ 适合所有场景**。文档自己列了适用边界："Long-running execution（分钟到小时级，多次工具调用）/ Cloud infrastructure / Minimal infrastructure / Stateful sessions"。反过来——低延迟（<1 秒）、单轮调用、不需要状态、不需要工具——继续用 Messages API 更便宜更快。Anthropic 把这件事在文档第一页就说清楚：Messages API vs Managed Agents 是两条路。
+
+## 四、价格、限额、适用场景：算清楚账再上车
+
+### 4.1 计费模型
+
+Managed Agents 是**两段计费**：
+
+- **Token 部分**：跟 Claude API 标准价一样。Opus 4.6 是 $5 input / $25 output 每百万 token，Sonnet 4.6 是 $3 / $15。
+- **Session 部分**：**$0.08 per session-hour**，按毫秒计费，**只在 `running` 状态计费**——idle 不收钱。
+- **Web search 工具**：$10 per 1,000 searches。
+- **Batch API 50% 折扣**：**不享受**。
+
+WaveSpeed 给的实战例子：一段 1 小时 Opus 4.6 session，烧 5 万 input + 1.5 万 output token，总费用约 **$0.70**，其中 session-hour 部分只占 $0.08。也就是说，token 还是大头，session-hour 是个小尾巴——但这个小尾巴让 Anthropic 把基础设施成本结构化了。
+
+### 4.2 限额
+
+| 维度 | 值 |
+|---|---|
+| Create endpoints rate | 300 RPM per org |
+| Read endpoints rate | 600 RPM per org |
+| 单 session memory store 数 | ≤8 |
+| 单 memory 大小 | ≤100KB（约 25K token） |
+| Outcome max_iterations | 默认 3，最大 20 |
+| Outcome 单次同时运行数 | 1（链式可串联） |
+| Memory version 保留 | 30 天 + 最近版本永留 |
+| Instructions 字段长度 | ≤4096 字符 |
+
+### 4.3 三类适合的场景
+
+**适合**：
+
+- 写一个 DCF 财务模型（官方示例，rubric 跑 Outcomes）
+- 长 horizon 数据分析（Netflix 跨百次 build 的 log 模式提取）
+- 文档自动化（Wisedocs 50% 提速）
+- coding agent 长跑（Claude Code 那一档的 5 小时窗口翻倍刚好对上）
+- 多用户隔离的 SaaS 后台 agent（每个 user 一个 memory store）
+
+**不适合**：
+
+- 实时低延迟交互（< 1 秒）
+- 高 QPS 单轮 prompt（没有 Batch 折扣，session-hour 有最小开销）
+- 不需要 stateful 文件系统的纯函数式调用
+
+## 五、🇨🇳 国产 agent 平台对照：百炼 / 扣子 / 元器+元宝 / 智谱 AutoGLM 各到哪一档
+
+国产这一边过去一年节奏很快，关键玩家四个，已经各自占住一段位次。
+
+![国产 agent 平台 vs Claude Managed Agents](managed-agents-cn-vs-anthropic.png)
+
+### 5.1 阿里云百炼（Bailian / ModelStudio）
+
+阿里云在 2025 年杭州云栖大会正式升级成「全栈 AI 服务商」，发布 ModelStudio-ADK（高代码框架，基于通义开源的 AgentScope）+ ModelStudio-ADP（低代码拖拉拽）双引擎架构。InfoQ 的报道里说，ADK 让构建一个 deep research agent 从原本数天压到一小时。
+
+百炼一年内月调用量涨 15 倍，开发者超 20 万、agent 应用超 80 万。它已经覆盖：
+
+- 长跑托管 ✅（七项企业级能力模块涵盖工具调用、记忆访问、动态推理调度、沙箱、全链路可观测）
+- 跨 session 记忆 ✅（长记忆模块，与支付宝联合的支付通道）
+- 目标驱动迭代 🟡 部分（AgentScope 支持自主决策、多轮反思、循环执行——能力具备，但没有 Anthropic 那种 rubric+grader 的产品化原语）
+- 多 agent 编排 🟡（蓝图存在，公开案例集中在金融、电商工作流）
+- 自反思（dream）⬜ 未公开对应原语
+
+**和 Managed Agents 差距**：差在「目标驱动迭代 + 自反思」的产品化抽象。百炼的反思是写在 Agent 配置里、跟着 workflow 一起跑的，不是独立的 grader。这一格如果做出来，国产平台第一次会在原语层面和 Anthropic 同台。
+
+### 5.2 字节扣子（Coze）2.0
+
+扣子 2.0 把品牌从「Coze 空间」收到「扣子」一个入口，主推 Vibe Coding 三层（Vibe Agent / Vibe Workflow / Vibe App）+ Vibe Infra。极客公园两年深挖文章里，最新增补的能力是：
+
+- **长期计划**（早 7 点抓技术热点发邮箱这种 daily routine）✅
+- **Coze Skill** 技能市场（人类经验沉淀成 LLM 可复用 skill，跨 agent 共享）✅
+- 多 agent 协作 🟡
+
+**和 Managed Agents 差距**：扣子的「长期计划」对应 Anthropic 的「routines + cron」一档，已经做出来了。但 Coze Skill 是市场化的「能力包」，更接近 Anthropic 的 MCP/skills 资源——不是 Outcomes 那种「我说目标你迭代」的抽象。Vibe Workflow 偏 visual 编排，对企业用户友好；Anthropic 的 SDK-first 路线对开发者更友好。两条路线服务的人不同。
+
+### 5.3 智谱 AutoGLM 沉思
+
+智谱去年发布的 AutoGLM 是全球第一个「手机 agent」——通过语音指令操作美团、京东、小红书、抖音等几十个 app。技术基座是开源的 GLM-4.5（语言）+ GLM-4.5V（视觉推理）。今年升级到「AutoGLM 沉思」：
+
+- 长跑 ✅（云端执行 50+ 步操作）
+- 沉思能力 🟡（深度思考 + 感知世界 + 工具使用三合一，比 Deep Research 多了"真正执行"）
+- 跨 app workflow ✅（飞书、网易邮箱、知乎、微博、抖音、微头条全都能跑）
+
+**和 Managed Agents 差距**：智谱「沉思」是单任务内部的 reasoning + 工具循环，Anthropic 的 Dreaming 是跨 session 复盘——一个是任务内自反思，一个是跨任务自反思。两件事都重要，但抽象层不一样。智谱在 GUI agent / 手机 agent 这一档反而走得更前，Anthropic Managed Agents 目前明确是后端任务，不操作 GUI。
+
+### 5.4 腾讯元器 + 元宝
+
+腾讯走的是「元器（开发分发平台）+ 元宝（C 端入口）」双品牌组合。能力清单：
+
+- 一键分发 ✅（元器搭好的 agent 可发布到元器、元宝、QQ、微信客服、腾讯云）
+- 平台 API 调用 ✅
+- Hermes Agent 集成（4 月 29 日完成，用户可在元宝派直接部署）✅
+- 汽车行业「全场景智能体开放平台」（4 月 24 日发布）✅
+
+**和 Managed Agents 差距**：元器的优势在分发——直通微信生态，这是 Anthropic 没有的护城河。但 agent 编排原语层（长跑、记忆、目标驱动、自反思）目前公开的细节最少。它的产品定位更像「workflow + 分发渠道」，不是「agent 平台 SDK」。
+
+### 5.5 一句话位次
+
+把五个平台五项能力的位次拍一张总表（详图见上）：
+
+- **长跑托管**：五家齐平，全 ✅。
+- **跨 session 记忆**：Anthropic 8 store/session + memory version + audit trail 是当前最完整的。百炼有长记忆模块，扣子靠 Skill 复用，智谱靠任务内上下文，腾讯靠平台知识库——抽象层级各不一样。
+- **目标驱动迭代**：Anthropic 唯一做出 Outcomes 这种产品化原语的厂商。其他四家具备能力，未公开为独立原语。
+- **多 agent 编排**：五家都有，但 Anthropic 的 Multiagent orchestration 把 lead/specialist 模型独立配置 + 共享 FS + Console trace 这套做成了完整闭环。
+- **自反思**：Anthropic Dreaming（research preview）是公开里第一家做成定时调度独立服务的。智谱沉思更接近任务内 reasoning，不是同一档。
+
+### 5.6 中国云的家底已经具备，下一步看谁先做出 Outcomes 这种原语
+
+国产 agent 平台的家底其实够厚——百炼有 ADK 框架 + AgentScope 开源生态、扣子有 Vibe 三层 + Skill 市场、智谱有沉思 + GUI agent、腾讯有微信生态分发。**真正的下一格不是再添能力，而是把已有能力提升到原语层**。比如：
+
+- 谁会第一个做出「rubric + 独立 grader + iteration cap」的产品化原语？
+- 谁会第一个把 Dreaming 那套「定时调度 → 复盘 → 写 memory」做成独立服务？
+- 谁会率先把企业级长 horizon agent 的 SLA 写进 SLA 协议？
+
+这不是技术问题——是产品决策。Anthropic 这次的发布提供了一个清晰的参考路径，国产云厂商照着改一版本不是难事。窗口期可能是半年到一年。
+
+## 六、接下来半年的可能演化
+
+把视野放到 2026 下半年，几条可能的轨迹：
+
+**1. 多模型混编成主流。**
+
+Spiral / Every 已经在做：Haiku 当 lead，Opus 当 specialist，因为 Haiku 路由便宜、Opus 干活准。Anthropic 的 Multiagent orchestration 把这件事做成了产品。国产这边阿里百炼接 200+ 模型（Qwen3、DeepSeek、Wan 全 OpenAI 协议兼容），已经具备同款混编基础。半年内这会从「定制方案」变成「平台默认」。
+
+**2. agent 计费会从 token-based 变成 token + session-time + outcome-based 混合。**
+
+$0.08/session-hour 是 Anthropic 给出的第一个公开样本。国产厂商目前都还是 token-based + 套餐制（百炼 Coding Plan、扣子订阅）。一旦 outcome-based 计价（按 task 完成度收费）这件事出现产品级方案，企业客户结账逻辑会变。这块谁先动谁占主动。
+
+**3. agent 平台会和 GUI agent 收敛。**
+
+Anthropic Managed Agents 目前是后端任务（bash、files、web）。智谱 AutoGLM 是手机 GUI agent。两条路线都缺对方那一半——后端的会想 cover 手机 / 浏览器场景，GUI 的会想 cover 长跑文件 + 数据。半年内会看到至少一家把两边接通。
+
+**4. 国产平台的「合规 + 数据本地」优势会被进一步放大。**
+
+百炼托管在阿里云国内 region，扣子在字节系，元器在腾讯系，AutoGLM 在智谱，全程数据不出境。Managed Agents 数据走 Anthropic 美国侧——对中国出海企业可用，对境内业务有边界。这条护城河随着 agent 越深入业务流程越值钱。
+
+**5. Outcomes 这套抽象会被开源复刻。**
+
+参考 Outcomes 的 rubric+grader 模式做 LangGraph / OpenClaw 的 plug-in 不会等太久——agent 框架社区一向跑得比闭源平台快。半年内大概率出现至少一个开源实现，价格压力会从社区端反向作用到平台。
+
+## 七、收尾：agent 平台战进入下一阶段
+
+回到开头那句话：**Anthropic 不再只卖 API，开始接管 agent 基础设施**。
+
+这不是一场单边胜利。Anthropic 用 Outcomes + Dreaming 把抽象层抬高了一格，但国产 agent 平台的家底（模型 + 算力 + 业务场景 + 渠道分发）这一年已经搭起来了。同台竞争是一件好事——它逼每一家把「能力」变成「原语」，把「演示」变成「SLA」。
+
+5 月 6 日不是终点，是新一段起跑线。下一个值得等的产品名字可能在 6 月底的某场国内云大会上被宣布，名字会很本土，但精神会和 Outcomes 同一脉。
+
+中国云的家底已经具备，窗口正在打开。
+
+---
+
+**参考链接（按出现顺序）**：
+
+- Anthropic 官方文档：[Managed Agents overview](https://platform.claude.com/docs/en/managed-agents/overview) · [Define outcomes](https://platform.claude.com/docs/en/managed-agents/define-outcomes) · [Quickstart](https://platform.claude.com/docs/en/managed-agents/quickstart) · [Memory](https://platform.claude.com/docs/en/managed-agents/memory) · [Sessions](https://platform.claude.com/docs/en/managed-agents/sessions)
+- Anthropic 官方博客：[New in Claude Managed Agents: dreaming, outcomes, and multiagent orchestration](https://claude.com/blog/new-in-claude-managed-agents)
+- Simon Willison live blog：[Code w/ Claude 2026 keynote](https://simonwillison.net/2026/May/6/code-w-claude-2026/)
+- 价格分析：[Claude Managed Agents Pricing and Beta Limits · WaveSpeed](https://wavespeed.ai/blog/posts/claude-managed-agents-pricing-2026/)
+- 阿里百炼：[阿里云百炼 2026 功能、计费价格、免费 Tokens 全攻略 · 阿里云开发者社区](https://developer.aliyun.com/article/1715297) · [面向 Agent 的全栈能力体系 · InfoQ](https://www.infoq.cn/article/ya6zml7irki6ph3c56hr) · [一年调用量暴涨 15 倍 · 36kr](https://36kr.com/p/3484631535033224)
+- 字节扣子：[扣子 2.0 发布 · 极客公园](https://www.geekpark.net/news/359437) · [Coze 2026 智能体构建与工作流设计指南](https://www.yunzhuanmi.com/coze-agent-guide-2026/)
+- 智谱 AutoGLM：[AutoGLM 沉思发布 · IT 之家](https://www.ithome.com/0/841/978.htm) · [实测 AutoGLM · 爱范儿](https://www.ifanr.com/1619258)
+- 腾讯元器+元宝：[元器智能体平台官网](https://yuanqi.tencent.com/) · [腾讯元宝接入 Hermes Agent · firecat-web 4-29](https://www.firecat-web.com/daily-news/7316)
