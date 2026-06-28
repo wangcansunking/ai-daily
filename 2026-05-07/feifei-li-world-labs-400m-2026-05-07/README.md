@@ -12,9 +12,9 @@ tags: [feifei-li, world-labs, spatial-intelligence, world-model, marble, embodie
 ---
 # 李飞飞拿到 10 亿美元，把 World Labs 估值推到 50 亿
 
-![World Labs 封面](feifei-li-world-labs-400m-2026-05-07.png)
+![World Labs 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/feifei-li-world-labs-400m-2026-05-07/feifei-li-world-labs-400m-2026-05-07.png)
 
-![李飞飞在 AI for Good 大会演讲（图：Wikimedia Commons / AI for Good 2017）](feifei-li-portrait.jpg)
+![李飞飞在 AI for Good 大会演讲（图：Wikimedia Commons / AI for Good 2017）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/feifei-li-world-labs-400m-2026-05-07/feifei-li-portrait.jpg)
 
 2026 年 2 月 18 日，李飞飞旗下 World Labs 官宣 Series B 完成融资。媒体早期传闻是「最高 4-5 亿美元、估值约 50 亿」，公告真实数字翻了一倍：**10 亿美元、由 Autodesk 单笔投入 2 亿领投，NVIDIA、AMD、Emerson Collective、Fidelity、Sea 跟投**。同一份 Bloomberg / TechCrunch 报道里，公司没有正式确认估值，但此前一个月内多家媒体已披露目标估值约 50 亿美元——较 2024 年 7 月的 10 亿估值翻了 5 倍。
 
@@ -86,7 +86,7 @@ tags: [feifei-li, world-labs, spatial-intelligence, world-model, marble, embodie
 | 渲染器 | Spark：开源 THREE.js Gaussian splat 渲染器（MIT 许可） |
 | 商业化 | 免费层 + 付费层（marble.worldlabs.ai） |
 
-![Marble 生成的维多利亚式门厅 demo](marble-victorian-foyer.jpg)
+![Marble 生成的维多利亚式门厅 demo](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/feifei-li-world-labs-400m-2026-05-07/marble-victorian-foyer.jpg)
 
 Marble 跟传统 3D 内容生成（比如 NeRF / 3D Gaussian Splatting 的早期工作）不同的地方有三个：
 
@@ -116,9 +116,9 @@ Marble 跟传统 3D 内容生成（比如 NeRF / 3D Gaussian Splatting 的早期
 
 四条路线表面在抢"世界模型"的标签，本质上是在世界模型这个新平台上抢不同的商业立足点。这跟 LLM 时代 OpenAI（API） / Anthropic（Coding） / Google（搜索）/ Meta（开源）四条路并行的格局非常像。
 
-![Marble 生成的废弃修道院庭院 demo](marble-overgrown-courtyard.jpg)
+![Marble 生成的废弃修道院庭院 demo](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/feifei-li-world-labs-400m-2026-05-07/marble-overgrown-courtyard.jpg)
 
-![Marble 生成的蘑菇森林——展示风格化场景能力](marble-mushroom-forest.jpg)
+![Marble 生成的蘑菇森林——展示风格化场景能力](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/feifei-li-world-labs-400m-2026-05-07/marble-mushroom-forest.jpg)
 
 ### 2.4 一个常被混淆的事
 
@@ -133,13 +133,13 @@ Marble 跟传统 3D 内容生成（比如 NeRF / 3D Gaussian Splatting 的早期
 
 **最后一个交叉点**：具身智能想训练机器人，需要大量"世界"做训练场，而真实世界采集太贵——所以世界模型是具身智能的训练数据来源。这一点是 NVIDIA 同时投 World Labs 和很多机器人公司的根本原因。NVIDIA Developer Blog 2025 年 12 月发的 Isaac Sim × Marble 整合教程把这个交叉点讲得很清楚——把 Marble 生成的 3D 场景直接导入 Isaac Sim，机器人 agent 可以直接在里面训练抓取、导航、操作任务。
 
-![NVIDIA Isaac Sim 直接接入 Marble 生成的 3D 场景做机器人训练（图：NVIDIA Developer Blog）](worldlabs-isaacsim-clip.gif)
+![NVIDIA Isaac Sim 直接接入 Marble 生成的 3D 场景做机器人训练（图：NVIDIA Developer Blog）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/feifei-li-world-labs-400m-2026-05-07/worldlabs-isaacsim-clip.gif)
 
 ## 三、国内同期阵容：不是观望者，是同时在卡位
 
 讲完海外，回到中国。这条赛道上中国团队 2026 年的进展可能比海外更密集。下表把同期进入"独角兽 +"门槛的玩家集中起来。
 
-![世界模型赛道 中美对位](world-model-comparison-2026-05.png)
+![世界模型赛道 中美对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/feifei-li-world-labs-400m-2026-05-07/world-model-comparison-2026-05.png)
 
 ### 3.1 极佳视界：国内首个世界模型百亿估值独角兽
 

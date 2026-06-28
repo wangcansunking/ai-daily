@@ -11,7 +11,7 @@ description: Kronos 是论文作者团队基于 45 个交易所 K 线数据训�
 ---
 # Kronos 26k stars 全球首个开源金融 K 线基础模型：45 个交易所训练、AAAI 2026 收录、量化团队的本地大模型替代品
 
-![Kronos 开源金融 K 线基础模型封面](kronos-open-finance-foundation-model-aaai2026-2026-05-28.png)
+![Kronos 开源金融 K 线基础模型封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/kronos-open-finance-foundation-model-aaai2026-2026-05-28/kronos-open-finance-foundation-model-aaai2026-2026-05-28.png)
 
 ## 30 秒速览
 
@@ -22,7 +22,7 @@ description: Kronos 是论文作者团队基于 45 个交易所 K 线数据训�
 - **4 个版本**：Kronos-mini 4.1 百万参数 / Kronos-small 24.7 百万参数 / Kronos-base 102.3 百万参数（均开源）/ Kronos-large 499.2 百万参数（闭源授权版）；HuggingFace 上模型 + tokenizer + 微调脚本全开放
 - **国内对位**：截至 2026-05-27，机器之心 / 量子位 / 36 氪过去 90 天对 Kronos 零报道；国内蚂蚁、平安、招商三家虽都有自研量化时间序列模型，但全部闭源——这是首个能让国内量化团队拉到本地、用自家私有 K 线数据微调的金融基础模型
 
-![Kronos 仓库 og:image · A Foundation Model for the Language of Financial Markets](source-kronos-og.png)
+![Kronos 仓库 og:image · A Foundation Model for the Language of Financial Markets](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/kronos-open-finance-foundation-model-aaai2026-2026-05-28/source-kronos-og.png)
 
 ## 一、26k stars 一周飙起：金融领域为什么需要一个基础模型
 
@@ -68,7 +68,7 @@ Kronos 把这一思路引入金融时间序列。但金融数据的噪音特性�
 
 **4 个版本怎么选**：
 
-![Kronos 4 个版本参数量横评：mini / small / base 开源 + large 闭源](kronos-versions-spec.png)
+![Kronos 4 个版本参数量横评：mini / small / base 开源 + large 闭源](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/kronos-open-finance-foundation-model-aaai2026-2026-05-28/kronos-versions-spec.png)
 
 从参数量看，Kronos-mini 4.1 百万、small 24.7 百万、base 102.3 百万、large 499.2 百万。这四档的跨度刚好覆盖了金融机构常见的硬件配置：
 
@@ -145,7 +145,7 @@ Kronos 论文里写训练数据覆盖「全球 45 个交易所」。这是它跟
 
 具体覆盖哪些市场？论文给的列表里前 12 大市场分布如下：
 
-![Kronos 训练数据覆盖全球 45 个交易所（前 12 大市场）](kronos-45-exchanges.png)
+![Kronos 训练数据覆盖全球 45 个交易所（前 12 大市场）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/kronos-open-finance-foundation-model-aaai2026-2026-05-28/kronos-45-exchanges.png)
 
 上面这张图是基于公开估算画出来的——单一市场日均 K 线条数取自每个交易所公开披露的上市标的数 × 交易时段时长估算（仅用于说明覆盖广度，不是 Kronos 训练实际使用的精确条数）。
 

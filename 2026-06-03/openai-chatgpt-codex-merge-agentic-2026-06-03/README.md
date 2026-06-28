@@ -9,7 +9,7 @@ description: "5 月 16 日，OpenAI 内部备忘录宣布重组：把 ChatGPT、
 ---
 # ChatGPT 和 Codex 合并：照着 Claude 重排
 
-![OpenAI 把 ChatGPT 与 Codex 合并成统一的 agentic 平台，由布罗克曼统管产品战略](openai-chatgpt-codex-merge-agentic-2026-06-03.png)
+![OpenAI 把 ChatGPT 与 Codex 合并成统一的 agentic 平台，由布罗克曼统管产品战略](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/openai-chatgpt-codex-merge-agentic-2026-06-03/openai-chatgpt-codex-merge-agentic-2026-06-03.png)
 
 5 月 16 日，OpenAI 给员工发了一份内部备忘录：联合创始人、总裁格雷格·布罗克曼（Greg Brockman）永久接管全部产品战略，把 ChatGPT、Codex 和开发者 API 并进同一个产品组织。备忘录里的原话是，OpenAI 要「投入一个统一的 agentic 平台，把 ChatGPT 和 Codex 合并成面向所有人的统一智能体体验」。
 
@@ -21,7 +21,7 @@ description: "5 月 16 日，OpenAI 内部备忘录宣布重组：把 ChatGPT、
 
 ## 合并了什么：三摊并一摊，布罗克曼统管
 
-![OpenAI 把 ChatGPT、Codex、开发者 API 并进一个产品组织，目标是单一 agentic 平台](source-openai-reorg-techtimes.png)
+![OpenAI 把 ChatGPT、Codex、开发者 API 并进一个产品组织，目标是单一 agentic 平台](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/openai-chatgpt-codex-merge-agentic-2026-06-03/source-openai-reorg-techtimes.png)
 
 *来源：TechTimes 关于 OpenAI 重组、合并 ChatGPT 与 Codex 的报道 techtimes.com*
 
@@ -37,7 +37,7 @@ description: "5 月 16 日，OpenAI 内部备忘录宣布重组：把 ChatGPT、
 
 ## 为什么说像 Claude：统一 agentic 系统，Anthropic 先做了
 
-![Codex 是 OpenAI 的编程智能体，合并后将与 ChatGPT 并入同一个 agentic 平台](source-openai-codex-repo.png)
+![Codex 是 OpenAI 的编程智能体，合并后将与 ChatGPT 并入同一个 agentic 平台](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/openai-chatgpt-codex-merge-agentic-2026-06-03/source-openai-codex-repo.png)
 
 *来源：OpenAI Codex 官方仓库 github.com/openai/codex*
 
@@ -63,7 +63,7 @@ description: "5 月 16 日，OpenAI 内部备忘录宣布重组：把 ChatGPT、
 
 ## 对开发者：一个账号，一个会干活的入口
 
-![Codex 已进入 ChatGPT 移动 app，当前跑在 GPT-5.5、每周约 400 万开发者活跃](source-openai-codex-app.png)
+![Codex 已进入 ChatGPT 移动 app，当前跑在 GPT-5.5、每周约 400 万开发者活跃](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/openai-chatgpt-codex-merge-agentic-2026-06-03/source-openai-codex-app.png)
 
 *来源：TechCrunch 关于 Codex 进入 ChatGPT 移动 app 的报道 techcrunch.com*
 

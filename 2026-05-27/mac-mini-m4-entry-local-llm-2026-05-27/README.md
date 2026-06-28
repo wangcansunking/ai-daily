@@ -35,7 +35,7 @@ image_alt_match_ignore:
 
 # Mac mini M4 跑国产本地大模型：1 万元入门工作站怎么搭
 
-![Mac mini M4 在中国开发者家中工位上夜灯下跑本地大模型封面](mac-mini-m4-entry-local-llm-2026-05-27.png)
+![Mac mini M4 在中国开发者家中工位上夜灯下跑本地大模型封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/mac-mini-m4-entry-local-llm-2026-05-27/mac-mini-m4-entry-local-llm-2026-05-27.png)
 
 ## 30 秒速览
 
@@ -69,7 +69,7 @@ image_alt_match_ignore:
 
 待机功耗 4W、满载 60W、整机重 670 克、噪音几乎听不见——这些是 Mac mini 在国内开发者书房 / 公司工位上**敢一直开着不关机**的工程底气。同价位 RTX 4090 整机满载 500W、噪音像吹风机、机箱大到放不进 IKEA 抽屉，**真要 24x7 跑本地大模型当家用 AI 服务器，4090 不是更好的入门选择**，物理体积、电费账单和家人投诉都会反过来咬人。
 
-![1 万元预算下国产本地大模型工作站选型矩阵](mac-mini-budget-matrix-2026-05-27.png)
+![1 万元预算下国产本地大模型工作站选型矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/mac-mini-m4-entry-local-llm-2026-05-27/mac-mini-budget-matrix-2026-05-27.png)
 
 矩阵图把视觉位置摊给读者：横轴是单机入手价（万元），纵轴是可用统一显存。1 万元那条红色虚线左边的甜点区里，绿色 Mac mini M4 Pro 24GB 这个点几乎是孤品——左下方的 M4 16GB 装不下 14B 模型、上方的 RTX 4090 整机 1.65 万超出预算、右上方的 Mac Studio M3 Ultra 96GB 要 3.3 万。M4 Pro 24GB 在这个坐标系里**既能装、又便宜、又能 24x7 开着不吵**。
 
@@ -86,7 +86,7 @@ image_alt_match_ignore:
 
 把三档 Mac mini 跑国产模型的真实 token/s 摊在同一张图上：
 
-![Mac mini M4 三档跑国产模型 token/s 横评柱状图](mac-mini-tokens-bars-2026-05-27.png)
+![Mac mini M4 三档跑国产模型 token/s 横评柱状图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/mac-mini-m4-entry-local-llm-2026-05-27/mac-mini-tokens-bars-2026-05-27.png)
 
 | 模型 / 量化 | M4 16GB ¥4499 | M4 Pro 24GB ¥10999 | M4 Pro 48GB ¥15999 | 数据来源 |
 |---|---|---|---|---|
@@ -152,7 +152,7 @@ ModelScope 的优势是阿里云 CDN 国内带宽更稳定（理论 200 MB/s+）
 
 ## 四、Ollama 与 MLX：两条引擎在 Mac mini 上的真实差异
 
-![Ollama 项目 GitHub OG card 截图](ollama-og-2026-05-27.png)
+![Ollama 项目 GitHub OG card 截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/mac-mini-m4-entry-local-llm-2026-05-27/ollama-og-2026-05-27.png)
 
 Ollama 是 Mac mini 用户的默认选择——GitHub 172,365 stars、MIT 许可、原生支持 macOS、命令行体验最干净。装 Ollama 在 Mac mini 上只需一行 brew：
 
@@ -164,11 +164,11 @@ ollama run qwen2.5-coder:7b  # 拉 + 跑一气呵成
 
 Ollama 暴露的 11434 端口是标准 OpenAI 兼容 `/v1/chat/completions`，Cherry Studio、Trae、通义灵码、Cline 全都能直接接。
 
-![llama.cpp 项目 GitHub OG card 截图](llamacpp-og-2026-05-27.png)
+![llama.cpp 项目 GitHub OG card 截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/mac-mini-m4-entry-local-llm-2026-05-27/llamacpp-og-2026-05-27.png)
 
 Ollama 的底层引擎是 `ggml-org/llama.cpp`（113,197 stars，MIT 许可，2026-05-26 最新 push）——Georgi Gerganov 主导的 C++ 推理框架，是开源本地大模型生态的真正底座。llama.cpp 单独跑也行（命令行更裸），但日常用 Ollama 的封装更顺手。
 
-![mlx-lm 项目 GitHub OG card 截图](mlxlm-og-2026-05-27.png)
+![mlx-lm 项目 GitHub OG card 截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/mac-mini-m4-entry-local-llm-2026-05-27/mlxlm-og-2026-05-27.png)
 
 第二条引擎路线是 MLX——Apple 机器学习团队 2023 年开源的张量库，专为 Apple Silicon 统一内存优化。`ml-explore/mlx-lm` 5428 stars，是 llama.cpp 的 1/21，但在 Apple 自家硬件上**确实比 llama.cpp 快 20-40%**。Narek Maloyan 在 Mac mini M4 16GB 上跑 Qwen 3.6-35B-A3B Q4 实测：llama.cpp/Ollama 跑 17 token/s 零交换，LM Studio 的 MLX 后端跑 25-35 token/s 但内存吃紧。
 
@@ -189,7 +189,7 @@ LM Studio 在 Mac 上提供 MLX + llama.cpp 双后端的图形界面，是想要
 
 ## 五、Cherry Studio + Trae + 通义灵码：三个 IDE 接本地后端
 
-![Cherry Studio 国内桌面客户端 GitHub OG card](cherry-studio-og-mac-2026-05-27.png)
+![Cherry Studio 国内桌面客户端 GitHub OG card](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/mac-mini-m4-entry-local-llm-2026-05-27/cherry-studio-og-mac-2026-05-27.png)
 
 模型跑起来之后，下一道坎是怎么让日常工作的 IDE 和对话客户端接到本地 11434 端口。Mac mini 用户最常配的三件套是 Cherry Studio（写作 / RAG）+ Trae（写代码）+ 通义灵码（VS Code 插件）。
 
@@ -220,7 +220,7 @@ Trae 国内版完全免费（2025-12-18 企业版发布），原生支持自定�
 
 通义灵码是 VS Code / JetBrains 插件，2026 年初开放了 BYOK 配置自定义后端。步骤大同小异，在插件设置里把"模型来源"改成"自定义"，填 baseURL `http://localhost:11434/v1`、模型名 `qwen2.5-coder:7b` 即可。通义灵码对 Qwen3-Coder 系列的 prompt 工程是阿里官方调优过的，配 Ollama 本地后端跑 Qwen3-Coder 14B 比通用 IDE 体验顺。
 
-![Mac mini M4 本地大模型端到端工作流：拉权重 → 启动 → 接 IDE](mac-mini-workflow-diagram-2026-05-27.png)
+![Mac mini M4 本地大模型端到端工作流：拉权重 → 启动 → 接 IDE](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/mac-mini-m4-entry-local-llm-2026-05-27/mac-mini-workflow-diagram-2026-05-27.png)
 
 整条工作流串起来是这样的：hf-mirror 或 ModelScope 拉权重 → Ollama 或 MLX 在本地 11434 端口启动 → Cherry Studio 接对话窗、Trae 接编程窗、通义灵码接 VS Code。**这条流水线一次配完，公司断网、深夜出差、咖啡馆 WiFi 不稳，全部不影响**——这就是把 Mac mini 当家用 AI 服务器的真实价值。
 

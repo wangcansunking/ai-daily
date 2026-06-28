@@ -10,7 +10,7 @@ tags: [terence-tao, claude-code, skills, math, academic-workflow, ai-coding]
 ---
 # 陶哲轩公开 Claude Code 审稿 workflow：15 分钟跑完一轮修订
 
-![cover](terence-tao-claude-code-math-review-skill.png)
+![cover](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/terence-tao-claude-code-math-review-skill/terence-tao-claude-code-math-review-skill.png)
 
 > 「重来一次，第一轮修订我就会用 AI。」——陶哲轩在 mathstodon.xyz 上自述。这句话能引发量子位、36氪、知乎集体转发，不是因为陶哲轩"安利"了 Claude Code，而是因为他第一次把审稿这件事的工序拆给所有人看。
 
@@ -20,7 +20,7 @@ tags: [terence-tao, claude-code, skills, math, academic-workflow, ai-coding]
 
 结果是 **十五分钟**：Claude Code 直接给出 11 处可合并的 LaTeX patch，第 12 处给两套候选方案让人挑，过程里还反向揪出审稿人自己写错的一个英文单词。同样的工作量，第一轮修订时陶哲轩和合作者按章节分工、走 GitHub PR 合并，花了几天。
 
-![陶哲轩 Mastodon 原帖](terence-tao-claude-code-qbitai-1.png)
+![陶哲轩 Mastodon 原帖](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/terence-tao-claude-code-math-review-skill/terence-tao-claude-code-qbitai-1.png)
 
 陶哲轩自己的总结非常克制，全文没有一个夸大动词：
 
@@ -28,7 +28,7 @@ tags: [terence-tao, claude-code, skills, math, academic-workflow, ai-coding]
 >
 > ——陶哲轩，mathstodon.xyz/@tao（量子位翻译）
 
-![陶哲轩英文原话与中文翻译](terence-tao-claude-code-qbitai-4.png)
+![陶哲轩英文原话与中文翻译](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/terence-tao-claude-code-math-review-skill/terence-tao-claude-code-qbitai-4.png)
 
 注意他用的词：**"agent goes through"、"unambiguously fix"、"isolate the more substantive comments"**。这不是在评价 AI 厉害，是在重新拆分一道工序——
 
@@ -56,7 +56,7 @@ tags: [terence-tao, claude-code, skills, math, academic-workflow, ai-coding]
 
 下面这张图把这三件事捏在一张工序图里：
 
-![陶哲轩数学论文审稿 workflow 流程图](terence-tao-claude-code-workflow-diagram.png)
+![陶哲轩数学论文审稿 workflow 流程图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/terence-tao-claude-code-math-review-skill/terence-tao-claude-code-workflow-diagram.png)
 
 更深一层，Claude Code 在 Anthropic 官方文档里被定位为 "agentic coding tool"，"agentic" 这个词的本意是 LLM 不再是答题机器，而是会主动调用工具、读写文件、跑命令。审稿这件事天然就是一个 agentic 任务：要先读，再定位，再改，再回头校对，再决定哪些拿不准。把它放到聊天框里就是脏活累活，放到 agent 工具里就是工序。
 
@@ -68,11 +68,11 @@ tags: [terence-tao, claude-code, skills, math, academic-workflow, ai-coding]
 
 陶哲轩同时在维护一个开放数学社区——Erdős Problems 网站，专门收集和讨论 Erdős 留下的开放问题。他在 11 月到 1 月之间发过一系列 Mastodon 长帖，记录"AI 在 Erdős 问题站点上变得越来越常见"、"AI 在数学问题的长尾上开始有真实进展"。
 
-![陶哲轩 Erdős 问题站 AI 大事记](terence-tao-claude-code-qbitai-5.png)
+![陶哲轩 Erdős 问题站 AI 大事记](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/terence-tao-claude-code-math-review-skill/terence-tao-claude-code-qbitai-5.png)
 
 更值得读的是这个社区给 AI 评论制定的规则——这是把"人类审核 AI 输出"写进了治理条款：
 
-![Erdős 问题站对 AI 辅助评论的规则](terence-tao-claude-code-qbitai-6.png)
+![Erdős 问题站对 AI 辅助评论的规则](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/terence-tao-claude-code-math-review-skill/terence-tao-claude-code-qbitai-6.png)
 
 规则里几条很关键：
 
@@ -91,7 +91,7 @@ tags: [terence-tao, claude-code, skills, math, academic-workflow, ai-coding]
 
 先把答案放出来：**思路能跑通，工具链有差距**。下面这张能力地图把六个维度逐项对到表里：
 
-![国内 AI Coding 工具数学论文审稿能力地图](domestic-ai-coding-math-review-table.png)
+![国内 AI Coding 工具数学论文审稿能力地图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/terence-tao-claude-code-math-review-skill/domestic-ai-coding-math-review-table.png)
 
 逐项展开看：
 

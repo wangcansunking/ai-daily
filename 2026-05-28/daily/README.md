@@ -37,7 +37,7 @@ cover: 28.png
 
 # 小米 MiMo 砍价 99% · Cursor 用 Kimi 反超 Opus · Simon 实账证 PMF | AI 日报 | 2026-05-28
 
-![三件事互相咬合：国产 token 砍到 0.025 元、Kimi 底座反超 Opus、海外开发者实账 11 倍证 PMF](28.png)
+![三件事互相咬合：国产 token 砍到 0.025 元、Kimi 底座反超 Opus、海外开发者实账 11 倍证 PMF](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/daily/28.png)
 
 ## 📋 头版目录
 
@@ -67,7 +67,7 @@ cover: 28.png
 
 ### 头条 1 · 小米 MiMo-V2.5 永久降价 99%：缓存命中输入 0.025 元 / 百万 tokens 落到与 DeepSeek V4-Pro 同档
 
-![新浪财经 5-27 凌晨头条：小米 MiMo API 永久降价 99%，雷军本人转发](sina-leijun-mimo-hero.jpg)
+![新浪财经 5-27 凌晨头条：小米 MiMo API 永久降价 99%，雷军本人转发](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/daily/sina-leijun-mimo-hero.jpg)
 
 5 月 27 日凌晨，小米开放平台官方推送一份只有四行的更新公告，新浪财经 [1] 与虎嗅几乎同时挂上头条：MiMo-V2.5 API 永久调价，三档全部对齐 DeepSeek V4-Pro 长期公开报价。雷军本人当晚在 X 上转发 [2]，特别点了「统一一档不分长短上下文」这一条。这条调价的关键不是「又一次国产降价」，而是国产推理工程能力第一次以永久价（不是限时活动）的形式向开发者直接交付。
 
@@ -81,7 +81,7 @@ cover: 28.png
 | 窗口策略 | 统一一档（取消短 / 长上下文分档计价） | 短 / 长上下文分档 | 统一一档 |
 | 生效 | 2026-05-27 0:00，永久价 | 限时活动为主 | 永久价 |
 
-![国产 LLM token 价四档对比 · 缓存命中输入 0.025 元 / 百万 tokens 落到新档](cn-llm-token-price-4way.png)
+![国产 LLM token 价四档对比 · 缓存命中输入 0.025 元 / 百万 tokens 落到新档](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/daily/cn-llm-token-price-4way.png)
 
 通稿里的 99% 是这样算的：改价前缓存命中输入约 2.5 元 / 百万 tokens 一档，新价 0.025 元 / 百万 tokens——刚好降到原档的 1/100，对外口径就是「最高降幅 99%」。这是国产对外公开 token 价历史上第一次出现「缓存命中输入档掉到三分钱以下」并以永久价形式落地的厂商。
 
@@ -95,7 +95,7 @@ cover: 28.png
 
 ### 头条 2 · Cursor Composer 2.5 仍跑 Kimi K2.5 底座：CursorBench 63.2% 反超 Opus 4.7
 
-![36 氪 5-27 头版报道：Cursor Composer 2.5 反超 Claude Opus 4.7](36kr-composer-25-hero.jpg)
+![36 氪 5-27 头版报道：Cursor Composer 2.5 反超 Claude Opus 4.7](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/daily/36kr-composer-25-hero.jpg)
 
 5 月 27 日 36 氪头版与新浪科技、智源同日挂出 Cursor Composer 2.5 [4] 复盘报道。底座这件事是焦点——上一代 Composer 2 出来时 Cursor 官方博客没有点 Kimi K2.5，引起月之暗面社区当周连续两天上 X 讨论；这次 Aman Sanger 公开 [6] 承认上一代博客「没提 Kimi 是疏漏」，Composer 2.5 仍在 Kimi K2.5 底座上做重度后训练，未替换。
 
@@ -108,7 +108,7 @@ cover: 28.png
 | Terminal-Bench 2.0 | 69.3% | 69.4% | 基本打平 |
 | 单任务平均成本 | **< 1 美元** | 4–6 美元（典型旗舰口径） | Composer 仅为对手 1/5–1/6 |
 
-![Cursor Composer 2.5 与 Claude Opus 4.7 在 CursorBench、SWE-Bench、Terminal-Bench 三项评测对照](composer-25-bench-4way.png)
+![Cursor Composer 2.5 与 Claude Opus 4.7 在 CursorBench、SWE-Bench、Terminal-Bench 三项评测对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/daily/composer-25-bench-4way.png)
 
 这是过去 12 个月 Cursor 官方榜上第一次有非 Anthropic 系模型登顶 CursorBench。要注意的细节：CursorBench 是 Cursor 官方自评测，对自家模型有「评测校准」的天然亲和度——这条数字真正值得国内开发者细看的，不是「Composer 反超 Opus」的营销标题，而是单任务成本 < 1 美元的硬约束在不影响通过率的前提下被守住。
 
@@ -126,7 +126,7 @@ Cursor 在博客里第一次公开训练投入结构——总算力 85% 用于�
 
 ### 头条 3 · Simon Willison 论断 Anthropic / OpenAI 已找到 PMF：HN 590 分顶帖 + 11 倍倍数
 
-![HN frontpage Simon Willison PMF 论断顶帖 590 分 719 评论](source-hn-frontpage-209-v2.png)
+![HN frontpage Simon Willison PMF 论断顶帖 590 分 719 评论](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/daily/source-hn-frontpage-209-v2.png)
 
 Simon Willison [7] 这位长期对 AI 商业模式持谨慎乐观的资深开发者，5 月 27 日发出博文《我认为 Anthropic 和 OpenAI 已找到 product-market fit》。帖子由他本人 4 小时内冲上 HN 首页第一 [8]，截稿时 **590 分 / 719 条评论**，是过去一个月 AI 商业模式题材最高顶帖。关键证据不是营收新闻稿，是他自己的 30 天编程账单。
 
@@ -140,7 +140,7 @@ Simon Willison [7] 这位长期对 AI 商业模式持谨慎乐观的资深开发
 | 折算总价值 | **2,180.16** | — |
 | 订阅价 / API 价 = | **1 / 11** | Simon 自己的结论 |
 
-![Simon Willison 30 天 bill 从 200 美元订阅膨胀到 2180 美元 API 价的 11 倍倍数对照](bill-200-to-2180.png)
+![Simon Willison 30 天 bill 从 200 美元订阅膨胀到 2180 美元 API 价的 11 倍倍数对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/daily/bill-200-to-2180.png)
 
 Simon 在文末写：「这不是亏损补贴，是定价策略——Anthropic 和 OpenAI 在用 200 美元月费档锁定高强度用户，然后用企业按量计费档把利润收回来。」HN 置顶第一条评论来自 tptacek（Fly.io 创始团队、知名安全工程师）：「这是我读过的关于 AI 行业 PMF 最有说服力的一段，因为它的颗粒度是一个真实开发者一个月的真实账单，而不是 ARR 或者 monthly active users。」
 
@@ -183,7 +183,7 @@ Simon 这条 590 分顶帖的真正价值，是给国内做 coding agent 的同�
 - 🟡 **DuckDuckGo noai 子站访问量周同比 +22.7%、美国 iOS 安装周均 +33%**[11][12]——PC Gamer 原文 HN 顶到 628 分 / 314 评论。这是 DuckDuckGo 自 2024 年上线 AI 摘要可选项以来同期增长最强的一次。Google AI mode 自 5 月 20 日 I/O 推成搜索默认入口之后，反 AI 用户群信号被一周内炸出来。
 - 🟡 **Heretic 22,000 stars 上 GitHub Trending：一行命令自动解 RLHF 拒答** [14]——p-e-w/heretic 用 Optuna TPE 自动搜参 + directional ablation + KL divergence 约束做 abliteration 全流程自动化。HuggingFace 已有 3000+ 个用 Heretic 产出的衍生模型。Gemma-3-12B 实测 refusal 从 97/100 降到 3/100、KL 仅 0.16（手工方案约六分之一）。社区采纳数字硬实但题材敏感，国内开发者具体使用需各自判断合规边界。
 
-![shiyu-coder/Kronos 仓库 og 卡：金融市场语言基础模型](source-kronos-og.png)
+![shiyu-coder/Kronos 仓库 og 卡：金融市场语言基础模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/daily/source-kronos-og.png)
 
 - 🟡 **Kronos 26,866 stars / AAAI 2026 录用：全球首个开源金融 K 线基础模型** [15][16]——shiyu-coder/Kronos 把金融 K 线序列直接类比为语言，沿用 LLM 那套 tokenizer + Transformer 范式，在 45 个交易所数据上预训。4 个版本：mini 4.1M / small 24.7M / base 102.3M（均开源）/ large 499.2M（闭源授权）。同期国内蚂蚁、平安、招商三家自研量化时间序列模型全部闭源，Kronos 是国内量化团队第一次能拉到本地用私有数据微调的开源金融基础模型。
 
@@ -196,7 +196,7 @@ Simon 这条 590 分顶帖的真正价值，是给国内做 coding agent 的同�
 
 ## 📦 GitHub Trending
 
-![affaan-m/ECC 仓库 og 卡：19.6 万星跨 harness 抽象层](source-github-ecc-og-2026-05-28.png)
+![affaan-m/ECC 仓库 og 卡：19.6 万星跨 harness 抽象层](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/daily/source-github-ecc-og-2026-05-28.png)
 
 - 🔴 **harry0703/MoneyPrinterTurbo** [18]：61,887 stars / +1,742 / Python。AI 一键生成短视频流水线，老牌项目再上 GitHub Trending 第 1 位。下一步看是否会接入 Veo 3 / Sora 2 等海外视频底座的本地兼容层。
 - 🔴 **affaan-m/ECC**[17]（[跟进 5/27]）：195,990 stars / +2,062 / 29,962 forks / MIT。仓库描述「The agent harness performance optimization system」。从 5/25 v2.0.0-rc.1 升级以来连续 4 天单日新增过千；跨 7 个 harness（Claude Code / Codex / Cursor / OpenCode / Gemini / Zed / 终端）共享同一套 skill。

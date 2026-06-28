@@ -16,7 +16,7 @@ description: 很多人冲着「内置 NPU」买了 Ryzen AI 笔记本，以为�
 ---
 # Ryzen AI 笔记本的 NPU 只快在读题，生成还得靠 iGPU
 
-![一颗发光的 Ryzen AI 主板神经网络处理器芯片，从中央引出一快一慢两束光流，快的标着「预填充」、慢的标着「生成」，背景是笔记本主板的电路纹理](ryzen-ai-npu-prefill-only-2026-06-10.png)
+![一颗发光的 Ryzen AI 主板神经网络处理器芯片，从中央引出一快一慢两束光流，快的标着「预填充」、慢的标着「生成」，背景是笔记本主板的电路纹理](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/ryzen-ai-npu-prefill-only-2026-06-10/ryzen-ai-npu-prefill-only-2026-06-10.png)
 
 很多人买 Ryzen AI（AMD 的 AI 笔记本平台）笔记本，是冲着芯片里那颗 NPU（神经网络处理器）去的——宣传页写着几十 TOPS 算力，听起来本地跑千问（Qwen）、Llama 全靠它。
 
@@ -37,7 +37,7 @@ NPU 跑大模型这件事，本身是今年才真正落到 Ryzen AI 笔记本用
 
 同一颗芯片、同一个模型，两个阶段差了 31 倍。这不是 NPU 坏了，而是这两件事的计算方式根本不一样。
 
-![同一颗 Ryzen AI 7 350：NPU 预填充极快、一到解码就交给 iGPU 的对比柱状图](ryzen-chart-pp-vs-tg.png)
+![同一颗 Ryzen AI 7 350：NPU 预填充极快、一到解码就交给 iGPU 的对比柱状图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/ryzen-ai-npu-prefill-only-2026-06-10/ryzen-chart-pp-vs-tg.png)
 
 预填充是「批量读」：你的 prompt 有几百上千个 token，可以一口气并行算完，这种密集矩阵乘法正好是 NPU 的强项。解码是「挤牙膏」：每生成一个新 token 都要把之前所有内容过一遍，一次只算一个，受内存带宽卡脖子——NPU 的算力优势在这种串行小批量上发挥不出来。
 
@@ -69,7 +69,7 @@ Hacker News 上那条 Lemonade（AMD 的本地大模型服务器）讨论帖里�
 - 一位用户在 Strix Halo 核显上用 Vulkan 跑 Qwen3.5 122B，拿到 35 令牌/秒；
 - 另一位在 128GB 内存的 Framework 机器上跑 Qwen3-Coder-Next，43 令牌/秒，换 Q4 量化后能到 55 令牌/秒。
 
-![Hacker News 上关于 AMD Lemonade 本地大模型服务器的真人讨论，多位用户贴出各自的解码速度](ryzen-source-lemonade-thread.png)
+![Hacker News 上关于 AMD Lemonade 本地大模型服务器的真人讨论，多位用户贴出各自的解码速度](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/ryzen-ai-npu-prefill-only-2026-06-10/ryzen-source-lemonade-thread.png)
 
 > 来源：Hacker News 「Lemonade by AMD」讨论帖，多位用户实测反馈
 
@@ -87,7 +87,7 @@ XDNA2 这代 NPU 标称约 50 TOPS，听起来不小，但在通用大模型推�
 
 把两段拼起来，Ryzen AI 跑大模型最舒服的形态是「混合执行」：预填充卸载给 NPU，解码交给 iGPU 或独显。这正是上面那两组数字告诉我们的分工。
 
-![FastFlowLM 官方基准页：Llama 3.x 的预填充与解码吞吐量，按上下文长度分列](ryzen-source-fastflowlm-benchmark.png)
+![FastFlowLM 官方基准页：Llama 3.x 的预填充与解码吞吐量，按上下文长度分列](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/ryzen-ai-npu-prefill-only-2026-06-10/ryzen-source-fastflowlm-benchmark.png)
 
 > 来源：FastFlowLM 官方基准页（Llama 3.x · Ryzen AI 7 350）
 
@@ -96,7 +96,7 @@ XDNA2 这代 NPU 标称约 50 TOPS，听起来不小，但在通用大模型推�
 - **Windows**：AMD 的 Lemonade 提供混合执行，但只支持 ONNX 格式的模型，而且混合模式下上下文上限只有 3K——想塞长文档会被卡住。
 - **Linux**：走 FastFlowLM 的 NPU 内核，今年 3 月起 Lemonade 10.0 加上 FastFlowLM 让 Ryzen AI 的 NPU 在 Linux 上第一次真正能用；上下文上限随版本提到了 256k token（0.9.35 及以后）。
 
-![FastFlowLM 项目页](ryzen-source-fastflowlm-repo.png)
+![FastFlowLM 项目页](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/ryzen-ai-npu-prefill-only-2026-06-10/ryzen-source-fastflowlm-repo.png)
 
 > 来源：FastFlowLM 项目主页
 
@@ -106,7 +106,7 @@ XDNA2 这代 NPU 标称约 50 TOPS，听起来不小，但在通用大模型推�
 
 版本上这两个月也在往前走：5 月 18 日的 v10.5.1 加了 MTP（多 token 预测），把解码最多提速到 2 倍；5 月 21 日又出了 v10.6.0。底层一直在补，但分工的大格局没变——NPU 读题、iGPU 答题。
 
-![strix-halo-guide 项目页：Strix Halo 平台本地大模型优化记录](ryzen-source-strix-halo-guide.png)
+![strix-halo-guide 项目页：Strix Halo 平台本地大模型优化记录](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/ryzen-ai-npu-prefill-only-2026-06-10/ryzen-source-strix-halo-guide.png)
 
 > 来源：strix-halo-guide 项目主页（Strix Halo iGPU 真人实测对照）
 

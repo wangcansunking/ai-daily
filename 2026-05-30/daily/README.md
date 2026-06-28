@@ -46,7 +46,7 @@ cover: 30.png
 
 # Mistral 把 Le Chat 改名 Vibe 转身做全栈编码 · Codex 学会操作 Windows 桌面 · 讯飞 40 克眼镜同传 122 语言 | AI 日报 | 2026-05-30
 
-![AI 走出对话框接管真实工作面：Mistral 把工作与编码合进一个 agent、Codex 直接操作 Windows 桌面、讯飞把同传模型塞进 40 克眼镜](30.png)
+![AI 走出对话框接管真实工作面：Mistral 把工作与编码合进一个 agent、Codex 直接操作 Windows 桌面、讯飞把同传模型塞进 40 克眼镜](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/daily/30.png)
 
 ## 📋 头版目录
 
@@ -76,7 +76,7 @@ cover: 30.png
 
 ### 头条 1 · Mistral 把 Le Chat 升级改名 Vibe：从只做模型，转身做覆盖工作与编码的全栈 agent
 
-![Mistral 5-28 把 Le Chat 升级改名 Vibe 的官方公告页，一个 agent 同时覆盖工作与编码两种模式](source-mistral-vibe-og.jpg)
+![Mistral 5-28 把 Le Chat 升级改名 Vibe 的官方公告页，一个 agent 同时覆盖工作与编码两种模式](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/daily/source-mistral-vibe-og.jpg)
 
 5 月 28 日，Mistral 把用了两年多的 Le Chat 升级，并直接改名为 Vibe [1]。这不是单纯换个名字——过去 Le Chat 是一个对话助手，现在 Vibe 被定义成一个 agent：一套账号、一套订阅，同时管「工作」和「编码」两件事。对一家此前以开放权重模型立身的欧洲公司来说，这是一次重心从「只做模型」往「做完整产品」的明显移动。
 
@@ -100,13 +100,13 @@ Vibe 按四档订阅卖：免费版、Pro 每月 14.99 美元、Team 每人每�
 
 ### 头条 2 · 讯飞把端到端同传大模型塞进 40 克眼镜：122 种语言实时互译
 
-![讯飞 AI 眼镜在澳门 BEYOND Expo 现场展示，整机 40 克、把端到端语音同传大模型装进镜腿支持 122 种语言](source-iflytek-scene.jpg)
+![讯飞 AI 眼镜在澳门 BEYOND Expo 现场展示，整机 40 克、把端到端语音同传大模型装进镜腿支持 122 种语言](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/daily/source-iflytek-scene.jpg)
 
 5 月 28 日，澳门 BEYOND Expo 2026 的展台上，科大讯飞（iFLYTEK）拿出了首款 AI 眼镜 [3][4]。整机 40 克、售价 4299 元、6 月 15 日开启预售。光看这几个数字，它和这两年密集冒头的 AI 眼镜没太大差别；真正的不同，藏在镜腿里。
 
 #### 头条 2.1 · 122 种语言，18 语种离线
 
-![讯飞（iFLYTEK）AI 眼镜关键参数：整机 40 克、122 种语言、18 语种离线、售价 4299 元](source-iflytek-spec.png)
+![讯飞（iFLYTEK）AI 眼镜关键参数：整机 40 克、122 种语言、18 语种离线、售价 4299 元](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/daily/source-iflytek-spec.png)
 
 这副眼镜把讯飞自研的端到端语音同传大模型直接装进了镜腿，支持 122 种语言（含方言、口音）的实时互译，覆盖全球 200 多个国家和地区，其中 18 个语种支持离线翻译 [3][4]。对经常要和不同母语的人打交道的人来说，「不掏手机、不点 App、对面一开口就出译文」是它想解决的核心场景。覆盖词库还做了 17 个行业的专业术语，应对专业对话。
 
@@ -122,7 +122,7 @@ Vibe 按四档订阅卖：免费版、Pro 每月 14.99 美元、Team 每人每�
 
 ### 头条 3 · OpenAI Codex 把 Computer Use 扩到 Windows：编码 agent 开始操作整台桌面
 
-![OpenAI Codex 5-29 changelog 显示 Computer Use 扩展到 Windows，Codex 可直接看点打字操作桌面应用](source-openai-codex-windows-2026-05-30.png)
+![OpenAI Codex 5-29 changelog 显示 Computer Use 扩展到 Windows，Codex 可直接看点打字操作桌面应用](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/daily/source-openai-codex-windows-2026-05-30.png)
 
 5 月 29 日，OpenAI 在 Codex 的更新日志里加了一条不起眼但方向感很强的能力：Computer Use 扩展到 Windows [2]。简单说，Codex 现在不只是在云端帮你写代码，它能在 Windows 上「看屏幕、移动鼠标、敲键盘」，直接操作桌面应用。
 
@@ -150,7 +150,7 @@ Vibe 按四档订阅卖：免费版、Pro 每月 14.99 美元、Team 每人每�
 
 **Max Woolf：榜单「最便宜」是假象，算上缓存 DeepSeek 输入反而更便宜。** 腾讯 Hy3 这几天在 OpenRouter 的用量榜断层登顶，标价每百万 token 0.066 美元，低于 DeepSeek 的 0.10 美元，看起来是「最便宜」的赢家。开发者 Max Woolf 写了一篇短文泼了冷水 [10]：真实成本要算 prompt 缓存——如今绝大部分 LLM API 成本是输入 token，而输入 token 会被大量缓存命中。把缓存折扣算进去后，DeepSeek 在官方渠道的输入实际只要每百万 token 0.018 美元（缓存读取只收 2%），比 Hy3 算上缓存后的实际单价还便宜近一倍。他的判断是：Hy3 登顶更可能是某个「单一大客户做大批量数据处理」带来的量，而不是它真有性价比优势。这是一条「榜单数据不等于真实性价比」的清醒提醒，对照着看格外有用。
 
-![KOG LaneFormer 推理引擎博客头图：单请求 3000 tokens/s 的速度展示](source-kog-blog-hero.png)
+![KOG LaneFormer 推理引擎博客头图：单请求 3000 tokens/s 的速度展示](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/daily/source-kog-blog-hero.png)
 
 **KOG 单请求 3000 tokens/s 的工程争议。** 推理初创 KOG 公布自研 LaneFormer 架构加协同设计的推理引擎，声称在 8 张 AMD MI300X 上、batch=1 单请求能跑到 3000 tokens/s（H200 上 2100），不靠量化也不靠投机解码 [7]。HN 上的讨论很快聚焦到一个折扣问题：H200 的理论带宽天花板约 7700 tokens/s，实测只到 2100，中间约 3 倍的差距去哪了？KOG 自报的显存带宽利用率（MBU）只有 36%，说明 KV cache 流量、非矩阵乘算子和同步开销吃掉了大半。值得点明的是，这是一个 2B 小模型加引擎深度协同的速度展示（HumanEval 仅 50%），亮点在工程，不能当成通用大模型的速度来读。
 
@@ -160,7 +160,7 @@ Vibe 按四档订阅卖：免费版、Pro 每月 14.99 美元、Team 每人每�
 
 ## 📰 精选要闻
 
-![Liquid AI LFM2.5-8B-A1B 官方基准对比图，指令遵循与数学能力较上代明显提升](source-liquid-blog-benchmarks.png)
+![Liquid AI LFM2.5-8B-A1B 官方基准对比图，指令遵循与数学能力较上代明显提升](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/daily/source-liquid-blog-benchmarks.png)
 
 - 🔴 **Liquid AI 发布端侧 MoE 模型 LFM2.5-8B-A1B**。Liquid AI 发布面向端侧的稀疏 MoE 模型 LFM2.5-8B-A1B：总参数 8.3B，但每个 token 只激活 1.5B，支持 128K 上下文，定位手机、笔记本、机器人上的本地工具调用与推理 [5][6]。官方给的指标里，指令遵循 IFEval 拿到 91.84（较上代提升 12.40），数学 MATH500 88.76。它的思路很直白——用「总参数大、单次激活小」的 MoE 结构，在端侧设备有限的算力下尽量保住能力。这是端侧模型走 MoE 路线的一个代表性发布。
 
@@ -180,7 +180,7 @@ Vibe 按四档订阅卖：免费版、Pro 每月 14.99 美元、Team 每人每�
 
 ## 📦 GitHub Trending
 
-![EveryInc/compound-engineering-plugin 仓库卡片：把计划到实现到审查的多步开发流程封装成可复用 agent，18,124 stars](source-github-compound-engineering-plugin-og-2026-05-30.png)
+![EveryInc/compound-engineering-plugin 仓库卡片：把计划到实现到审查的多步开发流程封装成可复用 agent，18,124 stars](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/daily/source-github-compound-engineering-plugin-og-2026-05-30.png)
 
 - 🔴 **EveryInc/compound-engineering-plugin**（18,124 stars，约 +350/日）[21]。面向 Claude Code、Codex、Cursor 的「复合工程」插件，把「计划 → 实现 → 审查」这套多步开发流程封装成可复用的 agent 流程。TypeScript 实现，最近持续在推送，是 AI Coding 工具往「把工作流标准化」方向走的一个活跃代表。
 

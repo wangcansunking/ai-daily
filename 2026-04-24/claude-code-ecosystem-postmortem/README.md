@@ -1,6 +1,6 @@
 # Claude Code 的 48 天、3% 掉分、9.5k 星：Anthropic 补锅，社区已经魔改上瘾
 
-![Anthropic 4/23 postmortem 封面](claude-ecosystem-anthropic-cover.png)
+![Anthropic 4/23 postmortem 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/claude-code-ecosystem-postmortem/claude-ecosystem-anthropic-cover.png)
 
 > **3 月 4 日到 4 月 20 日，Claude Code 被三个独立改动叠加打到 eval 掉 3%；Anthropic 在 4 月 23 日深夜出了 postmortem，HN 冲上 668 赞 / 507 条评论。** 道歉本身不算新鲜，更值得看的是同一周里，三个社区魔改工具在 GitHub 并排拔到 9,591、8,632、6,031 stars——`context-mode` 从创建到这个量级只用了 2 个月。下面把 postmortem、这三件工具、HN 上那场「爱之深责之切」的群起讨伐放在一起看。
 
@@ -102,7 +102,7 @@ Anthropic 嘴上宣传长 session、1M context、高 reasoning，背地里却默
 
 `claude-context` 解决的是所有 AI coding agent 都绕不开的问题——**agent 反复 grep 同一个 codebase，token 烧得心疼**。
 
-![claude-context 架构图](claude-ecosystem-context-architecture.png)
+![claude-context 架构图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/claude-code-ecosystem-postmortem/claude-ecosystem-context-architecture.png)
 
 本质是一个 MCP server。装上后 Claude Code 能调 4 个工具：
 
@@ -127,7 +127,7 @@ claude mcp add claude-context \
 
 `zilliz` 是做 Milvus 向量数据库的公司，`claude-context` 本质是他们的**商业化触角**——免费的 Milvus 自托管能用，但托管的 Zilliz Cloud 才好接进 AI agent 生态。「工具免费、向量库导流」是开源 RAG 产品最近一年最清晰的商业 pattern 之一。
 
-![claude-context 效率分析图](claude-ecosystem-context-efficiency.png)
+![claude-context 效率分析图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/claude-code-ecosystem-postmortem/claude-ecosystem-context-efficiency.png)
 
 ### context-mode：给 Claude Code 装一个会压缩废话的沙箱
 
@@ -158,7 +158,7 @@ claude mcp add claude-context \
 
 支持的平台列表也值得一看：Claude Code、Gemini CLI、VS Code Copilot、Cursor、OpenCode、KiloCode、OpenClaw、Codex CLI、Antigravity、Kiro、Zed、Pi Coding Agent——**12 个**，覆盖了几乎所有主流 AI coding agent。从生态位上看，`context-mode` 不是「Claude Code 插件」，是**AI coding agent 的通用肠胃**。
 
-![context-mode demo 缩略图](claude-ecosystem-context-mode-demo.jpg)
+![context-mode demo 缩略图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/claude-code-ecosystem-postmortem/claude-ecosystem-context-mode-demo.jpg)
 
 两个月，9,591 stars。项目 **2026 年 2 月 23 日才创建**。同期的 `claude-context` 从 2025 年 6 月创建到现在也才 8,632 stars。9.5k 这个数字不是平静增长，是**被 postmortem 爆雷前后这波恐慌直接打上去的**。
 
@@ -190,7 +190,7 @@ README 原文的 pitch 是：
 
 两个环境变量搞定。不用改 Claude Code CLI 或 VSCode 插件本体。
 
-![free-claude-code NIM demo](claude-ecosystem-free-claude-code-nim.png)
+![free-claude-code NIM demo](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/claude-code-ecosystem-postmortem/claude-ecosystem-free-claude-code-nim.png)
 
 还有一个更激进的玩法——**Discord bot 集成**。步骤：
 
@@ -221,7 +221,7 @@ README 原文的 pitch 是：
 
 `claude-context` 从去年 6 月开始慢热、`context-mode` 两个月冲到 9.5k、`free-claude-code` 创建于今年 1 月——这个时间梯度恰好对齐**重度用户群从 curious 过渡到 reliant 的速度**。Postmortem 爆雷只是点了火，柴早就堆好了。
 
-![Anthropic 监控指标面板](claude-ecosystem-anthropic-metrics.png)
+![Anthropic 监控指标面板](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/claude-code-ecosystem-postmortem/claude-ecosystem-anthropic-metrics.png)
 
 Anthropic 在 postmortem 的最后一段写了三条承诺：
 

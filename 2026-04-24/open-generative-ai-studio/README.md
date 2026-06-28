@@ -8,7 +8,7 @@ description: "Anil-matcha/Open-Generative-AI 把 Higgsfield/Freepik/Krea/OpenArt
 
 # 227 个模型塞进一个 Electron：Higgsfield 开源平替冲到 Trending #3
 
-![Open-Generative-AI 文章封面](open-gen-ai-article-cover.png)
+![Open-Generative-AI 文章封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/open-generative-ai-studio/open-gen-ai-article-cover.png)
 
 > **7,578 个 star、一天新增 847 个、今日 GitHub Trending #3**。`Anil-matcha/Open-Generative-AI` 在 2026-04-24 把 Higgsfield、Freepik、Krea、OpenArt 四家付费工具的核心功能塞进一个 MIT 协议的 Electron 应用——图生图 52、视频 43、图编辑 57、图到视频 62、视频改视频 4、口型同步 9，227 条 model entry，跨类别去重后 224 个 unique 模型。下面拆开讲——什么能用、什么有坑、中国用户要注意什么。
 
@@ -34,7 +34,7 @@ description: "Anil-matcha/Open-Generative-AI 把 Higgsfield/Freepik/Krea/OpenArt
 - **227 个模型 entry 是实测**。我下载了仓库里的 `packages/studio/src/models.js`（265 KB），用 brace-depth 解析法数了一遍：`t2iModels` 52、`t2vModels` 43、`i2iModels` 57、`i2vModels` 62、`v2vModels` 4、`lipsyncModels` 9，合计 227 条。其中 `flux-pulid`、`flux-redux`、`qwen-text-to-image-2512` 三个 id 同时出现在 t2i 和 i2i 数组里，去重后 **224 个 unique id**
 - **作者是老手**。Anil Chandra Naidu Matcha 项目最早叫 `Open-Higgsfield-AI`（Medium 文章 URL 里还留着这个 slug），后来改名 `Open-Generative-AI` 并扩展模型覆盖范围
 
-![Open-Generative-AI GitHub 仓库 banner](open-gen-ai-banner.png)
+![Open-Generative-AI GitHub 仓库 banner](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/open-generative-ai-studio/open-gen-ai-banner.png)
 
 ---
 
@@ -42,7 +42,7 @@ description: "Anil-matcha/Open-Generative-AI 把 Higgsfield/Freepik/Krea/OpenArt
 
 README 把整套 UI 分成 5 个 Studio。我按"上手第一眼能看到什么"重新排了一遍：
 
-![Open-Generative-AI Studio 演示界面](open-gen-ai-studio-demo.webp)
+![Open-Generative-AI Studio 演示界面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/open-generative-ai-studio/open-gen-ai-studio-demo.webp)
 
 ### 1. Image Studio：52 个 t2i × 57 个 i2i，一键切模型
 
@@ -62,7 +62,7 @@ README 把整套 UI 分成 5 个 Studio。我按"上手第一眼能看到什么"
 
 前两个模块说白了是"多模型聚合前端"，技术上不难。**Cinema Studio 才是项目的灵魂**——作者把商业片场"选镜头、选光圈、选胶片"那套动作搬进了 UI。
 
-![Cinema Studio 镜头预设：Compact Anamorphic](open-gen-ai-lens-compact-anamorphic.webp)
+![Cinema Studio 镜头预设：Compact Anamorphic](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/open-generative-ai-studio/open-gen-ai-lens-compact-anamorphic.webp)
 
 Cinema Studio 的每个镜头预设背后，是一段塞给模型的 prompt 前缀。举几个仓库里的实例：
 
@@ -72,7 +72,7 @@ Cinema Studio 的每个镜头预设背后，是一段塞给模型的 prompt 前�
 - **Swirl Bokeh Portrait**（旋转焦外人像）：老胶片镜头的旋转虚化
 - **Grand Format 70mm Film**（70 毫米大画幅）：诺兰式 IMAX 史诗质感
 
-![Cinema Studio 光圈预设：f/1.4](open-gen-ai-aperture-f14.webp)
+![Cinema Studio 光圈预设：f/1.4](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/open-generative-ai-studio/open-gen-ai-aperture-f14.webp)
 
 光圈预设 f/1.4、f/4、f/11 三档。作者在 Medium 写过为什么要这么设计——他想把"写 prompt"换成"当导演"。你不再跟模型说 "a portrait with shallow depth of field, soft bokeh"，而是点一下 "f/1.4" 预设，UI 把对应的 prompt token 帮你塞进去。
 
@@ -94,7 +94,7 @@ ComfyUI 逻辑的轻量版——拖拽节点把几个模型串起来跑一条完
 
 ## 模型生态一张表看清
 
-![Open-Generative-AI 模型类别与数量](open-gen-ai-model-breakdown.png)
+![Open-Generative-AI 模型类别与数量](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/open-generative-ai-studio/open-gen-ai-model-breakdown.png)
 
 数字出处：我本地 curl 了 `packages/studio/src/models.js`，用 brace-depth 解析数了每个 `export const xxxModels = [` 数组里的顶层对象数量。合计 **227 条 model entry**，其中 `flux-pulid`、`flux-redux`、`qwen-text-to-image-2512` 三个 id 跨 t2i 和 i2i 重复出现，去重后 **224 个 unique id**。
 

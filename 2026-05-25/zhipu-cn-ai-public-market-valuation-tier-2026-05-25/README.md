@@ -14,13 +14,13 @@ authors:
 
 # 国产 AI 估值梯队成型：智谱港股四个月十一倍
 
-![国产 AI 公开市场估值梯队封面](zhipu-cn-ai-public-market-valuation-tier-2026-05-25.png)
+![国产 AI 公开市场估值梯队封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/zhipu-cn-ai-public-market-valuation-tier-2026-05-25/zhipu-cn-ai-public-market-valuation-tier-2026-05-25.png)
 
 > 5 月 22 日盘中，智谱（02513.HK）单日涨超 **30%**，总市值冲到 **5800 亿港元**——距 1 月 8 日港交所敲钟当天的 528 亿港元，**四个月十一倍**。同一时间窗口，A 股寒武纪市值 **7168 亿元**、海光信息 **6885 亿元**、摩尔线程 **3363 亿元**、沐曦股份 **3032 亿元**，港股国产 GPU 第一股壁仞科技 **825 亿港元**（约 740 亿元）。加上模型一哥智谱，国产 AI 在公开市场第一次有了一张可以摊开来看的**估值梯队表**。本文做三件事：把这六家公司的市值、收入、估值口径一次摆齐；复盘智谱港股从 528 亿到 5800 亿的四个月四级跳；最后讲清楚为什么这张梯队表是国内做 Agent、做模型、做 AI 应用的同行第一次可以拿来作参考的国产资本锚。
 
 5 月 22 日下午 14:43，新浪财经的盘中快讯发出来：智谱涨幅一度突破 30%，市值站上 5800 亿港元。同一时段一起拉升的还有 MiniMax 概念股（涨近 15%）、五一视界（涨超 13%）、滴普科技、知行科技、迅策（均涨超 10%）、优必选（涨超 7%）。盘中消息面是双驱动：智谱当天发布 **GLM-5.1 高速版**，输出速度做到 400 tokens/秒；国家发改委政策研究室副主任李超在同日例行发布会上表示，正在谋划出台**加快人工智能落地的配套文件，进一步加大要素保障**。技术里程碑遇上政策利好，盘面给出了直接的反馈。
 
-![ai-app-stocks may22 gains 5 月 22 日盘中 AI 应用股涨幅横评（valuation tier 联动效应）](ai-app-stocks-may22-gains.png)
+![ai-app-stocks may22 gains 5 月 22 日盘中 AI 应用股涨幅横评（valuation tier 联动效应）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/zhipu-cn-ai-public-market-valuation-tier-2026-05-25/ai-app-stocks-may22-gains.png)
 
 国内做模型、做 Agent、做 AI 应用的同行第一反应大多是这样：**估值是不是又脱离基本面了？** 这是过去三年大家被国内 AI 一级市场反复教育出的本能反应——某家公司一发布新模型就估值翻倍，过两个月没声音又跌回去，反反复复，看到最后都不太愿意当真。
 
@@ -34,7 +34,7 @@ authors:
 
 写在最前面：本文用的"估值"全部是 5 月 22 日盘中或 4 月 30 日收盘的市值数据，不是一级市场融资估值。**公开市场估值不是真理，但它是国内同行能拿到的最透明的资本锚**——每天都可以重新检验。读者把这篇当成一次估值梯队复盘看就好，不必当投资建议。
 
-![国产 AI 公开市场 valuation tier 估值梯队（截至 2026-05-22）](cn-ai-valuation-tier-2026-05.png)
+![国产 AI 公开市场 valuation tier 估值梯队（截至 2026-05-22）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/zhipu-cn-ai-public-market-valuation-tier-2026-05-25/cn-ai-valuation-tier-2026-05.png)
 
 ## 一、估值梯队表：六家公司从模型到算力，从港股到 A 股
 
@@ -65,7 +65,7 @@ authors:
 
 智谱这条曲线值得单独拉出来看，因为它把"国产大模型公司在公开市场该值多少"的几个关键支点都打出来了。
 
-![zhipu mcap timeline 智谱 02513.HK 港股市值四个月时间线](zhipu-mcap-timeline-2026-05.png)
+![zhipu mcap timeline 智谱 02513.HK 港股市值四个月时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/zhipu-cn-ai-public-market-valuation-tier-2026-05-25/zhipu-mcap-timeline-2026-05.png)
 
 **1 月 8 日**：智谱以股票代码 02513.HK 在港交所主板挂牌上市，发行价 116.20 港元，IPO 募资 43 亿港元，开盘市值约 528 亿港元，首日收盘涨 13.17%，市值 579 亿港元。媒体打出"全球大模型第一股"的标题。这个估值大致对应 2024 年 D++ 轮一级估值，没有明显的二级溢价。
 
@@ -102,7 +102,7 @@ authors:
 
 海光信息一季度营收 40.34 亿元同比 +68.06%、归母净利润 6.87 亿元同比 +35.82%。海光的核心产品 DCU（深度计算单元）面向通用 GPU 替代场景，比寒武纪的"专用 AI 芯片"路径更接近国际通用 GPU 的产品形态，在央国企客户那里接受度更高。**两家的产品路径互补，不正面竞争**，这也是 A 股市场愿意同时给两家高估值的原因。
 
-![cambricon hygon revenue 寒武纪 / 海光信息 一季度营收 + 净利润横评（valuation tier 业绩支撑）](cambricon-hygon-q1-revenue.png)
+![cambricon hygon revenue 寒武纪 / 海光信息 一季度营收 + 净利润横评（valuation tier 业绩支撑）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/zhipu-cn-ai-public-market-valuation-tier-2026-05-25/cambricon-hygon-q1-revenue.png)
 
 摩尔线程一季度营收 7.38 亿元同比 +155.35%、归母净利润 2936 万元同比扭亏。沐曦股份一季度营收 5.62 亿元同比 +75.37%、归母净利润 -0.99 亿元同比减亏 57.49%。两家都在朝着"全功能 GPU"的方向走（既支持 AI 训练推理，也支持图形渲染、科学计算），客户更多是泛通用 GPU 场景。市值各自 3000 亿+ 量级，是寒武纪/海光的 1/2 不到——市场给的折扣对应"产品成熟度 + 客户结构"的真实差距。
 
@@ -128,7 +128,7 @@ Reddit 的 r/LocalLLaMA 当天有一条 "GLM-5.1-highspeed launches, 400 tokens/
 
 这些海外开发者口径里反复出现的关键词是 **"structural discount"**（结构性折扣）—— 智谱、深度求索、月之暗面、千问这一批国产大模型公司，因为价格低 + 工程优化 + 开源策略三个因素，在海外开发者市场已经拿到了显著的流量份额。市场（不管是港股市场还是 OpenRouter）正在为这个份额定价。
 
-![openrouter share trend OpenRouter 国产开源模型 token 占比 6 个季度趋势（海外定价 valuation tier 验证）](openrouter-cn-share-trend.png)
+![openrouter share trend OpenRouter 国产开源模型 token 占比 6 个季度趋势（海外定价 valuation tier 验证）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/zhipu-cn-ai-public-market-valuation-tier-2026-05-25/openrouter-cn-share-trend.png)
 
 ## 五、国内开发者使用视角：把梯队当成资本锚的三种用法
 
@@ -155,7 +155,7 @@ Reddit 的 r/LocalLLaMA 当天有一条 "GLM-5.1-highspeed launches, 400 tokens/
 
 **第三，把"一二级剪刀差"看成正常机制**。
 
-![zhipu scissor tier 智谱一二级估值剪刀差 26.5 倍（valuation tier 跨市场对照）](zhipu-scissor-1-2-tier.png)
+![zhipu scissor tier 智谱一二级估值剪刀差 26.5 倍（valuation tier 跨市场对照）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/zhipu-cn-ai-public-market-valuation-tier-2026-05-25/zhipu-scissor-1-2-tier.png)
 
 智谱从一级 200 亿元到二级 5300 亿元的 26.5 倍剪刀差，是公开市场对一级估值的集体重新定价。这个剪刀差对国内 AI 一级市场的反向影响在 2026 Q2 会逐步显现：**已经融到 D 轮、D+ 轮的国产大模型公司（深度求索、月之暗面、千问、MiniMax、阶跃）下一步融资的估值锚会重新设**——不是参考字节豆包的 ToC 月活，而是参考智谱港股的 ToB 营收倍数。一级市场的估值方法论会从"看 DAU + 看团队"切换到"看 ARR + 看推理工程力"。
 

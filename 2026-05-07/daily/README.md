@@ -1,6 +1,6 @@
 # Mythos 揪出 17 年 0-day · Anthropic 把 Agent 基建全揽了 | AI 日报 | 2026-05-07
 
-![AI 日报封面](07.png)
+![AI 日报封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/daily/07.png)
 
 **今日关键词：Anthropic Code w/ Claude 2026 一日三发 · Mythos Preview 揪出 FreeBSD 17 年 0-day / OpenBSD 27 年 SACK 漏洞 / FFmpeg H.264 16 年模糊测试漏掉的洞 · Project Glasswing 拉 12 家巨头联盟 + 100M usage credit · Managed Agents 公测 Outcomes + Multi-agent，研究预览 Dreaming · Claude Code Review $15-25/PR、≥1000 行 84% 命中均 7.5 处 · Cloudflare + Stripe Projects 给 agent 开账户 + 单 agent 100 美元/月封顶 · 陶哲轩公开 Claude Code 数学审稿工序、15 分钟跑完 12 处审稿意见 · Simon Willison 自承 200 → 2000 行/天、vibe coding 与 agentic engineering 已收敛 · 36 氪头条迈阿密 13 人团队 SSA「千倍」「1200 万 token」「Opus 5%」自报数 · 国产 MiniMax-01 / Qwen3-Next / DeepSeek 线性注意力开源已实测 · virattt/dexter +666 ⭐ 当日**
 
@@ -58,7 +58,7 @@
 
 三件事一起看，方向很清楚：Anthropic 不再只卖 API，开始接管 agent 长跑基础设施和关键软件防御两块底盘。
 
-> ![Mythos / Glasswing / Managed Agents 三件套并排](anthropic-managed-agents-outcomes-dreaming.png)
+> ![Mythos / Glasswing / Managed Agents 三件套并排](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/daily/anthropic-managed-agents-outcomes-dreaming.png)
 >
 > *图片来源：Anthropic Code w/ Claude 2026 大会素材 + 自制对照（daily-report-images repo）*
 
@@ -126,7 +126,7 @@ Dreaming 最有故事性。[Anthropic 官方博客](https://claude.com/blog/new-
 
 Outcomes 把 reward 模型抽象出来的做法，过去是 OpenAI / Anthropic 内部 RL 训练框架，现在被暴露到产品层——国产平台接下来 6-12 个月真正要补的就是这一格。
 
-> ![Managed Agents · 你自管 SDK vs Anthropic 服务端](managed-agents-vs-sdk.png)
+> ![Managed Agents · 你自管 SDK vs Anthropic 服务端](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/daily/managed-agents-vs-sdk.png)
 >
 > *图片来源：Anthropic 官方文档 + 自制对照（daily-report-images repo）*
 
@@ -216,7 +216,7 @@ Anthropic 的优势是 Code Review 被自家工程团队天天跑了一年再发
 
 首批 32 家服务商：Vercel、Clerk、Supabase、Hugging Face、Cloudflare 都在内。HN 597 分、346 评论。
 
-> ![Cloudflare + Stripe Projects · agent 自助账户流](cloudflare-agent-account-flow.png)
+> ![Cloudflare + Stripe Projects · agent 自助账户流](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/daily/cloudflare-agent-account-flow.png)
 >
 > *图片来源：Cloudflare 博客 + 自制流程图（daily-report-images repo）*
 
@@ -250,7 +250,7 @@ Simon Willison 是过去三年最克制的 AI 评论家，他这次把立场拆�
 
 这是中国 AI 学术界与工程界长期投入换来的稳步推进，线性注意力是过去一年国内大厂走得最远的方向之一。
 
-> ![SSA 团队自报基准数字（团队博客披露，未独立复现）](ssa-benchmarks-self-reported.png)
+> ![SSA 团队自报基准数字（团队博客披露，未独立复现）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/daily/ssa-benchmarks-self-reported.png)
 >
 > *图片来源：Subquadratic 团队博客 + 自制（daily-report-images repo）。注：所有数字均来自团队官方披露，第三方独立复现尚未出现。*
 
@@ -298,7 +298,7 @@ Simon Willison 是过去三年最克制的 AI 评论家，他这次把立场拆�
 
 为什么值得抄：dexter 的 README 自述定位是「Think Claude Code, but built specifically for financial research」——把 Claude Code 那套 agent 范式（任务规划 / 工具调用 / 自我反思）搬到金融研究垂直场景，每次查询写一份 `.dexter/scratchpad/<时间戳>.jsonl` 把 agent 决策全留痕。这套 scratchpad 模式是国内独立开发者直接可以抄的工程模板。
 
-> ![dexter CLI 运行界面](dexter-virattt-cli.png)
+> ![dexter CLI 运行界面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/daily/dexter-virattt-cli.png)
 >
 > *图片来源：dexter README（daily-report-images repo）*
 

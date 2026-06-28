@@ -11,13 +11,13 @@ track: arbitrage
 ---
 # 斯坦福这份 CLAUDE.md，专门教 AI 助手少干活
 
-![斯坦福 CS336 作业仓库里的 CLAUDE.md，把 AI 助手框成只能引导不能代劳的导师，手绘示意](cs336-claude-md-agent-guardrails-2026-06-03.png)
+![斯坦福 CS336 作业仓库里的 CLAUDE.md，把 AI 助手框成只能引导不能代劳的导师，手绘示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/cs336-claude-md-agent-guardrails-2026-06-03/cs336-claude-md-agent-guardrails-2026-06-03.png)
 
 天天在 repo 里写 CLAUDE.md、Cursor rules、AGENTS.md 的人，对这类文件的默认印象多半是同一个方向：告诉 agent 项目长什么样、用什么命令构建、跑测试要注意什么——一句话，让它更快上手、多干点活。斯坦福 CS336《从零写语言模型》最近放出来的这份 CLAUDE.md 反着来了。**它不是让 agent 更能干，而是把 agent 框成只能引导、不能代劳——这份"反向"规则文件，恰好给受控 agent、代码评审门禁、培训这几个场景，提供了一套可以直接抄的约束护栏写法。**
 
 这就是本文要讲的核心。当地时间 6 月 1 日，这份文件被发到 Hacker News，标题就叫《AI Agent Guidelines for CS336 at Stanford》，6 月 3 日核对那条帖约 484 分、151 条讨论；同一天，CS336 课程站本身那条帖约 536 分，两条一起冲上首页。一份课程的"给 AI 立规矩"文件能和课程主页同台热议，本身就说明：**"课程怎么和 AI 编码工具共存"是个被普遍感受到的真问题。**
 
-![斯坦福 CS336 作业仓库的社交卡片，描述写着“从零写语言模型”的学生版作业一](source-cs336-github-card-2026-06-03.png)
+![斯坦福 CS336 作业仓库的社交卡片，描述写着“从零写语言模型”的学生版作业一](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/cs336-claude-md-agent-guardrails-2026-06-03/source-cs336-github-card-2026-06-03.png)
 <small>来源：stanford-cs336/assignment1-basics 仓库社交卡片</small>
 
 这篇文章想把几件事讲清楚：**这份 CLAUDE.md 到底反常在哪、它真实的禁止规则逐条是什么、能整理成一张怎样可复用的约束护栏表、Hacker News 上支持与质疑两边各说了什么、以及国内开发者能从里头抄走什么。** 结论先放这儿——抛开"这能不能挡住学生绕过"这个争论不谈，这份文件作为"约束式 CLAUDE.md"的写法范本，价值是实打实的：它把"禁止代劳"这件事写得足够具体、足够可执行，任何需要让 agent"只引导不动手"的场景，都能照着改一份出来。
@@ -34,7 +34,7 @@ CS336 的作业一仓库 stanford-cs336/assignment1-basics，6 月 3 日核对�
 
 这份文件本身被单独拎出来发到 Hacker News，标题《AI Agent Guidelines for CS336 at Stanford》。把这条帖的热度放进它出现的背景里看会更清楚。
 
-![同一天 CS336 在 Hacker News 上的两条热帖，课程站约 536 分、那份 CLAUDE.md 约 484 分](chart-cs336-hn-heat-2026-06-03.png)
+![同一天 CS336 在 Hacker News 上的两条热帖，课程站约 536 分、那份 CLAUDE.md 约 484 分](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/cs336-claude-md-agent-guardrails-2026-06-03/chart-cs336-hn-heat-2026-06-03.png)
 
 两条帖的量级值得点一句：**课程站那条约 536 分，CLAUDE.md 那条约 484 分、151 条讨论，几乎平起平坐。** 一个教学课程的"AI 使用守则"能跟课程本身一样被热议，说明大家关心的早就不只是"这门课讲什么"，而是"在 AI 能一键生成代码的今天，这门强调动手的课要怎么守住学习这件事"。
 
@@ -48,7 +48,7 @@ CS336 的作业一仓库 stanford-cs336/assignment1-basics，6 月 3 日核对�
 
 **于是这门课撞上了一个很尖锐的矛盾——课程的全部价值在于"亲手实现的过程"，而 AI 工具的全部便利在于"帮你跳过这个过程"。** 这份 CLAUDE.md 就是课程方对这个矛盾给出的正面回应：不假装 AI 不存在、也不一刀切禁用，而是精确地划出一条线——AI 可以陪着你想，但不能替你写。
 
-![CS336 用代劳式 CLAUDE.md 与约束式 CLAUDE.md 的对照：一个教 agent 做得更多，一个教它做得更少但守住底线](chart-cs336-doc-compare-2026-06-03.png)
+![CS336 用代劳式 CLAUDE.md 与约束式 CLAUDE.md 的对照：一个教 agent 做得更多，一个教它做得更少但守住底线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/cs336-claude-md-agent-guardrails-2026-06-03/chart-cs336-doc-compare-2026-06-03.png)
 
 两种文件的差别，一张对照就清楚了：
 
@@ -63,7 +63,7 @@ CS336 的作业一仓库 stanford-cs336/assignment1-basics，6 月 3 日核对�
 
 要把这份文件当范本用，得先看清它真实写了什么——不能凭印象转述。它把 AI 助手该做和不该做的，明明白白分成两栏。
 
-![CS336 的 CLAUDE.md 在 GitHub 上的真实渲染，可见“What AI Agents SHOULD NOT Do”那一节的禁止清单](source-cs336-claude-md-rendered-2026-06-03.png)
+![CS336 的 CLAUDE.md 在 GitHub 上的真实渲染，可见“What AI Agents SHOULD NOT Do”那一节的禁止清单](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/cs336-claude-md-agent-guardrails-2026-06-03/source-cs336-claude-md-rendered-2026-06-03.png)
 <small>来源：stanford-cs336/assignment1-basics 仓库 CLAUDE.md 文件 GitHub 渲染</small>
 
 **该做的那一栏（当导师），原文列了这些：**
@@ -101,7 +101,7 @@ CS336 的作业一仓库 stanford-cs336/assignment1-basics，6 月 3 日核对�
 
 光看原文还不够，要能搬到自己 repo 里用，得把它抽象成"护栏类型"。把那一长串禁止项归归类，其实是五条可复用的约束护栏。
 
-![CS336 的 CLAUDE.md 把允许与禁止各列一栏，右栏五类禁止规则可直接复用](chart-cs336-rule-matrix-2026-06-03.png)
+![CS336 的 CLAUDE.md 把允许与禁止各列一栏，右栏五类禁止规则可直接复用](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/cs336-claude-md-agent-guardrails-2026-06-03/chart-cs336-rule-matrix-2026-06-03.png)
 
 | 护栏类型 | CS336 的原始规则 | 可复用到的场景 |
 |---|---|---|
@@ -162,7 +162,7 @@ CS336 的作业一仓库 stanford-cs336/assignment1-basics，6 月 3 日核对�
 
 也有评论者把视角拉高，提出更根本的应对方向：与其试图把 AI 这个口子堵回去，不如提高考核的难度和标准——对学生期待更高、更多依赖单个学生买不起的实验设施和大型项目、少考那些容易被 AI 解决的琐碎知识点。
 
-![Hacker News 上《AI Agent Guidelines for CS336 at Stanford》一帖的真实讨论，支持与质疑两边并存](source-cs336-hn-thread-2026-06-03.png)
+![Hacker News 上《AI Agent Guidelines for CS336 at Stanford》一帖的真实讨论，支持与质疑两边并存](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/cs336-claude-md-agent-guardrails-2026-06-03/source-cs336-hn-thread-2026-06-03.png)
 <small>来源：Hacker News item 48359232 讨论页</small>
 
 这里值得说句公道话：**两边其实没那么对立。** 质疑方说的"挡不住绕过"是事实——任何靠文字约定、不带强制执行的规则，认真要绕都绕得过去。但支持方说的"示范健康用法"也是事实——它的价值本就不在当一道技术防线，而在给出一个"AI 和学习如何共处"的清晰样板。把它当门禁看，它确实漏；把它当范本看，它立得住。

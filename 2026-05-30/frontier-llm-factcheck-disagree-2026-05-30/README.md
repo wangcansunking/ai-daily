@@ -9,7 +9,7 @@ description: "Lenz Research 用 1000 条真实声明测了 5 个前沿大模型�
 ---
 # 5 个顶尖模型核查同一批声明，67% 判定不一致
 
-![5 个前沿大模型核查同一批真实声明，67% 出现判定不一致](frontier-llm-factcheck-disagree-2026-05-30.png)
+![5 个前沿大模型核查同一批真实声明，67% 出现判定不一致](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/frontier-llm-factcheck-disagree-2026-05-30/frontier-llm-factcheck-disagree-2026-05-30.png)
 
 如果你正在给产品接一个"AI 帮我判断这句话是真是假"的功能，先记住一个数字：**把 1000 条真实用户提交的声明，丢给当前 5 个最强的大模型去判断真假，只有 33% 的声明 5 个模型给出完全相同的结论，剩下 67% 至少有一个模型唱反调。**
 
@@ -19,7 +19,7 @@ description: "Lenz Research 用 1000 条真实声明测了 5 个前沿大模型�
 
 下面分几步讲：这套评测怎么做的、它合理在哪也有什么局限、分歧规模有多大、为什么中间档最危险、检索增强为什么救不了、以及国产模型接进来会不会更好。
 
-![研究原文页面：5 个前沿模型在真实事实核查上的分歧](source-factcheck-lenz-og.png)
+![研究原文页面：5 个前沿模型在真实事实核查上的分歧](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/frontier-llm-factcheck-disagree-2026-05-30/source-factcheck-lenz-og.png)
 
 来源：Lenz Research《Frontier LLM Disagreement on Fact-Checks》研究页，快照 v1.0，2026-05-21
 
@@ -60,7 +60,7 @@ description: "Lenz Research 用 1000 条真实声明测了 5 个前沿大模型�
 
 ## 67% 不一致：分歧不是个别现象，是普遍现象
 
-![5 个前沿大模型对同一批声明的判定：33% 完全一致，67% 至少一个模型不一致](factcheck-agree-vs-disagree-2026-05-30.png)
+![5 个前沿大模型对同一批声明的判定：33% 完全一致，67% 至少一个模型不一致](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/frontier-llm-factcheck-disagree-2026-05-30/factcheck-agree-vs-disagree-2026-05-30.png)
 
 核心数字一次摆清楚，全部相对于这 1000 条声明：
 
@@ -107,7 +107,7 @@ description: "Lenz Research 用 1000 条真实声明测了 5 个前沿大模型�
 
 光说"不一致"还不够。两个模型一个判"真实"、一个判"大致属实"，这只是措辞分寸的差别；但一个判"真实"、另一个判"虚假"，那就是截然相反。把分歧按"相差几档"拆开，才看得出严重程度。
 
-![判定档差距分布：相差 0/1/2/3 档各占多少](factcheck-distance-dist-2026-05-30.png)
+![判定档差距分布：相差 0/1/2/3 档各占多少](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/frontier-llm-factcheck-disagree-2026-05-30/factcheck-distance-dist-2026-05-30.png)
 
 按"任意两个模型判定相差的最大档数"统计，仍然相对于 1000 条声明：
 
@@ -132,7 +132,7 @@ description: "Lenz Research 用 1000 条真实声明测了 5 个前沿大模型�
 
 把分歧按"该声明的多数判定落在哪一档"切开来看，会发现分歧高度集中在中间两档。
 
-![四档判定碎裂：中间两档几乎从不一致](factcheck-bucket-fragment-2026-05-30.png)
+![四档判定碎裂：中间两档几乎从不一致](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/frontier-llm-factcheck-disagree-2026-05-30/factcheck-bucket-fragment-2026-05-30.png)
 
 各档里"5 个模型完全一致"的比例（分母是该档以多数判定成立的声明数）：
 
@@ -158,7 +158,7 @@ description: "Lenz Research 用 1000 条真实声明测了 5 个前沿大模型�
 
 很多人第一反应是：纯靠记忆的模型不准很正常，让它联网检索（RAG）不就好了？这份评测里有个反直觉的发现——**检索增强派并没有明显更一致。**
 
-![各模型与同行多数的吻合率：参数派 vs 检索派](factcheck-peer-majority-2026-05-30.png)
+![各模型与同行多数的吻合率：参数派 vs 检索派](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/frontier-llm-factcheck-disagree-2026-05-30/factcheck-peer-majority-2026-05-30.png)
 
 衡量"每个模型和其余 4 个模型的多数意见有多吻合"，结果按高到低：
 
@@ -172,7 +172,7 @@ description: "Lenz Research 用 1000 条真实声明测了 5 个前沿大模型�
 
 吻合率最高的是纯参数派的 GPT-5.4（81%），两个检索增强派（76%、69%）反而排在中后段。再看两两一致率的矩阵，对照更直观：
 
-![5 模型两两逐条判定一致率热力图](factcheck-pairwise-heatmap-2026-05-30.png)
+![5 模型两两逐条判定一致率热力图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/frontier-llm-factcheck-disagree-2026-05-30/factcheck-pairwise-heatmap-2026-05-30.png)
 
 - 最高的一对是 Gemini 3 Pro 和 Gemini 3 Pro + Search，**75%**——但这俩本来就是同源模型，搜索是加在同一个底座上的，高一致是意料之中；
 - 跨家组合里，最低能掉到 **53%**（Claude Opus 4.7 与 Gemini 3 Pro、Gemini 3 Pro 与 Sonar Pro 等多对都是 53%）；

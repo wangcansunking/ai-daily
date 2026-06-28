@@ -20,13 +20,13 @@ tags:
 
 # Uber 给 Claude Code 设每月 1500 美元上限
 
-![Uber AI 编码 token budget cap 封面](uber-1500-cap-ai-coding-token-budget-2026-06-05.png)
+![Uber AI 编码 token budget cap 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/uber-1500-cap-ai-coding-token-budget-2026-06-05/uber-1500-cap-ai-coding-token-budget-2026-06-05.png)
 
 Uber 给全体员工的 AI 编码工具立了一条新规矩：每人、每个工具，每月 token 花费上限 1500 美元。规矩只管 agentic 编码软件——也就是 Cursor 和 Anthropic 的 Claude Code 这类能自己跑多步任务的工具。设上限之前，一部分工程师的月账单已经在 500 到 2000 美元之间。
 
 这件事真正值得国内开发者看的，不是「大厂也烧不起」这种情绪，而是一个更实用的问题：**当 agentic 编码在一家公司全员铺开之后，token 账单到底会涨到什么量级，以及一套能用的预算治理该怎么搭。** Uber 给出的答案不是禁用，而是上限加仪表盘加审批——这套做法，配上国产模型的低单价，几乎可以原样搬到任何一个正在推 AI 编码的团队里。
 
-![Claude 等 AI 应用（图：TechCrunch 配图，GettyImages）](tc-claude-apps.jpg)
+![Claude 等 AI 应用（图：TechCrunch 配图，GettyImages）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/uber-1500-cap-ai-coding-token-budget-2026-06-05/tc-claude-apps.jpg)
 
 ## 四个月烧光一整年的预算，问题出在哪
 
@@ -34,7 +34,7 @@ Uber 给全体员工的 AI 编码工具立了一条新规矩：每人、每个�
 
 这里有一个细节很能说明问题。据 ZeroHedge 转述，这位 CTO 自己在一次两小时的内部演示里，就烧掉了大约 1200 美元的 token——Uber 首席运营官 Andrew Macdonald 事后形容那是个「脑子要炸」的瞬间。一次演示顶得上一个工程师大半个月的额度，这就是 agentic 编码的真实花钱速度。
 
-![上限前工程师月账单区间与新上限对照 · bill range cap](chart-bill-range-cap.png)
+![上限前工程师月账单区间与新上限对照 · bill range cap](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/uber-1500-cap-ai-coding-token-budget-2026-06-05/chart-bill-range-cap.png)
 
 把几个关键数字摆在一起，更容易看清这家公司经历了什么：
 
@@ -51,7 +51,7 @@ Uber 给全体员工的 AI 编码工具立了一条新规矩：每人、每个�
 
 很多人对 AI 编码成本的直觉，还停留在「问一句答一句」的聊天阶段——一次对话几分钱，再贵能贵到哪去。但 agentic 编码是另一种花钱方式。它的核心区别在于：你给它一个任务，它自己拆成几十步去跑，每一步都在读写 token。
 
-![聊天与 agent 单任务的 token 量级对照](chart-chat-vs-agent.png)
+![聊天与 agent 单任务的 token 量级对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/uber-1500-cap-ai-coding-token-budget-2026-06-05/chart-chat-vs-agent.png)
 
 具体来说，钱主要花在三个地方：
 
@@ -63,7 +63,7 @@ Uber 给全体员工的 AI 编码工具立了一条新规矩：每人、每个�
 
 Simon Willison 在他的短评里算过一笔更直观的账：按两个工具、每月各 1500 美元算，单个工程师一年上限是 3.6 万美元。他把这个数字放在 Uber 软件工程师中位数年薪（约 33 万美元）旁边一比，大约占到 11%。**对一家拿 AI 当生产力杠杆的公司来说，给每个工程师多花一成薪资换产出，账其实算得过来——前提是这笔钱花得清楚、花得可控。** 他本人也提到，自己每月在 Anthropic 和 OpenAI 上各约花 1000 美元 token（两家合计约 2000 美元），这个量级对重度用户并不夸张。
 
-![Simon Willison 对 Uber 设上限的看法（要点转述）](card-simon-willison.png)
+![Simon Willison 对 Uber 设上限的看法（要点转述）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/uber-1500-cap-ai-coding-token-budget-2026-06-05/card-simon-willison.png)
 
 值得留意的是他对「上限」这件事的态度。在他看来，Uber 早先那套「用量排行榜」反而会激励工程师互相比谁烧得多，把 token 当成业绩；而设一个明确的月度上限，是对过度消耗的一种理性回应。这个判断点出了一个容易被忽略的事实——**失控的往往不是工具本身，而是缺少约束的激励方式。** 同一笔预算，配上排行榜会越花越多，配上上限和仪表盘则会越花越准。
 
@@ -73,7 +73,7 @@ Simon Willison 在他的短评里算过一笔更直观的账：按两个工具�
 
 Uber 这次的处理方式，最值得借鉴的一点是——它没有把工具收回去，而是给用量套上了一层管理。据 TechCrunch 和 ZeroHedge 的转述，这套做法包含四件事：
 
-![预算治理四件套 · governance checklist](chart-governance-checklist.png)
+![预算治理四件套 · governance checklist](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/uber-1500-cap-ai-coding-token-budget-2026-06-05/chart-governance-checklist.png)
 
 1. **每工具月度上限**：每人每个工具 1500 美元封顶，不同工具的预算互不挤占。这意味着同时用 Cursor 和 Claude Code 的工程师，两边各有 1500 美元，而不是合起来 1500。
 2. **用量仪表盘**：每位员工都能在内部看板上实时看到自己的 token 用量。花到哪了、还剩多少，本人随时清楚——这一条其实是上限能落地的前提，看不见用量的上限等于没有。
@@ -104,7 +104,7 @@ Uber 这次的处理方式，最值得借鉴的一点是——它没有把工具
 
 先看一组单价。下面这张图把几个主流编码模型的 token 单价放在一起对照——都按每百万 token 计，分输入（未命中缓存）和输出两档。海外的 Claude Sonnet、Cursor Auto 在左边，国产的千问、智谱、深度求索（DeepSeek）在右边。
 
-![海外与国产编码模型 token 单价对照](chart-token-price-compare.png)
+![海外与国产编码模型 token 单价对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/uber-1500-cap-ai-coding-token-budget-2026-06-05/chart-token-price-compare.png)
 
 把关键单价列成表，差距一目了然（均为每百万 token，2026-06-05 核对各厂官方价目页）：
 

@@ -13,7 +13,7 @@ cover: "chen-boyuan-openai-chinese-engineer-gpt-image2.png"
 
 > 4 月 21 日 GPT Image 2 上线，多语言文本渲染拉到 +242 Elo 领先。主导这次中文工程的是 GPT Image 团队的 Research Lead 陈博远——本科 UC Berkeley、博士 MIT EECS、NeurIPS 2024 «Diffusion Forcing» 一作。这篇复盘他在 OpenAI 做了什么，以及国内同行的同型工程。
 
-![封面](chen-boyuan-openai-chinese-engineer-gpt-image2.png)
+![封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/chen-boyuan-openai-chinese-engineer-gpt-image2/chen-boyuan-openai-chinese-engineer-gpt-image2.png)
 
 ## 事件本身：4 月 21 日的一次「安静」上线 + 5 月 1 日的一篇知乎自述
 
@@ -53,7 +53,7 @@ GPT Image 2 团队总负责人是 Gabriel Goh，从 DALL-E 时期就在 OpenAI�
 
 GPT Image 2 之前业界主流的"中文渲染"路线，要么靠 ControlNet + 中文字库后期合成，要么靠在 prompt 里逐字硬塞，结果都不稳定。这是行业共识，也是陈博远这次修中文之所以被国内媒体集体跟报的工程背景。
 
-![GPT Image 2 中文渲染前后对比](gpt-image2-cn-rendering-comparison.png)
+![GPT Image 2 中文渲染前后对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/chen-boyuan-openai-chinese-engineer-gpt-image2/gpt-image2-cn-rendering-comparison.png)
 
 ## 三、陈博远做了什么：仅按公开报道与他自己公开过的事实复盘
 
@@ -94,7 +94,7 @@ GPT Image 2 之前业界主流的"中文渲染"路线，要么靠 ControlNet + �
 
 修中文不是 OpenAI 一家在做。国内一线团队在中文图像渲染这条赛道已经做了好几代，开源策略反而比 OpenAI 更激进。
 
-![国内图像模型中文渲染对比](cn-image-models-cn-rendering-stack.png)
+![国内图像模型中文渲染对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/chen-boyuan-openai-chinese-engineer-gpt-image2/cn-image-models-cn-rendering-stack.png)
 
 把已经公开发布的几家代表摆在一起：
 
@@ -113,7 +113,7 @@ GPT Image 2 之前业界主流的"中文渲染"路线，要么靠 ControlNet + �
 
 陈博远不是孤例。把公开履历可查的案例摆出来，会发现中国 AI 教育（北大 / 清华 / 中科大 / 浙大 / 上交大）+ 海外名校训练（MIT / Stanford / UC Berkeley / CMU）已经是全球 AI 工程版图里的一块完整拼图。
 
-![中国 AI 工程师全球分布示意](cn-engineers-overseas-ai.png)
+![中国 AI 工程师全球分布示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/chen-boyuan-openai-chinese-engineer-gpt-image2/cn-engineers-overseas-ai.png)
 
 下列六位**仅取公开履历可查的研究员或工程师**，避免任何脑补：
 

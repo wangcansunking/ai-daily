@@ -14,19 +14,19 @@ authors:
 
 # Datadog 把 Toto 拉到 2.5B 五档全开源
 
-![toto-2-tsfm-observability-scaling 封面图](toto-2-tsfm-observability-scaling-2026-05-22.png)
+![toto-2-tsfm-observability-scaling 封面图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/toto-2-tsfm-observability-scaling-2026-05-22/toto-2-tsfm-observability-scaling-2026-05-22.png)
 
 > 5 月 14 日，美国可观测性厂商 Datadog 的 AI 研究院在公司博客挂出一篇低调的技术文章：Toto 时间序列基础模型升级到 2.0，参数尺寸从初代单一 152M 一次性拉到 4M、22M、313m、1B、2.5B 五档全开源。这是开源时间序列基础模型领域第一次有人把权重推到 25 亿参数，也是第一次有团队同时在 BOOM、GIFT-Eval、TIME 三大公开基准上把所有前三名席位收入囊中。22M 档位用 Toto 1.0 七分之一的参数量做到同等预测精度——五年来语言模型走过的 scaling 路径，时间序列基础模型在今年开始正式复刻。
 
 国内开发者的第一反应大多是「时间序列预测和我有什么关系」。其实关系很近：量化私募的回测引擎、电商大促的弹性扩容、数据中心的容量规划、工业产线的振动监测，这四类业务在国内每一类都有几十万到上百万从业者，背后吃的全是时间序列预测。过去十年这条赛道的主力是 ARIMA、Prophet、LSTM、XGBoost 这些「按业务训一个模型」的方案。Toto 2.0 这种开源基础模型的意义，是让一个不到 100MB 的权重文件零成本接入到现有业务里、跑出比定制方案更稳的基线——和两年前大家从「按任务训 BERT」切换到「直接调 ChatGPT 接口」是同一种范式迁移。
 
-![Datadog AI 研究院 Toto 2.0 官方发布配图](toto-2-datadog-hero.png)
+![Datadog AI 研究院 Toto 2.0 官方发布配图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/toto-2-tsfm-observability-scaling-2026-05-22/toto-2-datadog-hero.png)
 
 ## 一、五档参数规模：从 4M 到 2.5B 一次开齐
 
 Toto 2.0 这次最反常的动作不是模型变大，而是同时放出五档权重，把所有家用、生产、研究场景一次覆盖。
 
-![Toto 2.0 五档模型规格速查表](toto-2-five-size-matrix.png)
+![Toto 2.0 五档模型规格速查表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/toto-2-tsfm-observability-scaling-2026-05-22/toto-2-five-size-matrix.png)
 
 五档之间的定位泾渭分明：
 
@@ -46,7 +46,7 @@ Toto 2.0 这次最反常的动作不是模型变大，而是同时放出五档�
 
 时间序列基础模型这一年的公开基准比较散，Toto 2.0 把三个最权威的基准一次都打了，结果都是前三名。
 
-![Toto 2.0 三大基准对比](toto-2-benchmark-three.png)
+![Toto 2.0 三大基准对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/toto-2-tsfm-observability-scaling-2026-05-22/toto-2-benchmark-three.png)
 
 **BOOM**：Datadog 自研的运维可观测性基准，今年 5 月随 Toto 2.0 一起发布，arXiv 论文编号 2505.14766。基准里收录了 2807 条真实运维时间序列、合计 3.5 亿数据点，全部来自 Datadog 自家平台的脱敏遥测——CPU、内存、磁盘、网络、调用延迟、错误率、容器副本数这些指标的真实波形。BOOM 的特点是数据稀疏、毛刺多、有明显的工作日 / 工作时段周期，比金融行情还更难拟合。Toto 2.0 在这个基准上把 1-3 名一口气拿了：2.5B 排 1（CRPS 3.88）、1B 排 2（CRPS 3.96）、313m 排 3（CRPS 4.25）。Toto 1.0 的 152M 落到第 5 名，CRPS 6.94。
 
@@ -66,7 +66,7 @@ Toto 2.0 真正的方法学突破不是把模型做大，而是验证了一套�
 
 Datadog 这次把 u-μP 引到时间序列模型里，得到了一张漂亮的曲线：
 
-![Toto 2.0 五档 u-μP 参数效率 scaling 曲线](toto-2-scaling-efficiency.png)
+![Toto 2.0 五档 u-μP 参数效率 scaling 曲线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/toto-2-tsfm-observability-scaling-2026-05-22/toto-2-scaling-efficiency.png)
 
 横轴是参数量取对数，纵轴是 BOOM 的 CRPS 排名。Toto 2.0 五档完整画出一条平滑的下降曲线，从 4M 的 7.17 一路降到 2.5B 的 3.88，过程没有出现任何精度坍塌或 plateau。最关键的是，Toto 1.0 的 152M 单点（灰色）落在 6.94 这条横线上，而 Toto 2.0 的 22M（紫色）已经压到 5.52——参数量小 7 倍、精度反而更好。
 
@@ -80,7 +80,7 @@ Datadog 在博客里写「Every size improves on the one below it, with no sign 
 
 把 Toto 2.0 放回时间序列基础模型的全景里看，它的位置非常清晰：是开源世界里第一个把尺寸推到 2.5B 的玩家。
 
-![Toto 与海内外 TSFM 时间序列基础模型横评全景](toto-2-tsfm-landscape.png)
+![Toto 与海内外 TSFM 时间序列基础模型横评全景](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/toto-2-tsfm-observability-scaling-2026-05-22/toto-2-tsfm-landscape.png)
 
 横评里有几条值得展开讲：
 
@@ -100,7 +100,7 @@ Datadog 在博客里写「Every size improves on the one below it, with no sign 
 
 Toto 2.0 不需要 GPU 集群，也不需要等国产模型出来才能用。下面四条路径覆盖了国内开发者最常见的四类场景，硬件预算从一台旧台式机到一张专业卡都有可走的方案。
 
-![Toto 2.0 国内落地路径](toto-2-china-deploy.png)
+![Toto 2.0 国内落地路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/toto-2-tsfm-observability-scaling-2026-05-22/toto-2-china-deploy.png)
 
 **路径一：量化回测 · A 股私募**
 

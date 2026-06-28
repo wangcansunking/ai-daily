@@ -27,7 +27,7 @@ description: "SDAR 是浙江大学 REAL Lab + 美团 + 清华联合提交到 arx
 
 # 千问 agentic RL 不再训崩：浙大、美团、清华出招
 
-![SDAR 浙大美团清华 agentic RL 论文封面](sdar-meituan-2026-05-16.png)
+![SDAR 浙大美团清华 agentic RL 论文封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/sdar-meituan-zju-tsinghua-agentic-rl-2026-05-16/sdar-meituan-2026-05-16.png)
 
 5 月 14 日，浙江大学计算机学院的陆正希、姚志远等十一位作者，把一篇标题叫《Self-Distilled Agentic Reinforcement Learning》的论文挂上了 arxiv（编号 2605.15155）。第一作者所属 1 是浙江大学，所属 2 是美团；第二组人马来自清华大学；通讯作者沈永良同样跨浙大与美团。论文页底部注脚一句很朴素的说明：「Work done during internship at Meituan」——这是一篇浙大博士生在美团实习期间，三所顶级机构联合落地出来的工程论文。
 
@@ -53,7 +53,7 @@ OPSD（On-Policy Self-Distillation，去年下半年由清华 Zhao 等人提出�
 
 **观察 2：特权监督本身就不对称**。教师拿到的 skill 不一定准——检索来的 skill 可能完全不相关，可能不完整，可能教师压根没读懂怎么用。当教师对某个 token 给出"低于学生"的概率（负 gap）时，到底是这个 token 真的不该出现，还是教师被 skill 干扰判错了？论文用 Qwen2.5-3B-Instruct 跑了一遍统计：**整条轨迹里 50% 以上的 token 都是负 gap**。这不是少数边角情况，是普遍现象。
 
-![SDAR 训法流程：GRPO 主干 + OPSD 门控辅助](sdar-method-flow.png)
+![SDAR 训法流程：GRPO 主干 + OPSD 门控辅助](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/sdar-meituan-zju-tsinghua-agentic-rl-2026-05-16/sdar-method-flow.png)
 
 把两件事拼起来：**多轮场景下，教师给的 token 级监督有一半是噪声，硬学就会被带歪**。这就是 SDAR 要解决的真问题——不是 RL 不够好，也不是自蒸馏没用，是这两套范式硬拼在一起会爆。
 
@@ -71,7 +71,7 @@ SDAR 给出的方案，用一句话概括：**让 GRPO 留作主干，OPSD 当�
 
 直白翻译：原来的 GRPO 损失不动——这一点很关键，意味着 RL 的优势估计、importance sampling、clip 都保持原样，没有被特权信号污染。OPSD 那一项被单独拎出来当辅助 loss，每个 token 前面乘一个 0 到 1 之间的门控权重 `g_t`，权重的形状是一条 sigmoid 曲线。
 
-![SDAR sigmoid 门控：正负 gap 不对称信号](sdar-asymmetric-gate.png)
+![SDAR sigmoid 门控：正负 gap 不对称信号](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/sdar-meituan-zju-tsinghua-agentic-rl-2026-05-16/sdar-asymmetric-gate.png)
 
 这条曲线干的事很简洁：
 
@@ -96,7 +96,7 @@ SDAR 给出的方案，用一句话概括：**让 GRPO 留作主干，OPSD 当�
 
 数字才是真东西。
 
-![Qwen2.5-7B：SDAR vs 五条基线，三 benchmark 横评](sdar-7b-benchmarks.png)
+![Qwen2.5-7B：SDAR vs 五条基线，三 benchmark 横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/sdar-meituan-zju-tsinghua-agentic-rl-2026-05-16/sdar-7b-benchmarks.png)
 
 论文 Table 1 给的 Qwen2.5-7B 模型上、三个 benchmark 的成绩：
 
@@ -127,7 +127,7 @@ SDAR 给出的方案，用一句话概括：**让 GRPO 留作主干，OPSD 当�
 
 把 SDAR 放进 5 月观察到的国内大厂工程文献谱系里看，会发现它不是孤立事件。
 
-![国内大厂主动公开 RL 后训练复盘：四篇连成系统化训法](sdar-china-rl-timeline.png)
+![国内大厂主动公开 RL 后训练复盘：四篇连成系统化训法](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/sdar-meituan-zju-tsinghua-agentic-rl-2026-05-16/sdar-china-rl-timeline.png)
 
 | 日期 | 出处 | 主题 | 信号意义 |
 |---|---|---|---|

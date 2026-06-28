@@ -21,7 +21,7 @@ tags:
 
 > 2026 年 5 月 9 日下午两点，百度发布文心 5.1。Arena 搜索榜 1223 分（全球第四、国内第一），文本榜 Preview 版 1476 分（前 15 名唯一国产），总参数从 5.0 的 2.4 万亿压到约 8000 亿（1/3），激活参数从约 70B 压到约 35B（1/2），预训练成本只用同规模模型 6%。
 
-![文心 5.1 低成本预训练登顶国内](baidu-ernie-5-1-low-cost-pretrain-2026-05-10.png)
+![文心 5.1 低成本预训练登顶国内](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/baidu-ernie-5-1-low-cost-pretrain-2026-05-10/baidu-ernie-5-1-low-cost-pretrain-2026-05-10.png)
 
 5/9 当天下午，新浪财经两稿、IT 之家、量子位、凤凰、网易、ChinaZ、百度官博 6 家以上同步出稿。值得记一笔的不是某次单独登顶榜单，而是国产基础模型这次同时把参数小一截、成本低一档、分数还在涨这三件事摆上了同一张桌。这个组合 2025 年是分头出现的——DeepSeek 主打低成本，千问主打开源，智谱主打多模态，字节主打规模化。文心 5.1 把这条收敛路径在 2026 年 5 月跑通了。
 
@@ -51,7 +51,7 @@ tags:
 
 四个数字串成一句话——国产基础模型在 2026 年 5 月第一次同时跑出「分数追平海外第二梯队 + 参数小三分之二 + 训练成本只到对手 6%」。这件事的产业含义比单独看一次榜单要厚。
 
-![国产基础模型横评 · 2026 年 5 月在榜分数](ernie-5-1-vendor-comparison.png)
+![国产基础模型横评 · 2026 年 5 月在榜分数](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/baidu-ernie-5-1-low-cost-pretrain-2026-05-10/ernie-5-1-vendor-comparison.png)
 
 把分数和价格一起读，国产模型当下的性价比锚点就出来了。文心 5.1 在搜索榜里和 Claude / GPT 同场过招，输入价 4 元、输出价 18 元（每百万 token），比 GPT-5.5 / Claude Opus 这一档便宜一个数量级；千问 3.6 Max 与 GLM-5.1 在开源 + 长上下文上更激进；DeepSeek V4 Pro 守 1M 长上下文 + MIT 协议；Mistral Medium 3.5 守欧洲合规市场。各跑各的强项，互相不撞车。
 
@@ -59,7 +59,7 @@ tags:
 
 弹性训练这个概念学术圈早有 NestNet、Once-for-All（[原论文](https://arxiv.org/abs/1908.09791)）等先驱方法，核心思路是一次训练得到一族模型，部署时按需抽子模型。文心 5.1 把这个思路从 CV 圈搬进 LLM，并把宽度、深度、稀疏度三档同时改造成可弹性的训练目标。
 
-![多维弹性预训练 · 三维度同时压缩](ernie-5-1-elastic-pretrain.png)
+![多维弹性预训练 · 三维度同时压缩](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/baidu-ernie-5-1-low-cost-pretrain-2026-05-10/ernie-5-1-elastic-pretrain.png)
 
 ### 弹性深度：随机抽样 Transformer 层
 
@@ -85,7 +85,7 @@ MoE 训练时通常 Top-k 是固定常数，比如每个 token 激活 2 个专�
 
 百度 6% 这个数字单看吓人，拆开是几条相对扎实的工程惯例叠加。
 
-![6% 预训练成本如何算 · 同规模模型成本结构](ernie-5-1-cost-breakdown.png)
+![6% 预训练成本如何算 · 同规模模型成本结构](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/baidu-ernie-5-1-low-cost-pretrain-2026-05-10/ernie-5-1-cost-breakdown.png)
 
 ### 成本来源拆解
 
@@ -101,7 +101,7 @@ MoE 训练时通常 Top-k 是固定常数，比如每个 token 激活 2 个专�
 
 ### 文心 5.0 → 5.1 一图看完
 
-![文心 5.0 → 文心 5.1 · 参数压缩 + 性能不退](ernie-5-0-vs-5-1.png)
+![文心 5.0 → 文心 5.1 · 参数压缩 + 性能不退](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/baidu-ernie-5-1-low-cost-pretrain-2026-05-10/ernie-5-0-vs-5-1.png)
 
 把 5.0 和 5.1 摆在一张表里看，能看出几条隐含信号。
 
@@ -153,7 +153,7 @@ MoE 训练时通常 Top-k 是固定常数，比如每个 token 激活 2 个专�
 - **豆包 1.5**——主打「C 端规模化 + 多模态」。字节的渠道优势让豆包在 C 端跑出最大日活，模型能力在 B 端开发者圈讨论度相对低，但商业兑现稳定。
 - **Mistral Medium 3.5**——主打「欧洲合规市场 + 函数调用稳态」。法国厂商，欧盟数据驻留是天然卖点，跟国内五家不直接竞争。
 
-![国产基础模型选型决策矩阵](ernie-5-1-decision-matrix.png)
+![国产基础模型选型决策矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/baidu-ernie-5-1-low-cost-pretrain-2026-05-10/ernie-5-1-decision-matrix.png)
 
 读完这张表的真实结论不是「哪家最强」，而是国产基础模型生态在 2026 年 5 月已经走出了「全员对标 GPT」的初级阶段，开始分化成各有侧重的子赛道。文心 5.1 选了「搜索 + 创意 Agent」这条最贴合百度产品矩阵的路。这种分化对国内开发者是好事——选模型不再是「谁分数高就用谁」，而是「具体场景需要什么强项就选谁」。
 
@@ -240,7 +240,7 @@ curl -X POST "https://qianfan.baidubce.com/v2/chat/completions" \
    万亿俱乐部   Qwen Apache   DeepSeek V3    DeepSeek V4   文心 5.1
 ```
 
-![国产基础模型演化路径 · 2024-2026](ernie-5-1-timeline.png)
+![国产基础模型演化路径 · 2024-2026](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/baidu-ernie-5-1-low-cost-pretrain-2026-05-10/ernie-5-1-timeline.png)
 
 2024 上半年比的是「谁能上万亿参数」；2024 下半年阿里把 Qwen 用 Apache 2.0 开源了一大批，走「开源摊销」路线；2025 上半年 DeepSeek 把成本压到极致，跑通「低成本单点突破」；2025 下半年国产模型在多个 benchmark 上追平海外第一梯队；2026 上半年开始进入「参数压缩 + 成本压缩 + 分数不退」的工程化路径。
 

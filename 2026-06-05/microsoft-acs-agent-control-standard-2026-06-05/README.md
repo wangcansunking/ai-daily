@@ -10,7 +10,7 @@ description: "你现在用 LangChain、CrewAI、OpenAI Agents SDK、MCP 搭智�
 
 # 微软 ACS：给 AI 智能体装上跨框架的统一权限闸门
 
-![一个友好的黏土机器人伸手去够工作台上一排工具，机器人与工具之间立着四道小小的黏土关卡，象征给智能体调用工具的过程设权限](microsoft-acs-agent-control-standard-2026-06-05.png)
+![一个友好的黏土机器人伸手去够工作台上一排工具，机器人与工具之间立着四道小小的黏土关卡，象征给智能体调用工具的过程设权限](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/microsoft-acs-agent-control-standard-2026-06-05/microsoft-acs-agent-control-standard-2026-06-05.png)
 
 你现在多半正在用 LangChain、CrewAI、OpenAI Agents SDK、Anthropic Agents SDK 或者 MCP（模型上下文协议）里的某一个搭 AI 智能体。搭的过程里你一定干过同一件事：手写一段系统提示词，告诉模型「这个工具不能随便调」；再写几行检查代码，拦一拦危险参数；可能还挂了个分类器，给输入输出归个类。
 
@@ -18,7 +18,7 @@ description: "你现在用 LangChain、CrewAI、OpenAI Agents SDK、MCP 搭智�
 
 当地时间 2026 年 6 月 2 日，微软在 Build 2026 大会上开源了一套东西，正好冲着这件事来：**ACS（Agent Control Specification，智能体控制规范）。它是一个开放、厂商中立的标准，MIT 许可证、公开开发，目标是让 20 多个主流框架第一次共用同一套「运行时权限标准」——你写一份策略文件，到处通用，智能体每走一步都留下证据。** 等于给那个到处调工具的智能体，装上一道跨框架统一的权限闸门。
 
-![微软官方配图，展示今天开发者给智能体加护栏的方式很零碎，系统提示词、自定义检查代码、各种分类器各管一段，难以审计也无法跨框架复用](source-acs-todays-guardrails-2026-06-05.jpg)
+![微软官方配图，展示今天开发者给智能体加护栏的方式很零碎，系统提示词、自定义检查代码、各种分类器各管一段，难以审计也无法跨框架复用](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/microsoft-acs-agent-control-standard-2026-06-05/source-acs-todays-guardrails-2026-06-05.jpg)
 
 这篇文章想讲清楚的核心就是这一句反差：**以前每个框架各修各的护栏，换框架就得重写，出了事难审计；ACS 让一份策略文件到处通用、每一步留证据。**
 
@@ -42,7 +42,7 @@ description: "你现在用 LangChain、CrewAI、OpenAI Agents SDK、MCP 搭智�
 
 把这三点放到一起看，你会发现它们其实是同一个问题的三个侧面：管控规则没有一个统一、独立、能被工具读懂的存身之处。它寄生在提示词里、寄生在业务代码里、寄生在分类器的接入逻辑里——哪个框架变了、哪段代码改了，它就跟着碎一次。规则越多、智能体越复杂，这种碎裂就越难收拾。一个真正成熟的做法，应该是把「这个智能体被允许做什么」从具体框架里抽出来，变成一份独立的、谁都能读、到处都认的东西。这正是 ACS 切入的位置。
 
-![微软 ACS 官方文档截图，列出智能体一次任务中的多个拦截点与钩子，从收到输入、调用模型前后到调用工具前后，每一步都能挂上策略检查](source-acs-policy-interception-2026-06-05.png)
+![微软 ACS 官方文档截图，列出智能体一次任务中的多个拦截点与钩子，从收到输入、调用模型前后到调用工具前后，每一步都能挂上策略检查](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/microsoft-acs-agent-control-standard-2026-06-05/source-acs-policy-interception-2026-06-05.png)
 
 这里要说句公道话：临时拼凑不是开发者偷懒，而是过去确实没有一个现成的、框架无关的标准可用。每个智能体框架都有自己的护栏机制，但彼此不通——你在 LangChain 里学会的那套，到了 CrewAI 用不上。能力先跑起来、权限的管控收得不够统一，是这一代智能体工具演进里很自然的一个阶段。ACS 想做的，就是把这个阶段往前推一步。
 
@@ -82,7 +82,7 @@ ACS 和微软这次一起发布的 ASSERT 同属一个叫「open trust stack（�
 3. **工具返回后**——工具把结果吐回来了，先检查这个结果里有没有要脱敏、要拦的内容；
 4. **回复用户前**——最终答复要发出去了，发之前再过一道，确认没有越界、没有泄露。
 
-![自制流程图：ACS 在智能体一次任务里设四道关卡，收输入前、调工具前、工具返回后、回复前，每道关卡都能放行、拦截、脱敏或转人工审批](chart-acs-interception-flow-2026-06-05.png)
+![自制流程图：ACS 在智能体一次任务里设四道关卡，收输入前、调工具前、工具返回后、回复前，每道关卡都能放行、拦截、脱敏或转人工审批](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/microsoft-acs-agent-control-standard-2026-06-05/chart-acs-interception-flow-2026-06-05.png)
 
 这四个时刻是给人理解用的概念骨架。落到官方文档里，钩子分得更细，一共七个：`agent_startup`（智能体启动）、`input`（收到输入）、`pre_model_call`（调用模型前）、`post_model_call`（调用模型后）、`pre_tool_call`（调用工具前）、`post_tool_call`（调用工具后）、`agent_shutdown`（智能体关闭）。从启动到关闭，智能体的整段生命周期都有钩子可挂。
 
@@ -150,15 +150,15 @@ ACS 不是一份只能看的文档，它带着能直接装进项目的插件，�
 - **Microsoft.Extensions.AI**——微软给 .NET 生态准备的 AI 接入层；
 - **MCP（模型上下文协议）工具**——智能体调用外部工具的开放协议。
 
-![科技媒体对微软 ACS 的报道页面，标题大意是微软给开发者一种更好的方式来控制 AI 智能体行为，发布于六月二日](source-techcrunch-acs-2026-06-05.png)
+![科技媒体对微软 ACS 的报道页面，标题大意是微软给开发者一种更好的方式来控制 AI 智能体行为，发布于六月二日](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/microsoft-acs-agent-control-standard-2026-06-05/source-techcrunch-acs-2026-06-05.png)
 
 这串名单里，LangChain、CrewAI、AutoGen、MCP 都是国内开发者每天在用的东西。也就是说，你现在手上的智能体项目，大概率正好落在 ACS 覆盖的范围里，装上插件就能接。
 
-![自制示意图：ACS 的开发套件自带 LangChain、OpenAI Agents SDK、Anthropic Agents SDK、AutoGen、CrewAI、Semantic Kernel、Microsoft.Extensions.AI、MCP 工具八套框架的插件，写一份策略文件即可跨框架通用](chart-acs-frameworks-2026-06-05.png)
+![自制示意图：ACS 的开发套件自带 LangChain、OpenAI Agents SDK、Anthropic Agents SDK、AutoGen、CrewAI、Semantic Kernel、Microsoft.Extensions.AI、MCP 工具八套框架的插件，写一份策略文件即可跨框架通用](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/microsoft-acs-agent-control-standard-2026-06-05/chart-acs-frameworks-2026-06-05.png)
 
 更要紧的是它的开放属性。ACS 是 MIT 许可证、厂商中立、公开开发，而且可以自托管——你不必把数据交给谁的云、不必绑定某一家的服务，就能在自己的环境里跑这套权限标准。对国内团队来说，这一点很实在：**它不是「微软的智能体才有的安全能力」，而是一个谁都能拿、谁都能改、谁都能在自己机器上跑的开放标准。** 国内团队拿来用，门槛和海外开发者是一样的。
 
-![微软 Command Line 官方页面，介绍 ACS 是一套面向 AI 智能体的可移植运行时治理标准](source-acs-hero-2026-06-05.png)
+![微软 Command Line 官方页面，介绍 ACS 是一套面向 AI 智能体的可移植运行时治理标准](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/microsoft-acs-agent-control-standard-2026-06-05/source-acs-hero-2026-06-05.png)
 
 它真正帮你解决的，是把一团模糊的安全焦虑收成一个清清楚楚的工程动作。「我的智能体会不会乱调工具」这种悬在心里的担忧，过去无处下手；现在它变成了一件具体的事——**写一份策略文件**，定义清楚可以做什么、不能做什么、什么时候要人批准、要留哪些证据。焦虑一旦变成一份能写、能审、能复用的文件，就从心头的石头变成了手上的活儿。
 

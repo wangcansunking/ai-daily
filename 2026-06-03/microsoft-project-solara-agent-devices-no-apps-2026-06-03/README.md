@@ -9,7 +9,7 @@ description: "6 月 2 日 Build 2026，微软发布 Project Solara：一套给�
 ---
 # 微软 Project Solara：没有 app，智能体直接接管设备
 
-![微软 Build 2026 发布 Project Solara：给没有 app、智能体直接干活的新一类设备做的操作系统平台](microsoft-project-solara-agent-devices-no-apps-2026-06-03.png)
+![微软 Build 2026 发布 Project Solara：给没有 app、智能体直接干活的新一类设备做的操作系统平台](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/microsoft-project-solara-agent-devices-no-apps-2026-06-03/microsoft-project-solara-agent-devices-no-apps-2026-06-03.png)
 
 6 月 2 日的 Build 2026 上，微软发布了 Project Solara。台上演示的两台设备，都没有一个 app 图标：一枚挂在胸前的智能工牌，一块放在桌上的智能屏。你对它说话，它直接把事情办了。
 
@@ -21,7 +21,7 @@ description: "6 月 2 日 Build 2026，微软发布 Project Solara：一套给�
 
 ## Solara 是什么：给「没有 app」的设备做的操作系统
 
-![Project Solara 把 app 删掉，让智能体直接接管设备，微软视其为继 PC 与手机之后的下一个平台](source-solara-engadget.png)
+![Project Solara 把 app 删掉，让智能体直接接管设备，微软视其为继 PC 与手机之后的下一个平台](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/microsoft-project-solara-agent-devices-no-apps-2026-06-03/source-solara-engadget.png)
 
 *来源：Engadget 关于微软 Project Solara 发布的报道 engadget.com*
 
@@ -35,7 +35,7 @@ Solara 的核心定位，是一套面向「智能体优先」设备的操作系�
 
 ## 现场两台设备：一枚工牌、一块屏，都替你把事办了
 
-![微软 Build 2026 现场演示的 Project Solara 智能工牌与智能屏概念设备](source-solara-techradar.png)
+![微软 Build 2026 现场演示的 Project Solara 智能工牌与智能屏概念设备](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/microsoft-project-solara-agent-devices-no-apps-2026-06-03/source-solara-techradar.png)
 
 *来源：TechRadar 关于 Project Solara 概念设备的报道 techradar.com*
 
@@ -54,7 +54,7 @@ Solara 的核心定位，是一套面向「智能体优先」设备的操作系�
 
 ## 为什么从企业切入，不做手机
 
-![微软把 Project Solara 定位为跳出 PC、走进真实工作场景的下一类计算平台](source-solara-techbuzz.png)
+![微软把 Project Solara 定位为跳出 PC、走进真实工作场景的下一类计算平台](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/microsoft-project-solara-agent-devices-no-apps-2026-06-03/source-solara-techbuzz.png)
 
 *来源：TechBuzz 关于微软发布 Project Solara 智能体设备操作系统的报道 techbuzz.ai*
 

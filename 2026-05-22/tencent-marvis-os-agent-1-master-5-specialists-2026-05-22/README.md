@@ -25,13 +25,13 @@ description: "五月二十一日，腾讯公关总监张军官宣自家操作系
 
 # 腾讯 Marvis 三端上线：1 主 5 专家桌面 Agent
 
-![Marvis 三端同步上线 主管 Agent 协调 5 个专家 Agent 桌面 AI 助手](tencent-marvis-os-agent-1-master-5-specialists-2026-05-22.png)
+![Marvis 三端同步上线 主管 Agent 协调 5 个专家 Agent 桌面 AI 助手](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/tencent-marvis-os-agent-1-master-5-specialists-2026-05-22/tencent-marvis-os-agent-1-master-5-specialists-2026-05-22.png)
 
 ## 这件事的位置
 
 五月二十一日上午，腾讯公司公关总监张军在微博发了一句话：「腾讯出品的操作系统层级 AI 助手『马维斯』正式上工，Windows 端、Mac 端、安卓端版本同步上线。」配图是产品官网 marvis.qq.com，名字叫 Marvis，中文「马维斯」。
 
-![Marvis 官网首屏 marvis-website-hero 真实截图：static.marvis.qq.com 官方 Cover 资源](marvis-website-hero.png)
+![Marvis 官网首屏 marvis-website-hero 真实截图：static.marvis.qq.com 官方 Cover 资源](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/tencent-marvis-os-agent-1-master-5-specialists-2026-05-22/marvis-website-hero.png)
 
 国内媒体 24 小时内跟出 IT 之家、17173、新浪科技、DoNews、AIHub 6 家覆盖。如果只读发布稿，很容易把它当成又一个「AI 桌面助手」——但 Marvis 这次真把功夫下在了一个被国内厂商讲了很久却很少做到的点上：操作系统层级。
 
@@ -74,7 +74,7 @@ description: "五月二十一日，腾讯公关总监张军官宣自家操作系
 
 「操作系统层级」这个词过去两年被国内厂商讲过很多次，绝大多数情况下指的是「在系统通知栏开一个入口、能打开几个 App、能查几条系统信息」。Marvis 这次把它做实了——不是开个入口，而是让 5 个专家 Agent 各自拿一类系统能力。
 
-![Marvis agent-topology 拓扑图：1 主管 Agent + 5 专家 Agent 协作 含调度模型层](agent-topology.png)
+![Marvis agent-topology 拓扑图：1 主管 Agent + 5 专家 Agent 协作 含调度模型层](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/tencent-marvis-os-agent-1-master-5-specialists-2026-05-22/agent-topology.png)
 
 **主 Agent 是这套结构的大脑**。它的职责是接住用户的一句自然语言，做三件事：理解需求、拆解任务、依任务复杂度调度下游 Agent 与模型。DoNews 给出的描述是「全盘统筹，理解需求并拆解任务，调度其他 Agent」。这与 LangGraph 的 supervisor 模式、Anthropic 在 2024 年 12 月发布的 orchestrator-worker pattern 是同一思路：上层做规划与分配，下层各自负责一类实际动作。
 
@@ -94,7 +94,7 @@ description: "五月二十一日，腾讯公关总监张军官宣自家操作系
 
 ## 效率模式 vs 隐私模式：一个由用户掌控的数据流开关
 
-![Marvis 两模式 mode-compare：效率模式端云协同 vs 隐私模式端侧 0 上传 数据流](mode-compare.png)
+![Marvis 两模式 mode-compare：效率模式端云协同 vs 隐私模式端侧 0 上传 数据流](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/tencent-marvis-os-agent-1-master-5-specialists-2026-05-22/mode-compare.png)
 
 两种模式是这次发布里最值得普通用户关心的部分。官网的描述很直接——效率模式「可体验端云协同，又快又准」；隐私模式「可使用端侧大模型，文件 0 上传，最大程度保护你的隐私」。
 
@@ -110,7 +110,7 @@ description: "五月二十一日，腾讯公关总监张军官宣自家操作系
 
 跨端协同是这次发布里被国内媒体讨论最多的一组能力，也是 Marvis 区别于纯桌面助手的核心差异点。
 
-![Marvis cross-device 跨端协同 三个场景：手机看 PC 屏 实时接管 PC 锁屏远程解锁](cross-device.png)
+![Marvis cross-device 跨端协同 三个场景：手机看 PC 屏 实时接管 PC 锁屏远程解锁](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/tencent-marvis-os-agent-1-master-5-specialists-2026-05-22/cross-device.png)
 
 **第一件是手机看 PC 屏**。腾讯官网的原话是「支持手机连接电脑，实时查看电脑任务执行画面，随时可以接管」。落到具体场景：在会议室开会，PC 正在跑一个批量整理本月发票的任务，掏出手机就能看到 PC 屏的实时镜像，知道任务进度。这一条本身不算稀奇——TeamViewer、向日葵这一类远程桌面工具已经把这件事做了十几年，但 Marvis 把它嵌进了 AI Agent 工作流里，意味着手机不只是看画面，更是看 Agent 在做什么、做到第几步。
 
@@ -124,7 +124,7 @@ description: "五月二十一日，腾讯公关总监张军官宣自家操作系
 
 桌面 Agent 这条赛道在 2025 到 2026 年走出了独特的形态——海外以 Microsoft、Apple、Anthropic、OpenAI 为主力，国内以阿里夸克、字节豆包、腾讯 Marvis 为主力，开源侧以 OpenClaw、OpenHuman 为代表。
 
-![桌面 OS Agent desktop-agent-horizontal 横评：平台覆盖 架构 端侧 操控 跨端 权重 人群](desktop-agent-horizontal.png)
+![桌面 OS Agent desktop-agent-horizontal 横评：平台覆盖 架构 端侧 操控 跨端 权重 人群](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/tencent-marvis-os-agent-1-master-5-specialists-2026-05-22/desktop-agent-horizontal.png)
 
 **与微软 Copilot+ PC 对比**。两家走的是非常接近的路线——都瞄准操作系统层级、都做 Agent 调用工具、都接受用户自然语言指令。差异在于：Copilot+ PC 主要绑定 Windows 11 与特定 NPU 硬件，Marvis 直接覆盖 Windows、Mac、安卓三端，iOS 跟进；Copilot Studio 的 Computer Use 走商业订阅，Marvis 当前免费；Copilot 的端侧能力主要靠 NPU 加速，Marvis 直接把 Qwen 端侧权重打包进了隐私模式。腾讯这次给的不是「对标 Copilot+ PC」的产品，是一份比 Copilot+ PC 覆盖面更广、上手门槛更低的同代答卷。
 
@@ -142,7 +142,7 @@ description: "五月二十一日，腾讯公关总监张军官宣自家操作系
 
 5 月 11 日扣子 Coze 2.5、5 月 15 日 OpenHuman、5 月 19 日 OpenClaw、5 月 22 日腾讯 Marvis——12 天之内桌面 / 计算机使用 Agent 这个题目连续被 4 个独立来源命中。这件事不是巧合。
 
-![桌面 Agent n4-meta-signal 12 天 4 连击 国产矩阵真凑齐了 元层信号](n4-meta-signal.png)
+![桌面 Agent n4-meta-signal 12 天 4 连击 国产矩阵真凑齐了 元层信号](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/tencent-marvis-os-agent-1-master-5-specialists-2026-05-22/n4-meta-signal.png)
 
 **4 件事的形态截然不同**。扣子 Coze 2.5 是字节的云端 Agent 平台，目标用户是企业与开发者；OpenHuman 是 TinyHumansAI 团队的开源全本地化桌面 Agent，目标用户是想要数据隐私的极客；OpenClaw 是开源 CLI Agent + Skill 体系，目标用户是命令行工程师；腾讯 Marvis 是闭源商业 OS 层级助手，目标用户是普通办公人群。4 种形态覆盖了云端 / 本地、闭源 / 开源、CLI / 图形界面四组维度，几乎没有相互替代关系。
 
@@ -170,7 +170,7 @@ description: "五月二十一日，腾讯公关总监张军官宣自家操作系
 
 把 12 天内的桌面 Agent 4 连击和当前国内外格局放到一张时间轴上看，这件事的位置就清楚了。
 
-![桌面 Agent desktop-agent-timeline 时间轴：从 Adept ACT-1 到腾讯 Marvis](desktop-agent-timeline.png)
+![桌面 Agent desktop-agent-timeline 时间轴：从 Adept ACT-1 到腾讯 Marvis](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/tencent-marvis-os-agent-1-master-5-specialists-2026-05-22/desktop-agent-timeline.png)
 
 2022 年 Adept ACT-1 首次提出计算机使用 Agent 的概念，2024 年 Anthropic Computer Use 把它做到了商业可用，2025 年 OpenAI Operator / Apple Intelligence / 微软 Copilot+ PC 让这件事成为主流厂商必答题。2026 年第二季度国内一次性出现 4 个产品/项目，把国产桌面 Agent 矩阵补齐到了开源 + 闭源 + CLI + OS 四档全覆盖的程度。
 

@@ -14,7 +14,7 @@ authors:
 
 # 智谱 GLM-5.1 高速版：400 tps 速度赛新档
 
-![智谱 GLM-5.1 高速版 400 tokens/秒 与 TileRT 推理引擎](zhipu-glm-5-1-highspeed-400tps-tilert-2026-05-24.png)
+![智谱 GLM-5.1 高速版 400 tokens/秒 与 TileRT 推理引擎](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/zhipu-glm-5-1-highspeed-400tps-tilert-2026-05-24/zhipu-glm-5-1-highspeed-400tps-tilert-2026-05-24.png)
 
 > 5 月 22 日，智谱发布 GLM-5.1 高速版 API（模型 ID `GLM-5.1-highspeed`），实测输出速度 **400 tokens/秒**——是同档千问 Qwen3.7-Max（194.9 tps）的 2.1 倍、深度求索（DeepSeek）V4 Flash（108.8 tps）的 3.7 倍、月之暗面 Kimi K2.6（65.8 tps）的 6.1 倍。能力对齐 GLM-5.1 旗舰版（不阉割），上下文 200K、最大输出 128K。工程归因：智谱 GLM 团队和 TileRT 团队联合做的**自研推理引擎**，把推理调度从「运行时动态」搬到「编译期 AOT 静态」，让推理过程在 GPU 上常驻化。目前面向智谱 MaaS（BigModel）平台的部分企业客户开放试点，未公开零售 API 价。
 
@@ -26,7 +26,7 @@ authors:
 
 写在最前面——这次发布的是 **API 服务**（企业试点），不是开源权重。智谱不会把 GLM-5.1 高速版的模型权重或 TileRT 引擎代码放到 HuggingFace 或 GitHub 上；想用的国内开发者需要走智谱 BigModel 平台的企业接洽通道。这对国内本地化部署的同行不算友好——你拿不到权重、跑不了本地推理；但这是当下"旗舰能力 + 旗舰速度"商业模式的现实选择，过两个月零售 API 开放后会更友好。
 
-![智谱 GLM-5.1 高速版 30 秒生成完整网页 demo（量子位实测截图）](glm-5-1-highspeed-qbitai-demo-1.png)
+![智谱 GLM-5.1 高速版 30 秒生成完整网页 demo（量子位实测截图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/zhipu-glm-5-1-highspeed-400tps-tilert-2026-05-24/glm-5-1-highspeed-qbitai-demo-1.png)
 
 ## 一、400 tps 是什么样的速度：从打字感到流式直出的临界点
 
@@ -43,15 +43,15 @@ authors:
 
 量子位做的一组实测最直观。智谱团队现场让 GLM-5.1 高速版生成「呼吸星云粒子效果」的完整 HTML/CSS/JS 网页代码（约 600 行），按官方公告数据 **30 秒生成完整页面**，模糊指令（「再快一点」「再柔一点」）下的迭代响应都在 5 秒内。同样的代码量给到对位国内模型，普遍要 60-180 秒。
 
-![GLM-5.1 高速版迭代响应：模糊指令秒级迭代 UI 参数（量子位实测截图）](glm-5-1-highspeed-qbitai-iterative.png)
+![GLM-5.1 高速版迭代响应：模糊指令秒级迭代 UI 参数（量子位实测截图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/zhipu-glm-5-1-highspeed-400tps-tilert-2026-05-24/glm-5-1-highspeed-qbitai-iterative.png)
 
 更值得国内 Agent 开发者关注的是**实时游戏逻辑调整**这个 demo——量子位测试者一边玩着 GLM-5.1 高速版当场生成的小游戏（俄罗斯方块 + 自定义规则），一边用自然语言指挥「现在让方块下落速度变成两倍」「随机让一个方块变成炸弹」，模型实时改代码、热更新进游戏逻辑，整个修改循环不到 3 秒一轮。**这种"边玩边改"的交互密度，在 100 tps 档位下是做不出来的**——光等代码输出完，玩家就跳出去了。
 
-![GLM-5.1 高速版实时改游戏逻辑 demo（量子位实测截图）](glm-5-1-highspeed-qbitai-game-demo.png)
+![GLM-5.1 高速版实时改游戏逻辑 demo（量子位实测截图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/zhipu-glm-5-1-highspeed-400tps-tilert-2026-05-24/glm-5-1-highspeed-qbitai-game-demo.png)
 
 第三个 demo 是**万字内容秒出**。智谱官方公告中的这个场景：给 GLM-5.1 高速版一篇 8000 字的会议纪要，让它一次性输出 5 类衍生内容——海报标题 5 条、短视频文案 3 篇、宣传语 10 条、公众号文案 1 篇 800 字、JSON 结构化汇总。总输出 token 量约 3500，**10 秒内全部完成**。同样的任务给到 Kimi K2.6（65.8 tps），需要 53 秒；给到 DeepSeek V4 Flash（108.8 tps），需要 32 秒。
 
-![GLM-5.1 高速版万字内容 10 秒输出 5 类衍生内容 demo（量子位实测截图）](glm-5-1-highspeed-qbitai-wanzi-demo.png)
+![GLM-5.1 高速版万字内容 10 秒输出 5 类衍生内容 demo（量子位实测截图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/zhipu-glm-5-1-highspeed-400tps-tilert-2026-05-24/glm-5-1-highspeed-qbitai-wanzi-demo.png)
 
 注意一个口径——**400 tps 是输出速度（output speed），不是首 token 延迟（TTFT）**。这两个数字测的是不同环节：TTFT 是从请求发出到第一个 token 返回的时间，主要受网络、调度、prompt processing 影响；output speed 是 token 之间的生成速度，主要受模型架构、推理引擎、GPU 利用率影响。GLM-5.1 高速版的 TTFT 大约 300 毫秒（智谱官方未公开精确值，量子位实测推算），处于国内旗舰 API 的中上水平；真正改变体验的是后面的 400 tps 持续输出。
 
@@ -65,7 +65,7 @@ authors:
 
 这句话信息密度很高，得拆开看才能理解为什么它能做到 400 tps。
 
-![TileRT 推理引擎：从运行时动态调度到编译期 AOT 静态编排](glm-5-1-highspeed-tilert-architecture.png)
+![TileRT 推理引擎：从运行时动态调度到编译期 AOT 静态编排](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/zhipu-glm-5-1-highspeed-400tps-tilert-2026-05-24/glm-5-1-highspeed-tilert-architecture.png)
 
 **传统推理方案是这样**：模型推理是一连串算子（Attention、MoE Router、Expert FFN、AllReduce、LayerNorm 等）按顺序执行；每个算子由推理引擎在运行时（Runtime）动态调度，单独 launch 一个 GPU kernel。每次 kernel launch 都有开销（约 5-20 微秒），算子之间 GPU 还要等调度器决定下一步做什么。对于一个 MoE 大模型，一次 forward pass 可能涉及上百个 kernel launch，开销叠加起来非常可观。这是 vLLM、SGLang 这类主流推理引擎的标准做法——通用性好，但 GPU 利用率上限受限。
 
@@ -89,7 +89,7 @@ authors:
 
 下面这组数据按 2026-05-23 公开来源整理，主要来自 artificialanalysis.ai 第三方实测、各家官方公开延迟值、量子位现场实测。**所有数字带"截至 2026-05-23"的时间戳**——大模型速度赛节奏快，一周后这张表可能就需要更新。
 
-![GLM-5.1 高速版 400 tps vs 国内 5 家旗舰 API 输出速度 comparison（截至 2026-05-23）](glm-5-1-highspeed-speed-comparison.png)
+![GLM-5.1 高速版 400 tps vs 国内 5 家旗舰 API 输出速度 comparison（截至 2026-05-23）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/zhipu-glm-5-1-highspeed-400tps-tilert-2026-05-24/glm-5-1-highspeed-speed-comparison.png)
 
 | 模型 | 输出速度（tps） | TTFT | 上下文 | 商业可用性 | 工程归因 |
 |---|---|---|---|---|---|
@@ -118,7 +118,7 @@ authors:
 
 来算一笔账。假设一个典型的 Coding agent 工作流：5 轮工具调用，每轮模型需要看 1K token 上下文、输出 800 token 决策与代码片段。**端到端延迟 ≈ 5 × (TTFT + 800 ÷ 输出速度)**。
 
-![5 轮 Agent 工作流端到端延迟横评](glm-5-1-highspeed-agent-latency.png)
+![5 轮 Agent 工作流端到端延迟横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/zhipu-glm-5-1-highspeed-400tps-tilert-2026-05-24/glm-5-1-highspeed-agent-latency.png)
 
 按 6 家旗舰 API 数据代入：
 
@@ -142,7 +142,7 @@ authors:
 
 值得提的一点是 **UI 实时迭代**这个新形态。量子位实测里，开发者一边看 GLM-5.1 高速版生成的网页效果，一边用自然语言反复说「再淡一点」「再快一点」「换个颜色」，模型每次响应 3-5 秒。这种**边说边改、边改边看**的交互密度，过去只有在 Figma、Photoshop 这类直接操作型工具里才有；现在 LLM 的速度档位拉到 400 tps，"对话式 UI 设计"成了可能。这条曲线对国内做产品 Designer Tool 的团队是新的增量空间。
 
-![GLM-5.1 高速版完整 demo 输出结果](glm-5-1-highspeed-qbitai-output.png)
+![GLM-5.1 高速版完整 demo 输出结果](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/zhipu-glm-5-1-highspeed-400tps-tilert-2026-05-24/glm-5-1-highspeed-qbitai-output.png)
 
 ## 五、企业试点 vs 零售 API：智谱的两轨产品策略
 

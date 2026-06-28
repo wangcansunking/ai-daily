@@ -32,7 +32,7 @@ cover: 18.png
 
 # I/O 倒计时 · Grok Build 入局 AI Coding | AI 日报 | 2026-05-18
 
-![Agent 接管桌面 · 国产 Coding 工作台 · daily report 2026-05-18](18.png)
+![Agent 接管桌面 · 国产 Coding 工作台 · daily report 2026-05-18](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/daily/18.png)
 
 ## 📋 头版目录（一屏扫完今日）
 
@@ -72,7 +72,7 @@ cover: 18.png
 
 ## 🔥 头条一：Google I/O 2026 主 keynote 倒计时 24 小时——Gemini Omni 视频 + Android XR 眼镜 + Aluminium OS 三线同发
 
-![Google I/O 2026 keynote 倒计时三线发布时序 daily 2026-05-18 io 2026 timeline](daily-2026-05-18-io-2026-timeline.png)
+![Google I/O 2026 keynote 倒计时三线发布时序 daily 2026-05-18 io 2026 timeline](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/daily/daily-2026-05-18-io-2026-timeline.png)
 
 > **核心论断**：Google I/O 2026 主 keynote 5/19 PT 10am 不再是「上一年发的产品做个 1.x 版本号迭代」式的开发者大会——这一次是 **AI 模型（Gemini Omni）+ 智能终端（Android XR 眼镜）+ 操作系统（Aluminium OS / Googlebook）三线同发**，是 Google 历年 I/O 最罕见的「全栈推产品」节奏。Gemini Omni UI 字符串提前漏到生产环境、Gemini 3.2 Flash 隐藏路由跑出 <200ms 响应、Android XR 眼镜首次正式 demo——三件事任一上线都是单场 keynote 的头条，今年一次性都来。
 
@@ -127,7 +127,7 @@ Google 早在 5 月 12 日 Android Show 已经提前预告：I/O 2026 主舞台�
 
 ## 🔥 头条二：xAI Grok Build 入局，AI Coding 四国杀正式升级
 
-![Grok Build vs Claude Code vs Codex 三家 AI Coding 工具对比](daily-2026-05-18-ai-coding-quad-compare.png)
+![Grok Build vs Claude Code vs Codex 三家 AI Coding 工具对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/daily/daily-2026-05-18-ai-coding-quad-compare.png)
 
 > **核心论断**：5 月 14 日 xAI 把 Grok Build 推到 SuperGrok Heavy 公开 beta，意味着 **AI Coding 命令行客户端的战场从 Claude Code / Codex / 通义灵码 / Cursor 这一档「三国杀 + 国产」格局，正式升级成四家全栈玩家**——Anthropic（Claude Code）、OpenAI（Codex）、xAI（Grok Build）、Google（Gemini Code Assist + I/O 2026 Agentic Coding 专场）。Grok Build 的产品定位与价格不是「再做一个」，而是直接拿 Grok 4.3 beta 的 200 万 Token 上下文 + 16-agent Heavy 架构作硬件优势，正面切到 Claude Code Max 与 Codex Heavy 的腹地。
 
@@ -193,7 +193,7 @@ OpenAI 这边也没闲着——Sam Altman 5/17 在 X 上公开喊话「想从 Cl
 
 ## 🎙 名人说 & X 热议
 
-![HN 5月17日三条顶贴：开发者真实体感切片 daily 2026-05-18 hn three top posts](daily-2026-05-18-hn-three-top-posts.png)
+![HN 5月17日三条顶贴：开发者真实体感切片 daily 2026-05-18 hn three top posts](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/daily/daily-2026-05-18-hn-three-top-posts.png)
 
 ### Karpathy 5/16 Sequoia Ascent 2026：「资深程序员从未如此落后」
 
@@ -224,7 +224,7 @@ Simon Willison（[simonwillison.net](https://simonwillison.net/)）5/17 周日�
 
 ### 🔴 必读：Achieving Gold-Medal-Level Olympiad Reasoning：30B-A3B + 340K 轨迹 + 200 步 RL 三金
 
-![Achieving Gold-Medal-Level Olympiad Reasoning 三金统计 daily 2026-05-18 olympiad 30b three gold](daily-2026-05-18-olympiad-30b-three-gold.png)
+![Achieving Gold-Medal-Level Olympiad Reasoning 三金统计 daily 2026-05-18 olympiad 30b three gold](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/daily/daily-2026-05-18-olympiad-30b-three-gold.png)
 
 [arXiv 2605.13301](https://arxiv.org/abs/2605.13301) Yafu Li 等团队挂出 *Achieving Gold-Medal-Level Olympiad Reasoning via Simple and Unified Scaling*——本周 HuggingFace Papers 周榜登顶 140 赞。论文核心数字：
 
@@ -273,7 +273,7 @@ Simon Willison（[simonwillison.net](https://simonwillison.net/)）5/17 周日�
 
 ## 🇨🇳 国内 AI 观察
 
-![国内 AI 五月动态矩阵 价格 折扣 调用量 daily 2026-05-18 china pricing matrix](daily-2026-05-18-china-pricing-matrix.png)
+![国内 AI 五月动态矩阵 价格 折扣 调用量 daily 2026-05-18 china pricing matrix](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/daily/daily-2026-05-18-china-pricing-matrix.png)
 
 ### 阿里 Qoder 1.0 国产首发 Quest 任务工作台 · 与海外路线对比
 
@@ -281,7 +281,7 @@ Simon Willison（[simonwillison.net](https://simonwillison.net/)）5/17 周日�
 
 ## 📦 GitHub Trending
 
-![GitHub Trending 六款项目实测 stars 与定位 daily 2026-05-18 github trending six](daily-2026-05-18-github-trending-six.png)
+![GitHub Trending 六款项目实测 stars 与定位 daily 2026-05-18 github trending six](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/daily/daily-2026-05-18-github-trending-six.png)
 
 > 全部 star 数 2026年5月18日 当日实测，绝对不依赖搜索缓存。
 

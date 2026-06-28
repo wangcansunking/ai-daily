@@ -17,7 +17,7 @@ description: "2026-05-28，法国 Mistral 在巴黎首届 AI Now Summit 把对�
 ---
 # Vibe for Code 来了：Mistral 从只做模型转身做全栈
 
-![Mistral 在巴黎首届 AI Now Summit 把对话助手升级为全栈智能体平台 Vibe](mistral-vibe-fullstack-coding-agent-2026-05-30.png)
+![Mistral 在巴黎首届 AI Now Summit 把对话助手升级为全栈智能体平台 Vibe](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/mistral-vibe-fullstack-coding-agent-2026-05-30/mistral-vibe-fullstack-coding-agent-2026-05-30.png)
 
 > 当地时间 2026 年 5 月 28 日，法国 Mistral 在巴黎办了首届 AI Now Summit，做的不是又发一个跑分更高的模型——而是宣布自己不再「只做模型」。一个判断先放在这里：**Mistral 这步棋的真正看点，是一家欧洲模型公司决定把上面的应用、下面的算力、旁边的行业，全都自己做一遍。** 对每天用 Cursor、Claude Code 的国内开发者来说，最值得盯的是它新开的那条编码智能体线——Vibe for Code。
 
@@ -29,11 +29,11 @@ description: "2026-05-28，法国 Mistral 在巴黎首届 AI Now Summit 把对�
 
 这不是参数竞赛的故事，而是一家欧洲公司选择了一条和单纯比榜单分数不同的路。下面分四块讲清楚：Vibe 这个平台到底是什么、开发者最该看的 Vibe for Code 和大家熟悉的工具差在哪、工业 AI 与自建算力这两条新线意味着什么、以及国内开发者能不能用、怎么看。
 
-![Mistral 在巴黎首届 AI Now Summit 上的官方主视觉](source-mistral-summit-hero.jpg)
+![Mistral 在巴黎首届 AI Now Summit 上的官方主视觉](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/mistral-vibe-fullstack-coding-agent-2026-05-30/source-mistral-summit-hero.jpg)
 
 *来源：Mistral 官网 AI Now Summit 2026 主视觉*
 
-![Mistral 全栈四层版图：应用、行业、模型、算力四层这次都要自己做](mistral-fullstack-stack-2026-05-30.png)
+![Mistral 全栈四层版图：应用、行业、模型、算力四层这次都要自己做](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/mistral-vibe-fullstack-coding-agent-2026-05-30/mistral-fullstack-stack-2026-05-30.png)
 
 上面这张图是这篇文章的主线：过去 Mistral 主要占「模型层」这一格，这次往上做应用、往下做算力，四层全占齐。后面每一节都在为这条主线补证据。
 
@@ -68,7 +68,7 @@ Le Chat 从 2024 年 2 月上线到现在，定位一直是对话助手。这次
 
 对国内读者而言，Vibe for Work 这条线本身不一定能直接用上，但它给出了一个清晰的样本：**海外办公智能体已经从「写一段文案」进化到「编排一整天的固定流程」，这是衡量办公类 AI 产品成熟度的一把新尺子。**
 
-![Mistral 官方在 AI Now Summit 上展示 Vibe 平台的物料](source-mistral-vibe-og.jpg)
+![Mistral 官方在 AI Now Summit 上展示 Vibe 平台的物料](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/mistral-vibe-fullstack-coding-agent-2026-05-30/source-mistral-vibe-og.jpg)
 
 *来源：Mistral 官网 Vibe 产品页配图*
 
@@ -82,7 +82,7 @@ Vibe for Code 的产品形态，国内开发者其实很熟悉：它不是另起
 
 这套「编辑器扩展 + 终端 + 后台智能体」的组合，和 Cursor 的独立 IDE 路线、Claude Code 的命令行路线、通义灵码的编辑器插件路线各有侧重。把这五款放在一张表里横着看最清楚：
 
-![五款编码智能体横向对比：Vibe for Code、Cursor、Claude Code、通义灵码、Trae](mistral-vibe-coding-agent-compare-2026-05-30.png)
+![五款编码智能体横向对比：Vibe for Code、Cursor、Claude Code、通义灵码、Trae](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/mistral-vibe-fullstack-coding-agent-2026-05-30/mistral-vibe-coding-agent-compare-2026-05-30.png)
 
 表里有三处差异最该看：
 
@@ -104,7 +104,7 @@ Vibe for Code 的产品形态，国内开发者其实很熟悉：它不是另起
 
 先看工业 AI。Mistral 这次明确把大模型推向航空航天、汽车、半导体三个重制造业方向，点名的客户都是欧洲工业的招牌：
 
-![工业 AI 三家欧洲制造业客户：空客、宝马集团、阿斯麦](mistral-industrial-customers-2026-05-30.png)
+![工业 AI 三家欧洲制造业客户：空客、宝马集团、阿斯麦](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/mistral-vibe-fullstack-coding-agent-2026-05-30/mistral-industrial-customers-2026-05-30.png)
 
 - **空客（Airbus，法国 / 欧洲）**：合作从民航客机扩展到直升机、防务、航天业务，官方强调客户对关键数据保持完全自主控制
 - **宝马集团（BMW Group，德国）**：成为其「大型工业模型」（Large Industry Model）计划的核心伙伴，用在碰撞仿真等研发场景
@@ -166,7 +166,7 @@ Mistral 过去最让开发者记住的，是它持续放出开放权重的模型
 
 公司公布的营收目标也呼应了这个野心：2026 年瞄准约 10 亿欧元，较上一年约 2 亿欧元营收设定了约 5 倍的跃迁目标，团队规模约 1000 人。
 
-![Mistral 2026 营收目标：瞄准约 10 亿欧元，较上一年约 2 亿欧元设定约 5 倍跃迁](mistral-revenue-leap-2026-05-30.png)
+![Mistral 2026 营收目标：瞄准约 10 亿欧元，较上一年约 2 亿欧元设定约 5 倍跃迁](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/mistral-vibe-fullstack-coding-agent-2026-05-30/mistral-revenue-leap-2026-05-30.png)
 
 数字只是结果，背后的产品和路线选择才是看点。对每天在编辑器里跟编码智能体打交道的国内开发者来说，Vibe for Code 暂时还不是清单里的常用项，但它和 Cursor、Claude Code、通义灵码、Trae 摆在一起，恰好画出了这条赛道的全貌：**形态在收敛（都往编辑器和终端里钻），差异点在往「部署在哪、数据归谁」上转移。**
 

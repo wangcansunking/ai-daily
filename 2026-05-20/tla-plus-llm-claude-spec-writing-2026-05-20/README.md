@@ -27,7 +27,7 @@ description: "五月十三日 MongoDB 老工程师 A. Jesse Jiryu Davis 发了�
 
 # 用 Claude 写 TLA+ 形式规约：分布式系统老炮工具下放给普通后端
 
-![TLA+ 形式规约语言 Claude 大模型协作 低多边形封面](tla-plus-llm-claude-spec-writing-2026-05-20.png)
+![TLA+ 形式规约语言 Claude 大模型协作 低多边形封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/tla-plus-llm-claude-spec-writing-2026-05-20/tla-plus-llm-claude-spec-writing-2026-05-20.png)
 
 ## 这一次的转折点
 
@@ -67,7 +67,7 @@ description: "五月十三日 MongoDB 老工程师 A. Jesse Jiryu Davis 发了�
 
 > 截图来自原文 ※ 作者博客封面 + 数豆子规约 Claude 生成片段
 >
-> ![A. Jesse Jiryu Davis 原博客封面 robot square](tla-plus-emptysqua-og.jpg)
+> ![A. Jesse Jiryu Davis 原博客封面 robot square](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/tla-plus-llm-claude-spec-writing-2026-05-20/tla-plus-emptysqua-og.jpg)
 
 ## TLA+ 是什么 · 用数豆子讲清楚
 
@@ -85,7 +85,7 @@ description: "五月十三日 MongoDB 老工程师 A. Jesse Jiryu Davis 发了�
 
 把状态机的四件套拆开看：
 
-![TLA+ 形式规约的四件套 状态机视角](tla-plus-llm-state-machine.png)
+![TLA+ 形式规约的四件套 状态机视角](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/tla-plus-llm-claude-spec-writing-2026-05-20/tla-plus-llm-state-machine.png)
 
 第一件，**变量**。w 和 b 两个自然数。
 
@@ -97,7 +97,7 @@ description: "五月十三日 MongoDB 老工程师 A. Jesse Jiryu Davis 发了�
 - 抽到两黑：要求 b ≥ 2，下一步 b' = b − 2，w' = w + 1（黑变白，白多一颗）
 - 一黑一白：要求 w ≥ 1 且 b ≥ 1，下一步 w' = w − 1，b' = b（净减一颗白豆）
 
-![数豆子规则的三种动作 状态转换示意](tla-plus-llm-bean-puzzle.png)
+![数豆子规则的三种动作 状态转换示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/tla-plus-llm-claude-spec-writing-2026-05-20/tla-plus-llm-bean-puzzle.png)
 
 第四件，**性质**。我们关心的是「总数永远不等于零」。用 TLA+ 的时序逻辑写出来就是一句：□ (w + b > 0)，意思是「在所有可达状态里，w + b 永远大于零」。
 
@@ -119,13 +119,13 @@ TLA+ 设计于一九九零年代初。Leslie Lamport 在二零一三年拿了图
 
 **第四层 · 工程文化关。**国内大厂的分布式系统团队，在过去十年里学的是「拼测试覆盖率 + 拼 chaos engineering + 拼线上观测」。这条路线是工程范式，TLA+ 是数学范式。两边对「我怎么知道我的系统是对的」这个问题给的答案不一样。工程范式的答案是「我把它跑出来的全部已知坏情况都测过」，数学范式的答案是「我证明了不可能出现坏情况」。两者并不互斥，但在团队优先级里，国内大多数厂选了前者。
 
-![TLA+ 上手门槛 大模型出现前后对比](tla-plus-llm-onboarding-compare.png)
+![TLA+ 上手门槛 大模型出现前后对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/tla-plus-llm-claude-spec-writing-2026-05-20/tla-plus-llm-onboarding-compare.png)
 
 ## AWS · Cosmos DB · MongoDB · DynamoDB 抓到了什么 bug
 
 要理解 TLA+ 真实的工程价值，看四家海外公司在它上面投了多少工 + 抓到了什么 bug，比看任何教程都直观。
 
-![四家海外公司用 TLA+ 抓到的 bug 类型](tla-plus-llm-aws-case-grid.png)
+![四家海外公司用 TLA+ 抓到的 bug 类型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/tla-plus-llm-claude-spec-writing-2026-05-20/tla-plus-llm-aws-case-grid.png)
 
 **Amazon S3。**二零一一年开始用 TLA+。Newcombe 等人在二零一五年发表于 ACM 通讯第五十八卷的论文「How Amazon Web Services Uses Formal Methods」里写得很清楚：S3 的对象存储一致性 + 后台垃圾回收两块逻辑，在还没上线前用 TLA+ 抓到了一类极端情况下会丢数据的 bug。这个 bug 在生产环境复现需要每个对象做几亿次操作——意思是即使上线两年也未必能在测试中撞到。
 
@@ -179,7 +179,7 @@ Wayne 给的具体失败例子很扎心：大模型写的 TLA+ 规约里会引�
 
 Hacker News 上这篇博客的讨论，恰好分成三派，把全行业对「大模型 + TLA+」这件事的判断范围画得很清楚。
 
-![HN 八十一分二十评论的三派声音](tla-plus-llm-hn-voices.png)
+![HN 八十一分二十评论的三派声音](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/tla-plus-llm-claude-spec-writing-2026-05-20/tla-plus-llm-hn-voices.png)
 
 **第一派 · 大模型解锁了门槛派。**代表评论来自用户 baq：「就算只有一个用户，只要前后端分离，你就已经在分布式系统领域；大模型把入门门槛降下来本身就是改进——它不需要每次都完美，只要它出来的东西比人脑空想可靠就够了。」这一派把大模型当作 onboarding 工具，认为它能把过去望而却步的工程师拉进门来。
 
@@ -193,7 +193,7 @@ Hacker News 上这篇博客的讨论，恰好分成三派，把全行业对「�
 
 国内分布式系统团队对 TLA+ 的真实使用情况，是这篇文章最难写的一段——**公开可查的口径很有限。**国内大厂（蚂蚁 OceanBase、字节、腾讯云、阿里中间件、美团）有没有内部用 TLA+ 验证一致性算法，业内传言肯定有，但具体仓库和具体 bug 案例几乎不公开。所以本节限定在「公开博客 + 知乎 + 公司技术站 + 学术论文有可查记录」这条严口径上。
 
-![国内分布式系统 TLA+ 公开实践地图](tla-plus-llm-china-public-record.png)
+![国内分布式系统 TLA+ 公开实践地图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/tla-plus-llm-claude-spec-writing-2026-05-20/tla-plus-llm-china-public-record.png)
 
 **阿里云开发者社区。**「形式化验证工具 TLA+ 程序员视角的入门之道」一文是国内 TLA+ 第一入门门户，二零二一年发布，累计阅读破十万。文章把 PlusCal 的核心概念用程序员熟悉的伪代码讲清楚，是中文圈最被引用的入门资料。
 

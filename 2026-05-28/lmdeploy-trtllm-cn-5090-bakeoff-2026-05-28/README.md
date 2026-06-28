@@ -11,7 +11,7 @@ cover: lmdeploy-trtllm-cn-5090-bakeoff-2026-05-28.png
 
 # LMDeploy 0.13 跑 5090：千问 Coder 30B 实战
 
-![上海人工智能实验室 LMDeploy 与英伟达 TensorRT-LLM 在 RTX 5090 上跑千问 Coder 的本周横评](lmdeploy-trtllm-cn-5090-bakeoff-2026-05-28.png)
+![上海人工智能实验室 LMDeploy 与英伟达 TensorRT-LLM 在 RTX 5090 上跑千问 Coder 的本周横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/lmdeploy-trtllm-cn-5090-bakeoff-2026-05-28/lmdeploy-trtllm-cn-5090-bakeoff-2026-05-28.png)
 
 ## 30 秒速览：本周两件事把 5090 这条路重画了
 
@@ -79,7 +79,7 @@ LMDeploy 官方在 README 与文档里反复提三组吞吐数字，都来自上
 
 对照之下，5 月 25 日横评里我们引用的 Cloudrift（5090 + Qwen3-Coder-30B-A3B AWQ + vLLM/SGLang，2026-03-05）拿到的硬数字是：vLLM 默认 8K context 555.82 tok/s、调优 MCR=16 + 114K context 拉到 1,157 tok/s、峰值 MCR=24 1,186 tok/s；SGLang 默认 207.93 tok/s（需 `--quantization moe_wna16`）。原文 verbatim："vLLM wins by 2.7x. SGLang requires `--quantization moe_wna16` for AWQ MoE models and currently underperforms on this architecture."
 
-![RTX 5090 跑千问 Coder 30B 四引擎吞吐对照图](engine-throughput-5090-chart-2026-05-28.png)
+![RTX 5090 跑千问 Coder 30B 四引擎吞吐对照图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/lmdeploy-trtllm-cn-5090-bakeoff-2026-05-28/engine-throughput-5090-chart-2026-05-28.png)
 
 LMDeploy 在这张对照图上的位置，**只能基于官方 H800 1.5 倍 vLLM 主张做线性推断**：如果 5090 上的相对优势能维持，LMDeploy 在 8K context 默认配置下理论吞吐约 833 tok/s、调优后理论上限约 1,735 tok/s。但 5090 的 sm_120 跟 H800 的 sm_90 是不同架构、TurboMind 的算子优化曲线在两块卡上不可能简单线性套用——这个推断只能当作社区复测前的占位，不是结论。
 
@@ -101,7 +101,7 @@ TensorRT-LLM 的情况类似：v1.3rc16 把 Qwen3.5 MTP 投机解码合进主线
 | 2026-05-15 | 中国特供版渠道价 | 逼近 3.4 万元 | 新浪科技 |
 | 2026-05 在售 | 微星泰坦 16 MAX 整机 | 35,999 元首销 | IT 之家 |
 
-![RTX 5090 国行价格 2026 年 5 月走势](5090-cn-price-trend-2026-05-28.png)
+![RTX 5090 国行价格 2026 年 5 月走势](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/lmdeploy-trtllm-cn-5090-bakeoff-2026-05-28/5090-cn-price-trend-2026-05-28.png)
 
 这一波涨价的直接结果是：5090 整机方案与 Mac Studio M4 Max 64GB 的价差进一步缩窄；之前 5090 整机 1.6 万 vs Mac Studio M4 Max 64GB 1.65 万的紧贴关系，本周变成 5090 整机 1.8 万开外、Mac Studio M4 Max 64GB 反而成了便宜选项。对正在选硬件的小团队 CTO，这一信号比任何引擎吞吐数字都更直接。
 

@@ -10,14 +10,14 @@ cover: deepseek-shitu-mode-domestic-vision.png
 
 # 国产大模型最后一只眼睁开了：DeepSeek 识图模式
 
-![DeepSeek 识图模式 UI 灰度截图](deepseek-shitu-mode-domestic-vision.png)
+![DeepSeek 识图模式 UI 灰度截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/deepseek-shitu-mode-domestic-vision/deepseek-shitu-mode-domestic-vision.png)
 *封面图：识图模式与"快速模式""专家模式"并列，提示「图片理解功能内测中」。*
 
 **4 月 29 日下午，DeepSeek 多模态团队负责人陈小康在 X 上发了一句 "Now, we see you. 👀"，配图是两只 DeepSeek 鲸鱼标志——左边那只还戴着眼罩，右边那只眼睛睁开了。** 同一时段，部分用户在 DeepSeek 官方 App 的输入栏上方，灰度到了一个新按钮：识图模式（标注「图片理解功能内测中」）。这是 DeepSeek 主线产品首次具备图像理解能力。
 
 V4 上线只过去 5 天。**4 月 24 日 DeepSeek-V4 预览版发布时，模型架构本身仍是纯文本——总参数 1.6 万亿、激活 490 亿、百万 token 上下文均为标准配置，但视觉理解模块没有进 V4 主干。** 量子位 4 月 30 日的实测确认：识图模式更接近「挂载在 V4 主干上的视觉理解模块」，而不是原生多模态生成。陈小康在被删的 4 月 28 日预告「Soon, we see you」之后，第二天补了第二条「Now, we see you」——产品节奏给得很清楚。
 
-![识图模式实测 - 网页截图转 HTML](deepseek-shitu-html-test.webp)
+![识图模式实测 - 网页截图转 HTML](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/deepseek-shitu-mode-domestic-vision/deepseek-shitu-html-test.webp)
 *识图模式实测：上传一张网页截图，可直接复原可用 HTML 代码与按钮结构。图源：量子位 4/30 实测稿。*
 
 ## 鲸鱼睁眼这一步，国内已经只剩 DeepSeek 没走
@@ -32,14 +32,14 @@ DeepSeek 这次走视觉理解模块挂载、不直接做原生多模态融合�
 
 量子位 4 月 30 日的鱼羊跑了一遍完整测试集，落在 5 个场景上：OCR、表格识别、网页截图转代码、隐藏图片检测、色盲测试。**OCR 稳——技术报告摘要的中英文混排能正确提取**；表格识别格式化输出正确；网页截图转 HTML 不仅复原了结构，连按钮交互逻辑都还原出来。
 
-![识图模式实测 - 表格识别](deepseek-shitu-table-test.webp)
+![识图模式实测 - 表格识别](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/deepseek-shitu-mode-domestic-vision/deepseek-shitu-table-test.webp)
 *识图模式实测：表格识别 + 格式化输出。图源：量子位 4/30 实测稿。*
 
 弱项在空间推理。**正方体拼合题 4 分多钟才出结果，找不同任务（标准答案 7 处）模型给出 12 处，明显幻觉**。这条短板和国内其他视觉模型早期版本类似，属于训练阶段视觉-语言对齐的常见问题，预计随后续迭代收敛。色盲测试的偶发翻车也属于同一类原因。
 
 值得专门说一段网页截图转代码这件事。**量子位实测里上传一张博客落地页截图，识图模式输出的 HTML 不仅复原了三栏布局、卡片阴影、按钮悬浮态，连导航栏的下拉折叠逻辑都猜对了**。这个能力对前端工程师价值巨大——把竞品页面或设计稿截图丢进去，能直接拿到一份可改的脚手架。Claude 的同类能力是 2025 年下半年才稳定下来的，DeepSeek 这次起手就把这条路径点亮了。
 
-![识图模式实测 - 正方体拼合空间推理](deepseek-shitu-cube-puzzle.webp)
+![识图模式实测 - 正方体拼合空间推理](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/deepseek-shitu-mode-domestic-vision/deepseek-shitu-cube-puzzle.webp)
 *正方体拼合题：思考模式跑了 4 分多钟。图源：量子位 4/30 实测稿。*
 
 识图模式给了两挡推理选项：非思考模式速度接近 V4-Flash，但精度差；深度思考模式精度提升、耗时显著。**这个产品形态对开发者很友好——可以按调用场景选档**，OCR / 表格抽取这类批量任务上非思考模式即可，复杂逻辑判断时切深度思考。
@@ -64,7 +64,7 @@ DeepSeek 这次走视觉理解模块挂载、不直接做原生多模态融合�
 
 **陈小康发的不是产品营销文案，是技术节点信号**。本科和博士都在北大、博士师从曾刚教授、2024 年加入 DeepSeek 主导多模态预训练和后训练——他此前主导开源的 DeepSeek-VL2、Janus、JanusFlow 三项工作，外界对 DeepSeek 多模态早就有预期，只是节奏一直没踩清楚。
 
-![识图模式实测 - OCR 测试](deepseek-shitu-ocr-test.webp)
+![识图模式实测 - OCR 测试](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/deepseek-shitu-mode-domestic-vision/deepseek-shitu-ocr-test.webp)
 *识图模式实测：技术报告中英文混排 OCR。图源：量子位 4/30 实测稿。*
 
 观察者网 4 月 29 日的判断是「视觉理解对 Agent 应用至关重要——当 Agent 需要操作浏览器、读截图、看仪表盘时，视觉理解是基础设施而不是锦上添花」。这条判断很准。今年下半年国产 Agent 产品（智谱 AutoGLM、千问 Qwen-Agent、阶跃 Step Agent、月之暗面 Kimi Agent、刚发布的阿里 QoderWake）的入口都会跟「截图 + 操作 + 推理」这条链绑死，**识图模式就是 DeepSeek 给自家未来 Agent 留的那只眼**。

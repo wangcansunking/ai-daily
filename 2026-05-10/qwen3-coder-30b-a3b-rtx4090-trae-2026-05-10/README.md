@@ -22,7 +22,7 @@ description: "Qwen3-Coder-30B-A3B-Instruct 在 HuggingFace 月下载 270 万；3
 
 # Qwen3-Coder-30B-A3B 单卡 RTX 4090 实战
 
-![Qwen3-Coder-30B-A3B 单卡 4090 实战封面](qwen3-coder-30b-a3b-rtx4090-trae-2026-05-10.png)
+![Qwen3-Coder-30B-A3B 单卡 4090 实战封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/qwen3-coder-30b-a3b-rtx4090-trae-2026-05-10/qwen3-coder-30b-a3b-rtx4090-trae-2026-05-10.png)
 
 ## 一、为什么单卡 4090 这一档值得专门拆一遍
 
@@ -32,7 +32,7 @@ description: "Qwen3-Coder-30B-A3B-Instruct 在 HuggingFace 月下载 270 万；3
 
 这一篇换的是路数：单一模型、单一硬件、单一任务赛道——Qwen3-Coder-30B-A3B 在 RTX 4090 24GB 一张卡上跑 AI Coding，从 vLLM 启动命令到 IDE 接入配置全部走一遍。综合横评、Apple Silicon + MLX、3090 跑 SimpleQA 这些场景已经有不少现成材料；这里只盯 Linux + 单卡 4090 + 国内 IDE 这一条线。
 
-![Qwen3-Coder-30B 三档量化在 RTX 4090 上的显存预算](qwen3-coder-30b-vram-budget.png)
+![Qwen3-Coder-30B 三档量化在 RTX 4090 上的显存预算](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/qwen3-coder-30b-a3b-rtx4090-trae-2026-05-10/qwen3-coder-30b-vram-budget.png)
 
 ## 二、30B-A3B 这个 MoE 设计为什么能塞进 24GB
 
@@ -142,7 +142,7 @@ curl -X POST http://127.0.0.1:8000/v1/chat/completions \
 
 第二条 curl 拿回来 JSON 里看到一段 LRU cache 实现，就算成功。整个过程五条命令、半小时之内可以走完。
 
-![Qwen3-Coder-30B 关键参数与同档对位](qwen3-coder-30b-peer-comparison.png)
+![Qwen3-Coder-30B 关键参数与同档对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/qwen3-coder-30b-a3b-rtx4090-trae-2026-05-10/qwen3-coder-30b-peer-comparison.png)
 
 ## 四、社区转述吞吐画像：从 70+ 到 200+ tokens/s 的差距来自哪里
 
@@ -175,7 +175,7 @@ CloudRift 还测过 400 路并发纯 throughput 能到 2 千 tokens/s 量级，�
 
 vLLM 把模型变成 OpenAI 兼容服务之后，剩下的事就只是 IDE 怎么连。先讲 [Continue.dev](https://github.com/continuedev/continue) 这一档：开源、33,064 颗星、Apache-2.0、官方有 vllm provider，配置最干净。
 
-![Qwen3-Coder vLLM 启动 + Continue 配置](qwen3-coder-30b-vllm-continue-config.png)
+![Qwen3-Coder vLLM 启动 + Continue 配置](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/qwen3-coder-30b-a3b-rtx4090-trae-2026-05-10/qwen3-coder-30b-vllm-continue-config.png)
 
 打开 `~/.continue/config.yaml`（VS Code 装上 Continue 扩展后会自动生成），按 [Continue 官方 vLLM 文档](https://docs.continue.dev/customize/model-providers/more/vllm) 写几行：
 
@@ -224,7 +224,7 @@ CUDA_VISIBLE_DEVICES=0 vllm serve Qwen/Qwen2.5-Coder-1.5B \
 
 Continue 之外，国内开发者用得多的还有几款。各家支持情况摆成一张表，再逐家说一句。
 
-![国产 IDE / AI Coding 工具接 Qwen3-Coder 后端的支持矩阵](qwen3-coder-30b-ide-matrix.png)
+![国产 IDE / AI Coding 工具接 Qwen3-Coder 后端的支持矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/qwen3-coder-30b-a3b-rtx4090-trae-2026-05-10/qwen3-coder-30b-ide-matrix.png)
 
 **[Trae 国际版](https://docs.trae.cn/ide/models)**：字节做的 IDE，2025 下半年开始原生支持自定义模型服务商，配置入口在头像 → AI 功能管理 → 模型 → 添加模型，baseURL 填 `http://127.0.0.1:8000/v1`、API Key 随便填、模型名字写 `qwen3-coder-30b-awq`。Trae 的特点是 chat 和补全走的是同一个 endpoint，没法像 Continue 那样拆双模型；另一点要注意：**embedding / RAG 这部分仍走字节云端**，不希望代码做向量化外发就在设置里把 codebase index 关掉。
 

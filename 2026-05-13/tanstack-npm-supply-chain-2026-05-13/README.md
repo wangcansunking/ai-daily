@@ -23,7 +23,7 @@ description: "2026-05-11 攻击者用 pull_request_target + Actions cache 投毒
 
 # TanStack 42 包失守：AI agent 装包新前线
 
-![cover](tanstack-npm-supply-chain-2026-05-13.png)
+![cover](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/tanstack-npm-supply-chain-2026-05-13/tanstack-npm-supply-chain-2026-05-13.png)
 
 ## 一、6 分钟两批 · 1041 分 · 一次正向校准
 
@@ -51,15 +51,15 @@ description: "2026-05-11 攻击者用 pull_request_target + Actions cache 投毒
 
 事件本身已经被外部研究员 ashishkurmi（StepSecurity 团队）和 TanStack 官方共同压在 30 分钟内拦下，从损失评估上属于**「靠社区肌肉记忆抢下来」**的胜仗。社区一夜之间从「这次没事」转向「下次怎么再快一点」。这种从被动到主动的转换，才是值得继续观察的部分。
 
-![关键数字看板](tanstack-npm-supply-chain-key-numbers.png)
+![关键数字看板](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/tanstack-npm-supply-chain-2026-05-13/tanstack-npm-supply-chain-key-numbers.png)
 
-![TanStack npm 攻击时间线](tanstack-npm-supply-chain-timeline.png)
+![TanStack npm 攻击时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/tanstack-npm-supply-chain-2026-05-13/tanstack-npm-supply-chain-timeline.png)
 
 ## 二、攻击链拆成三段：pull_request_target、cache poisoning、OIDC 内存提取
 
 TanStack 的事故复盘里，攻击者把三段不算最前沿的手法编成了一条相当工程化的链路。
 
-![三段攻击链](tanstack-npm-supply-chain-attack-chain.png)
+![三段攻击链](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/tanstack-npm-supply-chain-2026-05-13/tanstack-npm-supply-chain-attack-chain.png)
 
 ### 第一段：pull_request_target 入口
 
@@ -123,7 +123,7 @@ varunsharma07 自己是 StepSecurity 的联合创始人，也是这次事件的 
 
 这次事件最值得国内开发者关注的不是攻击手法本身——pull_request_target / cache poisoning / OIDC 内存提取这三段在过去两年都是已知姿势。变量在另一端：包被装进项目的速度被 AI agent 极大压缩了——一般把这一端叫做**消化端**。
 
-![AI agent 自动装包风险窗口](tanstack-npm-supply-chain-agent-flow.png)
+![AI agent 自动装包风险窗口](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/tanstack-npm-supply-chain-2026-05-13/tanstack-npm-supply-chain-agent-flow.png)
 
 传统人工流程与 AI agent 流程分两段看：
 
@@ -157,7 +157,7 @@ varunsharma07 自己是 StepSecurity 的联合创始人，也是这次事件的 
 
 回到开发者每天接触的工具。当前主流的 AI Coding 工具按「自动装包行为」可以分三层。海外与国产产品分两段看。
 
-![国内 AI IDE 自动装包对照](tanstack-npm-supply-chain-cn-ide.png)
+![国内 AI IDE 自动装包对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/tanstack-npm-supply-chain-2026-05-13/tanstack-npm-supply-chain-cn-ide.png)
 
 第一层是**默认即装**：Claude Code（海外）、Cursor（海外）、Trae（字节）。agent 拿到需求后会直接调 `npm install`，整条工具调用链里没有原生审批门。Claude Code 有一个 PreToolUse hook 机制可以让用户在工具调用前自定义拦截脚本，但默认不启用。Cursor 当前没有原生审批门。Trae 与海外两家同档，但默认走 cnpm 或可切换国内镜像。
 
@@ -187,7 +187,7 @@ varunsharma07 自己是 StepSecurity 的联合创始人，也是这次事件的 
 
 事故复盘里值得提炼的是**四层防御**的思路。这不是「每家都要照做」的清单，而是供国内团队对照自家阶段挑选的观察样本。
 
-![四层防御矩阵](tanstack-npm-supply-chain-defense.png)
+![四层防御矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/tanstack-npm-supply-chain-2026-05-13/tanstack-npm-supply-chain-defense.png)
 
 **仓库层**：`pull_request_target` 收紧 + PR 审批门。海外可用工具有 actionlint、GitHub Org-level Policy；国内对位的是 GitHub Enterprise 私有部署、Gitee 企业版。核心约束：fork PR 不应该直接拿到主仓 secrets。
 

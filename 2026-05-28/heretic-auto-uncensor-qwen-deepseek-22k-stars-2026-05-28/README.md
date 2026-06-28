@@ -11,7 +11,7 @@ description: 过去解审查（abliteration）是研究员手工活，Heretic �
 ---
 # Heretic 22k stars 一行命令解审查：Qwen、DeepSeek、Gemma 通杀的自动 abliteration 工具
 
-![Heretic 自动解审查工具封面](heretic-auto-uncensor-qwen-deepseek-22k-stars-2026-05-28.png)
+![Heretic 自动解审查工具封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/heretic-auto-uncensor-qwen-deepseek-22k-stars-2026-05-28/heretic-auto-uncensor-qwen-deepseek-22k-stars-2026-05-28.png)
 
 ## 30 秒速览
 
@@ -23,7 +23,7 @@ description: 过去解审查（abliteration）是研究员手工活，Heretic �
 - **架构覆盖**：支持稠密模型 / 多模态模型 / 多种 MoE / Qwen3.5 等混合模型；**不支持纯 SSM 模型**（如 Mamba）和某些研究架构
 - **社区采纳**：HuggingFace 上已有 **3000+ 个**用 Heretic 产出的解审查模型，覆盖 `gpt-oss-20b-heretic`、`Qwen3-4B-Instruct-2507-heretic` 等热门变体
 
-![Heretic 仓库 og:image · Fully automatic censorship removal for language models](source-heretic-og.png)
+![Heretic 仓库 og:image · Fully automatic censorship removal for language models](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/heretic-auto-uncensor-qwen-deepseek-22k-stars-2026-05-28/source-heretic-og.png)
 
 ## 一、22k stars 这个数字背后：为什么过去要手工搞 abliteration
 
@@ -59,7 +59,7 @@ Heretic 实现了 directional ablation 的一个参数化变种。对支持的�
 
 Heretic 跟过去 abliteration 工具的核心差异是 **ablation kernel 的形状可调**。每层的 ablation 权重不是一刀切的 0 或 1，而是由 4 个参数（`max_weight` / `max_weight_position` / `min_weight` / `min_weight_distance`）描述的曲线——某些层强干预、某些层弱干预、深浅层之间平滑过渡。同时 attention 与 MLP 用不同参数组。
 
-![Heretic ablation 权重核函数示意（来自仓库 README）](source-heretic-ablation-kernel.png)
+![Heretic ablation 权重核函数示意（来自仓库 README）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/heretic-auto-uncensor-qwen-deepseek-22k-stars-2026-05-28/source-heretic-ablation-kernel.png)
 
 参数化的好处是：不同模型的拒答行为分布在不同深度的层，有的集中在中段、有的分散在多段，手工调参的人很难一开始就猜对，但搜索算法可以试出来。
 
@@ -72,7 +72,7 @@ Heretic 跟过去 abliteration 工具的核心差异是 **ablation kernel 的形
 
 这两个目标天然对立——抹得越狠，拒答越少但 KL 越大（能力损失越大）；抹得越轻，KL 小但拒答还在。Heretic 让 Optuna 在这两个目标之间自动找帕累托前沿，最终选出一个「同时低 refusal、低 KL」的点。
 
-![Gemma-3-12B 解审查方案对照：refusal 越低越好 · KL 越低越保智力](heretic-kl-vs-refusal.png)
+![Gemma-3-12B 解审查方案对照：refusal 越低越好 · KL 越低越保智力](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/heretic-auto-uncensor-qwen-deepseek-22k-stars-2026-05-28/heretic-kl-vs-refusal.png)
 
 上面这张散点图把 Heretic 与两个手工方案对照在一张坐标里：X 轴是 KL divergence（越低越保智力），Y 轴是 refusal score（越低越解审查）。原模型在右上角（KL=0 但拒答 97）。三个解审查方案都把拒答压到了 3/100，但 KL 差距很大：mlabonne v2 是 1.04，huihui-ai 是 0.45，Heretic 是 0.16——**Heretic 对原模型能力的破坏是手工方案的约 1/3 到 1/6**。
 
@@ -108,7 +108,7 @@ Heretic README 给的对照表数据是这样的（Gemma-3-12B-IT 作为基准�
 
 Heretic 在 RTX 3090 单卡上跑 Qwen3-4B 默认配置约 20-30 分钟（这是 README 明确给出的官方数据）。其他模型的耗时按参数量与架构经验外推：
 
-![RTX 3090 上 Heretic 解审查耗时估算（按参数量外推）](heretic-time-by-model.png)
+![RTX 3090 上 Heretic 解审查耗时估算（按参数量外推）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/heretic-auto-uncensor-qwen-deepseek-22k-stars-2026-05-28/heretic-time-by-model.png)
 
 | 模型 | 架构 | 估算耗时 | 数据依据 |
 |---|---|---:|---|

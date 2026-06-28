@@ -10,7 +10,7 @@ tags: [scrapling, mcp, web-scraping, claude-code, cursor, ai-agent, anti-bot, cl
 ---
 # Scrapling 半年涨到 46.9k 星：给 Claude Code / Cursor 装上抗封锁爬虫的那个工具
 
-![Scrapling 项目主图](scrapling-og.png)
+![Scrapling 项目主图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/scrapling-46k-mcp-anti-scraper-2026-05-07/scrapling-og.png)
 
 任何写过一个 AI agent 的人，第一个真正卡住的瓶颈八成不是模型也不是 prompt，而是这一步：**让 agent 把那个该死的网页内容拿回来。**
 
@@ -26,7 +26,7 @@ tags: [scrapling, mcp, web-scraping, claude-code, cursor, ai-agent, anti-bot, cl
 
 Scrapling 作者署名 Karim Shoair，仓库 `created_at` 是 2024-10-13，到今天 2026-05-07 是 **1 年零 7 个月**。中间发生了什么？翻 release 历史可以看到节奏：
 
-![Scrapling 8 周 5 个 release 时间线](scrapling-release-timeline.png)
+![Scrapling 8 周 5 个 release 时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/scrapling-46k-mcp-anti-scraper-2026-05-07/scrapling-release-timeline.png)
 
 8 周内出 5 个 release——这种节奏在爬虫库里相当少见，绝大多数老牌爬虫库一年才动一两次。
 
@@ -72,7 +72,7 @@ Scrapling 0.4 之后做的最重要一件事，是把上面这套能力包成 MC
 
 10 个工具一次列清楚：
 
-![Scrapling MCP 暴露的 10 个工具](scrapling-mcp-tools-table.png)
+![Scrapling MCP 暴露的 10 个工具](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/scrapling-46k-mcp-anti-scraper-2026-05-07/scrapling-mcp-tools-table.png)
 
 按工作流分三层：
 
@@ -125,7 +125,7 @@ Claude 会自动选 `stealthy_fetch`，过 Cloudflare，回来用 CSS 选择器�
 
 也就是说，对终端用户来说有三种使用姿态：
 
-![Scrapling 三种使用姿态](scrapling-three-modes.png)
+![Scrapling 三种使用姿态](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/scrapling-46k-mcp-anti-scraper-2026-05-07/scrapling-three-modes.png)
 
 1. **直接写 Python**：当传统库用，最自由，适合做生产 spider
 2. **挂 MCP**：Claude Code / Cursor / Claude Desktop 直接调，适合一次性研究、ad-hoc 抓取
@@ -139,7 +139,7 @@ Claude 会自动选 `stealthy_fetch`，过 Cloudflare，回来用 CSS 选择器�
 
 国内开发者讨论这类工具最容易跑偏的两种声音是："不就是 Playwright 套个壳吗"和"Playwright 能做的它都能做且更好"。两种都不准。一张表先放正：
 
-![Scrapling vs Playwright vs Selenium 对比](scrapling-vs-playwright-table.png)
+![Scrapling vs Playwright vs Selenium 对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/scrapling-46k-mcp-anti-scraper-2026-05-07/scrapling-vs-playwright-table.png)
 
 逐项掰开：
 

@@ -41,7 +41,7 @@ cover: "24.png"
 
 # DeepSeek 700 亿 · OpenAI 押 8 家安全 · 昇腾跑通 Qwen3-Coder | AI 日报 | 2026-05-24
 
-![DeepSeek 700 亿融资 OpenAI 押 8 家安全 昇腾跑通 Qwen3-Coder 三线交织](24.png)
+![DeepSeek 700 亿融资 OpenAI 押 8 家安全 昇腾跑通 Qwen3-Coder 三线交织](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/daily/24.png)
 
 ## 📋 头版目录
 
@@ -74,7 +74,7 @@ cover: "24.png"
 
 ### 头条 1 · OpenAI Daybreak 押 8 家安全龙头 vs Anthropic Glasswing 一月扫 1 万洞：AI 安全进多模型并行评估常态
 
-![OpenAI Daybreak 官方发布报道 Help Net Security 截图](openai-daybreak-helpnetsecurity-hero.webp)
+![OpenAI Daybreak 官方发布报道 Help Net Security 截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/daily/openai-daybreak-helpnetsecurity-hero.webp)
 
 #### 1.1 OpenAI 5/12 发布 Daybreak：GPT-5.5 拆三档 + 八家明示合作方
 
@@ -129,7 +129,7 @@ OpenAI 给的数字是「reduces hours of vulnerability analysis to minutes」�
 
 首批 11 家合作伙伴是 AWS / Apple / Broadcom / Cisco / CrowdStrike / Google / JPMorgan Chase / Linux Foundation / Microsoft / NVIDIA / Palo Alto Networks，另有约 40 家系统重要软件维护方加入扩展计划。Anthropic 联合创始人 Dario Amodei 在更新里给了一句最值得记住的话——**「过去，软件安全的进度被『我们找到新漏洞的速度』限制住。现在，它被『我们验证、披露、打补丁的速度』限制住。」** 530 个上报的高危里只有 75 个补丁落地，比例不到 15%。挖洞已经不是瓶颈，验证、协调披露、上游维护者打补丁、用户更新部署，整条链都还是人工速度。
 
-![Daybreak vs Glasswing 三家平台架构对比矩阵 模型分层 vs 单一旗舰](daybreak-vs-glasswing-architecture-matrix.png)
+![Daybreak vs Glasswing 三家平台架构对比矩阵 模型分层 vs 单一旗舰](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/daily/daybreak-vs-glasswing-architecture-matrix.png)
 
 #### 1.3 Cloudflare / Palo Alto / Oracle 三家「双押」：AI 安全工具进多模型并行评估常态
 
@@ -151,7 +151,7 @@ OpenAI 给的数字是「reduces hours of vulnerability analysis to minutes」�
 
 > 5/23 日报头条已点过 DeepSeek 融资 700 亿 + V4 Pro 永久降价方向 + Coding Agent 团队浮现，本期是把三档价格细则、投资方四落定三洽谈构造、梁文锋 200 亿个人出资三件事拆开。
 
-![量子位 5 月 22 日 DeepSeek 同日宣布 V4 永久降价与 700 亿融资头版报道](deepseek-financing-qbitai-hero.webp)
+![量子位 5 月 22 日 DeepSeek 同日宣布 V4 永久降价与 700 亿融资头版报道](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/daily/deepseek-financing-qbitai-hero.webp)
 
 #### 2.1 6 月 1 日起永久降到 1/4 价：把 API 价格曲线整体拽下来一档
 
@@ -181,7 +181,7 @@ OpenAI 给的数字是「reduces hours of vulnerability analysis to minutes」�
 
 国产其他四家——智谱、千问、豆包、月之暗面——大概率会在 6 / 7 月跟一波官方降价。这是国产 API 市场过去两年的常规剧本：DeepSeek 每一次价格动作，后面三到六周都会带出来一轮同档对位降价。这一次不同的是「永久」两个字，意味着回不去了。
 
-![DeepSeek V4 永久降到 1/4 价 vs 国产五家 API 单价对比柱状图](deepseek-v4-yongjiu-jiangjia-price-cliff.png)
+![DeepSeek V4 永久降到 1/4 价 vs 国产五家 API 单价对比柱状图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/daily/deepseek-v4-yongjiu-jiangjia-price-cliff.png)
 
 #### 2.2 700 亿元融资构造：国家基金 + 腾讯 / IDG + 梁文锋 200 亿 + 三家洽谈中
 
@@ -193,7 +193,7 @@ OpenAI 给的数字是「reduces hours of vulnerability analysis to minutes」�
 - **京东**：国民级电商基础设施需要大模型，反过来 DeepSeek 需要京东级别的真实业务数据 + 几十万人客服 / 推荐 / 搜索的真实场景；
 - **网易**：长期游戏与内容业务下来一笔稳定的算力订单，对模型方意味着「不需要靠 to C 流量做月活，靠 to B 单子吃稳现金流」，是 DeepSeek 长期算力支撑里偏稳定一端的角色。
 
-![DeepSeek 700 亿元融资投资人占比图](deepseek-v4-yongjiu-jiangjia-investor-pie.png)
+![DeepSeek 700 亿元融资投资人占比图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/daily/deepseek-v4-yongjiu-jiangjia-investor-pie.png)
 
 这三家任意一家进局，都会把 DeepSeek 从「单纯做模型」的公司，推向「算力 ←→ 能源 ←→ 物流」的产业级战略联盟。把 700 亿子弹 + 永久降到 1/4 价 + 三家洽谈中三件事并起来读，梁文锋向投资人说明的那句口径就有了具体的合同语境支撑——量子位 5 月 22 日深度稿援引的原话是「DeepSeek 的主要目标是推动技术边界，而不是尽快变现」。这是国内大模型公司第一次以这种公开姿态，把「不打算尽快赚回来」写进与投资人的合同前提里。完整融资构造与价格横评见今日「DeepSeek V4 永久降到 1/4 价：宁德 / 京东 / 网易进局」专题。
 
@@ -201,7 +201,7 @@ OpenAI 给的数字是「reduces hours of vulnerability analysis to minutes」�
 
 ### 头条 3 · 国产 IDE 接本地大模型五家盘点 + 昇腾 910B 跑通 Qwen3-Coder：国产 AI 工程版图收紧到一英寸
 
-![Atlas 800I A2 整机 华为官方产品页 hero](huawei-atlas-800i-a2-banner.png)
+![Atlas 800I A2 整机 华为官方产品页 hero](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/daily/huawei-atlas-800i-a2-banner.png)
 
 #### 3.1 国产 IDE 接本地横评：五家里只有 Trae v3.3.51 + Qwen Code v0.16.1 真打通 base_url
 
@@ -233,7 +233,7 @@ Qwen Code 是这一波里配置最干净的一条路——`~/.qwen/settings.json
 
 最让人意外的一笔：**MindIE 2.1.RC1 在 8 卡 910B、384 并发下把 Qwen3-30B-A3B 做到 8702.98 tok/s**，单卡 RTX 4090 在同一模型上单并发约 **196 tok/s**，对照 8 卡昇腾整机单并发 229 tok/s——8 卡国产整机与单卡消费级在不同负载档位上各自打出了自己的真实价值：消费级 4090 适合单人 IDE 助手（单并发吃满）；国产整机适合中小企业内部部署（高并发吞吐拉满）。完整 910 家族盘点 + 三家推理引擎选型 + Qoder CN 企业版接入路径，见今日「昇腾 910B 跑通 Qwen3-Coder：一次真实部署的工程账」专题。
 
-![MindIE 2.1 vs vLLM-Ascend v0.14 vs LMDeploy 在 384 并发吞吐对比](ascend-mindie-vs-vllm-throughput.png)
+![MindIE 2.1 vs vLLM-Ascend v0.14 vs LMDeploy 在 384 并发吞吐对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/daily/ascend-mindie-vs-vllm-throughput.png)
 
 ---
 
@@ -305,7 +305,7 @@ Codex 是 OpenAI 那个已经服役多年的代码代理，原来主要做代码
 
 这条姿态对国内 Agent 编排团队意义深远——过去要在「智谱 GLM-5.1 旗舰（智商高 + 速度慢）」和「智谱 GLM-5.1-Flash（速度高 + 智商低）」二选一，现在有第三个选项：智商不降、速度翻数倍。量子位实测：30 秒生成完整 600 行 HTML/CSS/JS 网页代码；模糊指令迭代响应都在 5 秒内；「边玩边改」小游戏修改循环不到 3 秒一轮。完整 6 家旗舰 API 输出速度横评 + TileRT 工程归因，见今日「智谱 GLM-5.1 高速版：400 tps 速度赛新档」专题。
 
-![GLM-5.1 高速版实时改游戏逻辑 量子位实测截图](glm-5-1-highspeed-qbitai-game-demo.png)
+![GLM-5.1 高速版实时改游戏逻辑 量子位实测截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/daily/glm-5-1-highspeed-qbitai-game-demo.png)
 
 ### 国产 IDE 接本地大模型现状：五家里只有两家真打通，剩三家是时间问题
 

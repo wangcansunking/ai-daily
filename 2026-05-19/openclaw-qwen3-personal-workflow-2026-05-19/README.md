@@ -22,7 +22,7 @@ description: "5 月 18 日 OpenClaw 主仓库 37.30 万 Star、MIT、TypeScript�
 
 # OpenClaw 接本地 Qwen3 一周实测：写作与记账两条线
 
-![OpenClaw 接本地 Qwen3 一周实测封面](openclaw-qwen3-personal-workflow-2026-05-19.png)
+![OpenClaw 接本地 Qwen3 一周实测封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/openclaw-qwen3-personal-workflow-2026-05-19/openclaw-qwen3-personal-workflow-2026-05-19.png)
 
 截至 5 月 18 日 22:01，OpenClaw 主仓库定格在 372,959 Star、MIT 协议、TypeScript 写，是个人 AI 助手类项目里 Star 数排第一的位置。同一天 Hugging Face 上 Qwen3-Coder-30B-A3B-Instruct 月下载停在 191.5 万次，Qwen3-Embedding-8B 停在 163.6 万次。两条数字摆在一起，能讲清楚一个事：把日常的写作和记账搬回本机，已经不是发烧友的玩具时间。
 
@@ -45,7 +45,7 @@ description: "5 月 18 日 OpenClaw 主仓库 37.30 万 Star、MIT、TypeScript�
 
 Apple Silicon 这一档也跑得起：M3 Max 128GB 跑 GGUF Q4 内存占用 21-23 GB（Unsloth 文档），生成速度社区帖给出的中位数大约 32-40 token/s。RTX 4090 跑 AWQ Q4 配 vLLM 0.6.4+ 在 batch=1 时大约 88 token/s，开 batch=8 在并发请求下能拉到 320 t/s 量级（Unsloth 文档 + dev.to 公开实测帖估算，作者未自测）。
 
-![OpenClaw 接本地 Qwen3 端到端接入架构](openclaw-qwen3-personal-workflow-2026-05-19-1-architecture.png)
+![OpenClaw 接本地 Qwen3 端到端接入架构](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/openclaw-qwen3-personal-workflow-2026-05-19/openclaw-qwen3-personal-workflow-2026-05-19-1-architecture.png)
 
 OpenClaw 的接入是两条主线同时存在。**主线 A 是 MCP 协议**（stdio + SSE 双 transport，文档地址 `docs.openclaw.ai/cli/mcp`），用来让本地模型调本地工具——Qdrant 向量检索、PaddleOCR 凭证识别、Excel 读写、SQLite 流水查询都走这条。**主线 B 是 OpenAI 兼容 endpoint**，把推理后端切到本地 vLLM / Ollama / LM Studio，OpenClaw 的模型设置里 base URL 指 `http://localhost:8000/v1`、API key 任意填一个就跑通。
 
@@ -99,7 +99,7 @@ ollama serve  # 默认 http://127.0.0.1:11434/v1
 
 OpenClaw 这边把这一整套封装成一个叫「写作助手」的 skill，存在 `~/.openclaw/workspace/skills/writing-assistant/` 目录里。skill 文件本质是一份 markdown 写的 prompt + 调度规则。触发方式可以是 macOS 菜单栏点开、可以是 Telegram 发消息、可以是飞书机器人——OpenClaw 把消息通道做成了多入口同一编排。
 
-![个人写作 + 家庭记账两个深度 case 端到端流程图](openclaw-qwen3-personal-workflow-2026-05-19-4-case-deep-dive.png)
+![个人写作 + 家庭记账两个深度 case 端到端流程图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/openclaw-qwen3-personal-workflow-2026-05-19/openclaw-qwen3-personal-workflow-2026-05-19-4-case-deep-dive.png)
 
 全链路 6 步拆开：
 
@@ -110,7 +110,7 @@ OpenClaw 这边把这一整套封装成一个叫「写作助手」的 skill，�
 5. **中英对照翻译**。通过 MCP 调一个独立的翻译 skill（同样跑在本地 Qwen3 上），把全文做段落级中英对照
 6. **落盘**。整篇 Markdown + 元数据写到 `~/notes/2026-05-19-*.md`，向量自动更新到 Qdrant，方便下次召回
 
-![三任务 P50/P95/P99 延迟分布](openclaw-qwen3-personal-workflow-2026-05-19-3-latency-distribution.png)
+![三任务 P50/P95/P99 延迟分布](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/openclaw-qwen3-personal-workflow-2026-05-19/openclaw-qwen3-personal-workflow-2026-05-19-3-latency-distribution.png)
 
 数字层面的几个观察。**首 token P50 6.2 秒**这条线，比 Claude Code Max 的同等任务慢 2 到 3 倍。Anthropic 在自家文档里给云端首 token 通常是 2-4 秒，差距确实存在。但本地这条路有两个反向优势：**一是 P95 不会出现云端那种偶发降速或限流**（订阅用户每天 5 小时之后被限速是 Claude Max 用户公开抱怨过的话题），二是 token 用完了不需要等下一个计费周期。
 
@@ -186,7 +186,7 @@ csv → sqlite → qdrant 召回 top-5 历史 → 分类 → confidence < 0.7 �
 
 电费这条线最直白：4090 主机典型功耗 350 W（GPU + CPU + 整机），按每度 0.5 元、每天 8 小时、每月 30 天，**月度电费约 42 元**。硬件折旧另算——4090 24GB 二手主机当下约 1.4 万元，按 36 个月折旧，每月约 389 元。两项合计 **本地方案月度边际成本约 430 元**。这个数字里没算空调和其他间接成本，南方夏天可以再加 20-30 元。
 
-![本地 vs Claude Max vs DeepSeek API 月成本三方对比](openclaw-qwen3-personal-workflow-2026-05-19-2-cost-comparison.png)
+![本地 vs Claude Max vs DeepSeek API 月成本三方对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/openclaw-qwen3-personal-workflow-2026-05-19/openclaw-qwen3-personal-workflow-2026-05-19-2-cost-comparison.png)
 
 token 消耗这条线没有计费意义，但有容量参考意义。粗算下来一周的真实使用是：
 

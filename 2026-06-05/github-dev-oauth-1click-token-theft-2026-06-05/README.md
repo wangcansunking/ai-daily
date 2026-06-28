@@ -13,7 +13,7 @@ description: "安全研究者 Ammar Askar 2026-06-02 公开 github.dev 的一键
 
 # github.dev 一个链接交出全部仓库：AI 编程时代该补的那道围栏
 
-![github.dev OAuth token 一键窃取漏洞封面](github-dev-oauth-1click-token-theft-2026-06-05.png)
+![github.dev OAuth token 一键窃取漏洞封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/github-dev-oauth-1click-token-theft-2026-06-05/github-dev-oauth-1click-token-theft-2026-06-05.png)
 
 2026 年 6 月 2 日，安全研究者 Ammar Askar 在个人博客公开了一种针对 github.dev 的攻击手法：受害者只要点开一条 github.dev 链接，攻击者就能拿到一枚 GitHub 的 OAuth 令牌——而这枚令牌不限定在某一个仓库，它能读写你能访问的**全部**公开、私有、组织仓库。次日，也就是 6 月 3 日，微软完成修复，并对外表示问题已在服务端缓解、用户无需操作。
 
@@ -25,13 +25,13 @@ description: "安全研究者 Ammar Askar 2026-06-02 公开 github.dev 的一键
 
 先把舞台交代清楚。github.dev 是 GitHub 自家的网页版编辑器，在任意仓库页面按一下句号键，或者把网址里的 github.com 改成 github.dev，浏览器里就会起一个轻量版的 VS Code。它免费、不用本地克隆仓库，能浏览文件、改代码、提交、发起合并请求——按 GitHub 官方文档的说法，是「一套完全跑在浏览器里的轻量编辑体验」。
 
-![来源：github.dev 网页版编辑器界面，Ammar Askar 博客 blog.ammaraskar.com/github-token-stealing/ · githubdev demo](source-githubdev-ui-demo-2026-06-05.png)
+![来源：github.dev 网页版编辑器界面，Ammar Askar 博客 blog.ammaraskar.com/github-token-stealing/ · githubdev demo](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/github-dev-oauth-1click-token-theft-2026-06-05/source-githubdev-ui-demo-2026-06-05.png)
 
 为了让这个网页编辑器能替你提交代码、发合并请求，github.com 在启动编辑器时会往 github.dev 会话里投递一枚 OAuth 令牌。这一步本身合理：网页编辑器要代表你和 GitHub 接口打交道，总得有个身份凭证。问题出在凭证的范围上。
 
 整条攻击链可以拆成五步，每一步都用到了一个看起来无害的合理设计：
 
-![一键令牌窃取的五步链路（来源：Ammar Askar 博客 2026-06-02 + BleepingComputer / The Hacker News 报道） · attack chain](chart-attack-chain-2026-06-05.png)
+![一键令牌窃取的五步链路（来源：Ammar Askar 博客 2026-06-02 + BleepingComputer / The Hacker News 报道） · attack chain](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/github-dev-oauth-1click-token-theft-2026-06-05/chart-attack-chain-2026-06-05.png)
 
 - **第一步**：受害者点开一条 github.dev 链接，链接指向攻击者准备好的仓库，里面藏着一个恶意的 Jupyter 笔记本文件；
 - **第二步**：github.com 自动把 OAuth 令牌投递给这个 github.dev 会话；
@@ -51,7 +51,7 @@ Askar 的原话是：「这枚令牌没有限定到你交互的那个具体仓�
 
 这道围栏的有无，直接决定了一旦令牌泄露，损失到底有多大：
 
-![令牌作用域对照：单仓库最小权限 vs 全仓库满权限 · token scope](chart-token-scope-2026-06-05.png)
+![令牌作用域对照：单仓库最小权限 vs 全仓库满权限 · token scope](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/github-dev-oauth-1click-token-theft-2026-06-05/chart-token-scope-2026-06-05.png)
 
 如果令牌按「最小权限」设计——只对你正在编辑的那一个仓库有效——那么即便被读走，攻击者也只能动这一个仓库，私有代码和组织仓库安然无恙。这是信息安全里反复强调的最小权限原则：你用到多少权限，系统就只给你多少，不多给。
 
@@ -67,13 +67,13 @@ Askar 的原话是：「这枚令牌没有限定到你交互的那个具体仓�
 
 正常情况下，VS Code 装一个扩展会弹「是否信任此发布者」的对话框，让你确认来源。这是一道给人留的刹车。
 
-![VS Code 安装扩展时的发布者信任对话框（来源：Ammar Askar 博客 2026-06-02） · trusted publisher dialog](source-trusted-publisher-dialog-2026-06-05.png)
+![VS Code 安装扩展时的发布者信任对话框（来源：Ammar Askar 博客 2026-06-02） · trusted publisher dialog](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/github-dev-oauth-1click-token-theft-2026-06-05/source-trusted-publisher-dialog-2026-06-05.png)
 
 但 VS Code 有一类特殊的「工作区扩展」：放在仓库 `.vscode/extensions` 目录里的扩展，会被当成这个工作区的一部分。在已信任的工作区里安装这类扩展，编辑器会跳过发布者信任的那道弹窗——因为它默认「你既然信任了这个工作区，就信任工作区里带的扩展」。
 
 攻击者要做的，是把受害者「骗」到点确认那一步。这里用上了第三个合理设计：VS Code 的网页视图（webview）出于体验考虑，允许键盘事件从沙箱里的网页内容冒泡到主窗口，好让快捷键能正常工作。Askar 的恶意笔记本就利用这一点，从网页视图里派发合成的键盘事件——先按一组快捷键接受「推荐安装本地扩展」的提示，再按一组触发自定义键位去装扩展。整个过程对受害者是静默的。
 
-![编辑器弹出的「推荐安装本地扩展」通知，攻击脚本用伪造按键自动接受（来源：Ammar Askar 博客 2026-06-02） · recommended extension](source-recommended-extension-2026-06-05.png)
+![编辑器弹出的「推荐安装本地扩展」通知，攻击脚本用伪造按键自动接受（来源：Ammar Askar 博客 2026-06-02） · recommended extension](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/github-dev-oauth-1click-token-theft-2026-06-05/source-recommended-extension-2026-06-05.png)
 
 把这条机制翻译成大白话：
 
@@ -84,7 +84,7 @@ Askar 的原话是：「这枚令牌没有限定到你交互的那个具体仓�
 
 下面这张图是 Askar 画的 VS Code 网页视图安全模型：主窗口握着「危险接口」，网页视图里是「不可信的用户内容」，两者靠 postMessage 通信——而键盘事件恰好能穿过这层边界。
 
-![VS Code 网页视图安全模型：主窗口的危险接口与不可信用户内容之间靠 postMessage 通信（来源：Ammar Askar 博客 2026-06-02）](source-postmessage-boundary-2026-06-05.png)
+![VS Code 网页视图安全模型：主窗口的危险接口与不可信用户内容之间靠 postMessage 通信（来源：Ammar Askar 博客 2026-06-02）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/github-dev-oauth-1click-token-theft-2026-06-05/source-postmessage-boundary-2026-06-05.png)
 
 微软 6 月 3 日的修复正是对着这道缝去的：一方面给「打开笔记本」加了确认对话框作为应急挡板，另一方面从根上堵住了笔记本网页视图里键盘事件向外冒泡的路径，让伪造按键这条路走不通。修复落地后，这套「一键」手法失效。
 

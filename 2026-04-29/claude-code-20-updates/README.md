@@ -1,6 +1,6 @@
 # Claude Code 近 3 个月 20 个最该上手的更新
 
-![Claude Code 2.1.121 MCP 升级](2026-04-29-claude-code-mcp.png)
+![Claude Code 2.1.121 MCP 升级](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-29/claude-code-20-updates/2026-04-29-claude-code-mcp.png)
 
 *图片来源：anthropics/claude-code GitHub OG*
 

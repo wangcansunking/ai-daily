@@ -23,7 +23,7 @@ description: "今天用 gh api 实查：Continue 33,193 stars、Roo Code 24,072 
 
 # VS Code AI 编程工具图鉴：Continue / Roo Code / Cline / DeepSeek-TUI 怎么搭
 
-![VS Code AI 编程工具图鉴封面](vscode-ai-coding-tools-landscape-2026-05-15.png)
+![VS Code AI 编程工具图鉴封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/vscode-ai-coding-tools-landscape-2026-05-15/vscode-ai-coding-tools-landscape-2026-05-15.png)
 
 今天用 `gh api repos/{owner}/{repo}` 把这几家一次性查了个底：Continue 33,193 stars、Roo Code 24,072 stars、Cline 61,807 stars、DeepSeek-TUI 29,453 stars、qwen-code 24,400 stars。五个工具同时压在 24k–62k 这条线上，2026 年 5 月这周才真正把 VS Code 上的 AI 编程版图凑齐——上下文引擎、多 Agent 团队、执行引擎、终端独立 Agent 四种位置各有一把交椅，没有谁能一家通吃。
 
@@ -33,7 +33,7 @@ description: "今天用 gh api 实查：Continue 33,193 stars、Roo Code 24,072 
 
 先把四家拍在一张表上看，再展开讲。
 
-![VS Code AI 编程四工具定位地图](vscode-ai-tools-positioning.png)
+![VS Code AI 编程四工具定位地图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/vscode-ai-coding-tools-landscape-2026-05-15/vscode-ai-tools-positioning.png)
 
 | 工具 | gh api 实查 | 主语言 / 协议 | 定位 | 杀手锏 |
 |---|---|---|---|---|
@@ -147,7 +147,7 @@ DEV.to 那篇入门教程里给的典型用法很直接：把 DeepSeek-TUI 装�
 
 在它的基础上结合本文盘出来的四家定位，重度 VS Code 用户的实操组合大致是这样：
 
-![四工具组合建议](vscode-ai-tools-combo-matrix.png)
+![四工具组合建议](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/vscode-ai-coding-tools-landscape-2026-05-15/vscode-ai-tools-combo-matrix.png)
 
 - **基础线**：Continue（上下文）+ Cline 或 Roo Code 二选一（执行）。Cline 偏纯执行 + 审批门稳，Roo Code 多了 Architect / Debug / Ask 三种角色，喜欢"团队感"的选 Roo Code。
 - **加一条终端线**：DeepSeek-TUI 装在常用 dev 机和服务器上，处理"SSH 远程"、"轻量脚本"、"VS Code 起不起来"的场景。

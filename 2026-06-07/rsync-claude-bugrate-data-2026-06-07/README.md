@@ -13,7 +13,7 @@ tags: [Claude, AI Coding, rsync, 数据分析, 代码质量, Anthropic]
 
 # Claude 把 rsync 写出更多 bug 了吗：数据给反直觉答案
 
-![Claude 把 rsync 写出更多 bug 了吗：数据给反直觉答案](rsync-claude-bugrate-data-2026-06-07.png)
+![Claude 把 rsync 写出更多 bug 了吗：数据给反直觉答案](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/rsync-claude-bugrate-data-2026-06-07/rsync-claude-bugrate-data-2026-06-07.png)
 
 > 一个争论烧到几百层评论：rsync 用了 Claude 写代码，质量是不是变差了？有人真的把 36 个版本的 bug 全数出来排了一遍，结论很反直觉——rsync 史上最烂的那一版，恰恰在 Claude 进来之前。
 
@@ -31,7 +31,7 @@ tags: [Claude, AI Coding, rsync, 数据分析, 代码质量, Anthropic]
 
 rsync 是开源世界里最老牌的文件同步工具之一，官网把它定义为「一个提供快速增量文件传输的开源工具」。它的作者是 Andrew Tridgell——业内昵称 tridge，写过 Samba，有 40 年软件工程经验。
 
-![rsync 官方标识](rsync-official-logo.png)
+![rsync 官方标识](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/rsync-claude-bugrate-data-2026-06-07/rsync-official-logo.png)
 
 事情的起点其实很普通：有用户升级到 rsync 3.4.3 之后，发现增量备份不工作了——只有全量备份正常。这是一个真实的回归问题，Tridgell 后来也承认，它影响的是「一些合法但不常见的用法」，恰好没被现有测试覆盖到。
 
@@ -41,7 +41,7 @@ rsync 是开源世界里最老牌的文件同步工具之一，官网把它定�
 
 随后争论蔓延到 Reddit 和 Hacker News，热度居高不下，连一张带威胁意味的画都被贴了出来。可以说，**这是一场情绪远远跑在证据前面的围攻**。
 
-![GitHub issue 截图：Please Do Not Vibe (F) Up This Software](rsync-analysis-github-issue.png)
+![GitHub issue 截图：Please Do Not Vibe (F) Up This Software](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/rsync-claude-bugrate-data-2026-06-07/rsync-analysis-github-issue.png)
 
 Tridgell 没有退让。他在 Medium 上写了一篇《Rsync and Outrage》（rsync 与众怒）回应。几个关键表态值得逐条看：
 
@@ -61,7 +61,7 @@ Tridgell 没有退让。他在 Medium 上写了一篇《Rsync and Outrage》（r
 
 下面这张分布图，是我们用他公开的口径复刻出来的，便于直观看清各版本的位置。
 
-![rsync 各版本 bug 严重度分布：史上最烂的一版恰恰在 Claude 之前](rsync-bugrate-distribution.png)
+![rsync 各版本 bug 严重度分布：史上最烂的一版恰恰在 Claude 之前](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/rsync-claude-bugrate-data-2026-06-07/rsync-bugrate-distribution.png)
 
 他的方法可以拆成三块，我们一块块讲清楚。
 
@@ -114,7 +114,7 @@ Tridgell 没有退让。他在 Medium 上写了一篇《Rsync and Outrage》（r
 
 当然，前面说过的那个前提依然成立——这套严重度是作者用 Qwen 自动打的分，是主观量化口径。但即便把这个口径的误差也考虑进去，**「Claude 让 rsync 质量明显变差」这个结论，在这份数据里是站不住的**。能站住的反而是它的反面：rsync 历史上最糟的一版，跟 Claude 没有半点关系。
 
-![Hacker News 上 rsync analysis 数据分析的讨论 thread](rsync-analysis-hn-thread.png)
+![Hacker News 上 rsync analysis 数据分析的讨论 thread](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/rsync-claude-bugrate-data-2026-06-07/rsync-analysis-hn-thread.png)
 
 ## 给天天用 Claude Code、Cursor 的我们：怎么用「分布」而不是「印象」判断质量
 

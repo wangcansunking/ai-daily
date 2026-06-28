@@ -12,7 +12,7 @@ tags: [代码补全, FIM, Qwen Coder, 本地大模型, IDE, Continue, 通义灵�
 
 # 本地代码补全：用 Qwen Coder 自建 IDE 后端
 
-![本地代码补全 Qwen Coder 接 IDE 封面](local-fim-code-completion-qwen-coder-2026-05-30.png)
+![本地代码补全 Qwen Coder 接 IDE 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/local-fim-code-completion-qwen-coder-2026-05-30/local-fim-code-completion-qwen-coder-2026-05-30.png)
 
 先把结论摆在最前面：代码补全和聊天、agent 编程是两条完全不同的技术路，别拿对话模型去做补全。聊天追求答案质量，你愿意等它想三五秒；补全追求的是你打字时几乎察觉不到它存在的那种低延迟，必须用 1.5B、3B 这种小模型，再配上专门的 FIM（Fill-In-the-Middle，中间填充）格式，而不是把一个 7B 对话模型塞进编辑器。这篇文章只回答一件事——本地自建 Tab 补全后端到底值不值、用哪个模型、FIM 怎么配、延迟体验真实如何。诚实地说：现在本地自建补全能用，但还不够顺；它的价值在隐私、离线、合规，而不是比通义灵码云端更快。
 
@@ -24,7 +24,7 @@ tags: [代码补全, FIM, Qwen Coder, 本地大模型, IDE, Continue, 通义灵�
 
 聊天和补全对模型的要求几乎相反。聊天你问一句、它答一段，首字慢一两秒没人在意，重点是答案对不对、完整不完整；补全是你每敲几个字符就要触发一次，模型必须在两三百毫秒内吐出后面那几行，慢一点你的手已经敲到下一行了，补出来反而打断思路。
 
-![代码补全路径与对话路径对比：小模型低延迟 FIM vs 大模型 chat](fim-vs-chat-path-2026-05-30.png)
+![代码补全路径与对话路径对比：小模型低延迟 FIM vs 大模型 chat](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/local-fim-code-completion-qwen-coder-2026-05-30/fim-vs-chat-path-2026-05-30.png)
 
 两条路的差别可以拆成四点：
 
@@ -71,7 +71,7 @@ print(add(1, 2))<|fim_middle|>
 
 社区里有个很典型的例子。开源 AI 编程插件 Continue.dev 的一个公开问题记录（GitHub issue #3372）描述：有人用 Qwen2.5 7B base 配 vLLM 做补全，结果输出全是乱码，prompt 里精心拼的前缀压根没被用上。根因就是 Continue 默认把对话模板发到了续写端点，跟模型官方演示里发对话端点的策略对不上，两边对 FIM token 的处理就错位了。
 
-![Continue 接本地 FIM 后端的配置要点与常见坑](fim-config-flow-2026-05-30.png)
+![Continue 接本地 FIM 后端的配置要点与常见坑](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/local-fim-code-completion-qwen-coder-2026-05-30/fim-config-flow-2026-05-30.png)
 
 把这件事讲透，配置时盯三个点：
 
@@ -89,7 +89,7 @@ print(add(1, 2))<|fim_middle|>
 
 选模型的第一原则上面已经说了：补全要小模型。下面给一张选型矩阵，把显存、延迟、质量三件事摆清楚。
 
-![本地补全模型选型矩阵：不同 Qwen Coder 规格的显存、延迟、质量](fim-model-matrix-2026-05-30.png)
+![本地补全模型选型矩阵：不同 Qwen Coder 规格的显存、延迟、质量](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/local-fim-code-completion-qwen-coder-2026-05-30/fim-model-matrix-2026-05-30.png)
 
 几款常见 Qwen Coder 用在补全场景的取舍：
 
@@ -155,7 +155,7 @@ python -m vllm.entrypoints.openai.api_server \
 
 先给标杆。通义灵码（Lingma）官方云端的行级补全延迟做到了 300 毫秒以内，而且不止补全——它还带 MCP 工具调用、自然语言生成函数、单元测试生成。这是目前"顺"的标杆。代价是代码上云。
 
-![补全延迟预算：通义灵码云端与本地自建实测区间对照](fim-latency-budget-2026-05-30.png)
+![补全延迟预算：通义灵码云端与本地自建实测区间对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/local-fim-code-completion-qwen-coder-2026-05-30/fim-latency-budget-2026-05-30.png)
 
 本地自建这边，普遍的网络评价相当一致：Continue 自建补全延迟"有点高，能用但体验说不上好，不建议自行部署模型做代码补全"。这句话听着泄气，但它是这篇文章可信度的关键——我不会告诉你本地能轻松追平 300 毫秒，因为那不是事实。本地受限于你这台机器的首字延迟，小模型加优化能压到可用，但要稳定做到云端那种几乎无感，目前还很难。
 
@@ -185,7 +185,7 @@ python -m vllm.entrypoints.openai.api_server \
 
 讲一个国内开发者的天然优势。海外做本地补全，主流路线是 Continue.dev 加 Ollama 加各家 Coder 模型，全套自建，没有一个能直接用的"本国云端补全加本国模型"组合可走捷径。
 
-![FIM 本地自建补全与云端补全的权衡：速度上云端更顺，本地的价值在隐私离线合规](fim-cloud-vs-local-2026-05-30.png)
+![FIM 本地自建补全与云端补全的权衡：速度上云端更顺，本地的价值在隐私离线合规](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/local-fim-code-completion-qwen-coder-2026-05-30/fim-cloud-vs-local-2026-05-30.png)
 
 国内不一样。你有通义灵码云端这条现成的捷径——国产云端补全服务加国产 Qwen 模型，300 毫秒以内，开箱即用。这是海外没有的等价组合。所以国内开发者的选择其实更宽：在乎延迟体验、代码可以上云，直接用通义灵码云端；在乎隐私、离线、合规，再走本地自建这条路。两条路不是替代关系，是按你最在乎什么来选。
 
@@ -205,7 +205,7 @@ huggingface-cli download Qwen/Qwen2.5-Coder-1.5B-GGUF \
 
 最后落到工具层面：本地起好了续写端点，国内常用的几个 IDE 和插件怎么把它当补全后端用。
 
-![FIM 本地补全后端在国内编辑器里的接入对照：通义灵码、Continue、Cline、Trae、OpenClaw](fim-ide-integration-2026-05-30.png)
+![FIM 本地补全后端在国内编辑器里的接入对照：通义灵码、Continue、Cline、Trae、OpenClaw](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/local-fim-code-completion-qwen-coder-2026-05-30/fim-ide-integration-2026-05-30.png)
 
 把本地 /v1/completions 当补全后端，主流的几条接法：
 

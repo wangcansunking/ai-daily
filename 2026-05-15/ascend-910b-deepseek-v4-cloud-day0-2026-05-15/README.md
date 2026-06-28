@@ -10,13 +10,13 @@ track: arbitrage
 ---
 # 昇腾 910B 跑 DeepSeek V4：国内三朵云一日打通的工程账
 
-![cover](ascend-910b-deepseek-v4-cloud-day0-2026-05-15.png)
+![cover](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/ascend-910b-deepseek-v4-cloud-day0-2026-05-15/ascend-910b-deepseek-v4-cloud-day0-2026-05-15.png)
 
 4 月 29 日下午，TrendForce 在英文站推了一条短讯，标题平淡得不像有戏：「Huawei Ascend, Cambricon and Hygon Completed Day 0 Adaptation to DeepSeek-V4」。国内中文圈里转得稀稀拉拉，因为外面同一时间正在追 OpenAI 的 Goblins 论文和 Mistral Medium 3.5 的 Vibe Remote。可这条短讯里写得很清楚——「华为全系（Ascend A2、A3、950）支持 V4-Pro 和 V4-Flash，寒武纪基于 vLLM 框架完成适配并把代码开源到 GitHub，海光 DCU 平台 Day 0 适配并形成模型发布到芯片到产业部署的闭环」。
 
 这事说大不大说小不小。说不大，是因为 DeepSeek V4-Pro / Flash 4 月 24 日凌晨发布、当天阿里云百炼、腾讯云 TI-ONE、华为云 MaaS 三家就把 API 挂出来，对很多人来说「能用上」就够了；说不小，是因为这条 72 小时的工程链条，把过去两年「国产芯片有，但不能跑前沿模型」的老叙事直接砍成两半——前沿 MoE 模型现在能在 910B、910C、950 上稳定跑起来，而且不是某家厂跑通一次，是三家国产芯同时跑通、三朵云同步定价、价格还跟 DeepSeek 官方对齐到 1 元 / 百万 token 输入。
 
-![DeepSeek V4 三家国产芯 Day-0 适配 TrendForce 报道](topic1-trendforce-ascend-day0-2026-05-15.jpg)
+![DeepSeek V4 三家国产芯 Day-0 适配 TrendForce 报道](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/ascend-910b-deepseek-v4-cloud-day0-2026-05-15/topic1-trendforce-ascend-day0-2026-05-15.jpg)
 
 这篇文章不写 DeepSeek V4 的模型能力，能力评测国内媒体已经写完了；也不渲染中美芯片对抗的叙事，那些情绪没有工程价值。我们把这条 72 小时链条拆开，看每一段是怎么走通的：发布当天怎么 Day-0、vllm-ascend 这个 GitHub 项目当前到底支持哪些模型、910B vs 910C vs 950PR 三代单卡参数和国内行情怎么对照、政企真要做私有化怎么选——一体机走华为 FusionCube、租赁走 anygpu.cn 这一档、单买芯片走 11 万到 19 万一片。读完心里有数，再决定要不要走这条路。
 
@@ -26,7 +26,7 @@ track: arbitrage
 
 4 月 24 日凌晨，DeepSeek 官方在 X 和官网同步发布 V4-Pro 和 V4-Flash。两个版本都是 MoE 架构、1M token 上下文、训练量在 32T 到 33T token 之间。V4-Pro 是 1.6T 总参 49B 激活，对应过去 V3.2 那一档的旗舰；V4-Flash 是 284B 总参 13B 激活，对位 V3.1。
 
-![DeepSeek V4 模型卡截图](topic1-deepseek-v4-model-card-2026-05-15.png)
+![DeepSeek V4 模型卡截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/ascend-910b-deepseek-v4-cloud-day0-2026-05-15/topic1-deepseek-v4-model-card-2026-05-15.png)
 
 发布同一天，阿里云百炼平台公告挂出 V4-Pro + V4-Flash API、Flash 版输入价 1 元 / 百万 token、输出价 2 元 / 百万 token，Pro 版输入 4 元 / 输出 16 元，与 DeepSeek 官网定价完全一致。腾讯云这边走 TokenHub、ADP、TI-ONE、EdgeOne 四个入口同时上线，同样官方价。华为云走 MaaS（ModelArts Studio），4 月 24 日先把 Flash 版挂出来一键调用，Pro 版隔了几小时跟上。
 
@@ -34,7 +34,7 @@ track: arbitrage
 
 4 月 29 日 TrendForce 的报道把后端那段补完——昇腾 A2、A3、950 全系适配，寒武纪用 vLLM 框架打通并开源代码，海光 DCU 平台同步打通。换句话说，前 24 小时是云厂商挂 API，后 4 天是芯片厂商把推理后端打稳定。
 
-![阿里云百炼上线 DeepSeek V4 公告页](topic1-aliyun-bailian-v4-launch-2026-05-15.jpg)
+![阿里云百炼上线 DeepSeek V4 公告页](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/ascend-910b-deepseek-v4-cloud-day0-2026-05-15/topic1-aliyun-bailian-v4-launch-2026-05-15.jpg)
 
 把这条链条对位过去几次模型发布看更清楚。2024 年 V3 发布到国内云厂商上线 V3 API 大概隔 1 周；V3.1 到 V3.2 那一档已经压到 48 小时上下；这次 V4 把延迟压到几小时。背后的工程能力不是一次性爆发，是 vllm-ascend 这个项目过去 9 个月稳定迭代、CANN 软件栈从 8.5 升到 9.0、PD 分离架构在 Ascend 上磨成默认后端、以及云厂商内部把模型上架流程跑成 CI 这几件事叠出来的。
 
@@ -80,7 +80,7 @@ GLM-5 单节点非 PD 部署当前有已知 bug 会产生错误结果，Qwen3.x 
 
 价格梯度先摆出来，这一段对 1.5 万小团队和政企采购方都直接相关。
 
-![DeepSeek V4 国内三朵云 API 价格对照](topic1-chart-cloud-pricing-2026-05-15.png)
+![DeepSeek V4 国内三朵云 API 价格对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/ascend-910b-deepseek-v4-cloud-day0-2026-05-15/topic1-chart-cloud-pricing-2026-05-15.png)
 
 三朵云首日报价完全对齐 DeepSeek 官方，没有差异化定价。这一点其实挺重要——历次国内云厂商上线开源模型，腾讯云、阿里云、华为云之间常常会有 10%-30% 的价格摆动，作为引流策略。这次三家都不动，意味着 V4 的成本结构对云厂商来说不是套利空间，是工程成本。
 
@@ -96,7 +96,7 @@ GLM-5 单节点非 PD 部署当前有已知 bug 会产生错误结果，Qwen3.x 
 
 昇腾 910B 国内 snapshot 单价 11 万元 / 片左右，64 GB HBM3e，FP16 算力 320 TFLOPS，带宽 1.2 TB/s（数据来自 anygpu.cn 租赁报价 + 极云科技公开行情，因渠道和批量有 ±30% 浮动）。跑 V4-Flash 推理 8 卡是工程起点，跑 V4-Pro 单节点要 16-32 卡。910C 单价上到 19 万 / 片，96 GB HBM、FP16 700 TFLOPS、带宽 2.2 TB/s。
 
-![国产 NPU vs NVIDIA 旗舰 单卡参数与价格](topic1-chart-ascend-pricing-2026-05-15.png)
+![国产 NPU vs NVIDIA 旗舰 单卡参数与价格](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/ascend-910b-deepseek-v4-cloud-day0-2026-05-15/topic1-chart-ascend-pricing-2026-05-15.png)
 
 这一档自己拼集群好处是单价透明，坏处是机房、网络、运维全是自己事，跟买 H100 自建一样麻烦，加上 CANN 软件栈相对成熟度比 CUDA 低半档，工程团队 3-5 人是底线配置。
 

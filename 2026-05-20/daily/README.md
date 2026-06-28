@@ -35,7 +35,7 @@ cover: 20.png
 
 # Karpathy 跳槽 Anthropic · Gemini Flash 涨价 3 倍 | AI 日报 | 2026-05-20
 
-![Karpathy 5 月 19 日加盟 Anthropic 预训练团队 同日 Google I/O 2026 Gemini 3.5 Flash 涨价 三倍封面 daily 2026-05-20](20.png)
+![Karpathy 5 月 19 日加盟 Anthropic 预训练团队 同日 Google I/O 2026 Gemini 3.5 Flash 涨价 三倍封面 daily 2026-05-20](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/daily/20.png)
 
 ## 📋 头版目录（一屏扫完今日）
 
@@ -91,7 +91,7 @@ cover: 20.png
 
 ## 🔥 头条一：Andrej Karpathy 加盟 Anthropic 预训练团队
 
-![Andrej Karpathy 职业轨迹 OpenAI 创始成员 Tesla AI 总监 教育者 2026 加盟 Anthropic 预训练团队 daily 2026-05-20 karpathy timeline](daily-2026-05-20-karpathy-timeline.png)
+![Andrej Karpathy 职业轨迹 OpenAI 创始成员 Tesla AI 总监 教育者 2026 加盟 Anthropic 预训练团队 daily 2026-05-20 karpathy timeline](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/daily/daily-2026-05-20-karpathy-timeline.png)
 
 > **核心论断**：5 月 19 日 PT 上午，Anthropic 通过博客 + Karpathy 本人 X 同步宣布——Andrej Karpathy 加盟 Anthropic **预训练团队**，向团队负责人 Nick Joseph 汇报，本周开始上班，将牵头一个『**用 Claude 加速预训练研究本身**』的新方向。这位 OpenAI 创始成员 + 前 Tesla AI 总监 + 全球最大 LLM 教学博主一脚迈出 OpenAI 旧主科研舞台，跨到对岸 Anthropic，意味着 Claude 在『模型预训练侧的研究节奏』要换挡。Anthropic 在 OpenAI 抢人战上拿到迄今最大的一颗子弹——拿这种『从研究到工业到教育到回归 R&D』的完整循环型人物当锚点，比单纯挖工程师更显示战略意图。
 
@@ -126,11 +126,11 @@ Karpathy 本人没有直接对比 OpenAI 和 Anthropic，但从他过去 18 个�
 
 **Karpathy-skills 仓库同步上线**：GitHub 上 `multica-ai/andrej-karpathy-skills` 这个仓库几乎和加盟新闻同时发布，**单日新增 1955 stars 直接进 GitHub Trending 日榜**。仓库内容是把 Karpathy 历年 nanoGPT / micrograd / YouTube 教学里的 LLM 工程经验整理成 Claude Code Skill 配置文件，作为一个 SKILL.md 单文件就能用。下游开发者反应是『终于有官方权威风格的 Skill 来对位』。
 
-![multica-ai andrej-karpathy-skills GitHub 仓库 og 卡 单日 1955 stars 几乎和加盟新闻同步发布](source-multica-karpathy-skills-og-2026-05-20.png)
+![multica-ai andrej-karpathy-skills GitHub 仓库 og 卡 单日 1955 stars 几乎和加盟新闻同步发布](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/daily/source-multica-karpathy-skills-og-2026-05-20.png)
 
 ## 🔥 头条二：Google I/O 2026——Gemini 3.5 Flash 追平 Opus 但同代涨价 3 倍
 
-![Gemini Flash 三代单价对比 + 国产八家旗舰 API 价 + Opus 4.7 同口径横评 daily 2026-05-20 gemini flash pricing](daily-2026-05-20-gemini-flash-pricing.png)
+![Gemini Flash 三代单价对比 + 国产八家旗舰 API 价 + Opus 4.7 同口径横评 daily 2026-05-20 gemini flash pricing](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/daily/daily-2026-05-20-gemini-flash-pricing.png)
 
 > **核心论断**：5/19 PT 上午 10 点 / 北京时间 5/20 凌晨 1 点，Google I/O 2026 主 keynote 在 Shoreline 圆形剧场开场。Sundar Pichai 同台宣布五件事——**Gemini 3.5 Flash 立即上线**（跑分追平 Opus 4.7 + 输出速度 289 tokens/s 约 4 倍）、**Gemini Omni 多模态视频模型**同日开放（image/audio/video/text 输入 → 可编辑视频输出）、**Gemini Spark Agent**（后台监控 Gmail/Docs，下周对 US AI Ultra 订阅开放）、**Android XR 智能眼镜**（Samsung+Qualcomm 制造、Warby Parker / Gentle Monster 设计，秋季上市）、**AI Ultra 订阅从 250 美元砍到 100 美元 / 月**（用量限额翻 5 倍）。但 HN 头帖 198 分顶赞的第一条评论不是夸 Flash 跑分，而是把价格表贴出来——**同代 Flash 单价从 2.5 Flash 的 0.30/2.50 跳到 3.5 Flash 的 1.50/9.00 USD / 百万 token，输入涨 5 倍、输出涨 3.6 倍**，海外旗舰 Flash 系列『每代腰斩』的循环正式翻篇。完整对比见今日「Gemini 3.5 Flash 追平 Opus 4.7，但单价涨了 3 倍」专题。
 
@@ -205,7 +205,7 @@ Pichai 原话 *"We want to make AI Ultra accessible to developers, technical lea
 
 **🔵 了解 · xAI Grok Build 公开 beta · $99 限时 6 个月**：5/14 xAI 把 Grok Build 推到 SuperGrok Heavy 公开 beta（Grok 4.3 beta + 16-agent Heavy 架构 + 200 万 Token 上下文 + 最多 8 并行 subagent + Plan Mode + 原生 ACP 协议 + 兼容 AGENTS.md / plugins / hooks / skills / MCP），**$300 / 月正价、$99 限时 6 个月**。AI Coding 工具四强格局正式坐实——见下方四强对比图。
 
-![AI Coding 工具四强对比 5/20 当周 Cursor Composer 2.5 Claude Code 限额加 50 OpenAI Codex 移动端 xAI Grok Build 跑分加单价加上下文加状态 daily 2026-05-20 ai coding 4way](daily-2026-05-20-ai-coding-4way.png)
+![AI Coding 工具四强对比 5/20 当周 Cursor Composer 2.5 Claude Code 限额加 50 OpenAI Codex 移动端 xAI Grok Build 跑分加单价加上下文加状态 daily 2026-05-20 ai coding 4way](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/daily/daily-2026-05-20-ai-coding-4way.png)
 
 ## 🎙 名人说 & X 热议
 
@@ -229,13 +229,13 @@ Pichai 原话 *"We want to make AI Ultra accessible to developers, technical lea
 
 ## 📦 GitHub Trending 日榜前 10
 
-![GitHub Trending 日榜前 10 2026-05-20 Skill Agent 题材接管 tinyhumansai openhuman Imbad0202 academic-research-skills multica-ai andrej-karpathy-skills daily 2026-05-20 github trending](daily-2026-05-20-github-trending.png)
+![GitHub Trending 日榜前 10 2026-05-20 Skill Agent 题材接管 tinyhumansai openhuman Imbad0202 academic-research-skills multica-ai andrej-karpathy-skills daily 2026-05-20 github trending](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/daily/daily-2026-05-20-github-trending.png)
 
 5/20 日榜被 **Skill / Agent 题材接管**——前 10 里有 6 个直接和 Claude Code Skill 体系绑定。当日实查 star 增量：
 
 **🔴 必看 · `tinyhumansai/openhuman`（Rust · 累计 21,152 stars · 单日 +3973）**：本地优先个人 AI 超智能体（描述原话『Your Personal AI super intelligence. Private, Simple and extremely powerful.』），Rust 写，本周连续 8 天上榜。技术亮点：单二进制无依赖、可挂任意本地或云端模型（Ollama / vLLM / 远端 API）、内置 Skills 注册中心兼容 Claude Code 规范。
 
-![tinyhumansai openhuman GitHub 仓库 og 卡 Rust 本地优先 AI 超智能体](source-openhuman-og-2026-05-20.png)
+![tinyhumansai openhuman GitHub 仓库 og 卡 Rust 本地优先 AI 超智能体](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/daily/source-openhuman-og-2026-05-20.png)
 
 **🔴 必看 · `Imbad0202/academic-research-skills`（Python · 累计 14,095 stars · 单日 +3164）**：Claude Code 学术工作流 Skill 包，覆盖『检索 → 笔记 → 论文 → 终稿』全流程。配合今日 arXiv 一年封禁新规一起看——学术 Skill 包在新规背景下转入『LLM 协作 + 全程人工核对』模式，更贴合 arXiv / Springer Nature 政策。
 

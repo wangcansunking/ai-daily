@@ -15,7 +15,7 @@ authors:
 
 # 华为昇腾 950 超节点同日开源 AgentInfra + CANN 全家桶：英伟达 NemoClaw 的国产对位栈是怎么搭起来的
 
-![华为昇腾 950 + AgentInfra 同日开源封面](huawei-ascend-950-agentinfra-cann-2026-05-26.png)
+![华为昇腾 950 + AgentInfra 同日开源封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/huawei-ascend-950-agentinfra-cann-2026-05-26/huawei-ascend-950-agentinfra-cann-2026-05-26.png)
 
 > 5 月 24 日北京·国家会议中心，鲲鹏昇腾开发者大会，华为把过去三年一直被海外开发者吐槽「最封闭」的国产 AI 算力栈一口气打开。**昇腾 950 超节点正式亮相**：单超节点 **8192 卡**、**8 EFlops FP8 算力**、**16 PB/s 全互联带宽**、**24 TB 统一内存池**。**同一天，CANN 50+ 代码仓 800+ 算子宣布全面开源**，BoostKit、openUBMC、openFuyao、灵衢协议四件套同步入驻 openEuler 与鲲鹏社区；MindSpore、MindSpeed、MindIE、MindStudio 四套软件也一起开放。从硅片到 Agent 推理服务，国产开发者第一次拿到一套**完整的、可读可改的、对位英伟达 NemoClaw + CUDA + NIM 的栈**。本文做四件事：复盘 5/24 大会现场把哪些东西真的发出来；逐层拆「鲲鹏 + openEuler + AgentInfra」三层架构与英伟达栈的对位；硬解昇腾 950 四个核心参数对 Agent 工作负载的意义；最后给国内开发者一条在昇腾 910B / 950 上跑 Qwen3-Coder-30B 推理的最短路径。
 
@@ -34,7 +34,7 @@ authors:
 
 这套组合拳的关键不在某一项参数，而在「**同一天**」三个字。过去两年华为 / 英伟达 / AMD 三家任何一家放出新硬件时，软件栈总是要等三到六个月才陆续跟上；这次华为把「硬件发布 + 编译运行时开源 + 操作系统开源 + Agent 运行环境开源」压在同一个 keynote 里，**等于一次性把开发者门槛降到「git clone 就能跑」的水平**。
 
-![国产 Agent 算力栈：华为三层架构 vs 英伟达对位栈](huawei-ascend-three-layer-arch.png)
+![国产 Agent 算力栈：华为三层架构 vs 英伟达对位栈](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/huawei-ascend-950-agentinfra-cann-2026-05-26/huawei-ascend-three-layer-arch.png)
 
 ## 一、5/24 大会现场到底发了什么
 
@@ -93,7 +93,7 @@ MindSeries 软件栈这一次的开源升级幅度也不小：MindSpore 做了**
 
 5/24 大会上的硬件参数是这次发布最容易被低估的部分。**8192 卡 + 8 EFlops FP8 + 16 PB/s + 24 TB** 看起来是堆数字，但每一个数字都对应 Agent 工作负载的一个具体痛点。
 
-![昇腾 950 超节点核心规格](huawei-ascend-950-spec.png)
+![昇腾 950 超节点核心规格](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/huawei-ascend-950-agentinfra-cann-2026-05-26/huawei-ascend-950-spec.png)
 
 **8192 卡的规模意味着什么**：英伟达 GB200 NVL72 是「72 卡」一个机柜级超节点，是英伟达过去两年的旗舰规格。昇腾 950 超节点 8192 卡，按规模算是 GB200 NVL72 的 **114 倍**。但这是一个「单超节点 vs 单超节点」的对比——8192 卡作为一个「逻辑单元」，意味着这 8192 卡之间是**全互联**（不是多个机柜拼接），任意两卡通信走灵衢协议而不是跨机柜的 InfiniBand。**对训练大模型来说，这等于把「多机训练」变成「单机训练」，省掉了所有跨节点通信的开销**。
 
@@ -109,7 +109,7 @@ MindSeries 软件栈这一次的开源升级幅度也不小：MindSpore 做了**
 
 CANN 是这次大会对一线开发者最有实际影响的发布。**因为这是 vLLM / SGLang 这两个主流推理引擎能不能真正在昇腾上跑顺的决定性变量**。
 
-![CANN 全栈开源 vs CUDA 闭源四层对位](huawei-cann-opensource-scope.png)
+![CANN 全栈开源 vs CUDA 闭源四层对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/huawei-ascend-950-agentinfra-cann-2026-05-26/huawei-cann-opensource-scope.png)
 
 过去两年昇腾上跑 LLM 推理有三条路径：
 
@@ -137,7 +137,7 @@ CANN 是这次大会对一线开发者最有实际影响的发布。**因为这�
 
 CANN 是最受关注的发布，但「五件套同日开源」整个组合才是这次大会的真正分量。把五件套放在一张图里看：
 
-![五件套同日开源全景](huawei-ascend-five-pillars.png)
+![五件套同日开源全景](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/huawei-ascend-950-agentinfra-cann-2026-05-26/huawei-ascend-five-pillars.png)
 
 **CANN（昇腾计算架构）**——前文详细拆过，对位 CUDA + cuBLAS + cuDNN。开源在 gitee.com/ascend，配套 PyTorch / vLLM / SGLang 后端。
 

@@ -8,7 +8,7 @@ tags: [AI Coding, GitHub Copilot, Pricing, Subscription Economics]
 cover: 2026-04-28-copilot-billing.png
 ---
 
-![cover](2026-04-28-copilot-billing.png)
+![cover](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-28/github-copilot-token-billing-pivot/2026-04-28-copilot-billing.png)
 
 # 6 月 1 日，GitHub Copilot 改按 Token 计费——AI 编程订阅时代终结
 
@@ -32,7 +32,7 @@ Code completions / Next Edit suggestions 仍包含在 plan 里，不再扣 credi
 
 订阅时代的逻辑是"高频用户养低频用户"。agent 时代每个用户都变成高频，没人在补贴谁。**4-27 这条公告是整个"$10-$30 月费 AI Coding"商业模式的拐点**。
 
-![GitHub Copilot 4 档 plan 配额一览](2026-04-28-copilot-plans-table.png)
+![GitHub Copilot 4 档 plan 配额一览](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-28/github-copilot-token-billing-pivot/2026-04-28-copilot-plans-table.png)
 
 *图片来源：根据 GitHub 官博 4-27 公告 + Community Discussion 192963 整理 PIL 渲染*
 

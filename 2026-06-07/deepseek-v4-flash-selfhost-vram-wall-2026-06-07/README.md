@@ -16,7 +16,7 @@ description: DeepSeek V4-Flash 是 284B 的开源 MoE 旗舰，权重可以随�
 ---
 # DeepSeek V4 自己部署：两张 4090 塞不下，官方接口更省
 
-![DeepSeek V4 自托管显存墙示意：夜色机房里一名工程师盯着桌上仅装两张消费级显卡的小主机，身后是一整面发光的多卡服务器机柜，凸显 284B 模型放不进个人机器](deepseek-v4-flash-selfhost-vram-wall-2026-06-07.png)
+![DeepSeek V4 自托管显存墙示意：夜色机房里一名工程师盯着桌上仅装两张消费级显卡的小主机，身后是一整面发光的多卡服务器机柜，凸显 284B 模型放不进个人机器](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/deepseek-v4-flash-selfhost-vram-wall-2026-06-07/deepseek-v4-flash-selfhost-vram-wall-2026-06-07.png)
 
 DeepSeek V4-Flash 有 2840 亿参数，是一个 MoE 架构的开源旗舰，权重公开、许可证宽松，谁都能下载。于是很多人下意识地以为：开源就等于「我自己机器也能跑」。
 
@@ -30,7 +30,7 @@ DeepSeek V4-Flash 有 2840 亿参数，是一个 MoE 架构的开源旗舰，权
 
 理解这道显存墙，得先搞清楚 V4-Flash 的体量。它的关键参数是这样的：
 
-![OpenRouter 上 DeepSeek V4-Flash 的模型页，标注 2840 亿总参数、130 亿激活、100 万 token 上下文与按量单价](deepseek-v4-flash-selfhost-vram-wall-2026-06-07-source-openrouter.png)
+![OpenRouter 上 DeepSeek V4-Flash 的模型页，标注 2840 亿总参数、130 亿激活、100 万 token 上下文与按量单价](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/deepseek-v4-flash-selfhost-vram-wall-2026-06-07/deepseek-v4-flash-selfhost-vram-wall-2026-06-07-source-openrouter.png)
 
 - **总参数 2840 亿，每个 token 只激活 130 亿。** 这是 MoE（混合专家）的典型结构：算的时候确实只动用 130 亿参数，所以推理的计算量和一个中型模型差不多。
 - **上下文窗口 100 万 token。** 这是它的卖点之一，但长上下文意味着巨大的 KV 缓存开销，后面算显存时这是一笔不能省的账。
@@ -44,11 +44,11 @@ DeepSeek V4-Flash 有 2840 亿参数，是一个 MoE 架构的开源旗舰，权
 
 把不同量化精度下的最低显存需求排出来，这道墙的高度就一目了然了。下面这张表是公开显存账里写得最细的一份，它的「最低显存」一栏已经把 100 万上下文的 KV 缓存和运行余量都算进去了：
 
-![codersera 整理的 DeepSeek V4-Flash 各量化精度显存需求表，从 Q2 到 FP8 逐档列出权重大小与含缓存的最低显存](deepseek-v4-flash-selfhost-vram-wall-2026-06-07-source-vram-table.png)
+![codersera 整理的 DeepSeek V4-Flash 各量化精度显存需求表，从 Q2 到 FP8 逐档列出权重大小与含缓存的最低显存](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/deepseek-v4-flash-selfhost-vram-wall-2026-06-07/deepseek-v4-flash-selfhost-vram-wall-2026-06-07-source-vram-table.png)
 
 我把它和另外两份独立显存表交叉核对后，画成了一张更直观的阶梯图，并把两张、四张 4090 的显存上限标成了红线：
 
-![DeepSeek V4-Flash 各精度最低显存阶梯图，叠加两张与四张 4090 的显存红线，显示连极限量化都越过两张 4090](deepseek-v4-flash-selfhost-vram-wall-2026-06-07-chart-vram-ladder.png)
+![DeepSeek V4-Flash 各精度最低显存阶梯图，叠加两张与四张 4090 的显存红线，显示连极限量化都越过两张 4090](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/deepseek-v4-flash-selfhost-vram-wall-2026-06-07/deepseek-v4-flash-selfhost-vram-wall-2026-06-07-chart-vram-ladder.png)
 
 各精度的最低显存如下：
 
@@ -64,7 +64,7 @@ DeepSeek V4-Flash 有 2840 亿参数，是一个 MoE 架构的开源旗舰，权
 
 换个问法：手里有多少显存，能对 V4-Flash 做什么？另一份独立整理的显存对照表回答得很清楚：
 
-![KnightLi 博客整理的显存档位对照表，按 24GB 到 1TB 逐档列出 V4-Flash 与 V4-Pro 在各显存下的可行量化与不要期待的范围](deepseek-v4-flash-selfhost-vram-wall-2026-06-07-source-knightli-vram-scale.png)
+![KnightLi 博客整理的显存档位对照表，按 24GB 到 1TB 逐档列出 V4-Flash 与 V4-Pro 在各显存下的可行量化与不要期待的范围](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/deepseek-v4-flash-selfhost-vram-wall-2026-06-07/deepseek-v4-flash-selfhost-vram-wall-2026-06-07-source-knightli-vram-scale.png)
 
 把它翻译成大白话：
 
@@ -99,7 +99,7 @@ DeepSeek V4-Flash 有 2840 亿参数，是一个 MoE 架构的开源旗舰，权
 
 再看自托管这边的账。要稳定跑 V4-Flash，前面说了，得是两张 H200 这一档。把硬件按三年摊销，加上一天 24 小时不停机的电费，每月固定成本大约 1800 美元——而且这是机器闲着也要付的钱。我把两条成本线随用量的变化画在一起，交点很说明问题：
 
-![自托管与官方接口的月成本随用量变化对比图，接口按量线性增长，自托管约 1800 美元每月固定，持平点在每天近 3 亿 token](deepseek-v4-flash-selfhost-vram-wall-2026-06-07-chart-cost.png)
+![自托管与官方接口的月成本随用量变化对比图，接口按量线性增长，自托管约 1800 美元每月固定，持平点在每天近 3 亿 token](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/deepseek-v4-flash-selfhost-vram-wall-2026-06-07/deepseek-v4-flash-selfhost-vram-wall-2026-06-07-chart-cost.png)
 
 按每百万 token 0.21 美元的接口均价、每月 1800 美元的自托管固定成本算，两者的持平点在**每月约 86 亿 token**——折算下来要每天近 3 亿 token、而且机器接近满载连轴转，自托管才开始比接口便宜。
 
@@ -109,7 +109,7 @@ DeepSeek V4-Flash 有 2840 亿参数，是一个 MoE 架构的开源旗舰，权
 
 把账算这么清楚，不是说自托管一无是处。它在三种情况下依然成立，而且这三条要同时满足才划算。下面这份自托管指南给的三个理由，和这里要说的几乎一一对应——它也直接点明，每天用量没到几十亿 token，接口几乎总是更省：
 
-![Lushbinary 自托管指南列出值得自托管 DeepSeek V4 的三个理由：数据主权、超大用量下的成本、可定制；并指出每天用量没到几十亿 token 时接口几乎总是更省](deepseek-v4-flash-selfhost-vram-wall-2026-06-07-source-lushbinary-selfhost.png)
+![Lushbinary 自托管指南列出值得自托管 DeepSeek V4 的三个理由：数据主权、超大用量下的成本、可定制；并指出每天用量没到几十亿 token 时接口几乎总是更省](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/deepseek-v4-flash-selfhost-vram-wall-2026-06-07/deepseek-v4-flash-selfhost-vram-wall-2026-06-07-source-lushbinary-selfhost.png)
 
 具体到三条：
 

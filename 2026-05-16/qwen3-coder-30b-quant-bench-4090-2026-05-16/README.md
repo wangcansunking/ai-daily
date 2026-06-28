@@ -21,7 +21,7 @@ description: "Qwen3-Coder-30B-A3B-Instruct 在单卡 RTX 4090 24GB 上 Q2 / Q4 /
 
 # 4090 跑 Qwen3-Coder：哪档量化最值
 
-![Qwen3-Coder 30B 在 4090 上的五档量化对位封面](qwen3-coder-30b-quant-bench-4090-2026-05-16.png)
+![Qwen3-Coder 30B 在 4090 上的五档量化对位封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/qwen3-coder-30b-quant-bench-4090-2026-05-16/qwen3-coder-30b-quant-bench-4090-2026-05-16.png)
 
 ## 关键数字一览
 
@@ -51,7 +51,7 @@ description: "Qwen3-Coder-30B-A3B-Instruct 在单卡 RTX 4090 24GB 上 Q2 / Q4 /
 
 把五档量化摆到一张表上之后，结论其实清楚得意外：**Q6_K 25.1 GB 已经超出 4090 24GB；Q4 是这张卡上能纯 GPU 跑的最高档**。Q6 / Q8 / BF16 全部要么走 partial offload（吞吐塌方）、要么换双卡。一旦把这条 24GB 红线画清楚，「该不该上 Q6」这个问题就不再是模型质量问题，而是工程拓扑问题。
 
-![quant-bench vram budget · Qwen3-Coder 五档量化显存预算图（4090 24GB）](quant-bench-4090-vram-budget.png)
+![quant-bench vram budget · Qwen3-Coder 五档量化显存预算图（4090 24GB）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/qwen3-coder-30b-quant-bench-4090-2026-05-16/quant-bench-4090-vram-budget.png)
 
 这一篇换的路数是：单卡 4090 + Qwen3-Coder-30B-A3B 这个组合不动，把 Q2 / Q4 / Q6 / Q8 / BF16 五档量化挨个跑预算账。权重文件大小走 [Unsloth 的 GGUF 仓库实测文件](https://huggingface.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF) 的真数字，吞吐 / 质量两边的体感引社区报告并显式标 "未独立复测"，最终把 5 档量化收敛到一张决策矩阵——按使用场景反推该选哪档。
 
@@ -130,7 +130,7 @@ KV cache 量化这一档也单独讲两句。默认情况下 llama.cpp / vLLM �
 
 吞吐这一档先把声明摆前面：**本文未独立复测，数字全部来自社区报告**。Arsturn 综合指南、Unsloth 文档、CloudRift 5090 / PRO 6000 评测、阿里云开发者社区帖、几篇知乎专栏综合下来，4090 + Qwen3-Coder-30B 在 Q4 这一档的吞吐中位大概在 70-90 tok/s 区间，arsturn 那篇引用的数字是 "sometimes hitting around 72.9 tokens per second"。
 
-![quant-bench throughput · Qwen3-Coder 五档量化吞吐对比图（4090 tok/s）](quant-bench-4090-throughput.png)
+![quant-bench throughput · Qwen3-Coder 五档量化吞吐对比图（4090 tok/s）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/qwen3-coder-30b-quant-bench-4090-2026-05-16/quant-bench-4090-throughput.png)
 
 把五档吞吐摆到一起看：
 
@@ -170,7 +170,7 @@ Q6 / Q8 一旦走 partial offload，PCIe Gen4 x16 ~64 GB/s 的带宽就是吞吐
 
 把这三段并到一起读，得到的结论是：
 
-![quant-bench quality decay · Qwen3-Coder 五档量化质量保持率曲线](quant-bench-4090-quality-decay.png)
+![quant-bench quality decay · Qwen3-Coder 五档量化质量保持率曲线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/qwen3-coder-30b-quant-bench-4090-2026-05-16/quant-bench-4090-quality-decay.png)
 
 - **Q4 是质量保持率的拐点**——从 Q3 的 ~92% 跳到 Q4 的 98.5%，再往上 Q6 / Q8 只是把零点几个百分点抠回来
 - **Q2 智力打折明显**——Aider Polyglot 已显示 3-bit 是"合理底线"，Q2 在多步推理 / 长链工具调用上掉智力的体感会被放大
@@ -190,7 +190,7 @@ Q4 拐点的存在则是因为：4-bit 量化的数值精度刚好够保住 rout
 
 吞吐 tok/s 是宏观指标，IDE 实时补全真正卡用户的是 P99 首 token 延迟（time-to-first-token, TTFT）和 token 间空窗。这两个指标在量化档位上的差异比平均吞吐更尖锐——平均吞吐 70 tok/s 听起来很好，但如果 P99 首 token 要等 2 秒、token 间偶尔卡 500ms，IDE 用户的实际感受是"补全总是慢半拍"。
 
-![quant-bench ide-latency · 5 档量化在 4090 上的 IDE 首字延迟（社区报告综合，未独立复测）](quant-bench-4090-ide-latency.png)
+![quant-bench ide-latency · 5 档量化在 4090 上的 IDE 首字延迟（社区报告综合，未独立复测）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/qwen3-coder-30b-quant-bench-4090-2026-05-16/quant-bench-4090-ide-latency.png)
 
 把 Q4 / Q6 / Q8 三档在 IDE 实时补全场景的工程现实拆开看：
 
@@ -206,7 +206,7 @@ Q4 拐点的存在则是因为：4-bit 量化的数值精度刚好够保住 rout
 
 把上面三节的预算 / 吞吐 / 质量三张账合到一起，得到的决策矩阵长这样：
 
-![quant-bench decision matrix · RTX 4090 × Qwen3-Coder 量化决策矩阵](quant-bench-4090-decision-matrix.png)
+![quant-bench decision matrix · RTX 4090 × Qwen3-Coder 量化决策矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/qwen3-coder-30b-quant-bench-4090-2026-05-16/quant-bench-4090-decision-matrix.png)
 
 | 使用场景 | 推荐量化 | 上下文 | 吞吐档 | 理由 |
 |---|---|---|---|---|
@@ -245,7 +245,7 @@ Q4 拐点的存在则是因为：4-bit 量化的数值精度刚好够保住 rout
 
 把这五档量化的对位讲完之后，剩下的工作不是再增加一档量化，是把"4090 + Q4_K_M"这个组合的工程链条做扎实——延迟控制、KV cache 压缩、上下文长度选择、IDE 接入路径、跑批与实时补全的混部策略。这些在 5/10、5/11、5/14 三篇专题里逐步铺开过，这一篇只是把"量化档位"这一根支柱钉死。
 
-![quant-bench series genealogy · 本月 4090 + Qwen3-Coder 系列文章谱系图](quant-bench-4090-series-genealogy.png)
+![quant-bench series genealogy · 本月 4090 + Qwen3-Coder 系列文章谱系图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/qwen3-coder-30b-quant-bench-4090-2026-05-16/quant-bench-4090-series-genealogy.png)
 
 这一篇是 5/10 那篇单 Q4 + Trae 接入文章的纵深延伸——同一张 4090、同一个 Qwen3-Coder-30B-A3B，把量化这一维拆细到 5 档。它跟近一周另外几篇本地大模型专题的关系，拆成一张矩阵看更清楚：
 

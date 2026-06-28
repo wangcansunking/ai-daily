@@ -35,7 +35,7 @@ cover: 21.png
 
 # OpenAI 反证 80 年 Erdős · 千问 3.7-Max HN 登顶 | AI 日报 | 2026-05-21
 
-![OpenAI 通用推理模型反证 Erdős 1946 单位距离猜想 与 千问 3.7-Max HN 头版登顶 双头条封面 daily 2026-05-21](21.png)
+![OpenAI 通用推理模型反证 Erdős 1946 单位距离猜想 与 千问 3.7-Max HN 头版登顶 双头条封面 daily 2026-05-21](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/daily/21.png)
 
 ## 📋 头版目录（一屏扫完今日）
 
@@ -55,7 +55,7 @@ cover: 21.png
 - 📦 GitHub Trending 今日榜：tinyhumansai/openhuman +3394 / karpathy-skills +2679 / academic-research-skills +1667 → GitHub Trending
 - 🎙 Noam Brown：「一年前我们模型还停在 IMO 金牌水准，速度还会继续」→ 名人说
 
-![今日 8 篇深度专题与日报导览 daily overview 总览 双头条 OpenAI Erdős 反证 与 千问 3.7-Max HN 登顶](daily-2026-05-21-overview.png)
+![今日 8 篇深度专题与日报导览 daily overview 总览 双头条 OpenAI Erdős 反证 与 千问 3.7-Max HN 登顶](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/daily/daily-2026-05-21-overview.png)
 
 ---
 
@@ -69,7 +69,7 @@ cover: 21.png
 
 更关键的是模型角色：内部通用推理模型，**没被任何数学语料专门微调，没被脚手架包，没被针对这道题做任何引导**。它自己从代数数论里翻出了**无穷类域塔**（infinite class field towers）与**Golod–Shafarevich 定理**这两件平时只在专业课本里出现的工具，构造了一族让单位距离对数量级跃升的离散点集。外部数学家团队独立复核，菲尔兹奖得主 Timothy Gowers 在 X 公开表态「如果是一个人写的，我会毫不犹豫推荐接收」。
 
-![Erdős 单位距离猜想 80 年关键节点时间线 与 OpenAI 反证位置](erdos-timeline.png)
+![Erdős 单位距离猜想 80 年关键节点时间线 与 OpenAI 反证位置](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/daily/erdos-timeline.png)
 
 #### 1.1 80 年时间线上这次反证的位置
 
@@ -107,7 +107,7 @@ OpenAI 推理团队负责人 Noam Brown 同步在 X 转引官博，原文：「�
 
 国内媒体当晚才陆陆续续发稿。**海外社区已经先一步炸开**。HackerNews 头版那条 `item 48205626`「Qwen3.7-Max: The Agent Frontier」由 kevinsimper 提交，发布九小时拿到 521 分 / 202 条评论，稳稳坐在头版第二位。这个热度在 2026 年的国产大模型海外讨论里属于顶级。
 
-![千问 3.7-Max HN 头版顶赞评论 与 AA-Omniscience 非幻觉率 SOTA 对比图](qwen-3-7-max-omniscience.png)
+![千问 3.7-Max HN 头版顶赞评论 与 AA-Omniscience 非幻觉率 SOTA 对比图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/daily/qwen-3-7-max-omniscience.png)
 
 #### 2.1 海外开发者主动安利的一句话
 
@@ -192,7 +192,7 @@ AA-Omniscience 是 Artificial Analysis 发布的事实性与幻觉评测套件�
 
 完整 Brooks 原文核心论点、Shen 语言 30 年历史、Go 守卫类型生成机制、HN 三派评论、与 Claude Code / Cursor / 千问 Coder / 智谱 GLM-Coder 当前主流做法的对比见今日「给 Claude Code 一道形式化类型门栏」专题。
 
-![Shen-Backpressure five gates architecture 形式化类型门栏拦截智能体输出 五道闸门架构图](five-gates-architecture-v2.png)
+![Shen-Backpressure five gates architecture 形式化类型门栏拦截智能体输出 五道闸门架构图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/daily/five-gates-architecture-v2.png)
 
 ### 🟡 推荐 / Tokenspeed：让你肉眼校准本地千问的速度
 
@@ -214,7 +214,7 @@ AA-Omniscience 是 Artificial Analysis 发布的事实性与幻觉评测套件�
 
 ## 🇨🇳 国内 AI 观察
 
-![国产开源大模型 local deploy tokps three tier 三档本地配置解码速度横评 双 4090 与 Mac M3 Ultra 192GB 与 M4 Max 128GB](daily-2026-05-21-local-deploy-tokps-three-tier.png)
+![国产开源大模型 local deploy tokps three tier 三档本地配置解码速度横评 双 4090 与 Mac M3 Ultra 192GB 与 M4 Max 128GB](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/daily/daily-2026-05-21-local-deploy-tokps-three-tier.png)
 
 ### 国内观察 A · 智象未来 HiDream-O1-Image 200B：开源图像模型全球榜首
 
@@ -268,7 +268,7 @@ Kimi K2 是 1T 参数 32B 激活的国产 MoE 大模型，原本属于「云端�
 
 ## 📦 GitHub Trending
 
-![GitHub Trending 2026-05-21 today star 增量 trending stars chart 横评图 Skills 题材包揽前列](daily-2026-05-21-github-trending-stars-chart.png)
+![GitHub Trending 2026-05-21 today star 增量 trending stars chart 横评图 Skills 题材包揽前列](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/daily/daily-2026-05-21-github-trending-stars-chart.png)
 
 ### 🔴 必看 / tinyhumansai/openhuman · 累计 23,592 ★（今日 +3,394）
 
@@ -276,13 +276,13 @@ Rust 写的桌面 AI 助手，主打「一次 OAuth 接通 118 个第三方服�
 
 ### 🔴 必看 / multica-ai/andrej-karpathy-skills · 累计 140,758 ★（今日 +2,679）
 
-![multica-ai/andrej-karpathy-skills GitHub trending claude skills repo og card 规则集](daily-2026-05-21-github-trending-claude-skills-og.png)
+![multica-ai/andrej-karpathy-skills GitHub trending claude skills repo og card 规则集](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/daily/daily-2026-05-21-github-trending-claude-skills-og.png)
 
 单个 CLAUDE.md 文件，基于 Karpathy 多年观察 LLM 写代码总结出的「让 Claude Code 行为更靠谱」的规则集。本周累计 **140,758 ★**，单日 +2,679。Karpathy 加盟 Anthropic 那一周这个 repo 也在同步火，社区在猜下一周 Anthropic 会不会官方收编。
 
 ### 🟡 推荐 / Imbad0202/academic-research-skills · 累计 16,130 ★（今日 +1,667）
 
-![Imbad0202/academic-research-skills GitHub repo og card 学术研究工作流 五步](daily-2026-05-21-github-academic-research-skills-og.png)
+![Imbad0202/academic-research-skills GitHub repo og card 学术研究工作流 五步](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/daily/daily-2026-05-21-github-academic-research-skills-og.png)
 
 Python 项目，教 Claude Code 跑「research → write → review → revise → finalize」五步学术工作流。本周累计 **16,130 ★**。这个 repo 受 arXiv 封禁 AI 水论文新规影响——评论区有人在讨论「这个 skill 怎么改才能让生成的论文不被 arXiv 扫到」。
 
@@ -302,7 +302,7 @@ AI agent skill，跨 Reddit、X、YouTube、HN、Polymarket、网络做研究并
 
 ## 🛠 AI Coding 工具动态
 
-![Google Antigravity 2.0 多智能体 Coding CLI 桌面图 来源 9to5Google](9to5-laptop.jpg)
+![Google Antigravity 2.0 多智能体 Coding CLI 桌面图 来源 9to5Google](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/daily/9to5-laptop.jpg)
 
 ### Coding 工具 A · Google Antigravity 2.0 把 IDE 推倒重做成多智能体工作平台
 

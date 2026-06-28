@@ -18,7 +18,7 @@ tags:
 ---
 # 让 LLM 从零重写 ffmpeg：Meta 新 benchmark 出炉
 
-![让 LLM 从零重写 ffmpeg：Meta 新 benchmark 出炉](programbench-meta-si-lab-rebuild.png)
+![让 LLM 从零重写 ffmpeg：Meta 新 benchmark 出炉](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/programbench-meta-si-lab-rebuild/programbench-meta-si-lab-rebuild.png)
 
 ## 一、5 月 5 日，arXiv 上贴了一道新题
 
@@ -30,7 +30,7 @@ tags:
 
 > 论点先放这里：SWE-Bench 这一代 benchmark 已经被刷得逼近天花板，前沿模型在它上面 60–70 分早就常态。下一代 benchmark 不再是"在已有 repo 里改 bug"，而是直接让 agent 从设计开始重建完整开源程序。ProgramBench 是这个新范式的第一锤。它给业界一个干净的"远未饱和"的标尺，正好接住 SWE-Bench 之后的评测真空。
 
-![ProgramBench 任务设计：从二进制+文档到等价代码库](programbench-task-design.png)
+![ProgramBench 任务设计：从二进制+文档到等价代码库](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/programbench-meta-si-lab-rebuild/programbench-task-design.png)
 
 ## 二、ProgramBench 是什么：任务定义与评分方式
 
@@ -57,7 +57,7 @@ ProgramBench 没有让人类来写测试集，而是用一个独立的 fuzzing a
 
 这两个数字才是论文摘要里那句"none fully resolve any task, with the best model passing 95% of tests on only 3% of tasks"的真正出处。9 个模型在 % Resolved 这一栏全部挂零；% Almost 这栏只有 Claude 三兄弟和 Opus 4.6 露头。
 
-![ProgramBench 评测流程：fuzzing agent 出题 + 模型答题](programbench-eval-flow.png)
+![ProgramBench 评测流程：fuzzing agent 出题 + 模型答题](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/programbench-meta-si-lab-rebuild/programbench-eval-flow.png)
 
 ### 2.3 任务规模：从 212 行到 270 万行
 
@@ -85,7 +85,7 @@ ProgramBench 这篇论文里有一句关键话：**"building a functional applic
 
 ProgramBench 不是要替掉 SWE-Bench，而是在它头上加一层。SWE-Bench 测螺丝刀，ProgramBench 测建筑师。两道题缺一不可。
 
-![SWE-Bench vs ProgramBench：两类编码评测的边界](swe-bench-vs-programbench.png)
+![SWE-Bench vs ProgramBench：两类编码评测的边界](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/programbench-meta-si-lab-rebuild/swe-bench-vs-programbench.png)
 
 ### 3.3 私榜不再是问题
 
@@ -105,7 +105,7 @@ ProgramBench 不是要替掉 SWE-Bench，而是在它头上加一层。SWE-Bench
 - **GPT 5.4 mini**——% Resolved 0.0%；% Almost 0.0%；平均 18 次 API call；单题成本 $0.04
 - **GPT 5 mini**——% Resolved 0.0%；% Almost 0.0%；平均 15 次 API call；单题成本 $0.03
 
-![ProgramBench Leaderboard：% Almost 排名与单题成本](programbench-leaderboard.png)
+![ProgramBench Leaderboard：% Almost 排名与单题成本](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/programbench-meta-si-lab-rebuild/programbench-leaderboard.png)
 
 几条值得注意的判断：
 
@@ -117,7 +117,7 @@ ProgramBench 不是要替掉 SWE-Bench，而是在它头上加一层。SWE-Bench
 
 **前沿模型的天花板就是 3%**。这是关键信号：哪怕最强的 Claude Opus 4.7 也只能在 200 道题里搞定接近完成度的 6 道。剩下 194 道题对所有模型来说都是黑盒。这个数字给国产模型留出了非常宽的追赶窗口——不是要追到饱和，而是从 0 起步，只要做到 1–2% 就已经能挤进第一梯队后排。
 
-![200 道题分类与代码规模分布](programbench-tasks-distribution.png)
+![200 道题分类与代码规模分布](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/programbench-meta-si-lab-rebuild/programbench-tasks-distribution.png)
 
 ## 五、200 道题里都有什么：从 lazygit 到 SQLite
 
@@ -144,7 +144,7 @@ MSL 内部分成四个组：**TBD Lab 管前沿大模型，Perception 管多模�
 
 把 ProgramBench 从这个 lab 出题这件事放在 2026 年节奏里看，很顺：**MSL 一边在造模型，一边要建立"自己人评测自己人"以外的公共标尺**。SWE-Bench 已经成熟，它需要新的硬题来证明"当前所有前沿模型都还远没到达 superintelligence"。这道题的政治意涵也明确：**给业界泼一盆冷水，提醒不要把 SWE-Bench 60% 当成 AGI 信号**。
 
-![Meta Superintelligence Labs 组织与 ProgramBench 出处](meta-si-lab-org-chart.png)
+![Meta Superintelligence Labs 组织与 ProgramBench 出处](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/programbench-meta-si-lab-rebuild/meta-si-lab-org-chart.png)
 
 ## 七、HN 与 r/ML 的反应：业界怎么看这道题
 
@@ -172,7 +172,7 @@ ProgramBench 把题目难度刻意调高到行业天花板以上，Press 自己�
 
 两派都有道理。这条观察直接给国内 AI Coding 工具厂商提了个清单——**Trae / 通义灵码 / CodeBuddy / 智谱 CodeGeeX 这一波，谁先把"多文件项目结构生成"做成 first-class capability，谁就能在长程编码上拉开身位**。
 
-![HN 与 r/ML 讨论焦点拼图](hn-discussion-screenshot.png)
+![HN 与 r/ML 讨论焦点拼图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/programbench-meta-si-lab-rebuild/hn-discussion-screenshot.png)
 
 ## 八、对国产 LLM 的启发：标尺有了，接下来比什么
 

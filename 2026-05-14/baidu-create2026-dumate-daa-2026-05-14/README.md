@@ -25,7 +25,7 @@ tags:
 
 > 5 月 13 日，北京。百度 Create 2026 开发者大会上，李彦宏在开幕 keynote 里抛出了一个新词：**DAA · 日活智能体数**。同一句话里他给这个词配了一组判断——Token 只代表成本不代表收益，DAA 才是 AI 时代真正的度量衡，未来全球 DAA 可能超过 100 亿。这是国内一线 AI 公司第一次正面把"AI 时代该用什么尺子量"这件事摆到台面上。同场发布的通用智能体 DuMate（百度搭子）、秒哒 3.0、伐谋 2.0、文心 5.1 与昆仑芯天池 256 卡超节点，整套是用来证明这把尺子能立起来的实物。
 
-![李彦宏首提 DAA：AI 时代的新度量衡](baidu-create2026-dumate-daa-2026-05-14.png)
+![李彦宏首提 DAA：AI 时代的新度量衡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/baidu-create2026-dumate-daa-2026-05-14/baidu-create2026-dumate-daa-2026-05-14.png)
 
 过去两年，国内同行讨论 AI 公司值不值钱，绕来绕去的核心数字就是 token——一个模型一天烧多少 token、卖多少 token、毛利率几个点。token 是 OpenAI 早期把大模型说成"通用工具"时留下来的口径，被所有云厂商和模型公司沿用至今，连国内招股说明书里都开始把 token 调用量当增长曲线。**问题是 token 这把尺子，量的是耗电不是干活**——一个模型反复在内部 think、最后输出 5 个字交付一份报告，烧的 token 没准是只输出结果的 100 倍，谁付钱、付多少、值不值，token 这把尺子里看不见。
 
@@ -42,7 +42,7 @@ tags:
 
 ## 一、DAA 是什么：把"AI 时代的 GDP"摆到台面上
 
-![DAA 是什么：李彦宏给 AI 时代定的新度量衡](baidu-dumate-daa-definition.png)
+![DAA 是什么：李彦宏给 AI 时代定的新度量衡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/baidu-create2026-dumate-daa-2026-05-14/baidu-dumate-daa-definition.png)
 
 先把这把尺子拆开看。**DAU**（Daily Active Users）量的是有多少人在主动用 App，量级目前最高的是 Meta 全球 34 亿 DAU、微信国内月活 13 亿。这把尺子在移动互联网时代撑了 15 年——App 是被消费的对象，人主动操作，对应的商业模型是广告和订阅。**Token** 量的是模型一天烧了多少计算单位，对应的是云厂商和模型公司的成本——它能算清楚一份 PPT 生成花了多少算力，但回答不了"这份 PPT 替谁完成了几个工时的活"。
 
@@ -52,7 +52,7 @@ tags:
 - **移动互联网 · DAU** — App 是被消费的对象，人主动操作，全球数十亿。
 - **AI 时代 · DAA** — Agent 是替人干活的工人，量的是任务完成数，未来或超 100 亿。
 
-![100 亿 DAA 是怎么算出来的：李彦宏的代际逻辑](baidu-daa-growth-eras.png)
+![100 亿 DAA 是怎么算出来的：李彦宏的代际逻辑](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/baidu-create2026-dumate-daa-2026-05-14/baidu-daa-growth-eras.png)
 
 100 亿这个数字往大说不夸张。**地球人口 80 亿、每个人配 1 个常用 Agent 就接近 100 亿，配 5 个就过 400 亿**——而日常生活里一个人同时跑的 App 就经常超过 5 个，未来跑 5 个 Agent 不是难题。难的是另一件事——**这 100 亿个 Agent 谁来付钱**。Token 模型里付钱的是用算力的那一方，DAA 模型里付钱的是要交付结果的那一方——后者更接近真实价值流动。这两年国内同行在 SaaS、AI Coding、Agent 落地上的所有讨论，其实都在等这件事：**有没有一把尺子，能把"被替代掉的工作量"算成生意**。
 
@@ -68,7 +68,7 @@ tags:
 
 ## 二、DuMate：百度想做的"AI 时代统一入口"长什么样
 
-![DuMate 百度搭子：用户进入 Agent 世界的统一入口](baidu-dumate-architecture.png)
+![DuMate 百度搭子：用户进入 Agent 世界的统一入口](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/baidu-create2026-dumate-daa-2026-05-14/baidu-dumate-architecture.png)
 
 DAA 这把尺子摆出来后，需要一个东西来承载——一个能让普通用户一句话就生成 Agent、并且让 Agent 替自己干活的入口。**DuMate（百度搭子）就是百度给这把尺子配的"入口产品"**。
 
@@ -81,7 +81,7 @@ DuMate 公开口径里有两条硬指标：
 
 把 DuMate 和海外几家通用智能体放在一起对位，会发现一件有意思的事——**大家走的不是同一条路线**。
 
-![全球通用智能体入口横向对位：DuMate · Gemini App · Claude · ChatGPT](baidu-dumate-global-compare.png)
+![全球通用智能体入口横向对位：DuMate · Gemini App · Claude · ChatGPT](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/baidu-create2026-dumate-daa-2026-05-14/baidu-dumate-global-compare.png)
 
 四家通用智能体入口的分野，简单一句话总结：
 
@@ -96,7 +96,7 @@ DuMate 公开口径里有两条硬指标：
 
 ## 三、秒哒 3.0：把非技术用户拉进开发链条这件事
 
-![秒哒 3.0：90% 代码自生成 · 1000 万用户 · 50 亿应用价值](baidu-miaoda-metrics.png)
+![秒哒 3.0：90% 代码自生成 · 1000 万用户 · 50 亿应用价值](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/baidu-create2026-dumate-daa-2026-05-14/baidu-miaoda-metrics.png)
 
 秒哒 3.0 是这次 Create 2026 大会上数字最硬的一个产品。先把六个数字摆开看：
 
@@ -117,7 +117,7 @@ DuMate 公开口径里有两条硬指标：
 
 把秒哒 3.0 放回国内外 AI 代码生成 / 无代码平台赛道里看，会发现它和 Cursor、Trae、通义灵码、v0 走的不是同一条路。
 
-![AI 代码生成 / 无代码平台：秒哒 3.0 · Cursor · v0 · Trae · 通义灵码](baidu-miaoda-codegen-compare.png)
+![AI 代码生成 / 无代码平台：秒哒 3.0 · Cursor · v0 · Trae · 通义灵码](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/baidu-create2026-dumate-daa-2026-05-14/baidu-miaoda-codegen-compare.png)
 
 五家工具的目标用户和产物形态有明显分野：
 
@@ -137,7 +137,7 @@ DuMate 公开口径里有两条硬指标：
 
 ## 四、百度全栈五层：国内同行视角对比能接的几个口子
 
-![百度全栈 AI：从昆仑芯到 DuMate，五层产品对应 DAA 时代的完整栈](baidu-fullstack-ai.png)
+![百度全栈 AI：从昆仑芯到 DuMate，五层产品对应 DAA 时代的完整栈](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/baidu-create2026-dumate-daa-2026-05-14/baidu-fullstack-ai.png)
 
 Create 2026 这次大会的另一个亮点，是百度一次性把五层全栈产品都更新了一遍——这件事在国内同行里目前只有阿里能对位，但阿里的产品矩阵分散在通义、千问、夸克几个不同入口。**百度这次的整合度是国内目前最高的一家**。
 
@@ -162,7 +162,7 @@ Create 2026 这次大会的另一个亮点，是百度一次性把五层全栈�
 
 ## 五、海外对位横评与国内 AI 行业的视角判断
 
-![DuMate 百度搭子：用户进入 Agent 世界的统一入口](baidu-dumate-architecture.png)
+![DuMate 百度搭子：用户进入 Agent 世界的统一入口](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/baidu-create2026-dumate-daa-2026-05-14/baidu-dumate-architecture.png)
 
 把 DAA 这件事放在全球 AI 行业的脉络里看一遍，更能看清楚百度这次的位置。
 

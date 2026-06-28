@@ -21,7 +21,7 @@ description: "5 月 4 日 vLLM 发到 v0.20.1、5 月 5 日 SGLang 发到 v0.5.1
 ---
 # 4090 跑 Qwen3-32B：3 家引擎横评
 
-![4090 跑 Qwen3-32B 3 家引擎横评封面](sglang-vllm-lmdeploy-qwen3-32b-4090-2026-05-10.png)
+![4090 跑 Qwen3-32B 3 家引擎横评封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/sglang-vllm-lmdeploy-qwen3-32b-4090-2026-05-10/sglang-vllm-lmdeploy-qwen3-32b-4090-2026-05-10.png)
 
 ## 一、为什么是这三家
 
@@ -29,7 +29,7 @@ SGLang 是 LMSYS（也就是把 Vicuna 和 Chatbot Arena 跑起来的那个 UC B
 
 > **本文核心论断**：在 RTX 4090 24GB 单卡 + Qwen3-32B-AWQ + 32K 上下文这个极端约束下，**没有"最快的引擎"，只有"最贴你业务的引擎"**——SGLang 在多用户共享前缀的 Agent 场景命中率领先，vLLM 在生态成熟度和 OpenAI API 兼容性上无人能及，lmdeploy 在量化推理和低延迟首 token 上靠纯 C++ 后端把 Python 解释器开销吃干净。**4090 + Qwen3-32B + 三引擎可选**这件事意味着，国内开发者第一次能在压业务前把"选哪家"用一张数字表替换玄学和情怀，把这一步从"我同事说"变成"我自己跑过"。
 
-![SGLang RadixAttention vs vLLM PagedAttention vs lmdeploy TurboMind 工程对照表](sglang-vllm-lmdeploy-engineering-table.png)
+![SGLang RadixAttention vs vLLM PagedAttention vs lmdeploy TurboMind 工程对照表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/sglang-vllm-lmdeploy-qwen3-32b-4090-2026-05-10/sglang-vllm-lmdeploy-engineering-table.png)
 
 ## 二、4090 单卡跑 Qwen3-32B 的硬约束：W4 才进 24GB
 
@@ -49,7 +49,7 @@ W4 之后权重大约 19 GB（按 4.7 bit 实际打包算），24GB 显卡剩 5 
 | W4A16 + KV INT8（lmdeploy 默认） | 19 GB | 4.3 GB | 23.3 GB | ✅ 紧贴 |
 | W4A16 + Q4K/Q8V（社区组合） | 19 GB | 2.7 GB | 21.7 GB | ✅ 留 2GB workspace |
 
-![4090 24GB 跑 Qwen3-32B 显存预算图：W4A16 + KV 量化才进得去](qwen3-coder-30b-vram-budget.png)
+![4090 24GB 跑 Qwen3-32B 显存预算图：W4A16 + KV 量化才进得去](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/sglang-vllm-lmdeploy-qwen3-32b-4090-2026-05-10/qwen3-coder-30b-vram-budget.png)
 
 **判断**：4090 单卡跑 Qwen3-32B 32K 上下文不是"能不能"的问题，是"必须把 KV 也量化"的问题；这一点三家引擎在工程默认值上的取舍直接决定了开发者部署时第一行命令该怎么写。
 
@@ -91,7 +91,7 @@ vLLM 还有一项国内开发者高频用到的功能——**LoRA 热加载**。
 
 **判断**：vLLM 适合"我要先把 Qwen3-32B 跑通、跑稳定、对外暴露 OpenAI API、不踩奇怪坑、未来还要外挂 LoRA"这一类目标；不适合追求绝对吞吐第一或者搞 Agent 多轮共享前缀的极致优化。
 
-![三家在 4090 + Qwen3-32B + 32K 上下文吞吐对照](sglang-vllm-lmdeploy-throughput-chart.png)
+![三家在 4090 + Qwen3-32B + 32K 上下文吞吐对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/sglang-vllm-lmdeploy-qwen3-32b-4090-2026-05-10/sglang-vllm-lmdeploy-throughput-chart.png)
 
 ## 五、lmdeploy TurboMind：纯 C++ 后端吃干净 Python 开销
 
@@ -150,7 +150,7 @@ lmdeploy 在量化栈上也比另外两家更深。除了主线的 W4A16，它�
 
 四条加起来给国内开发者的启示是清晰的：**不要听任何一家自己做的 benchmark，自己用业务真实流量跑一周再决定**。三家的 docker 镜像都是分钟级 pull 起来，4090 上同一个 AWQ 模型切换部署成本只是改一行 docker run 命令。
 
-![r/LocalLLaMA 国内外开发者真人选型反馈拼贴](sglang-vllm-lmdeploy-community-feedback.png)
+![r/LocalLLaMA 国内外开发者真人选型反馈拼贴](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/sglang-vllm-lmdeploy-qwen3-32b-4090-2026-05-10/sglang-vllm-lmdeploy-community-feedback.png)
 
 ## 八、国内开源生态：三家在中国的角色不一样
 
@@ -177,13 +177,13 @@ ModelScope（魔搭）这个国内开源模型分发平台把三家都列为官�
 
 **判断**：国内开发者今天在三家引擎之间切换的工程成本前所未有地低；选型这件事真的可以从"我同事说"升级到"我自己 docker pull 三个跑一周再说"。
 
-![三家在 4090 + Qwen3-32B + 32K 上下文吞吐分布对照](sglang-vllm-lmdeploy-throughput-chart.png)
+![三家在 4090 + Qwen3-32B + 32K 上下文吞吐分布对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/sglang-vllm-lmdeploy-qwen3-32b-4090-2026-05-10/sglang-vllm-lmdeploy-throughput-chart.png)
 
 ## 九、九个场景对应九条选型答案
 
 把前面所有节折叠成一张实际选型表。下面这九个场景是国内开发者最常见的、4090 上跑 Qwen3-32B 这种规模的项目落地决策。
 
-![SGLang vs vLLM vs lmdeploy 工程取舍对照（决策回顾图）](sglang-vllm-lmdeploy-engineering-table.png)
+![SGLang vs vLLM vs lmdeploy 工程取舍对照（决策回顾图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/sglang-vllm-lmdeploy-qwen3-32b-4090-2026-05-10/sglang-vllm-lmdeploy-engineering-table.png)
 
 | 场景 | 首选 | 理由 |
 |---|---|---|

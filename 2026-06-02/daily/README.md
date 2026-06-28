@@ -11,7 +11,7 @@ description: "6/2 三条主线各指向同一个判断：能力正在往单点�
 
 # MiniMax M3 五折上线主打编程 · 宇树本体进英伟达开源人形机 · 微软自研模型要换掉 Copilot 里的 GPT | AI 日报 | 2026-06-02
 
-![国产 MiniMax M3 主打编程 · 宇树本体进英伟达开源人形机 · 微软自研模型换 Copilot 引擎三线交织](02.png)
+![国产 MiniMax M3 主打编程 · 宇树本体进英伟达开源人形机 · 微软自研模型换 Copilot 引擎三线交织](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/daily/02.png)
 
 ## 📋 头版目录
 
@@ -39,7 +39,7 @@ description: "6/2 三条主线各指向同一个判断：能力正在往单点�
 
 ### 头条 1 · MiniMax M3 把编程、百万上下文、多模态压进同一个模型
 
-![MiniMax M3 官方发布主视觉，一个模型同时覆盖编程、百万上下文与原生多模态](source-minimax-m3-official-hero-2026-06-02.png)
+![MiniMax M3 官方发布主视觉，一个模型同时覆盖编程、百万上下文与原生多模态](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/daily/source-minimax-m3-official-hero-2026-06-02.png)
 
 > 来源：MiniMax 官方博客 minimax.io，2026-06-01 M3 发布主视觉
 
@@ -51,7 +51,7 @@ M3 的工程核心是自研的 MSA（MiniMax 稀疏注意力）。官方给出�
 
 这条路线解决的是一个很具体的痛点。过去把上下文拉到百万级，算力和显存几乎是平方级往上涨，长上下文好用但烧钱。MSA 用稀疏的方式只让每个词元关注真正相关的一小部分，把这条曲线压平，长上下文从"能用但贵"变成"可以日常开着用"。
 
-![MSA 稀疏注意力：百万上下文单词元算力约为上代 1/20，预填充加速约 9.7 倍、解码加速约 15.6 倍](chart-m3-msa-1m-cost-2026-06-02.png)
+![MSA 稀疏注意力：百万上下文单词元算力约为上代 1/20，预填充加速约 9.7 倍、解码加速约 15.6 倍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/daily/chart-m3-msa-1m-cost-2026-06-02.png)
 
 #### 头条 1.2 · 编程自评领先，桌面操作还差一口气
 
@@ -62,13 +62,13 @@ M3 在编程与智能体方向给出了一组官方自评成绩，放进读者�
 - Terminal-Bench 2.1 拿到 66.0%，MCP Atlas 74.2%，读图文文档的 OmniDocBench 高于 Gemini 3.1 Pro；
 - 桌面操作、后训练这类项目仍落在头部之后，PostTrainBench 自评 37.1 排第三，差距是真实存在的。
 
-![MiniMax M3 编程与智能体 benchmark 横评，和读者每天用的旗舰同台，★ 为该项最高](chart-m3-benchmark-2026-06-02.png)
+![MiniMax M3 编程与智能体 benchmark 横评，和读者每天用的旗舰同台，★ 为该项最高](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/daily/chart-m3-benchmark-2026-06-02.png)
 
 需要点明的一句：以上全部是 MiniMax 自评，权重还没公开，独立复现要等开源之后。把它当成"厂商给的起点参考"，真正的分数在你自己的任务里。
 
 #### 头条 1.3 · 价格才是这次最锋利的一刀
 
-![MiniMax M3 官方 API 价格，按上下文长度分两档，512K 以内七天五折](source-minimax-m3-official-pricing-2026-06-02.png)
+![MiniMax M3 官方 API 价格，按上下文长度分两档，512K 以内七天五折](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/daily/source-minimax-m3-official-pricing-2026-06-02.png)
 
 > 来源：MiniMax 官方定价页 minimax.io，2026-06-01
 
@@ -78,7 +78,7 @@ M3 把价格按上下文长度分两档，512K 以内享受发布后七天五折
 
 ### 头条 2 · 英伟达把开源人形机器人的标准身体，直接定成了宇树 H2
 
-![NVIDIA Isaac GR00T 开源参考人形机器人，Unitree H2 本体配 Sharpa 触觉手与 Jetson Thor 算力](source-unitree-groot-nvidia-hero-2026-06-02.png)
+![NVIDIA Isaac GR00T 开源参考人形机器人，Unitree H2 本体配 Sharpa 触觉手与 Jetson Thor 算力](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/daily/source-unitree-groot-nvidia-hero-2026-06-02.png)
 
 > 来源：英伟达官方新闻稿 nvidianews.nvidia.com，GTC 台北 2026-06-01
 
@@ -92,7 +92,7 @@ Isaac GR00T 是一套"软件 + 算力 + 本体"的完整参考栈，三层各有
 - **算力层**：英伟达 Jetson AGX Thor T5000 模组，Blackwell 架构 2070 FP4 TFLOPS、128GB 统一内存、功耗 40–130W 可调；
 - **软件层**：英伟达 Isaac GR00T 软件平台，提供训练、仿真到部署的链条。
 
-![Isaac GR00T 三层平台 platform stack 分解：软件层、算力层 Jetson Thor、本体层 Unitree H2 加 Sharpa 触觉手](groot-platform-stack-2026-06-02.png)
+![Isaac GR00T 三层平台 platform stack 分解：软件层、算力层 Jetson Thor、本体层 Unitree H2 加 Sharpa 触觉手](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/daily/groot-platform-stack-2026-06-02.png)
 
 #### 头条 2.2 · 哪些是官方说的，哪些只是个别媒体的写法
 
@@ -101,7 +101,7 @@ Isaac GR00T 是一套"软件 + 算力 + 本体"的完整参考栈，三层各有
 - **官方确认**：开源参考设计、Jetson Thor 算力、Sharpa 触觉手、宇树 H2 Plus 本体、上面那组自由度与算力数字、年底由宇树开售、合作研究机构包括艾伦人工智能研究院（Ai2）、苏黎世联邦理工、斯坦福机器人中心、加州大学圣迭戈分校；
 - **媒体补充**：把这次合作直接和宇树 IPO 时点绑在一起的叙事，属于媒体的解读角度，不是英伟达发布稿里的内容。
 
-![Isaac GR00T 参考人形机器人规格速查表，区分官方口径与媒体口径](groot-spec-table-2026-06-02.png)
+![Isaac GR00T 参考人形机器人规格速查表，区分官方口径与媒体口径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/daily/groot-spec-table-2026-06-02.png)
 
 #### 头条 2.3 · 同一天，宇树 IPO 过会
 
@@ -111,7 +111,7 @@ Isaac GR00T 是一套"软件 + 算力 + 本体"的完整参考栈，三层各有
 
 ### 头条 3 · 微软要拿自研模型，换掉 Copilot 里的 GPT
 
-![微软 Build 2026 开发者大会主视觉，主题聚焦智能体平台与 Copilot](source-microsoft-build-2026-06-02.png)
+![微软 Build 2026 开发者大会主视觉，主题聚焦智能体平台与 Copilot](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/daily/source-microsoft-build-2026-06-02.png)
 
 > 来源：微软 Build 官方活动页 build.microsoft.com
 
@@ -182,25 +182,25 @@ Isaac GR00T 是一套"软件 + 算力 + 本体"的完整参考栈，三层各有
 
 - 🔴 **pewdiepie-archdaemon/odysseus** [跟进]：约 20695 星、JavaScript，5 月 31 日创建，两天涨到约 2 万星。瑞典视频创作者 PewDiePie 亲手开发的自托管 AI 工作台，本地优先、隐私优先、零遥测，把多轮对话、自主智能体、硬件感知的两百多个模型一键部署、邮件 AI 摘要起草都放进同一台机器。完整拆解见今日「PewDiePie 开源 Odysseus：本地跑的 ChatGPT 平替」专题。它正中本日报最看重的个人 AI / 本地 AI 助手方向。 [9]
 
-![PewDiePie 自托管 AI 工作台 odysseus 的 GitHub 仓库卡片，本地优先的开源 AI 工作台](source-odysseus-github-card-2026-06-02.png)
+![PewDiePie 自托管 AI 工作台 odysseus 的 GitHub 仓库卡片，本地优先的开源 AI 工作台](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/daily/source-odysseus-github-card-2026-06-02.png)
 
 > 来源：GitHub 仓库 og 卡片 pewdiepie-archdaemon/odysseus
 
 - 🔴 **supermemoryai/supermemory**：约 23955 星、单日新增约 647，TypeScript。面向 AI 时代的高速可扩展记忆引擎，提供统一的记忆接口。智能体长期记忆是当前最热的工程方向之一，它给出了一个开箱即用的选项。 [10]
 
-![智能体记忆引擎 supermemory 的 GitHub 仓库卡片](source-github-supermemory-og-2026-06-02.png)
+![智能体记忆引擎 supermemory 的 GitHub 仓库卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/daily/source-github-supermemory-og-2026-06-02.png)
 
 > 来源：GitHub 仓库 og 卡片 supermemoryai/supermemory
 
 - 🔴 **EveryInc/compound-engineering-plugin** [跟进]：约 19087 星、单日新增约 417，TypeScript。官方 Compound Engineering 插件，同时支持 Claude Code、Codex、Cursor 等多端，把一套工程范式跨工具复用。对在多种编码智能体之间切换的团队很实用。 [11]
 
-![Compound Engineering 插件的 GitHub 仓库卡片，跨 Claude Code、Codex、Cursor 多端](source-github-compound-engineering-og-2026-06-02.png)
+![Compound Engineering 插件的 GitHub 仓库卡片，跨 Claude Code、Codex、Cursor 多端](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/daily/source-github-compound-engineering-og-2026-06-02.png)
 
 > 来源：GitHub 仓库 og 卡片 EveryInc/compound-engineering-plugin
 
 - 🟡 **can1357/oh-my-pi**：约 9450 星、单日新增约 335，TypeScript。终端里的 AI 编码智能体，按哈希锚定编辑、优化工具调用、内置语言服务、Python 与浏览器子智能体。是 2025 年底新起的项目，迭代很快。 [12]
 
-![终端 AI 编码智能体 oh-my-pi 的 GitHub 仓库卡片](source-github-oh-my-pi-og-2026-06-02.png)
+![终端 AI 编码智能体 oh-my-pi 的 GitHub 仓库卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/daily/source-github-oh-my-pi-og-2026-06-02.png)
 
 > 来源：GitHub 仓库 og 卡片 can1357/oh-my-pi
 

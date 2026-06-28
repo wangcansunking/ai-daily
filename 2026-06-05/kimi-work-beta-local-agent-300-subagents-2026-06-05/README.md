@@ -16,7 +16,7 @@ description: 月之暗面 6 月 3 日开放 Kimi Work Beta 内测，把 Kimi 从
 ---
 # Kimi 从写代码走到替你干活：本地版 Kimi Work 实拆
 
-![Kimi Work 本地 agent 封面 local work subagents](kimi-work-beta-local-agent-300-subagents-2026-06-05.png)
+![Kimi Work 本地 agent 封面 local work subagents](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/kimi-work-beta-local-agent-300-subagents-2026-06-05/kimi-work-beta-local-agent-300-subagents-2026-06-05.png)
 
 6 月 3 日，月之暗面给 Kimi 的 Mac 和 Windows 客户端推了一个新东西：**Kimi Work Beta 版**，定位写得很直白——「面向知识工作者的通用型本地 Agent」。
 
@@ -32,13 +32,13 @@ description: 月之暗面 6 月 3 日开放 Kimi Work Beta 内测，把 Kimi 从
 
 从客户端界面就能看清它的形态。打开 Kimi 桌面端，顶部多了一个 **Work** 标签，和原来的 **Chat** 并排。进到 Work 里，左侧是一排功能入口：新建任务、技能、定时任务、WebBridge，下面是「项目」——也就是它为每个任务建的本地文件夹。
 
-![Kimi Work Beta 开启内测 · kimiwork ithome](source-kimiwork-ithome-1.png)
+![Kimi Work Beta 开启内测 · kimiwork ithome](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/kimi-work-beta-local-agent-300-subagents-2026-06-05/source-kimiwork-ithome-1.png)
 
 <small>来源：IT之家报道配图（ithome.com）·「Kimi Work Beta 开启内测」客户端示意</small>
 
 中间是一个输入框，提示语是「输入"/"快速使用技能，"@"添加上下文」。输入框右下角有一个能在 **Agent** 与 **Agent 集群** 之间切换的开关，左下角还有一个「全部允许」的权限控制下拉——这两个细节后面会专门讲。
 
-![Kimi Work 桌面客户端主界面 · kimiwork ithome](source-kimiwork-ithome-3.png)
+![Kimi Work 桌面客户端主界面 · kimiwork ithome](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/kimi-work-beta-local-agent-300-subagents-2026-06-05/source-kimiwork-ithome-3.png)
 
 <small>来源：IT之家报道配图（ithome.com）·Kimi Work 桌面客户端主界面，左栏可见「技能 / 定时任务 / WebBridge」与「项目」文件夹</small>
 
@@ -54,7 +54,7 @@ description: 月之暗面 6 月 3 日开放 Kimi Work Beta 内测，把 Kimi 从
 
 把这串动作翻译成知识工作者听得懂的话：**你说一句要什么，它在你这台机器上自己排活、自己开浏览器查资料、自己整理文件，最后给你一份能直接用的交付物。** 这就是它和「聊天框」最本质的区别——聊天框给你答案，Work 给你产物。
 
-![Kimi Work Beta 内测 · kimiwork ifeng](source-kimiwork-ifeng.png)
+![Kimi Work Beta 内测 · kimiwork ifeng](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/kimi-work-beta-local-agent-300-subagents-2026-06-05/source-kimiwork-ifeng.png)
 
 <small>来源：凤凰网报道配图（tech.ifeng.com）·「自然语言指挥电脑干活」</small>
 
@@ -116,7 +116,7 @@ Kimi Work 继承了在线版 Kimi Agent 的专业 Skills，比如**建站、PPT*
 
 凤凰网报道里给的一条典型流程很能说明它怎么用：**本地文件读取 → 本地浏览器查看订阅数据库 → 深度报告生成 → 调用 PPT Skill → 输出客户方案。** 这一条线串起来，正好是一个咨询顾问 / 分析师真实的半天工作量——读资料、查数据、写报告、做 PPT，全在本机一气呵成。
 
-![Kimi Work 输出的工作产物 · kimiwork ithome](source-kimiwork-ithome-2.png)
+![Kimi Work 输出的工作产物 · kimiwork ithome](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/kimi-work-beta-local-agent-300-subagents-2026-06-05/source-kimiwork-ithome-2.png)
 
 <small>来源：IT之家报道配图（ithome.com）·Kimi Work 在本地生成的报告与 PPT 等工作产物示意</small>
 
@@ -152,9 +152,9 @@ Kimi Work 继承了在线版 Kimi Agent 的专业 Skills，比如**建站、PPT*
 
 国内读者最关心的一个问题是：这东西和我已经在用的那些有什么不一样？用一张定位象限图最清楚——横轴是执行地点（云端到本地优先），纵轴是面向人群（开发者到知识工作者）。
 
-![个人 AI 工作台定位象限图 · kimi work quadrant](chart-kimi-work-quadrant-2026-06-05.png)
+![个人 AI 工作台定位象限图 · kimi work quadrant](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/kimi-work-beta-local-agent-300-subagents-2026-06-05/chart-kimi-work-quadrant-2026-06-05.png)
 
-![Kimi Work 与 OpenClaw、Claude Code、扣子定位对比表 positioning](wechat-table-positioning-2026-06-05.png)
+![Kimi Work 与 OpenClaw、Claude Code、扣子定位对比表 positioning](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/kimi-work-beta-local-agent-300-subagents-2026-06-05/wechat-table-positioning-2026-06-05.png)
 
 <small>来源：本文据各厂商官方页与媒体公开描述整理的相对位置示意（2026-06-05 核对），非精确坐标</small>
 

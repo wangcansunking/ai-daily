@@ -12,13 +12,13 @@ description: "一位开发者在 2016 年的 Intel Xeon E5-2620 v4（八核、�
 
 # 十年前的老 Xeon 跑通 26B 模型，墙是内存带宽不是算力
 
-![十年老 Xeon 跑通 26B 模型，瓶颈是内存带宽](gemma4-26b-moe-vintage-xeon-cpu-2026-06-02.png)
+![十年老 Xeon 跑通 26B 模型，瓶颈是内存带宽](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/gemma4-26b-moe-vintage-xeon-cpu-2026-06-02/gemma4-26b-moe-vintage-xeon-cpu-2026-06-02.png)
 
 先把结论摆在最前面：一台 2016 年出厂、连一块独立显卡都没有的服务器，跑起了 2026 年的 26B 大模型，满载状态下还能稳定吐出每秒约 11.94 个词元——大致就是一个人正常阅读的速度。
 
 这台机器的处理器是 Intel Xeon E5-2620 v4，八个物理核、十六个线程，主频 2.10 GHz，配 128GB 内存。听起来内存挺大方，但那是 DDR3——按作者的说法，比当下最好的笔记本内存还要慢上 5 到 6 倍。就是在这样一台被很多人当电子垃圾处理掉的老机器上，谷歌（Google）Gemma 4 的 26B 混合专家（MoE）模型跑了起来。
 
-![原文博客头图，作者在文中详细记录了这套配置（来源：point.free 博客 gemma-4-on-a-2016-xeon）](source-gemma4-xeon-banner-2026-06-02.png)
+![原文博客头图，作者在文中详细记录了这套配置（来源：point.free 博客 gemma-4-on-a-2016-xeon）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/gemma4-26b-moe-vintage-xeon-cpu-2026-06-02/source-gemma4-xeon-banner-2026-06-02.png)
 
 这件事在国外开发者社区掀起的讨论，标题起得很直白：「一台十年的 Xeon 就够了」。作者把完整的配置、命令和数字都写在了博客里（point.free 博客的 gemma-4-on-a-2016-xeon 一文），讨论帖也很快冲到了 599 个赞、248 条回复。它之所以值得国内同行认真看一遍，不是因为又有人秀了一把极限折腾，而是因为作者把一个被官方营销长期盖住的事实重新讲清楚了——**本地跑大模型，挡在你面前的那堵墙，几乎从来不是算力，而是内存带宽。**
 
@@ -35,7 +35,7 @@ description: "一位开发者在 2016 年的 Intel Xeon E5-2620 v4（八核、�
 
 注意最后一条。作者给出 11.94 词元/秒这个数字时，特意说明机器当时正同时当缓存和构建服务器用——也就是处在满载状态。如果让它空下来专心推理，粗测能到每秒 20 个词元上下。这两个数字的对比本身就说明问题：负载在变，速度也在变，但变的幅度并没有想象中那么夸张。
 
-![同一台老 Xeon 在不同负载下的生成速度（throughput）](chart-throughput-2026-06-02.png)
+![同一台老 Xeon 在不同负载下的生成速度（throughput）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/gemma4-26b-moe-vintage-xeon-cpu-2026-06-02/chart-throughput-2026-06-02.png)
 
 这台机器为什么有代表性？因为它几乎就是国内二手市场上最常见的那一类——早些年从机房退役、被拆成矿渣机和洋垃圾服务器流出来的至强（Xeon）平台，核多、内存插槽多、价格便宜得离谱，唯一的硬伤就是制程老、内存代际旧。很多人买回来当软路由、当下载机、当家庭存储，却很少有人指望它能跑大模型。这台 E5-2620 v4 把那层「不指望」捅破了。
 
@@ -49,7 +49,7 @@ description: "一位开发者在 2016 年的 Intel Xeon E5-2620 v4（八核、�
 
 要回答这个问题，得先搞清楚大模型在生成阶段到底在干什么。每吐出一个词元，模型都要把这一步需要用到的权重，从内存里完整搬运一遍到处理器跟前。**真正耗时的不是处理器算这些数有多快，而是这些数从内存搬到处理器要多久。**
 
-![为什么核多不等于更快：墙是内存带宽（bandwidth）](chart-bandwidth-wall-2026-06-02.png)
+![为什么核多不等于更快：墙是内存带宽（bandwidth）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/gemma4-26b-moe-vintage-xeon-cpu-2026-06-02/chart-bandwidth-wall-2026-06-02.png)
 
 这就解释了一个很多人想不通的现象：为什么核心越堆越多，速度却不见得越快？因为处理器的核心再多，也只是在原地等内存把数据喂过来。算力是那条又宽又快的高速路，内存带宽是路尽头那根细吸管——车再多，也得排队从吸管里一辆一辆挤过去。
 
@@ -81,7 +81,7 @@ Gemma 4 这个 26B 模型并不是一个传统的稠密模型。它是混合专�
 - **KV 缓存**约 56GB，这是把上下文撑到完整的 262K 长度时的占用
 - 两者相加，82GB 稳稳落在 128GB 内存里
 
-![这套配置 82GB 占用拆解，KV 缓存比模型权重还大（Xeon）](gemma4-xeon-kvcache-2026-06-02.png)
+![这套配置 82GB 占用拆解，KV 缓存比模型权重还大（Xeon）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/gemma4-26b-moe-vintage-xeon-cpu-2026-06-02/gemma4-xeon-kvcache-2026-06-02.png)
 
 <small>来源：自制图表（数据据正文）</small>
 
@@ -93,7 +93,7 @@ Gemma 4 这个 26B 模型并不是一个传统的稠密模型。它是混合专�
 
 作者把这套配置形容成一句「咒语」——一条命令带着约 25 个开关。直接看会觉得密密麻麻像天书，但只要按「它们各自在跟哪堵墙较劲」来归类，立刻就清楚了。这些开关大致分四类。
 
-![约 25 个开关，按作用分四类（flags）](chart-flags-2026-06-02.png)
+![约 25 个开关，按作用分四类（flags）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/gemma4-26b-moe-vintage-xeon-cpu-2026-06-02/chart-flags-2026-06-02.png)
 
 | 分类 | 主要开关 | 在做什么 |
 | --- | --- | --- |
@@ -160,7 +160,7 @@ ik_llama.cpp 是社区里专门往「极致压榨 CPU 推理」方向走的分�
 
 完全不是。这条路线的核心从来不是某个具体模型，而是一个判断标准——**找一个总参数够大、但每步激活量很小的 MoE 模型，让 DDR3/DDR4 那点可怜的带宽刚好搬得动。** 凡是符合这个特征的模型，都能套进来。
 
-![国产 MoE 模型套用老 CPU 路线的方法论清单（Xeon）](gemma4-xeon-domestic-moe-2026-06-02.png)
+![国产 MoE 模型套用老 CPU 路线的方法论清单（Xeon）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/gemma4-26b-moe-vintage-xeon-cpu-2026-06-02/gemma4-xeon-domestic-moe-2026-06-02.png)
 
 <small>来源：自制图表（数据据正文）</small>
 

@@ -17,7 +17,7 @@ description: 在 Mac 上跑本地大模型，MLX 屏幕上跳 57 字每秒，看
 ---
 # Mac 上 MLX：屏显 57 字每秒，长文实测剩 3
 
-![一台 Mac 屏幕上速度表指针指向 57，旁边一份厚厚的长文档压上来后指针猛地回落到 3 附近，桌面摆着苹果芯片造型的处理器，整体明亮干净的等距插画风格，传达屏幕速度与真实长文速度的巨大落差](mlx-vs-llamacpp-apple-silicon-longcontext-2026-06-09.png)
+![一台 Mac 屏幕上速度表指针指向 57，旁边一份厚厚的长文档压上来后指针猛地回落到 3 附近，桌面摆着苹果芯片造型的处理器，整体明亮干净的等距插画风格，传达屏幕速度与真实长文速度的巨大落差](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/mlx-vs-llamacpp-apple-silicon-longcontext-2026-06-09/mlx-vs-llamacpp-apple-silicon-longcontext-2026-06-09.png)
 
 如果你在 Mac 上跑过本地大模型，多半听过一个说法：用苹果自家的 MLX 框架，比老牌的 llama.cpp 快好几倍。
 
@@ -40,7 +40,7 @@ description: 在 Mac 上跑本地大模型，MLX 屏幕上跳 57 字每秒，看
 
 这张表里藏着整篇文章的核心。屏幕报告速度 MLX 几乎是 llama.cpp 的两倍，但只要上下文长到 8500 词元，MLX 的有效速度就掉到 3 字每秒，被 llama.cpp 反超。**屏幕上的数字描述的是模型「开口之后」吐字多快，而你真正等待的，是从按下回车到第一个字出现、再到全部说完的总时间。**
 
-![famstack 的 MLX vs GGUF prefill 实测表](mlx-source-famstack-prefill.png)
+![famstack 的 MLX vs GGUF prefill 实测表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/mlx-vs-llamacpp-apple-silicon-longcontext-2026-06-09/mlx-source-famstack-prefill.png)
 
 *来源：famstack.dev《57 tok/s on Screen, 3 tok/s in Practice》实测页*
 
@@ -56,11 +56,11 @@ prefill 指的是模型在吐出第一个字之前，先把你输入的整段提
 
 还有一个细节容易被忽略：MLX 一旦开始吐字，节奏其实很稳，每个字的间隔大约 11 到 12 毫秒，体感顺滑。它的短板不在「吐字这一段」，而完全集中在「开口之前那一段」。这也是为什么屏幕速度会骗人——它只统计了顺滑的吐字段，把前面那段漫长的沉默藏了起来。
 
-![短文与长文下 MLX 报告速度与有效速度的落差](mlx-chart-effective-tps.png)
+![短文与长文下 MLX 报告速度与有效速度的落差](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/mlx-vs-llamacpp-apple-silicon-longcontext-2026-06-09/mlx-chart-effective-tps.png)
 
 再把这次回答的总耗时拆开看。下面这张图左边是 8500 词元下两个引擎的 prefill 耗时，右边是这次回答里 prefill 在 MLX 总耗时里占了多大比例。
 
-![8500 词元下 prefill 占 MLX 总耗时 94%，且 MLX 的 prefill 比 llama.cpp 还慢](mlx-chart-prefill-share.png)
+![8500 词元下 prefill 占 MLX 总耗时 94%，且 MLX 的 prefill 比 llama.cpp 还慢](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/mlx-vs-llamacpp-apple-silicon-longcontext-2026-06-09/mlx-chart-prefill-share.png)
 
 ## 上下文越长，llama.cpp 越占便宜
 
@@ -81,7 +81,7 @@ prefill 指的是模型在吐出第一个字之前，先把你输入的整段提
 
 到 14.6 万词元时，llama.cpp 的速度差不多是 MLX 的两倍。提交者的原话很直接：「在长上下文上，MLX 的词元生成速度持续比开了 FlashAttention 的 llama.cpp 慢，大约只有一半。」这条问题底下，社区把原因归到了 MLX 注意力核还不是完整的 FlashAttention 实现——同仓库一个更早的讨论里，开发者就提议按 FlashAttention 的思路重写，理由正是「有用户反馈，比起带 FlashAttention 的引擎，推理更慢」。
 
-![MLX 官方仓库问题 #763 里关于长上下文词元生成速度比 llama.cpp 慢约一半的反馈](mlx-source-github-issue763.png)
+![MLX 官方仓库问题 #763 里关于长上下文词元生成速度比 llama.cpp 慢约一半的反馈](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/mlx-vs-llamacpp-apple-silicon-longcontext-2026-06-09/mlx-source-github-issue763.png)
 
 *来源：MLX 官方仓库问题 #763 讨论区，2026-01-15 起*
 
@@ -91,7 +91,7 @@ prefill 指的是模型在吐出第一个字之前，先把你输入的整段提
 
 道理还是 prefill。一份四万词元左右的代码文件喂进去，模型得先把这四万词元整段读完算完，才肯吐第一个字。这段时间屏幕上什么都不显示，机器只是在默默算注意力缓存。等第一个字出来，屏幕速度可能依然漂亮，但你已经盯着空白等了好一会儿。
 
-![groundy 对 Apple Silicon 上 MLX 与 llama.cpp 长上下文表现的对比文章](mlx-source-groundy-longctx.png)
+![groundy 对 Apple Silicon 上 MLX 与 llama.cpp 长上下文表现的对比文章](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/mlx-vs-llamacpp-apple-silicon-longcontext-2026-06-09/mlx-source-groundy-longctx.png)
 
 *来源：groundy.com《MLX vs llama.cpp on Apple Silicon: Which Runtime to Use for Local LLM Inference》*
 

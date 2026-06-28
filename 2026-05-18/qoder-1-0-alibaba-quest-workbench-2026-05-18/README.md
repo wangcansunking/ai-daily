@@ -25,7 +25,7 @@ description: "阿里 Qoder 1.0 把 Quest 从 IDE 内功能升级为独立工作�
 
 # 阿里 Qoder 1.0 国产首发 Quest 任务工作台
 
-![阿里 Qoder 1.0 智能体自主开发工作台封面 alibaba qoder 1 0 autonomous workbench cover](qoder-1-0-alibaba-quest-workbench-2026-05-18.png)
+![阿里 Qoder 1.0 智能体自主开发工作台封面 alibaba qoder 1 0 autonomous workbench cover](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/qoder-1-0-alibaba-quest-workbench-2026-05-18/qoder-1-0-alibaba-quest-workbench-2026-05-18.png)
 
 ## 全文核心：阿里把「下任务」做成 AI 编程主入口的标志事件
 
@@ -33,7 +33,7 @@ description: "阿里 Qoder 1.0 把 Quest 从 IDE 内功能升级为独立工作�
 
 把全文核心论断先摆出来：**Qoder 1.0 不是又一个 AI IDE 的版本号迭代，而是国产 AI Coding 圈第一次有人把「任务」当成产品入口而不是补充功能**。代码留存率 +11%、输入 Token -40%、对话轮次 -33% 三个官方数字共同指向同一个方向——目标声明一次、Agent 自补全后续、开发者从「打字员」位置撤到「下任务 + 看交付」位置。这是 Anthropic Managed Agents 的产品愿景，也是 Claude Code Routines 的 CLI 路径，但 Qoder 是国内厂商里第一家把窗口拉出 IDE 之外的。
 
-![Qoder 1.0 Quest 工作台截图 task workspace screenshot](qoder-1-0-quest-workbench-screenshot.png)
+![Qoder 1.0 Quest 工作台截图 task workspace screenshot](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/qoder-1-0-alibaba-quest-workbench-2026-05-18/qoder-1-0-quest-workbench-screenshot.png)
 
 ## Quest 模式架构：任务管理 · 状态追踪 · 产物审查 · 知识调用 四件齐
 
@@ -58,7 +58,7 @@ Quest 模式的核心是一套把「自然语言目标」拆成「Agent 可执�
 
 代码留存率 +11% 是最关键的一项——它意味着 Agent 自主生成的代码被开发者真实接受、合入主干的比例提高了。输入 Token -40% 来自任务上下文压缩 + 缓存复用，意味着同样预算下能处理更多任务。对话轮次 -33% 则直接折算成「开发者花的时间」——目标声明一次、Agent 自补全后续，省下来的轮次是真金白银的时间。
 
-![Quest 模式 vs Chat vs Completion 三模式数据对比 mode comparison](qoder-1-0-mode-comparison.png)
+![Quest 模式 vs Chat vs Completion 三模式数据对比 mode comparison](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/qoder-1-0-alibaba-quest-workbench-2026-05-18/qoder-1-0-mode-comparison.png)
 
 把这三组数字翻译成产品判断：Quest 范式让开发者从「打字员 + Reviewer」的双重身份，回到「Reviewer + 任务下发者」的单一身份。这是 AI Coding 三年以来一直在追的方向，Qoder 是国内第一家把这个产品定位做到独立工作台层级的厂商。
 
@@ -68,7 +68,7 @@ Qoder 1.0 不是孤军，它是阿里 AI Coding 全球布局的海外侧入口�
 
 Qoder 家族六款产品按场景分工：
 
-![阿里 Qoder 家族六款产品矩阵 product matrix](qoder-1-0-product-matrix.png)
+![阿里 Qoder 家族六款产品矩阵 product matrix](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/qoder-1-0-alibaba-quest-workbench-2026-05-18/qoder-1-0-product-matrix.png)
 
 | 产品 | 形态 | 主战场 | 用户画像 |
 | --- | --- | --- | --- |
@@ -89,7 +89,7 @@ Qoder 家族六款产品按场景分工：
 
 把 Quest 放到全球任务编程范式的横轴上来对位，会看到一张清晰的四家路径图。
 
-![四家任务编程范式对比 paradigm compare](qoder-1-0-paradigm-compare.png)
+![四家任务编程范式对比 paradigm compare](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/qoder-1-0-alibaba-quest-workbench-2026-05-18/qoder-1-0-paradigm-compare.png)
 
 四家走的方向相同——都把「任务」而不是「对话」当成主入口，但选择的产品形态各异：
 
@@ -106,7 +106,7 @@ Qoder 家族六款产品按场景分工：
 
 国内厂商一年里都在追同一件事——把 AI Coding 从「补全 + 对话」升级到「任务 + 自治」。把五家国内主力的进度摆出来，能看清楚阿里在这条赛道上的位置。
 
-![国产 AI Coding 同业追赶 Quest 形态横评 cn competitors](qoder-1-0-cn-competitors.png)
+![国产 AI Coding 同业追赶 Quest 形态横评 cn competitors](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/qoder-1-0-alibaba-quest-workbench-2026-05-18/qoder-1-0-cn-competitors.png)
 
 | 厂商 / 产品 | 任务形态实现 | 完成度 | 备注 |
 | --- | --- | --- | --- |

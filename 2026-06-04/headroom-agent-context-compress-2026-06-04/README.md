@@ -21,7 +21,7 @@ description: "headroom 把工具输出、日志、RAG 片段在进入大模型�
 ---
 # 给 Agent 省 token 的 headroom：进大模型前先砍掉一大半内容
 
-![headroom 的 GitHub 社交卡片：压缩工具输出、日志、文件和 RAG 片段，进大模型前少 60-95% 的 token](headroom-agent-context-compress-2026-06-04.png)
+![headroom 的 GitHub 社交卡片：压缩工具输出、日志、文件和 RAG 片段，进大模型前少 60-95% 的 token](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/headroom-agent-context-compress-2026-06-04/headroom-agent-context-compress-2026-06-04.png)
 <small>来源：headroom 项目 GitHub 社交卡片（chopratejas/headroom，2026-06-04）</small>
 
 一个开发者用 Claude Code 跑了一次线上故障排查，让 Agent 把一段日志读进去定位那行 FATAL。日志原文 65694 个 token，几乎把半个上下文窗口塞满。换上 headroom 之后，同一段日志进模型时只剩 5118 个 token——同样找到了那行 FATAL，token 少了 92%。
@@ -69,7 +69,7 @@ headroom 没有强迫你改 Agent 架构，它提供三种用法，对应三种�
 
 三种用法之间还能叠——比如你既用 `headroom wrap claude` 让 Claude Code 自动省 token，又在自己另一个 Python 服务里用库模式精压某段 RAG 召回，两边共用同一套本地存储和记忆。这种"按场景挑接法、又能混着用"的弹性，是它接入门槛低的关键。
 
-![headroom 用 `headroom wrap claude` 把编码 Agent 包起来，本地代理在 8787 端口启动](source-demo-running-frame-2026-06-04.png)
+![headroom 用 `headroom wrap claude` 把编码 Agent 包起来，本地代理在 8787 端口启动](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/headroom-agent-context-compress-2026-06-04/source-demo-running-frame-2026-06-04.png)
 <small>来源：headroom 项目 README 内嵌运行录屏的画面（CLI 包裹 Claude Code，2026-06-04）</small>
 
 ## 不是一刀切压缩，是分内容类型选不同压法
@@ -95,7 +95,7 @@ headroom 真正讲究的地方在于它**不是用一种算法压所有东西**�
 
 这里单独点一下 CacheAligner，因为它解决的是一个很容易被忽略的坑。Anthropic、OpenAI 这些厂商的 KV-cache 是按请求前缀命中的——只要前缀有一丁点变化，缓存就失效，得重算。压缩如果把每次请求的前缀都搅乱了，反而会把本来能命中的缓存白白丢掉，省下来的 token 又从缓存失效那头亏回去。CacheAligner 做的就是稳住前缀，**让压缩和缓存命中这两件事不打架**。从 dashboard 的实测画面能看到，prefix 缓存命中率被维持在 89% 这个量级。
 
-![headroom 的 dashboard：实时显示省下的成本、prefix 缓存命中率 89%、token 量变化](source-demo-result-frame-2026-06-04.png)
+![headroom 的 dashboard：实时显示省下的成本、prefix 缓存命中率 89%、token 量变化](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/headroom-agent-context-compress-2026-06-04/source-demo-result-frame-2026-06-04.png)
 <small>来源：headroom 项目 README 内嵌的运行截图（dashboard 实测帧，2026-06-04）</small>
 
 ## CCR：压掉的原文没丢，模型要的时候能取回来
@@ -112,7 +112,7 @@ headroom 真正讲究的地方在于它**不是用一种算法压所有东西**�
 
 项目 README 给出了四类真实 Agent 任务的实测数字，区间从 47% 到 92%，把这个分布看清楚很重要：
 
-![四类真实 Agent 任务的 token 压缩对比：代码搜索省 92%、故障排查省 92%、工单分流省 73%、整库浏览省 47%](chart-headroom-token-savings-2026-06-04.png)
+![四类真实 Agent 任务的 token 压缩对比：代码搜索省 92%、故障排查省 92%、工单分流省 73%、整库浏览省 47%](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/headroom-agent-context-compress-2026-06-04/chart-headroom-token-savings-2026-06-04.png)
 <small>来源：根据 headroom 项目 README 公布的真实任务实测数据整理（同样答案口径）</small>
 
 | 任务类型 | 压缩前 token | 压缩后 token | 省下比例 |
@@ -124,7 +124,7 @@ headroom 真正讲究的地方在于它**不是用一种算法压所有东西**�
 
 这张表比一句"省 60-95%"诚实得多。能看出一条很清楚的规律：
 
-![压缩率取舍：冗余越多压得越狠，信息密度高的整库代码只能压 47%](chart-headroom-compress-tradeoff-2026-06-04.png)
+![压缩率取舍：冗余越多压得越狠，信息密度高的整库代码只能压 47%](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/headroom-agent-context-compress-2026-06-04/chart-headroom-compress-tradeoff-2026-06-04.png)
 <small>来源：根据 headroom 项目 README 四类真实任务实测整理</small>
 
 **搜索结果、日志这类高度重复、噪声密集的内容压得最狠（92%）；而整库代码浏览这种有效信息密度高的场景，压到 47% 就到头了**——因为代码里能砍的冗余本来就少。所以对自己的场景估收益，应该看你喂给 Agent 的内容偏哪一类，而不是直接套那个 95% 的上限。把规则记成一句话：**你喂进去的越是噪声，它帮你省得越多；你喂进去的越是干货，它越不会乱动。**
@@ -144,7 +144,7 @@ headroom 真正讲究的地方在于它**不是用一种算法压所有东西**�
 
 GSM8K 那一行是它最常被引用的依据——100 道数学题，压缩前后准确率都是 0.870，**确实是零下降**。TruthfulQA 甚至略微高了 0.030。
 
-![压缩前后基准准确率对照：GSM8K 持平 ±0.000，TruthfulQA 略升 +0.030](chart-headroom-accuracy-2026-06-04.png)
+![压缩前后基准准确率对照：GSM8K 持平 ±0.000，TruthfulQA 略升 +0.030](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/headroom-agent-context-compress-2026-06-04/chart-headroom-accuracy-2026-06-04.png)
 <small>来源：根据 headroom 项目 README 公布的基准对照整理（各 100 题）</small>
 
 但有三点必须诚实地交代清楚：
@@ -170,7 +170,7 @@ headroom 的分类型压缩对着第一个痛点，跨 Agent 共享记忆对着�
 
 上下文压缩这件事不止 headroom 一家在做。把它放在同类里看，能更清楚它的取舍：
 
-![headroom 和同类压缩方案的取舍对比：覆盖范围、运行位置、是否可逆、接入方式四个维度](table-headroom-vs-peers-2026-06-04.png)
+![headroom 和同类压缩方案的取舍对比：覆盖范围、运行位置、是否可逆、接入方式四个维度](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/headroom-agent-context-compress-2026-06-04/table-headroom-vs-peers-2026-06-04.png)
 <small>来源：根据 headroom 项目 README "Compared to" 一节整理</small>
 
 | 维度 | headroom | 部分同类方案 |

@@ -21,7 +21,7 @@ description: "NVlabs 在 2026-05-09 放出 cuda-oxide v0.1.0：把 Rust 源码�
 
 # cuda-oxide：Rust 写 CUDA 内核的官方答卷
 
-![cover](cuda-oxide-nvidia-rust-ptx-2026-05-12.png)
+![cover](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/cuda-oxide-nvidia-rust-ptx-2026-05-12/cuda-oxide-nvidia-rust-ptx-2026-05-12.png)
 
 ## 一、国内推理团队的痛点对比海外新工具链
 
@@ -51,13 +51,13 @@ description: "NVlabs 在 2026-05-09 放出 cuda-oxide v0.1.0：把 Rust 源码�
 
 NVlabs 的 cuda-oxide 与 Rust 主仓收紧 nvptx 目标几乎同周公开，配合的不是巧合。
 
-![cuda-oxide 关键时间线](cuda-oxide-timeline.png)
+![cuda-oxide 关键时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/cuda-oxide-nvidia-rust-ptx-2026-05-12/cuda-oxide-timeline.png)
 
 ## 二、cuda-oxide 到底是什么
 
 cuda-oxide 是一个**实验性 rustc 编译后端**，定位四件硬卖点：单源（host 与 device 代码同文件）、cargo 一条链构建、纯 Rust 实现的中间表示框架、直接出 PTX 不依赖 NVIDIA 自家的 nvcc 前端。
 
-![cuda-oxide 编译链路](cuda-oxide-pipeline.png)
+![cuda-oxide 编译链路](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/cuda-oxide-nvidia-rust-ptx-2026-05-12/cuda-oxide-pipeline.png)
 
 整条链路写出来是这样：
 
@@ -102,7 +102,7 @@ cuda-oxide 是一个**实验性 rustc 编译后端**，定位四件硬卖点：�
 
 性能口径必须先把数字摆桌面上、再讲解释。
 
-![cuda-oxide GEMM 性能对比](cuda-oxide-gemm.png)
+![cuda-oxide GEMM 性能对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/cuda-oxide-nvidia-rust-ptx-2026-05-12/cuda-oxide-gemm.png)
 
 仓库自带的 `gemm_sol` 示例是目前唯一的官方旗舰 benchmark，跑在 NVIDIA B200 上：
 
@@ -143,7 +143,7 @@ cuda-oxide 是一个**实验性 rustc 编译后端**，定位四件硬卖点：�
 
 把 vecadd 的 `map` 内核写成 Rust 和 CUDA C++，是观察这条路线工程感受最直接的方式。
 
-![Rust vs CUDA C++ 代码对比](cuda-oxide-code-compare.png)
+![Rust vs CUDA C++ 代码对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/cuda-oxide-nvidia-rust-ptx-2026-05-12/cuda-oxide-code-compare.png)
 
 Rust 版本来自仓库 README 字面引用：
 
@@ -208,7 +208,7 @@ module.map::<f32, _>(
 
 读这件事可以从三个角度同时看。
 
-![5 条 GPU 工具链路线决策矩阵](cuda-oxide-matrix.png)
+![5 条 GPU 工具链路线决策矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/cuda-oxide-nvidia-rust-ptx-2026-05-12/cuda-oxide-matrix.png)
 
 **第一，与 Rust 主线官方进度合拍**。Rust 团队成员 Kjetil Kjeka 在 2026-05-01 发了《Raising the baseline for the nvptx64-nvidia-cuda target》，宣布 Rust 1.97（计划 2026-07-09 发布）把 NVPTX 目标的 PTX ISA 抬到 7.0、最低 GPU 架构抬到 SM 7.0。Rust 主仓收紧 nvptx 目标基线，与 NVlabs 同期放出官方编译后端，时间点上严丝合缝。换句话说，**Rust 进 NVIDIA GPU 这件事，前端语言侧与后端编译侧第一次走到一起**。
 
@@ -242,7 +242,7 @@ Rust 主仓博客里有句话值得引述：「过去几年我们一直收到来
 
 把 cuda-oxide 放到国内 GPU 生态里看，是这一条新路径最值得思考的角度。
 
-![国内 GPU 工具链 mapping](cuda-oxide-cn-mapping.png)
+![国内 GPU 工具链 mapping](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/cuda-oxide-nvidia-rust-ptx-2026-05-12/cuda-oxide-cn-mapping.png)
 
 四家代表性国产平台目前的位置：
 

@@ -25,7 +25,7 @@ description: "一台 RTX 4090 跑 Qwen3-Coder-30B-A3B 当 AI Coding 后端，7 �
 
 # 7 款国产 AI IDE 接本地千问：3 款开放 4 款锁死
 
-![国产 AI IDE 接本地 Qwen3-Coder 兼容矩阵主图](cn-ai-ide-local-backend-matrix-2026-05-14.png)
+![国产 AI IDE 接本地 Qwen3-Coder 兼容矩阵主图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/cn-ai-ide-local-backend-matrix-2026-05-14/cn-ai-ide-local-backend-matrix-2026-05-14.png)
 
 ## 半夜 r/LocalLLaMA 那帖，把国产 AI IDE 横评切口推到聚光灯下
 
@@ -37,7 +37,7 @@ description: "一台 RTX 4090 跑 Qwen3-Coder-30B-A3B 当 AI Coding 后端，7 �
 
 我们这次用一台 RTX 4090 + Ollama v0.23.3 / vLLM v0.20.2 / SGLang v0.5.11 三种后端，挨个测 7 款国产或国内开发者常用的 AI Coding IDE：通义灵码、Trae、千问 Code、Qoder、文心快码、Continue.dev、Roo Code。把每一款能不能改 endpoint、改了之后能不能跑通工具调用、卡在哪儿、怎么绕过去，全都摆到台面上。
 
-![国产 AI IDE endpoint 锁死与开放两阵营对比](cn-ide-endpoint-lock-vs-open.png)
+![国产 AI IDE endpoint 锁死与开放两阵营对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/cn-ai-ide-local-backend-matrix-2026-05-14/cn-ide-endpoint-lock-vs-open.png)
 
 ## 7 款 IDE 当前事实速览，一张表先看清谁在哪一边
 
@@ -73,7 +73,7 @@ description: "一台 RTX 4090 跑 Qwen3-Coder-30B-A3B 当 AI Coding 后端，7 �
 
 图例：✅ 一键接通，🟡 需第三方桥接 / 改包，⚠️ 接得通但有工具调用 / 上下文坑，❌ 设置面板没入口
 
-![7 款国产 AI IDE × 4 种本地后端 28 格兼容矩阵可视化](cn-ide-7x4-cell-matrix.png)
+![7 款国产 AI IDE × 4 种本地后端 28 格兼容矩阵可视化](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/cn-ai-ide-local-backend-matrix-2026-05-14/cn-ide-7x4-cell-matrix.png)
 
 矩阵摆完结论很硬：4 款商业 IDE 在 4 种后端面前是 16 格全红的「四杀」，3 款开放 IDE 是 12 格全绿。中间唯一一抹黄是 Trae 的第三方桥接——TRAE-Ollama-Bridge 这个 GitHub 上的小项目 2025-11 最后一次更新，212 stars / 44 forks，原理是劫持 Trae 发往字节云端的 HTTPS 请求、转发到本地 Ollama。能跑，但不在字节官方支持范围内，下一次 Trae 大版本升级随时可能挂掉，只能算应急方案不能当生产路径。
 
@@ -149,7 +149,7 @@ vllm serve Qwen/Qwen3-Coder-32B-Instruct-AWQ \
 
 实测：vLLM 后端在 4090 上跑 32B-AWQ 量化，吞吐比 Ollama 高接近一倍（continuous batching 的优势），单 user 单任务体感差距不大，但团队多人共享一台 4090 时优势显著。一句体感：Roo Code 工具调用粒度比 Continue.dev 细，agentic 任务 plan 阶段会列出 5-8 步动作让你确认，适合不放心 LLM 直接动代码的开发者。
 
-![三档推荐组合 IDE 后端栈 tiers 卡片](cn-ide-recommend-tiers.png)
+![三档推荐组合 IDE 后端栈 tiers 卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/cn-ai-ide-local-backend-matrix-2026-05-14/cn-ide-recommend-tiers.png)
 
 ## 三档推荐组合，对应入门 / 中阶 / 极客三类开发者
 
@@ -163,7 +163,7 @@ vllm serve Qwen/Qwen3-Coder-32B-Instruct-AWQ \
 
 三档组合的共同前提是底层模型选 Qwen3-Coder-30B-A3B 这条线：30B 总参 / 3.3B 激活 MoE / 256K 原生 context，是当下国内本地化 AI Coding 后端的事实标准；它的好处是激活参数低、单 token 延迟在 4090 上能压到 30-40ms，长上下文又靠稀疏 MoE 撑住，正好夹在「能跑」和「够用」中间那个甜点位。
 
-![三种 IDE 的 config 文件对照](cn-ide-config-fileconfig-snippets.png)
+![三种 IDE 的 config 文件对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/cn-ai-ide-local-backend-matrix-2026-05-14/cn-ide-config-fileconfig-snippets.png)
 
 ## 国内开发者实操路径横评落地：镜像、离线包、迁移三件套
 

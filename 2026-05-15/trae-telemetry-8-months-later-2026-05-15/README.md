@@ -22,7 +22,7 @@ description: "2025 年 7 月 27 日，954 分 HN 帖把字节 Trae IDE 的遥测
 
 # 954 分 HN 帖之后 8 个月：Trae 还在传 26MB 遥测，免费的字节 IDE 是怎么算账的
 
-![Trae IDE 遥测争议 8 个月时间线 · 从 HN 954 分帖到 2026-05 现状](trae-telemetry-timeline.png)
+![Trae IDE 遥测争议 8 个月时间线 · 从 HN 954 分帖到 2026-05 现状](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/trae-telemetry-8-months-later-2026-05-15/trae-telemetry-timeline.png)
 
 ## 一句话摆桌上：8 个月过去，Trae 仍是「免费但有合规边界」的工具
 
@@ -50,7 +50,7 @@ description: "2025 年 7 月 27 日，954 分 HN 帖把字节 Trae IDE 的遥测
 
 把过去 8 个月（2025-07 → 2026-05）字节在 Trae 这件事上的动作按时间轴串一下：
 
-![Trae 8 个月动作时间轴：澄清 / 价格 / SOLO / Privacy Mode 仍空缺](trae-8months-actions.png)
+![Trae 8 个月动作时间轴：澄清 / 价格 / SOLO / Privacy Mode 仍空缺](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/trae-telemetry-8-months-later-2026-05-15/trae-8months-actions.png)
 
 **2025-07-28 至 2025-08 初** — 字节官方在 Trae 论坛和 GitHub Issue 区给出口径澄清，确认 telemetry toggle 仅覆盖 VS Code 自带遥测、字节自家这条链路需要单独 Privacy Mode 才能彻底关闭。海外媒体（The Register、TechRadar、cybernews）当周连续跟进。
 
@@ -84,7 +84,7 @@ lowcode.agency 给过一条很精准的对位描述：「**Trae is where you wri
 
 这是整篇文章的核心判断——Trae 这件事不是「免费 vs 收费」的对比，是「**数据流向 + 合规边界**」的对比。
 
-![Trae 企业合规决策矩阵 · 团队画像与适配度](trae-compliance-matrix.png)
+![Trae 企业合规决策矩阵 · 团队画像与适配度](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/trae-telemetry-8-months-later-2026-05-15/trae-compliance-matrix.png)
 
 把企业团队按数据敏感度分四类，每一类给一个清晰的判断口径：
 

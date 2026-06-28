@@ -20,7 +20,7 @@ description: "5 月 9 日这一天打开任意一个国内 AI 群——千问 3.
 ---
 # 国内开发者本地大模型完整指南：1.5 万机跑通 Qwen / GLM / Kimi / DeepSeek 加 OpenClaw
 
-![国内开发者本地大模型完整指南](cn-local-llm-deploy-2026-05-guide.png)
+![国内开发者本地大模型完整指南](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/cn-local-llm-deploy-2026-05-guide/cn-local-llm-deploy-2026-05-guide.png)
 
 ## 一、5 月 9 日这一天，国内本地 AI 同时凑齐了五条线
 
@@ -30,7 +30,7 @@ description: "5 月 9 日这一天打开任意一个国内 AI 群——千问 3.
 
 > **本文核心论断**：2026 年 5 月这个时点，国产私有化 LLM 这一代第一次同时具备五件事——模型质量到全球第一档、硬件门槛降到 1.5 万元、推理引擎全部开源、国内合规边界清晰、OpenClaw 这类本地 agent 框架成熟。一台中等预算的家用机配国产开源模型，再配一套 OpenClaw + 通义灵码这样的国内 IDE，可以把"私有化 AI 工具链"从营销词翻译成今天就能下单装机的具体步骤。**这种五条线收敛的窗口已经成为现实**，本文把每一条都摊开。
 
-![三档预算硬件 · 跑得动什么模型](cn-local-llm-3-tier-hardware.png)
+![三档预算硬件 · 跑得动什么模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/cn-local-llm-deploy-2026-05-guide/cn-local-llm-3-tier-hardware.png)
 
 ## 二、三档预算硬件：5 千、1.5 万、5 万分别能跑什么
 
@@ -62,7 +62,7 @@ description: "5 月 9 日这一天打开任意一个国内 AI 群——千问 3.
 
 需要诚实说一句——5 万元这一档对绝大多数个人开发者不是必需。**1.5 万元甜蜜点对 90% 私有化场景已经够用**。进阶档真正合适的是要给团队跑后端的小工作室、要做模型微调实验的研究者、要跑长上下文 RAG 的财务 / 法务 / 投研团队——**这三类用户上 5 万配置才回得了本**。
 
-![4 大国产模型本地 / 云端选型](cn-local-llm-4-model-comparison.png)
+![4 大国产模型本地 / 云端选型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/cn-local-llm-deploy-2026-05-guide/cn-local-llm-4-model-comparison.png)
 
 ## 三、4 大国产模型横评：本地能跑、云端旗舰、各自踩坑
 
@@ -110,7 +110,7 @@ V4-Flash 真正值得用的场景是 **1M 上下文**：把整个 monorepo、整
 
 更值得国内同行注意的是 5 月 2 日智谱在 z.ai/blog 公开复盘 GLM-5 上一版的 KV Cache race condition——**这是国产大厂第一次主动公开训练 / 推理事故的工程复盘**。把这些工程细节放出来本身就是国产 AI 团队工程文化向硬核方向收敛的信号。**国内 5 万元进阶档双 3090 团队跑 GLM-5 70B Q4，是当前能本地跑出的最强通用编程模型**。
 
-![4 套推理引擎选型对比](cn-local-llm-4-engines.png)
+![4 套推理引擎选型对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/cn-local-llm-deploy-2026-05-guide/cn-local-llm-4-engines.png)
 
 ## 四、4 套推理引擎：Ollama 入门、vLLM 主力、SGLang 多 agent、MLX 苹果专属
 
@@ -196,7 +196,7 @@ MLX 模型走 mlx-community 在 HuggingFace 维护的预转换权重，国内可
 - 阿里 ModelScope：模型主页直接 `git clone https://modelscope.cn/<repo>.git`
 - Docker 镜像：阿里云容器镜像服务、网易蜂巢、腾讯云 TCR 都有 vLLM / SGLang 镜像
 
-![OpenClaw 接 4 套本地推理后端](cn-local-llm-openclaw-integration.png)
+![OpenClaw 接 4 套本地推理后端](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/cn-local-llm-deploy-2026-05-guide/cn-local-llm-openclaw-integration.png)
 
 ## 五、OpenClaw 集成实战：把本地后端粘成 22 个 channel 的个人 AI 助手
 
@@ -415,7 +415,7 @@ vllm serve Qwen/Qwen3.6-27B \
 
 这套配置在 3090 上吞吐约 60-75 tok/s，跑 64K 上下文 RAG 任务稳定。**要再往上就属于双卡 / Mac M-series 64GB+ / 工作站卡的领地了**。
 
-![5 个国内开发者真实使用场景](cn-local-llm-5-scenarios.png)
+![5 个国内开发者真实使用场景](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/cn-local-llm-deploy-2026-05-guide/cn-local-llm-5-scenarios.png)
 
 ## 八、5 个国内开发者真实使用场景：直接抄
 

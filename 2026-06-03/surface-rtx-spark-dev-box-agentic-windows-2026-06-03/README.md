@@ -9,7 +9,7 @@ description: "6 月 2 日，微软在 Build 2026 上发布 Surface RTX Spark Dev
 ---
 # 微软 Surface RTX Spark：开机就配齐的 AI 开发盒子
 
-![微软在 Build 2026 发布 Surface RTX Spark Dev Box，一台开机即配齐 AI 开发环境的英伟达芯片 mini-PC](surface-rtx-spark-dev-box-agentic-windows-2026-06-03.png)
+![微软在 Build 2026 发布 Surface RTX Spark Dev Box，一台开机即配齐 AI 开发环境的英伟达芯片 mini-PC](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/surface-rtx-spark-dev-box-agentic-windows-2026-06-03/surface-rtx-spark-dev-box-agentic-windows-2026-06-03.png)
 
 6 月 2 日，微软在 Build 2026 开发者大会上发布了 Surface RTX Spark Dev Box：一台用英伟达 RTX Spark 芯片、128GB 统一内存、被动散热的 mini-PC。负责 Windows 与设备的执行副总裁帕万·达武卢里（Pavan Davuluri）给它的一句话定位是——让开发者「少花时间配机器，从登录那一刻就开始写代码」。
 
@@ -21,7 +21,7 @@ description: "6 月 2 日，微软在 Build 2026 上发布 Surface RTX Spark Dev
 
 ## 一、它是什么：一台开机就配齐的开发机
 
-![微软 Surface RTX Spark Dev Box：英伟达 RTX Spark 芯片、128GB 统一内存、被动散热的开发者 mini-PC](source-surface-dev-box-tomshardware.png)
+![微软 Surface RTX Spark Dev Box：英伟达 RTX Spark 芯片、128GB 统一内存、被动散热的开发者 mini-PC](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/surface-rtx-spark-dev-box-agentic-windows-2026-06-03/source-surface-dev-box-tomshardware.png)
 
 *来源：Tom's Hardware 关于 Surface RTX Spark Dev Box 的报道 tomshardware.com*
 
@@ -52,7 +52,7 @@ description: "6 月 2 日，微软在 Build 2026 上发布 Surface RTX Spark Dev
 
 答案不在硬件，在微软想把 Windows 变成什么。
 
-![英伟达 Computex 2026 主题演讲 Windows PC 环节，微软的 agentic Windows 与这套硬件同源](source-nvidia-keynote-windows-pcs.png)
+![英伟达 Computex 2026 主题演讲 Windows PC 环节，微软的 agentic Windows 与这套硬件同源](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/surface-rtx-spark-dev-box-agentic-windows-2026-06-03/source-nvidia-keynote-windows-pcs.png)
 
 *来源：英伟达 Computex 2026 主题演讲 Windows PC 环节，StorageReview 报道整理 storagereview.com*
 
@@ -70,7 +70,7 @@ Surface RTX Spark Dev Box 就是冲这个门槛来的。它给的不只是算力
 
 ## 三、给开发者的现实账：它的好与它的取舍
 
-![英伟达 RTX Spark 芯片：Arm 架构 Grace CPU 加 Blackwell GPU，Surface Dev Box 与之同源](source-nvidia-rtx-spark-chip.png)
+![英伟达 RTX Spark 芯片：Arm 架构 Grace CPU 加 Blackwell GPU，Surface Dev Box 与之同源](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/surface-rtx-spark-dev-box-agentic-windows-2026-06-03/source-nvidia-rtx-spark-chip.png)
 
 *来源：英伟达官方 RTX Spark 芯片发布配图 nvidianews.nvidia.com*
 

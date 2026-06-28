@@ -19,7 +19,7 @@ tags:
 
 # 杨植麟回来了：月之暗面 200 亿估值再起
 
-![杨植麟回来了：月之暗面 200 亿估值再起](kimi-20b-financing-yang-zhilin-return.png)
+![杨植麟回来了：月之暗面 200 亿估值再起](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/kimi-20b-financing-yang-zhilin-return/kimi-20b-financing-yang-zhilin-return.png)
 
 5 月 6 日下午，晚点先放出消息，新浪科技、网易随后跟上：月之暗面新一轮融资 20 亿美元（约 140 亿元人民币）已经走完关键流程，投后估值站上 200 亿美元（约 1400 亿元人民币），美团龙珠领投，中国移动、CPE 源峰跟投，多家老股东加注。把这个数字放到 Kimi 自己的时间线上，去年 11 月这家公司还在 43 亿美元这一档，3 月中旬过到 180 亿美元，5 月再加 20 亿一把推到 200 亿——半年估值翻 4 倍多。仲裁还没和解，朱啸虎那一战没翻篇，但杨植麟没躲，他在 4 月 10 日已经坐进了总理主持的企业家座谈会，是当天唯一一位大模型创业者代表。这篇文章把这一轮融资的数字、人、产品、六小虎座次拆清楚。
 
@@ -54,7 +54,7 @@ tags:
 
 这一轮把月之暗面的资方结构从"互联网大厂 + 美元 VC"改成了"互联网大厂 + 国家队 + 产业资本"。配合 4 月 10 日杨植麟现身总理座谈会，这一笔 20 亿美元已经不是单纯的 C 轮接续，更像是国产六小虎里第一家拿到产业 + 政策双背书的公司。
 
-![杨植麟近影](yang-zhilin-portrait.png)
+![杨植麟近影](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/kimi-20b-financing-yang-zhilin-return/yang-zhilin-portrait.png)
 
 > **判断**：领投方从纯 VC 切到产业资本，意味着月之暗面这一轮的估值不是按"下一轮还能卖给谁"算的，是按"美团本地生活 + 移动云 + Kimi App 用户"三方场景协同算的——产业资本愿意给溢价，是因为它要自己用。
 
@@ -70,7 +70,7 @@ tags:
 | 2026 年 3 月 | C 启动 | 计划 10 亿 | 谈到 180 亿美元 | 美团龙珠主导 |
 | 2026 年 5 月 | C 关账 | 实际 20 亿 | **200 亿美元** | **美团龙珠领投，中国移动、CPE 源峰跟投** |
 
-![Kimi 估值演进时间线](kimi-valuation-timeline.png)
+![Kimi 估值演进时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/kimi-20b-financing-yang-zhilin-return/kimi-valuation-timeline.png)
 
 这里有个数据要显式合并：
 
@@ -87,7 +87,7 @@ tags:
 
 **仲裁案**这条线，至今没和解。事件起点是 2024 年 11 月——循环智能时期的金沙江、万物、靖亚、华山、博裕几家老投资人在香港国际仲裁中心 HKIAC 提起仲裁，认为杨植麟、张宇韬另起月之暗面前没拿齐豁免书。2025 年 1 月底和 2 月下旬，双方先后完成 HKIAC 缴费，仲裁庭已组庭。**2026 年 5 月这一刻，案子还在仲裁程序里走，并未和解，也并未败诉**——这是为什么这一轮融资能继续走的前提，否则美团龙珠不可能领投。
 
-![Kimi 仲裁案时间线](kimi-arbitration-timeline.png)
+![Kimi 仲裁案时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/kimi-20b-financing-yang-zhilin-return/kimi-arbitration-timeline.png)
 
 **模型这条线**走得很快：
 
@@ -116,7 +116,7 @@ tags:
 | 百川智能 | 战略转向医疗垂直 | 不再追基础模型 |
 | 零一万物 | 战略转向中等模型 | 不再追基础模型 |
 
-![国产 AI 六小虎估值榜单](china-llm-six-tigers-valuation.png)
+![国产 AI 六小虎估值榜单](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/kimi-20b-financing-yang-zhilin-return/china-llm-six-tigers-valuation.png)
 
 把月之暗面的 200 亿美元放进这张表，能看出三件事：一是它已经把智谱、MiniMax 甩开了一档（200 亿美元 vs. 56 亿、40 亿），二是它和 DeepSeek 之间还有 3 倍多的距离，三是六小虎从 6 家变成"3 家追基础模型 + 2 家做垂直 + 1 家做中等模型"，月之暗面坐稳了基础模型第一梯队的另一席。
 
@@ -134,7 +134,7 @@ tags:
 
 **K3（在做）**：参数目标 3-4 万亿，对标 GPT-5.5 和 Claude Opus 4.7，预计今年下半年。
 
-![Kimi 模型路线图](moonshot-models-roadmap.png)
+![Kimi 模型路线图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/kimi-20b-financing-yang-zhilin-return/moonshot-models-roadmap.png)
 
 > **判断**：Kimi 这一轮 ARR 从 1 亿到 2 亿美元只用一个月，是 C 端订阅 + B 端 API 同时拉起来的——单独靠任何一条都不可能这么快。这种结构比"主要靠 API"的 DeepSeek、"主要靠 To B"的智谱都更接近 OpenAI 早期的 ARR 曲线形状。
 

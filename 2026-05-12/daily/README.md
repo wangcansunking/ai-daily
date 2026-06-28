@@ -22,7 +22,7 @@ cover: 12.png
 
 # Qwen 4090 落地 · 火山合账 · Claude 破 R(3,17) | AI 日报 | 2026-05-12
 
-![Qwen3-VL 4090 落地 · 火山 AFP 合 Agent 账单 · Claude+Codex 破 R(3,17)](12.png)
+![Qwen3-VL 4090 落地 · 火山 AFP 合 Agent 账单 · Claude+Codex 破 R(3,17)](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/daily/12.png)
 
 ## 📋 头版目录（一屏扫完今日）
 
@@ -56,7 +56,7 @@ cover: 12.png
 
 ## 🔥 头条：5/12 AI 三条线齐进对比——本地多模态、Agent 算账、AI × 数学
 
-![5/12 三条线对比：千问 4090 本地多模态 / 火山 AFP 合账 / 浙大 R(3,17) AI×数学](cn-agent-mapping.png)
+![5/12 三条线对比：千问 4090 本地多模态 / 火山 AFP 合账 / 浙大 R(3,17) AI×数学](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/daily/cn-agent-mapping.png)
 
 5/12 这一天，国内 AI 同时在三个层面交答卷。三件事的层次不一样、做法不一样、面向的用户也不一样：
 
@@ -68,7 +68,7 @@ cover: 12.png
 
 ### 一、千问 Qwen3-VL 30B-A3B：在 4090 上跑通发票与论文两条线
 
-![Qwen3-VL 30B-A3B 在 RTX 4090 / Mac M3 Pro / M4 Max 跑通本地多模态硬件 bench](qwen3-vl-hardware-bench-2026-05-12.png)
+![Qwen3-VL 30B-A3B 在 RTX 4090 / Mac M3 Pro / M4 Max 跑通本地多模态硬件 bench](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/daily/qwen3-vl-hardware-bench-2026-05-12.png)
 
 阿里通义千问团队 2025 年 10 月开源 Qwen3-VL 4B / 8B / 30B-A3B-Instruct/Thinking 系列，Apache-2.0 协议，主仓 `QwenLM/Qwen3-VL` 实查 19,145⭐。5/12 的新事不是模型发布，而是国内开发者社区在过去一周把 30B-A3B 接到了 RTX 4090（24GB）/ RTX 4090D 48GB / Mac M3 Pro / M4 Max 四套消费级硬件上，跑通了两个真实端到端 case：
 
@@ -86,7 +86,7 @@ cover: 12.png
 
 ### 二、字节火山方舟 Agent Plan + AFP：业内首个把 Agent 账单合一张
 
-![火山方舟 Agent Plan + AFP 四档套餐与折算关系](afp-4tier-pricing.png)
+![火山方舟 Agent Plan + AFP 四档套餐与折算关系](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/daily/afp-4tier-pricing.png)
 
 5/11，字节跳动旗下火山引擎方舟（Ark）发布业内首个 Agent 套餐 Agent Plan。这是国内云厂第一次把"模型 + 工具 + Agent 框架"合并成单一账单：
 
@@ -115,7 +115,7 @@ AFP 把 Token、搜索次数、Embedding 调用按真实成本系数折算到同
 
 ### 三、浙大校友王宜平：用通用 LLM API 撬动 32 年没人动的拉姆齐数下界
 
-![王宜平 ScaleAutoResearch 框架架构 vs DeepMind AlphaEvolve 集群路线](scaleautoresearch-ramsey-architecture.png)
+![王宜平 ScaleAutoResearch 框架架构 vs DeepMind AlphaEvolve 集群路线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/daily/scaleautoresearch-ramsey-architecture.png)
 
 5/7 凌晨，浙大竺可桢学院校友、华盛顿大学博士、xAI 技术员工王宜平在 GitHub 推出 `ypwang61/ScaleAutoResearch-Ramsey`（Apache-2.0、29⭐ / 5⭐ 当日新增）。仓库内容一句话讲完：在一台 CPU 服务器上跑 Claude Code + Codex 两个 LLM 跨家协作的并行 autoresearch agent，把拉姆齐数 R(3,17) 下界从 1994 年 Wang-Wang-Yan 给出的 92 推到 93，把 R(4,15) 从 DeepMind AlphaEvolve 半年前的 159 推到 160。所有见证图（witness graph）明文 `.txt` 摆在仓库根目录，验证脚本沿用 AlphaEvolve 的 `verify_bounds.ipynb`。
 
@@ -188,7 +188,7 @@ Redis 之父 Salvatore Sanfilippo 的 `antirez/ds4`（DeepSeek 4 Flash 本地推
 
 ### James Shore：写代码乘 N，维护成本必须除以 N
 
-![James Shore 维护成本反比定律：写代码速度乘 N，维护成本必须除以 N](jshore-maintenance-ratio.png)
+![James Shore 维护成本反比定律：写代码速度乘 N，维护成本必须除以 N](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/daily/jshore-maintenance-ratio.png)
 
 XP / Agile 老兵 James Shore（27 年方法学经验、Gordon Pask Award 得主、《Art of Agile Development》作者）5/10 发布长文《You Need AI That Reduces Maintenance Costs》，HN 拿到 331 pts、99 评论。文章核心是一条反比定律：**写代码速度乘以 N，维护成本必须除以 N，否则 10 个月内就跌破生产力基线**。Shore 给出 3+2 条反模式（god struct / 散乱状态 / 调试雪崩 / 偏离规范 / 拖累团队），以及一个 4 阶段评估框架（review 输出 → 检查架构边界 → 量化维护成本 → 重写边界）。这是 2026 年第一篇把"AI Coding 评估"从轶事升级到反比定律的长文，国内同行可以直接拿走。
 
@@ -206,13 +206,13 @@ Simon Willison（`llm` CLI 作者、独立 LLM 工具开发者）5/11 转述 404
 
 ### 🔴必读 · [Cloudflare Unweight：BF16 逐位等价无损省 22%](https://blog.cloudflare.com/unweight-tensor-compression/) [跟进]
 
-![Cloudflare Unweight Huffman 压 BF16 指数位原理图](cf-unweight-principle.png)
+![Cloudflare Unweight Huffman 压 BF16 指数位原理图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/daily/cf-unweight-principle.png)
 
 Cloudflare Research 5/12 当日重新被国内开发者社区翻出（原博客 4/17 发布）：在 NVIDIA Hopper（H100 / H200）GPU 上，用 Huffman 编码压 BF16 权重的指数位，分发包最多省 22%、推理常驻显存省约 13%，**出 token 和原始 BF16 模型逐位完全相同**。CUDA 内核以 BSD-3-Clause 开源到 [`cloudflareresearch/unweight-kernels`](https://github.com/cloudflareresearch/unweight-kernels)（实查 48⭐，刚起步）。这是一条和 FP8 / AWQ-INT4 / GPTQ-INT4 / GGUF 并行的全新无损路线——对涉及评测复现、监管口径、内部对账的场景特别有意义。**国内推理服务参考价值**：飞桨 / 阿里云 PAI / 火山方舟可考虑跟进。
 
 ### 🔴必读 · [NVlabs cuda-oxide v0.1.0：Rust→PTX 编译器官方答卷](https://github.com/NVlabs/cuda-oxide)
 
-![cuda-oxide Rust 写 CUDA kernel 与 C++ 对比矩阵](cuda-oxide-matrix.png)
+![cuda-oxide Rust 写 CUDA kernel 与 C++ 对比矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/daily/cuda-oxide-matrix.png)
 
 NVlabs 5/9 发布 [`cuda-oxide`](https://github.com/NVlabs/cuda-oxide) v0.1.0：把 Rust 源码经 Rust MIR → Pliron IR → LLVM IR 直接编到 PTX，仓库实查 1,520⭐、Apache-2.0、46 个 example 已覆盖 Hopper TMA 与 Blackwell tcgen05。仓库自带 `gemm_sol` 例子在 B200 上跑到 868 TFLOPS，相当于 cuBLAS Speed-of-Light 上限的 58%（8 个 kernel 跨 4 个阶段）。HN item 48096692 拿到 282 分 / 82 评论。**国内意义**：做推理加速、算子库的同行多了一条"不学 C++ 也能写 CUDA kernel"的官方路径。
 

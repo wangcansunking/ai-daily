@@ -14,7 +14,7 @@ authors:
 
 # DeepSeek V4 永久降到 1/4 价：宁德 / 京东 / 网易进局
 
-![DeepSeek V4 永久降价 与 700 亿融资 封面](deepseek-v4-yongjiu-jiangjia-ningde-jingdong-2026-05-24.png)
+![DeepSeek V4 永久降价 与 700 亿融资 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/deepseek-v4-yongjiu-jiangjia-ningde-jingdong-2026-05-24/deepseek-v4-yongjiu-jiangjia-ningde-jingdong-2026-05-24.png)
 
 > 5 月 22 日，DeepSeek（深度求索）同日宣布两件事。第一件：自 2026 年 6 月 1 日起，V4 系列 API 价格永久降至原价的 1/4——输入缓存命中 0.025 元、缓存未命中 3 元、输出 6 元，单位均为元 / 百万 tokens。第二件：本轮约 700 亿元（约 100 亿美元）融资进入收尾阶段，投前估值约 450 亿美元，融后约 550 亿美元。创始人梁文锋个人出资约 200 亿元，国家 AI 产业投资基金、腾讯、IDG 资本、Monolith Capital 已落定，宁德时代、京东、网易仍在洽谈中。量子位援引梁文锋向投资人说明的口径：「DeepSeek 的主要目标是推动技术边界，而不是尽快变现」。
 
@@ -24,9 +24,9 @@ authors:
 
 把这两件事并起来读，「永久降到 1/4 价」就不再只是一次惯例性的促销，而是「700 亿元子弹打进来 + 把价格曲线拽下来一档」的一体两面。梁文锋的口径——「主要目标是推动技术边界，而不是尽快变现」——第一次以这种公开姿态写进了与投资人的合同语境里。
 
-![DeepSeek 700 亿元融资构造图（自制 chart）](deepseek-v4-yongjiu-jiangjia-investor-pie.png)
+![DeepSeek 700 亿元融资构造图（自制 chart）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/deepseek-v4-yongjiu-jiangjia-ningde-jingdong-2026-05-24/deepseek-v4-yongjiu-jiangjia-investor-pie.png)
 
-![量子位 5 月 22 日 DeepSeek 同日宣布 V4 永久降价与 700 亿融资头版报道](deepseek-financing-qbitai-hero.webp)
+![量子位 5 月 22 日 DeepSeek 同日宣布 V4 永久降价与 700 亿融资头版报道](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/deepseek-v4-yongjiu-jiangjia-ningde-jingdong-2026-05-24/deepseek-financing-qbitai-hero.webp)
 
 ## 一、6 月 1 日 V4 永久降到 1/4 价：把 API 价格曲线整体拽下来一档
 
@@ -44,7 +44,7 @@ authors:
 
 下面这张柱状图把 DeepSeek V4 永久新价，与国产五家主流旗舰当下的官方 API 单价同档对比：
 
-![DeepSeek V4 永久降到 1/4 价 vs 国产五家 API 单价对比柱状图](deepseek-v4-yongjiu-jiangjia-price-cliff.png)
+![DeepSeek V4 永久降到 1/4 价 vs 国产五家 API 单价对比柱状图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/deepseek-v4-yongjiu-jiangjia-ningde-jingdong-2026-05-24/deepseek-v4-yongjiu-jiangjia-price-cliff.png)
 
 口径说明：图里的「输入（缓存未命中）」是大部分实际生产流量真正适用的单价，「输出」是模型生成 token 单价。DeepSeek V4 旧价是 5 月 31 日之前的促销价格，约 12 元 / 24 元（输入未命中 / 输出）；新价 3 元 / 6 元，正好是 1/4。智谱 GLM-4.6 输入输出同价 5 元；千问 Qwen3-Max 在 0-32k 输入档为 6 元 / 24 元，超出档位还要再涨；豆包 Seed 2.0 Pro 在 ≤32k 输入档为 3.2 元 / 16 元，月之暗面 Kimi K2 为 4 元 / 16 元。
 
@@ -60,13 +60,13 @@ authors:
 
 国产其他四家——智谱、千问、豆包、月之暗面——大概率会在 6 月、7 月跟一波官方降价或者推促销包。这是国产 API 市场过去两年的常规剧本：DeepSeek 每一次价格动作，后面三到六周都会带出来一轮「同档对位降价」。这一次不同的是，DeepSeek 用了「永久」两个字，意味着回不去了。
 
-![36 氪 5 月 23 日 DeepSeek 融资与产品线深度报道头图](deepseek-financing-36kr-hero.jpg)
+![36 氪 5 月 23 日 DeepSeek 融资与产品线深度报道头图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/deepseek-v4-yongjiu-jiangjia-ningde-jingdong-2026-05-24/deepseek-financing-36kr-hero.jpg)
 
 ## 二、700 亿元融资：国家基金 + 腾讯 / IDG + 梁文锋 200 亿 + 三家洽谈中
 
 价格只是表象，融资构造才是这次新闻里更重的一笔。下面这张饼图把 700 亿元拆开看：
 
-![DeepSeek 700 亿元融资投资人占比图（自制 chart）](deepseek-v4-yongjiu-jiangjia-investor-pie.png)
+![DeepSeek 700 亿元融资投资人占比图（自制 chart）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/deepseek-v4-yongjiu-jiangjia-ningde-jingdong-2026-05-24/deepseek-v4-yongjiu-jiangjia-investor-pie.png)
 
 已落定的四方：
 
@@ -99,13 +99,13 @@ authors:
 
 第三个细节，**估值轨迹**。下面这张图把 DeepSeek 从 2024 年 12 月 V3 发布到本轮投后的估值演进画出来：
 
-![DeepSeek 估值轨迹与 6/1 永久降价时间线图（自制 chart）](deepseek-v4-yongjiu-jiangjia-timeline.png)
+![DeepSeek 估值轨迹与 6/1 永久降价时间线图（自制 chart）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/deepseek-v4-yongjiu-jiangjia-ningde-jingdong-2026-05-24/deepseek-v4-yongjiu-jiangjia-timeline.png)
 
 V3 发布时市场给的估值约 20 亿美元，V3.5/R1 后跳到 100 亿美元档，DeepSeek Code 传出消息后市场预期已经爬到 300 亿美元档，本轮投前 450 亿美元、投后 550 亿美元。一年半的时间里，估值翻了约 27 倍。
 
 第四个细节，**与海外的估值对位**。本轮投前估值 450 亿美元，对比 Anthropic 公开口径下约 900 亿美元、OpenAI 近期传闻的 5000 亿美元档，DeepSeek 大约处在 Anthropic 的一半、OpenAI 的 1/10 这个档位上。这个对位口径要客观看：估值反映的是市场对未来现金流的折现预期，海外两家有更深的企业销售管道、更早的商业化收入；DeepSeek 在「主要目标是推动技术边界，而不是尽快变现」这条路上的折现要打折扣，450 亿美元这个数字，反过来印证了梁文锋这句话在投资人侧拿到了相当份量的认可。
 
-![新浪科技 sina DeepSeek financing 700 亿融资条款细节图（liang table 专题报道）](deepseek-financing-sina-table.png)
+![新浪科技 sina DeepSeek financing 700 亿融资条款细节图（liang table 专题报道）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/deepseek-v4-yongjiu-jiangjia-ningde-jingdong-2026-05-24/deepseek-financing-sina-table.png)
 
 ## 三、宁德 / 京东 / 网易 洽谈中：算力 ←→ 能源 ←→ 物流 的产业闭环
 
@@ -174,7 +174,7 @@ DeepSeek V4 永久降到 1/4 价之后，国产 API 价格曲线的「同档下�
 
 第三，**别忘了订阅套餐这条路径**。智谱推 GLM Coding Lite ¥20 / Pro ¥100 / Max ¥200 月费套餐覆盖编程场景，阿里推 Token Plan 团队版按月包 token，火山方舟有大客户阶梯折扣。订阅 + 包月 + 大客户折扣这三类路径，在国产 API 市场已经长期与按量计费并存。对中型团队来说，按月包套餐有时候单价反而比按量低 30-50%。本文这张表只对位按量价，套餐侧的对位需要另外起一篇专题。
 
-![新浪科技 sina DeepSeek financing 投资人名单与估值条款细节图（investors 专题报道）](deepseek-financing-sina-investors.png)
+![新浪科技 sina DeepSeek financing 投资人名单与估值条款细节图（investors 专题报道）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/deepseek-v4-yongjiu-jiangjia-ningde-jingdong-2026-05-24/deepseek-financing-sina-investors.png)
 
 ## 六、开发者模型选型表的变化：私有化 / API / 混合三档怎么调
 

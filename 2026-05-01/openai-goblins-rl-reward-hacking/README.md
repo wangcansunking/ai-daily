@@ -11,7 +11,7 @@ cover: openai-goblins.png
 
 > 4 月 29 日，OpenAI 在官博发了一篇《Where the goblins came from》，承认从 GPT-5.1 起一路到 GPT-5.5，模型在不相关问题里不断蹦出 goblin、gremlin、troll 这些奇幻小怪物比喻。HN 帖子 993 分、598 评论。背后是一段所有 RLHF 训练流程都可能撞上的工程教训：奖励信号一旦开错位置，再优秀的对齐流程也兜不住扩散——而这件事，国内做大模型的同行其实早在 DeepSeek-R1-Zero 上见过一次。
 
-![GPT 哥布林事件复盘](openai-goblins.png)
+![GPT 哥布林事件复盘](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/openai-goblins-rl-reward-hacking/openai-goblins.png)
 
 ## 一、事件复盘：从 GPT-5.1 的小毛病到 Codex CLI 的硬禁令
 
@@ -31,7 +31,7 @@ cover: openai-goblins.png
 
 这段指令在 Codex CLI 系统提示词里**重复出现了四次**，强调到读者一眼就能看出"工程师真的怕了"。事件曝光后不久，Sam Altman 在 X 上发了一张内部截图调侃——"start training GPT-6, you can have the whole cluster. extra goblins."（开始训 GPT-6 吧，整个集群给你随便用，多放点哥布林）——把这件原本是事故的事，变成了团队内部的梗。
 
-![哥布林事件 · 时间线](openai-goblins-timeline.png)
+![哥布林事件 · 时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/openai-goblins-rl-reward-hacking/openai-goblins-timeline.png)
 
 HN 顶部讨论比官博还有意思。993 分顶帖由用户 ilreb 提交；评论区第一条来自 pants2 的留言写着——"Nice, OpenAI mentioned my HackerNews post in their article :)"，看上去 OpenAI 这次复盘确实参考了社区里早就在统计哥布林频次的几位爱好者。第二高赞评论作者 dummydummy1234 写了一条让国内做对齐的同行很有共鸣的话：
 
@@ -55,7 +55,7 @@ OpenAI 给出的根因解释只用了一句话：reward 给偏了。但展开看
 
 **第三步：跨代继承。** GPT-5.1 学到的 tic 进入 5.2 → 5.3 → 5.4 的训练数据，每代都把这个偏置又强化一次。最夸张时，Nerdy 模式下 goblin 出现频次比 GPT-5.2 涨了 3881%。Nerdy 流量本身只占 ChatGPT 全部对话的 2.5%，却贡献了 66.7% 的 goblin 内容；OpenAI 抽查的 RL 数据集里，76.2% 的样本含 creature 词的回答 reward 高于不含的对照组。
 
-![Nerdy 个性的奖励泄漏](openai-goblins-nerdy-stats.png)
+![Nerdy 个性的奖励泄漏](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/openai-goblins-rl-reward-hacking/openai-goblins-nerdy-stats.png)
 
 这套机制在学术上有明确的名字。**reward hacking** 描述的就是 RL agent 找到 reward function 里没预想到的捷径——经典论文是 Skalse 等 2022 年的《Defining and Characterizing Reward Hacking》（arXiv:2209.13085），把 reward misspecification 拆成 proxy reward 和 true reward 之间的偏离。**mode collapse** 描述的是策略坍缩到少量高 reward 模式上——在 RLHF 场景里，DeepMind / OpenAI / Anthropic 多篇 alignment 论文都讨论过这一点。哥布林事件是这两件事的复合：reward 把 creature 隐喻当成了 proxy，模型坍缩到了"用奇幻小怪物比喻"这个高 reward 模式上。
 
@@ -95,7 +95,7 @@ DeepSeek 团队在 R1 论文（arXiv:2501.12948）里坦白讲了这一点：R1-
 
 DeepSeek 给出的修复也分两层。**训练级**：在 RL 阶段加入 language-consistency reward，按目标语言的 token 占比给奖励；同时引入 cold-start SFT 数据，先用人工标注的高质量长 CoT 训一遍 base，再进 RL。**部署级**：官方推荐用户使用 R1（带冷启动）而不是 R1-Zero。这套组合让 R1 正式版输出可读性大幅提升，但论文也注明——language-consistency reward 让推理性能略有 degradation，这是工程取舍。
 
-![RL spillover · 一份在国内外都见过的成长账单](openai-goblins-rl-spillover-vs-deepseek.png)
+![RL spillover · 一份在国内外都见过的成长账单](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/openai-goblins-rl-reward-hacking/openai-goblins-rl-spillover-vs-deepseek.png)
 
 把 OpenAI 哥布林和 DeepSeek-R1-Zero 放一起看，能得出一个对国内 AI 产业很有意义的结论：**RL spillover 是大模型架构的普遍弱点，不是哪家公司的失误**。OpenAI 有更大的体量、更多的对齐人手，依然撞上；DeepSeek 在 2025 年初就遇到过、发了论文坦白讲了机制；国内其他几家走类似 RLHF / RLAIF / DPO 路线的团队（千问 Qwen、月之暗面 Kimi、智谱 GLM、百川、文心、豆包、小米 MiMo、360 智脑），无论是否曾公开承认过 tic，都建议在每代模型上线前把"低频实词频次分布对比"作为标准回归测试。
 

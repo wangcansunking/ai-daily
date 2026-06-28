@@ -11,7 +11,7 @@ description: "别家把编码代理的系统提示词堆到一万 token，Armin 
 
 # OpenClaw 底层的编码代理 Pi：系统提示词压到不足千字
 
-![OpenClaw 底层 Pi agent 极简 prompt harness 封面](pi-agent-1k-prompt-openclaw-harness-2026-06-05.png)
+![OpenClaw 底层 Pi agent 极简 prompt harness 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/pi-agent-1k-prompt-openclaw-harness-2026-06-05/pi-agent-1k-prompt-openclaw-harness-2026-06-05.png)
 
 一句话先说结论：当大多数编码代理把系统提示词堆到一万 token 时，Pi 把它压到了不到一千。
 
@@ -19,13 +19,13 @@ description: "别家把编码代理的系统提示词堆到一万 token，Armin 
 
 本文要回答的核心问题只有一个：**为什么前沿模型不再需要又长又重的系统提示词，少掉的那九成上下文又换来了什么。** 想清楚这件事，把通义灵码、Trae、千问 Code 接 DeepSeek、千问、GLM 的人，都能直接借到这套思路。
 
-![Pi 项目社交配图，来源：Armin Ronacher 博客 lucumr.pocoo.org 2026-01-31](source-armin-pi-blog-2026-06-05.png)
+![Pi 项目社交配图，来源：Armin Ronacher 博客 lucumr.pocoo.org 2026-01-31](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/pi-agent-1k-prompt-openclaw-harness-2026-06-05/source-armin-pi-blog-2026-06-05.png)
 
 ## 别人一万，它不到一千
 
 先看这张体量对照，差距比想象中更直白。
 
-![四款编码代理系统提示词体量对照：Pi 不到 1000 token，Cline 约 7000，OpenCode 约 1 万以上，Claude Code 约 1 万](chart-pi-token-compare-2026-06-05.png)
+![四款编码代理系统提示词体量对照：Pi 不到 1000 token，Cline 约 7000，OpenCode 约 1 万以上，Claude Code 约 1 万](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/pi-agent-1k-prompt-openclaw-harness-2026-06-05/chart-pi-token-compare-2026-06-05.png)
 
 主流编码代理的系统提示词体量大致是这样：
 
@@ -70,7 +70,7 @@ HN 上有人把 Pi 形容成"编码代理里的 Vim 或 Emacs"，说的就是这
 
 只留四件工具，那复杂能力从哪来？答案是 Pi 最精巧的一招——**按需技能（lazy skills）**。
 
-![按需技能机制示意：每一轮只带技能的一行描述，用到某个技能时才临时载入完整说明和工具清单 · pi lazy skills](chart-pi-lazy-skills-2026-06-05.png)
+![按需技能机制示意：每一轮只带技能的一行描述，用到某个技能时才临时载入完整说明和工具清单 · pi lazy skills](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/pi-agent-1k-prompt-openclaw-harness-2026-06-05/chart-pi-lazy-skills-2026-06-05.png)
 
 机制拆开看是这样：
 
@@ -91,7 +91,7 @@ HN 上有人把 Pi 形容成"编码代理里的 Vim 或 Emacs"，说的就是这
 
 把四款代理放在同一张表里，差距一眼可见。
 
-![四款编码代理系统提示词体量对照表（截至 2026-06-05 核对） · token](wechat-table-token-2026-06-05.png)
+![四款编码代理系统提示词体量对照表（截至 2026-06-05 核对） · token](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/pi-agent-1k-prompt-openclaw-harness-2026-06-05/wechat-table-token-2026-06-05.png)
 
 ## 省下的十倍上下文，换来了什么
 
@@ -127,7 +127,7 @@ Armin 在博客里举过一个具体例子：他让 Pi 现写一个分析 GitHub
 
 换个角度看，这也解释了 OpenClaw 为什么能在短时间里长出大量可插拔技能：底层骨架越薄、越稳定，上面叠技能时要担心的"会不会把整体行为带歪"就越少。一个臃肿的骨架，每加一个能力都要重新评估它对全局的影响；一个极简骨架，技能之间互不打扰，扩展起来反而更从容。这是"少即是多"在工程上的一个实例——克制底层，换来上层更大的自由度。
 
-![Pi 系统提示词效率主题图，来源：Tensorlake 博客 tensorlake.ai 2026-05](source-tensorlake-pi-prompt-2026-06-05.png)
+![Pi 系统提示词效率主题图，来源：Tensorlake 博客 tensorlake.ai 2026-05](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/pi-agent-1k-prompt-openclaw-harness-2026-06-05/source-tensorlake-pi-prompt-2026-06-05.png)
 
 ## 这套思路能不能接国产模型
 
@@ -153,7 +153,7 @@ Armin 在博客里举过一个具体例子：他让 Pi 现写一个分析 GitHub
 
 这些顾虑不是否定 Pi，而是提醒：极简骨架更像一把交给高手的称手工具，而不是开箱即用的全自动方案。把控制权交还给开发者，前提是开发者愿意、也有能力用好这份控制权。
 
-![Syntax.fm 第 976 期《Pi——驱动 OpenClaw 的 AI 骨架》，对谈 Armin Ronacher 与 Mario Zechner，来源：syntax.fm](source-syntaxfm-976-pi-openclaw-2026-06-05.png)
+![Syntax.fm 第 976 期《Pi——驱动 OpenClaw 的 AI 骨架》，对谈 Armin Ronacher 与 Mario Zechner，来源：syntax.fm](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/pi-agent-1k-prompt-openclaw-harness-2026-06-05/source-syntaxfm-976-pi-openclaw-2026-06-05.png)
 
 ## 回到那不足千字的提示词
 

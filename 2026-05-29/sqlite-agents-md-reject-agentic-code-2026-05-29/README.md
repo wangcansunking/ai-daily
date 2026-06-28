@@ -11,7 +11,7 @@ description: 全球被部署最广的数据库引擎 SQLite 在仓库根目录�
 ---
 # SQLite 给 AI 划红线：AGENTS.md 明文不收 AI 写的代码，只收 AI 写的可复现 bug 报告
 
-![SQLite AGENTS.md 划红线封面](sqlite-agents-md-reject-agentic-code-2026-05-29.png)
+![SQLite AGENTS.md 划红线封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/sqlite-agents-md-reject-agentic-code-2026-05-29/sqlite-agents-md-reject-agentic-code-2026-05-29.png)
 
 ## 30 秒速览
 
@@ -23,7 +23,7 @@ description: 全球被部署最广的数据库引擎 SQLite 在仓库根目录�
 - **国内对位**：OpenHarmony、RT-Thread、Apache 系（DolphinScheduler / ShardingSphere / SkyWalking 等）目前都没有 AGENTS.md 这种协议级政策；个人维护者大多倾向「PR 里写清楚是不是 AI 协作」的轻度披露规则
 - **本文要点**：AGENTS.md 这套格式是 OpenAI 2025 年 8 月发起、随后被并入 Linux 基金会下的 Agentic AI Foundation，定位是「给 AI agent 看的 README」。SQLite 是第一个把「红线」也写进 AGENTS.md 的基础设施项目，等于把一份原本服务于 AI 协作的文件，反向用来约束 AI 协作
 
-![SQLite hero · 部署最广的嵌入式数据库 · AGENTS.md 红线](source-sqlite-hero.png)
+![SQLite hero · 部署最广的嵌入式数据库 · AGENTS.md 红线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/sqlite-agents-md-reject-agentic-code-2026-05-29/source-sqlite-hero.png)
 
 ## 一、Simon Willison 5/27 那篇短评的真实位置
 
@@ -33,7 +33,7 @@ description: 全球被部署最广的数据库引擎 SQLite 在仓库根目录�
 
 引文部分他挑了两段。第一段是「SQLite does not accept pull requests without prior agreement and/or accompanying legal paperwork that places the pull request in the public domain」——SQLite 是公共领域（public domain）项目，所有代码都要明确放弃版权，这条不是新政策，已经存在二十年。第二段才是新的，也是后来在 HN 与 r/programming 上引爆讨论的那句：「SQLite does not accept agentic code. However the project will accept agentic bug reports that include a reproducible test case」。
 
-![Simon Willison 5/27 短评 sqlite AGENTS.md · 截图渲染](source-simonw-sqlite-agents-post.png)
+![Simon Willison 5/27 短评 sqlite AGENTS.md · 截图渲染](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/sqlite-agents-md-reject-agentic-code-2026-05-29/source-simonw-sqlite-agents-post.png)
 
 帖子最后他补了一条关键信息：SQLite 在更早一两天把「(currently)」这个括号从原句里删了。原文是「SQLite does not accept agentic code (currently)」（SQLite 暂时不接受 agentic 代码），删之后是「SQLite does not accept agentic code」（SQLite 不接受 agentic 代码）。这个删除的 commit message 写得很直白：「强化关于不接受 agentic 代码的表述」（原文 Strengthen the statement about not accepting agentic code）。Simon 把这条改动单独拎出来强调，是因为「currently」三个字母的去留，等于把这份政策从「暂时性的、回头会改的」变成「就是这个立场、不打算改」。
 
@@ -47,7 +47,7 @@ description: 全球被部署最广的数据库引擎 SQLite 在仓库根目录�
 
 文件第一句话是「Guidance for AI coding agents working in this repository」（给在这个仓库里干活的 AI 编码 agent 的指引）。注意主语：不是「contribution guide」（贡献者指南），不是「style guide」（风格指南），是 guidance for AI coding agents。这个标题方式直接呼应 AGENTS.md 这个格式本身的定位——OpenAI 在 2025 年 8 月提出这个格式时就说它是「README the AI coding agent actually reads」（AI 编码 agent 真的会读的 README）。
 
-![SQLite AGENTS.md 原文渲染 · 红线段高亮](source-sqlite-agents-md-raw.png)
+![SQLite AGENTS.md 原文渲染 · 红线段高亮](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/sqlite-agents-md-reject-agentic-code-2026-05-29/source-sqlite-agents-md-raw.png)
 
 **Project nature 章节：三段连起来才能看懂**
 
@@ -79,7 +79,7 @@ description: 全球被部署最广的数据库引擎 SQLite 在仓库根目录�
 
 SQLite 划这条红线在工程逻辑上跟它的测试文化是连贯的。要看懂这条政策为什么对 SQLite 不是激进而是必然，得把 SQLite 的测试规模摆出来。
 
-![SQLite 测试代码量 / 本体代码量历史 5 个版本](sqlite-test-vs-prod-ratio-2026-05-29.png)
+![SQLite 测试代码量 / 本体代码量历史 5 个版本](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/sqlite-agents-md-reject-agentic-code-2026-05-29/sqlite-test-vs-prod-ratio-2026-05-29.png)
 
 SQLite 官方 testing.html 给出的数字是这样的：核心 C 代码约 15.6 万行（截至 3.46 版本左右），三套测试加在一起约 9200 万行——也就是测试代码量是本体的约 590 倍。这三套测试分别是：
 
@@ -99,7 +99,7 @@ SQLite 团队对自己工程标准的护城河意识，和「不接受 AI 代码
 
 把视角拉远看一圈，AGENTS.md 这种协议层划线在基础设施圈是稀有动作。下面这张雷达把六个项目摆在一张坐标系里。
 
-![六大基础 OSS 项目对 AI 贡献的接受度对照](oss-ai-acceptance-radar-2026-05-29.png)
+![六大基础 OSS 项目对 AI 贡献的接受度对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/sqlite-agents-md-reject-agentic-code-2026-05-29/oss-ai-acceptance-radar-2026-05-29.png)
 
 | 项目 | 当前 AI 政策 | 形式 | 触发事件 |
 |---|---|---|---|

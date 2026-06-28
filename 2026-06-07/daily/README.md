@@ -11,7 +11,7 @@ description: "周末这天三条主线其实在回答同一个问题：当模型
 
 # 苹果明天 WWDC·Siri 改用谷歌 Gemini · 编程工具同质化进下半场 · 国内一周把 Agent 装进真实产品 | AI 日报 | 2026-06-07
 
-![苹果 WWDC 明天开幕 Siri 改用谷歌 Gemini、编程工具同质化进下半场、国内一周把 Agent 装进真实产品三线并进](07.png)
+![苹果 WWDC 明天开幕 Siri 改用谷歌 Gemini、编程工具同质化进下半场、国内一周把 Agent 装进真实产品三线并进](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/daily/07.png)
 
 ## 📋 头版目录
 
@@ -40,7 +40,7 @@ description: "周末这天三条主线其实在回答同一个问题：当模型
 
 ### 头条 1 · 苹果明天开 WWDC，重做的 Siri 要靠谷歌的 Gemini 来撑
 
-![苹果 WWDC 2026 主题演讲 6 月 8 日上午开幕](source-wwdc-2026-keynote-2026-06-07.png)
+![苹果 WWDC 2026 主题演讲 6 月 8 日上午开幕](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/daily/source-wwdc-2026-keynote-2026-06-07.png)
 
 > 来源：Macworld [11]，The Motley Fool [12]
 
@@ -50,7 +50,7 @@ description: "周末这天三条主线其实在回答同一个问题：当模型
 
 #### 头条 1.1 · 几个公开的数字，框定了这桩合作的分量
 
-![苹果 WWDC Siri 改用谷歌 Gemini 的关键数字：约 1.2 万亿参数定制模型、每年约 10 亿美元、私有云计算运行](daily-2026-06-07-wwdc-siri-gemini.png)
+![苹果 WWDC Siri 改用谷歌 Gemini 的关键数字：约 1.2 万亿参数定制模型、每年约 10 亿美元、私有云计算运行](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/daily/daily-2026-06-07-wwdc-siri-gemini.png)
 
 据彭博社记者 Mark Gurman 等多方会前报道，这桩合作的几个关键数字已经基本清晰 [12]：
 
@@ -68,7 +68,7 @@ description: "周末这天三条主线其实在回答同一个问题：当模型
 
 ### 头条 2 · 编程工具的形态之争基本结束，这周各家集体上了同样的「三件套」
 
-![编程工具这周集体上的三件套：可嵌入 SDK、可见进度画布、多智能体编排，五家几乎同时补齐](daily-2026-06-07-coding-tools-triple.png)
+![编程工具这周集体上的三件套：可嵌入 SDK、可见进度画布、多智能体编排，五家几乎同时补齐](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/daily/daily-2026-06-07-coding-tools-triple.png)
 
 > 来源：GitHub Changelog [5][6]，Cursor [7]，OpenAI [8]，Claude Code [9]
 
@@ -92,7 +92,7 @@ description: "周末这天三条主线其实在回答同一个问题：当模型
 
 ### 头条 3 · 国内这一周：不再只发模型，而是把 Agent 装进每天都在用的入口
 
-![国内一周把 Agent 装进真实产品：高德 AGenUI、腾讯 WorkBuddy、金山 WPS 笔记、华为云 AgentArts](daily-2026-06-07-cn-agent-products.png)
+![国内一周把 Agent 装进真实产品：高德 AGenUI、腾讯 WorkBuddy、金山 WPS 笔记、华为云 AgentArts](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/daily/daily-2026-06-07-cn-agent-products.png)
 
 > 来源：高德 AGenUI [1]，量子位 [2][3][4]
 
@@ -102,7 +102,7 @@ description: "周末这天三条主线其实在回答同一个问题：当模型
 
 最值得国内开发者多看一眼的是高德和千问（Qwen）联合开源的 AGenUI [1]。它要解决的是生成式 UI 落地时最别扭的一环：让大模型动态生成的界面，能在 Web、小程序、原生 App 这三端，都跑成体验一致的原生组件，而不是各端各写一套、或者只能凑合用网页套壳。对做 Agent 应用的团队，这意味着「让智能体自己生成交互界面」从一个 demo 概念，往「三端可直接接入的工程能力」靠近了一步。它的三端方案，今天的「高德联手千问开源 AGenUI」专题里讲得更完整。
 
-![高德 AGenUI 开源官网展示生成式 UI 三端方案](agenui-official-site.png)
+![高德 AGenUI 开源官网展示生成式 UI 三端方案](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/daily/agenui-official-site.png)
 
 #### 头条 3.2 · 办公与企业入口：WorkBuddy、WPS 笔记、AgentArts 集中落地
 
@@ -130,13 +130,13 @@ description: "周末这天三条主线其实在回答同一个问题：当模型
 
 - 🔴 **GitHub Copilot SDK 正式可用**：GitHub 在 6 月 2 日宣布 Copilot SDK 转为正式可用，提供一套稳定的生产级接口，让开发者把 Copilot 的智能体引擎直接嵌进自家应用，支持自定义工具、MCP，以及对系统提示词分段的精细编辑 [5]。这是「三件套」里可嵌入 SDK 这一项最实在的落点——它把 Copilot 从一个编辑器插件，变成了可以被别的产品调用的智能体底座。
 
-![GitHub Copilot SDK 正式可用，可把 Copilot 智能体引擎嵌进自家产品](source-copilot-sdk-ga-2026-06-07.png)
+![GitHub Copilot SDK 正式可用，可把 Copilot 智能体引擎嵌进自家产品](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/daily/source-copilot-sdk-ga-2026-06-07.png)
 
 - 🟡 **GitHub Copilot 上线百万词元上下文与可调推理档位**：6 月 4 日，Copilot 拿到了百万词元级的上下文窗口和可按任务选择的推理档位 [6]，意味着可以把一整个大仓库塞进一次上下文，再按需要调高或调低推理深度。配合同期上线的 Agent 任务 REST API，开发者能从持续集成流程里以编程方式发起和管理 Copilot 的智能体任务。
 
 - 🟡 **MCP 协议核心转为无状态，候选版已发布**：Model Context Protocol 的新一版规范进入候选阶段，最大的变化是协议核心层转为无状态——原本需要保持会话粘性的远端 MCP 服务，现在可以放在普通的轮询负载均衡后面，客户端也能缓存工具列表 [13]。候选版打包了无状态核心、扩展框架、任务机制等多项内容，含破坏性变更，正式版定在 7 月 28 日。对在搭 MCP 服务的团队，这是一次值得提前按候选版做适配的底层调整。
 
-![MCP 无状态协议核心候选版发布，正式版定在 7 月底](source-mcp-stateless-rc-2026-06-07.png)
+![MCP 无状态协议核心候选版发布，正式版定在 7 月底](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/daily/source-mcp-stateless-rc-2026-06-07.png)
 
 - 🔵 **OpenAI Codex 把网站生成与亚马逊云接入补齐**：Codex 这周前后上线了 Sites 预览，能创建、部署、检查托管在 OpenAI 一侧的网站、仪表盘和内部工具；同时支持跑在亚马逊 Bedrock 上，由 AWS 托管鉴权与计费 [8]。这两项更偏「全栈影响」而非当天就能随手玩的功能，但 Bedrock 接入对已经在用 AWS 的团队是可以直接动手的。
 
@@ -152,27 +152,27 @@ description: "周末这天三条主线其实在回答同一个问题：当模型
 
 - 🔴 **obra/superpowers · 约 21.9 万星** [19]：给 Claude Code 配的智能体技能框架，外加一套软件开发方法论，是目前这一类里体量最大的开源项目，正好踩在「给编程 agent 补技能」的方向上。
 
-![GitHub superpowers 仓库：给 Claude Code 配技能的智能体框架](source-github-superpowers-og-2026-06-07.png)
+![GitHub superpowers 仓库：给 Claude Code 配技能的智能体框架](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/daily/source-github-superpowers-og-2026-06-07.png)
 
 - 🔴 **CopilotKit/CopilotKit · 约 3.32 万星** [20]：Agent 前端栈与生成式 UI 框架，也是生成式 UI 协议 AG-UI 的作者，覆盖 React、Slack、移动端等多端。它和今天高德 AGenUI 的方向是一回事——都在解决「智能体怎么把界面交付给用户」这一层。
 
-![GitHub CopilotKit 仓库：Agent 前端栈与生成式 UI 框架](source-github-copilotkit-og-2026-06-07.png)
+![GitHub CopilotKit 仓库：Agent 前端栈与生成式 UI 框架](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/daily/source-github-copilotkit-og-2026-06-07.png)
 
 - 🟡 **MemPalace/mempalace · 约 5.43 万星** [21]：标榜「benchmark 最强」的开源 AI 记忆系统，与 mem0 同赛道。智能体记忆这条线最近热度很高，云厂商把记忆做进基础设施、开源社区把记忆做成可自托管的中间件，两头都在补「让智能体记得住」这块短板。
 
 - 🟡 **Panniantong/Agent-Reach · 约 2.23 万星** [22]：给智能体装一双「上网的眼睛」，能读取 X、Reddit、B 站、小红书等平台内容，且主打零 API 费用。对做调研类、信息聚合类智能体的人，是一个现成的数据接入层。
 
-![GitHub Agent-Reach 仓库：给智能体读取社交平台内容的接入层](source-github-agent-reach-og-2026-06-07.png)
+![GitHub Agent-Reach 仓库：给智能体读取社交平台内容的接入层](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/daily/source-github-agent-reach-og-2026-06-07.png)
 
 - 🟡 **santifer/career-ops · 约 4.93 万星** [23]：一套基于 Claude Code 的求职系统，把简历打磨、岗位匹配、投递追踪拆成十几个技能模式，再配一个看板来管进度。它是「把 Claude Code 当成做某一类具体事情的底座」这股潮流里很典型的一个——智能体框架不只用来写代码，也开始被拿去解决日常事务。
 
-![GitHub career-ops 仓库：基于 Claude Code 的求职系统](source-github-careerops-og-2026-06-07.png)
+![GitHub career-ops 仓库：基于 Claude Code 的求职系统](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/daily/source-github-careerops-og-2026-06-07.png)
 
 ## 🛠 AI Coding 工具动态
 
 - **Cursor 3.7：设计模式支持多选与语音改界面**：Cursor 这周的更新里，设计模式新增了对界面元素的多选，以及在浏览器里用语音直接描述要改什么（点选、绘制、语音三种方式改 UI）；智能体的上下文用量现在能以可交互的画布报告查看；企业版可以从一处管理多个团队，SDK 也加了自定义工具、自动评审路由和嵌套子智能体 [7]。
 
-![Cursor 3.7 更新日志：设计模式支持语音改界面、上下文画布报告](source-cursor-changelog-2026-06-07.png)
+![Cursor 3.7 更新日志：设计模式支持语音改界面、上下文画布报告](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/daily/source-cursor-changelog-2026-06-07.png)
 
 - **Claude Code 加了「可备用模型链路」**：6 月 5 日前后的几个版本里，Claude Code 新增了备用模型设置——主力模型过载时可按顺序最多尝试三个备用模型，让会话不必因为一次模型抖动就重启；同时在拒绝规则里支持通配符，可以用一个 `*` 一次性禁掉所有工具，跨会话消息转发也做了权限收紧 [9]。对长时间挂着跑任务的人，可备用模型链路是个实用的稳定性补丁。
 

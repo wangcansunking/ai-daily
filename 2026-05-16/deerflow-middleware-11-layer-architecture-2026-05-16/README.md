@@ -26,7 +26,7 @@ description: "5 月 15 日火山引擎开发者社区放出一篇 DeerFlow 2.0 �
 
 # LangChain 的国产对手到齐：字节 DeerFlow
 
-![DeerFlow 11 层中间件架构主视觉：等距风格的分层根基](deerflow-middleware-11-layer-architecture-2026-05-16.png)
+![DeerFlow 11 层中间件架构主视觉：等距风格的分层根基](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/deerflow-middleware-11-layer-architecture-2026-05-16/deerflow-middleware-11-layer-architecture-2026-05-16.png)
 
 ## 先把这篇和五月七号那篇分开
 
@@ -48,7 +48,7 @@ description: "5 月 15 日火山引擎开发者社区放出一篇 DeerFlow 2.0 �
 - **三、本周国产 Agent 中间件横评**：5 月 14 日阿里悟空（编排）+ 5 月 15 日腾讯 Agent Memory（记忆层）+ DeerFlow（harness），三件凑齐根基。
 - **四、Lead Agent 动态衍生 sub-agent 的三条隔离工程红线**，以及"为什么自己加第 12 层中间件容易翻车"。
 
-![DeerFlow 仓库快照：67,895 star / 9,035 fork / 18 个中间件源文件 / 时间线](deerflow-repo-snapshot.png)
+![DeerFlow 仓库快照：67,895 star / 9,035 fork / 18 个中间件源文件 / 时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/deerflow-middleware-11-layer-architecture-2026-05-16/deerflow-repo-snapshot.png)
 
 ---
 
@@ -58,7 +58,7 @@ description: "5 月 15 日火山引擎开发者社区放出一篇 DeerFlow 2.0 �
 
 唯一的事实来源是 `backend/packages/harness/deerflow/agents/lead_agent/agent.py` 里的 `_build_middlewares()` 函数，外加 `tool_error_handling_middleware.py` 里那个 `build_lead_runtime_middlewares()` 工厂函数。两段读下来，注册顺序就是中间件链的执行顺序，下面这张图按这个顺序画。
 
-![DeerFlow Lead Agent 中间件链路：11 个阶段按注册顺序 + 每层挂的钩子面](deerflow-middleware-chain.png)
+![DeerFlow Lead Agent 中间件链路：11 个阶段按注册顺序 + 每层挂的钩子面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/deerflow-middleware-11-layer-architecture-2026-05-16/deerflow-middleware-chain.png)
 
 按源码顺序，主链 11 个阶段：
 
@@ -110,7 +110,7 @@ DeerFlow 的中间件链值得专门写一篇深度文，原因不只是它自�
 
 时间线很清楚：5 月 14 日阿里**悟空智能体编排平台**开源了它的 Java 系编排框架（Spring AI Alibaba 项目，截至发稿 9,621 star、Apache-2.0），把"多 agent 调度 / 路由 / 工作流"这块铺好；5 月 15 日上午**腾讯 Agent Memory**开源，把"短期 + 长期分层记忆 + 多 agent 共享会话"这块铺好（详见本报今日另一篇 5/15 腾讯 Agent Memory 专题）；5 月 15 日下午火山引擎深度文把 DeerFlow 的"super agent harness"——也就是中间件链 + 沙箱 + skills + sub-agent 这一整套——重新摆到台面上。**三块根基在两周内被三家厂同时开源**。
 
-![国产 Agent 中间件 / 编排 / 记忆 N=3 横评：DeerFlow / Spring AI Alibaba / 腾讯 Agent Memory + 海外对照](deerflow-n3-middleware-compare.png)
+![国产 Agent 中间件 / 编排 / 记忆 N=3 横评：DeerFlow / Spring AI Alibaba / 腾讯 Agent Memory + 海外对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/deerflow-middleware-11-layer-architecture-2026-05-16/deerflow-n3-middleware-compare.png)
 
 把这五个项目放在一张表里横向看，几个观察值得圈出来：
 
@@ -129,7 +129,7 @@ DeerFlow 的中间件链值得专门写一篇深度文，原因不只是它自�
 
 DeerFlow 的 Lead Agent 不直接干所有活——它把任务派给 sub-agent。这一点之前的写作里讲过，但工程上的隔离机制值得专门拆一次。
 
-![Lead Agent 动态衍生 sub-agent 的拓扑 + 三条隔离红线](deerflow-lead-subagent-topology.png)
+![Lead Agent 动态衍生 sub-agent 的拓扑 + 三条隔离红线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/deerflow-middleware-11-layer-architecture-2026-05-16/deerflow-lead-subagent-topology.png)
 
 按源码读，sub-agent 跟 Lead Agent 共用同一套 `create_agent()` 创建函数，但传进去的 `agent_name` 不一样，结果就是：
 

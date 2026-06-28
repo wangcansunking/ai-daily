@@ -12,7 +12,7 @@ description: "MiniMax（稀宇科技）2026 年 6 月 1 日发布新一代旗舰
 
 # MiniMax M3 一个模型扛起编程、百万上下文、多模态
 
-![MiniMax M3 发布：一个模型同时扛起编程、百万上下文、原生多模态三件事](minimax-m3-coding-multimodal-1m-2026-06-02.png)
+![MiniMax M3 发布：一个模型同时扛起编程、百万上下文、原生多模态三件事](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/minimax-m3-coding-multimodal-1m-2026-06-02/minimax-m3-coding-multimodal-1m-2026-06-02.png)
 
 过去一年，国内开发者已经习惯了一件事：想要强编程，找一类模型；想要超长上下文，找另一类；想要看图读文档，又得换一个。三件能力，往往要在三个模型、三套接口、三份预算之间来回切。代码评审挂一个模型，长合同长仓库审阅换一个，截图问答又得再开一个——切换本身就在悄悄吃掉时间和钱。
 
@@ -24,7 +24,7 @@ MiniMax 这家公司，国内开发者并不陌生。过去一年它的 M 系列
 
 ## 先把一句话讲清楚：M3 到底新在哪
 
-![MiniMax M3 官方发布主视觉](source-minimax-m3-official-hero-2026-06-02.png)
+![MiniMax M3 官方发布主视觉](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/minimax-m3-coding-multimodal-1m-2026-06-02/source-minimax-m3-official-hero-2026-06-02.png)
 
 <small>来源：MiniMax 官方 M3 发布页主视觉 · 2026-06-01</small>
 
@@ -45,7 +45,7 @@ MiniMax 这家公司，国内开发者并不陌生。过去一年它的 M 系列
 
 ## MSA 稀疏注意力：把百万词元的算力账重新算了一遍
 
-![MSA 稀疏注意力：1M 上下文单词元算力约为上代 1/20，预填充加速约 9.7 倍、解码加速约 15.6 倍](chart-m3-msa-1m-cost-2026-06-02.png)
+![MSA 稀疏注意力：1M 上下文单词元算力约为上代 1/20，预填充加速约 9.7 倍、解码加速约 15.6 倍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/minimax-m3-coding-multimodal-1m-2026-06-02/chart-m3-msa-1m-cost-2026-06-02.png)
 
 标准注意力机制的代价，随上下文长度按平方增长——上下文翻一倍，注意力的计算量大致翻到四倍。这也是为什么"百万上下文"听起来很美，真跑起来却又慢又贵。
 
@@ -69,7 +69,7 @@ MSA 的思路是两段式：先用一个轻量的索引模块，从超长序列�
 
 这是国内开发者最关心的部分，也是最需要把"自评"二字标清楚的部分。下面这张表来自 MiniMax 官方发布页的基准大图，所有数字都是厂商自评，且官方注明各项均用 Claude Code 这套统一框架跑出。
 
-![M3 编程与智能体能力横评：和读者每天用的旗舰同台，★ 为该项最高](chart-m3-benchmark-2026-06-02.png)
+![M3 编程与智能体能力横评：和读者每天用的旗舰同台，★ 为该项最高](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/minimax-m3-coding-multimodal-1m-2026-06-02/chart-m3-benchmark-2026-06-02.png)
 
 逐项看（数字为得分，越高越好，均为官方自评）：
 
@@ -97,7 +97,7 @@ MSA 的思路是两段式：先用一个轻量的索引模块，从超长序列�
 
 如果说编程是 M3 的"达标项"，那多模态和长文档理解才是它想立的招牌。
 
-![M3 多模态与智能体分项条形图：读图文文档拿全表最高，桌面操作仍落后头部，均为官方自评](chart-m3-multimodal-agent-2026-06-02.png)
+![M3 多模态与智能体分项条形图：读图文文档拿全表最高，桌面操作仍落后头部，均为官方自评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/minimax-m3-coding-multimodal-1m-2026-06-02/chart-m3-multimodal-agent-2026-06-02.png)
 
 官方发布页里，这一块的成绩相对更亮眼，以下仍为官方自评：
 
@@ -130,7 +130,7 @@ MSA 的思路是两段式：先用一个轻量的索引模块，从超长序列�
 
 ## 价格与接入：国内开发者怎么用上 M3
 
-![MiniMax M3 官方 API 价格：按上下文长度分两档，≤512K 七天五折](source-minimax-m3-official-pricing-2026-06-02.png)
+![MiniMax M3 官方 API 价格：按上下文长度分两档，≤512K 七天五折](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/minimax-m3-coding-multimodal-1m-2026-06-02/source-minimax-m3-official-pricing-2026-06-02.png)
 
 <small>来源：MiniMax 官方 M3 发布页 API 价格表 · 2026-06-01</small>
 
@@ -149,7 +149,7 @@ M3 发布即开放调用，接入方式对国内开发者相当友好。先看 A
 - **Max**：¥119 / 月，含约 18 亿（1.8B）词元；
 - **Ultra**：¥469 / 月，含约 55 亿（5.5B）词元。
 
-![M3 收费一图说清：API 按上下文分两档，Token Plan 包月分三档](chart-m3-pricing-2026-06-02.png)
+![M3 收费一图说清：API 按上下文分两档，Token Plan 包月分三档](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/minimax-m3-coding-multimodal-1m-2026-06-02/chart-m3-pricing-2026-06-02.png)
 
 接入方式上，M3 提供标准的对话补全接口，并兼容主流智能体工作流——官方自评本身就是在 Claude Code 这套框架里跑出来的，这也侧面说明把 M3 当作 Claude Code、Cursor 这类编程工具的后端模型，或接进自研智能体，路径是通的。对需要长仓库、长文档、看图读图的国内团队，这意味着不必再为"长上下文"和"多模态"分别采购两套服务。
 

@@ -13,7 +13,7 @@ language: zh-CN
 
 # 京东开源 JoyAI-Echo：把五分钟长视频做成一条流水线
 
-![京东开源的长视频生成框架 JoyAI-Echo：一段剧本进、一段五分钟成片出，中间靠记忆库锁住同一个角色](joyai-echo-jd-long-video-agent-2026-06-08.png)
+![京东开源的长视频生成框架 JoyAI-Echo：一段剧本进、一段五分钟成片出，中间靠记忆库锁住同一个角色](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/joyai-echo-jd-long-video-agent-2026-06-08/joyai-echo-jd-long-video-agent-2026-06-08.png)
 
 6 月 7 日，京东把一个叫 JoyAI-Echo 的长视频生成框架放到了 GitHub 上，仓库在 6 月 2 日建立，几天就攒到了八百多颗 star，主语言 Python。它瞄准的是一件大多数视频模型都绕着走的难事——一次生成五分钟、多镜头、同一个角色从头到尾不变样的长视频。
 
@@ -23,7 +23,7 @@ language: zh-CN
 
 下面分四件事来看：长视频为什么是另一道题、记忆库怎么把角色锁住五分钟、约 7.5 倍提速和一步超分让它能实时跑起来、以及一个国内开发者把仓库 clone 下来能拿到什么、又有哪些边界要先看清。
 
-![JoyAI-Echo 官方放出的生成画面合集，涵盖写实人像、定格动画、街头实拍、卡通动物等多种风格（来源：JoyAI-Echo 官方仓库 assets/image.png）](joyai-echo-official-gallery.png)
+![JoyAI-Echo 官方放出的生成画面合集，涵盖写实人像、定格动画、街头实拍、卡通动物等多种风格（来源：JoyAI-Echo 官方仓库 assets/image.png）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/joyai-echo-jd-long-video-agent-2026-06-08/joyai-echo-official-gallery.png)
 
 ## 长视频为什么是另一道题：秒级模型撑不到分钟级
 
@@ -33,7 +33,7 @@ language: zh-CN
 - **谷歌 Veo**：单段上限约 8 秒，靠的是画质和物理真实感。
 - **可灵 3.0（Kling）**：把单次时长推到了 3 分钟，是这几家里最长的，但公开反馈里角色一致性大约到 90 秒之后开始出现降级。
 
-![单次成片的时长与一致性对照：JoyAI-Echo 把五分钟做成可控目标，Sora 2、Veo、可灵都还在秒级到分钟级之间](joyai-echo-duration-v2.png)
+![单次成片的时长与一致性对照：JoyAI-Echo 把五分钟做成可控目标，Sora 2、Veo、可灵都还在秒级到分钟级之间](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/joyai-echo-jd-long-video-agent-2026-06-08/joyai-echo-duration-v2.png)
 
 为什么差这么多？因为长视频不是「短视频接力拼长」那么简单。镜头越长、镜头越多，模型每往后生成一帧，前面的微小偏差就累积一点，角色的脸会慢慢走样、衣服颜色会飘、声音音色会变。这就是长视频生成里最经典的三个老问题：误差累积、时序一致性弱、延迟高到没法交互。
 
@@ -47,7 +47,7 @@ JoyAI-Echo 解决一致性的核心，是一个叫「跨模态音视频记忆库
 
 它的做法不复杂，但很对症。生成一段多镜头故事时，每个新镜头不是凭空开始画，而是要回看之前所有镜头留下的记忆——人物的外观特征存了一份，声音的音色也存了一份，视觉和听觉两条线一起绑定。这样下一个镜头里出现的同一个角色，长相能接上、嗓音也能接上。
 
-![JoyAI-Echo 端到端流水线：策划、记忆、生成、编辑四段串成一条，对照纯生成模型少了跨工具搬运和角色对不上两道坎](joyai-echo-pipeline.png)
+![JoyAI-Echo 端到端流水线：策划、记忆、生成、编辑四段串成一条，对照纯生成模型少了跨工具搬运和角色对不上两道坎](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/joyai-echo-jd-long-video-agent-2026-06-08/joyai-echo-pipeline.png)
 
 具体到怎么写一段长视频，仓库里给的输入方式是一个 JSON 文件，里面是一串提示词，每一条字符串就是一个完整镜头。一条字符串生成一个镜头，多条就生成一段多镜头故事，后面的镜头通过这个配对的音视频记忆库接住前面的镜头。每条镜头提示词要按顺序写清楚六个部分：
 
@@ -60,11 +60,11 @@ JoyAI-Echo 解决一致性的核心，是一个叫「跨模态音视频记忆库
 
 官方还在仓库里放了提示词增强器（长故事和短故事各一份系统提示），把一句简单的想法扩写成结构完整的镜头提示，并明确建议先过一遍增强器再生成，否则效果会明显变弱。
 
-![JoyAI-Echo 生成的人像与人物场景画面，写实质感下人物表情、服装、光线连贯（来源：JoyAI-Echo 官方仓库画面合集）](joyai-echo-frames-mid.png)
+![JoyAI-Echo 生成的人像与人物场景画面，写实质感下人物表情、服装、光线连贯（来源：JoyAI-Echo 官方仓库画面合集）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/joyai-echo-jd-long-video-agent-2026-06-08/joyai-echo-frames-mid.png)
 
 为了验证记忆库真的有用，团队做了一组 GSB 人类偏好评测，用了 100 个故事、跑出 3000 个评测镜头。在长视频任务上对照一个导演模式的基线方案：
 
-![JoyAI-Echo 的 GSB 人类偏好评测：长视频任务在视觉美学、音频质量、提示词遵循、角色一致四项上都明显领先](joyai-echo-gsb.png)
+![JoyAI-Echo 的 GSB 人类偏好评测：长视频任务在视觉美学、音频质量、提示词遵循、角色一致四项上都明显领先](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/joyai-echo-jd-long-video-agent-2026-06-08/joyai-echo-gsb.png)
 
 长视频四项里，视觉美学 63.6%、音频质量 81.7%、提示词遵循 80.6%、角色一致 59.4% 的用户更偏好 JoyAI-Echo；在人像短视频的视觉美学上，对照阿里的通义万相（Wan 2.6），偏好率也到了 58.8% 对 26.5%。官方还给出语音一致性的量化指标约 0.8646。
 

@@ -12,7 +12,7 @@ cover: boba-stealth-model-coding-arena-top-2026-06-06.png
 
 > 截至 2026 年 6 月，一个名叫 Boba 的匿名模型以盲测分 1197 坐在编程竞技榜最上面，压过 Claude Opus 4.6（1142）和 Claude Sonnet 4.6（1084）。它的厂商至今没有公开。这件事比"谁第一"更值得说的，是一个不亮身份的模型也能霸榜——以及国内开发者该看哪张表，才不会被一个榜单牵着走。
 
-![低多边形风格封面：一个匿名的金色冠军站在编程竞技榜的最高一级台阶上，身旁是奖杯，下方几个蓝色身影站在更低的台阶](boba-stealth-model-coding-arena-top-2026-06-06.png)
+![低多边形风格封面：一个匿名的金色冠军站在编程竞技榜的最高一级台阶上，身旁是奖杯，下方几个蓝色身影站在更低的台阶](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/boba-stealth-model-coding-arena-top-2026-06-06/boba-stealth-model-coding-arena-top-2026-06-06.png)
 
 先把本文的核心判断摆明：**Boba 登顶不是某家厂商的胜负新闻，而是"厂商用代号先实测、再公布"已经成为行业常规动作的又一个例证；对国内开发者真正有用的，是把同档国产编程模型放进同一张对位表，再分清盲测投票和静态题库这两条评测路各自能说明什么。** 下面三件事一件件讲清楚。
 
@@ -20,11 +20,11 @@ cover: boba-stealth-model-coding-arena-top-2026-06-06.png
 
 Arena（也就是大家熟知的 LMArena）的编程竞技榜上，排在最前面的不是 Claude，也不是 GPT 或 Gemini，而是一个叫 Boba 的名字。它后面标注的厂商一栏写着"stealth"——隐身，意思是这个模型背后是谁，官方还没揭晓。
 
-![来源：Arena（LMArena）官方站点 leaderboard 预览图 arena.ai/leaderboard，2026-06](boba-stealth-model-coding-arena-top-2026-06-06-arena-og.png)
+![来源：Arena（LMArena）官方站点 leaderboard 预览图 arena.ai/leaderboard，2026-06](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/boba-stealth-model-coding-arena-top-2026-06-06/boba-stealth-model-coding-arena-top-2026-06-06-arena-og.png)
 
 这一档的盲测分对照很直观：
 
-![编程竞技榜盲测分对照：Boba（隐身）1197 排第一，Claude Opus 4.6 为 1142，Claude Sonnet 4.6 为 1084，基于 1566 次真人盲测投票](boba-stealth-model-coding-arena-top-2026-06-06-arena-rank.png)
+![编程竞技榜盲测分对照：Boba（隐身）1197 排第一，Claude Opus 4.6 为 1142，Claude Sonnet 4.6 为 1084，基于 1566 次真人盲测投票](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/boba-stealth-model-coding-arena-top-2026-06-06/boba-stealth-model-coding-arena-top-2026-06-06-arena-rank.png)
 
 几个关键数字，一次说完：
 
@@ -40,7 +40,7 @@ Arena（也就是大家熟知的 LMArena）的编程竞技榜上，排在最前�
 
 把时间线拉长就会发现，用代号先上竞技场、攒够真实反馈再正式发布，已经是各大厂商心照不宣的常规打法。
 
-![隐身模型代号小史：OpenAI 用 Summit/Quasar/Polaris，谷歌 DeepMind 用 Lithiumflow/Orionmist/Oceanstone，xAI 用 Sonic/Sherlock/Sonoma，Anthropic 用 Bobcat/Code-supernova，本次主角是 Boba](boba-stealth-model-coding-arena-top-2026-06-06-stealth-history.png)
+![隐身模型代号小史：OpenAI 用 Summit/Quasar/Polaris，谷歌 DeepMind 用 Lithiumflow/Orionmist/Oceanstone，xAI 用 Sonic/Sherlock/Sonoma，Anthropic 用 Bobcat/Code-supernova，本次主角是 Boba](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/boba-stealth-model-coding-arena-top-2026-06-06/boba-stealth-model-coding-arena-top-2026-06-06-stealth-history.png)
 
 各家的代号还各有偏好：
 
@@ -65,7 +65,7 @@ Boba 还没公开身份、也没开放使用，对日常写代码暂时帮不上
 
 把第一梯队的几个放进同一张对位表，看得最清楚：
 
-![国产同档编程模型对位表：深度求索 DeepSeek V4-Pro 首次通过率 80.6%、智谱 GLM-5.1 为 78.9%、月之暗面 Kimi K2.6 为 77.4%、千问 Qwen3.5 397B 推理档约 76%，均开源可自托管](boba-stealth-model-coding-arena-top-2026-06-06-cn-coding-table.png)
+![国产同档编程模型对位表：深度求索 DeepSeek V4-Pro 首次通过率 80.6%、智谱 GLM-5.1 为 78.9%、月之暗面 Kimi K2.6 为 77.4%、千问 Qwen3.5 397B 推理档约 76%，均开源可自托管](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/boba-stealth-model-coding-arena-top-2026-06-06/boba-stealth-model-coding-arena-top-2026-06-06-cn-coding-table.png)
 
 这里用的是 SWE-Bench Verified 的"首次通过率"——给模型一个真实代码仓库的待修问题，看它一次性把问题改对的比例，是目前最贴近真实开发的硬指标之一。几个数字（2026 年 4 月公开评测口径）：
 
@@ -93,7 +93,7 @@ Boba 还没公开身份、也没开放使用，对日常写代码暂时帮不上
 
 很多人看榜单会下意识把"竞技榜第一"和"静态题库跑分第一"画等号，其实这是两条不同的评测路，各自说明的事情并不一样。
 
-![盲测投票 vs 静态题库对照：左侧真人盲测投票考开放任务的真实手感、贴近日常但有波动，右侧静态题库考可复现硬指标、可跨模型比但题目公开后易被针对训练](boba-stealth-model-coding-arena-top-2026-06-06-vote-vs-bench.png)
+![盲测投票 vs 静态题库对照：左侧真人盲测投票考开放任务的真实手感、贴近日常但有波动，右侧静态题库考可复现硬指标、可跨模型比但题目公开后易被针对训练](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/boba-stealth-model-coding-arena-top-2026-06-06/boba-stealth-model-coding-arena-top-2026-06-06-vote-vs-bench.png)
 
 两条路的区别，列出来一目了然：
 

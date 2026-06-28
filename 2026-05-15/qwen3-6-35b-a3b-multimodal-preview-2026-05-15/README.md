@@ -21,7 +21,7 @@ description: "今早 7:11 QwenLM/qwen-code 仓库合入 commit 4c18f13，给本�
 
 # Qwen3.6 多模态 MoE 下周见？仓库露底
 
-![Qwen3.6-35B-A3B 多模态预告封面](qwen3-6-35b-a3b-multimodal-preview-2026-05-15.png)
+![Qwen3.6-35B-A3B 多模态预告封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/qwen3-6-35b-a3b-multimodal-preview-2026-05-15/qwen3-6-35b-a3b-multimodal-preview-2026-05-15.png)
 
 **前置声明：本文是基于公开 commit 的前瞻分析，不是官方发布。阿里通义千问团队尚未官方确认 Qwen3.6-35B-A3B 多模态版本的具体发布时间，本文所有"下周见"的预期仅是基于历史节奏的推断。**
 
@@ -50,7 +50,7 @@ commit message 原文很克制：
 
 35B-A3B 这一档的位置，要放到 Qwen3.6 系列里看。基于 [insiderllm 在 4 月底整理的综合指南](https://insiderllm.com/guides/qwen-3-6-local-ai-guide/) 与 [量子位 4 月的报道](https://www.qbitai.com/2026/04/394704.html)，Qwen3.6 目前公开的有三档：
 
-![Qwen3.6 系列三档产品线状态](qwen3-6-lineup.png)
+![Qwen3.6 系列三档产品线状态](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/qwen3-6-35b-a3b-multimodal-preview-2026-05-15/qwen3-6-lineup.png)
 
 | 版本 | 类型 | 参数量 | 主打场景 | 公开状态 |
 |---|---|---|---|---|
@@ -82,7 +82,7 @@ GGUF 量化格式（GPT-Generated Unified Format）的 Q4_K_M 是 4 比特中等
 
 每秒 25.57 token 的生成速度，65K 的上下文窗口——这个性能已经能支撑日常代码补全、技术文档翻译、长论文总结这类高频用例。Qwen3.6-27B 把"国产模型本地能用"这件事钉死了。35B-A3B 来的时候，本地侧的人群基础已经搭好。
 
-![Qwen3.6 本地推理硬件适配预估](qwen-local-hardware.png)
+![Qwen3.6 本地推理硬件适配预估](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/qwen3-6-35b-a3b-multimodal-preview-2026-05-15/qwen-local-hardware.png)
 
 ## 四、35B-A3B 多模态意味着什么
 

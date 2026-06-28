@@ -11,7 +11,7 @@ track: domestic-hot
 ---
 # SkyClaw：把百万上下文 Agent 模型的调用价压到一半
 
-![SkyClaw-v1.0：昆仑万维天工发布的百万上下文智能体模型，一卷百万词元长卷接到各家智能体客户端](skyclaw-million-token-agent-model-2026-06-01.png)
+![SkyClaw-v1.0：昆仑万维天工发布的百万上下文智能体模型，一卷百万词元长卷接到各家智能体客户端](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/skyclaw-million-token-agent-model-2026-06-01/skyclaw-million-token-agent-model-2026-06-01.png)
 
 输出每百万词元 4 元。这是昆仑万维天工 5 月 26 日发布的 SkyClaw-v1.0 给出的价格——同样跑智能体任务，MiniMax-M2.7 输出价 8.4 元，DeepSeek V4-Pro 是 24 元。也就是说，一个性能在多数智能体基准上稳压 MiniMax 2.7、在 OpenClaw 任务上逼近 DeepSeek V4-Pro 和 Claude Opus 4.6 的国产模型，把调用成本直接打到了竞品的一半甚至更低。
 
@@ -31,7 +31,7 @@ track: domestic-hot
 - **接口**走 OpenAI 兼容格式，支持流式输出、工具调用、多轮对话，模型名是 `skywork-ai/skyclaw-v1`（旗舰）和 `skywork-ai/skyclaw-v1-lite`（轻量）
 - **可直接用**：模型 5 月 22 日已接入天工 Skywork，登录 tiangong.cn 打开即用，无需自己配智能体环境；即日起开放 2 至 4 周免费试用
 
-![SkyClaw 生成的交互式机票旅行应用界面截图，展示模型一次性产出可运行前端应用的能力](source-skyclaw-flight-travel-demo-2026-06-01.png)
+![SkyClaw 生成的交互式机票旅行应用界面截图，展示模型一次性产出可运行前端应用的能力](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/skyclaw-million-token-agent-model-2026-06-01/source-skyclaw-flight-travel-demo-2026-06-01.png)
 <small>来源：天工 SkyClaw 官方发布页交互式应用样例（机票旅行）</small>
 
 官方发布页放了一组它直接生成的可运行界面——机票预订、社交信息流、小游戏（2048、俄罗斯方块、象棋），从产品级前端到交互逻辑一次成型，这正是“交互式应用构建”这项能力的直观样子。
@@ -42,7 +42,7 @@ track: domestic-hot
 
 光说“强”没意义，看官方放出的基准对位。SkyClaw 选的六项评测都是智能体方向的硬指标，对照组是 DeepSeek V4-Flash、MiniMax-M2.7、千问 3.6 27B（同价位段）以及 DeepSeek V4-Pro（更大规模闭源段）。
 
-![SkyClaw-v1.0 与 lite 版在六项智能体基准上对比 DeepSeek V4-Flash、MiniMax 2.7、千问 3.6 27B、DeepSeek V4-Pro 的官方成绩图](source-skyclaw-benchmark-chart-2026-06-01.png)
+![SkyClaw-v1.0 与 lite 版在六项智能体基准上对比 DeepSeek V4-Flash、MiniMax 2.7、千问 3.6 27B、DeepSeek V4-Pro 的官方成绩图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/skyclaw-million-token-agent-model-2026-06-01/source-skyclaw-benchmark-chart-2026-06-01.png)
 <small>来源：天工 SkyClaw 官方发布页基准对比图</small>
 
 把官方图里的关键分数整理成表（分数越高越好）：
@@ -68,7 +68,7 @@ track: domestic-hot
 
 如果说基准是“够用”，那定价就是 SkyClaw 真正的差异点。把官方价目表摆出来（单位：元 / 百万词元）：
 
-![SkyClaw API 定价与 DeepSeek V4、MiniMax 2.7 的输入输出价对位柱状图](skyclaw-pricing-compare-2026-06-01.png)
+![SkyClaw API 定价与 DeepSeek V4、MiniMax 2.7 的输入输出价对位柱状图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/skyclaw-million-token-agent-model-2026-06-01/skyclaw-pricing-compare-2026-06-01.png)
 
 | 模型 | 输入 | 输出 | 缓存读 | 缓存写 |
 | --- | :---: | :---: | :---: | :---: |
@@ -93,7 +93,7 @@ track: domestic-hot
 
 对国内开发者最有价值的部分在这里。SkyClaw 本身不是一个带界面的产品，它是个模型——真正的用法是把它接到你已经在用的智能体客户端里。官方明确列了适配范围：OpenClaw、Hermes、Nanobot 这类通用智能体环境，以及 Claude Code、Codex 这类代码智能体框架。
 
-![SkyClaw 通过 OpenAI 兼容端点接入 OpenClaw、Hermes、Nanobot、Claude Code、Codex 与自研工作流的接入路线图](skyclaw-agent-routing-2026-06-01.png)
+![SkyClaw 通过 OpenAI 兼容端点接入 OpenClaw、Hermes、Nanobot、Claude Code、Codex 与自研工作流的接入路线图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/skyclaw-million-token-agent-model-2026-06-01/skyclaw-agent-routing-2026-06-01.png)
 
 接入的关键，是它走 **OpenAI 兼容格式的接口**。这意味着任何已经支持配置 OpenAI 风格 base_url 的工具，理论上都能把后端模型换成 SkyClaw，改动只有三处：接口地址、API Key、模型名。
 

@@ -10,7 +10,7 @@ category: "Agent 基础设施 / 开源 / 长期记忆"
 ---
 # 华为开源 openJiuwen：给 Agent 一个能记得住事的运行环境
 
-![华为开源 openJiuwen 与 Agent 长期记忆，给智能体装上跨会话记得住事的运行环境，温暖科技风格示意](huawei-openjiuwen-agent-memory-2026-06-08.png)
+![华为开源 openJiuwen 与 Agent 长期记忆，给智能体装上跨会话记得住事的运行环境，温暖科技风格示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/huawei-openjiuwen-agent-memory-2026-06-08/huawei-openjiuwen-agent-memory-2026-06-08.png)
 
 写过 Agent 的人都撞过同一堵墙：让它跑一个跨好几天的任务，或者隔一周再回来接着上次的活，它一脸茫然——上次查到什么、和你商量过哪条方案、哪个坑已经踩过，全忘了。**Agent 真正卡住产品化的，往往不是模型不够聪明，而是它没有一份能跨会话、跨天、跨任务留得住的长期记忆。** 上下文窗口再大也填不平这个坑，因为窗口是临时草稿纸，关掉就清空。
 
@@ -30,7 +30,7 @@ category: "Agent 基础设施 / 开源 / 长期记忆"
 
 所以"记忆"要解决的，是**在无限增长的历史里，把此刻该用的那一小块事实准确地拎出来注入**。这条路上有几个 RAG（检索增强生成）天生不管的信号，恰恰是 Agent 长期记忆的难点所在。
 
-![上下文窗口再大也不等于有记忆：把半年历史全塞进窗口 vs 记忆层只取该用的几条](window-vs-memory-2026-06-08.png)
+![上下文窗口再大也不等于有记忆：把半年历史全塞进窗口 vs 记忆层只取该用的几条](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/huawei-openjiuwen-agent-memory-2026-06-08/window-vs-memory-2026-06-08.png)
 
 把这几个难点摊开看：
 
@@ -47,7 +47,7 @@ category: "Agent 基础设施 / 开源 / 长期记忆"
 
 实查一下它在国内代码托管平台上的真实状态——这套东西主仓托管在 GitCode（`gitcode.com/openJiuwen`），GitHub 上的 `openJiuwen-ai` 是只读镜像，组织简介写得很直白：「Read-only mirrors of all openJiuwen code repositories hosted at gitcode.com/openJiuwen」，公开仓库 13 个，全套 Apache-2.0 许可证。下面这些 star 数以 6 月 8 日核对的 GitCode 主仓为准：
 
-![openJiuwen 开源仓库矩阵：全套 Apache-2.0，主仓托管于 GitCode，国内可直接拉取](openjiuwen-repo-matrix-2026-06-08.png)
+![openJiuwen 开源仓库矩阵：全套 Apache-2.0，主仓托管于 GitCode，国内可直接拉取](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/huawei-openjiuwen-agent-memory-2026-06-08/openjiuwen-repo-matrix-2026-06-08.png)
 
 几个开发者会直接用到的核心仓库：
 
@@ -61,7 +61,7 @@ category: "Agent 基础设施 / 开源 / 长期记忆"
 | deepsearch | Python | 约 1610 | 深度检索能力 |
 | agent-core-java | Java | 约 1380 | SDK 的 Java 版 |
 
-![openJiuwen agent-core 仓库社交卡片：AI Agent 开发运行的全套 SDK，Apache-2.0](source-openjiuwen-github-og-2026-06-08.png)
+![openJiuwen agent-core 仓库社交卡片：AI Agent 开发运行的全套 SDK，Apache-2.0](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/huawei-openjiuwen-agent-memory-2026-06-08/source-openjiuwen-github-og-2026-06-08.png)
 <small>来源：github.com/openJiuwen-ai/agent-core 仓库社交卡片（GitCode 主仓的只读镜像）</small>
 
 上手成本是真低。核心 SDK 直接从 PyPI 装：`pip install -U openjiuwen`，要求 Python 3.11 到 3.13。README 里写得很清楚，接口覆盖「Agent 实例创建、工作流设计与编排、大模型调用与输出解析、提示词模板构造与动态填充」，预置了意图识别、提问器、工具组件这些现成块，编排上给了两种 Agent：**ReActAgent**（走"思考 → 行动 → 观察"循环）和 **WorkflowAgent**（跑多步任务流程自动化）。这套接口设计对用过 LangChain、用过别家 Agent 框架的人来说几乎是零迁移成本。
@@ -77,7 +77,7 @@ category: "Agent 基础设施 / 开源 / 长期记忆"
 
 记忆是 openJiuwen 这次最有想象空间的一块。配套放出的 **AMS 记忆方案**（Agentic 记忆存储），走的是一条和海外应用层记忆库不太一样的路——**它从存储硬件往上做。**
 
-![华为云 CEO 周跃峰 zhouyuefeng 在 Agentic AI 大会 keynote 主题演讲，6 月 5 日上海，来源量子位 qbitai](source-qbitai-zhouyuefeng-keynote-2026-06-08.jpeg)
+![华为云 CEO 周跃峰 zhouyuefeng 在 Agentic AI 大会 keynote 主题演讲，6 月 5 日上海，来源量子位 qbitai](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/huawei-openjiuwen-agent-memory-2026-06-08/source-qbitai-zhouyuefeng-keynote-2026-06-08.jpeg)
 <small>来源：量子位现场报道，华为云 Agentic AI 大会 2026-06-05 上海</small>
 
 华为云官方对 AMS 的描述（口径如下，标注清楚是官方宣称值）：
@@ -89,7 +89,7 @@ category: "Agent 基础设施 / 开源 / 长期记忆"
 
 配合 openJiuwen 的上下文引擎，官方还提到「异步压缩与动态卸载」——简单说，就是在长时、复杂的多智能体任务里，把暂时用不上的上下文压缩、卸载下去，需要时再调回来，保持任务执行的一致性。再往上的记忆管理层，企业版描述里提到「多层知识图谱与双时间轴建模」，做记忆的智能提取、按需失效与动态重排序——这套概念和海外记忆库讲的"时序知识图谱"是同一类思路，区别在于 AMS 把底下的存储这一层也一起接管了。
 
-![两条记忆路线对照：往硬件里扎的系统层 AMS vs 往应用层做的 mem0 / Letta / Zep](memory-route-compare-2026-06-08.png)
+![两条记忆路线对照：往硬件里扎的系统层 AMS vs 往应用层做的 mem0 / Letta / Zep](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/huawei-openjiuwen-agent-memory-2026-06-08/memory-route-compare-2026-06-08.png)
 
 这里得给读者一个诚实的提醒：**PB 级、分层池化、天级长程这些都是华为云的官方宣称口径，第三方独立实测的数据目前还没出来。** 硬件直通能带来多少真实收益、在非昇腾环境下还能剩多少，都要等社区把它真跑起来才知道。把它当成一个有明确工程取向的方案来看，而不是一组已经验证的基准数字，这个分寸要拿捏住。
 

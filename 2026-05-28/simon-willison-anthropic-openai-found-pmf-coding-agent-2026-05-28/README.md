@@ -18,7 +18,7 @@ keywords: Simon Willison, product market fit, Anthropic, OpenAI, Claude Code, Co
 
 # Simon Willison 论断 Anthropic / OpenAI 已找到 PMF：从 200 美元订阅到 2180 美元 token 账单的 11 倍跃迁
 
-![Simon Willison 博客首屏复刻：Anthropic / OpenAI 已找到 PMF](source-simon-blog-hero-v2.png)
+![Simon Willison 博客首屏复刻：Anthropic / OpenAI 已找到 PMF](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/simon-willison-anthropic-openai-found-pmf-coding-agent-2026-05-28/source-simon-blog-hero-v2.png)
 
 ## 30 秒速览
 
@@ -31,7 +31,7 @@ keywords: Simon Willison, product market fit, Anthropic, OpenAI, Claude Code, Co
 
 ---
 
-![Hacker News 头页 209 分顶帖复刻](source-hn-frontpage-209-v2.png)
+![Hacker News 头页 209 分顶帖复刻](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/simon-willison-anthropic-openai-found-pmf-coding-agent-2026-05-28/source-hn-frontpage-209-v2.png)
 
 ## 一、Simon Willison 这条论断为什么 HN 209 分顶到头页
 
@@ -57,7 +57,7 @@ HN 评论区第一条置顶来自用户 `tptacek`（Thomas Ptacek，Fly.io 创�
 
 然后是 30 天后回头折算：Claude Code 部分按 Claude 4.7 Sonnet 当前公开 API 价（输入 3 美元 / 百万 token，输出 15 美元 / 百万 token，缓存读 0.30 美元 / 百万 token）算下来 **1,199.79 美元**；Codex CLI 部分按 GPT-5.1 Codex API 价（输入 2.5 美元 / 百万 token，输出 10 美元 / 百万 token）算下来 **980.37 美元**。总计 **2,180.16 美元**。
 
-![个人账单单月对比：$200 订阅 vs $2,180 真实 token 价值](bill-200-to-2180.png)
+![个人账单单月对比：$200 订阅 vs $2,180 真实 token 价值](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/simon-willison-anthropic-openai-found-pmf-coding-agent-2026-05-28/bill-200-to-2180.png)
 
 这个 11 倍折扣意味着两件事，恰好对应消费侧和供给侧两条 PMF 信号。
 
@@ -75,7 +75,7 @@ HN 评论区第一条置顶来自用户 `tptacek`（Thomas Ptacek，Fly.io 创�
 
 Simon 的博文里只引用了一句「年化营收 109 亿美元」，没展开。我把背景补齐——这条数字源自 *The Information* 5 月 25 日报道、*Bloomberg* 同日跟进，对应的是 Anthropic 2026 年第二季度（4-6 月）年化口径的预测值。对比起点是 2025 年 8 月 Anthropic 内部沟通的 40 亿美元年化营收。9 个月时间，同比 170%。
 
-![Anthropic 年化营收增长曲线：2025-08 的 40 亿 → 2026-Q2 的 109 亿](anthropic-revenue-curve.png)
+![Anthropic 年化营收增长曲线：2025-08 的 40 亿 → 2026-Q2 的 109 亿](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/simon-willison-anthropic-openai-found-pmf-coding-agent-2026-05-28/anthropic-revenue-curve.png)
 
 整段增速我分成三段看：
 
@@ -113,7 +113,7 @@ Simon 原文那句「Anthropic 强烈传闻将迎来首个盈利季度」（pote
 
 ## 五、企业定价模型两个月内两次跳档：从座位制到 token 制说明什么
 
-![企业定价两次跳档：Anthropic 2025-11 + OpenAI 2026-04](enterprise-pricing-shift.png)
+![企业定价两次跳档：Anthropic 2025-11 + OpenAI 2026-04](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/simon-willison-anthropic-openai-found-pmf-coding-agent-2026-05-28/enterprise-pricing-shift.png)
 
 Simon 在博文中段花了一整节解释「为什么 Anthropic 和 OpenAI 在过去 6 个月几乎同时改了企业定价」。这件事看上去像是两家在比谁先动，实际上是 PMF 找到之后必然发生的定价升级。我把两次改动按时间顺序排一遍：
 

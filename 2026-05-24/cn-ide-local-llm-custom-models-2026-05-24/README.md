@@ -15,7 +15,7 @@ image_alt_match_ignore: []
 
 # Trae 与 Qwen Code：国产 IDE 接本地的两条路
 
-![五家国产 IDE Custom Models 现状矩阵图](cn-ide-five-cards-matrix.png)
+![五家国产 IDE Custom Models 现状矩阵图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/cn-ide-local-llm-custom-models-2026-05-24/cn-ide-five-cards-matrix.png)
 
 ## 30 秒速览：五家里只有两家能接本地
 
@@ -45,7 +45,7 @@ Qwen Code 这边走的是另一条工程路线——它从 2025-11 立项第一�
 
 为什么先写 Qwen Code，因为它配置文件最容易让一个第一次接本地大模型的人看明白发生了什么。打开终端，编辑 `~/.qwen/settings.json`，下面这段是同时挂 Ollama 与 vLLM 两个后端的最小可工作版本，原样照抄就能跑。
 
-![Qwen Code 官方 GitHub 仓库](qwen-code-gh-card.png)
+![Qwen Code 官方 GitHub 仓库](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/cn-ide-local-llm-custom-models-2026-05-24/qwen-code-gh-card.png)
 
 ```json
 {
@@ -88,7 +88,7 @@ Qwen Code 这边走的是另一条工程路线——它从 2025-11 立项第一�
 
 Trae 这边走的是 IDE 内置 GUI 配置路径，没有 settings.json 这种文本接口。点开 Trae 主界面右上角齿轮，选 Settings → Models → 右下角 "Custom Model"，弹出来的窗口里有四个字段：Provider 名（自定义文字）、Model ID（后端真实模型名）、API Key、Base URL。
 
-![Trae 官方文档：Models 配置](trae-models-doc.png)
+![Trae 官方文档：Models 配置](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/cn-ide-local-llm-custom-models-2026-05-24/trae-models-doc.png)
 
 Base URL 这里有个坑：必须填完整的接口路径，不能只填 host。本地 Ollama 要这么填：
 
@@ -114,7 +114,7 @@ Model ID 字段则要严格对齐后端真实模型名。Ollama 这边模型名�
 
 通义灵码 v0.11.0 的模型配置页只列五家：阿里百炼（自家全系）、DeepSeek（V3.1 / V4-Flash / V4-Pro）、智谱（GLM-4.6 / GLM-5.1）、Kimi（K2 / K2.5）、MiniMax（abab7-chat）。每家的 endpoint、模型 ID、计费方式都被官方包装好，用户只需要填一把对应平台的 API key。从合规角度看这是最稳的方案——五家全是 2024-2025 通过备案的国内大模型服务商，不存在数据出境问题。从开发者角度看就是有点闷，本机已经跑着 Qwen3-Coder 30B 也用不上。
 
-![通义灵码 BYOK 配置页（阿里云帮助中心）](lingma-byok-config.png)
+![通义灵码 BYOK 配置页（阿里云帮助中心）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/cn-ide-local-llm-custom-models-2026-05-24/lingma-byok-config.png)
 
 2026-05-20 阿里把通义灵码改名 Qoder CN，与海外线 Qoder 完成品牌统一。配置入口结构上对齐，但白名单依然分开——Qoder CN 用五家国内服务商，Qoder 海外线用 OpenAI / Anthropic / Google / Mistral 四家。Qoder 海外线社区论坛 `forum.qoder.com/t/qoder/4158` 这条 feature request 从 2026-01 挂到今天，官方回复一句"under consideration"，没下文。
 
@@ -153,7 +153,7 @@ lmdeploy 是上海 AI Lab 的开源项目，对昇腾、寒武纪、海光这些
 
 这一段把整套链路从零起来给一遍，机器假设是 RTX 4090 24GB + Ubuntu 22.04，模型选 Qwen3-Coder 30B Q4_K_M（约 18.6 GB），IDE 用 Qwen Code v0.16.1。
 
-![Ollama 与 vLLM 接 IDE 数据流图](ollama-vllm-endpoint-flow.png)
+![Ollama 与 vLLM 接 IDE 数据流图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/cn-ide-local-llm-custom-models-2026-05-24/ollama-vllm-endpoint-flow.png)
 
 第一步装 Ollama：
 
@@ -233,7 +233,7 @@ vllm serve Qwen/Qwen3-Coder-Plus \
 
 **坑一：CORS 错误**。IDE 插件用的是 Electron 浏览器内核发请求，Ollama 默认 CORS 策略只允许 localhost 同源，弹出来的报错信息是 `Access-Control-Allow-Origin missing`。修法就是上面那个 `OLLAMA_ORIGINS=*` 环境变量，必须走 systemctl edit 加 Environment 重启，写在 `~/.bashrc` 没用——systemd 拉起来的进程不读用户 shell rc。
 
-![Ollama CORS 配置示意](ollama-cors-fix.png)
+![Ollama CORS 配置示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/cn-ide-local-llm-custom-models-2026-05-24/ollama-cors-fix.png)
 
 **坑二：上下文窗口配置不一致**。Qwen3-Coder 30B 后端支持 256K 上下文，但 Qwen Code 默认会把 prompt 截断到 8K（保守策略，避免本地推理 OOM）。这种情况下读者会觉得"模型怎么忘事忘得这么快"。修法是 Qwen Code 的 `generationConfig.contextWindowSize` 字段显式设到 65536 或更大，Trae 这边暂时没开放该字段，只能在系统提示词里手动控制。
 
@@ -269,7 +269,7 @@ modelscope download --model Qwen/Qwen3-Coder-30B-A3B
 
 谈钱的事一向最直接。下面这张回本曲线是按三档真实工作量做的，硬件锚是国内电商 2026-05 的 RTX 4090 24GB 价格（13,000-15,000 元区间，中位数 14,000），云端价格按百炼 2026-05 公开价位测算。
 
-![本地与云端回本曲线](local-vs-cloud-cost-curve.png)
+![本地与云端回本曲线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/cn-ide-local-llm-custom-models-2026-05-24/local-vs-cloud-cost-curve.png)
 
 云端价格参考（每百万 token，2026-05-24 百炼控制台数字）：
 

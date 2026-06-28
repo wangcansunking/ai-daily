@@ -13,7 +13,7 @@ cover: tradingagents-cn-fork.png
 
 > Tauric Research 把多智能体交易框架开源到 59.5k 星，2026-05-01 GitHub Trending 当日第 1、单日新增 2,115 星。同一天，国内开发者 hsliuping 维护的国产 LLM 适配版 TradingAgents-CN 走到 25.2k 星——把基础面、情绪、新闻、技术四个分析师，连上多空研究员辩论 + 交易员 + 风控 + 组合经理这条完整流水线，搬到 A 股 / 港股 / 阿里百炼 / DeepSeek / 千问 / GLM 的国产基座上。
 
-![多智能体交易框架登顶 GH · 国产分叉同步在跑](tradingagents-cn-fork.png)
+![多智能体交易框架登顶 GH · 国产分叉同步在跑](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/tradingagents-multi-agent-finance-cn-fork/tradingagents-cn-fork.png)
 
 ## 一、原版做的是什么：一个 LLM 版的卖方研究所
 
@@ -25,7 +25,7 @@ TauricResearch/TradingAgents 在 README 里把自己定位写得很直接：
 
 整个框架沿着卖方机构的真实分工切了五层。
 
-![多智能体辩论流 · 5 层分工 + 五档评级](tradingagents-agent-debate-flow.png)
+![多智能体辩论流 · 5 层分工 + 五档评级](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/tradingagents-multi-agent-finance-cn-fork/tradingagents-agent-debate-flow.png)
 
 第一层是分析师团，按券商研究所的传统口径切成四类——基本面分析师看财报、情绪分析师看社媒、新闻分析师看宏观、技术分析师跑 MACD / RSI 这类指标。每个分析师都是一个独立的 LLM agent，吃同一份原始数据但只产一份属于自己角度的结构化报告。第二层是研究员团，多头研究员（Bullish）和空头研究员（Bearish）各拿到四份分析师报告，围绕同一只标的展开正反辩论。第三层是交易员，把辩论结论汇总成一份明确的仓位建议 + 五档评级。
 
@@ -49,7 +49,7 @@ v0.2.4 在 LLM provider 上的变化最直接。release note 给出的清单是�
 
 但 v0.2.4 主分支的 LLM provider 默认指向的还是 OpenAI / Anthropic / Google / xAI 这套。**真正把国产 LLM + A 股做到开箱即用的，是 hsliuping 维护的国产分叉版 TradingAgents-CN。**
 
-![原版 vs 国产分叉版 · 9 个维度对比](tradingagents-original-vs-cn.png)
+![原版 vs 国产分叉版 · 9 个维度对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/tradingagents-multi-agent-finance-cn-fork/tradingagents-original-vs-cn.png)
 
 TradingAgents-CN 当前稳定版 v1.0.1，2026-04-14 发布，25.2k 星。读者如果只看名字会以为这是一个简单的中文文档翻译版——实际上它和原版的差异已经覆盖到基座、数据、部署、报告、合规五条线，和原版相比是一个完整的二次开发版本。
 
@@ -65,7 +65,7 @@ LLM 基座这一层，国产部分覆盖了阿里百炼（DashScope）、DeepSee
 
 把视角拉远，国内开源金融 AI 生态在过去两年里已经长得相当完整——多智能体、强化学习、数据接口、本地量化回测，每条线都有头部项目在维护。
 
-![国内多智能体金融生态横评 · star 排序](domestic-fin-agent-landscape.png)
+![国内多智能体金融生态横评 · star 排序](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/tradingagents-multi-agent-finance-cn-fork/domestic-fin-agent-landscape.png)
 
 AI4Finance Foundation 这条线最完整。FinGPT 19.9k 星，是开源金融大模型的代表项目，主打开源 LLM 在金融语料上的轻量化微调，单次微调成本据社区数据控制在 300 美金以内。FinRL 15.0k 星，把强化学习正经搬进量化交易场景，覆盖股票、组合配置、高频交易三大方向。FinRobot 6.8k 星，跟 TradingAgents 是一个赛道——AI Agent 平台化做金融分析，把 LLM、RL、量化分析模块化堆在一起。三个项目分工很清楚：FinGPT 给基座、FinRL 给策略、FinRobot 给 agent 编排。
 

@@ -8,7 +8,7 @@ tags: [AI Coding, Coding Agent, Terminal-Bench, Open Source, Gemini 3 Flash]
 cover: 2026-04-28-dirac-terminal-bench.png
 ---
 
-![cover](2026-04-28-dirac-terminal-bench.png)
+![cover](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-28/dirac-terminal-bench-cost-efficiency/2026-04-28-dirac-terminal-bench.png)
 
 # 65.2 vs 64.3：一个 4 月才建库的 OSS 小作坊把 Junie CLI 顶下榜
 
@@ -32,7 +32,7 @@ JetBrains 2025 年下半年把自家 IDE 内的 AI 助手 **Junie 拆出 CLI 版
 
 代表性发言之一来自评论者 deskamess：*"I always wondered why AST's were not more of a part in both editing and scoping of changes/parsing code."* —— AST 这件事早该被 agent 工具圈重视。
 
-![dirac 仓库 OG 卡片](2026-04-28-dirac-og.png)
+![dirac 仓库 OG 卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-28/dirac-terminal-bench-cost-efficiency/2026-04-28-dirac-og.png)
 
 *图片来源：opengraph.githubassets.com 实时生成的仓库 OG 卡片快照*
 
@@ -61,7 +61,7 @@ Junie CLI 4 月初的 64.3 是这套流程审过的。Dirac 4 月 27 日交的 6
 
 Dirac README 里贴了一张内部 8 题对照表：同样 8 道任务（来自 transformers / vscode / django 三个项目的真实 issue），用 Cline / Kilo / Ohmypi / OpenCode / Pimono / Roo 这 6 个主流开源 agent 跑一遍，再用 Dirac 跑一遍，**数字一字未抹**：
 
-![Dirac vs 同行 8 题 cost 对比](2026-04-28-dirac-bench-table.png)
+![Dirac vs 同行 8 题 cost 对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-28/dirac-terminal-bench-cost-efficiency/2026-04-28-dirac-bench-table.png)
 
 *图片来源：根据 Dirac 仓库 README 的 8 题 cost 表手工整理 PIL 渲染*
 

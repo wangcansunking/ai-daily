@@ -12,7 +12,7 @@ description: "2026-06-04 起 OpenAI 把 ChatGPT 锁定模式从企业版扩到�
 
 # ChatGPT 上线锁定模式：用关掉联网堵住提示注入外泄
 
-![ChatGPT 锁定模式：用霓虹城门把外发的数据线全部上锁，封住提示注入的外泄出口](chatgpt-lockdown-mode-injection-firewall-2026-06-07.png)
+![ChatGPT 锁定模式：用霓虹城门把外发的数据线全部上锁，封住提示注入的外泄出口](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/chatgpt-lockdown-mode-injection-firewall-2026-06-07/chatgpt-lockdown-mode-injection-firewall-2026-06-07.png)
 
 当地时间 2026 年 6 月 4 日，OpenAI 开始把 ChatGPT 的「锁定模式」（Lockdown Mode）从企业版推到所有个人账号，覆盖 Free、Go、Plus、Pro，以及可以自助开通的 Business。到 6 月 5、6 日，Engadget、Neowin、TechTimes、The Hacker News 等都做了报道。
 
@@ -40,7 +40,7 @@ description: "2026-06-04 起 OpenAI 把 ChatGPT 锁定模式从企业版扩到�
 
 换句话说，锁定模式**不拦注入本身**，它只锁「数据往外走」这一步。理解这一点，就能理解 OpenAI 这次的整个设计取舍。
 
-![来源：Engadget 报道 ChatGPT 锁定模式上线（2026-06-05）](engadget-lockdown.jpg)
+![来源：Engadget 报道 ChatGPT 锁定模式上线（2026-06-05）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/chatgpt-lockdown-mode-injection-firewall-2026-06-07/engadget-lockdown.jpg)
 
 与锁定模式一起出现的，还有一套「高风险标签」（Elevated Risk labels）。OpenAI 把那些「连上 app 和网络后可能引入额外安全风险」的功能，统一打上一致的警示标，并在设置页解释清楚：这个功能做什么、开启后会变什么、有什么风险、什么时候适合用。这套标签会同步出现在 ChatGPT、ChatGPT Atlas 浏览器和 Codex 上，等到对应风险被技术手段充分缓解之后再撤掉。
 
@@ -50,7 +50,7 @@ description: "2026-06-04 起 OpenAI 把 ChatGPT 锁定模式从企业版扩到�
 
 要理解 OpenAI 为什么只锁最后一步，得先看清提示注入外泄的完整过程。它不是一次性的「黑进系统」，而是四步连起来的一条路。
 
-![提示注入外泄全过程：注入混进来→模型被骗→读到敏感数据→往外发，锁定模式只确定性切断最后一步](exfil-chain.png)
+![提示注入外泄全过程：注入混进来→模型被骗→读到敏感数据→往外发，锁定模式只确定性切断最后一步](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/chatgpt-lockdown-mode-injection-firewall-2026-06-07/exfil-chain.png)
 
 这四步分别是：
 
@@ -75,7 +75,7 @@ description: "2026-06-04 起 OpenAI 把 ChatGPT 锁定模式从企业版扩到�
 
 到这里，核心问题浮出来了：面对提示注入，工程上其实有两条路。
 
-![面对提示注入的两条工程路：确定性兜底 vs 概率拦截](two-paths.png)
+![面对提示注入的两条工程路：确定性兜底 vs 概率拦截](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/chatgpt-lockdown-mode-injection-firewall-2026-06-07/two-paths.png)
 
 **第一条是概率拦截**：再训一个更聪明的模型 / 分类器，去识别「这段内容里藏着注入吗」「模型现在是不是被骗了」，识别到就拦下来。这条路的好处是功能基本不受影响、体验顺，坏处是它永远有一个非零的漏判率——拦得再准，也总有拦不住的那一次，而攻防是动态的，攻击者会一直找新写法。
 
@@ -132,7 +132,7 @@ Anthropic 自己也很坦诚地量化过这条路的边界。在它为 Claude Co
 
 OpenAI 这次的锁定模式，提供的不是银弹，而是一个更成熟的态度：**承认拦不全，于是退一步，把「最坏情况」用一个确定的开关先兜住。** 它不解决提示注入本身，它解决的是「就算被注入了，数据也发不出去」。
 
-![来源：TechTimes 报道 ChatGPT 数据外泄风险与防护（2026-06-06）](techtimes-exfil.jpg)
+![来源：TechTimes 报道 ChatGPT 数据外泄风险与防护（2026-06-06）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/chatgpt-lockdown-mode-injection-firewall-2026-06-07/techtimes-exfil.jpg)
 
 这个取舍对每一个在做 Agent 的团队都有参考意义——无论是国内的千问、豆包、Kimi、扣子，还是海外的 Claude。当一个风险靠「让模型更聪明」兜不住底的时候，不妨想想：有没有哪个能力，是可以被一个确定的开关直接关掉的？把那条最容易砍的腿砍掉，往往比把整只猛兽训乖，来得更实在。
 

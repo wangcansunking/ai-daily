@@ -21,7 +21,7 @@ tags:
 
 > 5 月 11 日，火山引擎方舟（Ark）发布业内首个 Agent 套餐 — Agent Plan，把豆包自研模型、第三方 GLM-5.1 / Kimi K2.6、联网搜索、Vision Embedding、ArkClaw harness 一次性打包成 4 档订阅（¥40 / ¥200 / ¥500 / ¥1000），并用一个新单位 AFP（Agent Fuel Points）统一计量。Standard 档及以上免费用 ArkClaw。这是国内云厂第一次把「模型 + 工具 + Agent 框架」合并成单一账单。
 
-![火山方舟 Agent 套餐：AFP 把 Token、搜索、Embedding 折成一个单位](volcengine-ark-agent-afp-bundle-2026-05-12.png)
+![火山方舟 Agent 套餐：AFP 把 Token、搜索、Embedding 折成一个单位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/volcengine-ark-agent-afp-bundle-2026-05-12/volcengine-ark-agent-afp-bundle-2026-05-12.png)
 
 打开手头随便一个跑了三个月的 Agent 项目的账单，画面通常是这样：模型 token 一笔，联网搜索一笔，向量库一笔，OCR / ASR / TTS 又各一笔。月底对账，每一项都不算贵，加在一起翻倍。**国内 Agent 工程师最熟悉的痛点不是模型贵，是账单零散，五张账单、五个计量单位、五个免费额度，想算清一个 Agent 到底花了多少钱要拉五张表。**
 
@@ -36,7 +36,7 @@ tags:
 
 ## 一、AFP 是什么：一个把五种计量单位压成一个单位的尝试
 
-![AFP 计量公式：一个单位把模型、搜索、Embedding 全部折算](afp-formula.png)
+![AFP 计量公式：一个单位把模型、搜索、Embedding 全部折算](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/volcengine-ark-agent-afp-bundle-2026-05-12/afp-formula.png)
 
 **核心论断**：AFP（Agent Fuel Points，Agent 燃料值）不是新发明一种货币，而是火山方舟把「token / 调用次数 / Embedding 长度 / 视频秒数」四套并行的计量公式，统一折算到同一刻度上。
 
@@ -60,7 +60,7 @@ AFP 的计算公式按官方公告字面描述是「按模型类别区分极速 
 
 ## 二、Agent 套餐三层结构：自研模型 + 第三方 + ArkClaw 一体化
 
-![火山方舟 Agent Plan 三层结构](afp-bundle-architecture.png)
+![火山方舟 Agent Plan 三层结构](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/volcengine-ark-agent-afp-bundle-2026-05-12/afp-bundle-architecture.png)
 
 把 Agent Plan 的产品形态拆开看，是三层封装在一个订阅里：
 
@@ -76,7 +76,7 @@ ArkClaw 与 OpenClaw（火山引擎 4 月 2 日和 OpenClaw 达成合作的开�
 
 ## 三、四档订阅：¥40 / ¥200 / ¥500 / ¥1000 的额度账
 
-![Agent Plan 四档订阅价格与 ArkClaw 权益对比](afp-4tier-pricing.png)
+![Agent Plan 四档订阅价格与 ArkClaw 权益对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/volcengine-ark-agent-afp-bundle-2026-05-12/afp-4tier-pricing.png)
 
 四档订阅的核心数字（数据综合 IT 之家、AIBase、量子位、CSDN 实测、OpenViking 官方购买指南）：
 
@@ -92,7 +92,7 @@ ArkClaw 与 OpenClaw（火山引擎 4 月 2 日和 OpenClaw 达成合作的开�
 
 ## 四、一天账单实账：AFP 套餐 vs 海外按量 vs 国内同档横向对比
 
-![典型 Agent 工作负载一天账单实测对比](afp-workload-bill-compare.png)
+![典型 Agent 工作负载一天账单实测对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/volcengine-ark-agent-afp-bundle-2026-05-12/afp-workload-bill-compare.png)
 
 抽象的额度数字看不出真实划算度，跑一个标准 workload 才能算清账。
 
@@ -121,7 +121,7 @@ ArkClaw 与 OpenClaw（火山引擎 4 月 2 日和 OpenClaw 达成合作的开�
 
 ## 五、Agent Plan 在国内 Agent 工具链里的位置
 
-![国内 AI Agent 工具链 · 大厂定位 mapping（2026-05）](afp-domestic-agent-map.png)
+![国内 AI Agent 工具链 · 大厂定位 mapping（2026-05）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/volcengine-ark-agent-afp-bundle-2026-05-12/afp-domestic-agent-map.png)
 
 把火山方舟 Agent Plan 放到国内整个 Agent 工具链里看，画面是这样的：
 
@@ -141,7 +141,7 @@ ArkClaw 与 OpenClaw（火山引擎 4 月 2 日和 OpenClaw 达成合作的开�
 
 ## 六、海外对比：从「按 token 计费」走向「Agent 整体打包」是全球趋势
 
-![Agent 平台计费模型 · 6 维度横向对比](afp-vs-overseas-domestic.png)
+![Agent 平台计费模型 · 6 维度横向对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/volcengine-ark-agent-afp-bundle-2026-05-12/afp-vs-overseas-domestic.png)
 
 把火山方舟 Agent Plan 放到海外坐标系里，能看到一个有意思的图景。
 

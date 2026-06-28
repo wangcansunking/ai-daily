@@ -21,7 +21,7 @@ description: "Bun 作者 Jarred Sumner 5 月 9 日在 X 公布：96 万行 Zig �
 
 # AI 6 天把 Bun 翻成 Rust：96 万行能跑起来
 
-![Bun 6 天 Zig 改写 Rust 封面](bun-rust-rewrite-ai-6days-2026-05-11.png)
+![Bun 6 天 Zig 改写 Rust 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/bun-rust-rewrite-ai-6days-2026-05-11/bun-rust-rewrite-ai-6days-2026-05-11.png)
 
 ## 一、Jarred Sumner 把数字摆上台面
 
@@ -41,7 +41,7 @@ description: "Bun 作者 Jarred Sumner 5 月 9 日在 X 公布：96 万行 Zig �
 
 接下来不复述新闻，挑几个能 verbatim 抓到字面证据的点，把案子拆开看。
 
-![6 天 96 万行：Bun 的 AI 重写日历](bun-6days-timeline.png)
+![6 天 96 万行：Bun 的 AI 重写日历](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/bun-rust-rewrite-ai-6days-2026-05-11/bun-6days-timeline.png)
 
 ## 二、96 万行从哪来：分支 + commit 都能查
 
@@ -79,7 +79,7 @@ PR 单笔规模公开看到过 27,000 行往上——这在传统人工 review �
 - **Linux x64 glibc**：单平台单 libc。macOS arm64 / x64 / Windows / Linux musl / Linux arm64 全部不在这 99.8% 里；
 - **passes**：跑通即算 pass，不指性能持平、不指内存持平、不指 binary 大小持平。
 
-![Bun Rust 重写：分平台测试通过率](bun-rust-pass-rates.png)
+![Bun Rust 重写：分平台测试通过率](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/bun-rust-rewrite-ai-6days-2026-05-11/bun-rust-pass-rates.png)
 
 分平台真实状态从分支 commit 信息里就能挖出来。前面那条 commit 114a982f 的 message 写着：
 
@@ -120,7 +120,7 @@ PR 单笔规模公开看到过 27,000 行往上——这在传统人工 review �
 
 工作流不是「把整个仓库塞给 AI、让它一口气输出」。PORTING.md 把它拆成 4 段流水线，**这才是 96 万行能跑起来的关键**：
 
-![AI 重写工作流：PORTING.md 怎么把 .zig 翻成 .rs](bun-rust-workflow.png)
+![AI 重写工作流：PORTING.md 怎么把 .zig 翻成 .rs](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/bun-rust-rewrite-ai-6days-2026-05-11/bun-rust-workflow.png)
 
 PORTING.md 节选（字面引用）：
 
@@ -164,7 +164,7 @@ Rust 这边大部分讨论氛围是「带着审视的好奇」。HN 顶赞的 th
 
 下面是 HN 顶赞里几条值得 verbatim 抓出来的同行观点，连同评者一起列：
 
-![HN 顶赞同行怎么说 · 6 条 verbatim 引语](bun-hn-quotes.png)
+![HN 顶赞同行怎么说 · 6 条 verbatim 引语](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/bun-rust-rewrite-ai-6days-2026-05-11/bun-hn-quotes.png)
 
 
 - legerdemain 转引 Jarred 自家话「This whole thread is an overreaction. 302 comments about code that does not work」——整条早期讨论都建立在「连版本号都打不出来的代码」上；
@@ -178,7 +178,7 @@ Rust 这边大部分讨论氛围是「带着审视的好奇」。HN 顶赞的 th
 
 国内同行最关心的问题：通义灵码、Trae、Qoder、CodeBuddy，今天能不能做这种活？答案要分技术能力和工程化两件事。
 
-![国产 AI Coding 工具：能不能做 96 万行级跨语言改写？](bun-cn-ai-coding-vs.png)
+![国产 AI Coding 工具：能不能做 96 万行级跨语言改写？](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/bun-rust-rewrite-ai-6days-2026-05-11/bun-cn-ai-coding-vs.png)
 
 技术上看，国产工具底座的模型（千问、豆包、混元、文心）这两年都在快速逼近，SWE-Bench / SWE-Bench Pro 上的差距已经从两个数量级压缩到 5-15 个百分点之内。但工程化案例上能让全网围观的「整库改造」级别 demo，至今仍集中在「函数级补全 / 单文件改 / 几百行 PR」这一档。截至 2026 年 5 月，公开能查到的国产 AI Coding 厂家公开案例里：
 
@@ -232,7 +232,7 @@ Rust 这边大部分讨论氛围是「带着审视的好奇」。HN 顶赞的 th
 
 把这 5 件事的依赖关系画成一张落地路径，国内同行可以照着排队跑：
 
-![国内同行 AI 整库改造落地 6 步法](bun-cn-6steps.png)
+![国内同行 AI 整库改造落地 6 步法](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/bun-rust-rewrite-ai-6days-2026-05-11/bun-cn-6steps.png)
 
 
 - **第 0 步**：跑 `gh api`、`cloc` 把仓库现状摸清楚，列出语言占比、模块边界、测试覆盖率底数；

@@ -11,11 +11,11 @@ cover: apple-claude-md-leak-vibe-coding-governance.png
 
 # Apple Support v5.13 误打包 Claude.md：24 小时撤回
 
-![Apple Support v5.13 误打包 Claude.md](apple-claude-md-leak-vibe-coding-governance.png)
+![Apple Support v5.13 误打包 Claude.md](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/apple-claude-md-leak-vibe-coding-governance/apple-claude-md-leak-vibe-coding-governance.png)
 
 > 5 月 1 日清晨，Apple Support 应用推送了 v5.13 版本更新，意外把一份内部 Claude.md 配置文件一起打包进了 App。MacRumors 分析师 Aaron Perris（@aaronp613）当天 22:57 UTC 把截图发到 X 上，第二天上午 10:04 UTC，Apple 推出 v5.13.1 紧急修复版，把 Claude.md 删掉。整个回收过程不到 24 小时，Apple 全程未发表官方声明。Hacker News 上的讨论冲到 376 分、314 条评论；量子位记者梦晨在 5 月 2 日上午发出深度复盘，36 氪经授权同日转载。这是这一年里 Apple 对外暴露的第一份「内部 Coding Agent 工作流证据」。
 
-![Apple Support 双后端架构（Claude.md 泄露还原）](apple-claude-md-juno-live-agents-architecture.png)
+![Apple Support 双后端架构（Claude.md 泄露还原）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/apple-claude-md-leak-vibe-coding-governance/apple-claude-md-juno-live-agents-architecture.png)
 
 ## 一、24 小时复盘：从一条推文到全球热议
 
@@ -26,7 +26,7 @@ cover: apple-claude-md-leak-vibe-coding-governance.png
 - **05-01 10:04 UTC（与 HN 上首页几乎同时）**：Apple 发布 v5.13.1，Aaron Perris 在后续推文里写「I guess Apple saw my tweet」，附上修复版的截图。
 - **05-02 11:30**：量子位记者梦晨发出文章《苹果官方 App 误打包了 Claude.md，这么大的公司也 Vibe Coding 啊？》。同日 14:52，36 氪经授权转载。
 
-![24 小时紧急撤回时间线](apple-claude-md-timeline-24h-recall.png)
+![24 小时紧急撤回时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/apple-claude-md-leak-vibe-coding-governance/apple-claude-md-timeline-24h-recall.png)
 
 整条链路里有几个细节值得标记。第一，从泄露被公开到补丁发布只用了 11 小时，这放在 Apple 这种以发版周期严谨著称的公司身上，是教科书级别的危机响应——意味着内部 CI/CD 走的是同一套工程链路，不需要额外特批走绿色通道。第二，Apple 没出声明，说明法务和公关达成的判断是「沉默 + 快速修复」比解释更省事。第三，量子位与 36 氪能在事发第二天就拿出深度版，说明国内 AI 圈对「Apple 内部到底在用什么 AI Coding 工具」的好奇度本来就很高，只是缺一个公开锚点。这次拿到了。
 
@@ -102,7 +102,7 @@ mcrk 这条更接近 Anthropic 官方的设计意图——CLAUDE.md 是有层级
 
 把视线拉回国内。Apple 这次的事情，对国内 AI 开发者最有参考价值的不是「该不该用 Claude」（答案早已是用），而是「上下文文件这一类 AI 协作产物，国内主流工具是怎么处理的」。
 
-![国内外 AI 编码工具同型治理对比](claudemd-cn-vibe-coding-comparison.png)
+![国内外 AI 编码工具同型治理对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/apple-claude-md-leak-vibe-coding-governance/claudemd-cn-vibe-coding-comparison.png)
 
 把表里几个要点单独拎出来——
 

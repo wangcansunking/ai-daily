@@ -14,7 +14,7 @@ language: zh-CN
 
 # 文心 5.1 用 6% 成本逼近领先的国产大模型
 
-![文心 5.1 封面：水墨笔触里，一张稠密的神经网络节点矩阵向一枚紧凑的发光内核收束](ernie-5-1-elastic-pretrain-6pct-cost-2026-06-06.png)
+![文心 5.1 封面：水墨笔触里，一张稠密的神经网络节点矩阵向一枚紧凑的发光内核收束](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/ernie-5-1-elastic-pretrain-6pct-cost-2026-06-06/ernie-5-1-elastic-pretrain-6pct-cost-2026-06-06.png)
 
 5 月 9 日，百度正式发布新一代基础大模型文心 5.1（ERNIE 5.1）。发布稿里最抓眼的不是某个榜单名次，而是一个数字：这一代模型只用了业界同规模模型约 6% 的预训练成本，就把基础能力做到了同规模段位的领先水平。
 
@@ -31,7 +31,7 @@ language: zh-CN
 - **「约 6%」**——是个约数，不是精确到小数点的实测数；
 - **「同规模模型」**——是一个量级上的对照，不是与某一家具名厂商（比如某个具体的海外模型）逐笔账目核对出来的。
 
-![来源：百度文心官方博客「多维弹性预训练」框架示意图，ernie.baidu.com 2026-05-08](source-ernie-elastic-training-2026-06-06.png)
+![来源：百度文心官方博客「多维弹性预训练」框架示意图，ernie.baidu.com 2026-05-08](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/ernie-5-1-elastic-pretrain-6pct-cost-2026-06-06/source-ernie-elastic-training-2026-06-06.png)
 
 把口径摆正之后，6% 这个数字依然站得住——因为它背后是一套讲得通的技术机制，而不是一句空泛的营销话。下面就把这套机制讲清楚。
 
@@ -55,7 +55,7 @@ language: zh-CN
 - **弹性宽度**——调整 MoE（混合专家）层里用多少专家容量；
 - **弹性稀疏度**——调整每次推理激活几个专家。
 
-![自制图：传统做法每个规模重训一遍，Once-For-All 一次训练得到一张三维弹性的子模型矩阵](chart-ernie51-elastic-2026-06-06.png)
+![自制图：传统做法每个规模重训一遍，Once-For-All 一次训练得到一张三维弹性的子模型矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/ernie-5-1-elastic-pretrain-6pct-cost-2026-06-06/chart-ernie51-elastic-2026-06-06.png)
 
 文心 5.1 就是从这张矩阵里抽出来的「最优子网络」。它继承了上一代文心 5.0 已经学到的知识，等于站在 5.0 的肩膀上做了一次精挑细选的瘦身，而不是从一张白纸重新训起。**这就是 6% 成本的来路：省掉的，正是「为了这一档能力，本来要从头重训一遍」的那笔大钱。**
 
@@ -75,7 +75,7 @@ language: zh-CN
 | 每次回答激活参数 | 基准（100%） | 约为 5.0 的 1/2 |
 | 预训练成本 | —— | 约为同规模模型的 6% |
 
-![自制图：文心 5.1 总参数约为 5.0 的 1/3、激活参数约 1/2、预训练成本约为同规模模型的 6%](chart-ernie51-cost-account-2026-06-06.png)
+![自制图：文心 5.1 总参数约为 5.0 的 1/3、激活参数约 1/2、预训练成本约为同规模模型的 6%](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/ernie-5-1-elastic-pretrain-6pct-cost-2026-06-06/chart-ernie51-cost-account-2026-06-06.png)
 
 几个数字之间的逻辑是自洽的：
 
@@ -93,7 +93,7 @@ language: zh-CN
 
 文心 5.1 在 LMArena 的搜索排行榜（Search Arena）上拿到 1223 分，位居全球第四、国内第一，是这张榜单上唯一上榜的国产模型。
 
-![来源：百度文心官方博客 LMArena 搜索榜排名截图，ernie.baidu.com 2026-05-08](source-ernie-lmarena-search-ranking-2026-06-06.png)
+![来源：百度文心官方博客 LMArena 搜索榜排名截图，ernie.baidu.com 2026-05-08](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/ernie-5-1-elastic-pretrain-6pct-cost-2026-06-06/source-ernie-lmarena-search-ranking-2026-06-06.png)
 
 这张榜的测法值得说一句。LMArena（前身即广为人知的大模型竞技场）走的是**真人盲测对战**的路子：用户提出问题，两个匿名模型各给一份回答，用户投票选更好的那个，最后用类似国际象棋 Elo 的算法把胜负折算成分数排名。它衡量的不是某道标准化考题的对错，而是**真实用户在真实提问下更愿意选谁的回答**。
 
@@ -114,7 +114,7 @@ language: zh-CN
 
 一个细节值得点出来：**量子位当日的报道转述了「Agent 能力超过 DeepSeek-V4-Pro」这一句，但没有点出具体是哪两个基准；具体到 τ³-bench 和 SpreadsheetBench-Verified 这两个名字，是百度官方博客里写明的。** 看国产模型对位 DeepSeek 这种话题度极高的对比时，把「在哪个基准上超过」核对清楚，比记住一句「超过了」更有用——因为它告诉你这个领先是落在工具调用和表格任务上，而不是泛泛而谈的「全面超越」。
 
-![来源：百度文心官方博客 benchmark 对比图，ernie.baidu.com 2026-05-08](source-ernie-benchmark-2026-06-06.png)
+![来源：百度文心官方博客 benchmark 对比图，ernie.baidu.com 2026-05-08](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/ernie-5-1-elastic-pretrain-6pct-cost-2026-06-06/source-ernie-benchmark-2026-06-06.png)
 
 把两条线合起来看：**文心 5.1 在「真人更爱选谁」的搜索问答上拿到国内第一，在「会不会办事」的智能体任务上越过 DeepSeek-V4-Pro 的两个具体基准——成本压下去的同时，能力站在了一线段位，这才是 6% 这个数字真正的分量所在。**
 

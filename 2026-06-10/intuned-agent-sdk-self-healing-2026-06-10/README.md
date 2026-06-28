@@ -17,7 +17,7 @@ category: 海外 Agent 工程案例拆解
 
 这篇文章想拆的不是 Intuned 这个产品本身好不好用，而是它背后那套"自愈"工程闭环到底怎么搭起来的——探索、生成、校验、失败诊断、修复、重新部署这一圈是怎么连成环的，它和传统爬虫维护、和老一代 RPA 的区别在哪，Claude Agent SDK 在里头扮演什么角色。对正在做 agent 产品和自动化的同行来说，这是一个少见的、把生产级 agent 闭环讲清楚的案例。很多人手里已经在用 Claude Agent SDK，正好顺着这个熟悉的锚点，看看别人把它用到了哪一步。
 
-![Intuned 产品首图：code-first 浏览器自动化平台，agent 构建并维护自动化（来源：Intuned 官网 og-image，2026-06）](intuned-source-product-hero.png)
+![Intuned 产品首图：code-first 浏览器自动化平台，agent 构建并维护自动化（来源：Intuned 官网 og-image，2026-06）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/intuned-agent-sdk-self-healing-2026-06-10/intuned-source-product-hero.png)
 
 ## 先看它把哪几件脏活交给了 agent
 
@@ -41,7 +41,7 @@ Intuned 官方对自己的定义是一句话：**"带 AI agent 的 code-first �
 
 "自愈"这个词容易被当成营销话术，所以得把它拆到具体机制上看才有意义。Intuned 这套闭环，核心其实是六个环节首尾相接。
 
-![自愈闭环六环节：探索站点 → 提取数据结构 → 生成代码 → 真站点校验 → 失败读轨迹诊断 → 改代码重新部署，最后回到监控（自制流程图）](intuned-chart1-self-healing-loop.png)
+![自愈闭环六环节：探索站点 → 提取数据结构 → 生成代码 → 真站点校验 → 失败读轨迹诊断 → 改代码重新部署，最后回到监控（自制流程图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/intuned-agent-sdk-self-healing-2026-06-10/intuned-chart1-self-healing-loop.png)
 
 **第一环，探索站点。** agent 拿到一个目标网址，不是直接闷头写代码，而是先开一个真实浏览器去把站点逛一遍，搞清楚页面长什么样、数据藏在哪、要不要翻页、要不要登录。官方的说法是 agent"controls a real browser in the background, and works in the background as long as needed"（来源：Intuned 官方文档，2026-06）——它有一个能长时间挂着的真实浏览器和对平台的完整访问权。
 
@@ -74,7 +74,7 @@ Claude Agent SDK 的核心循环，Anthropic 官方讲得很直白：**"gather c
 
 （左列为 Claude Agent SDK 官方循环口径；右列为 Intuned 官方/HN 描述的对应实现，2026-06）
 
-![Claude Agent SDK 通用循环铺到爬虫场景上的逐项对应：搜集上下文对应探索站点读轨迹、采取行动对应生成改代码、验证成果对应真站点校验盯异常、重复对应诊断修复部署一圈（自制对照图）](intuned-chart3-sdk-mapping.png)
+![Claude Agent SDK 通用循环铺到爬虫场景上的逐项对应：搜集上下文对应探索站点读轨迹、采取行动对应生成改代码、验证成果对应真站点校验盯异常、重复对应诊断修复部署一圈（自制对照图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/intuned-agent-sdk-self-healing-2026-06-10/intuned-chart3-sdk-mapping.png)
 
 所以 Claude Agent SDK 在这里不是被当成一个"调一下就出代码"的代码生成器，而是被当成驱动整个长任务的引擎。Intuned 在 HN 上还提了一句很实在的话——它们在更强的模型出来之后，把已经准备发布的版本推倒重做，重建了 agent（来源：Launch HN 帖文，2026-06）。这个动作本身说明 agent 部分不是外壳贴皮，而是产品的承重墙，值得为了底层模型升级整个重写。
 
@@ -90,7 +90,7 @@ SDK 提供的几样能力，恰好都是这套闭环吃得最重的：长会话�
 
 下面这张表把三种做法的维护方式摆一起：
 
-![三种做法对比：传统爬虫维护靠人复现改代码、老 RPA 黑盒断了人工点、Intuned agent 读轨迹自愈，从产物形态到故障响应逐项对照（自制对比表图）](intuned-chart2-three-approaches.png)
+![三种做法对比：传统爬虫维护靠人复现改代码、老 RPA 黑盒断了人工点、Intuned agent 读轨迹自愈，从产物形态到故障响应逐项对照（自制对比表图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/intuned-agent-sdk-self-healing-2026-06-10/intuned-chart2-three-approaches.png)
 
 除了自愈这条主线，Intuned 还把一堆爬虫绕不开的脏活打包进了平台：内置反检测套件（隐身模式、自动过验证码、代理），创始人在 HN 上提到验证码处理走的是定制 chromium 构建；登录态管理通过 create.ts / check.ts 两个文件来定义和校验会话；运行侧分成两种接口，Runs API 管单次执行（适合 RPA 和集成场景，带并发控制），Jobs 管定时批量（适合爬虫和爬取，能跨多台机器自动扩缩）。这些不是自愈的核心，但它们是让爬虫真能在生产里活下去的配套——再聪明的 agent，绕不过反爬和登录态也白搭。
 
@@ -100,7 +100,7 @@ agent 驱动的自动化有个绕不开的现实问题：每跑一次都在烧 t
 
 HN 上有用户晒了自己的实测账单：用 Intuned 提交一个联系表单、跑了 3 次，一共花了 2.27 美元（来源：Launch HN 评论区用户实测，2026-06）；同一个用户还提到验证码求解的价格大约是每 1000 次 2 美元（人工验证那种）。把这两个数字摆一起看挺有意思：单看每千次 2 美元的验证码很便宜，但 3 次表单提交就 2.27 美元，说明大头不在验证码，而在 agent 本身探索、决策、重试这一圈的开销。
 
-![两个成本数字对照：单次表单提交约 0.76 美元（3 次 2.27 美元摊算）远高于每次验证码约 0.002 美元，直观看出花费大头在 agent 决策而非验证码（自制对比图，数据据 Launch HN 用户实测）](intuned-chart4-cost-breakdown.png)
+![两个成本数字对照：单次表单提交约 0.76 美元（3 次 2.27 美元摊算）远高于每次验证码约 0.002 美元，直观看出花费大头在 agent 决策而非验证码（自制对比图，数据据 Launch HN 用户实测）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/intuned-agent-sdk-self-healing-2026-06-10/intuned-chart4-cost-breakdown.png)
 
 这给了一个很务实的判断基准：**自愈 agent 适合的是单价能容忍、但维护成本极高的场景，不适合那种海量、单次价值极低、且结构稳定的批量抓取。** govtech（政务科技）、insurance tech（保险科技）这两类正是 Intuned 点名的主力客户（来源：创始人 HN 回复，2026-06），它们的共同点是：目标站点形态杂、变更频繁、数据本身价值高、错一条后果重——恰好是那种"宁可多花点钱让它自己别断"的场景。官方还提到有些公司用它跑着 1000+ 个爬虫、合作两年以上，说明在对的场景里这套模式确实站得住。
 

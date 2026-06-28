@@ -25,7 +25,7 @@ description: "腾讯云数据库团队 5 月 14 日把 TencentDB Agent Memory �
 
 # 腾讯 Agent Memory 开源：长任务 Token 砍 61%，国产 Agent 中间件挤进牌桌
 
-![国产 Agent 记忆中间件挤进牌桌主图](tencent-agent-memory-opensource-2026-05-15.png)
+![国产 Agent 记忆中间件挤进牌桌主图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/tencent-agent-memory-opensource-2026-05-15/tencent-agent-memory-opensource-2026-05-15.png)
 
 ## 一句话先把数字摆桌上：61.38% / 51.52% / 48→76
 
@@ -35,7 +35,7 @@ description: "腾讯云数据库团队 5 月 14 日把 TencentDB Agent Memory �
 
 媒体侧今天主要在传两个角度：量子位头条侧重「Token 降 61%」的成本节省口径，IT 之家给的是「腾讯云数据库团队新作」的厂商信号。这两个角度都对，但都没把这件事在国产 Agent 中间件赛道里的位置说清楚。这一篇做的事情就是把这个位置补上。
 
-![腾讯 Agent Memory 四层金字塔 + Mermaid 任务画布架构示意](tencent-agent-memory-pyramid.png)
+![腾讯 Agent Memory 四层金字塔 + Mermaid 任务画布架构示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/tencent-agent-memory-opensource-2026-05-15/tencent-agent-memory-pyramid.png)
 
 ## 拆开看：短期工具日志压缩 + 长期个性化分层，两件事一并打包
 
@@ -59,7 +59,7 @@ graph LR
 
 这段 Mermaid 直接取自项目 README，原始符号未做改写。下游接收的开发者复用进自己的 Agent runtime 时，等于直接用这张图当协议。
 
-![Token 用量大幅下降同时长任务完成率反向上升](tencent-agent-memory-token-cut.png)
+![Token 用量大幅下降同时长任务完成率反向上升](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/tencent-agent-memory-opensource-2026-05-15/tencent-agent-memory-token-cut.png)
 
 ## 三个评测一齐摆，验证「省 Token 不掉性能」
 
@@ -82,7 +82,7 @@ README 里特地标了一句：**这些数字都来自连续长会话场景，�
 
 要把腾讯这次开源的位置摆准，得跟海外几家成熟方案放一起看。
 
-![Agent 记忆中间件五家对比矩阵](tencent-agent-memory-peer-matrix.png)
+![Agent 记忆中间件五家对比矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/tencent-agent-memory-opensource-2026-05-15/tencent-agent-memory-peer-matrix.png)
 
 | 项目 | 长期记忆分层 | 短期记忆画布 | 默认本地存储 | 主要语言 | 协议 | 上游 Agent 框架 |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -156,7 +156,7 @@ Hermes 是 Nous Research 出的开源 Agent gateway，海外社区用得多，�
 
 从工程链路完整度看，今天这一篇拼图意义比单看「Token 降 61%」要大。Agent 中间件这条赛道国内过去一直是「能跑就行」，今天开始有了「能跑得稳」的版本——README 把评测、基线、绝对 Token、相对降幅、长会话场景全部摆明，这种透明度本身就是一种工程成熟度的信号。
 
-![腾讯 Agent Memory 项目 README 头图](tencent-readme-logo.png)
+![腾讯 Agent Memory 项目 README 头图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/tencent-agent-memory-opensource-2026-05-15/tencent-readme-logo.png)
 
 ## 工程师视角的三条直接判断
 

@@ -22,7 +22,7 @@ tags:
 
 # transformers.js v4 把 Qwen3.5 跑进 Chrome
 
-![transformers-js v4 webgpu qwen3 封面](transformers-js-v4-webgpu-qwen3-2026-05-17.png)
+![transformers-js v4 webgpu qwen3 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/transformers-js-v4-webgpu-qwen3-2026-05-17/transformers-js-v4-webgpu-qwen3-2026-05-17.png)
 
 > 浏览器里跑大模型这件事，从 v3 时代的「玩一玩可以、做产品不行」，被 transformers.js v4 推到了「Qwen3.5、Gemma 4、GPT-OSS 20B 都能直接在 Chrome 里跑出可用速度」的门槛。对国内一线 Web 开发者来说，这是过去两年里第一次真的可以拿浏览器内推理做隐私优先、零部署成本的个人 AI 产品。
 
@@ -50,7 +50,7 @@ tags:
 | 对照框架 web-llm 星标 | 17,975（pushed 2026-05-06） | gh api repos/mlc-ai/web-llm |
 | 官方演示数量 | 20+ 个浏览器内 WebGPU demo | webml-community v4 demos 合集 |
 
-![transformers.js v4 WebGPU 一图看清运行环境矩阵](tjs-v4-webgpu-overview-cn.png)
+![transformers.js v4 WebGPU 一图看清运行环境矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/transformers-js-v4-webgpu-qwen3-2026-05-17/tjs-v4-webgpu-overview-cn.png)
 
 **本文核心论断**：浏览器内跑大模型这条赛道，过去一直被中文媒体当成「Demo 级新奇玩意」忽略；v4 是把它从玩具状态推到可做产品的那一脚——而国内中文媒体目前 0 篇 v4 深度报道，全部停在 v3 / v2 旧文。这条 16,007 星的赛道，在国内被低估了。
 
@@ -86,7 +86,7 @@ v4 把第四个方案推到了可用线上：**用户打开网页，浏览器自
 
 本节核心论断：**v4 的核心升级不是「加快」，而是「把推理跑到了浏览器原生 GPU 加速通道上」，让以前根本上不去的 8B+ 模型变成日常可跑。**
 
-![tjs v3 → v4 关键能力跃迁](tjs-v4-vs-v3.png)
+![tjs v3 → v4 关键能力跃迁](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/transformers-js-v4-webgpu-qwen3-2026-05-17/tjs-v4-vs-v3.png)
 
 ### 3.1 新 WebGPU 后端：C++ 重写，全平台同一份代码
 
@@ -105,7 +105,7 @@ v4.0 release notes 第一句话就是：「The biggest change is undoubtedly the
 
 v4 在 `MultiHeadAttention` 算子上做了专门优化，BERT 类嵌入模型相对 v3 速度提升约 4 倍。
 
-![tjs v4 BERT 嵌入模型 speedup 实测](tjs-v4-speedup-cn.png)
+![tjs v4 BERT 嵌入模型 speedup 实测](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/transformers-js-v4-webgpu-qwen3-2026-05-17/tjs-v4-speedup-cn.png)
 
 对国内开发者来说，嵌入模型是 RAG、向量搜索、网页内容理解的基础环节。v3 时代浏览器内跑 BERT 嵌入是「能跑但产品里得做转圈圈」，v4 之后基本进入「无感」区间。
 
@@ -151,7 +151,7 @@ v4 开发周期里加进来的模型架构（节选）：
 
 本节核心论断：**Hugging Face 已经把 Qwen3.5、Gemma 4、GPT-OSS、Voxtral 等 20+ 个模型的浏览器内 demo 做好了，国内开发者今天就能 fork。**
 
-![tjs v4 官方 demo matrix 矩阵](tjs-v4-demo-matrix.png)
+![tjs v4 官方 demo matrix 矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/transformers-js-v4-webgpu-qwen3-2026-05-17/tjs-v4-demo-matrix.png)
 
 来源是 Hugging Face 官方维护的 `webml-community/transformersjs-v4-demos` 合集，节选 12 个有代表性的：
 
@@ -227,7 +227,7 @@ WebGPU 第一次加载模型权重到 GPU 需要几秒到十几秒不等。建�
 
 本节核心论断：**transformers.js 不是浏览器内 LLM 唯一选项；mlc-ai 的 web-llm 走的是 TVM 编译路线，星标更高（17,975），但 v4 把 transformers.js 从「能跑」推到「易接入」的距离拉得更短。**
 
-![tjs v4 三大浏览器内 LLM framework stars 横评](tjs-v4-framework-stars.png)
+![tjs v4 三大浏览器内 LLM framework stars 横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/transformers-js-v4-webgpu-qwen3-2026-05-17/tjs-v4-framework-stars.png)
 
 ### 6.1 web-llm（mlc-ai）：编译派
 

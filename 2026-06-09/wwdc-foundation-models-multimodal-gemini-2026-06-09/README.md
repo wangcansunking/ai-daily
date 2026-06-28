@@ -11,7 +11,7 @@ description: "WWDC 2026 周一开场，对国内每天用 Claude Code、Cursor�
 
 # WWDC 开放端侧模型读图，第三方助手能换 Claude
 
-![WWDC 2026：端侧 Foundation Models 框架从纯文本走向图像输入，系统默认助手向第三方开放](wwdc-foundation-models-multimodal-gemini-2026-06-09.png)
+![WWDC 2026：端侧 Foundation Models 框架从纯文本走向图像输入，系统默认助手向第三方开放](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/wwdc-foundation-models-multimodal-gemini-2026-06-09/wwdc-foundation-models-multimodal-gemini-2026-06-09.png)
 
 每年 WWDC 一开，中文圈讨论的多半是 Siri 又聪明了多少、界面换了什么颜色。但如果你是天天在 Claude Code、Cursor 里写代码，或者在自己机器上跑本地模型的人，今年这场 6 月 8 日（北京时间 6 月 9 日凌晨）开场的发布会，有两条信息比"Siri 接了 Gemini"更值得你花十分钟搞清楚。
 
@@ -44,7 +44,7 @@ description: "WWDC 2026 周一开场，对国内每天用 Claude Code、Cursor�
 
 这就埋下了今年改变的伏笔。
 
-![Apple 端侧与服务端 Foundation Models 的建模总览：端侧约 3B 模型 + 服务端并行轨 MoE，含视觉编码器与视觉-语言适配模块](wwdc-foundation-models-multimodal-gemini-2026-06-09-img1.png)
+![Apple 端侧与服务端 Foundation Models 的建模总览：端侧约 3B 模型 + 服务端并行轨 MoE，含视觉编码器与视觉-语言适配模块](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/wwdc-foundation-models-multimodal-gemini-2026-06-09/wwdc-foundation-models-multimodal-gemini-2026-06-09-img1.png)
 <small>来源：Apple 机器学习研究博客模型架构图 `mlr.cdn-apple.com`，2025 年技术报告配图</small>
 
 ## 开发者的老大难：为了让 app 看一张图，得背 1-2GB 模型
@@ -101,7 +101,7 @@ iOS 27 引入了一套对第三方 AI 开放的接口（外界普遍称之为 Ex
 
 把这三件事连起来看，Apple 这次的路线就清楚了：**端侧自研（省电、私密、给开发者免费用）+ 云端先租顶尖模型撑全功能（用授权买时间）+ 默认助手向第三方开放（把选择权还给用户）。** 三条线各司其职，而对开发者影响最直接、最能马上动手的，是端侧那条。
 
-![新 Siri 云端请求三层分级示意：设备端处理简单请求、私有云计算处理中等请求、云端定制 Gemini 处理最复杂推理](wwdc-foundation-models-multimodal-gemini-2026-06-09-img2.png)
+![新 Siri 云端请求三层分级示意：设备端处理简单请求、私有云计算处理中等请求、云端定制 Gemini 处理最复杂推理](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/wwdc-foundation-models-multimodal-gemini-2026-06-09/wwdc-foundation-models-multimodal-gemini-2026-06-09-img2.png)
 <small>来源：自制示意图（chart），依据公开报道的三层请求分级口径绘制</small>
 
 ## 落到国内：云端这条用不上，端侧这条还在

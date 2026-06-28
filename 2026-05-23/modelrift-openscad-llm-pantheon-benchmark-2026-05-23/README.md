@@ -15,7 +15,7 @@ tags: [AI Coding, Antigravity, OpenSCAD, 3D, benchmark, Cursor, Claude Code]
 
 # Antigravity 造万神殿：六家 AI 编程评测
 
-![OpenSCAD 罗马万神殿 LLM 编程评测](modelrift-openscad-llm-pantheon-benchmark-2026-05-23.png)
+![OpenSCAD 罗马万神殿 LLM 编程评测](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/modelrift-openscad-llm-pantheon-benchmark-2026-05-23/modelrift-openscad-llm-pantheon-benchmark-2026-05-23.png)
 
 > 5 月 22 日，ModelRift 在自家博客挂出一份 OpenSCAD 评测：把罗马万神殿（Pantheon）当题目，让六家主流 AI 编程工具用代码写 3D 模型。Hacker News 当天上首页，截至发稿 279 赞、147 条评论。结果让所有人意外——Cursor / Composer 2.5 最快，跑了几分钟就出答案，质量打了 1.4/5；Google Antigravity 2.0 跑了近十二分钟，是唯一造出五环、每环二十八格藻井的代理；Claude Code 2.1 配上 Sonnet 4.6 第二慢，质量 3.4/5；Codex 5.5 High 的初版渲染最漂亮，导出 STL 时却塌出一层莫名其妙的天花板。这是一道空间几何题，不是常规的文本代码题。每一个用过 Cursor、Claude Code、Antigravity 的国内开发者都该看一眼这份结果——它把六家工具在「连续空间推理」这个维度上的真实差距摆得很白。
 
@@ -36,7 +36,7 @@ OpenSCAD 这个名字对国内大多数开发者还很陌生。它是一种参�
 
 ModelRift 给的六家评测对象，按发布时间从老到新分别是：Cursor 3.5 配 Composer 2.5、Codex 5.5 High、Claude Code 2.1 配 Opus 4.7、Claude Code 2.1 配 Sonnet 4.6、Google Antigravity 2.0 配 Gemini 3.5 Flash High、ModelRift 自家产品配 Gemini 3.0 Flash。题目统一：给两张万神殿参考图（一张正面立面、一张半剖切显示内部圆顶藻井），要求生成完整 `.scad` 文件，每家工具都可以调用 OpenSCAD 命令行渲染 PNG 看效果、自动迭代到满意为止。最后由 ModelRift 团队按 1-5 分两个维度打分：质量分看几何完整度（柱廊有没有、门廊比例对不对、圆顶曲率像不像、藻井实现没实现）、速度分按总耗时倒序。
 
-![六家 AI 编程工具 OpenSCAD 万神殿渲染对比总览（数据来源：ModelRift）](modelrift-overview.jpg)
+![六家 AI 编程工具 OpenSCAD 万神殿渲染对比总览（数据来源：ModelRift）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/modelrift-openscad-llm-pantheon-benchmark-2026-05-23/modelrift-overview.jpg)
 
 完整数字摆下来是这样：
 
@@ -49,7 +49,7 @@ ModelRift 给的六家评测对象，按发布时间从老到新分别是：Curs
 | Codex 5.5 High | 3.0 / 5 | 4 / 5 | 较快 | 立柱铭文清晰可读，导出 STL 时天花板塌掉 |
 | Cursor 3.5 / Composer 2.5 | 1.4 / 5 | 5 / 5 | 最快 | 几分钟出答案，造型只能算「初稿」 |
 
-![quality vs speed 散点图：六家 AI 编程工具的质量 quality 与 speed 评分对位](quality-vs-speed-chart.png)
+![quality vs speed 散点图：六家 AI 编程工具的质量 quality 与 speed 评分对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/modelrift-openscad-llm-pantheon-benchmark-2026-05-23/quality-vs-speed-chart.png)
 
 这张散点图把六家工具的位置摊开看，一眼能看出三件事：
 
@@ -63,13 +63,13 @@ ModelRift 评测里对 Cursor 的判断原话是「fastest interaction loop, but
 
 Antigravity 2.0 这次拿 4.5/5 拿得很扎实。ModelRift 把它的工作过程拆出来看，发现它做了一件其他自主代理都没做的事——**主动搜索万神殿的真实建筑参数**，把找到的圆顶直径、墙体厚度、藻井数量直接灌成参数化代码的输入值，而不是只靠参考图肉眼估算。
 
-![Antigravity 2.0 全自主代理输出：注意圆顶内侧的 5 环 × 28 格藻井（数据来源：ModelRift）](antigravity-preview.png)
+![Antigravity 2.0 全自主代理输出：注意圆顶内侧的 5 环 × 28 格藻井（数据来源：ModelRift）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/modelrift-openscad-llm-pantheon-benchmark-2026-05-23/antigravity-preview.png)
 
 它的代码里出现了几个具体数字：圆顶净跨度 43.3 米（这是历史学家公认的万神殿穹顶直径）、地面到天眼高度同样 43.3 米（这是万神殿著名的「内切球」几何）、藻井五环每环二十八格（这是 2 世纪原始几何，文艺复兴学者反复测量过）。这些数字 Antigravity 是从工具调用里查回来的，然后才写进 OpenSCAD 代码。
 
 最难的藻井部分是 Antigravity 的得分点。半球面上的方形藻井不是简单的平面阵列，而是球面上的方格——每一格的四条边必须是球面上的大圆弧段，越靠近顶端格子越小，五环之间还要保留垂直墙体把每环分隔开。Antigravity 用了「球面坐标参数循环 + 布尔差集」的写法实现：先建一个完整的半球体，然后在每个藻井位置用一个缩小版的方形体做减法，循环五圈、每圈二十八次。这个写法在 OpenSCAD 社区不算新，但要在一次零样本生成里写对，需要模型同时记住三件事——球面坐标系、布尔运算顺序、五环二十八格的离散网格。
 
-![Antigravity 2.0 圆顶内侧藻井细节：5 环 × 28 格逐层收敛（数据来源：ModelRift）](antigravity-ceiling.png)
+![Antigravity 2.0 圆顶内侧藻井细节：5 环 × 28 格逐层收敛（数据来源：ModelRift）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/modelrift-openscad-llm-pantheon-benchmark-2026-05-23/antigravity-ceiling.png)
 
 ModelRift 评测里有一句话值得国内开发者认真读：「Antigravity raised the autonomous ceiling on this benchmark」——它把全自主代理在这道题上的天花板抬高了。这里的关键词是「全自主」（autonomous），意思是它在没有人类反馈、没有中途指点的情况下，自己规划、自己迭代、自己验证。ModelRift 自家产品拿 3.8/5 用的是人在环路的工作流，每一次模型出 PNG 后由人类标注「这里柱子歪了」「这里比例不对」再让模型改——这条路下细节更完整，但代价是人力成本。Antigravity 的 4.5/5 是「我离开电脑十二分钟回来代码就是这样」的分数。两个分数都有价值，但场景不同。
 
@@ -89,7 +89,7 @@ ModelRift 评测里有一句话值得国内开发者认真读：「Antigravity r
 
 Claude Code 2.1 在这次评测里同时上了 Opus 4.7 和 Sonnet 4.6 两个模型版本，结果反过来——Sonnet 4.6 拿 3.4/5，比 Opus 4.7 的 3.0/5 还高一点。ModelRift 的判断是「Sonnet produced the cleanest autonomous result with balanced proportions」，Sonnet 的输出造型最干净、比例最匀。
 
-![reference images：ModelRift 评测给六家工具的两张万神殿参考图（正面立面 + 半剖切显示圆顶藻井）](reference-images.jpg)
+![reference images：ModelRift 评测给六家工具的两张万神殿参考图（正面立面 + 半剖切显示圆顶藻井）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/modelrift-openscad-llm-pantheon-benchmark-2026-05-23/reference-images.jpg)
 
 这个结果跟国内开发者过去几个月在常规代码任务里观察到的趋势是一致的——Sonnet 在「中等复杂度任务里写干净代码」这件事上常常表现得比 Opus 更稳。Opus 的优势是处理超长上下文、做复杂多步推理；但在「五百行代码以内的几何写正确」这种任务，Sonnet 的输出反而更整洁。这次评测两个 Claude 模型的对比给了一个有趣的旁证：模型能力强不等于在所有任务上都表现更好。
 

@@ -31,7 +31,7 @@ cover: 16.png
 
 # Claude 双开源 · 字节 DeerFlow 中间件齐 | AI 日报 | 2026-05-16
 
-![Claude NLA 与 Legal 12 plugin 双开源 · 字节 DeerFlow 67k 11 层中间件 · 国产 Agent 工程化拼图齐了](16.png)
+![Claude NLA 与 Legal 12 plugin 双开源 · 字节 DeerFlow 67k 11 层中间件 · 国产 Agent 工程化拼图齐了](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/daily/16.png)
 
 ## 📋 头版目录（一屏扫完今日）
 
@@ -68,13 +68,13 @@ cover: 16.png
 
 ## 🔥 头条：Anthropic 双开源 + 字节 DeerFlow 中间件齐——工程化进入"默认形态"竞争阶段
 
-![Claude for Legal 12 plugin × 92 具名 agent × 19 MCP 工作流包结构图](anthropic-legal-plugin-map.png)
+![Claude for Legal 12 plugin × 92 具名 agent × 19 MCP 工作流包结构图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/daily/anthropic-legal-plugin-map.png)
 
 把这一周三件事叠在一张图上看：**Anthropic 同周双开源（NLA 研究底座 + Legal 行业落地）+ 字节 DeerFlow 11 层中间件深拆 + 国产 Agent 中间件三块拼图齐了**。任何一件单拎出来都不算颠覆性，叠在一起看，是 AI 工程化从"哪家模型分数高"那一层博弈整体下沉到"谁把 Agent 做成可 fork 的工作流包"这一层。下面按研究层、行业层、中间件层依次拆。
 
 ### 一、研究层：Anthropic 5/7 把读心术开源——可解释性进入工程化打分阶段
 
-![Anthropic NLA 测出 Claude 在不同场景下的测试感知率柱状对照](anthropic-nla-test-awareness.png)
+![Anthropic NLA 测出 Claude 在不同场景下的测试感知率柱状对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/daily/anthropic-nla-test-awareness.png)
 
 5/7，Anthropic 把 **Natural Language Autoencoders（NLA）** 放到 transformer-circuits 上，配套 Apache-2.0 训练代码 + Neuronpedia 在线 demo。NLA 干的事很直白——**把模型激活值直接翻译成可读的自然语言、再反向重建做对照**。和 SAE（稀疏自编码器）那条路相比，NLA 的关键变化是：解释端是一段可读句子，而不是一组待人工命名的向量。
 
@@ -95,7 +95,7 @@ Anthropic 把研究底座开源出来，国内对齐团队不用再从"看 paper
 
 ### 二、行业层：Claude for Legal 12 plugin / 92 agent 整套开源——AI 工具开始按行业打包
 
-![Claude for Legal 12 plugin × 92 具名 agent × 19 MCP 工作流包结构图](anthropic-legal-12-plugins-oss-2026-05-16.png)
+![Claude for Legal 12 plugin × 92 具名 agent × 19 MCP 工作流包结构图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/daily/anthropic-legal-12-plugins-oss-2026-05-16.png)
 
 同一周，Anthropic 把 Claude for Legal 整套搬上 GitHub——**12 个 plugin（按律所执业领域划分）× 92 个具名 agent × 19 个 MCP 工作流包**。这不再是"通用 AI Coding 助手"，是**按行业打包成可 fork 的工作流模板**。
 
@@ -109,7 +109,7 @@ Anthropic 把研究底座开源出来，国内对齐团队不用再从"看 paper
 
 ### 三、中间件层：字节 DeerFlow 67k + 阿里悟空 + 腾讯 Agent Memory——国产 Agent 三家拼齐 + 海外横评
 
-![DeerFlow Lead Agent 11 阶段中间件链路：从 ThreadDataMiddleware 起、ClarificationMiddleware 收](deerflow-middleware-chain.png)
+![DeerFlow Lead Agent 11 阶段中间件链路：从 ThreadDataMiddleware 起、ClarificationMiddleware 收](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/daily/deerflow-middleware-chain.png)
 
 5/15 22:30，字节 [`bytedance/deer-flow`](https://github.com/bytedance/deer-flow) 推了一次大 push——67,906⭐ / 9,035 fork、Python 3.12+、MIT 协议、18 个中间件源文件。当晚火山引擎开发者社区放出一篇 DeerFlow 2.0 中间件深度文，知乎 / 博客园 / 53AI 同步跟进，国产 Agent 中间件话题进入二次热度拐点。
 
@@ -133,7 +133,7 @@ Anthropic 把研究底座开源出来，国内对齐团队不用再从"看 paper
 
 把 DeerFlow 放进国产 Agent 中间件三家横评里：
 
-![国产 Agent 中间件 / 编排 / 记忆 N=3 横评：DeerFlow / Spring AI Alibaba / 腾讯 Agent Memory + 海外对照](deerflow-n3-middleware-compare.png)
+![国产 Agent 中间件 / 编排 / 记忆 N=3 横评：DeerFlow / Spring AI Alibaba / 腾讯 Agent Memory + 海外对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/daily/deerflow-n3-middleware-compare.png)
 
 | 厂 | 项目 | 角色 | 国际对位 | 工程化指标 |
 |---|---|---|---|---|
@@ -210,7 +210,7 @@ HuggingFace Daily Papers 5/15 第 3 名（58 upvote）。给 GRPO 主干装上 O
 
 ## 🇨🇳 国内 AI 观察（含海外横评对比）
 
-![RTX 4090 单卡跑国产开源四模型 coding / RAG / 翻译三任务横评决策矩阵](cn-llm-task-matrix-overview.png)
+![RTX 4090 单卡跑国产开源四模型 coding / RAG / 翻译三任务横评决策矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/daily/cn-llm-task-matrix-overview.png)
 
 **国产开源四模型 RTX 4090 三任务横评**
 单卡 RTX 4090 24GB，今天能跑 **Qwen3-Coder-30B**（阿里千问，coding 强项）、**DeepSeek-R1-Distill-32B**（DeepSeek，推理与 RAG 强项）、**GLM-4.5-Air**（智谱，Q2 + 内存卸载路径）、**ERNIE-4.5-21B**（百度，翻译与中文长文强项）四款国产开源模型。把 coding / RAG / 翻译三类任务横到一张矩阵——已经跑通某一家、想看看换一家能不能在其他任务上更顺手的国内开发者，今天就能照着选档。详细矩阵见今日「国产开源四模型 4090 三任务横评」专题。
@@ -242,7 +242,7 @@ Qwen3-Coder-30B-A3B-Instruct 在单卡 RTX 4090 24GB 上 **Q2 / Q4 / Q6 / Q8 / B
 
 **特别关注 1：bytedance/deer-flow 67,906⭐ 单日 +1200**
 
-![字节 DeerFlow 仓库快照：实测 67,906 star / 9,035 fork / 18 个中间件源文件 / 时间线](deerflow-repo-snapshot.png)
+![字节 DeerFlow 仓库快照：实测 67,906 star / 9,035 fork / 18 个中间件源文件 / 时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/daily/deerflow-repo-snapshot.png)
 
 [bytedance/deer-flow](https://github.com/bytedance/deer-flow)（5/15 22:30 push 后 67,906⭐ / 9,035 fork）——5/15 当天 push 中间件 2.0 后单日涨 1200⭐，Trending AI 区跳进前 6。Python 3.12+、MIT 协议、18 个中间件源文件。**国产 Agent harness 第一次拿出 LangGraph 级别的工程化产物**，详细按层拆见今日「DeerFlow 11 层中间件」专题。
 

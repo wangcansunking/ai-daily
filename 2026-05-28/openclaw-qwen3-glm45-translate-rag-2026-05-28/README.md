@@ -16,7 +16,7 @@ word_count: 6800
 
 # OpenClaw 接千问 + GLM：英文论文翻译 + 私人知识库
 
-![OpenClaw 接千问 + 智谱 GLM 翻译 + 私人知识库封面](openclaw-qwen3-glm45-translate-rag-2026-05-28.png)
+![OpenClaw 接千问 + 智谱 GLM 翻译 + 私人知识库封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/openclaw-qwen3-glm45-translate-rag-2026-05-28/openclaw-qwen3-glm45-translate-rag-2026-05-28.png)
 
 > 我们每天打开 arxiv、GitHub README、Hacker News、Stratechery，读到的几乎全是英文一手材料；读完之后留下的只有几个标签页、几个 Pocket 收藏，三个月后翻回去常常一脸茫然，连"当时看到的那个数字到底是什么"都想不起来。这一篇要做的事很具体——把"翻译"和"知识库"两个最高频的日常场景，串成一条全本地的小流水线，让英文资料 24 小时内中文化、月度沉淀成个人 wiki，全程不挂云 API。
 
@@ -43,7 +43,7 @@ word_count: 6800
 
 OpenClaw 的核心抽象有三层：Skill（用户自定义的工作流，写在 `~/.config/openclaw/skills/<name>/SKILL.md`）、MCP（Model Context Protocol，桥接外部工具和模型）、Sub-agent（独立 cwd 的子进程，跑长链路任务时用）。我们这条翻译 + 知识库小流水线，刚好把这三层都用上：翻译用 Skill 定义流程，调外部 vLLM / Ollama 用 MCP，长批量任务跑 sub-agent 隔离。
 
-![OpenClaw 三层抽象在翻译 + 知识库小流水线里的映射示意](openclaw-three-layer-2026-05-28.png)
+![OpenClaw 三层抽象在翻译 + 知识库小流水线里的映射示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/openclaw-qwen3-glm45-translate-rag-2026-05-28/openclaw-three-layer-2026-05-28.png)
 
 ## 翻译端为什么选千问 Qwen3-32B，不选 GLM-4.6 旗舰
 
@@ -51,7 +51,7 @@ OpenClaw 的核心抽象有三层：Skill（用户自定义的工作流，写在
 
 智谱的 GLM-4.6 旗舰是 355B 参数的 MoE 模型，200K 上下文，MIT 协议，release notes 里明确写着"advanced coding ability, extended context length, improved multilingual translation"——翻译能力是它的官方主打卖点之一。问题是 355B MoE 即便 Q4 量化也需要多卡组合才能跑动，对手里只有一张 4090 / 5090 / Mac Studio M4 Max 的个人开发者不友好。所以 GLM-4.6 在这条流水线里我们当作对照，不当主力。
 
-![千问 Qwen3-32B 与智谱 GLM-4.5-Air 双本地后端分工对比图](qwen-glm-dual-backend-2026-05-28.png)
+![千问 Qwen3-32B 与智谱 GLM-4.5-Air 双本地后端分工对比图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/openclaw-qwen3-glm45-translate-rag-2026-05-28/qwen-glm-dual-backend-2026-05-28.png)
 
 千问 Qwen3-32B 是 dense 架构，128K 上下文，2025-04-29 首发到 HuggingFace 和 ModelScope；同月晚些时候放出的还有 Qwen3-VL-32B-Instruct（多模态版，可以直接读 PDF 截图）和社区 QuantTrio 维护的 Qwen3-VL-32B-Instruct-AWQ 4-bit 量化版。Q4_K_M 量化下显存占用大约 18-20 GB，4090 24GB 标准 context 跑得动（需要 `--max-model-len 2048` 控制 KV cache），5090 32GB 直接拉满 8K 上下文无忧。社区实测数字：4090 24GB 上 vLLM 后端 decode 速度 24.9 tok/s，5090 比 4090 高 35-46%（spheron 与 willitrunai 两家独立测试一致）。
 
@@ -83,7 +83,7 @@ embedding 这一端不用犹豫，2026 年春天 MTEB 综合榜的开源前两�
 
 把上面这些模型组装起来的工作流并不复杂，6 步就够：
 
-![OpenClaw 接千问 + GLM 翻译 + RAG 6 步工作流图](translate-rag-flow-2026-05-28.png)
+![OpenClaw 接千问 + GLM 翻译 + RAG 6 步工作流图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/openclaw-qwen3-glm45-translate-rag-2026-05-28/translate-rag-flow-2026-05-28.png)
 
 第一步，抓取。OpenClaw skill 接 arxiv API 或 GitHub raw README URL，拿到 PDF / Markdown 原文。这一步可以做得很轻，也可以做得很重——轻量做法是直接 fetch + 保存到 `~/Documents/openclaw-corpus/raw/2026-05-28/`；重量做法是用 arxiv-sanity-style 的脚本按关键词每天自动抓 10-30 篇。这一步不挑模型，是纯 I/O。
 
@@ -95,7 +95,7 @@ embedding 这一端不用犹豫，2026 年春天 MTEB 综合榜的开源前两�
 
 第五步，入库。两路选：腾讯 WeKnora 适合"我想要一个完整的开源 RAG 系统、有 web UI、有 ReAct Agent、有 Wiki Mode、能接 20+ LLM provider"的用户；Cherry Studio v1.9.3 适合"我只想要一个桌面客户端、内置 BGE-M3、点几下就能用"的最简栈。WeKnora 在 2026 年陆续上线了 ReAct Agent、Wiki Mode、4 层 RBAC，并且支持从飞书、Notion、Yuque 多源摄入——对小团队（3-5 人）的私有知识库特别合适。
 
-![国内私人知识库 / RAG 四家栈横评](cn-rag-stack-bakeoff-2026-05-28.png)
+![国内私人知识库 / RAG 四家栈横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/openclaw-qwen3-glm45-translate-rag-2026-05-28/cn-rag-stack-bakeoff-2026-05-28.png)
 
 第六步，检索 + 回答。OpenClaw skill 接 WeKnora 的 search API（或 Cherry Studio 的本地 vector DB），拿到 top-K chunk 之后丢给 GLM-4.5-Air / GLM-4.7-Flash 做 RAG 回答。这一步的 prompt 工程是：明确告诉 GLM 它收到的 chunk 是"用户的私人 wiki 检索结果"，回答时要标注来源 chunk（用 `[1] [2]` 索引）。GLM-4.5-Air 在这个角色上的表现稳定，不容易出现"自信地编造"的幻觉。
 
@@ -189,7 +189,7 @@ modelscope download --model ZhipuAI/GLM-4.5-Air --local_dir ./glm45-air
 
 讲到翻译就绕不开 immersive-translate（沉浸式翻译），社区开源的"双语对照网页 / PDF 翻译"项目，17,761 star，是国内 indie 圈最常用的浏览器翻译插件。和我们这条本地流水线的关系不是替代，而是互补。
 
-![沉浸式翻译开源仓 README 截图](immersive-translate-og-2026-05-28.png)
+![沉浸式翻译开源仓 README 截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/openclaw-qwen3-glm45-translate-rag-2026-05-28/immersive-translate-og-2026-05-28.png)
 
 沉浸式翻译的官方文档（immersivetranslate.com/en/docs/services/ollama/）明确支持 Ollama 本地后端，配置只要在选项里填 `http://localhost:11434/v1` 和模型名（比如 `qwen3:32b`）。它还在"Temporary Integration of Other AI Models"里支持 OpenAI-compatible 接口，意味着可以直接接我们前面起的 vLLM 后端。沉浸式翻译的好处是浏览器场景下零负担：刷 Twitter、刷 Hacker News 时随手把整页双语化。开源版本叫 read-frog（mengxi-ream/read-frog），Mac 用户喜欢的 Bob 划词翻译也有 bob-plugin-ollama-translator 这样的本地后端桥接。
 
@@ -203,7 +203,7 @@ modelscope download --model ZhipuAI/GLM-4.5-Air --local_dir ./glm45-air
 
 ## 性能 / 成本 / 隐私三维度对比：本地双后端 vs 纯云端
 
-![本地双后端 vs 云 API 月度账单对比](local-vs-cloud-cost-2026-05-28.png)
+![本地双后端 vs 云 API 月度账单对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/openclaw-qwen3-glm45-translate-rag-2026-05-28/local-vs-cloud-cost-2026-05-28.png)
 
 把这条流水线和"纯云端方案"（翻译用 GPT-4.1-mini，RAG 用 Claude 3.7 Sonnet）摊开对比，是个人开发者做决策最关心的事。
 

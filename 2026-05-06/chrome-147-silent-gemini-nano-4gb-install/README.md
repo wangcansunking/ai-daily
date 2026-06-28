@@ -12,7 +12,7 @@ description: "隐私研究员 Alexander Hanff 在个人博客上用 macOS 文件
 ---
 # Chrome 偷装 4GB Gemini Nano 隐私研究员举证
 
-![Chrome 偷装 4GB Gemini Nano 隐私研究员举证](chrome-147-silent-gemini-nano-4gb-install.png)
+![Chrome 偷装 4GB Gemini Nano 隐私研究员举证](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/chrome-147-silent-gemini-nano-4gb-install/chrome-147-silent-gemini-nano-4gb-install.png)
 
 ## 一、4GB、14 分 28 秒、5 亿设备 × 30,000 吨：三组数字钉死一件事
 
@@ -24,7 +24,7 @@ Chrome 在新装的 macOS 用户配置文件里，14 分 28 秒静默写入了 4
 
 这是隐私研究员 Alexander Hanff 在 5 月 4 日发表的一篇博文，海外技术社区 Hacker News 当日拿到 940 个赞、639 条评论，登上首页头条。
 
-![Chrome 147 文件系统事件日志](chrome-gemini-nano-fs-event-log.png)
+![Chrome 147 文件系统事件日志](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/chrome-147-silent-gemini-nano-4gb-install/chrome-gemini-nano-fs-event-log.png)
 
 ## 二、文件系统事件日志：三个时间戳锁定 4GB 写入轨迹
 
@@ -50,7 +50,7 @@ Chrome 147 启动后会在合规硬件上点亮地址栏右侧的「AI Mode」�
 
 真正使用本地模型的功能藏得很深。textarea 右键菜单里的「Help me write」、标签页右键菜单里的「Tab group 推荐」、复制粘贴时偶发触发的「Smart paste」、还有面向网页开发者的 Summarizer API、scam 检测——这些才是 Gemini Nano 在本地真正跑推理的入口。
 
-![AI Mode 徽章 vs 本地 Gemini Nano 调用错位](chrome-gemini-nano-ui-vs-local.png)
+![AI Mode 徽章 vs 本地 Gemini Nano 调用错位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/chrome-147-silent-gemini-nano-4gb-install/chrome-gemini-nano-ui-vs-local.png)
 
 UI 上看起来像一个 AI 入口，实际上是两条完全独立的代码路径。一条走云端，一条走本地，两条都是默认开启，普通用户既不会从徽章里发现本地有个 4GB 模型，也不会从隐私设置里看到「我电脑上正在跑一个本地 LLM」这条信息。
 
@@ -70,7 +70,7 @@ Hanff 测试了三种「我能不能把它清掉」的路径，得到的结果�
 
 唯一可靠的关闭路径在 `chrome://flags`。把 `Optimization Guide On Device Model` 这条 flag 显式设为 Disabled，重启浏览器，再删除 `weights.bin`，模型才不再回来。
 
-![Chrome 关闭 Gemini Nano 自动下载 三档操作](chrome-gemini-nano-disable-steps.png)
+![Chrome 关闭 Gemini Nano 自动下载 三档操作](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/chrome-147-silent-gemini-nano-4gb-install/chrome-gemini-nano-disable-steps.png)
 
 Windows 用户可以在注册表里把 `OptimizationGuideModelDownloading` 设为 0，跨 Chrome 大版本升级也不会被重置。企业管理员则可以走组策略下发同名 policy，覆盖整个组织的所有终端。
 
@@ -116,7 +116,7 @@ Chrome 浏览器本身在国内可以正常下载和使用，新版 147 也会�
 
 国内主流浏览器对 AI 的接入几乎全部铺开，但端侧路径选择和 Chrome 完全不同。
 
-![国内主流浏览器端侧 AI 策略对比](chrome-gemini-nano-domestic-browsers.png)
+![国内主流浏览器端侧 AI 策略对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/chrome-147-silent-gemini-nano-4gb-install/chrome-gemini-nano-domestic-browsers.png)
 
 阿里旗下的夸克 AI 浏览器，在 2025 年 3 月把传统搜索框升级为「AI 超级框」，深度接入通义千问。整套体验依赖云端推理，无声后台下载本地权重的产品形态目前并未在公开资料中出现。
 

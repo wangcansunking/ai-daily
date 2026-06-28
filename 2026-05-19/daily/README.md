@@ -34,7 +34,7 @@ cover: 19.png
 
 # Anthropic 抢在 I/O 前夜三连发 | AI 日报 | 2026-05-19
 
-![Anthropic 5/18 一晚三连发硬抗 Google I/O 倒计时 daily 2026-05-19 三连发封面](19.png)
+![Anthropic 5/18 一晚三连发硬抗 Google I/O 倒计时 daily 2026-05-19 三连发封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/daily/19.png)
 
 ## 📋 头版目录（一屏扫完今日）
 
@@ -81,13 +81,13 @@ cover: 19.png
 
 ## 🔥 头条一：Anthropic 5/18 一晚三连发——Stainless 收购 + 十个金融 Agent + Moody's 接入 MCP
 
-![Anthropic 5/18 一晚三连发时间轴 SDK 收购 金融 Agent Moody MCP daily 2026-05-19 anthropic three launches](daily-2026-05-19-anthropic-three-launches.png)
+![Anthropic 5/18 一晚三连发时间轴 SDK 收购 金融 Agent Moody MCP daily 2026-05-19 anthropic three launches](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/daily/daily-2026-05-19-anthropic-three-launches.png)
 
 > **核心论断**：5/18 当晚 Anthropic 同时放出三个公告——传闻三亿美元收购 SDK 自动生成器 Stainless、十个金融 Agent 模板 + Office 三件全量上线 + Outlook 内测、Moody's 用 MCP 协议接进 Claude 拿到六亿家公司财务数据 + 八家新数据连接器同步官宣——三件事同晚落地，覆盖"平台 SDK 基建、垂直行业模板、合规数据连接器"三条战线，恰好压在 Google I/O 主 keynote 开场前 17 小时。这是 Anthropic 至今最密集的一次预先反制。
 
 ### 1.1 收购 Stainless：把 SDK 与 MCP server 生成层自有化
 
-![Anthropic 官方公告页 og 图 节点连接抽象插画 收购 Stainless 公告](source-anthropic-stainless-og-2026-05-19.png)
+![Anthropic 官方公告页 og 图 节点连接抽象插画 收购 Stainless 公告](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/daily/source-anthropic-stainless-og-2026-05-19.png)
 
 Anthropic 5/18 在官网公告 `Anthropic acquires Stainless`，HN 同步 336 分顶到首页（链接：[Anthropic 官方公告](https://www.anthropic.com/news/anthropic-acquires-stainless) · [HN 讨论 item?id=48182281](https://news.ycombinator.com/item?id=48182281)）。金额未官方披露，The Information 援引知情人士给出"约三亿美元"区间。
 
@@ -97,7 +97,7 @@ Anthropic 5/18 在官网公告 `Anthropic acquires Stainless`，HN 同步 336 �
 
 ### 1.2 十个金融 Agent 模板 + Office 三件全量 + Outlook 内测 [跟进 · 5/17 已预告 + 5/18 正式 GA]
 
-![Anthropic finance-agents 官方公告 og 图 柱状图与上扬箭头 珊瑚底色](source-anthropic-finance-agents-og-2026-05-19.png)
+![Anthropic finance-agents 官方公告 og 图 柱状图与上扬箭头 珊瑚底色](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/daily/source-anthropic-finance-agents-og-2026-05-19.png)
 
 5/17 Anthropic 已经预告金融 Agent 模板 + Microsoft 365 add-in 走 Excel / PowerPoint / Word / Outlook 四件入口，5/18 把整套从"预告"推到 GA 转正，并补上**十个具体行业模板** + **金融成为第二大行业收入**的官方公开数字。Anthropic Finance 这次放出的十个金融 Agent 模板——DCF 估值建模、比较模型、初步上市、尽职调查、投资备忘录、信用风险、宏观分析、行业研究、并购整合、ESG 报告——一次性开放给 Claude Enterprise / Claude Max 用户。配套官宣三件事：
 
@@ -133,7 +133,7 @@ MCP（Model Context Protocol）2024 年由 Anthropic 提出，2026 年 5 月发�
 
 ## 🎙 名人说 & X 热议
 
-![三位海外 KOL 5/18 同框：Dario LeCun Musk 三方观点 daily 2026-05-19 KOL 三声音](daily-2026-05-19-kol-three-voices.png)
+![三位海外 KOL 5/18 同框：Dario LeCun Musk 三方观点 daily 2026-05-19 KOL 三声音](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/daily/daily-2026-05-19-kol-three-voices.png)
 
 **Dario Amodei · 软件十年内会变得基本免费**。Anthropic 联合创始人 Dario 5/18 在达沃斯世界经济论坛与华尔街日报主编 Emma Tucker 对谈，第一次公开下注"软件经济结构性变化"判断——『Software is going to become cheap, maybe essentially free』。举例：单次会议用一次就丢的应用，只花几分钱部署一次就够用了；传统软件公司"卖订阅卖席位"的商业模式十年内会崩溃（[The News 报道](https://www.thenews.com.pk/latest/1402953-software-will-become-essentially-free-warns-anthropic-ceo-amodei)）。这一论调直接给 Claude Code / Codex / Cursor / Qoder / 通义灵码这类 AI 编程工具收编传统 SaaS 市场提供了顶层叙事——既然软件会"用一次就丢"，那做工具的公司就得重新算价格表，是开发者一周内必须读到的一段公开发言。
 
@@ -154,7 +154,7 @@ MCP（Model Context Protocol）2024 年由 Anthropic 提出，2026 年 5 月发�
 
 ## 🇨🇳 国内 AI 观察
 
-![国内 AI 厂商 5/18-19 实际动作六家在桌上 daily 2026-05-19 china vendor snapshot](daily-2026-05-19-china-vendor-snapshot.png)
+![国内 AI 厂商 5/18-19 实际动作六家在桌上 daily 2026-05-19 china vendor snapshot](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/daily/daily-2026-05-19-china-vendor-snapshot.png)
 
 **Qwen 3.7 Preview 推特预告 + 通义灵码 Qwen3-Coder 不限量免费持续**。阿里千问官方推特 5/18 放出 Qwen 3.7 Preview 预告，HN 同步 211 分顶头版。Qwen 3.7 Preview 具体规格还没正式技术页，但延续了 Qwen3.6-Max-Preview 在智能体编程 / 世界知识 / 指令遵循三维国产第一的势头——Artificial Analysis Intelligence Index 上 Qwen3.6-Max-Preview 与 DeepSeek-V4-Pro 同分 52。通义灵码 Qwen3-Coder 同期保持对个人开发者不限量免费，推荐档 `qwen3-coder-next` 走混合架构、仓库级理解、多轮工具调用，累计下载 2000 万 + 生成代码超 30 亿行（[通义灵码博客](https://www.cnblogs.com/tongyilingma/p/19016850)）。开发者群里这一周的实测主轴：Qwen3-Coder 在中文项目可读性、注释 + 命名一致性两项上比主流海外工具更贴本地工程习惯，但 Plan Mode 等高级编排还差一些。
 
@@ -166,16 +166,16 @@ MCP（Model Context Protocol）2024 年由 Anthropic 提出，2026 年 5 月发�
 
 ## 📦 GitHub Trending
 
-![Agent Skills 三个 GitHub Trending 项目实测 star 与日增 daily 2026-05-19 skills trending](daily-2026-05-19-agent-skills-trending.png)
+![Agent Skills 三个 GitHub Trending 项目实测 star 与日增 daily 2026-05-19 skills trending](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/daily/daily-2026-05-19-agent-skills-trending.png)
 
 - 🔴 **必看 · tinyhumansai/openhuman** — 累计 17,122 stars · 单日新增 3941，Rust 写的本地优先个人 AI 超智能体。命中 r/LocalLLaMA 与 HN 同步的『个人 AI 拥有感』情绪，[GitHub: tinyhumansai/openhuman](https://github.com/tinyhumansai/openhuman) 仓库今日仍在更新，是值得每天回看的项目。
 
-  ![GitHub tinyhumansai openhuman 仓库 og 卡 18k stars 2k forks](source-github-openhuman-og-2026-05-19.png)
+  ![GitHub tinyhumansai openhuman 仓库 og 卡 18k stars 2k forks](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/daily/source-github-openhuman-og-2026-05-19.png)
 
 - 🔴 **必看 · Imbad0202/academic-research-skills** — 累计 11,671 stars · 日增 1439，Claude Code 学术研究 skill 包，研究 → 撰写 → 评审 → 修订 → 定稿 五段流水线、4 skill + 32 agent。昨日日报已深度覆盖。
 - 🔴 **必看 · tech-leads-club/agent-skills** — 累计 4,026 stars · 日增 1244，Skill 安全注册中心，同时支持 Claude Code / Cursor / Copilot 三家。给希望"集中管理团队级 Skill"的开发组织的真实样本，[GitHub: tech-leads-club/agent-skills](https://github.com/tech-leads-club/agent-skills) Apache 2.0。
 
-  ![GitHub tech-leads-club agent-skills 仓库 og 卡 4k stars 357 forks](source-github-agent-skills-og-2026-05-19.png)
+  ![GitHub tech-leads-club agent-skills 仓库 og 卡 4k stars 357 forks](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/daily/source-github-agent-skills-og-2026-05-19.png)
 
 - 🟡 **推荐 · HKUDS/CLI-Anything** [跟进] — 累计 36,602 stars · 日增 1049，港大数据智能实验室把 Blender / GIMP / LibreOffice / Audacity 等 18+ 款专业桌面软件转成带 JSON 输出 / REPL / Undo / Redo 的命令行工具。昨日已覆盖，本日是连续上榜跟进。
 - 🟡 **推荐 · K-Dense-AI/scientific-agent-skills** [跟进] — 累计 24,377 stars · 日增 609，科研 + 工程 + 金融 + 写作开箱即用 Agent Skills。和 academic-research-skills 互补，前者是科研论文流水线，后者是工程 / 金融场景。
@@ -185,7 +185,7 @@ MCP（Model Context Protocol）2024 年由 Anthropic 提出，2026 年 5 月发�
 
 ## 🛠 AI Coding 工具动态
 
-![AI Coding 工具一周更新 六家产品同时上桌 daily 2026-05-19 ai coding week updates](daily-2026-05-19-ai-coding-week-updates.png)
+![AI Coding 工具一周更新 六家产品同时上桌 daily 2026-05-19 ai coding week updates](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/daily/daily-2026-05-19-ai-coding-week-updates.png)
 
 **Claude Code · Anthropic** — 本周 Anthropic 在 [code.claude.com/docs/en/changelog](https://code.claude.com/docs/en/changelog) 上线一组更新：**Agent View** 上线（一个 CLI 视图管理多 session，可让 agent 后台跑、需要输入时再切回）；**Fast Mode 默认升级到 Opus 4.7**（此前 Opus 4.6）；**5 小时限额翻倍**，所有付费档（Pro / Max）取消高峰时段降速；新增 `claude agents` 子命令族；插件市场新增**上下文成本预估**和**插件依赖强制校验**；新增 `worktree.bgIsolation: "none"` 让后台 session 直接改工作副本；钩子 JSON 输出新增 `terminalSequence` 字段；环境变量 `ANTHROPIC_WORKSPACE_ID` 支持工作负载身份联合。配合 5/18 收购 Stainless 公告，是本周 AI Coding 工具一周里更新最密的一家。
 
@@ -201,7 +201,7 @@ MCP（Model Context Protocol）2024 年由 Anthropic 提出，2026 年 5 月发�
 
 ## 🔭 值得关注
 
-![Google I/O 2026 倒计时 17 小时五大主角清单 daily 2026-05-19 io keynote leaks](daily-2026-05-19-io-keynote-leaks.png)
+![Google I/O 2026 倒计时 17 小时五大主角清单 daily 2026-05-19 io keynote leaks](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/daily/daily-2026-05-19-io-keynote-leaks.png)
 
 - 🎬 **Google I/O 2026 主 keynote 倒计时 17 小时**（北京时间 5/20 凌晨 1 点开场）。今晚一过，今日日报的"前夜"叙事就翻篇。已确定上桌的有 Gemini 3.2 Flash（泄露价 0.25 美元 / 百万 Token 输入）、Gemini Omni 视频模型（在 chat 内编辑视频）、Aluminium OS / Googlebook（Android 笔电品类）、Android XR 智能眼镜（Warby Parker + Gentle Monster + Samsung）、Gemini Code Assist agent 化升级。次确定的有 Gemini 3.5 Pro Preview（内部代号 Cappuccino）、Spark Agent。Veo 5 / Imagen 5 / Lyria 是否会独立发布还是被 Omni 吸收，等今晚揭晓。
 - 🛡 **Cloudflare Project Glasswing / Anthropic 前沿模型威胁**（HN 5/18 266 分）：Cloudflare 5/18 把 Anthropic 5/17 公告的"前沿威胁模型"做了一份具体技术拆解（[Cloudflare 博客](https://blog.cloudflare.com/cyber-frontier-models/)）。把"前沿模型可能给攻击者用"这件事从抽象警告落到具体威胁向量（自动化漏洞挖掘、社工脚本生成、零日链路发现）。配合 Simon Willison 5/17 的 GDS-NHS 开源退守评论形成"前沿模型威胁 → 政府开源政策反应"完整闭环。

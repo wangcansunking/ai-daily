@@ -12,7 +12,7 @@ feishu_doc_id: null
 ---
 # 用 TypeScript 写 agent，Mastra 把 Next.js 那套工程搬了过来
 
-![Mastra 官网首页：面向 TypeScript 开发者的 agent 框架](mastra-typescript-agent-framework-2026-06-09-img1.png)
+![Mastra 官网首页：面向 TypeScript 开发者的 agent 框架](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/mastra-typescript-agent-framework-2026-06-09/mastra-typescript-agent-framework-2026-06-09-img1.png)
 
 过去一年多，写 agent 这件事几乎是 Python 的主场。LangGraph、CrewAI、AutoGen，一线能叫得出名字的框架，导入语句清一色是 `from langchain ...`。一个每天在 Next.js、React、Node 里讨生活的全栈开发者，想给自己的 Web 产品接一个能跑多步任务的 agent，标准答案往往是：再起一个 Python 服务，两套语言、两套部署、两套类型边界，中间用 HTTP 缝起来。
 
@@ -26,7 +26,7 @@ Mastra 想改的就是这件事。它是一个用 TypeScript 写、给 TypeScrip
 
 Mastra 由 Abhi Aiyer、Sam Bhagwat、Shane Thomas 三人在 2024 年发起，这三位是 React 静态站点框架 Gatsby 的原班团队，项目入选了 YC（Y Combinator）2025 年冬季批次。代码仓库 2024 年 8 月建立，对外公开发布在 2024 年 10 月。到撰稿时，GitHub 上的 star 数为 24,883，fork 超过 2,200，核心包 `@mastra/core` 的最新版本是 2026 年 6 月 5 日发布的 1.41.0——更新节奏相当密，最近几周几乎每天都有提交。
 
-![Mastra 与三大 agent 框架对比：语言、范式、记忆、成熟度](mastra-typescript-agent-framework-2026-06-09-img2.png)
+![Mastra 与三大 agent 框架对比：语言、范式、记忆、成熟度](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/mastra-typescript-agent-framework-2026-06-09/mastra-typescript-agent-framework-2026-06-09-img2.png)
 
 2026 年 1 月 21 日，Mastra 发布 1.0 正式版，同时公布了几个能说明它不只是 demo 的数字：npm 周下载量超过 30 万次，GitHub star 当时为 1.94 万，以及 Replit、WorkOS 这样的公司在生产环境里用它。一个值得记下来的细节是，它不是「先有 demo 再补工程」的路子，而是从第一天就把记忆、评测、可观测性这些「上线才会用到」的部件当成框架的一等部件来设计。
 
@@ -66,7 +66,7 @@ agent 上线后最折磨人的，是它「黑箱」——用户说结果不对�
 
 这一条对从 Web 工程过来的人特别亲切：它把「agent 质量」变成了和「单元测试覆盖率」类似的、可以纳入 CI 流水线的工程指标。你改了一版 prompt，跑一遍 evals，分数掉了就拦在合并之前——这正是前端工程这些年沉淀下来的纪律，被原封不动搬到了 agent 上。
 
-![Mastra Studio 本地调试界面示意：agent / workflow 的可视化追踪](mastra-typescript-agent-framework-2026-06-09-img3.png)
+![Mastra Studio 本地调试界面示意：agent / workflow 的可视化追踪](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/mastra-typescript-agent-framework-2026-06-09/mastra-typescript-agent-framework-2026-06-09-img3.png)
 
 配套的还有 Studio——一个本地的交互式调试界面。装好 Mastra 后能直接打开，在浏览器里看 agent 和 workflow 怎么一步步执行、记忆里存了什么、每步的输入输出长什么样。对习惯了浏览器开发者工具的前端来说，这种「打开就能看见内部状态」的体感，比对着终端读日志要顺手太多。
 

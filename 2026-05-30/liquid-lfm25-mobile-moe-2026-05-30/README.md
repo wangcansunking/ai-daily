@@ -11,7 +11,7 @@ description: 2026-05-28，波士顿的 Liquid AI 发了 LFM2.5-8B-A1B，一个�
 ---
 # 手机能跑的推理模型：Liquid 把 8B MoE 的激活压到 1.5B
 
-![Liquid AI 发布端侧 MoE 推理模型 LFM2.5-8B-A1B 的封面](liquid-lfm25-mobile-moe-2026-05-30.png)
+![Liquid AI 发布端侧 MoE 推理模型 LFM2.5-8B-A1B 的封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/liquid-lfm25-mobile-moe-2026-05-30/liquid-lfm25-mobile-moe-2026-05-30.png)
 
 2026-05-28，波士顿的 Liquid AI 放出了 LFM2.5-8B-A1B。一个数字最能说明它想干什么：总参数 8.3B，但每生成一个 token 只激活 1.5B。
 
@@ -33,7 +33,7 @@ description: 2026-05-28，波士顿的 Liquid AI 发了 LFM2.5-8B-A1B，一个�
 
 一句话，MoE 让端侧设备「用小模型的速度，吃大模型的能力」。
 
-![端侧 MoE 的算账方式：显存按 8.3B 占，算力按 1.5B 花](liquid-moe-active-param-2026-05-30.png)
+![端侧 MoE 的算账方式：显存按 8.3B 占，算力按 1.5B 花](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/liquid-lfm25-mobile-moe-2026-05-30/liquid-moe-active-param-2026-05-30.png)
 
 *自制示意图：稠密 8B 模型每个 token 全激活 8.3B，LFM2.5-8B-A1B 只激活 1.5B*
 
@@ -54,13 +54,13 @@ LFM2.5-8B-A1B 不是 Liquid 第一个 8B MoE。上一代叫 LFM2-8B-A1B，参数
 
 最值得说的是第一行。AA-Omniscience 的非幻觉率衡量的是：当模型其实不知道答案时，它是老老实实承认「我不确定」，还是硬编一个错的出来。上一代是 7.46，几乎是逮着不会的就瞎答；这一代到了 63.47。**对端侧助手来说，「不知道就说不知道」比「多答对几道题」更要命——一个会一本正经胡说的本地助手，比一个偶尔说「这个我不确定」的助手危险得多。**
 
-![同样 8.3B 总参 / 1.5B 激活，加上推理后四项指标的变化](liquid-benchmark-jump-2026-05-30.png)
+![同样 8.3B 总参 / 1.5B 激活，加上推理后四项指标的变化](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/liquid-lfm25-mobile-moe-2026-05-30/liquid-benchmark-jump-2026-05-30.png)
 
 *自制对比图，数据取自 Liquid 官方博客与 HuggingFace 模型卡*
 
 工具调用那一项也很说明问题。Tau² Telecom 从 13.60 跳到 88.07，意味着这个模型被明确地按「会用工具的智能体」来训练——它能稳定地理解什么时候该调一个函数、按什么格式填参数。Liquid 在博客里把这一代直接定位成「为工具调用而设计」，这个分数是底气所在。
 
-![来源：Liquid AI HuggingFace 模型卡，LFM2.5-8B-A1B 综合能力对照图（2026-05-28）](source-liquid-hf-quality.png)
+![来源：Liquid AI HuggingFace 模型卡，LFM2.5-8B-A1B 综合能力对照图（2026-05-28）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/liquid-lfm25-mobile-moe-2026-05-30/source-liquid-hf-quality.png)
 
 *来源：Liquid AI HuggingFace 模型卡 2026-05-28，与同量级及更大 MoE 模型的综合质量对照*
 
@@ -88,7 +88,7 @@ LFM2.5-8B-A1B 不是 Liquid 第一个 8B MoE。上一代叫 LFM2-8B-A1B，参数
 
 需要说清楚口径：M5 Max 上约 253 tokens/s，是 Liquid 官方在 CPU 上给出的解码速度。这个数字的分量在于，M5 Max 是笔记本里的芯片，CPU 跑、不靠独立显卡，就能到每秒两百多 token——对一个有 8.3B 总参、还会先想后答的推理模型来说，这个本地体验已经足够顺手。
 
-![来源：Liquid AI HuggingFace 模型卡 CPU 推理速度图（2026-05-28）](source-liquid-hf-cpu-speed.png)
+![来源：Liquid AI HuggingFace 模型卡 CPU 推理速度图（2026-05-28）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/liquid-lfm25-mobile-moe-2026-05-30/source-liquid-hf-cpu-speed.png)
 
 *来源：Liquid AI HuggingFace 模型卡 2026-05-28 CPU 推理基准*
 
@@ -100,7 +100,7 @@ LFM2.5-8B-A1B 不是 Liquid 第一个 8B MoE。上一代叫 LFM2-8B-A1B，参数
 
 国内做端侧大模型的团队不少，各有各的路子。把 LFM2.5-8B-A1B 和几家有代表性的国产端侧模型摆在一起，能看清它的位置。
 
-![端侧小模型横评：LFM2.5 与国产三家放在一起看](liquid-domestic-compare-2026-05-30.png)
+![端侧小模型横评：LFM2.5 与国产三家放在一起看](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/liquid-lfm25-mobile-moe-2026-05-30/liquid-domestic-compare-2026-05-30.png)
 
 *自制横评图。各家速度为公开口径，硬件与量化不同不可直接横比*
 
@@ -114,7 +114,7 @@ LFM2.5-8B-A1B 不是 Liquid 第一个 8B MoE。上一代叫 LFM2-8B-A1B，参数
 
 需要强调的是，这张表不是要分高下。各家硬件口径、量化方式、考察任务都不一样，速度数字不能直接横比。它更像一张地图——告诉正在选型的国内开发者，端侧这条路上现在有哪几种走法，LFM2.5 占的是哪个格子。
 
-![来源：Liquid AI 官方博客 LFM2.5-8B-A1B 能力对比图（2026-05-28）](source-liquid-blog-benchmarks.png)
+![来源：Liquid AI 官方博客 LFM2.5-8B-A1B 能力对比图（2026-05-28）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/liquid-lfm25-mobile-moe-2026-05-30/source-liquid-blog-benchmarks.png)
 
 *来源：Liquid AI 官方博客 2026-05-28，LFM2.5-8B-A1B 与同量级模型的能力对照*
 

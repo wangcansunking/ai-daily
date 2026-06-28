@@ -49,7 +49,7 @@ image_alt_match_ignore:
 
 # Anthropic 15 个工种 Cowork plugin 开源 · DeepSeek Reasonix 99.82% 缓存 · 代码图谱双雄继续高歌 | AI 日报 | 2026-05-26
 
-![Anthropic 一次开源 15 个工种 Cowork 插件 · DeepSeek Reasonix 99.82% 缓存命中把 61 美元跑到 12 美元 · 代码图谱双雄继续高歌](26.png)
+![Anthropic 一次开源 15 个工种 Cowork 插件 · DeepSeek Reasonix 99.82% 缓存命中把 61 美元跑到 12 美元 · 代码图谱双雄继续高歌](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/daily/26.png)
 
 ## 📋 头版目录
 
@@ -78,7 +78,7 @@ image_alt_match_ignore:
 
 ### 头条 1 · Anthropic 翻 public 一次开源 15 个工种 Cowork 插件：把通用 agent 改成「按职业装专用 agent」
 
-![anthropics/knowledge-work-plugins 仓库 og:image 15399 stars 1861 forks](source-github-anthropic-knowledge-work-plugins-2026-05-26.png)
+![anthropics/knowledge-work-plugins 仓库 og:image 15399 stars 1861 forks](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/daily/source-github-anthropic-knowledge-work-plugins-2026-05-26.png)
 
 #### 1.1 仓库三个数字：15,399 stars · 1,861 forks · +1,441 今日
 
@@ -112,7 +112,7 @@ Claude Cowork 本身要在国内合规走通还有距离，但仓库本身是 MI
 
 ### 头条 2 · DeepSeek Reasonix 单日 HN top 4：99.82% prefix cache 把同一段长会话从 61 美元跑到 12 美元
 
-![esengine/DeepSeek-Reasonix 仓库 og:image 8304 stars TypeScript MIT](source-github-deepseek-reasonix-2026-05-26.png)
+![esengine/DeepSeek-Reasonix 仓库 og:image 8304 stars TypeScript MIT](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/daily/source-github-deepseek-reasonix-2026-05-26.png)
 
 #### 2.1 5/24 HN 上榜实录：624 票 / 258 评论 / top 4
 
@@ -245,11 +245,11 @@ Artificial Analysis 5 月 22 日更新的榜上 3.7-Max 拿到 56.6 综合分，
 
 - **Lum1104/Understand-Anything · 30,961 stars · +5,604 今日 · TypeScript / MIT** [13]：在线交互式代码图谱可视化，14 家 AI 客户端接入。从昨日 25,658 stars 单日跳到今日 30,961，**+5,303 day-over-day** 是过去 30 天 Trending 单日最大涨幅之一。
 
-![Lum1104/Understand-Anything GitHub 仓库 og:image 代码图谱在线可视化](source-github-understand-anything-2026-05-26.png)
+![Lum1104/Understand-Anything GitHub 仓库 og:image 代码图谱在线可视化](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/daily/source-github-understand-anything-2026-05-26.png)
 
 - **colbymchenry/codegraph · 24,861 stars · +3,161 今日 · TypeScript / MIT** [14]：100% 本地预索引代码图谱，给 Claude Code / Codex / Cursor / OpenCode / Hermes 用。7 仓 benchmark 平均省 35% 钱省 71% 工具调用。
 
-![colbymchenry/codegraph GitHub 仓库 og:image 100% 本地代码图谱](source-github-codegraph-2026-05-26.png)
+![colbymchenry/codegraph GitHub 仓库 og:image 100% 本地代码图谱](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/daily/source-github-codegraph-2026-05-26.png)
 
 - **anthropics/knowledge-work-plugins · 15,399 stars · +1,441 今日 · Python** [1]：见头条 1。
 
@@ -257,7 +257,7 @@ Artificial Analysis 5 月 22 日更新的榜上 3.7-Max 拿到 56.6 综合分，
 
 - **manaflow-ai/cmux · 19,471 stars · +603 今日 · Swift** [15]：基于 Ghostty 终端内核改的 vertical-tab 终端，原生给 AI coding agent 优化布局——每个 tab 是一个独立 agent 会话，左侧 sidebar 切换。
 
-![manaflow-ai/cmux GitHub 仓库 og:image Ghostty 内核 AI 终端](source-github-cmux-2026-05-26.png)
+![manaflow-ai/cmux GitHub 仓库 og:image Ghostty 内核 AI 终端](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/daily/source-github-cmux-2026-05-26.png)
 
 - **multica-ai/andrej-karpathy-skills · 154,885 stars · +2,749 今日** [8]：单文件 skill 把 Karpathy 偏好集抽出来，覆盖 prompt 风格、代码审查习惯、文档写作习惯。
 - **Leonxlnx/taste-skill · 19,663 stars · +264 今日 · Shell** [16]：单文件配置，目标是「让 Claude 不要生成常见、平庸的输出」。

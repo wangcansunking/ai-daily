@@ -25,7 +25,7 @@ description: "五月十四日西蒙·威利森（Simon Willison）写了一篇�
 
 # Simon Willison：程序员母语正在被 AI 抹平
 
-![语言可互换](simon-willison-language-fungibility-2026-05-19.png)
+![语言可互换](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/simon-willison-language-fungibility-2026-05-19/simon-willison-language-fungibility-2026-05-19.png)
 
 五月十四日格林尼治时间晚上，西蒙·威利森（Simon Willison）在个人博客挂了一篇只有 130 个英文单词、6 段话的短文。标题特别朴素——**Not so locked in any more**（不再那么锁死了）。文章短到读完只需要 45 秒，但底下挂出来的判断如果用一句话总结，是这么一件事：**程序员选哪门母语，从此不再是公司战略层级的决定**。
 
@@ -43,7 +43,7 @@ description: "五月十四日西蒙·威利森（Simon Willison）写了一篇�
 
 先把 Simon 原文 6 段话还原出来，每一段都摘自他的公开博客，原文链接是 simonwillison.net/2026/May/14/not-so-locked-in/。
 
-![Simon Willison 5 月 14 日博客原文](simon-fungibility-blog-excerpt.png)
+![Simon Willison 5 月 14 日博客原文](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/simon-willison-language-fungibility-2026-05-19/simon-fungibility-blog-excerpt.png)
 
 第一段。Simon 写："This Mitchell Hashimoto quote about Bun migrating from Zig to Rust reminded me of a similar conversation I had at a conference last week."（Mitchell Hashimoto 关于 Bun 从 Zig 迁到 Rust 的那段话让我想起上周开会时一段类似的对话。）
 
@@ -85,7 +85,7 @@ Simon 短文的钩子来自 Mitchell Hashimoto（HashiCorp 创始人）当天发
 | 主要生成方 | Claude（Anthropic 自家模型） |
 | 测试通过率 | 99.8%（Linux x64 glibc，Bun 原测试套件） |
 
-![Simon fungibility Bun PR numbers 一览](simon-fungibility-bun-pr-numbers.png)
+![Simon fungibility Bun PR numbers 一览](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/simon-willison-language-fungibility-2026-05-19/simon-fungibility-bun-pr-numbers.png)
 
 Bun 一两个月前还在用 Zig 写，Zig 是 Andrew Kelley 那门小众系统语言，三大优势是没有隐藏控制流、跨编译特别方便、和 C 互通做得很彻底，全球用户量按 2025 年 GitHub 统计还不到 Rust 的 1/30。Jarred Sumner 选 Zig 是 2021 年的决定，5 年下来已经把整个 Bun 实现压到 96 万行 Zig 代码。
 
@@ -97,7 +97,7 @@ Hashimoto 的判断特别准——**Rust 在 Bun 这件事里只是一个临时�
 
 ## 三、HN 顶帖里的反对声和支持声
 
-![Simon fungibility HN voices 三派](simon-fungibility-hn-voices.png)
+![Simon fungibility HN voices 三派](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/simon-willison-language-fungibility-2026-05-19/simon-fungibility-hn-voices.png)
 
 Bun 这次合并在 HN 一共起了两条头版顶帖。第一条是合并当天 5 月 14 日的 item 48132488，标题 `Rewrite Bun in Rust has been merged`，最终顶到 652 分、724 评论；第二条是 5 月初实验阶段的 item 48073680，顶到 722 分、554 评论。两条加起来 1300 多评论，是过去半年开发者社区对 AI 编程讨论密度最高的一次。
 
@@ -113,7 +113,7 @@ Bun 这次合并在 HN 一共起了两条头版顶帖。第一条是合并当天
 
 把视野从 Bun 这一件事拉宽，过去 8 个月里类似规模的 AI 驱动跨语言重写已经积累了好几起。每一起都有公开数字可查。
 
-![Simon 文中提到的跨语言 fungibility 重写 cases 时间线](simon-fungibility-rewrite-cases-v2.png)
+![Simon 文中提到的跨语言 fungibility 重写 cases 时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/simon-willison-language-fungibility-2026-05-19/simon-fungibility-rewrite-cases-v2.png)
 
 | 时间 | 项目 | 从 | 到 | 规模 | 周期 | 主驱方 |
 |---|---|---|---|---|---|---|
@@ -133,7 +133,7 @@ Datasette 那次是 Simon 自己干的实验。Datasette 是 Simon 维护超过 
 
 把 Simon 那篇短文翻译到国内 AI 开发者今天就要做的决策上，至少有 5 个轴会被这件事重塑。
 
-![Simon fungibility 5 轴影响 matrix](simon-fungibility-impact-matrix.png)
+![Simon fungibility 5 轴影响 matrix](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/simon-willison-language-fungibility-2026-05-19/simon-fungibility-impact-matrix.png)
 
 **轴一 · 技术选型门槛**。过去做一个新业务系统，技术选型会议要开 3 周，团队要在 Java、Go、Rust、Node.js 之间反复权衡，因为一旦选定就是 5 年的承诺。今天可以反过来思考——**先按业务领域选最顺手的，跑半年发现选错了，6 周内可以切**。这件事对国产 Rust 生态特别友好——国内做芯片、做安全、做基础设施的团队过去因为人才储备不够不敢押 Rust，今天可以押。
 
@@ -175,7 +175,7 @@ Datasette 那次是 Simon 自己干的实验。Datasette 是 Simon 维护超过 
 
 如果把这件事翻译成国内一线开发团队下半年就要做的具体动作，可以浓缩成 3 条——
 
-![Simon fungibility action plan 3 条具体建议](simon-fungibility-action-plan.png)
+![Simon fungibility action plan 3 条具体建议](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/simon-willison-language-fungibility-2026-05-19/simon-fungibility-action-plan.png)
 
 **第一条 · 把测试覆盖率拉到 60% 以上再考虑跨语言迁移**。Bun 这次能 6 天跑通的真正功臣是 Bun 原本就有的测试套件。国内多数中型企业的内部业务系统测试覆盖率徘徊在 20% 到 40% 之间，**先用 AI 把测试补到 60% 以上，再去想重写这件事**。补测试这件事 AI 自己擅长，是性价比最高的前置工作。
 

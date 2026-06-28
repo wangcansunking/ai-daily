@@ -14,7 +14,7 @@ authors:
 
 # OpenAI 的 AI 安全平台：8 家 partner 双押
 
-![OpenAI Daybreak 三层模型对位 Anthropic Glasswing](openai-daybreak-codex-security-gpt55-cyber-vs-anthropic-2026-05-24.png)
+![OpenAI Daybreak 三层模型对位 Anthropic Glasswing](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/openai-daybreak-codex-security-gpt55-cyber-vs-anthropic-2026-05-24/openai-daybreak-codex-security-gpt55-cyber-vs-anthropic-2026-05-24.png)
 
 > 5 月 12 日，OpenAI 发布 Daybreak——一个把 GPT-5.5 拆成三档、再接进 8 家全球安全龙头的 AI 安全平台。GPT-5.5 是通用版，所有开发者都能用；GPT-5.5 + Trusted Access for Cyber 是受信任版，给已经验证过身份的防御方做漏洞分诊、补丁验证、检测工程；最高一档 GPT-5.5-Cyber 是受控红队验证版，只给授权账号做红队、渗透测试、隔离验证，不开放公开下载。绑在 Trusted Access 计划里的 8 家明示 partner——Cisco、Cloudflare、Palo Alto Networks、CrowdStrike、Fortinet、Oracle、Akamai、Zscaler——覆盖了从网络设备、边缘 CDN、端点检测、防火墙到零信任接入的全球安全工具栈。
 
@@ -24,7 +24,7 @@ authors:
 
 国内安全大模型这条赛道上，奇安信、360、启明星辰、阿里云、腾讯五家都有自己的产品——奇安信 QAX-GPT 安全大模型加 AI 燔石漏洞挖掘 agent、360 大模型安全卫士、启明星辰九天·泰合安全大模型加安星智能体、阿里云通义千问安全侧、腾讯混元安全侧——产品形态齐了，但**目前没有出现「模型分三档 + 8 家以上联盟接入」这种产品姿态**。差距不在模型本身，而在产品组织方式：海外把 AI 安全做成多家共建的开放平台，国内还停留在 1 厂 1 客户的封闭项目制。这个差距是这篇文章想拆开讲清楚的对象。
 
-![OpenAI Daybreak 官方发布报道（Help Net Security 截图）](openai-daybreak-helpnetsecurity-hero.webp)
+![OpenAI Daybreak 官方发布报道（Help Net Security 截图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/openai-daybreak-codex-security-gpt55-cyber-vs-anthropic-2026-05-24/openai-daybreak-helpnetsecurity-hero.webp)
 
 ## 一、Daybreak 平台架构：三档 SKU 把红队能力关在受信账号里
 
@@ -38,7 +38,7 @@ authors:
 
 下面这张三家平台架构对比图把核心维度摆全。注意 Microsoft Security Copilot（2024 年发布）这一列是放进来做对照的，它不是 AI 安全平台对位赛道的当期玩家，是上一代 GPT-4o 时代的产品。
 
-![Daybreak vs Glasswing 三家平台架构对比矩阵：模型分层 vs 单一旗舰](daybreak-vs-glasswing-architecture-matrix.png)
+![Daybreak vs Glasswing 三家平台架构对比矩阵：模型分层 vs 单一旗舰](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/openai-daybreak-codex-security-gpt55-cyber-vs-anthropic-2026-05-24/daybreak-vs-glasswing-architecture-matrix.png)
 
 平台架构这一层之外，Daybreak 还有一个绑死的代理框架叫 **Codex Security**。Codex 是 OpenAI 那个已经服役多年的代码代理，原来主要做代码生成；这次 OpenAI 给 Codex 加了一条「Security」侧的工作链路，专门做四件事：
 
@@ -49,7 +49,7 @@ authors:
 
 OpenAI 官方原话是「reduces hours of vulnerability analysis to minutes」——把过去几个小时的漏洞分析压到几分钟。这条数字目前没有可对照的 CVE 战绩支撑（Daybreak 5 月 12 日刚上线，OpenAI 还没像 Anthropic 那样亮 1 万漏洞的数字），需要后续几个月看 partner 实战反馈。
 
-![Daybreak 与 Codex Security 工作链路（MarkTechPost 报道头图）](openai-daybreak-marktechpost-hero.png)
+![Daybreak 与 Codex Security 工作链路（MarkTechPost 报道头图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/openai-daybreak-codex-security-gpt55-cyber-vs-anthropic-2026-05-24/openai-daybreak-marktechpost-hero.png)
 
 ## 二、8 家 partner 阵营：从网络设备到零信任接入的全球安全工具栈
 
@@ -85,7 +85,7 @@ Akamai 那边的 CSO Boaz Gelbord 在 Help Net Security 的报道里给了一段
 
 下面这张 Venn 图把双押关系画清楚。
 
-![Daybreak Glasswing partner overlap Venn 图：全球安全龙头的双押选择](daybreak-glasswing-partner-overlap-venn.png)
+![Daybreak Glasswing partner overlap Venn 图：全球安全龙头的双押选择](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/openai-daybreak-codex-security-gpt55-cyber-vs-anthropic-2026-05-24/daybreak-glasswing-partner-overlap-venn.png)
 
 为什么这三家会同时押 Anthropic 和 OpenAI 两边？读这件事有三条逻辑可以放进来。
 
@@ -97,7 +97,7 @@ Akamai 那边的 CSO Boaz Gelbord 在 Help Net Security 的报道里给了一段
 
 CyberScoop 那篇报道里有一段总结说得直白：OpenAI 是「taking direct aim at Anthropic's tightly restricted Mythos model, offering a more open — but still carefully gated — path to AI-powered cyber defense」——OpenAI 选择走「比 Anthropic 开放、但仍精心管控」的路线。对照 Anthropic 自己说的「no company—including Anthropic—has developed safeguards strong enough to prevent such models from being misused」——没有任何公司（包括 Anthropic）开发出了强到能阻止滥用的护栏——两家在「红队能力到底要放出来多少」这个核心问题上路线选择不同，但都走到了「不公开下载、账号级管控」的同一种姿态上。
 
-![OpenAI Daybreak vs Anthropic Mythos 对位报道（CyberScoop 头图）](openai-daybreak-cyberscoop-vs-anthropic.jpg)
+![OpenAI Daybreak vs Anthropic Mythos 对位报道（CyberScoop 头图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/openai-daybreak-codex-security-gpt55-cyber-vs-anthropic-2026-05-24/openai-daybreak-cyberscoop-vs-anthropic.jpg)
 
 ## 四、模型分层 vs 单一旗舰：两家路线分歧的工程权衡
 
@@ -130,7 +130,7 @@ CyberScoop 那篇报道里有一段总结说得直白：OpenAI 是「taking dire
 
 把视线拉回国内。AI 安全大模型这条赛道国内不是没有玩家——五家厂商各自的产品都已经上线，但姿态跟海外两家差距明显。
 
-![Daybreak overseas vs domestic 海外 2 家与国内 5 家 AI 安全平台产品形态对比](daybreak-overseas-vs-domestic-comparison.png)
+![Daybreak overseas vs domestic 海外 2 家与国内 5 家 AI 安全平台产品形态对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/openai-daybreak-codex-security-gpt55-cyber-vs-anthropic-2026-05-24/daybreak-overseas-vs-domestic-comparison.png)
 
 **奇安信**。奇安信的安全大模型叫 QAX-GPT，已经通过国家网信办「双备案」（生成式 AI 服务备案 + 大模型算法备案）。绑在 QAX-GPT 上的漏洞挖掘 agent 叫「AI 燔石」，是奇安信技术研究院主导的产品，定位是「漏洞终结者」——自动识别真假风险、自动生成 PoC/EXP 一键验证、把「发现-验证-修复」做成自动化流水线。在 DataCon（数据安全竞赛）的评测里，QAX-GPT 排名国内领先，2026 年 4 月还登顶 CyberSec-Eval 评测榜八项第一。
 

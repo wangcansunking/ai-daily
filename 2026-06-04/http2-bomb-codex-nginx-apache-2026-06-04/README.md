@@ -10,13 +10,13 @@ description: "一个叫 HTTP/2 Bomb 的新漏洞（CVE-2026-49975），让一台
 
 # Codex 挖出 HTTP/2 大洞：家用机几秒打垮你的服务器
 
-![一个人在小电脑前发出一道火花，击中一排正在过载、迸出红色内存方块的服务器机柜，象征 HTTP/2 Bomb 漏洞让单台家用机几秒打垮服务器](http2-bomb-codex-nginx-apache-2026-06-04.png)
+![一个人在小电脑前发出一道火花，击中一排正在过载、迸出红色内存方块的服务器机柜，象征 HTTP/2 Bomb 漏洞让单台家用机几秒打垮服务器](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/http2-bomb-codex-nginx-apache-2026-06-04/http2-bomb-codex-nginx-apache-2026-06-04.png)
 
 一台普通的百兆宽带家用电脑，几秒钟就能让一台跑着 nginx 或 Apache 的服务器吃满内存、彻底失去响应。这不是科幻，而是 6 月初公开的一个新漏洞——名字就叫 HTTP/2 Bomb，编号 CVE-2026-49975，安全机构给它打了 9.8 分的"严重"等级（满分 10）。
 
 受影响的不是某个冷门软件，而是几乎整张 Web 服务器版图：nginx、Apache httpd、微软 IIS、代理服务器 Envoy、Cloudflare 的 Pingora，在默认的 HTTP/2 配置下全部中招。
 
-![安全机构 Calif 对 HTTP/2 Bomb 的原始披露页，标注受影响的 nginx、Apache、IIS、Envoy、Pingora，以及单客户端约 10 秒占满 32GB 内存、放大比约 5700 比 1](source-calif-http2-bomb-2026-06-04.png)
+![安全机构 Calif 对 HTTP/2 Bomb 的原始披露页，标注受影响的 nginx、Apache、IIS、Envoy、Pingora，以及单客户端约 10 秒占满 32GB 内存、放大比约 5700 比 1](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/http2-bomb-codex-nginx-apache-2026-06-04/source-calif-http2-bomb-2026-06-04.png)
 
 *来源：安全机构 Calif 的原始披露《Codex discovered a hidden HTTP/2 Bomb》，标注攻击组合（HPACK 压缩炸弹 + 流控窗口拖延）与受影响的五款服务器*
 
@@ -28,7 +28,7 @@ description: "一个叫 HTTP/2 Bomb 的新漏洞（CVE-2026-49975），让一台
 
 这个攻击的特点是"以小博大"：攻击者只需要一台普通电脑、一条百兆家用宽带，就能拖垮一台配置高得多的服务器。原始披露里给出了几款主流服务器的实测数据，差异还不小。
 
-![HTTP/2 Bomb 受影响服务器一览表，列出 Envoy、Apache、nginx、IIS、Cloudflare Pingora 各自的内存放大比、单客户端占用内存与耗时、以及补丁状态](chart-http2-affected-patch-2026-06-04.png)
+![HTTP/2 Bomb 受影响服务器一览表，列出 Envoy、Apache、nginx、IIS、Cloudflare Pingora 各自的内存放大比、单客户端占用内存与耗时、以及补丁状态](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/http2-bomb-codex-nginx-apache-2026-06-04/chart-http2-affected-patch-2026-06-04.png)
 
 *来源：综合 Calif 原始披露、Tenable 的 CVE-2026-49975 记录（CVSS 9.8 严重）与 oss-security 邮件列表整理*
 
@@ -43,7 +43,7 @@ description: "一个叫 HTTP/2 Bomb 的新漏洞（CVE-2026-49975），让一台
 
 要补一句的是：让它影响面这么大的，不是某个管理员配错了参数，而是这几款服务器**开箱默认**的 HTTP/2 配置就会中招。HTTP/2 当年为了提速，设计上允许一条连接里同时跑很多个请求、并且大量复用压缩过的请求头——这些特性平时是优点，可一旦被人专门拿来"喂"超额的内部记账，就成了被撬动的支点。也正因为问题出在协议常用功能的实现细节上，而不是某个边角设置，受影响的服务器才会这么齐。
 
-![一张以网络与服务器为主题的安全示意图，呼应 HTTP/2 拒绝服务攻击对全网 Web 服务器的影响](source-cyberinsider-http2-2026-06-04.jpg)
+![一张以网络与服务器为主题的安全示意图，呼应 HTTP/2 拒绝服务攻击对全网 Web 服务器的影响](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/http2-bomb-codex-nginx-apache-2026-06-04/source-cyberinsider-http2-2026-06-04.jpg)
 
 *来源：CyberInsider 对 HTTP/2 Bomb 攻击的报道配图*
 
@@ -51,7 +51,7 @@ description: "一个叫 HTTP/2 Bomb 的新漏洞（CVE-2026-49975），让一台
 
 有意思的是，这个攻击没有用到任何新技术。它把两个业内早就知道、单独都不算致命的老套路组合了起来，威力才陡然放大。
 
-![HTTP/2 Bomb 的两步攻击原理图：第一招 HPACK 索引炸弹让服务器按条目分配簿记内存，第二招流控窗口拖延把已分配的内存钉住不释放，合起来单客户端几秒占满几十 GB](chart-http2-mechanism-2026-06-04.png)
+![HTTP/2 Bomb 的两步攻击原理图：第一招 HPACK 索引炸弹让服务器按条目分配簿记内存，第二招流控窗口拖延把已分配的内存钉住不释放，合起来单客户端几秒占满几十 GB](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/http2-bomb-codex-nginx-apache-2026-06-04/chart-http2-mechanism-2026-06-04.png)
 
 *来源：依据 Calif 原始披露整理的两步攻击原理*
 
@@ -67,7 +67,7 @@ description: "一个叫 HTTP/2 Bomb 的新漏洞（CVE-2026-49975），让一台
 
 漏洞是安全研究员 Quang Luong 借助 OpenAI 的 Codex 找出来的。按披露里的说法，研究员让 Codex 去读这两套早已公开的攻击技术对应的代码，模型识别出"这两个东西可以拼在一起"，并把组合后的攻击给搭了出来。一个人要同时吃透 HPACK 压缩、HTTP/2 流控两套机制、再想到把它们叠加，门槛不低；而模型把跨领域的已知弱点拼起来这件事，做得又快又顺。
 
-![Tenable 的 CVE-2026-49975 记录页，标注该漏洞为"严重"等级、CVSS 9.8 分、发布于 2026 年 6 月 3 日，影响 nginx、Apache httpd、微软 IIS、Envoy、Cloudflare Pingora](source-tenable-cve-http2-2026-06-04.png)
+![Tenable 的 CVE-2026-49975 记录页，标注该漏洞为"严重"等级、CVSS 9.8 分、发布于 2026 年 6 月 3 日，影响 nginx、Apache httpd、微软 IIS、Envoy、Cloudflare Pingora](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/http2-bomb-codex-nginx-apache-2026-06-04/source-tenable-cve-http2-2026-06-04.png)
 
 *来源：Tenable 的官方 CVE-2026-49975 记录，列为严重等级（CVSS v3 9.8），发布于 2026 年 6 月 3 日*
 

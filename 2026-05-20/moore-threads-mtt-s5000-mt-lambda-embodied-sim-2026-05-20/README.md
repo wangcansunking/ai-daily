@@ -23,7 +23,7 @@ description: "五月十八号星期一，摩尔线程在北京年度发布会上
 
 # MTT S5000 + MT Lambda 拆解：国产具身智能工具链
 
-![MTT S5000 + MT Lambda 封面图 黏土定格风 亚洲工程师在中国机器人实验室引导一台人形机器人穿越高保真物理仿真环境 背景是发光的 MTT S5000 服务器机柜 与 MuJoCo Warp 物理网格叠加](moore-threads-mtt-s5000-mt-lambda-embodied-sim-2026-05-20.png)
+![MTT S5000 + MT Lambda 封面图 黏土定格风 亚洲工程师在中国机器人实验室引导一台人形机器人穿越高保真物理仿真环境 背景是发光的 MTT S5000 服务器机柜 与 MuJoCo Warp 物理网格叠加](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/moore-threads-mtt-s5000-mt-lambda-embodied-sim-2026-05-20/moore-threads-mtt-s5000-mt-lambda-embodied-sim-2026-05-20.png)
 
 ## 这一次的工具链补齐
 
@@ -71,7 +71,7 @@ description: "五月十八号星期一，摩尔线程在北京年度发布会上
 
 ## MTT S5000 硬件：第四代 MUSA「平湖」的全功能定位
 
-![MTT S5000 vs H100 vs 昇腾 910B 关键规格横评](mtt-s5000-vs-h100-ascend.png)
+![MTT S5000 vs H100 vs 昇腾 910B 关键规格横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/moore-threads-mtt-s5000-mt-lambda-embodied-sim-2026-05-20/mtt-s5000-vs-h100-ascend.png)
 
 MTT S5000 是摩尔线程第四代 MUSA 架构「平湖」的旗舰训推一体卡。先看几个最容易被忽略的设计选择。
 
@@ -87,7 +87,7 @@ MTT S5000 是摩尔线程第四代 MUSA 架构「平湖」的旗舰训推一体�
 
 ## MT Lambda：把整条具身智能工具链装进一个产品
 
-![MT Lambda 三引擎架构图 Lab + Sim 两大产品 + 物理 + 渲染 + AI 三大底层引擎](mt-lambda-three-engines.png)
+![MT Lambda 三引擎架构图 Lab + Sim 两大产品 + 物理 + 渲染 + AI 三大底层引擎](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/moore-threads-mtt-s5000-mt-lambda-embodied-sim-2026-05-20/mt-lambda-three-engines.png)
 
 MT Lambda 的产品命名容易让人误以为是一个软件。实际上它更接近一个平台，分成上下两层：上层是 MT Lambda-Lab 和 MT Lambda-Sim 两个产品，下层是物理 / 渲染 / AI 三大底层引擎。逐层拆。
 
@@ -117,7 +117,7 @@ MuJoCo Warp（MJWarp）是 DeepMind 与 NVIDIA 在 2025 年联合开源的 GPU �
 
 ## 与 H100 训练对位：智源 RoboBrain 2.5 的 0.62% Loss 差是怎么算出来的
 
-![国产 GPU 6 家具身智能仿真 / 训练 / 推理适配现状](domestic-gpu-embodied-readiness.png)
+![国产 GPU 6 家具身智能仿真 / 训练 / 推理适配现状](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/moore-threads-mtt-s5000-mt-lambda-embodied-sim-2026-05-20/domestic-gpu-embodied-readiness.png)
 
 智源研究院的 RoboBrain 2.5 是这次发布会最关键的客户证言。把这件事的工程细节摆清楚，0.62% 这个数字才有意义。
 
@@ -137,9 +137,9 @@ Checkpoint 跨平台迁移这件事在国产 GPU 场景里有特殊意义。以�
 
 ## 光轮智能与小马智行：具身智能仿真合作的两条不同路径
 
-![三家关键客户 智源 / 光轮智能 / 小马智行 合作模式对照卡片图](mtt-s5000-three-customers.png)
+![三家关键客户 智源 / 光轮智能 / 小马智行 合作模式对照卡片图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/moore-threads-mtt-s5000-mt-lambda-embodied-sim-2026-05-20/mtt-s5000-three-customers.png)
 
-![国内具身智能 / 自动驾驶 7 家头部公司硬件栈现状](china-embodied-companies-stack.png)
+![国内具身智能 / 自动驾驶 7 家头部公司硬件栈现状](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/moore-threads-mtt-s5000-mt-lambda-embodied-sim-2026-05-20/china-embodied-companies-stack.png)
 
 光轮智能和小马智行是 MT Lambda 发布会上另外两个客户证言。这两家走的是两条完全不同的合作路径，对国产 GPU 在具身智能赛道的渗透方式非常有代表性。
 
@@ -179,7 +179,7 @@ Checkpoint 跨平台迁移这件事在国产 GPU 场景里有特殊意义。以�
 
 ## 英伟达 Isaac 生态对照：MT Lambda 离 Isaac Sim 多近
 
-![MT Lambda vs NVIDIA Isaac 生态产品形态逐项对照表](mt-lambda-vs-isaac.png)
+![MT Lambda vs NVIDIA Isaac 生态产品形态逐项对照表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/moore-threads-mtt-s5000-mt-lambda-embodied-sim-2026-05-20/mt-lambda-vs-isaac.png)
 
 把 MT Lambda 跟英伟达 Isaac 生态做对照，是这次发布会必须回答的问题。
 

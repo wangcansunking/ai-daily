@@ -12,7 +12,7 @@ description: 高德联合阿里千问 C 端团队近期开源 AGenUI——号称
 ---
 # 高德联手千问开源 AGenUI：Agent 生成的界面，在三端跑成原生组件
 
-![AGenUI 封面](amap-qwen-agenui-tri-platform-2026-06-07.png)
+![AGenUI 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/amap-qwen-agenui-tri-platform-2026-06-07/amap-qwen-agenui-tri-platform-2026-06-07.png)
 
 高德和阿里千问的 C 端应用团队近期开源了一个叫 AGenUI 的框架。它要解决的不是「Agent 怎么生成界面」，而是更难的一步：让 Agent 生成的界面在 iOS、安卓、鸿蒙三端都渲染成原生组件，而且是边生成边出现。
 
@@ -28,7 +28,7 @@ description: 高德联合阿里千问 C 端团队近期开源 AGenUI——号称
 
 生成式 UI 的思路就是：**让模型不止生成文字，还能生成界面**——根据当前任务，临时「长出」一张表单、一组卡片、一个选择器，让用户直接点、直接填，而不是在聊天框里来回打字。
 
-![AGenUI 官网首页](agenui-official-site.png)
+![AGenUI 官网首页](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/amap-qwen-agenui-tri-platform-2026-06-07/agenui-official-site.png)
 
 *来源：AGenUI 官网 genui.amap.com 首页实截，「引领智能体时代生成式界面范式」*
 
@@ -52,9 +52,9 @@ AGenUI 的整个设计，就是围绕这两道坎展开的。
 - **云侧**：通过 Agent Skill 生成 AI 原生的 A2UI JSON。这一步的关键，是让模型只输出「要展示什么」的语义描述，而不是具体的像素和代码。这样能降低大模型的 token 消耗，也减少了输出的不确定性。
 - **端侧**：依托一个跨平台的 C++ Core，统一处理协议解析、状态管理和布局计算，然后在 iOS、安卓、鸿蒙三端各自渲染成原生组件。
 
-![AGenUI 端云一体流程](amap-qwen-agenui-tri-platform-2026-06-07-flow.png)
+![AGenUI 端云一体流程](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/amap-qwen-agenui-tri-platform-2026-06-07/amap-qwen-agenui-tri-platform-2026-06-07-flow.png)
 
-![AGenUI 架构示意](agenui-csdn-arch.png)
+![AGenUI 架构示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/amap-qwen-agenui-tri-platform-2026-06-07/agenui-csdn-arch.png)
 
 *来源：AGenUI 开源资料架构示意图*
 
@@ -86,7 +86,7 @@ AGenUI 走的是另一条路。它端侧那层 C++ Core 把生成的界面描述
 
 再说流式挂载这一点。
 
-![AGenUI 三端原生效果](agenui-csdn-product.png)
+![AGenUI 三端原生效果](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/amap-qwen-agenui-tri-platform-2026-06-07/agenui-csdn-product.png)
 
 *来源：AGenUI 发布资料，同一份界面在 iOS / Android / HarmonyOS 三端渲染成原生组件*
 
@@ -112,7 +112,7 @@ AGenUI 的核心是 Streaming-first 流式架构——**组件到达即刻挂载
 
 这件事的价值在于解耦。模型管「这是什么」，App 管「这长什么样」。模型不需要知道每个接入方的品牌色卡，接入方也不需要去改模型的输出。一份语义描述能跑在多个 App、多个品牌之下，这正是「一套描述、多端复用」能成立的前提。
 
-![AGenUI 组件与协议示意](agenui-qbitai-1bbf2db126c2ef714624b68e8162d440.png)
+![AGenUI 组件与协议示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/amap-qwen-agenui-tri-platform-2026-06-07/agenui-qbitai-1bbf2db126c2ef714624b68e8162d440.png)
 
 *来源：量子位 qbitai.com 2026-05 AGenUI 报道配图*
 
@@ -129,7 +129,7 @@ AGenUI 的核心是 Streaming-first 流式架构——**组件到达即刻挂载
 
 横向摆在一起，差异就清楚了。
 
-![生成式 UI 框架横评](amap-qwen-agenui-tri-platform-2026-06-07-compare.png)
+![生成式 UI 框架横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/amap-qwen-agenui-tri-platform-2026-06-07/amap-qwen-agenui-tri-platform-2026-06-07-compare.png)
 
 这里要说句公道话：上面这些海外框架各有所长，网页这条路它们做得很成熟，Vercel AI SDK 和 CopilotKit 在 React 项目里都是很顺手的选择。AGenUI 不是要取代它们，而是补上了它们够不到的一块——移动端和鸿蒙端的原生渲染。
 

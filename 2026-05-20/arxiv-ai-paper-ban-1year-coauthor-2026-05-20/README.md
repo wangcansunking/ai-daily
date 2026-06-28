@@ -34,7 +34,7 @@ source_urls:
 
 # arXiv 把 AI 水论文作者封一年：科研合规姿势重排
 
-![arXiv AI 水论文新规封面 剪纸风学术诚信红章节制 主题图](arxiv-ai-paper-ban-1year-coauthor-2026-05-20.png)
+![arXiv AI 水论文新规封面 剪纸风学术诚信红章节制 主题图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/arxiv-ai-paper-ban-1year-coauthor-2026-05-20/arxiv-ai-paper-ban-1year-coauthor-2026-05-20.png)
 
 ## 一句话先把这事讲清楚
 
@@ -70,7 +70,7 @@ source_urls:
 
 arXiv 新规一共四条：封一年、连带、解禁须先过同行评审、可申诉。每条对应一个明确动作，配合三类铁证（幻觉引用、元评论残留、占位符未填）就构成完整的判罚链条。
 
-![arXiv 新规四条核心点流程图 封一年 共同作者连带 解禁先过同行评审 可申诉 + 三类铁证](arxiv-ban-four-rules.png)
+![arXiv 新规四条核心点流程图 封一年 共同作者连带 解禁先过同行评审 可申诉 + 三类铁证](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/arxiv-ai-paper-ban-1year-coauthor-2026-05-20/arxiv-ban-four-rules.png)
 
 四条新规一条条拆开看：
 
@@ -93,7 +93,7 @@ arXiv 新规一共四条：封一年、连带、解禁须先过同行评审、�
 
 让 arXiv 在五月十五号下决心动手的不是哪一篇水论文，而是 GPTZero 公开发布的一份独立调研报告：在 NeurIPS 2025 录用的 4841 篇论文里抽样核对引用，共找出 100 条幻觉引用，分布在约 51 篇论文上。量子位五月十八号报道写成「53 篇」，两家差异不到 4%，本文统一按 GPTZero 官方口径「约 51-53 篇」处理。
 
-![NeurIPS 2025 五类 AI 幻觉引用分布图 彻底虚构 66 属性错改 27 ID 劫持 4 占位符 2 语义混搭 1](arxiv-ban-neurips-breakdown.png)
+![NeurIPS 2025 五类 AI 幻觉引用分布图 彻底虚构 66 属性错改 27 ID 劫持 4 占位符 2 语义混搭 1](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/arxiv-ai-paper-ban-1year-coauthor-2026-05-20/arxiv-ban-neurips-breakdown.png)
 
 GPTZero 报告把 100 条幻觉引用按失效模式分成五类：
 
@@ -107,11 +107,11 @@ NeurIPS 2025 全部录用论文都过了至少三个评审，仍然有这 100 �
 
 arXiv 这次新规的潜在分母比 NeurIPS 大得多。TechCrunch 引述 arXiv 内部数据：平台上幻觉引用的比例三年里大约升了十倍，2023 年大约每 2828 篇论文里有一条幻觉引用，2026 年初已经升到大约 1 / 277。一份发表在 Nature Human Behaviour 的研究估计，约 1/5 的计算机方向论文摘要里能检测到大语言模型修改痕迹。比例还在往上爬。
 
-![arXiv 幻觉引用比例三年趋势图 2023 1/2828 → 2026 1/277 升十倍](arxiv-ban-hallucination-trend.png)
+![arXiv 幻觉引用比例三年趋势图 2023 1/2828 → 2026 1/277 升十倍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/arxiv-ai-paper-ban-1year-coauthor-2026-05-20/arxiv-ban-hallucination-trend.png)
 
 NeurIPS 投稿量五年翻了两倍多，是这次失守的根因之一：
 
-![NeurIPS 投稿量五年增长柱状图 2020 9467 篇 → 2025 21575 篇](arxiv-ban-neurips-growth.png)
+![NeurIPS 投稿量五年增长柱状图 2020 9467 篇 → 2025 21575 篇](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/arxiv-ai-paper-ban-1year-coauthor-2026-05-20/arxiv-ban-neurips-growth.png)
 
 ## 第四节·陶哲轩为什么公开附议
 
@@ -157,7 +157,7 @@ NeurIPS 投稿量五年翻了两倍多，是这次失守的根因之一：
 
 横轴是 AI 使用强度，纵轴是是否主动披露。四个象限对应四种典型作风：
 
-![国内研究生 AI 辅助科研写作合规边界四象限图 安全姿势 高强度但披露 低强度隐瞒 红线区](arxiv-ban-china-compliance-quadrant.png)
+![国内研究生 AI 辅助科研写作合规边界四象限图 安全姿势 高强度但披露 低强度隐瞒 红线区](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/arxiv-ai-paper-ban-1year-coauthor-2026-05-20/arxiv-ban-china-compliance-quadrant.png)
 
 四个象限说人话翻译一下：
 
@@ -180,7 +180,7 @@ NeurIPS 投稿量五年翻了两倍多，是这次失守的根因之一：
 | ④ IDE 内 Claude Code / Cursor / 通义灵码 / DeepSeek 协作过程留痕 | git commit log / IDE 工作记录 / 截图存档 | 申诉环节的证据链 |
 | ⑤ 通讯作者负责把关：定稿前通讯作者过一遍引用与元评论扫描结果，签字归档 | 邮件确认 + PDF 签注 | 配合「可申诉」条款的程序正义 |
 
-![五条工作流改造 · 对应 arXiv 新规条款 图 引用必查 二次扫描 共同作者声明 IDE 留痕 通讯作者把关](arxiv-ban-workflow-map.png)
+![五条工作流改造 · 对应 arXiv 新规条款 图 引用必查 二次扫描 共同作者声明 IDE 留痕 通讯作者把关](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/arxiv-ai-paper-ban-1year-coauthor-2026-05-20/arxiv-ban-workflow-map.png)
 
 五条照做下来增量工作量大约是写一篇硕士小论文多出半天到一天。对比一年封禁带来的代价——一年内不能在 arXiv 投稿对计算机方向研究生几乎是「失去这一年」——是非常划算的保险。
 

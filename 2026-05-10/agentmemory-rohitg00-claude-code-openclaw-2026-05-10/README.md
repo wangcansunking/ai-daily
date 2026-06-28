@@ -22,7 +22,7 @@ description: "Claude Code、Cursor 用久了都有同一个抱怨：今天定的
 
 # 给 Claude Code 加持久记忆：3 个开源方案对比
 
-![AI Coding 持久记忆栈横评](agentmemory-rohitg00-claude-code-openclaw-2026-05-10.png)
+![AI Coding 持久记忆栈横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/agentmemory-rohitg00-claude-code-openclaw-2026-05-10/agentmemory-rohitg00-claude-code-openclaw-2026-05-10.png)
 
 ## 一、Claude Code 老忘事，这次有人把它治了
 
@@ -36,7 +36,7 @@ description: "Claude Code、Cursor 用久了都有同一个抱怨：今天定的
 
 同一周国内开发者群里被刷屏的还有四件事：千问 3.6-27B 在 SWE-Bench 拿到 77.2%、智谱 GLM-5.1 在 SWE-bench Pro 拿到 58.4%、月之暗面 Kimi K2.6 用 INT4 native 跑通了 256K 上下文、DeepSeek V4-Flash 把 1M 上下文做到 13B 激活。本地大模型这一头到位的同时，记忆栈这一头第一次也凑齐了——一台 1.5 万元的家用主机跑国产开源模型，再上面挂一个 agentmemory 这种持久记忆服务，配 OpenClaw 这类国内开发者主项目，整套私有化 AI 工具链就能从「下个月再说」变成今晚就能装机。
 
-![agentmemory · mem0 · Letta · claude-mem 横评](agentmemory-vs-competitors.png)
+![agentmemory · mem0 · Letta · claude-mem 横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/agentmemory-rohitg00-claude-code-openclaw-2026-05-10/agentmemory-vs-competitors.png)
 
 ## 二、4 个开源记忆栈，硬数据先摊出来
 
@@ -94,7 +94,7 @@ mem0 的 SDK 默认绑 Python 和 Node.js，截至 v0.9.x 没有 MCP 协议层�
 
 把这 4 个维度汇总：**agentmemory 不是为某个 IDE 写的插件，是为"任意支持 MCP 的代理"写的记忆引擎**。star 数小一个数量级是因为它年轻，但维度上它是 4 家里唯一一个把所有 4 件事都解决了的。
 
-![agentmemory 四段式数据流 · 12 hook + RRF + 四层记忆](agentmemory-pipeline.png)
+![agentmemory 四段式数据流 · 12 hook + RRF + 四层记忆](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/agentmemory-rohitg00-claude-code-openclaw-2026-05-10/agentmemory-pipeline.png)
 
 ## 三、95.2% 是怎么做到的：四段式数据流
 
@@ -150,7 +150,7 @@ Claude Code 默认提供 12 个 hook 锚点，agentmemory 全部接上。每一�
 
 这四层不是静态的——记忆会随时间衰减（README 用了"艾宾浩斯遗忘曲线"这个词）、被反复访问的记忆会强化、过期的记忆自动清理、出现矛盾时会被检测和合并。**它不只记，还会忘、会修正**。
 
-![agentmemory · OpenClaw 集成两条官方路径](agentmemory-openclaw-integration.png)
+![agentmemory · OpenClaw 集成两条官方路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/agentmemory-rohitg00-claude-code-openclaw-2026-05-10/agentmemory-openclaw-integration.png)
 
 ## 四、OpenClaw 用户 30 秒装好：两条官方路径
 
@@ -244,7 +244,7 @@ cp -r integrations/openclaw ~/.openclaw/extensions/agentmemory
 - **3111 端口连接被拒**：agentmemory 服务没跑起来，回到路径①第一步重新 `npx @agentmemory/agentmemory`
 - **检索没返回任何记忆**：浏览器打开 http://localhost:3113 看观察是否在被捕获——如果 viewer 上是空的，多半是 hook 没触发
 
-![13 个 MCP 客户端落地适配 agentmemory 的方式](agentmemory-13-clients.png)
+![13 个 MCP 客户端落地适配 agentmemory 的方式](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/agentmemory-rohitg00-claude-code-openclaw-2026-05-10/agentmemory-13-clients.png)
 
 ## 五、不只 OpenClaw：8 个客户端一行接入
 
@@ -296,7 +296,7 @@ curl -X POST http://localhost:3111/agentmemory/smart-search -d '{"query": "auth"
 
 这一节真正的信号是：**MCP 这条协议 2026 年第一季度真的快速普及了**。从 Claude Code 起手、半年内扩到 13 个主流 Coding Agent，记忆栈这一类工具第一次有了"装一次、所有 IDE 共享"的可能。
 
-![国产 IDE 落地适配 agentmemory 难度分级](agentmemory-cn-ide-tier.png)
+![国产 IDE 落地适配 agentmemory 难度分级](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/agentmemory-rohitg00-claude-code-openclaw-2026-05-10/agentmemory-cn-ide-tier.png)
 
 ## 六、通义灵码 / Trae / Qoder 用户能不能吃到
 

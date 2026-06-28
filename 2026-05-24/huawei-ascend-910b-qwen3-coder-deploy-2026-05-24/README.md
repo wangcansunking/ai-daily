@@ -18,7 +18,7 @@ image_alt_match_ignore: []
 
 # 昇腾 910B 跑通 Qwen3-Coder：一次真实部署的工程账
 
-![昇腾 910B 跑通 Qwen3-Coder 封面](huawei-ascend-910b-qwen3-coder-deploy-2026-05-24.png)
+![昇腾 910B 跑通 Qwen3-Coder 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/huawei-ascend-910b-qwen3-coder-deploy-2026-05-24/huawei-ascend-910b-qwen3-coder-deploy-2026-05-24.png)
 
 ## 30 秒速览
 
@@ -28,7 +28,7 @@ image_alt_match_ignore: []
 
 最让人意外的一笔是：MindIE 2.1.RC1 在 8 卡 910B、384 并发下把 Qwen3-30B-A3B 做到 **8702.98 tok/s**，单卡 RTX 4090 在同一模型上单并发约 **196 tok/s**——8 卡国产整机和单卡消费级在不同负载档位上各自打出了自己的真实价值。本文围绕这一台机器，从硬件家族、价格分层、推理引擎选型、Qwen3-Coder 官方支持现状、一次真实跑通的关键三步、4090 单卡 vs 整机的选型矩阵、到 Qoder CN（前通义灵码）企业版接入路径，给国内工程师一份能照着抄的真实账。
 
-![Atlas 800I A2 整机 banner（华为官方产品页 hero）](ascend-atlas-800i-a2-banner.png)
+![Atlas 800I A2 整机 banner（华为官方产品页 hero）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/huawei-ascend-910b-qwen3-coder-deploy-2026-05-24/ascend-atlas-800i-a2-banner.png)
 
 ## 一、910B 不是一张卡，是一个家族
 
@@ -66,7 +66,7 @@ Atlas 800I A2 这台 4U 整机的具体参数，**关系到机房上架与电源
 
 这张对位表读完，910B1 的工程定位就清楚了：**FP16 算力是 H20 的 2.8 倍，是 RTX 6000 Ada 的 4.5 倍，是 RTX 4090 的 5 倍，仅次于 H100**。显存与 H100 在同一档（64 GB vs 80 GB），整卡功耗也接近（310 W vs 700 W，H100 更高）。这是过去一年国内大模型私有化项目最常用 910B 直接对位 H100 / H20 的根本原因——单看 FP16 / 显存这两个对模型推理最重要的指标，910B1 是国产卡里唯一进入这一档的产品。
 
-![vLLM-Ascend 仓库 GitHub OG 卡片](vllm-ascend-gh-card.png)
+![vLLM-Ascend 仓库 GitHub OG 卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/huawei-ascend-910b-qwen3-coder-deploy-2026-05-24/vllm-ascend-gh-card.png)
 
 ## 二、价格的三个分层：整卡、整机、整机租赁
 
@@ -92,7 +92,7 @@ Atlas 800I A2 这台 4U 整机的具体参数，**关系到机房上架与电源
 
 把 910B4 整机租赁 1 万元出头/月与 8 卡 H20 整机 100 万元自购同档放一起，**国产卡的整机租赁路径，在月度现金流上几乎只有自购的 1%**。这条价格曲线，是过去半年中小团队真正能跑出来「先在 910B 上试一周再决定要不要自购」这种工程节奏的基础。
 
-![Qwen3-Coder 仓库 GitHub OG 卡片](qwen3-coder-gh-card.png)
+![Qwen3-Coder 仓库 GitHub OG 卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/huawei-ascend-910b-qwen3-coder-deploy-2026-05-24/qwen3-coder-gh-card.png)
 
 ## 三、MindIE / vLLM-Ascend / LMDeploy 三家推理引擎选哪一个
 
@@ -123,7 +123,7 @@ Atlas 800I A2 这台 4U 整机的具体参数，**关系到机房上架与电源
 
 **第三，vLLM-Ascend 在 448 并发时已经接近崩溃临界**——吞吐从 384 并发的 6652 tok/s 下降到 4731 tok/s，下降 29%。这一段是社区版本仍在迭代的真实状态；选 vLLM-Ascend 的团队，**生产环境要把 max-num-seqs 卡在 384 以内**，给上限留出安全余量。
 
-![MindIE vs vLLM-Ascend 8 卡并发吞吐对比线图（自制 chart）](ascend-mindie-vs-vllm-throughput.png)
+![MindIE vs vLLM-Ascend 8 卡并发吞吐对比线图（自制 chart）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/huawei-ascend-910b-qwen3-coder-deploy-2026-05-24/ascend-mindie-vs-vllm-throughput.png)
 
 ## 四、Qwen3-Coder-Next 在昇腾的官方支持现状
 
@@ -162,7 +162,7 @@ vllm serve /path/to/Qwen3-Coder-Next \
 
 注意三件事：tensor-parallel-size 默认是 4（不是 8），因为 80B-A3B 这一档模型 4 卡切已经够；max-model-len 在线模式默认拉到 32768，离线评测时压到 10000 是为了快速 sanity check；dtype 必须显式写 float16，**不能让框架自动从模型 config.json 读默认的 bf16**，原因看下一节。
 
-![Triton Ascend 仓库 GitHub OG 卡片](triton-ascend-gh-card.png)
+![Triton Ascend 仓库 GitHub OG 卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/huawei-ascend-910b-qwen3-coder-deploy-2026-05-24/triton-ascend-gh-card.png)
 
 ## 五、真实部署一次跑通的关键三步
 
@@ -180,7 +180,7 @@ vllm serve /path/to/Qwen3-Coder-Next \
 
 这三步用一张流程图汇总：
 
-![昇腾 910B 部署 Qwen3-Coder 流程图（自制 chart）](ascend-deploy-pipeline-flow.png)
+![昇腾 910B 部署 Qwen3-Coder 流程图（自制 chart）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/huawei-ascend-910b-qwen3-coder-deploy-2026-05-24/ascend-deploy-pipeline-flow.png)
 
 启动 MindIE 服务的命令（参考 MindIE 2.1.RC1 官方镜像 README）：
 
@@ -218,7 +218,7 @@ docker run --rm -it \
 
 显存这块还有一个工程师常被劝退的点——**昇腾的显存占用比 NVIDIA 同档高出一截**。CSDN 用户 qq_14845119 在 vLLM-Ascend v0.8.5rc1 镜像（quay.io/ascend/vllm-ascend:v0.8.5rc1）上做的实测数据：Qwen3-0.6B 单卡占 25 GB，Qwen3-4B 单卡占 21 GB，Qwen3-8B 双卡占 46 GB，DeepSeek-R1-Distill-Qwen-7B 双卡占 32 GB。作者**verbatim** 原话：「华为 atlas 比英伟达的显存占用高出很多」。这部分差距主要来自昇腾原生算子的 KV cache 分配策略与默认 gpu-memory-utilization 设定。生产环境上要把 `--gpu-memory-utilization 0.8` 显式压一档，留出余量。
 
-![昇腾 vs RTX 4090 显存占用对比柱状图（自制 chart）](ascend-vram-vs-4090.png)
+![昇腾 vs RTX 4090 显存占用对比柱状图（自制 chart）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/huawei-ascend-910b-qwen3-coder-deploy-2026-05-24/ascend-vram-vs-4090.png)
 
 ## 六、4090 单卡 vs 8 卡 910B 整机：什么场景选谁
 

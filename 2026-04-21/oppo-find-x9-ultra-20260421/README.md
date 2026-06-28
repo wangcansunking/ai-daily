@@ -2,7 +2,7 @@
 
 > 2026 年 4 月 21 日晚成都 · OPPO 一口气甩出 **9 件新品**，价格从 **849 元**（Enco Clip 2）到 **11999 元**（Hasselblad 探索者大师套装）。Find X9 Ultra 7499 起是主角，但 Pad 5 Pro 4299 起 / Pad Mini 3699 起 / Watch X3 Mini 1799 起也都有爆点。这篇把**全场新品清单 + Ultra vs 影像旗舰战队对决 + 各档推荐**讲清楚。
 
-![OPPO Find X9 Ultra · 7499 · 双 2 亿哈苏 + 10x 光学](OPPO-Find-X9-Ultra.jpg)
+![OPPO Find X9 Ultra · 7499 · 双 2 亿哈苏 + 10x 光学](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-21/oppo-find-x9-ultra-20260421/OPPO-Find-X9-Ultra.jpg)
 
 ---
 
@@ -41,7 +41,7 @@
 
 ### 狠事二：双 2 亿哈苏 + 2 亿超广角
 
-![Find X9 Ultra 影像系统](OPPO-FindX9-camera.jpg)
+![Find X9 Ultra 影像系统](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-21/oppo-find-x9-ultra-20260421/OPPO-FindX9-camera.jpg)
 
 - **23mm 主摄**：1/1.12 英寸 2 亿像素 F1.5
 - **70mm 长焦**：1/1.28 英寸 2 亿像素 F2.2
@@ -60,7 +60,7 @@
 
 ## 二、✊ Ultra vs 影像旗舰战队对决
 
-![Find X9 Ultra vs 影像旗舰](oppo-ultra-vs-rivals.png)
+![Find X9 Ultra vs 影像旗舰](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-21/oppo-find-x9-ultra-20260421/oppo-ultra-vs-rivals.png)
 
 关键点：
 
@@ -151,7 +151,7 @@
 
 ## 七、💡 你该买哪个？
 
-![OPPO 全系购买建议](oppo-ultra-buyer-guide.png)
+![OPPO 全系购买建议](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-21/oppo-find-x9-ultra-20260421/oppo-ultra-buyer-guide.png)
 
 **实操建议（扩展全系）**：
 

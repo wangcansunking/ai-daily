@@ -14,7 +14,7 @@ tags:
 description: 5 月 21 日晚，小米人车家全生态发布会上，YU7 家族一次性扩到 5 款车型，价格区间 23.35-38.99 万，YU7 GT 在纽北跑出 7 分 22 秒 755，登顶 SUV 纪录榜。比起单台车的圈速纪录，更值得看的是小米把这条价位带做成了完整阵列。
 ---
 
-![小米 YU7 GT 车头特写](2026-05-22-xiaomi.png)
+![小米 YU7 GT 车头特写](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/xiaomi-yu7-family-launch-2026-05-22/2026-05-22-xiaomi.png)
 
 5 月 21 日晚 19:00，北京小米科技园，雷军把小米 YU7 家族的最后两块拼齐：23.35 万的 YU7 标准版、38.99 万起的 YU7 GT。算上之前的 Pro 版、Max 版、原标准版，YU7 一夜之间从 3 款扩到 5 款；最便宜的标准版直接对位 Model Y，最贵的 GT 选装赛道包跑出纽北 7 分 22 秒 755，比奥迪 RS Q8 performance 快 14 秒。
 
@@ -39,7 +39,7 @@ description: 5 月 21 日晚，小米人车家全生态发布会上，YU7 家族
 - **23.35 万 YU7 标准版**：用 73 kWh 小电池换续航和价格，把家族最低门槛压到 Model Y 长续航后驱版（约 26 万）下方。雷军在发布会上说，原本定价 23.99 万，「最后还是让回了 0.64 万」。
 - **38.99 万 YU7 GT**：跑车级 SUV，对标保时捷 Cayenne Turbo GT、奥迪 RS Q8 performance；选装赛道专业套装的顶配版本拉到 42.99 万。
 
-![小米 YU7 标准版整车展示](yu7-standard.jpg)
+![小米 YU7 标准版整车展示](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/xiaomi-yu7-family-launch-2026-05-22/yu7-standard.jpg)
 
 把视野放宽：23.35 到 38.99 万这条价位带，过往真正能算「国产豪华纯电 SUV」选项的，只有蔚来 ES6/ES8、极氪 7X、智己 LS6/LS7、阿维塔 12 这几家——而且每家通常只在 1-2 个档位站住脚。小米一夜之间填进 5 款 YU7，相当于把同一个底盘平台的全部组合一次摆到货架上。
 
@@ -56,7 +56,7 @@ YU7 GT 是这场发布会的技术招牌。先把那串数字摊清楚：
 - 零百加速 **2.92 秒**，最高时速 **300 km/h**
 - CLTC 续航 **705 km**
 
-![小米 YU7 GT 纽北圈速记录](nurburgring-laptime.jpg)
+![小米 YU7 GT 纽北圈速记录](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/xiaomi-yu7-family-launch-2026-05-22/nurburgring-laptime.jpg)
 
 支撑这串数据的，是三块工程模块：V8s EVO 后电机、蛟龙底盘大师版、欧洲研发中心调校团队。
 
@@ -79,7 +79,7 @@ V8s EVO 是小米超级电机 V8s 的强化版本，首次上车 YU7 GT。三个
 2. **闭式双腔空气弹簧**：高度可调，最高离地间隙 219 mm，最大高低刚度差 37%，匹配多种驾驶模式
 3. **eLSD 电子限滑差速器**：毫秒级在后轴左右轮分配动力，过弯时外侧轮多吃力、内侧轮少滑
 
-![小米 YU7 GT 轮毂底盘细节](yu7-gt-wheel-chassis.jpg)
+![小米 YU7 GT 轮毂底盘细节](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/xiaomi-yu7-family-launch-2026-05-22/yu7-gt-wheel-chassis.jpg)
 
 国产纯电 SUV 过去在底盘上的最大短板，是空簧 + CDC + eLSD 这三件套的成熟标定经验长期空缺——这是德系豪华品牌过去四十年攒下的工程资产。YU7 GT 把这三件套一次性放进 38.99 万的指导价里，价格只有保时捷 Cayenne Turbo GT 的三分之一。
 
@@ -87,7 +87,7 @@ V8s EVO 是小米超级电机 V8s 的强化版本，首次上车 YU7 GT。三个
 
 YU7 GT 的另一个不寻常处，是研发署名。小米汽车欧洲研发中心总负责人是 Rudolf Dittrich，曾任宝马 M 部门技术总监；底盘负责人在奥迪、宝马做底盘工作近 30 年，纽北测试经验也近 30 年。
 
-![小米汽车欧洲研发团队介绍](yu7-europe-rd-team.jpg)
+![小米汽车欧洲研发团队介绍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/xiaomi-yu7-family-launch-2026-05-22/yu7-europe-rd-team.jpg)
 
 这种人员结构带来两件事：
 
@@ -100,7 +100,7 @@ YU7 GT 的另一个不寻常处，是研发署名。小米汽车欧洲研发中�
 
 如果说 YU7 GT 是面子，YU7 标准版（新）就是里子。23.35 万起的定价，落到 Model Y 长续航后驱版（26.39 万）下方近 3 万元；与极氪 7X 入门版（23.99 万）、智己 LS6（22.59 万起）正面同台。
 
-![小米 YU7 标准版外观细节](yu7-standard-detail.jpg)
+![小米 YU7 标准版外观细节](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/xiaomi-yu7-family-launch-2026-05-22/yu7-standard-detail.jpg)
 
 配置上做了三处务实取舍：
 
@@ -125,7 +125,7 @@ YU7 GT 的另一个不寻常处，是研发署名。小米汽车欧洲研发中�
 
 这场发布会主线是 YU7，但小米 17 Max 也在同一场亮相，按惯例值得一节单独说清。
 
-![小米 YU7 GT 内饰展示（同发布会美学语言）](yu7-gt-interior.jpg)
+![小米 YU7 GT 内饰展示（同发布会美学语言）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/xiaomi-yu7-family-launch-2026-05-22/yu7-gt-interior.jpg)
 
 核心配置：
 

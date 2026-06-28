@@ -17,7 +17,7 @@ category: 国内端侧小模型与群体智能路线
 
 2026 年 6 月，一个熟悉的名字给出了另一种答案。"小冰之父"李笛带着他离开微软后创立的公司 Nextie（明日新程），发布了一个只有 **4B** 参数的端侧认知模型"新程 Alpha"，以及一个让几十个 AI"坐在一起吵架"的群体智能平台"团子"。他押的不是"更大的单体模型"，而是一句听上去有点反直觉的判断——**智能不会来自某一个更大的模型。**
 
-![Nextie 在路演现场介绍认知模型与群体智能路线，图源量子位 2026-06-09 报道](nextie-source-presentation.png)
+![Nextie 在路演现场介绍认知模型与群体智能路线，图源量子位 2026-06-09 报道](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/nextie-ondevice-cognitive-model-2026-06-10/nextie-source-presentation.png)
 
 这篇文章想把这条"小而认知、端侧可跑、多 agent 协作"的路线讲清楚：它到底在工程上主张什么，和我们熟悉的单体大模型、和海外的多 agent 辩论框架有什么异同，以及对每天在用个人 AI 的你我，一个能塞进 MacBook 的 4B 模型意味着什么。
 
@@ -29,7 +29,7 @@ category: 国内端侧小模型与群体智能路线
 
 这支队伍的履历，决定了他们不太可能去做一件"再训一个更大的聊天机器人"的事。下面这张表先把公司的基本盘摆出来：
 
-![Nextie 公司基本盘，含成立时间、创始团队、融资轮次与投资方，自制信息图](nextie-wtable1-company.png)
+![Nextie 公司基本盘，含成立时间、创始团队、融资轮次与投资方，自制信息图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/nextie-ondevice-cognitive-model-2026-06-10/nextie-wtable1-company.png)
 
 | 维度 | 情况 | 口径与时间 |
 |---|---|---|
@@ -50,7 +50,7 @@ Nextie 的第一句核心主张很直白——与其把一个 AI 做得更聪明
 
 群体智能换了个思路。它不追求单个智能体的能力极限，而是让多个认知能力、功能角色都不一样的 AI 围坐到一起，按明确规则相互协作、相互验证。这个协作过程，Nextie 称为"认知碰撞"——具体动作是辩论、挑战、反思、同行评审、投票。一个问题进来，不是一个模型直接吐答案，而是一群带着不同立场的 agent 先吵一轮，再收敛。
 
-![群体智能的协作机制示意：多个角色不同的 AI 经辩论、挑战、反思、同行评审、投票收敛到答案，自制概念图](nextie-chart1-debate-flow.png)
+![群体智能的协作机制示意：多个角色不同的 AI 经辩论、挑战、反思、同行评审、投票收敛到答案，自制概念图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/nextie-ondevice-cognitive-model-2026-06-10/nextie-chart1-debate-flow.png)
 
 这套主张落到产品上，就是 2026 年 2 月上线内测的"团子"。它被定位成原生群体智能平台，而不是又一个聊天机器人——界面不是我们熟悉的那种一来一回的线性对话框，而是一块白板式、思维导图式的画面，把几十个 agent 的推理过程、观点碰撞、协作路径都摊开给你看。据多家媒体的内测报道，团子在一个问题上会调动数十个 agent 经多轮辩论后投票，再汇总交付结果——它追求的不是单个智能体抢答出"正确答案"，而是一群智能体协作收敛出"最优解"。
 
@@ -90,7 +90,7 @@ Nextie 的第一句核心主张很直白——与其把一个 AI 做得更聪明
 
 这里有个口径要分清。"比肩 GPT-5.4"是 Nextie 自己给出的说法，针对的是群体智能任务这个特定场景，并不是说一个 4B 模型在所有维度上单挑顶级闭源大模型。Nextie 自己也讲得很明白：它的赌注从来不是"单体更强"，而是"小模型加群体协作"这套组合。把模型做小，正是为了让它能在端侧本地跑起来，进而让群体智能这件事不必每一步都依赖云端算力。
 
-![新程 Alpha 端侧认知模型的五维评估示意，图源量子位 2026-06-09 报道](nextie-source-five-dimensions.png)
+![新程 Alpha 端侧认知模型的五维评估示意，图源量子位 2026-06-09 报道](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/nextie-ondevice-cognitive-model-2026-06-10/nextie-source-five-dimensions.png)
 
 为了衡量这种"想得全不全"，Nextie 还给出了一套五维评估，去看一个答案在认知层面够不够好：
 
@@ -108,7 +108,7 @@ Nextie 的第一句核心主张很直白——与其把一个 AI 做得更聪明
 
 早在 2023 年初，小冰团队就推出过"小冰链"（X-CoTA），把模型的思维链透明化——让你看见它一步步怎么想，而不只是看最终答案。据公开资料，小冰链当时用的参数量约为 GPT-3 的 2%。换句话说，"用小参数 + 透明推理去逼近大模型效果"这个思路，是这支队伍长期的技术信仰，而不是为了这次发布临时编出来的卖点。
 
-![Nextie 从小冰链到团子、再到新程 Alpha 的产品演进时间线，图源量子位 2026-06-09 报道](nextie-source-timeline.png)
+![Nextie 从小冰链到团子、再到新程 Alpha 的产品演进时间线，图源量子位 2026-06-09 报道](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/nextie-ondevice-cognitive-model-2026-06-10/nextie-source-timeline.png)
 
 一条更清楚的演进线是这样的：
 

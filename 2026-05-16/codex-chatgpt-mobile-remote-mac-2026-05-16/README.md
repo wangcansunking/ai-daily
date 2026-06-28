@@ -13,7 +13,7 @@ track_score: 4.5
 
 # ChatGPT 把 Codex 装进手机：Mac 跑代码手机审 diff
 
-![Codex 手机端封面](codex-mobile-2026-05-16.png)
+![Codex 手机端封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/codex-chatgpt-mobile-remote-mac-2026-05-16/codex-mobile-2026-05-16.png)
 
 > **本篇与同月『Claude SMB 15 个 agent 工作流』、『Claude Code 国内大代码库实践』、『VS Code AI Coding 工具盘点』不重叠**。同月那几篇讲的是「桌面 IDE 怎么落到企业 / 大代码库」，这一篇只盯一件事：**Mac 在跑、手机在批**这个 hybrid 工作流，OpenAI 把它做成了 ChatGPT App 原生功能，是不是值得国内同行抄、还是另辟蹊径。
 
@@ -23,7 +23,7 @@ HN 当天就把这条消息顶到了首页中段。截至发稿，那条 *Codex 
 
 如果只看标题，这是「手机能写代码」的老故事。但 OpenAI 这一次端出来的东西，本质不是「手机端 IDE」，而是把 **IDE-as-control-plane** 这件事拆给了手机：**Mac 出算力，手机做审批面板**。这是 AI Coding 工具从「桌面 IDE 单机形态」走向「多端协作」的旗舰大厂动作第四家，前面三家分别是 Anthropic 的 Claude Code `/remote-control`、GitHub Copilot CLI 4 月 13 日上线的 `--remote`、以及更早的 Cursor Background Agents。**OpenAI 没有发明这条路线，但它是把这件事做成「ChatGPT App 一等公民」的第一家**。
 
-![MacRumors 配图：手机端 Codex 视图（来源：MacRumors）](macrumors-codex-mobile-hero.jpg)
+![MacRumors 配图：手机端 Codex 视图（来源：MacRumors）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/codex-chatgpt-mobile-remote-mac-2026-05-16/macrumors-codex-mobile-hero.jpg)
 
 国内这条线目前是空的——通义灵码、千问 Code、Trae、Cline，公开渠道暂时都没有「手机端原生控制面板」。这不是说国内做不出来，而是产品节奏没排到这里。下面这一篇，把 OpenAI 这次动作里几个真正影响国内开发者的点摆清楚：**1.** 形态到底是什么、和 Codex Cloud 有什么区别；**2.** 套餐分档、谁能用、Pro 200 美元那一档值不值；**3.** HN 上一线开发者的真实反馈（顶赞引语）；**4.** 国内同型工具的位置；**5.** 这条赛道接下来一年会怎么走。
 
@@ -55,7 +55,7 @@ HN 当天就把这条消息顶到了首页中段。截至发稿，那条 *Codex 
 
 实测下来，手机端能做的事比想象的多：
 
-![Codex 手机端 hybrid 工作流：数据怎么流（自制图）](codex-mobile-hybrid-arch.png)
+![Codex 手机端 hybrid 工作流：数据怎么流（自制图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/codex-chatgpt-mobile-remote-mac-2026-05-16/codex-mobile-hybrid-arch.png)
 
 - **看**：所有 thread 列表、每个 thread 的截图 / 终端输出 / git diff / 测试结果
 - **审**：批准或拒绝 Codex 想执行的 shell 命令
@@ -77,7 +77,7 @@ HN 当天就把这条消息顶到了首页中段。截至发稿，那条 *Codex 
 
 ## 二、套餐分档：六档全开，Pro 200 美元用量最宽
 
-![ChatGPT 套餐与 Codex mobile 准入梯度（自制图）](codex-mobile-tier-table.png)
+![ChatGPT 套餐与 Codex mobile 准入梯度（自制图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/codex-chatgpt-mobile-remote-mac-2026-05-16/codex-mobile-tier-table.png)
 
 按 `developers.openai.com/codex` 官方文档：**「ChatGPT Plus, Pro, Business, Edu, and Enterprise plans include Codex」**。配套到 mobile 这一侧，OpenAI 给得更宽——Free 和 Go 两档**也能试用**，只是 Codex 本身的用量受套餐配额约束。
 
@@ -150,7 +150,7 @@ HN 那条 454 分帖子的评论区，难得对 OpenAI 这次产品评价正向�
 
 把视野拉远一点。Codex mobile 不是这条赛道的开山之作，前面已经有三家在跑，但这一次 OpenAI 把它做成 ChatGPT App 的原生功能——意味着这条形态正式从「极客小众工具」进入「主流大厂产品形态」。
 
-![AI Coding 工具的手机远程控制格局（自制图）](codex-mobile-vendor-matrix.png)
+![AI Coding 工具的手机远程控制格局（自制图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/codex-chatgpt-mobile-remote-mac-2026-05-16/codex-mobile-vendor-matrix.png)
 
 逐一摊开：
 

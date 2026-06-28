@@ -27,7 +27,7 @@ tags:
 
 > 5 月 12 日到 13 日两天，一款叫 React Doctor 的开源工具单日涨 804 星，登顶 GitHub Trending TypeScript 日榜。总 star 数 8679，2026 年 2 月才出生，三个月长出来的体量。它做的事情很具体——给 50+ coding agent（Claude Code / Cursor / Codex / Aider / Cline / RooCode / Kilo / Windsurf 等）一键注入「React 写法规矩」，扫代码时给出一个 0-100 的单一健康分。这件事对国内每天用 Trae、通义灵码、豆包 Coder、千问 Code、文心快码、CodeBuddy 的开发者来说是个早期信号——AI Coding 工具链开始进入「写完还要被打分」的下半场，写代码不烂这件事，正在被工具化。
 
-![React Doctor · AI 写的 React 不再烂](react-doctor-ai-code-quality-2026-05-13.png)
+![React Doctor · AI 写的 React 不再烂](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/react-doctor-ai-code-quality-2026-05-13/react-doctor-ai-code-quality-2026-05-13.png)
 
 先把范围说清楚。昨天（5 月 12 日）我们刚拆过 James Shore 那篇关于 AI Coding 维护成本反比的长文，那是一篇方法论级别的判断框架——给行业递了一把尺子。今天这篇讨论的是另一件事：**一个具体可装可跑的工具，把那把尺子里「写代码长期好不好维护」这条维度变成了 0-100 的数字**。一个是哲学，一个是落地，前后是连着的。
 
@@ -43,7 +43,7 @@ tags:
 
 ## 一、6 类诊断 · 一次扫描覆盖 React 代码的常见问题
 
-![React Doctor 六大诊断类目 · 0-100 健康分构成](react-doctor-6-categories.png)
+![React Doctor 六大诊断类目 · 0-100 健康分构成](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/react-doctor-ai-code-quality-2026-05-13/react-doctor-6-categories.png)
 
 打开 React Doctor 官方 README，6 个诊断类目摆得很清楚：**state & effects、performance、architecture、security、accessibility、dead code**。每一类下面是十几条到二十条具体规则，加起来 70 多条 React 专项规则。这套规则不是空中楼阁——它的底层引擎是 oxlint（一款 Rust 写的 ESLint 兼容 linter，2025 年下半年在前端社区跑得很快），React Doctor 把规则封装成 oxlint plugin 与 ESLint plugin 双形态，所以可以直接和你项目里已有的 .eslintrc 合并。
 
@@ -69,7 +69,7 @@ tags:
 
 ## 二、0-100 健康分 · 一个数字代替一堆 lint 报告
 
-![Health Score 73 / 100 · 健康分公式与六类分布](react-doctor-score-output.png)
+![Health Score 73 / 100 · 健康分公式与六类分布](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/react-doctor-ai-code-quality-2026-05-13/react-doctor-score-output.png)
 
 React Doctor 最容易被注意到的设计是它把所有规则的执行结果归约成一个 0-100 的健康分。这件事不是花架子，它解决的是一个真实痛点——**ESLint / oxlint 出来一堆 warning 与 error，谁也不知道整体到底好不好**。
 
@@ -97,7 +97,7 @@ Health Score = 100 − (unique_error_rules × 1.5) − (unique_warning_rules × 
 
 ## 三、一行命令两种用法 · scan 与 install
 
-![一行命令两种用法 · scan 与 install for agent](react-doctor-install-flow.png)
+![一行命令两种用法 · scan 与 install for agent](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/react-doctor-ai-code-quality-2026-05-13/react-doctor-install-flow.png)
 
 React Doctor 在 CLI 设计上做得很克制——核心只有两条命令路径，**一条是扫，一条是装**。
 
@@ -127,7 +127,7 @@ CI 集成方面 React Doctor 提供了一个 composite GitHub Action，三行 ya
 
 ## 四、50+ 适配 agent · 海外主力 + 国产同类的兼容性
 
-![适配 50+ Coding Agent · 一条命令把 React 规则塞进去](react-doctor-agents-50.png)
+![适配 50+ Coding Agent · 一条命令把 React 规则塞进去](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/react-doctor-ai-code-quality-2026-05-13/react-doctor-agents-50.png)
 
 React Doctor 官方 README 提到「detects 50+ coding agents」，这个数字是把市面上常见的 agent 都覆盖了——海外主力有 Claude Code、Cursor、Codex CLI、OpenCode、Aider、Cline、RooCode、Kilo Code、Windsurf、Continue.dev 这一档第一梯队，另外还有 Sweep、GitHub Copilot Chat、Aide、Tabby、Cody、Refact.ai、Mentat、Plandex、OpenDevin、SWE-agent、Smol Developer、GPT Engineer、Devon 等长尾。
 
@@ -155,7 +155,7 @@ React Doctor 官方 README 提到「detects 50+ coding agents」，这个数字�
 
 ## 五、国内 AI Coding 工具横评 · React 代码质量反馈现状对比
 
-![国内 AI Coding 工具 · React 代码质量反馈现状横评](react-doctor-domestic-matrix.png)
+![国内 AI Coding 工具 · React 代码质量反馈现状横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/react-doctor-ai-code-quality-2026-05-13/react-doctor-domestic-matrix.png)
 
 把 React Doctor 这套范式对照国内 AI Coding 工具的当前能力，画一张横评表会更清楚。先说明——**这张表不是评谁更强，而是看「React 专项代码质量反馈」这条线上国内工具的现状画像**。
 
@@ -183,7 +183,7 @@ React Doctor 官方 README 提到「detects 50+ coding agents」，这个数字�
 
 ## 六、把 React Doctor 接入到团队工作流的实操路径
 
-![6 步把 React Doctor 接到团队工作流](react-doctor-team-workflow.png)
+![6 步把 React Doctor 接到团队工作流](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/react-doctor-ai-code-quality-2026-05-13/react-doctor-team-workflow.png)
 
 讲完原理与现状，给国内工程团队一份直接可上手的接入路径。前提假设是团队已经在用 Claude Code、Cursor、Codex CLI、Trae、通义灵码、CodeBuddy 中至少一款。
 
@@ -255,7 +255,7 @@ baseline 拿到了，规则注入做了，CI 接了——最后一步是设一�
 
 最后一个观察：**国内开源生态在这件事上其实有自己的优势**。React Doctor 只覆盖 React，国内项目栈里 Vue / 小程序 / Taro / uni-app 占比不低，这部分海外开源社区不会主动覆盖。**国产开源团队完全有能力做出「Vue Doctor」「小程序 Doctor」「Taro Doctor」这种本地化规则集**——技术栈一样可分析、agent 注入路径已经齐了、CI 集成方式也很成熟。这是一片明确的、海外不会进的空地。
 
-![国产开源团队可补位的专项规则集空间](react-doctor-domestic-space.png)
+![国产开源团队可补位的专项规则集空间](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/react-doctor-ai-code-quality-2026-05-13/react-doctor-domestic-space.png)
 
 5 月 12 日那篇 James Shore 的维护成本框架文章给行业递了一把尺子，5 月 13 日 React Doctor 8679 星的爆发给了那把尺子的第一个落地工具。两件事连起来看就是一句话——**AI Coding 工具链进入「写完还要被打分」的成熟期，国内开发者站在和海外同行同样的起点上，没必要焦虑，但值得动手**。看见，然后调整，然后变好。
 

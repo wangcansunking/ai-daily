@@ -11,13 +11,13 @@ description: "Jane Street 期权部门的设计师 Edwin Morris 写了一篇博�
 
 # 在 Claude Code 里做设计，比 Figma 还顺手
 
-![从 Figma 静态稿到 Claude Code 里能跑的原型](claude-code-design-over-figma-2026-06-08.png)
+![从 Figma 静态稿到 Claude Code 里能跑的原型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/claude-code-design-over-figma-2026-06-08/claude-code-design-over-figma-2026-06-08.png)
 
 做产品的人这两年大概都隐约感觉到一件事：设计稿和真实界面之间，那条缝越来越窄了。以前画一版 Figma 高保真稿，标好间距、定好颜色，交给工程师照着实现——这套流程跑了十几年。现在有人开始跳过画稿这一步，直接在编辑器里让大模型把界面写成能点能用的原型。
 
 2026 年 6 月 7 日，Jane Street 期权交易部门的一位设计师 Edwin Morris 把这件事写成了一篇博客，标题很直白：《现在我用 Claude 做设计，比用 Figma 还多》。文章一上线就冲到了 Hacker News 首页，两百多条评论吵成一片——有人说这正是设计该有的样子，也有人担心这条路会把设计师的判断力交给模型。
 
-![博客头图：左边是 Figma 的组件网格静态稿，右边是 Claude Code 终端，写着「Project: add LLM prompting to the JSQL input」](source-janestreet-figma-claude-hero.png)
+![博客头图：左边是 Figma 的组件网格静态稿，右边是 Claude Code 终端，写着「Project: add LLM prompting to the JSQL input」](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/claude-code-design-over-figma-2026-06-08/source-janestreet-figma-claude-hero.png)
 <small>来源：Edwin Morris 博客 `blog.janestreet.com` 头图，2026-06-07</small>
 
 这篇文章想讲清楚三件事：Morris 这套「在代码里做设计」到底怎么运作、它替掉了 Figma 的哪一段又留下了哪些没替掉、争议究竟在争什么。最后再落到国内读者最关心的问题上——Claude 直连在国内不方便，这套方法换成国产工具能不能照着做。
@@ -32,7 +32,7 @@ Morris 的主张可以浓缩成一句话：**一个跑在真实代码库里的�
 
 这次他没画图。他打开编辑器，起好本地服务，把需求描述直接喂给 Claude Code 当作提示，让它先把基本功能跑起来，然后开始一版一版地调。
 
-![Morris 在 JSQL 输入框里加的原型：上面是 SELECT 查询，下面一行用大白话写「给我看看新员工随时间的变化」，点右边箭头交给大模型翻译](source-janestreet-jsql-prompt.png)
+![Morris 在 JSQL 输入框里加的原型：上面是 SELECT 查询，下面一行用大白话写「给我看看新员工随时间的变化」，点右边箭头交给大模型翻译](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/claude-code-design-over-figma-2026-06-08/source-janestreet-jsql-prompt.png)
 <small>来源：Edwin Morris 博客 `blog.janestreet.com` 配图，2026-06-07</small>
 
 上面这张就是他做出来的原型实拍。上半部分是 JSQL 的查询框，写着 `SELECT *`；下面多出来一行输入框，里面是一句大白话——「给我看看新员工随时间的变化」，右边一个蓝色箭头按钮，点一下就把这句话交给模型去翻译成查询。这不是一张图层叠出来的假界面，而是一个真能点、能输入、能跑出结果的东西。
@@ -43,7 +43,7 @@ Morris 的主张可以浓缩成一句话：**一个跑在真实代码库里的�
 
 这一点是整套方法成立的根基。**设计的本质是反复试错，而过去试错的成本主要卡在「每改一次就得重画一次」上。** 当重画的成本被压到接近于零，试错的次数自然可以放开，设计师就能在更多版本里挑出真正好的那个。
 
-![同一个原型的报错状态：模型把大白话翻成查询后类型对不上，下面给出一行提示并附「Fix my Query」修复入口——这种「出错了长什么样」的细节，画在静态稿上是体会不到的](source-janestreet-jsql-error.png)
+![同一个原型的报错状态：模型把大白话翻成查询后类型对不上，下面给出一行提示并附「Fix my Query」修复入口——这种「出错了长什么样」的细节，画在静态稿上是体会不到的](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/claude-code-design-over-figma-2026-06-08/source-janestreet-jsql-error.png)
 <small>来源：Edwin Morris 博客 `blog.janestreet.com` 配图，2026-06-07</small>
 
 上面这张是同一个原型的报错状态。为什么这张图重要？因为一个功能真正难做对的，往往不是它顺利时长什么样，而是出岔子时怎么提示用户。这种边角状态，画静态稿时很容易漏掉，只有真的把原型跑起来、故意输点模型翻译不出来的东西，才会逼着你把报错体验也设计到位。这正是「住进原型里」比「盯着图看」多出来的那部分价值。
@@ -52,7 +52,7 @@ Morris 的主张可以浓缩成一句话：**一个跑在真实代码库里的�
 
 很多人看到标题第一反应是「Figma 要被取代了」，但 Morris 自己说得很清楚，他替掉的是很具体的一段，不是全部。把这件事拆开看最清楚。
 
-![同一个原型的两种做法对照：Figma 静态稿和在代码里做原型，各自管哪一段](design-figma-compare.png)
+![同一个原型的两种做法对照：Figma 静态稿和在代码里做原型，各自管哪一段](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/claude-code-design-over-figma-2026-06-08/design-figma-compare.png)
 <small>依据 Edwin Morris 博客公开内容整理，2026-06-07</small>
 
 **被替掉的，是「画稿 + 写说明文档」这一段。** 过去为了把一个想法讲清楚，设计师要画 Figma 稿、写提案文档、和工程师来回沟通好几轮。Morris 现在用一个能跑的原型把这几样东西合并了——他把原型称作「活的提案文档」，想法直接以可运行的形态摆在所有人面前，不需要再靠图加文字去描述。

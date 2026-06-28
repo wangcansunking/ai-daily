@@ -13,7 +13,7 @@ tags: [DeepSeek, AI Coding, 缓存优化, 终端工具, 中国开发者]
 
 # DeepSeek Reasonix 99.82% 缓存命中：Claude Code 风格长会话从 61 美元跑到 12 美元，国内开发者直接受益
 
-![DeepSeek Reasonix 99.82% 缓存命中封面](deepseek-reasonix-cover-2026-05-26.png)
+![DeepSeek Reasonix 99.82% 缓存命中封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/deepseek-reasonix-prefix-cache-99pct-2026-05-26/deepseek-reasonix-cover-2026-05-26.png)
 
 ## 30 秒速览
 
@@ -23,7 +23,7 @@ tags: [DeepSeek, AI Coding, 缓存优化, 终端工具, 中国开发者]
 
 对国内开发者来说更直接：DeepSeek API 国内能正常用、能用人民币付款、价格本来就比 Claude / GPT 便宜一个数量级，再叠加 Reasonix 这层缓存逻辑，等于把 "Claude Code 体验" 用一份饭钱的价格搬到自己终端里。Hacker News 评论区里 5 位陌生开发者各自用 OpenCode、Codex 桥、Reasonix 测了一圈，命中率全部在 95% 以上，不是孤证。
 
-![单日成本对比](deepseek-reasonix-cost-comparison.png)
+![单日成本对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/deepseek-reasonix-prefix-cache-99pct-2026-05-26/deepseek-reasonix-cost-comparison.png)
 
 ## 一个独立中国开发者怎么把 Hacker News 头版做下来
 
@@ -33,7 +33,7 @@ Reasonix 这个项目 5 月初首次在 GitHub 出现，没有公司背书，没
 
 帖子热度从 200 分迅速爬到 663 分，挂在 HN 首页头部超过 24 小时。GitHub 星数同步从两千多冲到 8200+。一个独立中国开发者的开源项目用一个看似平凡的工程优化击中了海外重度 LLM 用户的真实痛点——他们手里那张每月 API 账单。
 
-![HN 评论区 5 位开发者命中率分布](deepseek-reasonix-hit-rate-distribution.png)
+![HN 评论区 5 位开发者命中率分布](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/deepseek-reasonix-prefix-cache-99pct-2026-05-26/deepseek-reasonix-hit-rate-distribution.png)
 
 ## DeepSeek 的 prefix caching 到底特殊在哪里
 
@@ -57,7 +57,7 @@ DeepSeek 在 4 月底的一次价格调整里把命中价直接降到了原来�
 
 **第三条：tool call 修复机制。** agent 跑工具调用时最容易把缓存毁掉——某个工具失败了、某个返回值格式变了、模型自己回退重试，每一次都会破坏前缀。Reasonix 在工具层做了一层 idempotent 重写：失败不删，错误不改，全部以"原本调用 + 修正记录"的形式追加在历史里，这样前缀永远是只增不减。
 
-![prefix cache 工作原理示意](deepseek-reasonix-prefix-cache-flow.png)
+![prefix cache 工作原理示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/deepseek-reasonix-prefix-cache-99pct-2026-05-26/deepseek-reasonix-prefix-cache-flow.png)
 
 这套设计有一个反直觉的副作用：单次请求的 token 量越长，缓存命中比例越高，单 token 平均成本越低。普通 agent 跑 10 轮以后 token 越长越贵，Reasonix 跑 50 轮以后 token 越长反而越便宜。esengine 在 README 里管这叫「挂在那里跑就行」（leave it running）——你随便挂着跑一整天，不用心疼账单。
 
@@ -78,7 +78,7 @@ DeepSeek 在 4 月底的一次价格调整里把命中价直接降到了原来�
 
 **千问3-Coder 30B（本地）**：本地路径完全不付 API 钱，但要付电费、显卡折旧、上下文窗口的硬约束。一台 RTX 4090 整机跑一整月，电费摊到一位全职开发者头上大约 75 美元/月——账面上比所有云方案便宜，代价是上下文长度受限、模型规模比 V4 Pro 小一个数量级，复杂任务上的"一次跑通率"会差不少。
 
-![四种主流路径月成本横评](deepseek-reasonix-monthly-cost.png)
+![四种主流路径月成本横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/deepseek-reasonix-prefix-cache-99pct-2026-05-26/deepseek-reasonix-monthly-cost.png)
 
 把这四条放一张图上对比，Reasonix + DeepSeek 这条线大约在每月 360 美元的位置——比 Cursor 贵、比 Claude Code 便宜得多、比千问本地贵得多。它的位置非常微妙：你愿意付一点点钱换一个比本地大一个数量级的模型、比 Cursor 宽得多的上下文、比 Claude Code 便宜 5 倍以上的账单。
 

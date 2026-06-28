@@ -15,7 +15,7 @@ summary: GitHub 5988 星的 LearningCircuit/local-deep-research 把"OpenAI Deep 
 ---
 # 完全本地跑的 Deep Research agent：千问 27B 在 SimpleQA 拿 95.7%
 
-![完全本地跑的 Deep Research agent](local-deep-research-learningcircuit-2026-05-07.png)
+![完全本地跑的 Deep Research agent](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/local-deep-research-learningcircuit-2026-05-07/local-deep-research-learningcircuit-2026-05-07.png)
 
 2026 年 5 月 7 日今天，海外开源 Deep Research 项目 `LearningCircuit/local-deep-research`（下文简称 LDR）的 GitHub 星数冲到 5988，社区跑分榜单第一名是国产千问 3.6 27B——不是 gpt-oss，不是 Llama，是千问。这条赛道国内开发者等了大半年的"不烧 OpenAI token、研究问题不发去 Tavily"的替代品，现在有了一份干净的成绩单可以参照。
 
@@ -23,7 +23,7 @@ LDR 项目 2026-02 上线，HN 顶贴 190+，过去 7 天 push 38 个 commit，�
 
 更值得注意的是这条路线的政治性：**它是国产模型在海外社区的真实成绩单**——不是厂商自评，是社区贡献者用同一脚本、同一测试集、同一个搜索后端跑出来的横评。本文要回答的就是这一件事：**这套 5988 星的本地化 Deep Research agent 在国内开发者手里到底能跑成什么样，硬件门槛在哪，跟我们已经熟悉的 gpt-researcher / Khoj 比强在哪。**
 
-![LDR 真实跑分 - 千问 3.6 27B 在 SimpleQA 拿 95.7%](local-deep-research-benchmark-table.png)
+![LDR 真实跑分 - 千问 3.6 27B 在 SimpleQA 拿 95.7%](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/local-deep-research-learningcircuit-2026-05-07/local-deep-research-benchmark-table.png)
 
 ## 一、这个 5988 星的项目到底干什么
 
@@ -74,7 +74,7 @@ xbench-DeepSearch 这个更难的多步检索测试上，千问 3.6 27B 也拿�
 
 国内开发者圈早就熟悉 `assafelovic/gpt-researcher`（21k 星）和 `khoj-ai/khoj`（30k 星）。LDR 5988 星，从绝对量看不算最大——但定位差异非常明确。
 
-![三条本地化 Deep Research 路线对比](local-deep-research-vs-competitors.png)
+![三条本地化 Deep Research 路线对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/local-deep-research-learningcircuit-2026-05-07/local-deep-research-vs-competitors.png)
 
 **核心论断**：LDR 不是来抢 gpt-researcher 用户的——它服务的是"我连云端 API 都不想调"的私有化场景。
 
@@ -96,7 +96,7 @@ xbench-DeepSearch 这个更难的多步检索测试上，千问 3.6 27B 也拿�
 
 **核心论断**：跑得动，而且能跑出 SOTA 段位——但要选对模型 + 量化方案。
 
-![LDR 国内开发者硬件配置参考](local-deep-research-hardware-guide.png)
+![LDR 国内开发者硬件配置参考](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/local-deep-research-learningcircuit-2026-05-07/local-deep-research-hardware-guide.png)
 
 按硬件预算给具体推荐：
 
@@ -116,7 +116,7 @@ xbench-DeepSearch 这个更难的多步检索测试上，千问 3.6 27B 也拿�
 
 **核心论断**：LDR 自带的 MCP server 让 Claude Code 直接调用本地 LDR 跑深度研究——这是 gpt-researcher / Khoj 都没有的、对 Claude Code 重度用户特别关键的能力。
 
-![LDR 接入 Claude Code 的 MCP 工具清单](local-deep-research-mcp-tools.png)
+![LDR 接入 Claude Code 的 MCP 工具清单](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/local-deep-research-learningcircuit-2026-05-07/local-deep-research-mcp-tools.png)
 
 接入方式简单到一行 JSON。在 `~/.claude/mcp.json` 写：
 

@@ -13,7 +13,7 @@ cover: zhipu-glm5-scaling-pain.png
 
 > 5 月 1 日 19:00，智谱发布技术博客《Scaling Pain》，把过去几周用户在 GLM-5 上撞见的"降智"问题讲透了：不是模型退化，是 PD 分离架构里 KV Cache 复用时序竞争，加上 SGLang HiCache 分层缓存的 read-before-ready 漏洞。两个 bug 都已经在 GLM-5.1 修复，修复方案被 SGLang 开源社区收下；配套的 LayerSplit 长上下文优化让吞吐在 40K-120K 区间提升 10%-132%。这是国产大模型团队第一次把超大规模推理事故讲到工程颗粒，含金量足够开发者收藏一遍。
 
-![GLM-5 推理事故复盘](zhipu-glm5-scaling-pain.png)
+![GLM-5 推理事故复盘](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/zhipu-glm5-scaling-pain-kv-cache/zhipu-glm5-scaling-pain.png)
 
 ## 一、事件复盘：用户撞见的「降智」是什么样
 
@@ -42,7 +42,7 @@ PD 分离指的是把推理过程拆成两个阶段、分别部署到不同节�
 
 这两个阶段对硬件的需求很不一样，把它们拆到不同节点能让算力和显存都更接近"用满"。代价是：跨节点协作的时序握手，要做得非常细。
 
-![PD 分离架构里 KV Cache 时序竞争发生的位置](pd-separated-kv-cache-flow.png)
+![PD 分离架构里 KV Cache 时序竞争发生的位置](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/zhipu-glm5-scaling-pain-kv-cache/pd-separated-kv-cache-flow.png)
 
 智谱定位到的第一个 bug 就发生在这个握手环节。原话：
 
@@ -86,7 +86,7 @@ LayerSplit 的思路简单说就是把"每张卡都装全部层 KV"改成"每张
 
 这一波修复方案能直接通过 SGLang 上游回流给所有用户，是开源社区协同的好例子。把国内开发者常见的几个推理框架放一起看，能更清楚地知道自己手头的方案处在哪个位置。
 
-![国产推理框架的 KV Cache 管理对位](inference-framework-cache-comparison.png)
+![国产推理框架的 KV Cache 管理对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/zhipu-glm5-scaling-pain-kv-cache/inference-framework-cache-comparison.png)
 
 **SGLang** 是这次事件最直接的相关者。LMSYS 团队主导，RadixAttention 树状前缀缓存 + HiCache 分层是它的招牌特性。智谱这次发现并修复了 HiCache 模块的 read-before-ready 问题，修复回流到 SGLang 主线，等同于让所有跑 SGLang 部署 GLM / Qwen / DeepSeek / Kimi 的团队同步受益。
 

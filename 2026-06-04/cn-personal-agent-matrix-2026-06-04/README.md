@@ -16,7 +16,7 @@ description: 智谱 AutoGLM、字节扣子、MiniMax Agent、阿里千问四款�
 ---
 # 国产个人 AI 助手能替你干完活了吗：四款对照 OpenClaw 横评
 
-![国产个人 AI 助手能力矩阵横评封面 personal agent matrix](cn-personal-agent-matrix-2026-06-04.png)
+![国产个人 AI 助手能力矩阵横评封面 personal agent matrix](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/cn-personal-agent-matrix-2026-06-04/cn-personal-agent-matrix-2026-06-04.png)
 
 过去半年最让人惦记的一类工具，不是又一个聊天框，而是**能真替你在手机和电脑上把事办完的个人 AI 助手**。海外这条线的标杆是 OpenClaw——它一个开源仓库两周就冲到十几万星、如今已超过 37 万，做的事就一句话：装在你自己机器上，跨过 App 边界，把活干完，而不只是陪你聊天。
 
@@ -43,7 +43,7 @@ description: 智谱 AutoGLM、字节扣子、MiniMax Agent、阿里千问四款�
 
 > 这里有一款值得特别说明：**Manus**。它曾是国内最火的通用 Agent 之一，但其总部已于 2026 年 5 月迁至新加坡，与阿里通义的合作公告随之删除，目前中国地区无法访问官网。所以本文把 Manus 作为「这条赛道曾经的国内标杆」做背景提及，不列入「现在能用」的横评对象。
 
-![OpenClaw 仓库主页](source-openclaw-github-2026-06-04.png)
+![OpenClaw 仓库主页](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/cn-personal-agent-matrix-2026-06-04/source-openclaw-github-2026-06-04.png)
 
 <small>来源：OpenClaw 官方 GitHub 仓库 github.com/openclaw/openclaw 项目页</small>
 
@@ -57,7 +57,7 @@ OpenClaw 这个仓库 2025 年 11 月底建立，截至本文写作时星标已�
 
 AutoGLM 走的是手机操作（Phone Use）路线。按智谱官方文档，它的工作方式是「多模态理解屏幕内容 + 通过 ADB 自动控制设备」——你说一句「打开小红书搜美食」，它就自己看屏幕、自己点。
 
-![Open-AutoGLM 开源仓库](source-autoglm-github-2026-06-04.png)
+![Open-AutoGLM 开源仓库](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/cn-personal-agent-matrix-2026-06-04/source-autoglm-github-2026-06-04.png)
 
 <small>来源：智谱 Open-AutoGLM 官方 GitHub 仓库 github.com/zai-org/Open-AutoGLM 项目页</small>
 
@@ -132,7 +132,7 @@ AutoGLM 走的是手机操作（Phone Use）路线。按智谱官方文档，它
 - **MiniMax Agent** 支持 MCP 多 Agent 协作，配合它的分层架构——一个主调度 Agent 理解意图、拆解任务，多个执行 Agent 各管编程、设计、调研
 - **扣子**把本地命令行工具接入，本身就是一种 Agent 互联的实践
 
-![QwenPaw 个人助手仓库](source-qwenpaw-github-2026-06-04.png)
+![QwenPaw 个人助手仓库](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/cn-personal-agent-matrix-2026-06-04/source-qwenpaw-github-2026-06-04.png)
 
 <small>来源：QwenPaw 官方 GitHub 仓库 github.com/agentscope-ai/QwenPaw 项目页</small>
 
@@ -160,7 +160,7 @@ OpenClaw 的设计是彻底的本地优先：
 - **云端为主**：算力强、记忆长（MiniMax Agent 的上下文可达百万 token），开箱即用，但你得信任云端
 - **本地优先**：数据自己管、模型自己挑、能断网用，但配置门槛更高，得自己动手
 
-![国产个人 AI 助手能力矩阵](chart-cn-agent-matrix-2026-06-04.png)
+![国产个人 AI 助手能力矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/cn-personal-agent-matrix-2026-06-04/chart-cn-agent-matrix-2026-06-04.png)
 
 <small>来源：本文据各产品官网·官方文档·GitHub 仓库整理（○ 已支持 / △ 部分或测试中 / × 暂不支持）</small>
 

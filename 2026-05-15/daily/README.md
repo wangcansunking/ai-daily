@@ -31,7 +31,7 @@ cover: 15.png
 
 # Anthropic 首超 OpenAI · Codex 进 ChatGPT 手机版 | AI 日报 | 2026-05-15
 
-![Anthropic 首次反超 OpenAI 业务采纳 · Codex 进 ChatGPT 手机版 · 高德千问开源 AGenUI 三端 A2UI 三轴并行](15.png)
+![Anthropic 首次反超 OpenAI 业务采纳 · Codex 进 ChatGPT 手机版 · 高德千问开源 AGenUI 三端 A2UI 三轴并行](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/daily/15.png)
 
 ## 📋 头版目录（一屏扫完今日）
 
@@ -71,13 +71,13 @@ cover: 15.png
 
 ## 🔥 头条：Anthropic 反超 · Codex 进手机 · AGenUI 三端——开发者工具大战这一周三轴并进
 
-![Anthropic 反超 OpenAI 业务采纳 · Codex 进 ChatGPT 手机版 · AGenUI 三端开源三轴并行](daily-2026-05-15-hero-three-axes.png)
+![Anthropic 反超 OpenAI 业务采纳 · Codex 进 ChatGPT 手机版 · AGenUI 三端开源三轴并行](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/daily/daily-2026-05-15-hero-three-axes.png)
 
 5/13 到 5/15 这三天，开发者工具竞争被同时推到了三条赛道上：**企业采纳数字（Anthropic 反超 OpenAI）、移动入口（Codex 进 ChatGPT 手机版）、端侧渲染（AGenUI 三端原生）**。单独看每一件事都不算颠覆性，叠在一起看，是 Agent 化这条主线从模型 / 工具 / 框架三个层级同时落到了产品默认形态——这一波 AI 工具的形态战略已经不在"哪个模型分高"那一层博弈，而是看谁能更快地把 Agent 做成默认运行单元。下面按企业端、入口端、端侧依次拆。
 
 ### 一、企业端：Anthropic 业务采纳首次反超 OpenAI，引擎是 Claude Code
 
-![Ramp 追踪 2023-2026 业务采纳曲线，Anthropic 4 月以 34.4% 首次反超 OpenAI 的 32.3%](daily-2026-05-15-ramp-trajectory.png)
+![Ramp 追踪 2023-2026 业务采纳曲线，Anthropic 4 月以 34.4% 首次反超 OpenAI 的 32.3%](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/daily/daily-2026-05-15-ramp-trajectory.png)
 
 5/13，财务卡平台 Ramp 在月度 AI Index 里公布了一组关键数字：4 月美国企业里 **Anthropic 业务采纳率 34.4%**（环比 +3.8%），**OpenAI 32.3%**（环比 -2.9%）。这是自 ChatGPT 2022 年底引爆以来，第一次有第二名实打实地越过 OpenAI 在企业端的水位。Ramp 的统计口径不是"调研问卷里你最看好谁"，是 5 万家用 Ramp 财务卡的美国企业 4 月实际支付给两家公司账单的金额占比——这是真金白银流向哪一家的口径，比 MAU 硬。
 
@@ -110,7 +110,7 @@ Ramp 在报告里点出的增长引擎只有一个名字——**Claude Code**，
 
 ### 二、入口端：Codex 进 ChatGPT 手机版 + Claude Code 三天三版
 
-![Claude Code 5/12 → 5/14 三天三版升级清单](daily-2026-05-15-claude-code-2-1-142.png)
+![Claude Code 5/12 → 5/14 三天三版升级清单](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/daily/daily-2026-05-15-claude-code-2-1-142.png)
 
 5/14 HN 头条第六位顶着一条简短的标题：「Codex is now in the ChatGPT mobile app」——126 分讨论量。OpenAI 把 Codex（5/12 才在桌面 IDE 内置完成的代码 Agent）正式集成进 ChatGPT iOS 和 Android 客户端。你在通勤地铁里掏出手机，对着 ChatGPT 说"把我昨天的 React PR 加上单元测试"，Codex 在云端跑完后把 patch 回推到你的 GitHub 仓库——这件事现在不用打开电脑也能发生。
 
@@ -134,7 +134,7 @@ Ramp 在报告里点出的增长引擎只有一个名字——**Claude Code**，
 
 ### 三、端侧：高德 × 千问开源 AGenUI——Google A2UI 协议出 4 周内的中国答案
 
-![Google Android Show 5/12 公布 Gemini Intelligence 进系统层，Acer ASUS Dell HP Lenovo 五家 PC 厂跟进 Googlebook](daily-2026-05-15-android-gemini-layer.png)
+![Google Android Show 5/12 公布 Gemini Intelligence 进系统层，Acer ASUS Dell HP Lenovo 五家 PC 厂跟进 Googlebook](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/daily/daily-2026-05-15-android-gemini-layer.png)
 
 第三条线在中国端起：5/13 量子位头条——**高德地图与阿里千问 C 端应用团队联合开源 AGenUI**，是行业首个覆盖 iOS、Android、HarmonyOS 三端的端云一体原生 A2UI 框架。
 
@@ -250,7 +250,7 @@ supertone-inc/supertonic 5/14 stars 5307，韩国 Hybe（BTS 母公司）旗下 
 
 ## 🇨🇳 国内 AI 观察
 
-![GitHub Trending 5/15 AI 类前 9 仓库 stars](daily-2026-05-15-github-trending-top9.png)
+![GitHub Trending 5/15 AI 类前 9 仓库 stars](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/daily/daily-2026-05-15-github-trending-top9.png)
 
 **TencentDB Agent Memory 5/14 开源**：腾讯云数据库团队把这套 Agent 记忆中间件推到 GitHub Tencent 顶层组织，核心架构是事件流（短期记忆）+ 摘要树（中期）+ 持久化知识图（长期）三层。WideSearch 长会话 Token 砍 61.38%、PersonaMem 长期个性化准确率 48% → 76% 是和 mem0 / Letta / Zep / LangMem 同框可比的硬指标——国产 Agent 记忆中间件第一次在工程指标上挤进国际牌桌。**对国内 ISV 是直接的中间件替换选项**——之前接 mem0 跑长会话场景的可以做 PoC 对比。完整拆解见 「腾讯 Agent Memory 开源专题」。
 
@@ -279,17 +279,17 @@ supertone-inc/supertonic 5/14 stars 5307，韩国 Hybe（BTS 母公司）旗下 
 **特别关注 1：anthropics/claude-code 123.6k 同档冠军**
 [anthropics/claude-code](https://github.com/anthropics/claude-code)（123.6k stars）— 与 Ramp 数据的反超直接同步——CLI 形态 Agent 的 reference implementation。5/12-14 三天三版的迭代密度（v2.1.140 / 141 / 142）也证明了 Anthropic 在这个产品上的投入级别。
 
-![Claude Code 仓库 OG 卡片：Anthropic 历史增长最快的单产品](daily-2026-05-15-claude-code-og.png)
+![Claude Code 仓库 OG 卡片：Anthropic 历史增长最快的单产品](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/daily/daily-2026-05-15-claude-code-og.png)
 
 **特别关注 2：tinyhumansai/openhuman 7.7k 单周冠军**
 [tinyhumansai/openhuman](https://github.com/tinyhumansai/openhuman)（5/15 stars 7732）— Rust + Tauri 实现的本地优先桌面 AI，118 个第三方服务做成 OAuth 一键接入，每 20 分钟自动拉数据压成 ≤3000 token Markdown 切片落到本机 SQLite。**对位 OpenClaw 是国内开发者今天就值得对比测的 alternative**。详细同框对比见 「OpenHuman 专题」。
 
-![OpenHuman 仓库 OG 卡片：Rust + Tauri 桌面 AI 单周冲到 Trending 第二](daily-2026-05-15-openhuman-og.png)
+![OpenHuman 仓库 OG 卡片：Rust + Tauri 桌面 AI 单周冲到 Trending 第二](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/daily/daily-2026-05-15-openhuman-og.png)
 
 **特别关注 3：AGenUI/AGenUI 284 stars 起步**
 [AGenUI/AGenUI](https://github.com/AGenUI/AGenUI)（5/14 stars 284）— 高德 × 千问 联合开源的端侧 A2UI 渲染器，国内厂在 Google A2UI 协议出来 4 周内交的答案。起步 star 数偏小但协议层意义重要。
 
-![AGenUI 仓库 OG 卡片：高德千问开源的三端原生 A2UI 渲染器](daily-2026-05-15-agenui-og.png)
+![AGenUI 仓库 OG 卡片：高德千问开源的三端原生 A2UI 渲染器](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/daily/daily-2026-05-15-agenui-og.png)
 
 ## 🛠 AI Coding 工具动态
 

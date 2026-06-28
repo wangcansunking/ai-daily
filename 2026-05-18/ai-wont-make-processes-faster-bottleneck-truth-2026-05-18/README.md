@@ -24,7 +24,7 @@ description: "5 月 15 日比利时工程师 Frederick Van Brabant 发的一篇�
 
 # AI 不会让流程更快：瓶颈在上游
 
-![瓶颈不在编码段](ai-wont-make-processes-faster-bottleneck-truth-2026-05-18.png)
+![瓶颈不在编码段](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/ai-wont-make-processes-faster-bottleneck-truth-2026-05-18/ai-wont-make-processes-faster-bottleneck-truth-2026-05-18.png)
 
 五月十五号，比利时一位企业架构师 Frederick Van Brabant 在自己博客挂了一篇 5 分钟读完的短文，标题特别朴素——`I don't think AI will make your processes go faster`。三天后，这篇被 HN 顶到 419 分、300 评论，热度一直挂到 5 月 18 日早上还没下来。
 
@@ -36,7 +36,7 @@ description: "5 月 15 日比利时工程师 Frederick Van Brabant 发的一篇�
 
 Frederick 没用任何花哨的论证手段，全篇就靠三张 Mermaid 甘特图。把同一个功能项目放在三种节奏下走一遍，谁是瓶颈一目了然。
 
-![三种节奏的同一个项目](ai-wont-make-processes-faster-bottleneck-truth-2026-05-18-gantt.png)
+![三种节奏的同一个项目](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/ai-wont-make-processes-faster-bottleneck-truth-2026-05-18/ai-wont-make-processes-faster-bottleneck-truth-2026-05-18-gantt.png)
 
 把三张图的关键数字摆到桌面上：
 
@@ -71,7 +71,7 @@ Frederick 文中引了两本书——大野耐一的《丰田之路》和 Eliyah
 - 传统开发：软件开发 70 天看起来最长，但其实它"正常运转"——开发者每天 8 小时都在敲代码，没有等。
 - 真实 AI 开发：规格文档 40 天看起来比开发段短，但它**才是真瓶颈**——产品经理写两小时 → 等 domain 专家回邮件三天 → 改一版 → 等法务回 → 又改 → 反复。这 40 天里，实际"产生信息"的时间可能只有 8 小时。
 
-![信息流拓扑：卡点在上游](ai-wont-make-processes-faster-bottleneck-truth-2026-05-18-topology.png)
+![信息流拓扑：卡点在上游](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/ai-wont-make-processes-faster-bottleneck-truth-2026-05-18/ai-wont-make-processes-faster-bottleneck-truth-2026-05-18-topology.png)
 
 Frederick 的引文是《目标》里那句经典——**"bottlenecks should receive predictable, high-quality inputs"**（瓶颈段应该收到稳定、高质量的输入）。这是 AI 编码时代每个工程团队负责人都该贴在墙上的一句话。
 
@@ -86,7 +86,7 @@ Frederick 的引文是《目标》里那句经典——**"bottlenecks should rec
 
 这条 HN 帖五月十六到十八号一直挂在头版（item 48168221），419 分 300 评论。把高赞评论翻一遍，业内人的真实声音可以分成四派：
 
-![HN 419 分评论分四派的真相](ai-wont-make-processes-faster-bottleneck-truth-2026-05-18-hn-voices.png)
+![HN 419 分评论分四派的真相](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/ai-wont-make-processes-faster-bottleneck-truth-2026-05-18/ai-wont-make-processes-faster-bottleneck-truth-2026-05-18-hn-voices.png)
 
 **第一派 · 大组织 confirmed**
 
@@ -132,7 +132,7 @@ Frederick 的引文是《目标》里那句经典——**"bottlenecks should rec
 
 巧合的是同一周国内量子位发了一篇热文——《Need is all you need：在 AI 时代，谁会用比会写更值钱》。这篇文章的核心论点和 Frederick 这篇刚好构成正反两面，对照读会出非常硬的思辨。
 
-![两篇火文 · 同一个真相的两面](ai-wont-make-processes-faster-bottleneck-truth-2026-05-18-thesis.png)
+![两篇火文 · 同一个真相的两面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/ai-wont-make-processes-faster-bottleneck-truth-2026-05-18/ai-wont-make-processes-faster-bottleneck-truth-2026-05-18-thesis.png)
 
 把两篇的立论摆到一起：
 

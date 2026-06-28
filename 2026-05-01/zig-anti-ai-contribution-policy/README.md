@@ -10,7 +10,7 @@ cover: zig-anti-ai.png
 
 # Zig 把 LLM 写进 Code of Conduct
 
-![Zig 反 LLM 贡献政策主视觉](zig-anti-ai.png)
+![Zig 反 LLM 贡献政策主视觉](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/zig-anti-ai-contribution-policy/zig-anti-ai.png)
 
 > 2026 年 4 月 30 日 02:15 UTC，[Simon Willison](https://simonwillison.net/2026/Apr/30/zig-anti-ai/) 把 Zig 项目刚写进 Code of Conduct 的三条反 LLM 规则推到他的博客头条。同一时刻，Hacker News [item 47957294](https://news.ycombinator.com/item?id=47957294)（截稿时 612 pts / 397 评论）冲到当日热门第二。这是过去一年 OSS 圈里关于 LLM 贡献最系统的一次划线。
 
@@ -30,7 +30,7 @@ Zig 把界线写得没有任何模糊空间：
 
 ## 一、Loris Cro 的论证：贡献者扑克，押人不押牌
 
-![贡献者扑克牌——押人不押牌](zig-anti-ai-poker.png)
+![贡献者扑克牌——押人不押牌](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/zig-anti-ai-contribution-policy/zig-anti-ai-poker.png)
 
 Loris Cro 把它叫做 **contributor poker**。一句话讲完：成熟的 OSS 项目处理新贡献者的方式，跟扑克牌局更像，跟阅卷打分不像。
 
@@ -92,7 +92,7 @@ HN 用户 baq（id=47959875）把矛盾点总结得很到位：
 
 ## 四、HN 397 条评论里的真实声音（verbatim）
 
-![OSS 反 LLM 简史 · 三家项目陆续划线](zig-anti-ai-mentor.png)
+![OSS 反 LLM 简史 · 三家项目陆续划线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/zig-anti-ai-contribution-policy/zig-anti-ai-mentor.png)
 
 HN 这个帖子有一个特点：反对方的声音不少，但不脏。把几条票数明显较高的留言原文摘出来，正反两面都看一遍。
 

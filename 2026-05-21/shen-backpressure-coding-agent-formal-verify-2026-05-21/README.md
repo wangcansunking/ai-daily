@@ -25,7 +25,7 @@ description: "五月十八日 Reuben Brooks 在个人博客发了一篇『Struct
 
 # 给 Claude Code 一道形式化类型门栏
 
-![Shen-Backpressure 形式化类型门栏拦截 AI 智能体输出 等距 2.5D 封面](shen-backpressure-coding-agent-formal-verify-2026-05-21.png)
+![Shen-Backpressure 形式化类型门栏拦截 AI 智能体输出 等距 2.5D 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/shen-backpressure-coding-agent-formal-verify-2026-05-21/shen-backpressure-coding-agent-formal-verify-2026-05-21.png)
 
 ## 这一次的核心判断
 
@@ -70,7 +70,7 @@ Brooks 的做法换了个方向——**不让智能体变聪明，让智能体�
 
 要把 Brooks 的核心判断说清楚，先把当前 AI Coding 工具的两条路径摆到同一张图里。
 
-![两条路径的成本曲线对比 让模型更聪明 vs 结构压制](structural-vs-smart-curve-v2.png)
+![两条路径的成本曲线对比 让模型更聪明 vs 结构压制](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/shen-backpressure-coding-agent-formal-verify-2026-05-21/structural-vs-smart-curve-v2.png)
 
 **A 路径 · 让智能体更聪明。**这条路是 Anthropic、OpenAI、阿里千问、智谱、字节豆包过去两年的共同方向——参数加大、推理链加深、上下文加长、提示词工程加细。Claude Code 默认上下文从二零二四年的二十万 token 涨到二零二六年的一百万 token，Cursor Composer 2.5 把 deep reasoning 时延从二点五秒拉到三十秒。这条路真实有效，但每多写一个 if-else 业务规则，模型需要的上下文就长一截，**项目复杂度往上走，成本曲线接近指数化**。
 
@@ -84,7 +84,7 @@ Brooks 的做法换了个方向——**不让智能体变聪明，让智能体�
 
 国内大多数开发者对 Shen 这门语言陌生，先把它的三十年来龙去脉补一下。
 
-![Shen Lisp 官方 logo Mark Tarver 设计的函数式语言](shen-logo.png)
+![Shen Lisp 官方 logo Mark Tarver 设计的函数式语言](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/shen-backpressure-coding-agent-formal-verify-2026-05-21/shen-logo.png)
 
 **作者背景。**Mark Tarver 是英国数学家、计算机科学家，在剑桥拿了博士。他上世纪末做的第一门语言叫 Qi，是一门当年获过奖的函数式语言——核心卖点是「在 Common Lisp 之上加一套序列演算类型系统」。Qi 后来停止维护，Tarver 在二零一一年前后重写了一遍，叫做 Shen——保留 Qi 的核心思想，但把可移植性放在第一位。
 
@@ -100,7 +100,7 @@ Brooks 的做法换了个方向——**不让智能体变聪明，让智能体�
 
 把 Brooks 在博客里给的多租户访问控制例子完整摆出来，这是理解整个项目的关键。
 
-![Shen 序列演算 → Go 守卫类型 → AI 智能体两种结局 三栏流程图](proof-chain-flow.png)
+![Shen 序列演算 → Go 守卫类型 → AI 智能体两种结局 三栏流程图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/shen-backpressure-coding-agent-formal-verify-2026-05-21/proof-chain-flow.png)
 
 **第一段 · Shen 规约。**这一段是写给规约维护者看的，业务团队不直接接触：
 
@@ -165,7 +165,7 @@ Brooks 在博客里用一句话总结这件事的工程意义：「the proof tra
 
 理解了规约怎么写，再看 Brooks 设计的五道闸门——这是智能体跑完一轮代码生成后，必须依次通过的五道结构性检查。
 
-![Shen-Backpressure 默认五道闸门架构 智能体循环的硬卡点](five-gates-architecture-v2.png)
+![Shen-Backpressure 默认五道闸门架构 智能体循环的硬卡点](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/shen-backpressure-coding-agent-formal-verify-2026-05-21/five-gates-architecture-v2.png)
 
 **第一道 · shengen（`sb gen`）。**重新跑一次代码生成器，看「Shen 规约」和「Go 守卫类型」之间有没有漂移。如果智能体偷偷改了规约但忘了同步守卫，或者改了守卫但没改规约，这一道直接红。
 
@@ -185,7 +185,7 @@ Brooks 在博客里用一句话总结这件事的工程意义：「the proof tra
 
 Hacker News item 48209323 当天评论数只有十条，但分布很有代表性——五派意见全部出来了。
 
-![HN 帖底三派声音 结构压制派 确定性工具派 更强类型论派 代码生成安全派 无 AI 也成立派](hn-comments-snapshot.png)
+![HN 帖底三派声音 结构压制派 确定性工具派 更强类型论派 代码生成安全派 无 AI 也成立派](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/shen-backpressure-coding-agent-formal-verify-2026-05-21/hn-comments-snapshot.png)
 
 **第一派 · 作者自陈结构压制派。**作者 pyrex41 自己在评论区留了一句话总结整个项目的思路：
 
@@ -251,7 +251,7 @@ Brooks 用 Shen + 守卫类型做的事，是**把语义层面的不变量也升
 
 要把 Brooks 的论点说得更具体，看一个最贴近国内 Web 开发者日常的例子——OWASP Top 10 第一名是什么。
 
-![OWASP 第一名失效的访问控制 散乱 if 检查 vs 集中守卫类型 两种做法对照](owasp-broken-access-v2.png)
+![OWASP 第一名失效的访问控制 散乱 if 检查 vs 集中守卫类型 两种做法对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/shen-backpressure-coding-agent-formal-verify-2026-05-21/owasp-broken-access-v2.png)
 
 **OWASP 二零二五年版 Top 10 第一名仍然是 Broken Access Control——失效的访问控制。**这个分类已经连续多年居榜首。常见 bug 长这样：handler-a 写了 `if !user.IsMemberOf(tenantID)` 检查，handler-b 漏写了，handler-c 用了一个不一样的检查（`if user.Role == "admin"`）。三个 handler 都通过了单元测试，都通过了 code review——但 handler-b 的疏漏让攻击者能跨租户访问数据。
 

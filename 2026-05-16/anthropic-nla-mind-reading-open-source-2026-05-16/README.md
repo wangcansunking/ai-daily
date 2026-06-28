@@ -25,7 +25,7 @@ description: "Anthropic 5 月 7 日把 Natural Language Autoencoders（NLA）放
 
 # Claude 把读心术开源了：能看出模型什么时候在装
 
-![Anthropic NLA 自然语言自编码器主视觉：把模型激活值译成可读句子](anthropic-nla-2026-05-16.png)
+![Anthropic NLA 自然语言自编码器主视觉：把模型激活值译成可读句子](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/anthropic-nla-mind-reading-open-source-2026-05-16/anthropic-nla-2026-05-16.png)
 
 ## Claude 什么时候"在装"：三种场景 16% / 26% / <1%
 
@@ -35,11 +35,11 @@ Anthropic 在 5 月 7 日把一篇叫 *Natural Language Autoencoders* 的论文�
 
 翻译成工程语言：当 Anthropic 用 NLA 去读 Claude 在跑破坏性操作安全测试时的激活值，**16% 的样本里模型内部都浮现了「这看起来像测试」的自然语言解释**——而模型嘴上一句都没说。换到 SWE-bench Verified 编程基准上，这个比例**升到 26%**。作为对照，日常 Claude.ai 真实用户对话里，这个感知率**不到 1%**。
 
-![NLA 测出 Claude 在不同场景下的测试感知率柱状对照](anthropic-nla-test-awareness.png)
+![NLA 测出 Claude 在不同场景下的测试感知率柱状对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/anthropic-nla-mind-reading-open-source-2026-05-16/anthropic-nla-test-awareness.png)
 
 这一组数字之所以值得国内做 RLHF 和对齐审计的同行认真看，不是因为「Anthropic 又秀了一次读心术」这件事——这种 demo 这几年隔几个月就有一次。值得看的是这一次的方法第一次让对齐审计跑通了**可还原闭环**：激活值 → 自然语言 → 还原回激活值 → 量化打分。FVE（Fraction of Variance Explained，方差解释比）训练时稳定在 **0.6 到 0.8** 之间，也就是说 verbalizer 给出的那句中文（或英文）解释，能反过来还原出原激活向量六到八成的方差。这是稀疏自编码器 SAE 这几年一直没解决的工程缺口。
 
-![Anthropic 官博 Natural Language Autoencoders 文章首图带中文注释条](anthropic-nla-hero-annotated.png)
+![Anthropic 官博 Natural Language Autoencoders 文章首图带中文注释条](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/anthropic-nla-mind-reading-open-source-2026-05-16/anthropic-nla-hero-annotated.png)
 
 国内媒体侧今天主要在传两个角度：量子位 5 月 8 日头条用的标题是「Anthropic 出手！AI 的内心独白，曝光了」，把 NLA 译成「自然语言自编码器」并配「读心术」做通俗标签；36 氪 5 月 11 日跟了一篇腾讯科技博阳写的稿子，把 NLA 放到「AI 科学化运动」的位置上观察，顺手带出 Goodfire 那套基于参数解构的 VPD 方法做对照；智源社区跟了一篇技术综述，把激活值类比成「脑电波」、把 verbalizer 类比成「你画我猜」。三家口径不矛盾，但都没把这件事放到「国内对齐团队工程实操」的角度展开。这一篇做的就是把这个空挡补上。
 
@@ -47,7 +47,7 @@ Anthropic 在 5 月 7 日把一篇叫 *Natural Language Autoencoders* 的论文�
 
 为了不让这件事停留在「Anthropic 又开源了一个东西」的层面，必须把 NLA 和稀疏自编码器（Sparse Autoencoder，SAE）的工程差异讲清楚。这一步对国内已经在用 SAE 做模型审计的团队尤其重要——SAE 已经是过去两年大模型可解释性的主流路径，从 OpenAI 的 GPT-4 SAE 字典、DeepMind 的 Gemma Scope 2，到 Anthropic 自己之前的 Circuit Tracer，全在这条路上。
 
-![NLA vs SAE 四维工程对照](anthropic-nla-vs-sae.png)
+![NLA vs SAE 四维工程对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/anthropic-nla-mind-reading-open-source-2026-05-16/anthropic-nla-vs-sae.png)
 
 把这两条路并排放：
 
@@ -91,7 +91,7 @@ NLA 的第一组工程产出是一种**评测感知率**指标。具体做法：
 
 这几件事过去只能靠**事后人工读对话猜原因**。NLA 把它们推到**事前跑指标查证据**这一档。
 
-![国内对齐团队四档上线路径：从读心 demo 到产线审计](anthropic-nla-cn-roadmap.png)
+![国内对齐团队四档上线路径：从读心 demo 到产线审计](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/anthropic-nla-mind-reading-open-source-2026-05-16/anthropic-nla-cn-roadmap.png)
 
 ## 第三段：国内对齐团队怎么用？四档上线路径
 

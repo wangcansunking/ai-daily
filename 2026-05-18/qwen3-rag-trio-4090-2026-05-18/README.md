@@ -20,7 +20,7 @@ description: "Qwen3-Embedding-8B、Qwen3-Reranker-8B、Qwen3-Coder-30B-A3B 三�
 
 # Qwen3 RAG 三件套：在 RTX 4090 上跑通端到端
 
-![Qwen3 RAG 三件套：在 RTX 4090 上跑通端到端 · low-poly 封面](qwen3-rag-trio-4090-2026-05-18.png)
+![Qwen3 RAG 三件套：在 RTX 4090 上跑通端到端 · low-poly 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/qwen3-rag-trio-4090-2026-05-18/qwen3-rag-trio-4090-2026-05-18.png)
 
 过去一年，我们写「本地大模型」写过很多档：5/11 那篇拆 1M 上下文的 YaRN 与 KV 量化，5/14 那篇把 7 款国产 AI IDE 横评四种后端，5/16 那篇横评 4 模型在 3 任务上的得失，5/17 那篇钉死 4090 上 Q4 三家量化格式的取舍。但有一件事我们一直没真正端到端写过——**RAG 这套「嵌入 → 召回 → 重排 → 生成」流水线，能不能全栈国产、单卡跑通、且不带任何海外组件**。
 
@@ -65,7 +65,7 @@ Qwen3 系列从 5 月初开始把这件事补齐。今天提及的「三件套�
 
 三件套加在一起，最有价值的一点是「同源」——三个模型都从 Qwen3 基座衍生，嵌入和重排是在 Qwen3-8B 基础上做对比学习与监督微调出来的，与生成模型共享分词器、共享指令格式、共享语义空间。这件事比「单看每个模型的分数」更重要：跨模型语义对齐是 RAG 系统里最难调的隐性变量，过去用 bge-m3 + DeepSeek-Coder 这种「跨家组合」时，嵌入空间和生成模型的语义先验是错位的，需要靠 prompt 模板与多轮调参来弥合；三件套这种同源结构理论上把这一档错位天然消除了一部分。
 
-![Qwen3 RAG 三件套：嵌入 → 召回 → 重排 → 生成 五步流水线架构](qwen3-rag-trio-4090-2026-05-18-1-architecture.png)
+![Qwen3 RAG 三件套：嵌入 → 召回 → 重排 → 生成 五步流水线架构](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/qwen3-rag-trio-4090-2026-05-18/qwen3-rag-trio-4090-2026-05-18-1-architecture.png)
 
 把这件事讲完之后必须补一句：Qwen 团队没有把三件套官方包成「Qwen3-RAG-Suite」一类的整包，它们三个仓库独立存在、文档独立维护、推理引擎适配状态也不一样。社区目前是用 Milvus、Qdrant 这类向量库做胶水，把三件套手工串起来。本文也是把这件事做一次：把官方分散的三个仓拼成一张可工程化的「单卡 RAG 全栈」蓝图。
 
@@ -93,7 +93,7 @@ Qwen3 系列从 5 月初开始把这件事补齐。今天提及的「三件套�
 
 把这四条画在一张显存预算图上：
 
-![三件套显存预算：4090 24GB 单卡分时调度方案](qwen3-rag-trio-4090-2026-05-18-2-vram-budget.png)
+![三件套显存预算：4090 24GB 单卡分时调度方案](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/qwen3-rag-trio-4090-2026-05-18/qwen3-rag-trio-4090-2026-05-18-2-vram-budget.png)
 
 我们自己测下来，**方案 1（分时调度）+ Embedding/Reranker Q4_K_M GGUF + Coder AWQ Q4 是 4090 单卡最稳的姿态**：嵌入和重排走 llama.cpp 单独起一个 server，监听不同端口；生成走 vLLM 独立进程；中间用 Python 协调器按阶段拉起 / 释放。整体延迟比同卡常驻多 200 ms 左右，但 OOM 风险降到接近零。这件事在 r/LocalLLaMA 上已经有人验证：「inference memory and latency comparable to the original Qwen3-8B」（社区原文），意思是嵌入模型在 4090 上的开销曲线跟普通 8B 模型基本一致，没有特殊负担。
 
@@ -101,7 +101,7 @@ Qwen3 系列从 5 月初开始把这件事补齐。今天提及的「三件套�
 
 国内开发者最关心的问题是：替掉 bge-m3、替掉 OpenAI text-embedding-3-large、替掉 Cohere Rerank，分数到底差不差。把三件套与主流海外组合摆到同一张表上看一眼。
 
-![嵌入 + 重排双线对位：Qwen3 三件套 vs bge-m3 / OpenAI / Cohere](qwen3-rag-trio-4090-2026-05-18-3-benchmark.png)
+![嵌入 + 重排双线对位：Qwen3 三件套 vs bge-m3 / OpenAI / Cohere](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/qwen3-rag-trio-4090-2026-05-18/qwen3-rag-trio-4090-2026-05-18-3-benchmark.png)
 
 数字里几个关键点单独拆开讲。
 
@@ -130,7 +130,7 @@ Qwen3 系列从 5 月初开始把这件事补齐。今天提及的「三件套�
 
 具体到「怎么把 Qwen3 三件套塞进各家框架」，我们整理了一张国内 RAG 工程栈的四象限定位图：
 
-![国内 RAG 工程栈四象限：从开箱即用到工程可定制](qwen3-rag-trio-4090-2026-05-18-4-rag-quadrant.png)
+![国内 RAG 工程栈四象限：从开箱即用到工程可定制](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/qwen3-rag-trio-4090-2026-05-18/qwen3-rag-trio-4090-2026-05-18-4-rag-quadrant.png)
 
 四象限的判断标准是横轴「开箱即用 ↔ 工程可定制」、纵轴「单机本地 ↔ 多机服务化」：
 

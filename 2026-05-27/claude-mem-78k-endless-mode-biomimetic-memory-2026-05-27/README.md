@@ -11,7 +11,7 @@ description: claude-mem 给 Claude Code、Gemini CLI、OpenClaw 装一套跨会�
 ---
 # claude-mem 78k stars 跨会话仿生记忆：把 Claude Code「失忆症」按在了海马体上
 
-![claude-mem 跨会话仿生记忆封面](claude-mem-78k-endless-mode-biomimetic-memory-2026-05-27.png)
+![claude-mem 跨会话仿生记忆封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/claude-mem-78k-endless-mode-biomimetic-memory-2026-05-27/claude-mem-78k-endless-mode-biomimetic-memory-2026-05-27.png)
 
 ## 30 秒速览
 
@@ -22,7 +22,7 @@ description: claude-mem 给 Claude Code、Gemini CLI、OpenClaw 装一套跨会�
 - **一行命令安装**：`npx claude-mem install`，自动注册 5 个 hook + 启动 37777 端口的 Worker + 拉起 Web UI；想换 IDE 加 `--ide gemini-cli` 或 `--ide opencode`；想给 OpenClaw 网关挂上则用专用脚本 `curl -fsSL https://install.cmem.ai/openclaw.sh | bash`
 - **本身就是 Claude Code 插件市场里 stars 最高的一类项目**：仓库 topics 里挂了 `claude-code-plugin / ai-memory / chromadb / sqlite / rag / long-term-memory`，定位明确——给 Claude Code 这一类基于 LLM 的开发助手补上「记忆」这块缺失的能力
 
-![claude-mem 仓库 og:image · Persistent Context Across Sessions for Every Agent](claude-mem-og.png)
+![claude-mem 仓库 og:image · Persistent Context Across Sessions for Every Agent](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/claude-mem-78k-endless-mode-biomimetic-memory-2026-05-27/claude-mem-og.png)
 
 ## 一、78,520 stars 这个数字背后：8 个月迭代 271 个版本的项目
 
@@ -70,7 +70,7 @@ description: claude-mem 给 Claude Code、Gemini CLI、OpenClaw 装一套跨会�
 
 你在 A 项目里跟 Claude Code 一起调通了一个稀奇的 Redis cluster 配置问题。这个经验对 B 项目也有用，但 B 项目的 `CLAUDE.md` 里没有这一条——除非你手动复制过去。CLAUDE.md 是 per-project 的，跨项目记忆基本等于零。
 
-![跨会话信息保留率：claude-mem 自动注入 vs CLAUDE.md 手动拼接](claude-mem-continuity.png)
+![跨会话信息保留率：claude-mem 自动注入 vs CLAUDE.md 手动拼接](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/claude-mem-78k-endless-mode-biomimetic-memory-2026-05-27/claude-mem-continuity.png)
 
 上面这张曲线是一个粗略估算：CLAUDE.md 方案在第一次会话保留率是 100%（你刚写完，全在），但越往后越衰减——第 5 次会话大约只剩 40%（你忘了同步、被截断、相关性低没被读到），第 20 次基本就剩 10%。claude-mem 因为是「自动捕获 + 按需取回」，理论上能维持在 80% 以上的稳定水位。
 
@@ -133,7 +133,7 @@ Claude Code 通过 MCP 协议跟 claude-mem 对话，claude-mem 给出 3 个工�
 
 总成本约 2300 token。如果不分层、一次性把所有相关 observation 完整内容塞进上下文，按平均每条 1000 token、10 条相关算就是 10000 token——**渐进式取回把 token 成本压到原来的约四分之一到十分之一**，正比于你过滤得有多准。
 
-![claude-mem 三层 MCP 工具：每层 token 成本（按官方估算中位）](claude-mem-token-budget.png)
+![claude-mem 三层 MCP 工具：每层 token 成本（按官方估算中位）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/claude-mem-78k-endless-mode-biomimetic-memory-2026-05-27/claude-mem-token-budget.png)
 
 这个设计哲学官方文档叫「progressive disclosure」（渐进披露）——别一次性塞给模型一堆细节，让模型像人翻档案一样，先看目录、再翻章节、再读具体页。读到这里你可能觉得「这不就是搜索引擎的思路吗」，确实是，但放进 MCP 工具协议里实现，让 Claude 自己决定「现在需要翻到哪一层」，这就是 claude-mem 跟传统 RAG 的差异——**它不是给人用的，是给 AI 用的**。
 
@@ -167,7 +167,7 @@ Endless Mode 把这个结构搬到 Claude Code 里：
 
 理论上的收益是把累计推理量从 O(N²) 拉回 O(N)：
 
-![Endless Mode（仿生记忆）vs 标准 Claude Code：推理量随工具次数的增长曲线](claude-mem-endless-curve.png)
+![Endless Mode（仿生记忆）vs 标准 Claude Code：推理量随工具次数的增长曲线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/claude-mem-78k-endless-mode-biomimetic-memory-2026-05-27/claude-mem-endless-curve.png)
 
 **为什么叫「仿生」**
 

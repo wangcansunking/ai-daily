@@ -17,7 +17,7 @@ description: 一篇刚上 Hacker News 前页的论文，用 GPT-5 推理模型�
 ---
 # 实测 Agent 编程的 token 烧在哪：六成花在反复改
 
-![黏土定格风格的开发者工作室：一个开发者在桌前写代码只攒了一小堆金币，旁边两个机器人在放大镜代码评审台前把代码传来传去，脚下堆着一大堆金币，象征 Agent 编程的钱主要烧在反复精修验证而非第一次生成](agent-coding-token-cost-breakdown-2026-06-08.png)
+![黏土定格风格的开发者工作室：一个开发者在桌前写代码只攒了一小堆金币，旁边两个机器人在放大镜代码评审台前把代码传来传去，脚下堆着一大堆金币，象征 Agent 编程的钱主要烧在反复精修验证而非第一次生成](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/agent-coding-token-cost-breakdown-2026-06-08/agent-coding-token-cost-breakdown-2026-06-08.png)
 
 如果让你猜，一套多 agent 系统从头帮你写一个程序，钱主要花在哪个环节，你大概会说「写代码那一步」。
 
@@ -25,7 +25,7 @@ description: 一篇刚上 Hacker News 前页的论文，用 GPT-5 推理模型�
 
 这篇论文叫《Tokenomics: Quantifying Where Tokens Are Used in Agentic Software Engineering》，1 月 20 日挂到 arXiv，最近在 Hacker News 上引起了不少讨论。它的价值不在于某个惊人的数字，而在于它给了开发者一张「成本地图」——**多 agent 编程贵，不贵在让模型生成代码，而贵在让一群 agent 反复商量着改代码、验代码。**
 
-![arXiv 论文首页：标题 Tokenomics，作者 Mohamad Salim 等四人，来自康考迪亚大学，摘要点明研究多 agent 系统在软件开发全流程中的 token 消耗分布](agent-coding-token-cost-breakdown-2026-06-08-source-arxiv-abstract.png)
+![arXiv 论文首页：标题 Tokenomics，作者 Mohamad Salim 等四人，来自康考迪亚大学，摘要点明研究多 agent 系统在软件开发全流程中的 token 消耗分布](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/agent-coding-token-cost-breakdown-2026-06-08/agent-coding-token-cost-breakdown-2026-06-08-source-arxiv-abstract.png)
 
 *来源：arXiv:2601.14470 论文首页，2026 年 1 月 20 日提交，收录于 MSR '26（软件仓库挖掘会议）*
 
@@ -45,7 +45,7 @@ description: 一篇刚上 Hacker News 前页的论文，用 GPT-5 推理模型�
 
 记账的关键一步，是把 ChatDev 内部那些框架专属的环节，映射到所有人都认识的六个通用开发阶段。这一步是论文的方法论核心——映射做完，结论就能推广到别的框架。
 
-![arXiv 论文 Table 2：把 ChatDev 内部环节映射到六个通用开发阶段，设计对应需求分析与选语言，编码对应写源码，评审对应程序员与评审 agent 的迭代对话](agent-coding-token-cost-breakdown-2026-06-08-source-arxiv-fig2.png)
+![arXiv 论文 Table 2：把 ChatDev 内部环节映射到六个通用开发阶段，设计对应需求分析与选语言，编码对应写源码，评审对应程序员与评审 agent 的迭代对话](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/agent-coding-token-cost-breakdown-2026-06-08/agent-coding-token-cost-breakdown-2026-06-08-source-arxiv-fig2.png)
 
 *来源：arXiv:2601.14470 Figure 2，各阶段平均 token 占比，误差棒为 ±1 个标准差*
 
@@ -70,7 +70,7 @@ description: 一篇刚上 Hacker News 前页的论文，用 GPT-5 推理模型�
 
 把六个阶段的 token 占比画出来，分布极不均匀。
 
-![自制趋势示意图：六个开发阶段占总 token 的平均份额，代码评审 59.4% 一骑绝尘，代码补全 26.8%、文档 20.1%、测试 10.3%、编写代码 8.6%、设计 2.4%](agent-coding-token-cost-breakdown-2026-06-08-chart-phase-share.png)
+![自制趋势示意图：六个开发阶段占总 token 的平均份额，代码评审 59.4% 一骑绝尘，代码补全 26.8%、文档 20.1%、测试 10.3%、编写代码 8.6%、设计 2.4%](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/agent-coding-token-cost-breakdown-2026-06-08/agent-coding-token-cost-breakdown-2026-06-08-chart-phase-share.png)
 
 逐项看（占该任务总 token 的平均份额）：
 
@@ -103,7 +103,7 @@ description: 一篇刚上 Hacker News 前页的论文，用 GPT-5 推理模型�
 
 第三个发现更细，论文按阶段拆了输入/输出/推理的比例，发现不同开发活动的 token 画像差别很大。
 
-![自制趋势示意图：各阶段输入/输出/推理三类 token 占比的堆叠图，编写代码阶段输出占 58% 是唯一的异类，评审和文档则是输入主导](agent-coding-token-cost-breakdown-2026-06-08-chart-token-type.png)
+![自制趋势示意图：各阶段输入/输出/推理三类 token 占比的堆叠图，编写代码阶段输出占 58% 是唯一的异类，评审和文档则是输入主导](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/agent-coding-token-cost-breakdown-2026-06-08/agent-coding-token-cost-breakdown-2026-06-08-chart-token-type.png)
 
 完整数据（每个阶段内 输入 / 输出 / 推理 的占比）：
 

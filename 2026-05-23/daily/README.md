@@ -35,7 +35,7 @@ cover: "23.png"
 
 # 微软暂别 Claude · DeepSeek Code 浮现 · Cohere 真开源 218B | AI 日报 | 2026-05-23
 
-![papercut 剪纸风微软切回 Copilot · DeepSeek Code 浮现 · Cohere 真开源 218B 三线交织](23.png)
+![papercut 剪纸风微软切回 Copilot · DeepSeek Code 浮现 · Cohere 真开源 218B 三线交织](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/daily/23.png)
 
 ## 📋 头版目录
 
@@ -69,7 +69,7 @@ cover: "23.png"
 
 ### 头条 1 · 微软暂别 Claude Code 切回 Copilot CLI：表面工具切换，底子是 Token 经济学
 
-![The Verge 头版报道 · 微软给 Claude Code 内部许可设定 6/30 截止日](source-verge-microsoft-cancels-claude-2026-05-23.jpg)
+![The Verge 头版报道 · 微软给 Claude Code 内部许可设定 6/30 截止日](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/daily/source-verge-microsoft-cancels-claude-2026-05-23.jpg)
 
 #### 1.1 备忘录原文给出的时间表与覆盖范围
 
@@ -99,7 +99,7 @@ The Verge 没有公开备忘录里的具体账单数字，但 36 氪 5 月 16 �
 
 把"质量除以钱"摆出来：Copilot CLI 每分质量 479 美元，Claude Code 每分质量 1046 美元——质量高 21%，账单高 164%。当事业部工程师人数过万、单月 AI 工具开支上五千万美元规模时，这个比值乘出来就是季度财报里的真实硬支出。CFO 视角下，"质量高 21% 但贵 164%" 不是单 token 决策，是整个事业部的预算上限决策。
 
-![Token 经济学拆解 · Claude Code vs Copilot CLI 30 天账单对比](microsoft-claude-code-cost-comparison.png)
+![Token 经济学拆解 · Claude Code vs Copilot CLI 30 天账单对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/daily/microsoft-claude-code-cost-comparison.png)
 
 #### 1.3 国内自建路径对比视角：阿里 / 字节 / DeepSeek 走过同一道账单关
 
@@ -115,7 +115,7 @@ The Verge 没有公开备忘录里的具体账单数字，但 36 氪 5 月 16 �
 
 ### 头条 2 · DeepSeek Code 真要来了：ACM 金牌大神崔添翼挂帅 + Model+Harness=Agent 架构定调
 
-![DeepSeek 三条独立产品线 · Model + Harness + Agent 团队边界](deepseek-three-product-lines.png)
+![DeepSeek 三条独立产品线 · Model + Harness + Agent 团队边界](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/daily/deepseek-three-product-lines.png)
 
 #### 2.1 招聘帖原文与量子位深度稿同日发出
 
@@ -137,7 +137,7 @@ The Verge 没有公开备忘录里的具体账单数字，但 36 氪 5 月 16 �
 | Harness | 工具调用、沙箱、状态持久化、跨会话记忆 | 新组建的 Harness team |
 | Agent | 任务规划、子任务编排、长程目标对齐 | Harness team 上层产品化 |
 
-![Model + Harness = Agent 三层架构示意](deepseek-model-harness-agent.png)
+![Model + Harness = Agent 三层架构示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/daily/deepseek-model-harness-agent.png)
 
 这套划分对国内开发者的真实启示是：**未来 12 个月国内 Coding Agent 的竞争不在模型层，在 Harness 层**。模型层 DeepSeek V4 / Qwen3-Coder / GLM-4.6 Code / Kimi K2.6-Code 已经基本同档，差异主要是工具壳层的设计——谁的 Bash 沙箱稳定、谁的子任务编排不爆栈、谁的跨会话记忆能记住项目历史。
 
@@ -155,7 +155,7 @@ DeepSeek 选这个时间点公开 Harness team 招聘，**等于告诉国内开�
 
 ### 头条 3 · Cohere 把 Command A+ 2180 亿用 Apache 2.0 真开源：闭源中间地带被填上
 
-![Cohere Command A+ 2180 亿总参 / 250 亿激活的 MoE 模型 Apache 2.0 完全开源](cohere-command-a-plus-official-hero.png)
+![Cohere Command A+ 2180 亿总参 / 250 亿激活的 MoE 模型 Apache 2.0 完全开源](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/daily/cohere-command-a-plus-official-hero.png)
 
 #### 3.1 模型规格与硬件需求：两张 H100 起服务
 
@@ -179,7 +179,7 @@ Command A+ 在两条核心 agent benchmark 上的跃迁是 Cohere 这次开源�
 
 放在开源模型对位里：Llama 3.3 405B 在 τ²-Bench Telecom 上约 52%、DeepSeek V3.2 约 58%、Qwen3-235B 约 61%——Command A+ 把开源旗舰天花板抬到了 85%。
 
-![Command A+ vs 同档开源模型 τ²-Bench Telecom / Terminal-Bench Hard / SWE-Bench 三条对比](cohere-command-a-plus-36kr-benchmark.png)
+![Command A+ vs 同档开源模型 τ²-Bench Telecom / Terminal-Bench Hard / SWE-Bench 三条对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/daily/cohere-command-a-plus-36kr-benchmark.png)
 
 #### 3.3 Aidan Gomez 的「真开源」宣言：补齐闭源中间地带
 
@@ -252,19 +252,19 @@ DeepSeek 创始人梁文锋本周未公开发声。Deli Chen 5/22 X 招聘帖结
 
 [arxiv 2605.22791](https://arxiv.org/abs/2605.22791) [1]。NVIDIA Research 三位作者 Ali Hatamizadeh、Yejin Choi、Jan Kautz 5/21 挂论文，HuggingFace Papers 趋势榜次日 69 个 upvote。一句话：上代 Gated DeltaNet 用同一组门控参数管擦和写，新版给擦写各自独立的 gate 网络，**在 1.3B / 7B 双档训练下同等 perplexity 把 KV cache 占用压低 18-24%**。这件事对端侧长上下文 Coding Agent 是直接利好——同样 64GB 显存能跑的有效上下文窗口拉长一档。完整算法细节与五条 benchmark 对位见今日「Gated DeltaNet-2」专题。
 
-![Gated DeltaNet-2 vs 上代 / Mamba-2 / RetNet / Transformer 五条对位](gated-deltanet-2-five-way-benchmark.png)
+![Gated DeltaNet-2 vs 上代 / Mamba-2 / RetNet / Transformer 五条对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/daily/gated-deltanet-2-five-way-benchmark.png)
 
 ### 🔴 必读 / Anthropic Glasswing 初版报告：可解释性研究三季度路线图首个落锤
 
 [Anthropic Research](https://www.anthropic.com/research/glasswing-initial-update) [2]。5/22 周五 Anthropic 公开 Glasswing 项目初版结果，目标是把"模型在做某个推理判断时哪些神经元在做主"这件事从研究 demo 推到工程化产品阶段。HN 4 小时顶到 267 赞、179 评论。这是 Anthropic 给监管 / 企业大客户的一份关键交付——AI Safety 三季度承诺里"Agent 决策审计可视化"的工程化路径首次走通。
 
-![Anthropic Glasswing 初版报告 og 卡](source-anthropic-glasswing-2026-05-23.jpg)
+![Anthropic Glasswing 初版报告 og 卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/daily/source-anthropic-glasswing-2026-05-23.jpg)
 
 ### 🟡 推荐 / ModelRift OpenSCAD 罗马万神殿评测：Antigravity 2.0 唯一造出五环二十八格藻井
 
 [ModelRift Blog](https://modelrift.com/blog/openscad-llm-benchmark/) [3]。5/22 用罗马万神殿当 OpenSCAD 题目让六家 AI 编程工具同台跑分。结果让所有人意外——Cursor / Composer 2.5 最快但只有几分钟就出答案，质量 1.4/5；Google Antigravity 2.0 跑了近 12 分钟，是唯一造出五环二十八格藻井的代理；Claude Code 2.1 + Sonnet 4.6 第二慢、质量 3.4/5；Codex 5.5 High 初版渲染最漂亮但导出 STL 时却塌出一层莫名其妙的天花板。HN 339 赞 / 131 评论。
 
-![ModelRift OpenSCAD 万神殿评测 hero 图](source-modelrift-openscad-2026-05-23.png)
+![ModelRift OpenSCAD 万神殿评测 hero 图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/daily/source-modelrift-openscad-2026-05-23.png)
 
 ### 🟡 推荐 / 阿里 Qwen3.7-Max 旗舰 agent-centric 模型发布
 
@@ -282,13 +282,13 @@ DeepSeek 创始人梁文锋本周未公开发声。Deli Chen 5/22 X 招聘帖结
 
 截至 5 月 23 日中午，DeepSeek-V4-Flash 的 HuggingFace 模型卡月下载量爬到 **255.65 万次**，比 5/21 那篇双 4090 vLLM 专题写稿时（228.95 万）又多走了 11.6%；antirez/ds4 仓库 Star 数从 5/11 的 5950 翻到 **11369**，过去 12 天净增 5419。一个 284B 总参的国产开源 MoE，加上 Redis 之父亲手写的专属 C+Metal 推理引擎，加上 llama.cpp、MLX、SGLang 三条全开源框架同步跟进——把"国内开发者书房 4090 / Mac Studio / Strix Halo / 双 A100"四档硬件全打通。完整四档硬件实测、吞吐对比、显存利用率脉络见今日「DeepSeek V4 Flash 本地 MLX / llama.cpp / ds4c 实战」专题。
 
-![DeepSeek V4 Flash 四档硬件 vs 三条推理框架吞吐对位](deepseek-v4-flash-hardware-framework-throughput.png)
+![DeepSeek V4 Flash 四档硬件 vs 三条推理框架吞吐对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/daily/deepseek-v4-flash-hardware-framework-throughput.png)
 
 ### OpenClaw + GLM-4.5-Air 私有 RAG · 国产三场景落地
 
 5 月 23 日，OpenClaw 主仓库定格在 **373989 Star**、MIT 协议、TypeScript 写，是个人 AI 助手类项目里 Star 数排第一。同一周 HuggingFace 上 GLM-4.5-Air 月下载停在 **386593 次**，总参 106B、激活 12B、MoE 架构、纯 MIT 可商用。两条数字摆在一起讲清楚一件事：**把家庭流水、公司合同、写论文这三件事同时搬回本机，已经从「值不值」的问题变成了「怎么搭」的问题**。OpenClaw 接本地 GLM-4.5-Air 加一套 Qdrant 私有 RAG，比 Claude Code 慢 30%、贵不到 1/30，且数据完全不出本机。完整三场景部署清单 / 显存峰值 / 法律合规分项见今日「OpenClaw + GLM-4.5-Air 私有 RAG」专题。
 
-![OpenClaw + GLM-4.5-Air 私有 RAG 三场景部署架构](openclaw-glm4-6-air-private-rag-finance-legal-2026-05-23.png)
+![OpenClaw + GLM-4.5-Air 私有 RAG 三场景部署架构](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/daily/openclaw-glm4-6-air-private-rag-finance-legal-2026-05-23.png)
 
 ### 智谱 Code 速度领跑国产编程模型
 
@@ -306,7 +306,7 @@ DeepSeek 创始人梁文锋本周未公开发声。Deli Chen 5/22 X 招聘帖结
 
 [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) [7]（24881 ★ 累计，Python）。Anthropic 官方维护的 Claude Code 插件目录，把社区高质量插件统一收录、文档化、版本化。这一波 trending 主要由 5/22 Anthropic 公布的"6/15 程序化调用计费分离"事件推到首页——开发者扎堆来找官方推荐的、可信的插件路径。
 
-![Anthropic 官方 Claude Code 插件目录仓库 OG 卡](source-github-anthropics-claude-plugins-2026-05-23.png)
+![Anthropic 官方 Claude Code 插件目录仓库 OG 卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/daily/source-github-anthropics-claude-plugins-2026-05-23.png)
 
 ### 🔴 必看 / colbymchenry/codegraph · 单日 +3684
 

@@ -23,7 +23,7 @@ description: "一月底 Karpathy 在 X 上吐了四条 LLM 写代码反复犯的
 
 # Karpathy 65 行 CLAUDE.md 拿下 14 万 stars
 
-![Karpathy CLAUDE.md 四条铁律封面图 神秘石板悬浮笔记本上方 抽象符号 光束牵引代码归于秩序](karpathy-claude-md-4-rules-220k-2026-05-22.png)
+![Karpathy CLAUDE.md 四条铁律封面图 神秘石板悬浮笔记本上方 抽象符号 光束牵引代码归于秩序](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/karpathy-claude-md-4-rules-220k-2026-05-22/karpathy-claude-md-4-rules-220k-2026-05-22.png)
 
 ## 65 行 Markdown，凭什么是 AI Coding 生态最星仓库之一
 
@@ -33,7 +33,7 @@ description: "一月底 Karpathy 在 X 上吐了四条 LLM 写代码反复犯的
 
 整篇文章把这件事按四件子事拆开：仓库与时间线、四条铁律的中英对照、铁律一一对位 Karpathy 抱怨的病灶、国产八家 AI Coding 工具的适配现状。最后落到国内开发者最关心的那一段——这套规则在 OpenClaw 这种本地 AI 助手主项目上怎么挂、怎么验证，给一份可直接复制的精简中文版。
 
-![star history multica-ai/andrej-karpathy-skills 117 天 star 累计曲线 142,922 stars](star-history.png)
+![star history multica-ai/andrej-karpathy-skills 117 天 star 累计曲线 142,922 stars](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/karpathy-claude-md-4-rules-220k-2026-05-22/star-history.png)
 
 ## 时间线与仓库公开数字
 
@@ -60,7 +60,7 @@ description: "一月底 Karpathy 在 X 上吐了四条 LLM 写代码反复犯的
 
 仓库 `CLAUDE.md` 文件 65 行，包含一个开篇说明、四条规则与一段结尾验证语。下面是四条规则的原文与翻译，全部对照原文件一字不动。
 
-![Karpathy CLAUDE.md four-rules-bilingual 四条铁律中英对照卡片](four-rules-bilingual.png)
+![Karpathy CLAUDE.md four-rules-bilingual 四条铁律中英对照卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/karpathy-claude-md-4-rules-220k-2026-05-22/four-rules-bilingual.png)
 
 ### 规则一：Think Before Coding · 先想清楚再动手
 
@@ -186,7 +186,7 @@ description: "一月底 Karpathy 在 X 上吐了四条 LLM 写代码反复犯的
 
 很多人读这份 CLAUDE.md 时把它当成一份并列的好习惯清单。这是误读。这四条规则不是平行的，是 Karpathy 那条 X 推文里点名的四类病灶的处方，一一对位。下面把它们摆到一张映射矩阵里。
 
-![rules vs pitfalls 四条铁律对症 Karpathy 四类抱怨的处方矩阵](rules-vs-pitfalls.png)
+![rules vs pitfalls 四条铁律对症 Karpathy 四类抱怨的处方矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/karpathy-claude-md-4-rules-220k-2026-05-22/rules-vs-pitfalls.png)
 
 **病灶一 → 规则一。** Karpathy 原话：「模型会替你做错误假设，然后顺着假设跑下去都不查一查；它们不管理自己的困惑、不寻求澄清、不抛权衡、不反驳。」处方是 Think Before Coding——要求 agent 把假设显式说出来，遇到歧义全部摆开，不确定就停下来发问，而不是猜一种跑下去。
 
@@ -202,7 +202,7 @@ description: "一月底 Karpathy 在 X 上吐了四条 LLM 写代码反复犯的
 
 接下来到大家最关心的一段：这套规则在国内能用的工具上怎么落地？我把 2026 年五月还在持续更新的国产 AI Coding 工具横评了一遍，每家工具的官方文档与各自社区帖（V2EX / 知乎 / Linux.do / GitHub issues）都看过一遍。
 
-![cn ide support 国产 AI Coding 工具 CLAUDE.md 类配置支持现状](cn-ide-support.png)
+![cn ide support 国产 AI Coding 工具 CLAUDE.md 类配置支持现状](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/karpathy-claude-md-4-rules-220k-2026-05-22/cn-ide-support.png)
 
 把上图里的关键结论展开说：
 
@@ -238,7 +238,7 @@ description: "一月底 Karpathy 在 X 上吐了四条 LLM 写代码反复犯的
 
 OpenClaw 是本仓库的主项目，本地 AI 助手方向的开源 TypeScript 工程。从五月十九号专题的实测看，OpenClaw + 本地 Qwen3-Coder 30B A3B 在 RTX 4090 上跑一周共 256 次 agent 调用，月度边际成本 430 元，覆盖写作 + 财务两条主线。把 Karpathy 这份 65 行 CLAUDE.md 嫁接到 OpenClaw，有两条路径。
 
-![openclaw integration 路径示意 嫁接 Karpathy CLAUDE.md 的两条路径](openclaw-integration.png)
+![openclaw integration 路径示意 嫁接 Karpathy CLAUDE.md 的两条路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/karpathy-claude-md-4-rules-220k-2026-05-22/openclaw-integration.png)
 
 **路径 A，挂到全局规则。** 复制 65 行原文到仓库根，`~/.openclaw/config.yml` 添加 `global_rules: - source: ./CLAUDE.md / apply_to: [code_edit, plan] / enforce: strict / language: zh-CN`。重启 CLI，规则全局生效。验证方法是让 agent 改一行无关代码——按规则三应当被拒。OpenClaw 与 Claude Code 同源，一改双吃。
 

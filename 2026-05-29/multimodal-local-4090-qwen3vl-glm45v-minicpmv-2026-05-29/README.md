@@ -11,7 +11,7 @@ cover: multimodal-local-4090-qwen3vl-glm45v-minicpmv-2026-05-29.png
 
 # 千问 VL/GLM/MiniCPM：4090 多模态横评
 
-![一张 RTX 4090 上跑国产多模态：千问 VL / GLM-4.5V / MiniCPM-V 4.5 三家横评](multimodal-local-4090-qwen3vl-glm45v-minicpmv-2026-05-29.png)
+![一张 RTX 4090 上跑国产多模态：千问 VL / GLM-4.5V / MiniCPM-V 4.5 三家横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/multimodal-local-4090-qwen3vl-glm45v-minicpmv-2026-05-29/multimodal-local-4090-qwen3vl-glm45v-minicpmv-2026-05-29.png)
 
 ## 30 秒速览：4090 上跑国产多模态，3 家已经凑齐三种位置
 
@@ -33,7 +33,7 @@ cover: multimodal-local-4090-qwen3vl-glm45v-minicpmv-2026-05-29.png
 
 后面五个段落把这张表挨个展开。
 
-![RTX 4090 24GB 跑国产多模态：显存账与可达档](multimodal-vram-budget-2026-05-29.png)
+![RTX 4090 24GB 跑国产多模态：显存账与可达档](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/multimodal-local-4090-qwen3vl-glm45v-minicpmv-2026-05-29/multimodal-vram-budget-2026-05-29.png)
 
 ## 一、Qwen3-VL-30B-A3B：把视觉 agent 和 GUI 操控这条路单独跑通了
 
@@ -57,7 +57,7 @@ GLM-4.5V 是智谱 2025 年下半年放出来的视觉语言模型，主体是 z
 
 对 4090 用户来说，GLM-4.5V 当下的实际位置是「视觉推理的旗舰标杆」——本地跑不动，云端调 API（智谱开放平台或 SiliconFlow / DeepInfra 等聚合）做对照、看看自家 Qwen3-VL-30B-A3B AWQ 跟它差多少，是更现实的姿势。等 GLM-4.6V-Flash 或更小的 9B 版本（智谱已有 GLM-4V-9B 旧版基础，新一代 4.5V 系列的轻量版本社区一直在等）放出来，再回头跑本地。
 
-![MiniCPM-V 4.5 OpenCompass 8 项基准对照：8B 压过 72B 与 GPT-4o](multimodal-openbench-score-2026-05-29.png)
+![MiniCPM-V 4.5 OpenCompass 8 项基准对照：8B 压过 72B 与 GPT-4o](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/multimodal-local-4090-qwen3vl-glm45v-minicpmv-2026-05-29/multimodal-openbench-score-2026-05-29.png)
 
 ## 三、MiniCPM-V 4.5：8B 撑出 OCR 与 PDF 的 4090 甜点档
 
@@ -71,7 +71,7 @@ vLLM 已经原生支持 MiniCPM-V 4.5。启动命令大致是 `vllm serve openbm
 
 我们手里的任务一旦落到「OCR + PDF 表格 + 文档结构」这一类，MiniCPM-V 4.5 是 4090 上的第一选择；视频帧理解类（会议录像快进总结、视频教程关键帧提取）它也是甜点。Qwen3-VL-30B-A3B 在这两类任务上同样可用，但 30B 模型在 4090 上 token 速度会比 8B 慢 2-3 倍，OCR 这种结构化任务又用不到 30B 那部分推理深度——结果是 MiniCPM-V 4.5 反而更合适。
 
-![国产多模态选型矩阵：按任务挑哪家（RTX 4090 24GB）](multimodal-task-matrix-2026-05-29.png)
+![国产多模态选型矩阵：按任务挑哪家（RTX 4090 24GB）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/multimodal-local-4090-qwen3vl-glm45v-minicpmv-2026-05-29/multimodal-task-matrix-2026-05-29.png)
 
 ## 四、按任务分位：4090 上的国产多模态选型矩阵
 
@@ -97,7 +97,7 @@ vLLM 已经原生支持 MiniCPM-V 4.5。启动命令大致是 `vllm serve openbm
 
 4090 24GB 上能装的海外视觉语言模型主要是这几家：
 
-![国产 vs 海外开源多模态：4090 24GB 上的可达档对位](multimodal-cn-vs-overseas-2026-05-29.png)
+![国产 vs 海外开源多模态：4090 24GB 上的可达档对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/multimodal-local-4090-qwen3vl-glm45v-minicpmv-2026-05-29/multimodal-cn-vs-overseas-2026-05-29.png)
 
 - Meta Llama 3.2 Vision 11B / 90B：11B 单卡 4090 BF16 紧张，4-bit 可跑；90B 4090 装不下。综合表现中规中矩，OCR 弱。
 - Google Gemma 3 Vision 9B / 27B：9B 4090 完美，27B AWQ 紧张能跑。

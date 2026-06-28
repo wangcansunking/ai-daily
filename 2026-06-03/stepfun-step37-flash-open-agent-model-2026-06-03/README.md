@@ -12,7 +12,7 @@ description: "阶跃星辰（StepFun）5 月 29 日发布并开源 Step 3.7 Flas
 
 # 阶跃 Step 3.7 Flash：能本地跑的开源 Agent 底座
 
-![阶跃星辰 Step 3.7 Flash 发布并开源：一款主打速度、成本、可靠执行的生产级 Agent 模型](stepfun-step37-flash-open-agent-model-2026-06-03.png)
+![阶跃星辰 Step 3.7 Flash 发布并开源：一款主打速度、成本、可靠执行的生产级 Agent 模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/stepfun-step37-flash-open-agent-model-2026-06-03/stepfun-step37-flash-open-agent-model-2026-06-03.png)
 
 过去一年，国内想自己搭一套智能体（Agent）的团队，几乎都卡在同一个地方：好用的模型几乎都是闭源的。想要稳定的工具调用、可靠的多轮执行，往往只能把 Claude、GPT 这类海外旗舰挂在云端 API 后面——延迟看别人脸色，价格随调用量往上走，数据还得出内网。开源那一侧能打的不是没有，但要么偏向通用对话、要么参数大到本地跑不动，真正"为智能体而生、又能搬进自己机房"的底座，一直是稀缺品。
 
@@ -22,7 +22,7 @@ description: "阶跃星辰（StepFun）5 月 29 日发布并开源 Step 3.7 Flas
 
 ## 它到底新在哪：为智能体专门调过的一款 Flash 模型
 
-![阶跃星辰 Step 3.7 Flash 官方模型卡（HuggingFace `stepfun-ai/Step-3.7-Flash`）](source-stepfun-hf-modelcard-2026-06-03.png)
+![阶跃星辰 Step 3.7 Flash 官方模型卡（HuggingFace `stepfun-ai/Step-3.7-Flash`）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/stepfun-step37-flash-open-agent-model-2026-06-03/source-stepfun-hf-modelcard-2026-06-03.png)
 
 <small>来源：HuggingFace 官方模型卡 stepfun-ai/Step-3.7-Flash · 2026-05-29</small>
 
@@ -48,7 +48,7 @@ description: "阶跃星辰（StepFun）5 月 29 日发布并开源 Step 3.7 Flas
 
 ## 11B 激活 + 400 token/s：高频智能体最在意的两个数字
 
-![Step 3.7 Flash 稀疏 MoE：总参数 196B、每 token 只激活约 11B，最高生成速度约每秒 400 个 token](chart-stepfun-activation-speed-2026-06-03.png)
+![Step 3.7 Flash 稀疏 MoE：总参数 196B、每 token 只激活约 11B，最高生成速度约每秒 400 个 token](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/stepfun-step37-flash-open-agent-model-2026-06-03/chart-stepfun-activation-speed-2026-06-03.png)
 
 对自建智能体的团队来说，模型参数榜上的峰值分数往往不是第一关心的，**延迟和成本才是每天要还的账**。Step 3.7 Flash 最值得讲的两个数字，恰恰落在这两件事上。
 
@@ -70,7 +70,7 @@ description: "阶跃星辰（StepFun）5 月 29 日发布并开源 Step 3.7 Flas
 
 ## 智能体真实任务横评：视觉问答拔尖，多数仍在追
 
-![Step 3.7 Flash 官方 benchmark 大图：覆盖 Agentic Coding、General Agent、Multimodal 三组评测](source-stepfun-hf-benchmarks-2026-06-03.png)
+![Step 3.7 Flash 官方 benchmark 大图：覆盖 Agentic Coding、General Agent、Multimodal 三组评测](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/stepfun-step37-flash-open-agent-model-2026-06-03/source-stepfun-hf-benchmarks-2026-06-03.png)
 
 <small>来源：阶跃星辰官方 Step 3.7 Flash 发布页 benchmark 大图（HuggingFace 模型卡）· 2026-05-29</small>
 
@@ -78,7 +78,7 @@ description: "阶跃星辰（StepFun）5 月 29 日发布并开源 Step 3.7 Flas
 
 先把贴近"自建智能体"的几项真实任务分数摆出来，每一项都标明它在测什么：
 
-![Step 3.7 Flash 智能体真实任务横评：SimpleVQA 拿对比图最高、ClawEval 排第二，其余多项仍落后同台最高分（均为官方自评）](chart-stepfun-benchmark-2026-06-03.png)
+![Step 3.7 Flash 智能体真实任务横评：SimpleVQA 拿对比图最高、ClawEval 排第二，其余多项仍落后同台最高分（均为官方自评）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/stepfun-step37-flash-open-agent-model-2026-06-03/chart-stepfun-benchmark-2026-06-03.png)
 
 | 评测项（测什么） | Step 3.7 Flash | 同台最高分 | 官方定位 |
 |---|---|---|---|
@@ -102,7 +102,7 @@ description: "阶跃星辰（StepFun）5 月 29 日发布并开源 Step 3.7 Flas
 
 ## 开源这件事，才是它对自建智能体团队的真正分量
 
-![Step 3.7 Flash 与 NVIDIA 联合：vLLM / SGLang / TensorRT-LLM / NIM 全链路适配，FP8、NVFP4 量化齐备](source-stepfun-nvidia-blog-2026-06-03.png)
+![Step 3.7 Flash 与 NVIDIA 联合：vLLM / SGLang / TensorRT-LLM / NIM 全链路适配，FP8、NVFP4 量化齐备](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/stepfun-step37-flash-open-agent-model-2026-06-03/source-stepfun-nvidia-blog-2026-06-03.png)
 
 <small>来源：NVIDIA 官方技术博客 Run Step 3.7 Flash on NVIDIA GPUs · 2026-05</small>
 
@@ -125,7 +125,7 @@ description: "阶跃星辰（StepFun）5 月 29 日发布并开源 Step 3.7 Flas
 
 ## 放进坐标系：和千问、GLM、DeepSeek 这些开放权重底座怎么选
 
-![把 Step 3.7 Flash 放进开放权重 Agent 模型的坐标系：国内四家权重均可下载，闭源 Flash 仅作对位参照](chart-stepfun-open-weight-peers-2026-06-03.png)
+![把 Step 3.7 Flash 放进开放权重 Agent 模型的坐标系：国内四家权重均可下载，闭源 Flash 仅作对位参照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/stepfun-step37-flash-open-agent-model-2026-06-03/chart-stepfun-open-weight-peers-2026-06-03.png)
 
 国内自建智能体的团队，手里的开放权重选项其实已经不少。把 Step 3.7 Flash 放进这个坐标系，更容易看清它的位置。
 

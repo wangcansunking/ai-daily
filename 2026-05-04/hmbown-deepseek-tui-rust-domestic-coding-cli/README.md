@@ -11,7 +11,7 @@ cover: hmbown-deepseek-tui-rust-domestic-coding-cli.png
 
 # Claude Code 的 DeepSeek 版来了：DeepSeek-TUI
 
-![DeepSeek-TUI 4 个月攒到 3947 stars](hmbown-deepseek-tui-rust-domestic-coding-cli.png)
+![DeepSeek-TUI 4 个月攒到 3947 stars](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/hmbown-deepseek-tui-rust-domestic-coding-cli/hmbown-deepseek-tui-rust-domestic-coding-cli.png)
 
 > 3947 stars、4 个月、当日 +389、Trending Daily Top 4。Hmbown/DeepSeek-TUI 是一款用 Rust 写、专门绑定 DeepSeek V4 系列模型、跑在终端里的 coding agent。作者只有一个人——美国独立开发者 Hunter Bown（GitHub 用户名 Hmbown）。这是 DeepSeek 官方之外，第一个把"DeepSeek 1M 上下文 + agent 工具链"打包成单 binary 的开源工具，MIT 协议，cargo 一键装上就能用。
 
@@ -28,7 +28,7 @@ cover: hmbown-deepseek-tui-rust-domestic-coding-cli.png
 - **当日增长**：+389 stars，进 GitHub Trending Daily Rust 板块第 4 名
 - **作者画像**：Hunter Bown，65 个 public 仓库，170 followers，@huntermbown，Twitter 上零认证身份，没有公司挂靠
 
-![DeepSeek-TUI 4 个月增长里程碑](deepseek-tui-star-growth-4months.png)
+![DeepSeek-TUI 4 个月增长里程碑](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/hmbown-deepseek-tui-rust-domestic-coding-cli/deepseek-tui-star-growth-4months.png)
 
 把节奏拆开看会更直观。前两个月相当慢，stars 从 0 爬到 240 用了 4 周——这是大多数个人 Rust 项目的节奏。3 月 1 日 v0.5 把 Plan / Agent / YOLO 三种交互模式上线之后，曲线开始抬头。4 月初接入 DeepSeek V4 的 1M 上下文那一波拉动最大，单周 +280；4 月中旬一条 Hacker News 短帖把项目带进英语开发者视野，又叠上 +345。最后一拳是 5 月 3 日 v0.8.8——视觉重构、HTTP/SSE 无头 API、MCP 健康指示——直接把当日增长打到 +389。
 
@@ -40,7 +40,7 @@ DeepSeek-TUI 的核心定位很直白——把 Claude Code 那一套"终端原�
 
 具体的架构有五层。
 
-![DeepSeek-TUI 五层架构](deepseek-tui-architecture.png)
+![DeepSeek-TUI 五层架构](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/hmbown-deepseek-tui-rust-domestic-coding-cli/deepseek-tui-architecture.png)
 
 **第一层是终端 UI**。用 Rust 生态里成熟的 ratatui 库渲染——多 tab、滚动历史、内联 diff、可访问性配色（v0.8.8 新加）、retry/backoff 状态条、MCP 服务器健康指示。这些是 Claude Code 在 Node 端做了一年多才稳定下来的东西，DeepSeek-TUI 在 Rust 端用 4 个月追上了基本的可用度。
 
@@ -60,7 +60,7 @@ DeepSeek-TUI 的核心定位很直白——把 Claude Code 那一套"终端原�
 
 把市面上主流终端 / IDE coding agent 摆在一起对比，DeepSeek-TUI 的位置就清楚了——它不是要和 Cursor / 通义灵码这种带 GUI 的全平台工具拼，是和 Claude Code / Codex CLI / aider 这一档纯终端工具的同台竞争者。
 
-![终端 coding agent 横评](deepseek-tui-vs-claude-cursor-codex-aider.png)
+![终端 coding agent 横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/hmbown-deepseek-tui-rust-domestic-coding-cli/deepseek-tui-vs-claude-cursor-codex-aider.png)
 
 几条关键差异化——
 

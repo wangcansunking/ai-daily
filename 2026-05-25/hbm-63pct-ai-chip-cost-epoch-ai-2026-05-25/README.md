@@ -15,7 +15,7 @@ image_alt_match_ignore: []
 
 # AI 芯片成本里 HBM 占了 63%
 
-![AI 芯片成本结构里 HBM 内存占比 8 个季度堆叠面积图](hbm-cost-share-trend.png)
+![AI 芯片成本结构里 HBM 内存占比 8 个季度堆叠面积图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/hbm-63pct-ai-chip-cost-epoch-ai-2026-05-25/hbm-cost-share-trend.png)
 
 ## 30 秒速览：一颗 AI 芯片，六成多的钱花在内存上
 
@@ -52,9 +52,9 @@ Epoch AI 在 5 月 21 日挂出一份新数据：把 NVIDIA、AMD、Google、Ama
 
 集邦科技（TrendForce）在 2025 年 12 月披露，三星与 SK 海力士已经把 2026 年的 HBM3e 长约价上调了 20%。
 
-![四家设计厂 HBM 总支出从 120 亿涨到 320 亿美元的柱状对比](hbm-spend-quadruple.png)
+![四家设计厂 HBM 总支出从 120 亿涨到 320 亿美元的柱状对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/hbm-63pct-ai-chip-cost-epoch-ai-2026-05-25/hbm-spend-quadruple.png)
 
-![HBM 代际演进：从 HBM2 到 HBM4 单颗容量与带宽](hbm-generations-evolution.png)
+![HBM 代际演进：从 HBM2 到 HBM4 单颗容量与带宽](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/hbm-63pct-ai-chip-cost-epoch-ai-2026-05-25/hbm-generations-evolution.png)
 
 ## HBM 上游三家寡头：SK 海力士一家拿走六成
 
@@ -84,7 +84,7 @@ HBM 这个市场目前是三家寡头格局。根据 Counterpoint Research 在 2
 | 摩尔线程 S5000 | 摩尔线程（中） | HBM2e | 64 GB | 未公开 | 2025 |
 | 寒武纪思元 590 | 寒武纪（中） | HBM2 | 64 GB | 1.55 TB/s | 2024 |
 
-![主流 AI 芯片 HBM 配置实查表](gpu-hbm-config-matrix.png)
+![主流 AI 芯片 HBM 配置实查表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/hbm-63pct-ai-chip-cost-epoch-ai-2026-05-25/gpu-hbm-config-matrix.png)
 
 读这张表的几个细节：
 
@@ -137,7 +137,7 @@ gpm 在 151 赞的评论里说：
 
 **封装与设计协同——一整条产业链已经就位**：通富微电作为长鑫 HBM 的主要封装合作伙伴，已经为华为昇腾 910 系列提供 HBM 封装堆叠服务。中芯国际、长电科技、华天科技、晶方科技、深科技、华进半导体、兆易创新、北京君正、澜起科技、聚辰股份等一批厂商在 HBM 整个产业链的不同环节上都已经布局。
 
-![国产 HBM 路线时间窗 2025-2027](domestic-hbm-roadmap.png)
+![国产 HBM 路线时间窗 2025-2027](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/hbm-63pct-ai-chip-cost-epoch-ai-2026-05-25/domestic-hbm-roadmap.png)
 
 把这三块叠在一起看，2026 H1 就是那个关键窗口：长鑫 HBM3 全面量产 + 通富微电封装就位 + 昇腾 910C 第二代装机持续推进 + 长江存储三期厂启动量产。第一次出现"国产训练芯片单卡 128 GB 以上 HBM 全栈国产化"的工程可能性。
 

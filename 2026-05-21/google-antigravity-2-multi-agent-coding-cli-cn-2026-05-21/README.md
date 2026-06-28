@@ -23,7 +23,7 @@ description: "五月十九号晚上谷歌 I/O 2026 发布 Antigravity 2.0，把�
 
 # Google Antigravity 2.0 vs Cursor 3 vs Claude Code 五方混战，国内开发者怎么用得起来
 
-![Google Antigravity 2.0 多智能体 Coding CLI 封面图 3D 工作站桌面渲染 反重力视觉概念 多个 AI agent 协作 蓝紫青光照](google-antigravity-2-multi-agent-coding-cli-cn-2026-05-21.png)
+![Google Antigravity 2.0 多智能体 Coding CLI 封面图 3D 工作站桌面渲染 反重力视觉概念 多个 AI agent 协作 蓝紫青光照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/google-antigravity-2-multi-agent-coding-cli-cn-2026-05-21/google-antigravity-2-multi-agent-coding-cli-cn-2026-05-21.png)
 
 ## 这一次不是发新模型，是把整个 IDE 推倒重做
 
@@ -33,7 +33,7 @@ description: "五月十九号晚上谷歌 I/O 2026 发布 Antigravity 2.0，把�
 
 下面把可独立核实的事实、四大斜杠命令的具体契约、多 agent 架构、五方矩阵实测对比、国内可用度判断、以及国产工具的应对路径，全部摆到桌上。
 
-![Antigravity 2.0 桌面应用产品图 多 agent 工作台界面 来源 9to5Google](9to5-laptop.jpg)
+![Antigravity 2.0 桌面应用产品图 多 agent 工作台界面 来源 9to5Google](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/google-antigravity-2-multi-agent-coding-cli-cn-2026-05-21/9to5-laptop.jpg)
 
 ## 可独立核实的关键数字与时间点
 
@@ -63,7 +63,7 @@ description: "五月十九号晚上谷歌 I/O 2026 发布 Antigravity 2.0，把�
 
 ## 四大斜杠命令是什么——执行契约，不是快捷键
 
-![Antigravity 2.0 四大斜杠命令工作流图](antigravity-slash-commands.png)
+![Antigravity 2.0 四大斜杠命令工作流图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/google-antigravity-2-multi-agent-coding-cli-cn-2026-05-21/antigravity-slash-commands.png)
 
 斜杠命令听起来像 Slack 的 `/giphy`，但 Google 官方文档把它们定义为「契约」——决定 agent 在执行过程中的行为协议。逐个看：
 
@@ -103,7 +103,7 @@ description: "五月十九号晚上谷歌 I/O 2026 发布 Antigravity 2.0，把�
 
 ## subagent 并行调度是怎么落地的
 
-![Antigravity 2.0 多 agent 并行调度架构图](antigravity-multi-agent-arch.png)
+![Antigravity 2.0 多 agent 并行调度架构图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/google-antigravity-2-multi-agent-coding-cli-cn-2026-05-21/antigravity-multi-agent-arch.png)
 
 V2EX 用户 fds2003 五月二十号晚上发的实测帖，把 Antigravity 2.0 的多 agent 架构拆得最清楚。原话两句：「每次修改前强制生成 plan 供人类确认」「把耗时的检索和背景研究丢给 subagent」。配合 MarkTechPost 的技术分析，可以把架构拆成五层：
 
@@ -121,7 +121,7 @@ V2EX 楼主原话：「这套机制在很大程度上解决了大项目上下文
 
 ## 五方矩阵实测对比
 
-![五大 AI Coding 工具五方矩阵实测对比 Antigravity 2.0 Cursor Composer 2.5 Claude Code 千问 Coder Kimi K2.5](antigravity-five-camp-matrix.png)
+![五大 AI Coding 工具五方矩阵实测对比 Antigravity 2.0 Cursor Composer 2.5 Claude Code 千问 Coder Kimi K2.5](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/google-antigravity-2-multi-agent-coding-cli-cn-2026-05-21/antigravity-five-camp-matrix.png)
 
 把今天能在国内每天敲代码用到的五个主力 AI Coding 工具摆到一张矩阵里：
 
@@ -144,7 +144,7 @@ V2EX 楼主原话：「这套机制在很大程度上解决了大项目上下文
 - **国内可用度上 Qwen3-Coder 和 Kimi K2.5 是绝对优势**——直接国内连，不用 VPN，不用海外信用卡。Antigravity / Cursor / Claude Code 三家国内都需要 VPN，且都需要谷歌账号或海外手机号注册。
 - **开源维度上 Qwen3-Coder 一枝独秀**——模型权重、训练数据、agent 框架全开源，国内开发者可以自行部署到内网。Kimi K2.5 权重也开源（modified MIT），但 agent 框架还是 Moonshot 闭源的。Antigravity / Cursor / Claude Code 都是闭源。
 
-![Google AI Studio Android 9to5google aistudio 9to5 截图 同期发布 可一键导出到本地 Antigravity](9to5-aistudio.png)
+![Google AI Studio Android 9to5google aistudio 9to5 截图 同期发布 可一键导出到本地 Antigravity](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/google-antigravity-2-multi-agent-coding-cli-cn-2026-05-21/9to5-aistudio.png)
 
 ## 国内开发者实测可用度判断
 

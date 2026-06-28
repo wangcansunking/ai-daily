@@ -12,7 +12,7 @@ keywords: [JiuwenSwarm, 九闻群体智能, openJiuwen, 华为开源, multi-agen
 
 # JiuwenSwarm 开源：国产 multi-agent 第一次上桌
 
-![九闻群体智能 JiuwenSwarm 开源封面](jiuwenswarm-huawei-multi-agent-swarm-2026-05-19.png)
+![九闻群体智能 JiuwenSwarm 开源封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/jiuwenswarm-huawei-multi-agent-swarm-2026-05-19/jiuwenswarm-huawei-multi-agent-swarm-2026-05-19.png)
 
 ## 开篇：一句话先把今天这件事说清楚
 
@@ -27,9 +27,9 @@ keywords: [JiuwenSwarm, 九闻群体智能, openJiuwen, 华为开源, multi-agen
 | LOCOMO 长期记忆准确率 | **85%** | 跨 session 跟踪能力 |
 | 开源仓库 | **Apache-2.0 · Python · 已挂 697 star / 121 fork** | 截至 5/18 22:00 实查 |
 
-> ![JiuwenSwarm 三组对外报告口径](jiuwenswarm-three-kpis.png)
+> ![JiuwenSwarm 三组对外报告口径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/jiuwenswarm-huawei-multi-agent-swarm-2026-05-19/jiuwenswarm-three-kpis.png)
 
-![量子位 2026-05-18 JiuwenSwarm 报道 hero 截图](qbitai-jiuwenswarm-hero.jpeg)
+![量子位 2026-05-18 JiuwenSwarm 报道 hero 截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/jiuwenswarm-huawei-multi-agent-swarm-2026-05-19/qbitai-jiuwenswarm-hero.jpeg)
 
 这篇文章把三件事讲清楚：
 
@@ -54,7 +54,7 @@ JiuwenSwarm 把方向切到 **"养一群 Agent，让它们自己分工、自己�
 
 听起来像营销话术，但拆开看四层架构就能看到落点：
 
-![JiuwenSwarm 四层协同工程架构](jiuwenswarm-architecture.png)
+![JiuwenSwarm 四层协同工程架构](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/jiuwenswarm-huawei-multi-agent-swarm-2026-05-19/jiuwenswarm-architecture.png)
 
 四层从下往上读：
 
@@ -92,7 +92,7 @@ JiuwenSwarm 把方向切到 **"养一群 Agent，让它们自己分工、自己�
 
 按 5/18 各家项目主页 + 社区共识，我列了一张横评表：
 
-![JiuwenSwarm 与海外 framework 同框 compare 横评](jiuwenswarm-framework-compare.png)
+![JiuwenSwarm 与海外 framework 同框 compare 横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/jiuwenswarm-huawei-multi-agent-swarm-2026-05-19/jiuwenswarm-framework-compare.png)
 
 读这张表前先把 **Anthropic Swarm** 的现状交代清楚：Anthropic 24 年 10 月放出 Swarm 作为实验项目，定位明确写着 "educational"，到 2026 年 5 月仓库已停更近半年，handoff 协议本身设计巧妙，但没有自演进、没有 Skill 沉淀、没有 Hub。社区共识是：**它示范了 multi-agent 的最小可行内核，但不是产品级方案**。
 
@@ -130,7 +130,7 @@ CrewAI 走的是 Role-Task 模型——给每个 Agent 设角色和任务，靠 
 
 ### 3.1 PinchBench 94.2% vs OpenClaw 91.6%
 
-![PinchBench 对比柱状图](jiuwenswarm-pinchbench-compare.png)
+![PinchBench 对比柱状图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/jiuwenswarm-huawei-multi-agent-swarm-2026-05-19/jiuwenswarm-pinchbench-compare.png)
 
 先把口径说透：**PinchBench 不是 openJiuwen 团队出的题**，是 kilo.ai 团队为 OpenClaw 系 Coding Agent 设计的评测套件，开源在 `pinchbench/skill` 仓库。题目内容是真实任务：安排会议、写代码、整理邮件、调研话题、管理文件。
 

@@ -20,7 +20,7 @@ description: 截至 2026 年 6 月初，国产编码套餐已经从单纯的"编
 ---
 # 国产编码套餐怎么选：从智谱包月到 MiniMax 全模态按量
 
-![国产编码套餐横评封面](cn-coding-token-plan-compare-2026-06-04.png)
+![国产编码套餐横评封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/cn-coding-token-plan-compare-2026-06-04/cn-coding-token-plan-compare-2026-06-04.png)
 
 如果你每天用 Claude Code 或 Cursor 写代码，最近大概率被同一个问题反复问到：国产的编码包月套餐这么多家，到底该订哪一个。
 
@@ -36,7 +36,7 @@ description: 截至 2026 年 6 月初，国产编码套餐已经从单纯的"编
 
 把五家的套餐放在一张表里，差异一目了然：
 
-![国产编码套餐主横评表](cn-coding-token-plan-table-2026-06-04.png)
+![国产编码套餐主横评表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/cn-coding-token-plan-compare-2026-06-04/cn-coding-token-plan-table-2026-06-04.png)
 
 <small>来源：各厂商官方定价页（MiniMax platform.minimaxi.com、智谱 docs.bigmodel.cn、Kimi 会员页、阶跃 platform.stepfun.com、阿里云 help.aliyun.com），截至 2026 年 6 月初，自制对照表</small>
 
@@ -58,13 +58,13 @@ MiniMax Token Plan 的标准版分三档：**Starter ¥29/月、Plus ¥49/月、
 
 MiniMax 官方定价页把这套结构画得很清楚：
 
-![MiniMax Token Plan 定价卡片](source-minimax-tokenplan-pricing-2026-06-04.png)
+![MiniMax Token Plan 定价卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/cn-coding-token-plan-compare-2026-06-04/source-minimax-tokenplan-pricing-2026-06-04.png)
 
 <small>来源：IT之家《MiniMax 发布全球首个支持全模态模型的订阅计划 Token Plan》官方截图 ithome.com/0/931/772.htm，2026-03</small>
 
 除了标准版，MiniMax 还有一套**极速版**，推理速度更快、价格更高：极速版 Plus ¥98、Max ¥199、Ultra ¥899/月。极速版的多模态额度也更大。把各档多模态的具体配额拉出来看：
 
-![MiniMax 多模态额度表](source-minimax-multimodal-quota-2026-06-04.png)
+![MiniMax 多模态额度表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/cn-coding-token-plan-compare-2026-06-04/source-minimax-multimodal-quota-2026-06-04.png)
 
 <small>来源：IT之家 MiniMax Token Plan 官方额度表 ithome.com/0/931/772.htm，2026-03。Image 01 图像、Speech 2.8 语音、Music 2.5 音乐、Hailuo 2.3 视频各档每日额度</small>
 
@@ -112,7 +112,7 @@ Kimi 的卖点是套餐里附带的不只是编码——还打包了 AI 建站�
 
 横评里最容易踩的坑，是拿 A 家的"次请求"去比 B 家的"prompts"。这两个口径根本不是一回事。
 
-![额度计费口径对照](cn-coding-token-plan-units-2026-06-04.png)
+![额度计费口径对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/cn-coding-token-plan-compare-2026-06-04/cn-coding-token-plan-units-2026-06-04.png)
 
 <small>来源：各厂商官方文档计费口径说明，截至 2026 年 6 月初，自制对照图</small>
 
@@ -142,7 +142,7 @@ Kimi 的卖点是套餐里附带的不只是编码——还打包了 AI 建站�
 
 把价格和额度都摆完，最后回到最实际的问题：你是哪种开发者，该落在哪个价位段。按月费分三档对齐，各家的落点是这样的：
 
-![同样月费落在哪个价位段](cn-coding-token-plan-bands-2026-06-04.png)
+![同样月费落在哪个价位段](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/cn-coding-token-plan-compare-2026-06-04/cn-coding-token-plan-bands-2026-06-04.png)
 
 <small>来源：各厂商官方定价页，截至 2026 年 6 月初，自制对照图</small>
 

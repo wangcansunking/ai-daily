@@ -9,7 +9,7 @@ tags: [Web 标准, Chrome, Mozilla, Prompt API, 端侧大模型, WebNN]
 ---
 # Chrome 推浏览器原生大模型，Mozilla 反对
 
-![Mozilla 反对 Chrome Prompt API](mozilla-vs-chrome.png)
+![Mozilla 反对 Chrome Prompt API](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/mozilla-vs-chrome-prompt-api/mozilla-vs-chrome.png)
 
 > 488 票、195 条评论。Hacker News 头版 4 月 30 日把 Mozilla 反对 Chrome Prompt API 顶到了第一位，48 小时仍没掉下首页。
 
@@ -38,7 +38,7 @@ for await (const chunk of stream) {
 
 ## Mozilla 的三条反对意见，一条比一条具体
 
-![Mozilla 三条核心反对意见](mozilla-three-objections.png)
+![Mozilla 三条核心反对意见](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/mozilla-vs-chrome-prompt-api/mozilla-three-objections.png)
 
 Mozilla 在 standards-positions 仓库 issue #1213 把这条提案标为 `position: negative`。最新一次表态是 4 月 29 日，由前 Chrome 团队工程师、现为 Mozilla 撰写标准评估的 Jake Archibald 写下。
 
@@ -99,7 +99,7 @@ HN 47959463 这条贴在 4 月 30 日 7:43 UTC 提交，48 小时拿了 488 票�
 
 ## Mozilla 不只是反对，自己还做了另一条路
 
-![Prompt API 与 WebNN 的对照](prompt-api-vs-webnn-comparison.png)
+![Prompt API 与 WebNN 的对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/mozilla-vs-chrome-prompt-api/prompt-api-vs-webnn-comparison.png)
 
 Mozilla 反对 Prompt API 时，端出了自己的方案——Firefox 133 起，浏览器内置了一套基于 ONNX 运行时和 Transformers.js 的本地推理基础设施，最先用在了 PDF 自动写 alt 文本上。Firefox 134 之后，Mozilla 在 nightly 频道开放 `browser.trial.ml`，让 web 扩展可以加载开发者自选的开源模型，模型来源是 Hugging Face 的 Mozilla / Xenova 组织。
 
@@ -113,7 +113,7 @@ Prompt API、Firefox 扩展路径、WebNN——这是浏览器内置 AI 的三�
 
 回到我们自己的工位上。同一个事情，国内 Web 平台已经有一套自己的答案。
 
-![国内浏览器与 Web 平台的 AI 入口对照](china-browser-ai-landscape.png)
+![国内浏览器与 Web 平台的 AI 入口对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/mozilla-vs-chrome-prompt-api/china-browser-ai-landscape.png)
 
 **夸克浏览器**走的是另一种思路：AI 入口长在搜索框和侧边栏里，背后接阿里通义系列模型，2025 年 3 月升级为「AI 超级框」。用户在地址栏直接问问题，浏览器调用云端大模型整合搜索结果。这是产品级 AI，不是 Web API——前端开发者拿不到 `window.LanguageModel` 这样的入口。
 
@@ -144,7 +144,7 @@ Chrome Prompt API 想做的事情，这四条路径都覆盖了——只是没�
 
 ## 标准博弈不是新鲜事
 
-![Web 标准博弈历史 · Chrome 单边推进的提案命运](web-standards-history.png)
+![Web 标准博弈历史 · Chrome 单边推进的提案命运](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/mozilla-vs-chrome-prompt-api/web-standards-history.png)
 
 Web 历史上类似的拐点出现过好几次。Chrome 主推、Mozilla 拒签的提案有过一长串：联邦学习广告投放（FLoC）、Topics API、Web Environment Integrity、Web Bluetooth、Web Serial、Web USB……每一次的争论结构都很像——Chrome 拿着多数市场份额先发制人发 intent-to-ship，Mozilla 和苹果（WebKit）在标准位置上写下反对，社区分裂成三种意见：跟 Chrome 走、坚持等共识、彻底跳出 Web 平台用别的方案。
 

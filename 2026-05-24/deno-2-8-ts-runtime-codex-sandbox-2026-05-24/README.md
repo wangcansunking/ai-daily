@@ -14,7 +14,7 @@ authors:
 
 # Deno 2.8 给 AI Coding 当沙盒：Bun 之外的另一条路
 
-![Deno 2.8 给 AI Coding agent 当沙盒底座的封面图](deno-2-8-ts-runtime-codex-sandbox-2026-05-24.png)
+![Deno 2.8 给 AI Coding agent 当沙盒底座的封面图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/deno-2-8-ts-runtime-codex-sandbox-2026-05-24/deno-2-8-ts-runtime-codex-sandbox-2026-05-24.png)
 
 > 5 月 22 日，Deno 2.8 上线。这次大版本一口气塞进 `deno transpile`、`deno why`、`deno ci`、`deno pack`、`deno audit fix` 五个新子命令；Node 测试套通过率从 2.7 的 42% 拉到 76.4%（3405 / 4457 项），同周期 Bun 1.3.14 是 40.6%；冷启动 npm 安装比 2.7 快 3.66 倍，`node:http` 吞吐快 2.21 倍；TypeScript 升到 6.0.3；V8 从 14.6 升到 14.9。Hacker News 上 5 月 22 日发布当天的头帖一夜冲到 404 分、169 条评论（截至 5 月 23 日上午的 algolia 接口实查），是当周排在前列的 runtime 类话题。
 
@@ -26,7 +26,7 @@ authors:
 - 为什么 AI Coding agent 时代，「TypeScript 默认 + 权限白名单 + microVM」这条路线正变成事实标准；
 - 国内做通义灵码、Trae、千问 Code 这类 Coding agent 的团队，怎么把这套思路对位到阿里函数计算、腾讯云函数、字节 IDLerunner 三家国内云函数上去落地。
 
-![Deno 2.8 官方 release 头图](deno-2-8-official-hero.png)
+![Deno 2.8 官方 release 头图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/deno-2-8-ts-runtime-codex-sandbox-2026-05-24/deno-2-8-official-hero.png)
 
 ## 一、Deno 2.8 这次升级的三件大事
 
@@ -44,7 +44,7 @@ Deno 2.8 官方博客把 release 切成 npm 工程化、调试体验、Web 标�
 
 下面这张图是 Deno 2.8 与 Bun 1.4、Node 24 LTS 三家在 AI Coding 沙盒视角下的能力横评矩阵，把上面三件大事映射到「AI agent 跑用户代码」这个具体场景上。
 
-![Deno 2.8 / Bun 1.4 / Node 24 LTS 三家在 AI Coding 沙盒场景下的能力对比矩阵](deno-2-8-runtime-matrix.png)
+![Deno 2.8 / Bun 1.4 / Node 24 LTS 三家在 AI Coding 沙盒场景下的能力对比矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/deno-2-8-ts-runtime-codex-sandbox-2026-05-24/deno-2-8-runtime-matrix.png)
 
 | 能力维度 | Deno 2.8 | Bun 1.4 | Node 24 LTS |
 |---|---|---|---|
@@ -91,7 +91,7 @@ Deno 2.8 + Deno Sandbox 是**第三种思路**：把权限模型做进 runtime �
 
 下面这张图把 AI Coding agent 调用 Deno 沙盒的合规链路画成五步，对照 Codex CLI 的 Seatbelt / Bubblewrap 方案，最大差别是第二步「声明 permissions」这一步直接写在 runtime CLI 参数里，不需要外接 sandbox 配置。
 
-![AI Coding agent 调用 Deno 沙盒的五步合规链路](deno-2-8-sandbox-flow.png)
+![AI Coding agent 调用 Deno 沙盒的五步合规链路](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/deno-2-8-ts-runtime-codex-sandbox-2026-05-24/deno-2-8-sandbox-flow.png)
 
 对国内做 Coding agent 的同行来说，这条路线的吸引力分三层：
 
@@ -111,7 +111,7 @@ Deno 抓的是另一条赛道：**「我要让 TS 代码在不可信场景下也
 
 下面这张图把国内三家云函数（阿里函数计算 / 腾讯云函数 / 字节 IDLerunner）和 Deno Deploy 放到一起横评，从 AI 沙盒视角看，国内方案在「微 VM 隔离 + 网络白名单」这条底层能力上其实并不缺位，差异主要在「TS 是不是默认 + Web 标准 API 是不是开箱即用」。
 
-![Deno Deploy vs 国内三家云函数对位横评](deno-2-8-cn-faas-compare.png)
+![Deno Deploy vs 国内三家云函数对位横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/deno-2-8-ts-runtime-codex-sandbox-2026-05-24/deno-2-8-cn-faas-compare.png)
 
 | 维度 | Deno Deploy | 阿里函数计算 FC | 腾讯云函数 SCF | 字节 IDLerunner |
 |---|---|---|---|---|

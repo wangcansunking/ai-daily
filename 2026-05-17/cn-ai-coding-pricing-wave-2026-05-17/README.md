@@ -25,7 +25,7 @@ description: "2026Q2 国内 AI Coding 套餐集体涨价，智谱海外版翻倍
 
 # 智谱海外翻倍 通义灵码限免 国内 AI Coding 选谁
 
-![国内 AI Coding 套餐 2026Q2 涨价潮封面 pricing wave cn](cn-ai-coding-pricing-wave-2026-05-17.png)
+![国内 AI Coding 套餐 2026Q2 涨价潮封面 pricing wave cn](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/cn-ai-coding-pricing-wave-2026-05-17/cn-ai-coding-pricing-wave-2026-05-17.png)
 
 ## 全文核心：贵了，但国内仍是性价比高地（国内 vs 海外对比）
 
@@ -33,7 +33,7 @@ description: "2026Q2 国内 AI Coding 套餐集体涨价，智谱海外版翻倍
 
 把全文核心论断先摆出来：**国产 Coding Plan 的中端档（¥149-¥199 月费）仍是当下全球性价比最高的一档，比 Cursor Pro $20 / Claude Code Pro $20 折成人民币便宜一半左右、且无需信用卡 / 跨境支付；缓存命中后的 API 单价 DeepSeek V4-Pro 仍维持在 ¥0.025-¥1/M Token 区间，相比 Claude Opus 4.5 的 ¥3.5/M 仍便宜 70-99%**。涨价潮过滤掉的是浅尝辄止的玩家，留下的是「真把 AI Coding 用进生产」的开发者——这对国内整个 AI 应用圈反而是利好。
 
-![国内 6 家 AI Coding 套餐三档月费横评 pricing overview cn](cn-ai-coding-pricing-overview.png)
+![国内 6 家 AI Coding 套餐三档月费横评 pricing overview cn](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/cn-ai-coding-pricing-wave-2026-05-17/cn-ai-coding-pricing-overview.png)
 
 一眼看下去六家分三个梯队：字节火山方舟 ¥19 入门档最便宜、MiniMax 顶端档 ¥119 最克制、智谱 Max ¥469 顶端档最贵；通义灵码靠阿里云的限免活动占住「个人专业版 5/20 之前 0 元」的特殊位置。下面把每一档的来历、选谁的理由摊开。
 
@@ -49,7 +49,7 @@ description: "2026Q2 国内 AI Coding 套餐集体涨价，智谱海外版翻倍
 
 国内版的 ¥49 / ¥149 / ¥469 三档暂时维持原价，但**新用户首购 5 折优惠取消、季付折扣从 8 折调到 9 折**——隐形涨价已经在路上。这是国内开发者群里反复确认过的细节：5 月之前买 Lite 季付能拿到 ¥48/季的「白菜价」，5 月之后这种活动几乎消失。
 
-![智谱 zhipu coding pricing 2026 上半年三次涨价节奏 trajectory](cn-ai-coding-pricing-zhipu-trajectory.png)
+![智谱 zhipu coding pricing 2026 上半年三次涨价节奏 trajectory](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/cn-ai-coding-pricing-wave-2026-05-17/cn-ai-coding-pricing-zhipu-trajectory.png)
 
 API 侧的涨价更具技术冲击力。GLM-5.1 发布后，OpenRouter 上的单价同步上调：**缓存命中输入 0.475 美元/百万 Token、缓存未命中输入 0.517 美元/百万 Token、输出 4.40 美元/百万 Token**。换算成人民币（按 7:1 汇率），缓存命中输入约 ¥3.4/M、输出约 ¥30.8/M。对比一下 Anthropic Claude Opus 4.5 的缓存命中输入 0.50 美元/百万 Token（≈¥3.5/M），**GLM-5.1 缓存命中价已经追到 Claude Opus 4.5 的 97% 位置**。
 
@@ -96,7 +96,7 @@ API 侧的涨价更具技术冲击力。GLM-5.1 发布后，OpenRouter 上的单
 
 `※ 美元按 7:1 汇率折算，缓存命中输入价为 OpenRouter / 模型卡公开口径`
 
-![DeepSeek vs GLM vs Claude Opus 缓存命中价对比 coding pricing overseas vs cn](cn-ai-coding-pricing-overseas-vs-cn.png)
+![DeepSeek vs GLM vs Claude Opus 缓存命中价对比 coding pricing overseas vs cn](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/cn-ai-coding-pricing-wave-2026-05-17/cn-ai-coding-pricing-overseas-vs-cn.png)
 
 这张图把三件事讲清楚了：
 
@@ -133,7 +133,7 @@ API 侧的涨价更具技术冲击力。GLM-5.1 发布后，OpenRouter 上的单
 
 这一档最佳组合是 `智谱 GLM Pro ¥149 + DeepSeek V4 API 按量（月预估 ¥80）`，**月支出 ¥230 左右**，IDE + API 双覆盖。Token 全月预估 5-8 亿，足够支撑 2-3 个项目并行 + 副业接单。如果月预算到 ¥300 上限，可以再加 ¥59 通义灵码，三家叠 IDE 体验做 A/B 对比。
 
-![月预算 100 / 300 / 500 元三档决策矩阵 coding pricing budget matrix](cn-ai-coding-pricing-budget-matrix.png)
+![月预算 100 / 300 / 500 元三档决策矩阵 coding pricing budget matrix](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/cn-ai-coding-pricing-wave-2026-05-17/cn-ai-coding-pricing-budget-matrix.png)
 
 判断方法：每天写代码 4-6 小时、单任务 Token 消耗 2-8 万、用 Agent 自动改文件但单任务时长 ≤30 分钟、月营收 ¥1000-5000——满足两条以上就在 ¥300 档稳住。
 
@@ -166,7 +166,7 @@ API 侧的涨价更具技术冲击力。GLM-5.1 发布后，OpenRouter 上的单
 
 把所有结论拧成一个 5 步走的决策路径：
 
-![国内 AI Coding 涨价潮后的 5 步迁移决策路径 cn coding pricing decision flow](cn-ai-coding-pricing-decision-flow.png)
+![国内 AI Coding 涨价潮后的 5 步迁移决策路径 cn coding pricing decision flow](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/cn-ai-coding-pricing-wave-2026-05-17/cn-ai-coding-pricing-decision-flow.png)
 
 1. **看月预算**：≤¥100 进入门档；¥100-¥300 进中端档；≥¥500 进顶端档
 2. **看日耗 Token**：<5000 万 选字节方舟 ¥19；1-3 亿 选智谱 Pro ¥149；>10 亿 选智谱 Max ¥469

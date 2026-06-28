@@ -13,7 +13,7 @@ feishu_doc_id: null
 
 # 自进化 Agent 越学越笨？一篇论文给经验内化定下三条原则
 
-![自进化 Agent 经验内化封面](self-evolving-agent-experience-collapse-2026-06-07.png)
+![自进化 Agent 经验内化封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/self-evolving-agent-experience-collapse-2026-06-07/self-evolving-agent-experience-collapse-2026-06-07.png)
 
 让 Agent 把自己用过的经验学进参数里、下一轮变得更强，这件事听起来像复利——跑得越久，本金越厚。但一篇 6 月 3 日挂上 arXiv 的新论文给出了一个让人有点意外的结论：现有的「经验内化」方法在多轮迭代下，不是越学越强，而是出现「渐进式能力坍缩」，第一轮可能真的涨，再往后掉头向下。
 
@@ -37,7 +37,7 @@ feishu_doc_id: null
 
 ## 渐进式能力坍缩：多轮迭代下，经验复利反成经验拖累
 
-![预期复利 vs 实际坍缩对照](self-evolving-agent-experience-collapse-2026-06-07-chart1.png)
+![预期复利 vs 实际坍缩对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/self-evolving-agent-experience-collapse-2026-06-07/self-evolving-agent-experience-collapse-2026-06-07-chart1.png)
 
 论文最反直觉的发现就在这张图的方向里：**把经验一轮轮内化进去，能力曲线不是向上复利，而是先涨后崩。**
 
@@ -55,7 +55,7 @@ feishu_doc_id: null
 
 ## 第一条线：学原则，别学实例
 
-![原则级 vs 实例级经验持久性](self-evolving-agent-experience-collapse-2026-06-07-chart2.png)
+![原则级 vs 实例级经验持久性](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/self-evolving-agent-experience-collapse-2026-06-07/self-evolving-agent-experience-collapse-2026-06-07-chart2.png)
 
 第一条线讲的是**经验的粒度**（experience granularity）：同样一段经验，你是把它整理成「可迁移的策略原则」，还是「贴着某条具体轨迹的实例」，结果差很远。
 
@@ -85,7 +85,7 @@ feishu_doc_id: null
 
 ## 第三条线：跟好老师学，别老盯着自己的错改
 
-![自我进化迭代下不同内化方式对照（论文图）](self-evolving-agent-x5.png)
+![自我进化迭代下不同内化方式对照（论文图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/self-evolving-agent-experience-collapse-2026-06-07/self-evolving-agent-x5.png)
 
 > 图为论文中不同内化方式在多轮自我进化迭代下的表现对照。来源：arXiv:2606.04703 论文 Figure（HTML 版 v1）
 
@@ -106,7 +106,7 @@ feishu_doc_id: null
 
 ## 三条线合起来：一份不坍缩的内化配方
 
-![HuggingFace Papers 论文页](self-evolving-agent-hf-papers.png)
+![HuggingFace Papers 论文页](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/self-evolving-agent-experience-collapse-2026-06-07/self-evolving-agent-hf-papers.png)
 
 > 图为该论文在 HuggingFace Papers 每日论文列表中的页面。来源：HuggingFace Papers（huggingface.co/papers/2606.04703）
 

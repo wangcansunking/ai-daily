@@ -22,7 +22,7 @@ description: 当地时间 6 月 9 日，Anthropic 把 Claude Fable 5 推成公�
 
 但这篇文章真正想讲的，不是它有多强。是这个最强模型做了一件以前没人在产品层默认做的事：**碰到网络攻击、生化、蒸馏这三类高危请求，它会自动把回答交给一个更弱的模型——Opus 4.8——来答**，大约 5% 的会话会被触发。能力顶到天花板，厂商却主动给它留了一道默认的闸。
 
-![复古印刷海报风格画面：一只由发光线条组成的蝴蝶，翅膀拼成一个巨大的数字 5，蝴蝶旁边立着一个老式断路器闸刀，画面冷暖对照，下方是密排的代码纹理](claude-fable5-mythos-safety-fallback-2026-06-10.png)
+![复古印刷海报风格画面：一只由发光线条组成的蝴蝶，翅膀拼成一个巨大的数字 5，蝴蝶旁边立着一个老式断路器闸刀，画面冷暖对照，下方是密排的代码纹理](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/claude-fable5-mythos-safety-fallback-2026-06-10/claude-fable5-mythos-safety-fallback-2026-06-10.png)
 
 ## 先说清楚 Fable 5 和 Mythos 5 是什么关系
 
@@ -37,7 +37,7 @@ Anthropic 这次一口气放了两个名字：Claude Fable 5 和 Claude Mythos 5
 
 这套设计的好处在于：它让 Anthropic 不必在"把强能力藏起来"和"把强能力裸放出去"之间二选一。强能力照样开发、照样给最需要它的防御方用满血版；面向大众的那一份，则把高危方向单独摁住，其余全部开放。对普通开发者，这意味着你拿到的不是一个被整体阉割过的弱化版，而是一个只在三类边缘话题上降速、其余地方满血的最强公开模型。这个分寸，正是这次发布里最值得琢磨的地方。
 
-![Anthropic 官方公告页截图，标题为 Claude Fable 5 and Claude Mythos 5](fable5-source-anthropic-news.png)
+![Anthropic 官方公告页截图，标题为 Claude Fable 5 and Claude Mythos 5](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/claude-fable5-mythos-safety-fallback-2026-06-10/fable5-source-anthropic-news.png)
 
 来源：Anthropic 官方公告页 `anthropic.com/news/claude-fable-5-mythos-5`，2026-06-09。
 
@@ -47,7 +47,7 @@ Anthropic 这次一口气放了两个名字：Claude Fable 5 和 Claude Mythos 5
 
 两个基准摆在一起看更清楚。SWE-Bench Pro 测的是接近真实软件工程的任务；FrontierCode 则是按生产标准衡量的高难编程评测。
 
-![Claude Fable 5 在 SWE-Bench Pro 和 FrontierCode 两项编程基准上与 Opus 4.8、GPT-5.5、Gemini 3.1 Pro 的横向对比条形图](fable5-chart-swebench.png)
+![Claude Fable 5 在 SWE-Bench Pro 和 FrontierCode 两项编程基准上与 Opus 4.8、GPT-5.5、Gemini 3.1 Pro 的横向对比条形图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/claude-fable5-mythos-safety-fallback-2026-06-10/fable5-chart-swebench.png)
 
 具体数字：
 
@@ -66,7 +66,7 @@ SWE-Bench Pro 上 80.3% 已经够亮眼，但 FrontierCode 这一栏才是分水
 
 落到实际：如果你的活只是写写脚本、补补函数，各家模型其实都够用，没必要为最强买单；但如果你面对的是遗留系统重构、跨框架迁移、要过 code review 的生产代码，FrontierCode 这一栏的差距会实打实地反映在你的工作效率上。
 
-![the-decoder 文章中的 Claude Fable 5 编程基准对比图](fable5-source-swebench.png)
+![the-decoder 文章中的 Claude Fable 5 编程基准对比图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/claude-fable5-mythos-safety-fallback-2026-06-10/fable5-source-swebench.png)
 
 来源：the-decoder 报道配图，2026-06-09。
 
@@ -85,7 +85,7 @@ IMC 那个例子则指向另一类场景。量化交易团队的"交易分析评
 
 当然，这两个都是 Anthropic 官方放出的客户口径，分数也来自厂商提供的评测，读的时候心里有数即可——真正的判断，还得等你把自己的代码库或自己的分析任务丢进去跑一遍。
 
-![the-decoder 文章中的 Claude Fable 5 标识图](fable5-source-decoder-logo.png)
+![the-decoder 文章中的 Claude Fable 5 标识图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/claude-fable5-mythos-safety-fallback-2026-06-10/fable5-source-decoder-logo.png)
 
 来源：the-decoder 报道配图，2026-06-09。
 
@@ -124,7 +124,7 @@ Fable 5 内置了一组新分类器，专门识别三类高危请求。一旦命
 
 这道闸还有一个对普通开发者很友好的特性：它是按请求内容动态判断的，而不是把整类话题一刀切封死。同样是聊网络安全，你问"怎么给我的服务器加固防火墙规则"和问"怎么写一个攻击某系统的漏洞利用"，前者是防御方的正常需求，后者才是闸要拦的方向。所以正经做安全开发、写防御工具、做渗透测试授权范围内工作的人，绝大多数情况不会被误伤——这也是为什么超过 95% 的会话能正常走完。Anthropic 把识别的精度做在了"请求意图"这一层，而不是"话题关键词"这一层，这是它敢公开的底气之一。
 
-![TechCrunch 关于 Claude Fable 5 发布的报道页面截图](fable5-source-techcrunch.png)
+![TechCrunch 关于 Claude Fable 5 发布的报道页面截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/claude-fable5-mythos-safety-fallback-2026-06-10/fable5-source-techcrunch.png)
 
 来源：TechCrunch 报道页，2026-06-09。
 
@@ -152,7 +152,7 @@ Fable 5 内置了一组新分类器，专门识别三类高危请求。一旦命
 - **要写进自己产品里调用的**：在 Claude API 用 `claude-fable-5` 这个标识接入，AWS Bedrock、Google Vertex AI、Microsoft Foundry 也都能用，挑你团队已经在用的那条线接最省事。
 - **对成本敏感的**：记住输出端是 Opus 4.8 的两倍价，把它留给真正啃硬骨头的任务，常规活继续用便宜档位。
 
-![the-decoder 文章中的 Claude Fable 5 智能体编程基准对比图](fable5-source-decoder-agentic.png)
+![the-decoder 文章中的 Claude Fable 5 智能体编程基准对比图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/claude-fable5-mythos-safety-fallback-2026-06-10/fable5-source-decoder-agentic.png)
 
 来源：the-decoder 报道配图，2026-06-09。
 

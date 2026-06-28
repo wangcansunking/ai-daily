@@ -13,7 +13,7 @@ language: zh-CN
 
 # 阿里开源代码审查：确定性流水线兜底，能当 Claude Code 插件
 
-![阿里开源的代码审查工具 Open Code Review：确定性流水线把改动文件全量选出来，大模型只负责判断每一段写得对不对](alibaba-open-code-review-hybrid-2026-06-07.png)
+![阿里开源的代码审查工具 Open Code Review：确定性流水线把改动文件全量选出来，大模型只负责判断每一段写得对不对](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/alibaba-open-code-review-hybrid-2026-06-07/alibaba-open-code-review-hybrid-2026-06-07.png)
 
 6 月 5 日，阿里开源的一个命令行代码审查工具 Open Code Review 冲到了 Hacker News 前排，海外开发者讨论得很热闹。它用 Go 写成，2026 年 5 月 18 日建仓，到 6 月 6 日还在持续更新。阿里官方说这套东西在内部已经用了约两年，服务过数万开发者、识别出数百万处代码缺陷，这次把它整个拿出来开源了。
 
@@ -31,7 +31,7 @@ language: zh-CN
 
 这个争论本身，恰恰说明了代码审查这件事的难点所在。
 
-![Open Code Review 在 GitHub 上的项目页](source-ocr-github-og-2026-06-07.png)
+![Open Code Review 在 GitHub 上的项目页](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/alibaba-open-code-review-hybrid-2026-06-07/source-ocr-github-og-2026-06-07.png)
 
 用 `gh api` 核对了一下项目的真实数据：截至 6 月 6 日，约 3421 颗 star、155 个 fork，主语言 Go，5 月 18 日建仓后保持着活跃更新。项目描述里明确写着混合架构、行级评论、内置微调规则集、兼容 OpenAI 与 Anthropic 接口这几个关键点。
 
@@ -50,7 +50,7 @@ language: zh-CN
 
 这四件事里，前两件最致命。**漏审和行号漂移，直接动摇了开发者对审查工具的信任**——一旦发现它漏了东西、或者评论老挂错地方，人就不会再认真看它的输出了。
 
-![Open Code Review 对照图 ocr-pipeline-vs-llm：纯大模型审查（pure llm）和确定性流水线加 Agent，在「文件不漏审」和「定位不漂移」两件事上的差别](ocr-pipeline-vs-llm.png)
+![Open Code Review 对照图 ocr-pipeline-vs-llm：纯大模型审查（pure llm）和确定性流水线加 Agent，在「文件不漏审」和「定位不漂移」两件事上的差别](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/alibaba-open-code-review-hybrid-2026-06-07/ocr-pipeline-vs-llm.png)
 
 这一节的结论很清楚：纯大模型审查不是不能用，而是它把「该看哪些文件、评论挂在哪一行」这种本该确定的事，也交给了一个带随机性的模型去做。问题不在模型聪不聪明，在于分工错了。
 
@@ -60,7 +60,7 @@ Open Code Review 的核心思路，就是把刚才那几件「该确定的事」
 
 它内部一次审查，大致走三段路。
 
-![Open Code Review 架构图 ocr-architecture：一次审查在内部走的三段路，确定性流水线选文件、智能打包分组、隔离子 Agent 逐组判断](ocr-architecture.png)
+![Open Code Review 架构图 ocr-architecture：一次审查在内部走的三段路，确定性流水线选文件、智能打包分组、隔离子 Agent 逐组判断](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/alibaba-open-code-review-hybrid-2026-06-07/ocr-architecture.png)
 
 **第一段，确定性流水线。** 这一步不交给大模型：用确定的工程逻辑把本次改动涉及的文件全量选出来，一个都不漏；该报的行号，也由工程逻辑和外置定位回填，而不是让大模型生成。官方原文的说法是，对于那些「绝对不能出错」的审查步骤，由工程逻辑而非语言模型来保证正确性。
 
@@ -96,7 +96,7 @@ Open Code Review 的核心思路，就是把刚才那几件「该确定的事」
 
 更有意思的是，它能直接装成 Claude Code 的插件。
 
-![Open Code Review 官方 highlights 页展示的几项核心能力：约两万活跃用户、累计运行过百万次真实场景代码评审任务](source-ocr-highlights-zh-2026-06-07.png)
+![Open Code Review 官方 highlights 页展示的几项核心能力：约两万活跃用户、累计运行过百万次真实场景代码评审任务](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/alibaba-open-code-review-hybrid-2026-06-07/source-ocr-highlights-zh-2026-06-07.png)
 
 装成 Claude Code 插件之后，它会注册一个斜杠命令 `/open-code-review:review`。你在 Claude Code 里写完一段代码，直接敲这个命令，就能让它用确定性流水线加隔离子 Agent 的这套方式过一遍审查——相当于给 Claude Code 自带的能力补了一层专门为代码审查调优的工序。对每天用 Claude Code 写代码的人来说，这个接入方式几乎是零成本的。
 

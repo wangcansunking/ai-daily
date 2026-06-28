@@ -12,7 +12,7 @@ tags: [OpenClaw, Cherry Studio, Trae, 国产 IDE, MCP, 桌面 AI, BYOK, 本地�
 
 # 桌面 AI 三层堆栈：OpenClaw × Cherry × Trae
 
-![三层桌面 AI 堆栈封面](openclaw-cherry-studio-trae-desktop-stack-2026-05-26.png)
+![三层桌面 AI 堆栈封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/openclaw-cherry-studio-trae-desktop-stack-2026-05-26/openclaw-cherry-studio-trae-desktop-stack-2026-05-26.png)
 
 ## 30 秒速览
 
@@ -30,7 +30,7 @@ tags: [OpenClaw, Cherry Studio, Trae, 国产 IDE, MCP, 桌面 AI, BYOK, 本地�
 
 「场景分工论」给的是另一种解法：编程在 Trae、写作和 RAG 在 Cherry Studio、模型路由和密钥管理在 OpenClaw 后台默默做。一次配置完，三个场景共享同一份 provider 列表、同一套路由规则、同一笔账单。下面这张图是这套堆栈的数据流。
 
-![三层堆栈架构数据流](desktop-stack-three-layer-2026-05-26.png)
+![三层堆栈架构数据流](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/openclaw-cherry-studio-trae-desktop-stack-2026-05-26/desktop-stack-three-layer-2026-05-26.png)
 
 ## OpenClaw 是国际开源 gateway，不是某个人的私人项目
 
@@ -38,7 +38,7 @@ tags: [OpenClaw, Cherry Studio, Trae, 国产 IDE, MCP, 桌面 AI, BYOK, 本地�
 
 主维护者 steipete 在 README 里写的描述是：「Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞」最新 release 是 v2026.5.22（2026-05-24 发布），同时 v2026.5.24-beta.1 和 .2 也在测试通道里跑。同一个 organization 下还有 7 个配套仓库：clawhub（8,764 stars 的 Skill 目录）、Peekaboo（4,499 stars 的 macOS 截屏 MCP 服务器）、mcporter（4,498 stars 的 MCP 包管理器）、gogcli（7,542 stars 的命令行套件）、lobster（1,214 stars 的工作流 shell）、openclaw-windows-node（531 stars 的 Windows 客户端组件）、nix-openclaw（692 stars 的 Nix 包定义）。
 
-![OpenClaw 主仓 og:image](openclaw-github-og.png)
+![OpenClaw 主仓 og:image](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/openclaw-cherry-studio-trae-desktop-stack-2026-05-26/openclaw-github-og.png)
 
 为什么国内开发者讨论桌面 AI 工作流时绕不开它？三个产品事实：
 
@@ -48,7 +48,7 @@ tags: [OpenClaw, Cherry Studio, Trae, 国产 IDE, MCP, 桌面 AI, BYOK, 本地�
 
 配套的 ClawRouter（第三方 BlockRunAI/ClawRouter 仓，stars 6,512）做的是更细的路由层：它自带 41+ 模型、声称 <1 ms 路由延迟、还支持 Base 和 Solana 链的 USDC 加密支付。国内开发者关注它的产品维度通常是「41+ 模型一个 endpoint 接完」，加密支付那部分对境内场景关联不大，知道有这个能力即可。
 
-![ClawRouter 主仓 og:image](clawrouter-github-og.png)
+![ClawRouter 主仓 og:image](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/openclaw-cherry-studio-trae-desktop-stack-2026-05-26/clawrouter-github-og.png)
 
 ## Cherry Studio 是被低估的「非编程任务入口」
 
@@ -56,7 +56,7 @@ tags: [OpenClaw, Cherry Studio, Trae, 国产 IDE, MCP, 桌面 AI, BYOK, 本地�
 
 截至 2026-05-25，CherryHQ/cherry-studio 主仓 stars 46,281、forks 4,397、open issues 1,224，license 在 2025 年从 Dual License 切到 AGPL-3.0，主语言 TypeScript，最新 release v1.9.6（2026-05-15），跨平台 Windows / macOS / Linux 三端 Electron 应用。README 第一句的产品定位是：「AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs」。
 
-![Cherry Studio 主仓 og:image](cherry-studio-github-og.png)
+![Cherry Studio 主仓 og:image](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/openclaw-cherry-studio-trae-desktop-stack-2026-05-26/cherry-studio-github-og.png)
 
 把它和 LobeChat / Open WebUI / Chatbox 摆在一起对比，Cherry Studio 的差异点不是「模型多」也不是「界面好看」，而是「一个客户端把日常非编程任务全包了」：
 
@@ -67,7 +67,7 @@ tags: [OpenClaw, Cherry Studio, Trae, 国产 IDE, MCP, 桌面 AI, BYOK, 本地�
 | Open WebUI | 138,618 | BSD-3 派 | Web / Docker | 多语言 | Ollama 原生 | 支持 | 支持 |
 | Chatbox | 40,117 | GPL-3.0 | Win / Mac / Linux / iOS | 多语言 | 支持 | 弱 | 弱 |
 
-![四客户端横评矩阵](desktop-clients-matrix-2026-05-26.png)
+![四客户端横评矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/openclaw-cherry-studio-trae-desktop-stack-2026-05-26/desktop-clients-matrix-2026-05-26.png)
 
 差异点拆开看：Cherry Studio 是唯一国内团队 + 桌面客户端 + 默认 zh-CN + 完整 MCP / RAG / 知识库的组合。LobeChat 和 Open WebUI 都是 Web 端，需要自己起 Docker；Chatbox 是桌面端但 RAG 和 MCP 能力偏弱，更接近「带历史的 ChatGPT 桌面壳子」。
 
@@ -90,7 +90,7 @@ L3 编程层这一块，国产 IDE 已经形成了「通义灵码（阿里）+ �
 
 下面这张图是从隐私 / 合规三个维度对比三层堆栈的方案。
 
-![桌面三层堆栈隐私合规矩阵 privacy matrix](desktop-stack-privacy-matrix-2026-05-26.png)
+![桌面三层堆栈隐私合规矩阵 privacy matrix](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/openclaw-cherry-studio-trae-desktop-stack-2026-05-26/desktop-stack-privacy-matrix-2026-05-26.png)
 
 ## 数据流走 18789 端口：堆栈中枢
 
@@ -187,15 +187,15 @@ Trae 设置 → 模型管理 → 添加自定义模型 → baseURL 这里**必�
 
 把 Cherry Studio 摆在 LobeChat / Open WebUI / Chatbox 中间对比，并不是说 Cherry Studio 在所有维度都赢——四个客户端各有自己最擅长的场景。
 
-![LobeChat 主仓 og:image](lobechat-github-og.png)
+![LobeChat 主仓 og:image](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/openclaw-cherry-studio-trae-desktop-stack-2026-05-26/lobechat-github-og.png)
 
 LobeChat 77,688 stars，license NOASSERTION，Web + Docker 形态。它的强项是「插件市场」和「Web 端配置最丰富」：自带搜索、绘图、代码运行、文件解析等几十个插件，UI 在多语言下都做得很好。但它要求用户自己起 Docker，对桌面端用户来说门槛比 Cherry Studio 高一截。如果团队已经有内网 Docker 集群、希望多人共享同一份配置和插件，LobeChat 更合适。
 
-![Open WebUI 主仓 og:image](open-webui-github-og.png)
+![Open WebUI 主仓 og:image](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/openclaw-cherry-studio-trae-desktop-stack-2026-05-26/open-webui-github-og.png)
 
 Open WebUI 138,618 stars，BSD-3 派 license，Web + Docker。它是 Ollama 用户的事实默认前端，对本地后端的支持深度无人能及——直接和 Ollama 进程通讯、模型管理界面原生集成、镜像下载进度条都有。RAG 也做得很完整。如果工作流以「本地 Ollama 跑模型」为主、不太在乎云端模型，Open WebUI 比 Cherry Studio 更顺手。
 
-![Chatbox 主仓 og:image](chatbox-github-og.png)
+![Chatbox 主仓 og:image](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/openclaw-cherry-studio-trae-desktop-stack-2026-05-26/chatbox-github-og.png)
 
 Chatbox 40,117 stars，GPL-3.0，覆盖 Windows / macOS / Linux / iOS 四个平台。它的强项是「跨平台一致体验 + iOS 端」——目前桌面客户端里少有的有完整 iPhone 端的项目。但 RAG 和 MCP 能力相对偏弱，更适合「桌面到手机随时切换的轻量对话」场景。
 
@@ -255,7 +255,7 @@ Cherry Studio 输出带引用块的回答：「根据第 7 条违约责任条款
 
 OpenClaw organization 下还有一个值得单独提的项目：clawhub（8,764 stars），定位是 OpenClaw 的 Skill 目录。社区贡献的 prompt 模板、Agent 配置、MCP 工具链全部聚合在这里，类似 Cherry Studio 内置的 300+ 助手市场，但走 OpenClaw 路由层、所有客户端共享同一份 Skill 库。
 
-![ClawHub 主仓 og:image](clawhub-github-og.png)
+![ClawHub 主仓 og:image](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/openclaw-cherry-studio-trae-desktop-stack-2026-05-26/clawhub-github-og.png)
 
 国内开发者关注 ClawHub 的现实意义是：当三层堆栈跑通之后，新接一个场景（比如「英文邮件润色」「学术论文摘要」「会议纪要整理」）不再需要在 Cherry Studio 和 Trae 里各贴一遍系统提示词，从 ClawHub 拉一个 Skill 配置，三个客户端立刻共享。Skill 的版本和更新走 git 管理，团队里多人共享同一份 Skill 库时，更新一次所有人立刻同步。
 

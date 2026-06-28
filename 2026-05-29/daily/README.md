@@ -46,7 +46,7 @@ cover: 29.png
 
 # Claude Opus 4.8 上线 · Genesis 开源机器人仿真平台 · SQLite 官方仓库拒收 AI 代码 | AI 日报 | 2026-05-29
 
-![三件事互相咬合：Opus 4.8 让 Claude 自己写脚本调 16 个分身、Genesis 把机器人仿真平台一次性开源、SQLite 在仓库里写明不收 AI 代码](29.png)
+![三件事互相咬合：Opus 4.8 让 Claude 自己写脚本调 16 个分身、Genesis 把机器人仿真平台一次性开源、SQLite 在仓库里写明不收 AI 代码](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/daily/29.png)
 
 ## 📋 头版目录
 
@@ -76,7 +76,7 @@ cover: 29.png
 
 ### 头条 1 · Anthropic 同日发 Opus 4.8 + Claude Code Dynamic Workflows：Claude 第一次以「脚本作者」身份并行调 16 个分身
 
-![Anthropic 5-28 同步发 Claude Opus 4.8 与 Dynamic Workflows 的官方公告截图](anthropic-opus-4-8-news-og.jpg)
+![Anthropic 5-28 同步发 Claude Opus 4.8 与 Dynamic Workflows 的官方公告截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/daily/anthropic-opus-4-8-news-og.jpg)
 
 5 月 28 日 Anthropic 一口气发了两份公告：Claude Opus 4.8 [6] 与 Claude Code Dynamic Workflows [7][8]。这两件事不是各自独立的版本号迭代，是同一条产品线的同步升级——Opus 4.8 把模型推理能力推上去，Dynamic Workflows 把 Claude Code 这一壳子的协作能力推上去，两者一起把「季度级代码审计 / 千文件迁移 / 跨源研究」这一档活的耗时从月压成天。
 
@@ -93,7 +93,7 @@ Dynamic Workflows 之前 Claude Code 已经支持 subagent，但调度是开发�
 
 官博文案里出现的「几十到几百个 subagent」指的是单次运行总数，不是同一时刻并发——这一点 HN 评论里也有人指出。Subagent 在默认 acceptEdits 权限下运行，企业用法必须用工具白名单做硬约束。
 
-![Claude Code Dynamic Workflows 流程图：主 Claude 写 JavaScript 脚本调度 16 个并发 subagent + 对抗审计](claude-code-dynamic-workflow-flowchart-2026-05-29.png)
+![Claude Code Dynamic Workflows 流程图：主 Claude 写 JavaScript 脚本调度 16 个并发 subagent + 对抗审计](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/daily/claude-code-dynamic-workflow-flowchart-2026-05-29.png)
 
 #### 1.2 Opus 4.8 把未被发现的缺陷概率压到 1/4，价格未涨
 
@@ -119,7 +119,7 @@ HN 评论里的核心分歧是：并行规模上去之后，瓶颈是「Claude �
 
 ### 头条 2 · Genesis World 1.0（快速仿真世界）：Genesis AI 把多物理仿真、跨平台 GPU 编译器、光线追踪渲染器一次性 Apache-2.0 开源
 
-![Genesis World 1.0 在 36 氪 5-28 头版报道：让机器人学会番茄炒蛋的国内爆红团队开源机器人训练场](genesis-cn-36kr-screenshot.png)
+![Genesis World 1.0 在 36 氪 5-28 头版报道：让机器人学会番茄炒蛋的国内爆红团队开源机器人训练场](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/daily/genesis-cn-36kr-screenshot.png)
 
 5 月 28 日凌晨，Genesis AI（Genesis-Embodied-AI 组织）一次性把 Genesis World 1.0 三件套——多物理引擎、Quadrants 跨平台 GPU 编译器、Nyx 光线追踪渲染器——以 Apache-2.0 协议放上 GitHub [1]。仓库当前 stars 29,019、forks 2,740、Python 主语言、open issues 123，是过去一年里国内团队第一次拿出与 NVIDIA Isaac Sim 同档的全栈开源仿真栈。36 氪 [2]、量子位 [3]、虎嗅 [4] 同日头条覆盖，三家媒体里 36 氪用了「让机器人学会番茄炒蛋的爆红团队」做标题——这指向团队 2024 年那条夹蛋翻锅的演示视频。创始人周衔（Zhou Xian）是 CMU Robotics 博士，过去两年带队跑的是仿真到真机一体化路线。
 
@@ -136,19 +136,19 @@ Genesis AI 官博 [5] 给出的核心评估口径只用了两个数字：14 个�
 | 仿真评测耗时 | 30 分钟内 | 同样 14 × 200 回合 |
 | 时间压缩比 | 约 400 倍 | 200 小时 / 30 分钟 |
 
-![Genesis World 1.0 把真机 200+ 小时评测压成仿真 30 分钟，约 400 倍提速](genesis-200h-vs-30min-2026-05-29.png)
+![Genesis World 1.0 把真机 200+ 小时评测压成仿真 30 分钟，约 400 倍提速](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/daily/genesis-200h-vs-30min-2026-05-29.png)
 
 要注意三个边界条件：(1)Pearson 0.8996 是「相对强弱相关性」，不是「成功率绝对值一致」——某个策略在仿真里成功率 80%，到真机可能是 65% 也可能是 75%，但仿真比另一个策略好这件事大概率成立；(2) 14 个任务都是相对结构化的桌面操作，移动操作 / 全身控制 / 灵巧手不在其内；(3) 这条数字是 Genesis AI 自家口径，独立第三方复现需要时间。Genesis 团队在官博里也明确写「仿真不能替代真机评测，只是让真机评测变得稀缺而精确」。
 
 #### 2.2 Quadrants 跨平台 GPU 编译器六后端：第一次不绑 NVIDIA 供应链
 
-![Genesis Quadrants 跨平台 GPU 编译器架构：六后端 CUDA / ROCm / Metal / Vulkan / x86 / ARM64](genesis-quadrants-arch.png)
+![Genesis Quadrants 跨平台 GPU 编译器架构：六后端 CUDA / ROCm / Metal / Vulkan / x86 / ARM64](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/daily/genesis-quadrants-arch.png)
 
 Quadrants 是这三件套里对国内具身智能产业链最敏感的一件。它从 Taichi（MIT 系胡渊鸣团队的可微编程框架）派生，重写了关键模块，编译目标包含六个后端：CUDA（NVIDIA）、ROCm（AMD）、Metal（Apple Silicon）、Vulkan（跨厂 GPU 通用层）、x86 与 ARM64（纯 CPU）。Genesis AI 官博给出的数字是启动时间约 10× 提速、运行时最高约 4.6× 提速。这条数字本身重要，但对国内具身智能团队更重要的是「不绑 NVIDIA」这条工程姿态——A100 / H100 / H200 这一档 GPU 在国内的可获得性与价格波动一直是具身智能创业团队的最大不确定项，Quadrants 给出的是一份让 ROCm（AMD MI300X）、Metal（Apple Silicon Mac Studio）、Vulkan（国产 GPU 通用层）都能跑同一份仿真代码的工程承诺。
 
 #### 2.3 国内五家具身智能公司第一次有同档开源仿真栈可选
 
-![物理仿真栈横评：MuJoCo / Isaac Sim / Genesis 0.x / Genesis World 1.0 / 上海 AI Lab 各自位置](physics-sim-stack-bakeoff-2026-05-29.png)
+![物理仿真栈横评：MuJoCo / Isaac Sim / Genesis 0.x / Genesis World 1.0 / 上海 AI Lab 各自位置](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/daily/physics-sim-stack-bakeoff-2026-05-29.png)
 
 把国内五家具身智能公司当下的仿真栈摆在一起看：
 
@@ -164,7 +164,7 @@ Genesis World 1.0 给这五家提供的不是「立刻替换现有仿真栈」�
 
 ### 头条 3 · SQLite 在仓库根目录写下 AGENTS.md：不收 AI 代码，收带测试的 AI bug 报告
 
-![SQLite 仓库 hero 图：基础设施级 OSS 项目第一次在协议层划出 AI 红线](source-sqlite-hero.png)
+![SQLite 仓库 hero 图：基础设施级 OSS 项目第一次在协议层划出 AI 红线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/daily/source-sqlite-hero.png)
 
 5 月 22 日，SQLite 项目维护者 D. Richard Hipp 在仓库根目录新增了一份 AGENTS.md [11]。这份文件最关键的一段共三句话，翻译过来是：「SQLite **不接受** agentic 代码。但 SQLite 项目**接受**带可复现测试用例的 agentic bug 报告。展示可能修复方式的补丁或 PR，作为**文档用途**是欢迎的。」5 月 25 日前后，他又改了一次——把第一句末尾的「（currently）」删掉，commit 信息写「Strengthen the statement about not accepting agentic code」。Simon Willison 5 月 27 日发出一篇短评回应 [12]。SQLite 仓库当前 stars 9,708 / forks 1,514 / 默认分支 master / 最近 push 5/28 11:30 UTC（主仓在 sqlite.org/src 上用 Fossil 自托管，GitHub 上的是镜像）。
 
@@ -178,7 +178,7 @@ AGENTS.md 这三句话的边界划法值得一字一句拆开看：
 
 #### 3.2 为什么 SQLite 这么硬气：100% MC/DC 覆盖自 2009 起、测试代码与本体约 590:1
 
-![六大基础 OSS 项目对 AI 协作的接受度雷达对照：SQLite 刚刚把 AI 红线写进 AGENTS.md，cURL 走漏洞披露通道侧拦截](oss-ai-acceptance-radar-2026-05-29.png)
+![六大基础 OSS 项目对 AI 协作的接受度雷达对照：SQLite 刚刚把 AI 红线写进 AGENTS.md，cURL 走漏洞披露通道侧拦截](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/daily/oss-ai-acceptance-radar-2026-05-29.png)
 
 SQLite 这份 AGENTS.md 的工程底座，是它自 2009 年 8 月（3.6.17 版本）起就把 100% 分支覆盖 + 100% MC/DC（修正条件 / 判定覆盖，航空电子 DO-178B 等级标准）作为发布闸的一部分。官方 testing.html [13] 给出的数字是 TH3 测试套件约 76.9MB / 1055.4 KSLOC C 代码 / 50,362 个测试用例，参数化展开后约 240 万个测试实例；测试代码（TH3 + TCL + SQLLogic 三套）与本体核心 C 代码（约 15.6 万行）之比约 590:1。这是 SQLite 能把「不接受 AI 代码」当成产品级承诺的根本——AI 助手当前还做不到「写一段会落进 590 倍测试代码覆盖网的 SQLite 内核 PR」。维护者 D. Richard Hipp 是 1967 年生的资深工程师，运营 Hwaci 这家小团队私有公司，治理结构是「小团队私有判断」，所以这条政策能直接拍板。
 
@@ -197,7 +197,7 @@ SQLite 这份 AGENTS.md 的工程底座，是它自 2009 年 8 月（3.6.17 版�
 
 ## ⚡ 快讯速览
 
-![CVE-2026-48710 BadHost：FastAPI / vLLM / LiteLLM / FastAPI-MCP / Airflow 五条下游全栈依赖扇出树](fastapi-starlette-deptree-2026-05-29.png)
+![CVE-2026-48710 BadHost：FastAPI / vLLM / LiteLLM / FastAPI-MCP / Airflow 五条下游全栈依赖扇出树](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/daily/fastapi-starlette-deptree-2026-05-29.png)
 
 - **CVE-2026-48710 BadHost** [14][15]：Starlette < 1.0.1 在构造 `request.url` 时把 Host header 与 path 拼接后用 `urlsplit` 解析，恶意 Host 让 `request.url.path` 与 ASGI `scope[path]` 分道扬镳、绕过 middleware 路径鉴权。Starlette 周下载 3.25 亿次、GitHub 下游依赖 40 万+ 项目，FastAPI / vLLM / LiteLLM / FastAPI-MCP / Text Generation Inference / Apache Airflow Webserver 一起在影响范围。修复一行：`pip install starlette==1.0.1`。X41 D-Sec [16] 在 OSTIF（Alpha-Omega 资助）下审计 vLLM 时发现。下一步看国内云厂商 WAF（阿里云 / 腾讯云 / 华为云）会不会针对 BadHost 模式加托管规则。
 - **NVIDIA 5/27 开源 Polar** [17][18]：仓库 NVIDIA-NeMo/ProRL-Agent-Server，Apache-2.0，当前 400 stars。让 Codex CLI、Claude Code、Qwen Code、Pi、Gemini CLI、OpenCode 六个智能代理框架不改一行代码，仅把模型 API 地址改成 Polar 网关，就能用 GRPO 训练。同底座 Qwen3.5-4B 训练后 SWE-Bench Verified pass@1：Codex 3.8%→26.4%（+22.6 个百分点）、Claude Code 29.8%→34.6%（+4.8）、Qwen Code 34.6%→35.2%（+0.6）、Pi 34.2%→40.4%（+6.2）。下一步看国内 AI Coding 厂商谁第一个公开用 Polar 训自家模型。
@@ -237,7 +237,7 @@ SQLite 这份 AGENTS.md 的工程底座，是它自 2009 年 8 月（3.6.17 版�
 
 ## 📦 GitHub Trending
 
-![GitHub Trending 5/28 双榜首日：taste-skill 与 stop-slop 联袂登榜](gh-trending-double-charting-2026-05-29.png)
+![GitHub Trending 5/28 双榜首日：taste-skill 与 stop-slop 联袂登榜](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/daily/gh-trending-double-charting-2026-05-29.png)
 
 - 🔴 **Leonxlnx/taste-skill** [19]：26348 stars / 当日 +2235 / 1973 forks / 2026-02-19 创建。仓库就是一份 SKILL.md（约 800 行），目标是把 Claude Code / Cursor / Codex 生成前端的 6 类 AI 味（紫蓝渐变 + 玻璃磨砂 / Inter 字体全场 / 均匀栅格三栏 hero / lucide 图标泛滥 / Hover 全场淡入淡出 / 组件过度装饰）一刀刮掉。配套站点 tasteskill.dev 给了 Floria 与 Collective OS 两个示例。
 - 🔴 **Genesis-Embodied-AI/genesis-world** [1]：29019 stars / 2740 forks / Apache-2.0 / Python / v1.0.0 / 5/28 发布。机器人多物理仿真三件套，14 任务 × 200 回合、Pearson 0.8996、200h→30min 这一档评估口径在过去 24 小时内被 36 氪 / 量子位 / 虎嗅同日头条覆盖。

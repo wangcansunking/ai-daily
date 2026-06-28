@@ -17,7 +17,7 @@ description: 海外开发者圈最近在聊一种「一发即走」的编程 age
 
 # 云端一发即走的编程 agent，和 Claude Code 是两条路
 
-![云端一发即走的编程 agent 与本地交互式 agent 两条路线 封面](broccoli-cloud-oneshot-coding-agent-2026-06-06.png)
+![云端一发即走的编程 agent 与本地交互式 agent 两条路线 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/broccoli-cloud-oneshot-coding-agent-2026-06-06/broccoli-cloud-oneshot-coding-agent-2026-06-06.png)
 
 > 一个叫 Broccoli 的开源项目最近在海外开发者社区被讨论。它的卖点只有一句话：把工单交给它，它在云端一个独立沙箱里自己 checkout 仓库、写代码、跑测试、来回评审，最后开一个 PR 等你看。它不需要你坐在屏幕前盯着——这恰好和国内开发者每天用 Claude Code、Codex CLI 的姿势，是反过来的。
 
@@ -31,7 +31,7 @@ description: 海外开发者圈最近在聊一种「一发即走」的编程 age
 
 先把这个项目本身讲清楚，避免误会。Broccoli 是一个开源项目，定位是「one shot coding agent on the cloud」——直译过来是「云端一发即走的编程 agent」。它由一个叫 besimple-oss 的团队开源，本文核对时仓库 280 颗 star、9 个 fork、1 位主要贡献者，规模还很小，是个新项目。
 
-![Broccoli 项目介绍卡片：把 Linear 工单变成已合并的 PR，由 Claude 和 Codex 驱动，跑在你自己的 Google Cloud 或 Blaxel 容器里](broccoli-cloud-oneshot-coding-agent-2026-06-06-source-github-card.png)
+![Broccoli 项目介绍卡片：把 Linear 工单变成已合并的 PR，由 Claude 和 Codex 驱动，跑在你自己的 Google Cloud 或 Blaxel 容器里](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/broccoli-cloud-oneshot-coding-agent-2026-06-06/broccoli-cloud-oneshot-coding-agent-2026-06-06-source-github-card.png)
 
 > 来源：Broccoli 项目社交预览卡片（besimple-oss 公开仓库，2026-06-06 核对）
 
@@ -49,7 +49,7 @@ description: 海外开发者圈最近在聊一种「一发即走」的编程 age
 
 Broccoli 这类「一发即走」agent 的工作流，和本地交互式 agent 摆在一起看，差别一眼就出来。
 
-![两条编程 agent 路线的工作流对照：云端一发即走（工单→独立沙箱→自动实现→跑测试互评→开 PR）vs 本地交互式（本机终端→你盯着改→随时纠偏→实时跑→自己提交）](broccoli-cloud-oneshot-coding-agent-2026-06-06-chart-workflow.png)
+![两条编程 agent 路线的工作流对照：云端一发即走（工单→独立沙箱→自动实现→跑测试互评→开 PR）vs 本地交互式（本机终端→你盯着改→随时纠偏→实时跑→自己提交）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/broccoli-cloud-oneshot-coding-agent-2026-06-06/broccoli-cloud-oneshot-coding-agent-2026-06-06-chart-workflow.png)
 
 云端一发即走这条路，五步走完，人基本不出现在中间：
 
@@ -71,7 +71,7 @@ Broccoli 这类「一发即走」agent 的工作流，和本地交互式 agent �
 
 把这两条路放到七个具体维度上比，会发现它们几乎是互补的——一方强的地方，正好是另一方弱的地方。
 
-![云端一发 vs 本地交互：七个维度各擅胜场的横向条形对照，任务隔离/多任务并行/适合明确小任务云端强，中途介入/实时操控/起步成本低/适合探索性改本地强](broccoli-cloud-oneshot-coding-agent-2026-06-06-chart-tradeoff.png)
+![云端一发 vs 本地交互：七个维度各擅胜场的横向条形对照，任务隔离/多任务并行/适合明确小任务云端强，中途介入/实时操控/起步成本低/适合探索性改本地强](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/broccoli-cloud-oneshot-coding-agent-2026-06-06/broccoli-cloud-oneshot-coding-agent-2026-06-06-chart-tradeoff.png)
 
 逐条说清楚：
 
@@ -112,7 +112,7 @@ Broccoli 这类「一发即走」agent 的工作流，和本地交互式 agent �
 
 国内开发者最关心的一问：这种「云端一发」的能力，有没有能用的国产对位？答案是有，而且方向上对得相当齐。下面把海外项目和国产产品放进同一张对比地图里看。
 
-![编程 agent 对位地图：横轴从「人全程盯着改」到「一发即走」，纵轴从「套本地 CLI、自带钥匙」到「平台全托管、自带模型」，标出 Claude Code、Codex CLI、OpenClaw、Broccoli、Codex 云端、字节扣子编程、阿里无影 AgentBay、通义灵码各自的位置](broccoli-cloud-oneshot-coding-agent-2026-06-06-chart-map.png)
+![编程 agent 对位地图：横轴从「人全程盯着改」到「一发即走」，纵轴从「套本地 CLI、自带钥匙」到「平台全托管、自带模型」，标出 Claude Code、Codex CLI、OpenClaw、Broccoli、Codex 云端、字节扣子编程、阿里无影 AgentBay、通义灵码各自的位置](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/broccoli-cloud-oneshot-coding-agent-2026-06-06/broccoli-cloud-oneshot-coding-agent-2026-06-06-chart-map.png)
 
 把海外和国内、云端和本地放进同一张对位地图，国内这边至少有三个值得说的对位：
 

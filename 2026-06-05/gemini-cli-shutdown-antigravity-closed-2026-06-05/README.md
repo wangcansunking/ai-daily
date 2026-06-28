@@ -18,7 +18,7 @@ description: Google 宣布 6 月 18 日关停开源的 Gemini CLI，换成不开
 
 # Gemini CLI 六月关停，开源换闭源 Antigravity
 
-![Gemini CLI shutdown 转 Antigravity 封面](gemini-cli-shutdown-antigravity-closed-2026-06-05.png)
+![Gemini CLI shutdown 转 Antigravity 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/gemini-cli-shutdown-antigravity-closed-2026-06-05/gemini-cli-shutdown-antigravity-closed-2026-06-05.png)
 
 一个在一年里攒下六千多个合并代码、十万多个星标的开源命令行工具，被官方定在 **2026 年 6 月 18 日**关停；接替它的，是一个目前并不开源的同名产品。社区里同一个免费账户，每天能发的请求数也从约 1000 次掉到约 20 次。
 
@@ -28,7 +28,7 @@ description: Google 宣布 6 月 18 日关停开源的 Gemini CLI，换成不开
 
 这篇文章只想把一件事讲清楚：**当一个开源工具说关就关、免费额度大砍时，开发者真正该做的不是焦虑，而是把日常生产力重新建在一个更可控的地基上。** 下面从这次转向的来龙去脉、Google 的产品账、开发者为什么反弹，一直谈到对国内开发者的实际影响和一份替代选型表。
 
-![Google Developers Blog 官方公告页头图](source-google-blog-hero.png)
+![Google Developers Blog 官方公告页头图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/gemini-cli-shutdown-antigravity-closed-2026-06-05/source-google-blog-hero.png)
 
 ## 关停时间线：六月十八日这条线怎么划下来的
 
@@ -45,7 +45,7 @@ description: Google 宣布 6 月 18 日关停开源的 Gemini CLI，换成不开
 
 换句话说，停的是**面向个人和免费用户的那条开源链路**，留的是**面向企业付费的那条**。距离这个日期已经不到两周，6 月初仍有新的迁移指南和讨论在持续出现，热度没有退。
 
-![一年时间线：从开源发布到关停接替 · timeline](chart-timeline-2026-06-05.png)
+![一年时间线：从开源发布到关停接替 · timeline](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/gemini-cli-shutdown-antigravity-closed-2026-06-05/chart-timeline-2026-06-05.png)
 
 这条线之所以扎眼，是因为 Gemini CLI 不是一个没人用的边角项目。它 **2025 年 6 月用 Apache 2.0 协议开源**，截至 2026-06-05 凌晨，其 GitHub 主仓库星标 **104935**（gh api 核实），是一个 TypeScript 项目；按 Google 官方公告与多家科技媒体的口径，一年里社区贡献了 **6000 多个合并代码**，星标越过十万。这是一个被社区真金白银投入过的工具。
 
@@ -72,7 +72,7 @@ description: Google 宣布 6 月 18 日关停开源的 Gemini CLI，换成不开
 
 这就是开发者反弹的真正落点：**社区为一个开源项目投入的劳动，被用来改进了一个把贡献者关在门外的产品。**
 
-![The Register 对这次转向的报道头图](source-register-og.jpg)
+![The Register 对这次转向的报道头图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/gemini-cli-shutdown-antigravity-closed-2026-06-05/source-register-og.jpg)
 
 ## 「先开源吸引人，再收进闭源」——这次争论的两面
 
@@ -90,7 +90,7 @@ description: Google 宣布 6 月 18 日关停开源的 Gemini CLI，换成不开
 
 把 Gemini CLI 和 Antigravity CLI 并排看，能更清楚这次转向的取舍。
 
-![Gemini CLI 开源仓库页面](source-gemini-cli-og.png)
+![Gemini CLI 开源仓库页面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/gemini-cli-shutdown-antigravity-closed-2026-06-05/source-gemini-cli-og.png)
 
 | 维度 | Gemini CLI（即将关停） | Antigravity CLI（接替者） |
 |---|---|---|
@@ -109,7 +109,7 @@ description: Google 宣布 6 月 18 日关停开源的 Gemini CLI，换成不开
 
 按社区实测口径——**注意这是社区用户实测，不是官方公布数字**——免费层每天能发的请求数，从 Gemini CLI 时代的约 **1000 次/天**，降到 Antigravity 上的约 **20 次/天**，相当于只剩原来的五十分之一。Google 官方的开发者论坛和支持社区里，已经有不少用户反映即便是付费的 Pro 层，新平台的额度也明显比过去吃紧，有人甚至报告 Antigravity CLI 的单次任务开销偏大，几分钟就能把个人 Pro 额度耗光。
 
-![同一个免费账户每天能发的请求数对照 · quota compare](chart-quota-compare-2026-06-05.png)
+![同一个免费账户每天能发的请求数对照 · quota compare](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/gemini-cli-shutdown-antigravity-closed-2026-06-05/chart-quota-compare-2026-06-05.png)
 
 这里要冷静区分两件事：
 
@@ -159,7 +159,7 @@ Apache 2.0 让你可以自由读、改、分发 Gemini CLI 的源码。但它对
 
 好在 2026 年的终端编码代理已经相当成熟，选择很多。下面这张表按「开源与否 / 能不能接国产模型 / 适合谁」三个维度，把几条主流路线列清楚。所有星标和许可证均经 gh api 核实，截至 2026-06-05 凌晨。
 
-![Gemini CLI 关停后终端编码代理替代选型 alternatives](chart-alternatives-2026-06-05.png)
+![Gemini CLI 关停后终端编码代理替代选型 alternatives](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/gemini-cli-shutdown-antigravity-closed-2026-06-05/chart-alternatives-2026-06-05.png)
 
 | 工具 | 出处 | 开源 | 接国产模型 | 适合谁 |
 |---|---|---|---|---|

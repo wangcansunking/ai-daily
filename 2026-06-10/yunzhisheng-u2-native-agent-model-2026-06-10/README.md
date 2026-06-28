@@ -13,7 +13,7 @@ tags: ["云知声", "U2", "大模型", "MoE", "Agent", "智能密度", "国产�
 
 国内做基础大模型的厂商，过去两年的叙事主线几乎是同一个方向：参数往大了堆，价格往低了打。万亿参数成了第一梯队的入场券，每 token 几厘钱成了发布会上最响的掌声。云知声（港股 09678）6 月 8 日发布的新一代通用大模型 U2，偏偏在这两件事上都没跟。它的总参数只有 2660 亿，价格也不是它海报上最大的字。它把卖点压在一个国内厂商很少单独拎出来讲的指标上——**智能密度**：用 2660 亿参数，做出接近 1.2 万亿参数模型的活，参数效率约为后者的 5 倍。
 
-![云知声 U2 大模型正式发布现场，2026-06-08，来源：新浪科技](yunzhisheng-u2-source-launch.png)
+![云知声 U2 大模型正式发布现场，2026-06-08，来源：新浪科技](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/yunzhisheng-u2-native-agent-model-2026-06-10/yunzhisheng-u2-source-launch.png)
 
 这篇想讲清楚三件事：智能密度到底是个什么工程取舍，它和"参数堆叠"差在哪；U2 把 Agent 能力做进基座，跟外面那一圈"大模型外挂 Agent 框架"的做法有什么本质区别；以及对一个国内开发者来说，这个模型适合拿来干什么、不适合干什么。看完你大概能判断：这条路线不是营销话术包装的小聪明，而是一个有真实工程代价、也有真实收益的方向选择。
 
@@ -30,13 +30,13 @@ tags: ["云知声", "U2", "大模型", "MoE", "Agent", "智能密度", "国产�
 | 复杂工作流 | 自主拆解推进 100+ 步 | 官方，原生 Agent 能力 |
 | GPQA 硬核推理 | 接近甚至超过部分超大模型 | 多家媒体报道，单篇未给统一分数 |
 
-![云知声 U2 核心数据一览：参数、对标性能、复杂工作流步数](yunzhisheng-u2-chart4-spec-table.png)
+![云知声 U2 核心数据一览：参数、对标性能、复杂工作流步数](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/yunzhisheng-u2-native-agent-model-2026-06-10/yunzhisheng-u2-chart4-spec-table.png)
 
 有一点要说清楚：GPQA Diamond、GDPval 这类评测，不同媒体报道给出的数字口径并不完全一致，官方发布通稿里也更多是"前排""接近甚至超越超大模型"这类定性表述。所以本文不把某一个具体分数当成铁板钉钉的结论，只取一个站得住的判断——**在硬核推理和办公任务这两类评测上，U2 用远小于对手的体量，打出了同一梯队的成绩**。这个判断有多家报道交叉支撑，也是这次发布真正的看点。
 
 数字背后的那句话其实很朴素：同样一道题，别人调动一万亿参数去算，U2 调动两千多亿就把它做对了。如果这个结论在真实任务上稳定成立，那它改变的不是某个榜单名次，而是跑这个模型要花多少卡、多少电、多少钱。
 
-![云知声 U2 与万亿参数模型的参数效率对比示意](yunzhisheng-u2-chart1-param-efficiency.png)
+![云知声 U2 与万亿参数模型的参数效率对比示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/yunzhisheng-u2-native-agent-model-2026-06-10/yunzhisheng-u2-chart1-param-efficiency.png)
 
 ## 智能密度不是新词包装，是一组具体的工程取舍
 
@@ -48,7 +48,7 @@ tags: ["云知声", "U2", "大模型", "MoE", "Agent", "智能密度", "国产�
 
 **第三件，少 token，深思考。** 这是前两件事合起来的结果。把激活压低、把无效推理砍掉，剩下的算力就能集中花在真正需要想的地方。云知声给这套理念起的口号是"高智能密度 × 高 Token 价值"——同样花一个 token，要让它承载更强的能力。
 
-![U2 混合思考机制：快通道与深推理动态切换示意](yunzhisheng-u2-chart2-fast-slow-thinking.png)
+![U2 混合思考机制：快通道与深推理动态切换示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/yunzhisheng-u2-native-agent-model-2026-06-10/yunzhisheng-u2-chart2-fast-slow-thinking.png)
 
 这三件事放到一起，智能密度这个词就不空了。它不是"我们模型很聪明"的另一种说法，而是一组明确的设计选择：宁可总参数小一点，也要把每一份激活算力的产出比做高。
 
@@ -72,7 +72,7 @@ tags: ["云知声", "U2", "大模型", "MoE", "Agent", "智能密度", "国产�
 | 价格补贴 | 每百万 token 价格打到地板 | 厂商让利换市场 | 压毛利，难持续 |
 | 智能密度（U2 / 海外稀疏激活） | 总参数适中，激活压低 + 快慢思考 | 模型效率本身改善 | MoE 路由难调，工程门槛高 |
 
-![三条路线的成本来源与风险对照：参数堆叠、价格补贴与智能密度](yunzhisheng-u2-chart5-route-table.png)
+![三条路线的成本来源与风险对照：参数堆叠、价格补贴与智能密度](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/yunzhisheng-u2-native-agent-model-2026-06-10/yunzhisheng-u2-chart5-route-table.png)
 
 这张表想说的不是谁对谁错。参数堆叠在追求绝对能力上限时仍有意义，价格补贴在抢用户时也确实管用。但如果你关心的是"长期跑下来一个 token 到底烧多少算力"，那智能密度这条路指向的方向更可持续——它改的是分母，不是靠贴钱改分子。U2 把国内的注意力往这个方向拉了一把，这件事本身是有价值的。
 
@@ -93,7 +93,7 @@ U2 的思路是把这套能力往基座里塞。官方的说法是"为执行而�
 
 云知声给的能力指标是：自主拆解并推进 **100+ 步**复杂真实工作流。官方举的一个例子是"生成客户季度投资报告"——这一个任务里就包含调研、分析、计算、生成结构化报告好几个环节，模型要自己排好顺序、一步步做完、最后交出成品。从"给出答案"走到"完成任务"，这是这次发布想讲的核心跃迁。
 
-![U2 原生 Agent 完整任务闭环：从需求理解到结果验收](yunzhisheng-u2-chart3-agent-loop.png)
+![U2 原生 Agent 完整任务闭环：从需求理解到结果验收](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/yunzhisheng-u2-native-agent-model-2026-06-10/yunzhisheng-u2-chart3-agent-loop.png)
 
 原生和外挂的差别，对开发者意味着什么？外挂框架的好处是灵活、换底座方便，坏处是每多一步就多一次"模型不一定听话"的风险，100 步工作流里只要有几步格式崩了、规划跑偏了，整条链就断。原生 Agent 把这些能力训进权重里，理论上链路更稳、更省 prompt 工程，但代价是这套能力和模型绑死了——你没法像换底座那样轻松替换它的规划逻辑。
 

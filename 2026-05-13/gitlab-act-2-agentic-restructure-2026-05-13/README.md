@@ -17,7 +17,7 @@ track: overseas_hot
 
 # GitLab Act 2：第一家公开说为 Agent 重构组织的硅谷公司
 
-![封面](gitlab-act-2-agentic-restructure-2026-05-13.png)
+![封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/gitlab-act-2-agentic-restructure-2026-05-13/gitlab-act-2-agentic-restructure-2026-05-13.png)
 
 5 月 3 日那篇 `CTO Exodus`，咱们国内同行看到的是「Anthropic 拿 MTS 头衔挖技术一号位」的被动现象 —— Coinbase / Microsoft / Stripe 的 CTO 一个接一个走，行业默认的解读是「AI 把工程顶层抽空了」。这次想说的是另外一件事，方向完全反过来：**有公司主动把整套研发组织拆掉，明面上说'是为了承接 Agent 写代码的产能膨胀'**。这种事，在硅谷上市公司里，2026 年 5 月 11 日才出现第一例。
 
@@ -29,7 +29,7 @@ track: overseas_hot
 
 国内媒体当晚翻成了「GitLab 大重组」「人员收缩」之类的标题，路径熟到不能再熟。咱们这篇不走这个叙事 —— 写另一件更值得做平台工程 / DevOps / SRE 的同行琢磨的事：**Bill Staples 给出的组织结构方案，到底长什么样，为什么说这是行业第一次明面上'为 Agent 重构组织'，国内字节 / 阿里 / 腾讯 2024-2026 那一轮组织调整里有没有一样的信号**。
 
-![GitLab Act 2 五个关键数字](gitlab-act-2-key-numbers.png)
+![GitLab Act 2 五个关键数字](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/gitlab-act-2-agentic-restructure-2026-05-13/gitlab-act-2-key-numbers.png)
 
 把所有数字摆在前面：研发口拆成约 60 个自治小组（独立小组数量翻倍）；国家组从近 60 个收敛到约 42 个（砍 30% 小尾巴）；压扁 3 层管理（CEO → 领域负责人 → 自治小组，2 层级签字到底）；6 月 1 日前完成新结构定型，6 月 2 日财报披露最终范围与财务影响；CEO 公开口径里，开发者平台单价从去年的「几十美元 / 人月」走到今年的「几百美元 / 人月」，未来朝「几千美元 / 人月」走。
 
@@ -69,7 +69,7 @@ track: overseas_hot
 
 Act 1 的 GitLab 组织长什么样？2021 年 IPO 之后的几年里，它的研发口大致是这个形态：CEO 下面是若干 VP（产品 / 工程 / DevSecOps / 销售 / 客户成功 / 安全等），VP 下面是 Senior Director、Director、Manager，最底层才是真正写代码的小组。从 CEO 到一线工程师，平均 5 到 7 层签字。每个小组平均 12 到 18 人，做的是「横向能力域」 —— 比如「CI Runner 内核组」「鉴权组」「GitLab Pages 组」 ——大家各自负责一段能力，跨小组协作靠 OKR 对齐和半年度规划。
 
-![Act 1 vs Act 2 组织拓扑对照](gitlab-act-2-org-topology-v2.png)
+![Act 1 vs Act 2 组织拓扑对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/gitlab-act-2-agentic-restructure-2026-05-13/gitlab-act-2-org-topology-v2.png)
 
 Act 2 的拓扑变了。CEO 下面直接是「领域负责人」一层（公告里叫 `Domain Leaders`），领域负责人下面就是约 60 个端到端自治小组，每个小组 6 到 10 人。从 CEO 到一线 2 层管理签字到底，决策路径砍掉了 3 层。
 
@@ -87,7 +87,7 @@ GitLab 是 all-remote 公司的代表 —— 全球 60 多个国家都有员工�
 
 砍到 42 个国家组之后，GitLab 仍然是 all-remote 公司，但分布会向工程产出密度高、税务和合规成本可控的国家收敛。
 
-![国内大厂 2024-2026 组织调整 vs GitLab Act 2 对照](gitlab-act-2-domestic-timeline.png)
+![国内大厂 2024-2026 组织调整 vs GitLab Act 2 对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/gitlab-act-2-agentic-restructure-2026-05-13/gitlab-act-2-domestic-timeline.png)
 
 这件事的国内对照其实很多。字节跳动 2024 年起把若干海外小据点收编，把工程产能向新加坡 / 北美湾区 / 上海 / 北京几个高密度节点集中；阿里通义 2025 年把分散在多个 BU 的模型小组合并入集团统一的 AI 团队；腾讯 CSIG 2025 年新设 AI Infra 部、AI Data 部、数据计算平台部，把分散在事业群下的能力按维度重新切分；网易雷火 / 有道把 AI 业务单独拎成工作室制小组，独立运营。
 
@@ -105,7 +105,7 @@ Act 2 想做到的是 1 到 2 天。一线小组对客户结果直接负责，�
 
 ## 五、平台单价：从 $10 到 $1k+，谁在为这个曲线买单
 
-![开发者平台单价：从几十到几千美元 / 人月](gitlab-act-2-pricing-curve-v2.png)
+![开发者平台单价：从几十到几千美元 / 人月](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/gitlab-act-2-agentic-restructure-2026-05-13/gitlab-act-2-pricing-curve-v2.png)
 
 Bill Staples 公告里最具体的商业判断是这一段：**去年 $10-$50/人月，今年 $200/人月，未来几年向 $1k+/人月走**。这个曲线是支撑整个 Act 2 战略的核心商业假设。
 
@@ -124,7 +124,7 @@ CEO 在赌的是「这条曲线还有 3-5 年的上行空间」。逻辑是 Jevo
 
 ## 六、Act 1 vs Act 2 八指标对照
 
-![Act 1 vs Act 2 八个关键指标对照](gitlab-act-2-metrics-compare-v2.png)
+![Act 1 vs Act 2 八个关键指标对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/gitlab-act-2-agentic-restructure-2026-05-13/gitlab-act-2-metrics-compare-v2.png)
 
 把 Act 1 和 Act 2 拆成 8 个具体维度对照：
 
@@ -143,7 +143,7 @@ CEO 在赌的是「这条曲线还有 3-5 年的上行空间」。逻辑是 Jevo
 
 ## 七、为什么这件事和国内 DevOps / 平台工程岗位有关
 
-![国内 DevOps / 平台工程岗位的五项传导](gitlab-act-2-role-transit.png)
+![国内 DevOps / 平台工程岗位的五项传导](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/gitlab-act-2-agentic-restructure-2026-05-13/gitlab-act-2-role-transit.png)
 
 
 讲到这里有必要把视角收回国内。咱们做 DevOps / SRE / 平台工程 / 研发效能的工程师，过去几年大家的岗位定义大致是「保障 CI / CD pipeline 稳定 + 优化构建速度 + 维护内部工具链 + 推广最佳实践」。这一套岗位定义在 Act 1 时代是合理的 —— 大公司有 5-7 层管理结构，平台工程需要服务那个结构。

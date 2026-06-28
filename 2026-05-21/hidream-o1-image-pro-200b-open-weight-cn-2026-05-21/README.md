@@ -25,7 +25,7 @@ description: "五月十九日早上，合肥起家的智象未来把 HiDream-O1-
 
 # 200B 开源图像模型 HiDream-O1 把 FLUX、通义万相一起按住
 
-![HiDream-O1-Image 封面 电影级影棚 屏幕上拼贴多个 AI 生成艺术作品 亚洲艺术家工作环境](hidream-o1-image-pro-200b-open-weight-cn-2026-05-21.png)
+![HiDream-O1-Image 封面 电影级影棚 屏幕上拼贴多个 AI 生成艺术作品 亚洲艺术家工作环境](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/hidream-o1-image-pro-200b-open-weight-cn-2026-05-21/hidream-o1-image-pro-200b-open-weight-cn-2026-05-21.png)
 
 ## 这件事的位置
 
@@ -78,7 +78,7 @@ description: "五月十九日早上，合肥起家的智象未来把 HiDream-O1-
 
 ## GenEval、HPSv3、CVTG-2K 横向硬碰硬
 
-![HiDream-O1 与 FLUX.2 Qwen-Image SD 3.5 在 GenEval 上的开源图像模型综合得分柱状图](hidream-geneval-bar.png)
+![HiDream-O1 与 FLUX.2 Qwen-Image SD 3.5 在 GenEval 上的开源图像模型综合得分柱状图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/hidream-o1-image-pro-200b-open-weight-cn-2026-05-21/hidream-geneval-bar.png)
 
 把四套标准评测一起摆出来看：
 
@@ -99,7 +99,7 @@ description: "五月十九日早上，合肥起家的智象未来把 HiDream-O1-
 
 ## 为什么能砍掉 VAE 和文本编码器
 
-![HiDream-O1 Pixel-level Unified Transformer 架构与传统扩散模型的对比图](hidream-architecture.png)
+![HiDream-O1 Pixel-level Unified Transformer 架构与传统扩散模型的对比图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/hidream-o1-image-pro-200b-open-weight-cn-2026-05-21/hidream-architecture.png)
 
 这是这次最技术、也最值得展开的部分。
 
@@ -132,7 +132,7 @@ GenEval 0.90、HPSv3 10.37、CVTG-2K 0.9128 三套指标全部一致地反映同
 
 ## 本地部署经济账
 
-![HiDream-O1 8B 主模型在 RTX 4090 5090 3090 Ti M4 Max 上的本地部署典型硬件与量化版本对照表](hidream-hardware.png)
+![HiDream-O1 8B 主模型在 RTX 4090 5090 3090 Ti M4 Max 上的本地部署典型硬件与量化版本对照表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/hidream-o1-image-pro-200b-open-weight-cn-2026-05-21/hidream-hardware.png)
 
 200B Pro 版本闭源不放权重，本地能跑的是 8B 主版本与 Dev-2604 蒸馏版本。社区开发者在过去 48 小时内已经把量化包跑通：
 
@@ -238,11 +238,11 @@ python inference.py \
 - text-layout.webp（长文本渲染与布局）
 - IP_2.jpg（主体驱动个性化）
 
-![HiDream-O1 官方长文本渲染与布局示例 多种海报字幕场景](hidream-text-layout.png)
+![HiDream-O1 官方长文本渲染与布局示例 多种海报字幕场景](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/hidream-o1-image-pro-200b-open-weight-cn-2026-05-21/hidream-text-layout.png)
 
 上面这张是模型卡 text-layout 演示——海报、广告、菜单、说明书四种典型场景的中英文字渲染，是过去开源图像模型最弱的一类任务，HiDream 这一次的稳定度肉眼可见拉到了商用线以上。
 
-![HiDream-O1 在 Artificial Analysis 文生图竞技场 open-weight 全球第一的排行榜截图](hidream-leaderboard.png)
+![HiDream-O1 在 Artificial Analysis 文生图竞技场 open-weight 全球第一的排行榜截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/hidream-o1-image-pro-200b-open-weight-cn-2026-05-21/hidream-leaderboard.png)
 
 上面这张是模型卡内置的 Artificial Analysis 排行榜截图：200B 闭源 Pro 版本第八、open-weight 第一，对位前面还有 Imagen 4、GPT Image 1、Seedream 3 等闭源旗舰。
 

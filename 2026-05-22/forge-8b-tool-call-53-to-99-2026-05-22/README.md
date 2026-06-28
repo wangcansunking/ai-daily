@@ -14,7 +14,7 @@ authors:
 
 # 本地 8B 工具调用 53→99：千问 / GLM 对位
 
-![forge 本地 8B guardrails 跃迁封面](forge-8b-tool-call-53-to-99-2026-05-22.png)
+![forge 本地 8B guardrails 跃迁封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/forge-8b-tool-call-53-to-99-2026-05-22/forge-8b-tool-call-53-to-99-2026-05-22.png)
 
 > 5 月 19 日，美国德州仪器 AI 总监 Antoine Zambelli 在 Hacker News 挂出一张 Show HN 帖：「Forge — Guardrails take an 8B model from 53% to 99% on agentic tasks」。48 小时内拿到 667 赞、227 条评论，挂到首页一整天。配套的开源仓库 antoinezambelli/forge 截至 5 月 21 日 1440 星、75 fork，MIT 协议，配套论文已被 ACM CAIS '26 录用，定于 5 月 26 日在圣何塞宣讲。一个不到一万行 Python 的工程层，把社区争论了一年的「本地 8B 模型到底能不能干活」问题，从「能力问题」改写成了「工程问题」。
 
@@ -24,7 +24,7 @@ authors:
 
 Zambelli 在 HN 自述帖里把整件事讲得很白：「我想在自家服务器跑几个常驻 agentic 系统给个人项目用，又不想付云端旗舰模型的钱。本地小模型上手第一件事就撞上复合数学问题——单步 90% 准确率听起来不错，但 5 步工作流就是 40% 失败率。现有框架全是按云端旗舰模型设计的，没有一个去解这个机械性的可靠性问题。」
 
-![forge pcompound failure 5 步工作流端到端失败率曲线](forge-pcompound-failure.png)
+![forge pcompound failure 5 步工作流端到端失败率曲线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/forge-8b-tool-call-53-to-99-2026-05-22/forge-pcompound-failure.png)
 
 这条曲线是本地大模型工程化最残酷的一张图。横轴是单步工具调用准确率 p，纵轴是 5 步工作流的端到端失败率 1 − p^5。三个标记点解释清楚了为什么不挂 guardrails 一定翻车：单步 90% 对应 5 步 41% 失败、单步 95% 对应 5 步 23% 失败、单步 99% 对应 5 步 5% 失败。换句话说，工具调用工作流的可用性对单步准确率极度敏感，从 95% 涨到 99% 这 4 个百分点的改进，能把 5 步端到端失败率从 23% 砍到 5%——这是 4 倍的可靠性差距。
 
@@ -45,7 +45,7 @@ Zambelli 在 HN 自述帖里把整件事讲得很白：「我想在自家服务�
 
 Forge 的设计哲学一句话讲完——模型本身不动，外面挂四件套，把每一种系统性错误都堵成可修复的状态。
 
-![Forge 工程化四件套流程图](forge-pipeline-4modules.png)
+![Forge 工程化四件套流程图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/forge-8b-tool-call-53-to-99-2026-05-22/forge-pipeline-4modules.png)
 
 四件套按数据流方向依次是 rescue parsing、retry nudges、step enforcement、VRAM-aware context management，对应 5 步工作流里四类典型错误的工程兜底。
 
@@ -63,7 +63,7 @@ Forge 的设计哲学一句话讲完——模型本身不动，外面挂四件�
 
 Zambelli 自己最被引用的一句话是「Ministral 8B with Forge: 99.3%. Claude Sonnet with Forge: 100%. The gap between a free local 8B model on a $600 GPU and a frontier API is less than 1 point.」——本地 8B 加 Forge 拿到 99.3%，云端旗舰模型 Claude Sonnet 拿到 100%，两者差距不到 1 个百分点。
 
-![Forge 四件套对 Llama 3.1 8B Instruct 的逐阶段提升](forge-53-to-99-stages.png)
+![Forge 四件套对 Llama 3.1 8B Instruct 的逐阶段提升](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/forge-8b-tool-call-53-to-99-2026-05-22/forge-53-to-99-stages.png)
 
 按论文公布的方法，53% → 99% 的提升可以拆成五个阶段。Llama 3.1 8B Instruct 在多步 agentic 任务套件（18 个场景，每个场景跑 50 次）上的裸跑基线是 53% 端到端通过率——单步准确率大约 87%，五次方下来恰好 50% 左右，符合「p^5 残酷数学」的预测。加上 rescue parsing 后涨到 72%，再加 retry nudges 涨到 86%，再加 step enforcement 涨到 95%，最后挂上 VRAM-aware context management 涨到 99%。逐阶段拆分的具体百分位以论文为准，但「四件套同时挂上才能逼近 99% 上限」是 Forge 论文里反复验证过的结论。
 
@@ -100,7 +100,7 @@ Zambelli 自己最被引用的一句话是「Ministral 8B with Forge: 99.3%. Cla
 
 Forge 的差异化定位就在这里：它不试图做最通用的 agent 框架，只解一个具体的工程问题——「本地小模型怎么把工具调用做稳」。仓库描述也写得很直白：「A Python framework for self-hosted LLM tool-calling and multi-step agentic workflows.」它把所有设计预算都花在四件套上，不做 RAG、不做多 agent 协作、不做 prompt 优化。这种「专攻一点」的工程姿态，在拥挤赛道里反而更容易跑出差异化结论。
 
-![forge HN 顶赞评论摘要 hn top quotes](forge-hn-top-quotes.png)
+![forge HN 顶赞评论摘要 hn top quotes](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/forge-8b-tool-call-53-to-99-2026-05-22/forge-hn-top-quotes.png)
 
 HN 上还有两条评论值得国内开发者特别注意。
 
@@ -112,7 +112,7 @@ HN 上还有两条评论值得国内开发者特别注意。
 
 绕了一大圈讲完海外，回到中国开发者最关心的问题：国产 8B 级模型现在工具调用做到什么水平了？
 
-![forge domestic 8b bfcl 国产 8B 工具调用横评](forge-domestic-8b-bfcl.png)
+![forge domestic 8b bfcl 国产 8B 工具调用横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/forge-8b-tool-call-53-to-99-2026-05-22/forge-domestic-8b-bfcl.png)
 
 这张横评表的数据综合自各家官方报告 + Berkeley Function-Calling Leaderboard（BFCL v3）+ Open LLM Leaderboard 公开范围中位值，结论摆在桌上。
 
@@ -152,7 +152,7 @@ HN 上还有两条评论值得国内开发者特别注意。
 
 讲完原理，给一份能直接跑的落地路径。
 
-![国内开发者三档硬件 × 推理引擎 × Forge × 国产 8B 嫁接路径](forge-domestic-landing.png)
+![国内开发者三档硬件 × 推理引擎 × Forge × 国产 8B 嫁接路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/forge-8b-tool-call-53-to-99-2026-05-22/forge-domestic-landing.png)
 
 **消费级 RTX 4090 档**：24GB 显存，推荐推理引擎 vLLM（80,664 星）或 SGLang（28,093 星），跑 Qwen3-8B 全精度或 GLM-4-9B 量化版本。这一档目标是高并发——单卡能撑 12-24 路并发推理，给本地团队或开发者社区用。vLLM 配 Forge 的接入路径很直接：Forge 的 proxy 模式（python -m forge.proxy）兼容 OpenAI 协议，vLLM 默认就开 OpenAI 兼容 endpoint，两边一接即可。
 

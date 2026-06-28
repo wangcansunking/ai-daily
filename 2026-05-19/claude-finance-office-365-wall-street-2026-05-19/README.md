@@ -12,7 +12,7 @@ keywords: [Claude 金融, Anthropic, Microsoft 365, Excel, 金融 Agent, Moody's
 
 # Claude 接管 Office：十个金融 Agent 上桌
 
-![Claude 把 Office 全家桶变成投行工具封面](claude-finance-office-365-wall-street-2026-05-19.png)
+![Claude 把 Office 全家桶变成投行工具封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/claude-finance-office-365-wall-street-2026-05-19/claude-finance-office-365-wall-street-2026-05-19.png)
 
 ## 开篇：一句话先把这件事说清楚
 
@@ -34,9 +34,9 @@ keywords: [Claude 金融, Anthropic, Microsoft 365, Excel, 金融 Agent, Moody's
 | 金融行业地位 | **第二大行业收入来源** · 前 50 大客户中 **40%** 来自金融机构 | 三十六氪五月十八号 |
 | Office 应用 | Excel / Word / PowerPoint **全量上线** · Outlook **内测** | The New Stack 五月十号 |
 
-> ![Anthropic 金融 Agent 官方公告 hero](claude-finance-anthropic-hero.png)
+> ![Anthropic 金融 Agent 官方公告 hero](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/claude-finance-office-365-wall-street-2026-05-19/claude-finance-anthropic-hero.png)
 
-![三十六氪五月十八号头条 hero 截图](claude-finance-36kr-hero.jpg)
+![三十六氪五月十八号头条 hero 截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/claude-finance-office-365-wall-street-2026-05-19/claude-finance-36kr-hero.jpg)
 
 这篇文章把三件事讲清楚：
 
@@ -68,7 +68,7 @@ keywords: [Claude 金融, Anthropic, Microsoft 365, Excel, 金融 Agent, Moody's
 - ⑨ **Month-End Closer**（月末关账）
 - ⑩ **Statement Auditor**（财报一致性核查）
 
-![Anthropic 十个金融 Agent 按投行三段工作链路分布](claude-finance-10-agents.png)
+![Anthropic 十个金融 Agent 按投行三段工作链路分布](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/claude-finance-office-365-wall-street-2026-05-19/claude-finance-10-agents.png)
 
 读这张表前先把一个误读拦下来：**这十个 Agent 不是十段 prompt**。
 
@@ -94,7 +94,7 @@ keywords: [Claude 金融, Anthropic, Microsoft 365, Excel, 金融 Agent, Moody's
 4. Agent 调 PowerPoint 模板，按公司视觉规范填充三十页幻灯片；
 5. 分析师收到一份完整 pitchbook 初稿，**整个过程大约二十分钟**，对比传统人工拼一份 pitchbook 需要 8-16 小时。
 
-![Pitch Builder Agent 实跑一次 · 二十分钟生成一份 pitchbook 时序图](claude-finance-pitch-workflow.png)
+![Pitch Builder Agent 实跑一次 · 二十分钟生成一份 pitchbook 时序图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/claude-finance-office-365-wall-street-2026-05-19/claude-finance-pitch-workflow.png)
 
 注意这里的关键工程细节：**整条链路里数据连接器 / Excel 模型 / PowerPoint 渲染都是 Claude 调用工具，分析师只需要审核结果**。这不是「AI 提升效率」的常规叙事，是工作流形态的根本变化。
 
@@ -130,7 +130,7 @@ Anthropic 这次跟 Microsoft 365 的整合，可以说是把过去半年「Clau
 
 **Outlook** 还在内测，能力包括收件箱分诊、按客户偏好语气起草回复、自动会议安排。Anthropic 官方原文用了「coming soon」（即将上线）。
 
-![Claude 接管 Office 全家桶 · 四个应用具体能力矩阵](claude-finance-office-matrix-v2.png)
+![Claude 接管 Office 全家桶 · 四个应用具体能力矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/claude-finance-office-365-wall-street-2026-05-19/claude-finance-office-matrix-v2.png)
 
 更关键的一个新功能叫 **Dispatch**。The New Stack 五月十号文章原文：「In Claude Cowork, users can assign Claude work tasks from anywhere—by text or by voice—using Dispatch」（在 Claude Cowork 里，用户可以从任何地方用文字或语音派任务给 Claude，靠 Dispatch 功能）。
 
@@ -172,7 +172,7 @@ Anthropic 这次同时官宣的合作：
 
 **Moody's MCP 接入**：Anthropic 官方公告原文「more than 600 million public and private companies」（六亿多家公开与私人公司）。注意是 **6 亿不是 60 亿**——三十六氪原文也是六亿，本文沿用 verbatim 数字。
 
-![Claude 金融版 · 客户名单与数据连接器全景](claude-finance-ecosystem-v2.png)
+![Claude 金融版 · 客户名单与数据连接器全景](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/claude-finance-office-365-wall-street-2026-05-19/claude-finance-ecosystem-v2.png)
 
 这里的工程含义比客户名单更重要：**Moody's 走的是 MCP 协议接入，而不是传统数据 API**。
 
@@ -239,7 +239,7 @@ Fortune 五月五号文章给了一份在生产环境部署 Claude 的金融客�
 - **百度文心 · 金融**——主要在海通等券商内嵌。
 - **DeepSeek**——多家券商底层接入但无独立金融版。
 
-![Claude 金融版 vs 国内同向产品 · 截至五月十八号实查口径](claude-finance-domestic-compare.png)
+![Claude 金融版 vs 国内同向产品 · 截至五月十八号实查口径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/claude-finance-office-365-wall-street-2026-05-19/claude-finance-domestic-compare.png)
 
 横向对比 Anthropic 和国内方案，差异不在「谁的模型更强」，而在两条更基础的轴：
 

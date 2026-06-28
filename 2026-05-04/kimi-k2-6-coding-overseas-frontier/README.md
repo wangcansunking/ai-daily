@@ -13,7 +13,7 @@ track_score: 3.48
 
 # 海外切到 Kimi K2.6：编码三榜跑赢 Claude
 
-![Kimi K2.6 把闭源前沿压过一头](kimi-k2-6-coding-overseas-frontier.png)
+![Kimi K2.6 把闭源前沿压过一头](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/kimi-k2-6-coding-overseas-frontier/kimi-k2-6-coding-overseas-frontier.png)
 
 > 5 月 3 日，Hacker News 一条 348 分、206 条评论的帖子登上首页，标题直白：「Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge」。这是 Moonshot 月之暗面 4 月 20 日开源 Kimi K2.6 之后，海外 AI 开发者第一次集中讨论这件事。三榜数据是真的：SWE-Bench Pro 58.6 与 GPT-5.5（xhigh）的 57.7 / Claude Opus 4.6（max effort）的 53.4 横在一条线上；Terminal-Bench 2.0 拿 66.7 略高于 Claude Opus 4.6 的 65.4；LiveCodeBench v6 拿 89.6 高于 Claude Opus 4.6 的 88.8。**这是国产开源大模型第一次在三个 coding 评测同时不输给海外闭源前沿。**
 
@@ -31,7 +31,7 @@ Moonshot 4 月 20 日晚发布 Kimi K2.6，HuggingFace 仓库 `moonshotai/Kimi-K
 
 ## 二、三榜横评：和海外前沿同框
 
-![三大 coding 评测：Kimi K2.6 与海外前沿同框](kimi-k2-6-coding-frontier-bench.png)
+![三大 coding 评测：Kimi K2.6 与海外前沿同框](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/kimi-k2-6-coding-overseas-frontier/kimi-k2-6-coding-frontier-bench.png)
 
 数据来自 Moonshot 官方 blog（kimi.com/blog/kimi-k2-6）和 llm-stats 第三方榜单——
 
@@ -45,7 +45,7 @@ Moonshot 4 月 20 日晚发布 Kimi K2.6，HuggingFace 仓库 `moonshotai/Kimi-K
 
 帖子 5 月 3 日由 bazlightyear 发出，标题直接：「Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge」。206 条评论里挑 3 条最有信息量的——
 
-![HN 348 分热议：开发者怎么看 Kimi K2.6](kimi-k2-6-hn-developer-voices.png)
+![HN 348 分热议：开发者怎么看 Kimi K2.6](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/kimi-k2-6-coding-overseas-frontier/kimi-k2-6-hn-developer-voices.png)
 
 `sieve` 在比 token 透明度。Claude 在 5 小时套餐里看不到精确 token 用量，OpenCode 这类壳给精确分解。Kimi 跑 3-4 小时编码任务，缓存读 5000-7000 万 tokens 不是小数——这是开源 + 多 provider 后才被晒出来的实情。
 
@@ -79,7 +79,7 @@ Moonshot 4 月 20 日晚发布 Kimi K2.6，HuggingFace 仓库 `moonshotai/Kimi-K
 
 K2.6 不是一家独大——4 月一个月，国产 coding 开源模型整体都在上。
 
-![国产开源 coding 模型横评](kimi-k2-6-domestic-coding-stack.png)
+![国产开源 coding 模型横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/kimi-k2-6-coding-overseas-frontier/kimi-k2-6-domestic-coding-stack.png)
 
 **DeepSeek V4-Pro**（4-24）1.6T / 49B MoE / MIT / 1M 上下文 / 1.74 美元起，SWE-Bench Verified 80.6——但 Verified 和 Pro 不是同一榜，难度差异大，不能和 K2.6 的 Pro 58.6 直接比。**Qwen3-Coder-Next**（阿里 4-8）80B / 3B MoE / Apache 2.0 / 零 API 费用，SWE-Bench Verified 70%+，"小而美"路线 Mac M3 Max 本地都能跑流畅。**GLM-5.1**（智谱 4-7）MIT / Coding 套餐 3 美元/月起 / API 1.40 / 4.40，Claude Code 评测 45.3（满分 50），距 Opus 4.6 的 47.9 只差 2.6 分。**国内闭源**——百度文心 4.5、字节豆包 Pro、通义千问 3.5 闭源版均在 SWE-Bench Pro 50+ 区间，但不开源权重，自部署价值有限。
 

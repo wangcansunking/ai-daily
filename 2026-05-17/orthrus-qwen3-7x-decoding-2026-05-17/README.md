@@ -26,7 +26,7 @@ description: "Orthrus 是 University of Oregon、Google DeepMind、Adobe Researc
 
 # Orthrus 给 Qwen3 加 7.8 倍解码
 
-![Orthrus 双头解码封面](orthrus-qwen3-7x-decoding-2026-05-17.png)
+![Orthrus 双头解码封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/orthrus-qwen3-7x-decoding-2026-05-17/orthrus-qwen3-7x-decoding-2026-05-17.png)
 
 五月十七号清晨，HN 头版被一篇标题朴素的论文顶到了 207 分——`Orthrus-Qwen3: up to 7.8× tokens/forward on Qwen3, identical output distribution`。链接指向 GitHub 上一个叫 Orthrus 的小项目，作者把 Qwen3-1.7B / 4B / 8B 的加速版本权重一并放上了 HuggingFace。
 
@@ -59,7 +59,7 @@ description: "Orthrus 是 University of Oregon、Google DeepMind、Adobe Researc
 
 把这十几个数字读一遍就能感受到 Orthrus 这套方法的密度——**单节点 24 小时、不到 1 B token、不动一根原模型权重，把 Qwen3-8B 的吞吐拉到 5 倍以上**。这件事本来应该贵到只有大厂训得起，结果一个三人小组在 H200 上一夜跑完，权重还挂上了 HF。
 
-![Orthrus 三档 Qwen3 加速曲线](orthrus-speedup-by-qwen3-size.png)
+![Orthrus 三档 Qwen3 加速曲线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/orthrus-qwen3-7x-decoding-2026-05-17/orthrus-speedup-by-qwen3-size.png)
 
 加速比随尺寸涨这件事本身值得说一下——**模型越大、单 token 的前向开销越重，并行解码省下来的 wall-clock 时间也越多**。这给后续移植到 Qwen3-32B、Qwen3-Coder-30B-A3B、甚至 Qwen3-Max 这种动辄 480B 的大家伙留下了非常乐观的外推空间。
 
@@ -73,7 +73,7 @@ Orthrus 这一篇相比过去几个月看到的推理加速文章，有三件事
 - **训练成本可复制**。0.96 B token + 8×H200 + 24 小时——这个预算在国内云厂商按需 GPU 实例上大概是 1500 美金量级；甚至高校实验室咬咬牙也能跑下来。对比 Dream-7B 那种从零训 diffusion 模型用 580 B token、SDAR adaptation 用 50 B token，Orthrus 把训练成本压低了 50× 到 600×。
 - **复现路径短**。HF 上 `chiennv/Orthrus-Qwen3-8B` 已经挂了完整权重，vLLM `serve` 一行启起来，对外暴露的是行业标准的 chat completions HTTP API；想用 SGLang 也一行；甚至 `docker model run` 也支持。这种「论文出第二天权重就在 HF」的节奏，国内团队一两周内就能在自己的业务上跑出复测数据。
 
-![Orthrus 训练成本 vs 其他 diffusion 改造路线](orthrus-training-cost-compare.png)
+![Orthrus 训练成本 vs 其他 diffusion 改造路线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/orthrus-qwen3-7x-decoding-2026-05-17/orthrus-training-cost-compare.png)
 
 回到一个更工程的判断——**国内大部分团队过去一年都在 Qwen3 上做后训练 / RAG / agent 套壳，模型本身的权重没人想动**。Orthrus 这套「冻结主干 + 挂第二个头」的范式刚好契合这种生产姿态：你过去微调好的 Qwen3-8B 业务模型，理论上都能直接套上 Orthrus 的 diffusion head 重新训一次（甚至直接迁移一个 head，作者在论文里没明说但理论上 head 本身的初始化来自 AR 的 Q/K/V 投影矩阵，理应有一定泛化）。
 
@@ -83,7 +83,7 @@ Orthrus 这个名字来自希腊神话里那只双头犬。论文里两个头分
 
 下面这张图是论文 Figure 1 的官方架构图，蓝色路径是冻结的 AR head，红色路径是可训练的 diffusion head：
 
-![Orthrus 双视图架构示意（论文 Figure 1）](orthrus-dual-view-fig1-v2.png)
+![Orthrus 双视图架构示意（论文 Figure 1）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/orthrus-qwen3-7x-decoding-2026-05-17/orthrus-dual-view-fig1-v2.png)
 
 ### 3.1 推理时两个 head 怎么协作
 
@@ -129,7 +129,7 @@ Orthrus 这一篇的实验段做得很扎实——把它和当前推理加速领
 
 投机解码是过去两年最主流的 lossless 加速路线，思路是「训一个小 drafter 模型快速猜 token，让大模型验证」。EAGLE-3 是这类方法的 SOTA，DFlash 是更新的 block-diffusion 变体。
 
-![Orthrus 投机解码接受长度对比 MATH-500](orthrus-vs-spec-decoding.png)
+![Orthrus 投机解码接受长度对比 MATH-500](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/orthrus-qwen3-7x-decoding-2026-05-17/orthrus-vs-spec-decoding.png)
 
 接受长度（每次前向 pass 平均能通过验证的 token 数）的数字非常硬：
 

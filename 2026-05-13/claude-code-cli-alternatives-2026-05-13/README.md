@@ -22,7 +22,7 @@ description: "把市面上声称『可以替代 Claude Code』的 5 个 CLI 一�
 
 # Claude Code 的 5 个对手实测：Codex、Copilot CLI、Gemini CLI、Qwen Code 谁值得用
 
-![Claude Code 替代品 CLI 横评封面](claude-code-cli-alternatives-2026-05-13.png)
+![Claude Code 替代品 CLI 横评封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-cli-alternatives-2026-05-13/claude-code-cli-alternatives-2026-05-13.png)
 
 5 月 12 日下午 V2EX 一个上海开发者发了条「Claude Code Max 每月 200 美元真的扛不住，国内有什么平替」的帖子，下面 60 多条回复分成 5 个阵营——Codex 党、新 Copilot CLI 党、Gemini CLI 党、Qwen Code 党、cc-switch 反代党。同一天 r/ClaudeAI 一条「我换回 Copilot CLI 了」的帖子在 12 小时内冲到 200 多赞，评论区 Sonnet 4.5 / GPT-5.4 / Qwen3-Coder-Plus 的支持者吵成一团。
 
@@ -38,14 +38,14 @@ description: "把市面上声称『可以替代 Claude Code』的 5 个 CLI 一�
 |---|---|---|---|---|---|---|---|
 | Claude Code（参照系） | anthropics/claude-code | **122,962** | 20,294 | 2.1.140 | 2025-02-22 | Shell | 无 SPDX |
 
-![anthropics/claude-code GitHub repo 社交预览（参照系） — 53 Contributors · 123k Stars · 20k Forks](anthropics-claude-code-og.png)
+![anthropics/claude-code GitHub repo 社交预览（参照系） — 53 Contributors · 123k Stars · 20k Forks](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-cli-alternatives-2026-05-13/anthropics-claude-code-og.png)
 | OpenAI Codex CLI | openai/codex | 82,169 | 11,871 | 0.130.0 | 2025-04-13 | **Rust** | Apache-2.0 |
 | GitHub Copilot CLI（新版） | github/copilot-cli | 10,445 | 1,471 | `@github/copilot` 1.0.46 | 2023-01-06 | Shell | NOASSERTION |
 | Google Gemini CLI | google-gemini/gemini-cli | 103,816 | 13,618 | 0.42.0 | 2025-04-17 | TypeScript | Apache-2.0 |
 | Qwen Code（阿里） | QwenLM/qwen-code | 24,346 | 2,361 | 0.15.10 | 2025-06-26 | TypeScript | Apache-2.0 |
 | 通义灵码 Lingma | 无 OSS repo | - | - | Lingma IDE v0.3.0+ | - | - | 闭源 |
 
-![六款 AI Coding CLI 的 Star 与发版节奏对比](cli-alternatives-stars-comparison.png)
+![六款 AI Coding CLI 的 Star 与发版节奏对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-cli-alternatives-2026-05-13/cli-alternatives-stars-comparison.png)
 
 观测要点：
 
@@ -61,7 +61,7 @@ description: "把市面上声称『可以替代 Claude Code』的 5 个 CLI 一�
 
 ### 2.1 OpenAI Codex CLI
 
-![openai/codex GitHub repo 社交预览 — Rust 96.1% · 82,169 Stars · 11,871 Forks · Apache-2.0](openai-codex-og.png)
+![openai/codex GitHub repo 社交预览 — Rust 96.1% · 82,169 Stars · 11,871 Forks · Apache-2.0](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-cli-alternatives-2026-05-13/openai-codex-og.png)
 
 OpenAI 官方编码 agent CLI，2025-04 开源、Apache-2.0。早期 TypeScript，2025 下半年完全 Rust 重写，仓库 96%+ Rust。默认模型 GPT-5.4 / GPT-5.3-Codex；支持 MCP、子 agent 并行、approval mode、`codex exec` 非交互模式、`AGENTS.md` 配置文件、hooks、plugin 架构。计费绑定 ChatGPT Plus / Pro / Business / Edu / Enterprise 订阅，也支持 API key BYO（含 Azure OpenAI）。最近 30 天近 30 个 alpha + 数个 stable，发版极频。**注意**：与 2021 年那个老 Codex（codex-davinci-002 API）完全无关——老 Codex 2023 年 3 月已下线，这是 2025 年全新命名重启的产品线。
 
@@ -69,7 +69,7 @@ OpenAI 官方编码 agent CLI，2025-04 开源、Apache-2.0。早期 TypeScript�
 
 ### 2.2 GitHub Copilot CLI（新版 agentic）
 
-![github/copilot-cli GitHub repo 社交预览 — 10,445 Stars · 1,471 Forks · 默认 Claude Sonnet 4.5](github-copilot-cli-og.png)
+![github/copilot-cli GitHub repo 社交预览 — 10,445 Stars · 1,471 Forks · 默认 Claude Sonnet 4.5](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-cli-alternatives-2026-05-13/github-copilot-cli-og.png)
 
 GitHub 2025-09-25 公开预览，把 Copilot coding agent 搬到终端。默认模型 **Claude Sonnet 4.5**（GitHub 官方文档明写），`/model` 切换，也可挂自定义 OpenAI 兼容 / Azure OpenAI / Anthropic endpoint。核心能力：`/fleet` 拆任务并行跑 subagent + Autopilot 模式 + Plan / Ask / Execute 三态 + Skills + Hooks + MCP + Copilot Memory + GitHub.com 原生集成（PR / Issue / Actions）。所有 GitHub Copilot 订阅（Free / Pro $10 / Pro+ $39 / Business $19 / Enterprise $39）都含 Copilot CLI 不另收费，但 2026-06-01 起改 usage-based billing，每月给等额 AI Credits（Pro $10 含 $10 credits）。
 
@@ -77,7 +77,7 @@ GitHub 2025-09-25 公开预览，把 Copilot coding agent 搬到终端。默认�
 
 ### 2.3 Google Gemini CLI
 
-![google-gemini/gemini-cli GitHub repo 社交预览 — 103,816 Stars · 13,618 Forks · TypeScript · Apache-2.0](google-gemini-gemini-cli-og.png)
+![google-gemini/gemini-cli GitHub repo 社交预览 — 103,816 Stars · 13,618 Forks · TypeScript · Apache-2.0](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-cli-alternatives-2026-05-13/google-gemini-gemini-cli-og.png)
 
 Google 2025-06 开源，Apache-2.0，TypeScript，103.8k Star。默认模型 gemini-2.5-pro / gemini-2.5-flash，2026 年新增 Gemini 3 系列 1M context。**免费层最慷慨**：用个人 Google 账号 OAuth 登录得到 60 req/min + 1000 req/day（README 明示）；API key 直连也给 1000 req/day with Gemini 3。支持 MCP、自定义 extensions、`@google/gemini-cli` npm 直装。**中国大陆访问需走代理，Google AI 服务在国内不可直连**。
 
@@ -85,7 +85,7 @@ Google 2025-06 开源，Apache-2.0，TypeScript，103.8k Star。默认模型 gem
 
 ### 2.4 Qwen Code（阿里 / 通义实验室）
 
-![QwenLM/qwen-code GitHub repo 社交预览 — 24,346 Stars · 2,361 Forks · fork 自 Gemini CLI · Apache-2.0](QwenLM-qwen-code-og.png)
+![QwenLM/qwen-code GitHub repo 社交预览 — 24,346 Stars · 2,361 Forks · fork 自 Gemini CLI · Apache-2.0](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-cli-alternatives-2026-05-13/QwenLM-qwen-code-og.png)
 
 Qwen 团队 2025-06-26 开源，Apache-2.0，**fork 自 Google Gemini CLI**。默认模型 Qwen3-Coder-Plus / 480B-A35B / 30B-A3B，2026 上半年升级到 Qwen3.5-Plus、Qwen3.6-Plus。认证：2026-04-15 之后 OAuth 通道关闭，目前以 API key（阿里云百炼 `sk-xxx`、ModelScope `ms-xxx`、OpenRouter、Fireworks、Anthropic、Google GenAI、本地 Ollama / vLLM 全部 OpenAI 兼容）或订阅阿里云 Coding Plan 月费为主。`@qwen-code/qwen-code` 0.15.10。**免费策略 4 月收紧**：HN 用户反映「Alibaba discontinued Qwen Code's free tier almost on the spot, with a 2-day transitory drop from 1,000 to 100 free requests a day」。
 
@@ -107,7 +107,7 @@ Qwen 团队 2025-06-26 开源，Apache-2.0，**fork 自 Google Gemini CLI**。�
 
 把 6 个工具按读者最关心的 7 个维度做横向对比——表格 + 热力图双重呈现。
 
-![六款 AI Coding CLI 7 维能力热力图](cli-alternatives-capability-matrix.png)
+![六款 AI Coding CLI 7 维能力热力图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-cli-alternatives-2026-05-13/cli-alternatives-capability-matrix.png)
 
 | 能力 | Claude Code | Codex CLI | Copilot CLI（新） | Gemini CLI | Qwen Code | Lingma（IDE 内） |
 |---|---|---|---|---|---|---|
@@ -140,7 +140,7 @@ Qwen 团队 2025-06-26 开源，Apache-2.0，**fork 自 Google Gemini CLI**。�
 | Qwen Code | 阿里云百炼新用户 70M+ token 免费 90 天 | Coding Plan 包月 | Token Plan 团队版 by seat | **支持微信 / 支付宝 / 企业对公**，国内最顺 |
 | Lingma | 个人专业版限免至 2026-05-20 18:00 | 企业标准版包年 8 折 | 企业定制 | **支持阿里云体系内一切支付方式** |
 
-![六款 CLI 入门档与主力档价格对比](cli-alternatives-price-comparison.png)
+![六款 CLI 入门档与主力档价格对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-cli-alternatives-2026-05-13/cli-alternatives-price-comparison.png)
 
 几个细节读者容易忽略：
 
@@ -165,7 +165,7 @@ V2EX、HN、知乎、独立测评博客近 30 天的高频原话，每条带链�
 
 国内开发者最关心的「装得了 / 付得起 / 用得顺」三件事整合成一张表：
 
-![六款 CLI 国内可用性矩阵](cli-alternatives-china-availability.png)
+![六款 CLI 国内可用性矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-cli-alternatives-2026-05-13/cli-alternatives-china-availability.png)
 
 | 工具 | 翻墙 | 国内 API key | 中文交互 | 隐私合规 |
 |---|---|---|---|---|
@@ -182,7 +182,7 @@ V2EX、HN、知乎、独立测评博客近 30 天的高频原话，每条带链�
 
 把读者按场景分三类，给出明确推荐——不写「各有优劣」「因人而异」这种骑墙话术。
 
-![三类读者的 CLI 选择决策树](cli-alternatives-decision-tree.png)
+![三类读者的 CLI 选择决策树](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-cli-alternatives-2026-05-13/cli-alternatives-decision-tree.png)
 
 | 读者画像 | 第一推荐 | 第二备选 | 不推荐 |
 |---|---|---|---|

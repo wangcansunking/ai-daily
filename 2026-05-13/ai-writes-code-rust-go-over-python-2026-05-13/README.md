@@ -24,7 +24,7 @@ description: "Noah Mitchem 一篇《If AI writes your code, why use Python?》�
 
 # AI 写代码该选 Rust 还是 Python：HN 868 评论吵翻
 
-![cover](ai-writes-code-rust-go-over-python-2026-05-13.png)
+![cover](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/ai-writes-code-rust-go-over-python-2026-05-13/ai-writes-code-rust-go-over-python-2026-05-13.png)
 
 ## 一、823 分、871 评论：一篇反 Python 长文为什么能在 HN 吵翻全场
 
@@ -78,7 +78,7 @@ description: "Noah Mitchem 一篇《If AI writes your code, why use Python?》�
 
 第四，Python 因为是动态类型，AI 写错了往往要等到运行时、单测、甚至上线才会暴露。同样一段「校验用户订单」的逻辑，Python 版的类型错误是写出来要靠人手工加的 if-else，Rust 版直接嵌进类型签名——AI 想偷懒都偷懒不了。
 
-![Python vs Rust：AI 写代码时的编译期捕获差异](python-vs-rust-code-compare.png)
+![Python vs Rust：AI 写代码时的编译期捕获差异](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/ai-writes-code-rust-go-over-python-2026-05-13/python-vs-rust-code-compare.png)
 
 第五，运行时性能这块，原本是 Python 的硬伤，但在「人写为主」时代不构成致命短板，因为人时间贵、机器时间便宜。可是当 AI 接管打字之后，机器时间反而被放大——24 小时跑着的 agent、上下文动辄几十 K token 的推理、海量的 GPU 调用，每一项都让运行时效率重新值钱。Mitchem 原文里的提法是「a harder language's runtime advantages compound every day you run the service in production」——「一门更难的语言，每运行一天就多积累一份性能复利」。
 
@@ -88,7 +88,7 @@ description: "Noah Mitchem 一篇《If AI writes your code, why use Python?》�
 
 光讲逻辑没有说服力，Mitchem 在原文里搬出了一串真实的工程案例，每一个都是 2025-2026 这一年发生的事。这里挑最硬的三个，按时间顺序摆一摆：
 
-![三大佐证：AI 已经在写系统语言代码](three-proofs.png)
+![三大佐证：AI 已经在写系统语言代码](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/ai-writes-code-rust-go-over-python-2026-05-13/three-proofs.png)
 
 **第一个：Nicholas Carlini 用 16 个 Claude 并行写出一个能跑的 C 编译器**。这位 DeepMind 出身的研究者，在 2025 年下半年公开了一个项目：把 16 个 Claude agent 并行起来，让它们协作写一个产线可用的 C 编译器。代码语言是 Rust，最终代码量约 10 万行，API 调用费用约 2 万美元。这个案例的关键不是「AI 能写编译器」——这个事 2024 年就有人证明过——关键是 **16 个 agent 并行能协作出 10 万行不打架的代码**，这背后非常依赖 Rust 的强类型签名作为「契约」，让不同 agent 之间不会改坏对方的数据结构。
 
@@ -102,7 +102,7 @@ description: "Noah Mitchem 一篇《If AI writes your code, why use Python?》�
 
 但更扎心的一件事，Mitchem 在文章里只点了一段，但咱们写 Python 的工程师其实早就感觉到了：**Python 的工具链生态，正在被 Rust 大规模换芯**。这不是未来时，是已经发生时。
 
-![Python 生态正在被 Rust 重写：核心组件时间线](python-rust-rewrite-timeline.png)
+![Python 生态正在被 Rust 重写：核心组件时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/ai-writes-code-rust-go-over-python-2026-05-13/python-rust-rewrite-timeline.png)
 
 把 Python 工程师每天大概率会用到的工具列一下：
 
@@ -161,7 +161,7 @@ Mitchem 借这个事实做了一个稍有挑衅的延伸：「既然 Python 生�
 
 翻译：「如果 AI 写代码不需要人读，干脆直接让 AI 写汇编或者二进制好了，何必停在 Rust？所有所谓『AI 友好』语言都是为人类设计的中间产物。」这条极端派的杀伤力在于把 Mitchem 的逻辑推到极端——如果代码不是给人读的，那连 Rust 也是多余的。
 
-![HN 871 评论五种立场分布](hn-5-positions.png)
+![HN 871 评论五种立场分布](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/ai-writes-code-rust-go-over-python-2026-05-13/hn-5-positions.png)
 
 这五条立场放在一起，能看出 HN 社区的真实分布：**支持 + 实操 + 折中 = 三种偏积极立场，加起来大概是评论池的多数，但反方与极端派也都拿到了显眼位置**。换句话说，「AI 时代选 Rust / Go」这个判断在海外开发者社区已经从「少数派观点」走到「主流候选项之一」，但远没到「共识」级别。
 
@@ -173,7 +173,7 @@ Mitchem 借这个事实做了一个稍有挑衅的延伸：「既然 Python 生�
 
 把 2026-05 这个时间点的真实体验摆出来，避免假大空判断。
 
-![国内 AI Coding 工具链 × Rust / Go 实操体验](cn-ai-coding-rust-go-matrix.png)
+![国内 AI Coding 工具链 × Rust / Go 实操体验](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/ai-writes-code-rust-go-over-python-2026-05-13/cn-ai-coding-rust-go-matrix.png)
 
 按工具拆开来看：
 
@@ -207,7 +207,7 @@ Mitchem 借这个事实做了一个稍有挑衅的延伸：「既然 Python 生�
 
 **第三块：脚本、胶水、教学**。运维脚本、数据 ETL、自动化测试、小工具、教学示例，Python 的可读性优势在这些「人写人读」的小代码场景里仍然不可替代。Rust 在这些场景下的体验，即使有 AI 加持，仍然是杀鸡用牛刀。
 
-![Python 仍然占着三块基本盘](python-unreplacable-3-pillars.png)
+![Python 仍然占着三块基本盘](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/ai-writes-code-rust-go-over-python-2026-05-13/python-unreplacable-3-pillars.png)
 
 把这三块基本盘摆出来，Mitchem 的论点就更精确了：**不是 Python 让位，是「服务后端 + 系统软件 + 工具链」这一类原本属于 Python 的场景，正在分流到 Rust 和 Go**。研究、数据、脚本三块，Python 仍然是主场。
 

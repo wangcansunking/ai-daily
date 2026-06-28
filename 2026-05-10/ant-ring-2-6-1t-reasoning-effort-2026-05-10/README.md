@@ -10,7 +10,7 @@ cover: ant-ring-2-6-1t-reasoning-effort-2026-05-10.png
 ---
 # 蚂蚁开源万亿模型 Ring-2.6 对标 Claude/Qwen3
 
-![封面：Ring-2.6-1T 万亿思考模型登场](ant-ring-2-6-1t-reasoning-effort-2026-05-10.png)
+![封面：Ring-2.6-1T 万亿思考模型登场](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/ant-ring-2-6-1t-reasoning-effort-2026-05-10/ant-ring-2-6-1t-reasoning-effort-2026-05-10.png)
 
 5 月 9 日下午，蚂蚁百灵把 Ring-2.6-1T 推上了 OpenRouter。1T 总参数、63B 激活、262K 上下文，PinchBench high 档 87.60，蚂蚁声称这一档位高于 GPT-5.4 xHigh、Gemini-3.1-Pro high、Claude-Opus-4.7 xhigh。一周限免，跑完即开源。
 
@@ -49,7 +49,7 @@ extra_body={"reasoning": {"effort": "xhigh"}}   # 长推理链，给数学 / 科
 
 把"推理预算"从黑盒做成显式参数，是国产模型在产品形态上跟海外闭源主流的一次错位：海外卷模型 IQ，蚂蚁这次卷开发者控制权。
 
-![Ring-2.6-1T 在三大公开榜单的官方披露成绩](ring-2-6-1t-benchmarks.png)
+![Ring-2.6-1T 在三大公开榜单的官方披露成绩](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/ant-ring-2-6-1t-reasoning-effort-2026-05-10/ring-2-6-1t-benchmarks.png)
 
 ## 二、`high` 跟 `xhigh` 各管什么场景
 
@@ -63,7 +63,7 @@ extra_body={"reasoning": {"effort": "xhigh"}}   # 长推理链，给数学 / 科
 
 ITBear 5/9 测评稿额外提到 high 档"工具调用效率提升 30% 以上"、xhigh"可同时维持 5+ 推理链"——这两个数字仅在 ITBear 出现，蚂蚁官方稿没有，引用时记得注明来源。
 
-![Ring-2.6-1T high 与 xhigh 两档推理强度对比](ant-ring-2-6-1t-high-vs-xhigh.png)
+![Ring-2.6-1T high 与 xhigh 两档推理强度对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/ant-ring-2-6-1t-reasoning-effort-2026-05-10/ant-ring-2-6-1t-high-vs-xhigh.png)
 
 具体到国内 Agent 业务栈：
 
@@ -82,7 +82,7 @@ ITBear 5/9 测评稿额外提到 high 档"工具调用效率提升 30% 以上"�
 
 要理解 Ring-2.6-1T 的来路，得回到 2026 年 2 月 14 日。
 
-![蚂蚁百灵 Ring 系列 2025—2026 时间线](ring-series-timeline.png)
+![蚂蚁百灵 Ring 系列 2025—2026 时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/ant-ring-2-6-1t-reasoning-effort-2026-05-10/ring-series-timeline.png)
 
 那天蚂蚁发布 Ring-2.5-1T。量子位定位它是"全球首个基于混合线性架构的万亿参数思考模型"，激活参数从 51B 提到 63B，32K 长文本生成场景里访存规模降低 10 倍、生成吞吐提升 3 倍（据量子位 2026/02 引述蚂蚁官方披露）。
 

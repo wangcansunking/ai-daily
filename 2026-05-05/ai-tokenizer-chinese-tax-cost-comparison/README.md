@@ -11,7 +11,7 @@ cover: "ai-tokenizer-chinese-tax.png"
 
 # 大模型「中文税」实测：中文比英文贵 64%
 
-![大模型「中文税」实测封面](ai-tokenizer-chinese-tax.png)
+![大模型「中文税」实测封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/ai-tokenizer-chinese-tax-cost-comparison/ai-tokenizer-chinese-tax.png)
 
 > 同一段商业新闻——中文 1,000 字、英文译稿 1,000 字——丢进 Claude Opus 4.6，中文吃掉 1,640 token，英文只吃掉 1,000 token，**中文版账单贵 64%**。换成千问 3.6 或者深度求索 V3，中文反过来比英文便宜 5%–35%。22 段平行文本、5 个主流 tokenizer 跑下来的差距就这么大。**数据口径说明**：以下数字主要来自社区独立测试（claudecodecamp 等），Anthropic 官方未单独披露 tokenizer 升级口径，仅在 Opus 4.7 release notes 提到"整体多吃 0-35% token"。
 
@@ -23,7 +23,7 @@ cover: "ai-tokenizer-chinese-tax.png"
 
 ## 一、5 个 tokenizer 22 段平行文本实测
 
-![5 个 tokenizer 中英比值实测](ai-tokenizer-cn-en-ratio.png)
+![5 个 tokenizer 中英比值实测](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/ai-tokenizer-chinese-tax-cost-comparison/ai-tokenizer-cn-en-ratio.png)
 
 22 段平行文本——商业新闻、技术文档、古文、日常对话四个类目各 5–6 段——同时跑 Claude Opus 4.6、Claude Opus 4.7（重训版）、GPT-4o（o200k_base）、千问（Qwen）3.6、深度求索（DeepSeek）V3 五个 tokenizer。
 
@@ -82,7 +82,7 @@ flowchart LR
 
 ## 四、国内 5 家主流模型 · vocab 横评
 
-![国内 5 家主流模型 tokenizer vocab 规模](ai-tokenizer-domestic-vocab.png)
+![国内 5 家主流模型 tokenizer vocab 规模](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/ai-tokenizer-chinese-tax-cost-comparison/ai-tokenizer-domestic-vocab.png)
 
 把国内 5 家厂商的 tokenizer 拉到同一张表上看：
 
@@ -100,7 +100,7 @@ flowchart LR
 
 ## 五、海外 4 家旗舰对位
 
-![海外 4 家旗舰中英比值](ai-tokenizer-overseas-comparison.png)
+![海外 4 家旗舰中英比值](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/ai-tokenizer-chinese-tax-cost-comparison/ai-tokenizer-overseas-comparison.png)
 
 把海外四家旗舰也拉过来看清楚差距：
 
@@ -198,7 +198,7 @@ Claude 4.7 的 tokenizer 重训给海外厂商出了个题目——**当中文�
 2. **Anthropic 不太可能再做一次 tokenizer 重训**——4.7 这一次代价已经吃了一年，下一次重训至少要等 Claude 5 / 6 这一代
 3. **国产模型继续守住 0.65×–0.95× 优势**——千问 / DeepSeek / Kimi / GLM 在 tokenizer 这一层的工程积累已经形成护城河，海外厂商除非把训练语料里中文比例拉到 30%（OpenAI 大约 5–8%），否则追不上
 
-![1M context 中文实际可用空间](ai-tokenizer-context-window.png)
+![1M context 中文实际可用空间](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/ai-tokenizer-chinese-tax-cost-comparison/ai-tokenizer-context-window.png)
 
 **长上下文窗口才是真正的战场**——同样 1M 上下文，Claude 4.6 上中文用户实际只能塞 61% 的原文内容（约 60 万中文字），换成 DeepSeek-V3 能塞 130%（约 130 万中文字）。**做 RAG / 长文档分析的国内开发者在 tokenizer 这一层已经领先海外同行 2 倍**。
 

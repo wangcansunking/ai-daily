@@ -30,7 +30,7 @@ image_alt_match_ignore:
 
 # Mac Studio 跑 GLM-4.6：256GB 是真正的甜点档
 
-![GLM-4.6 在 Mac Studio 上跑 MLX 与 llama.cpp 两条路线的封面](glm-4-6-mac-ultra-m4-max-mlx-llamacpp-2026-05-22.png)
+![GLM-4.6 在 Mac Studio 上跑 MLX 与 llama.cpp 两条路线的封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/glm-4-6-mac-ultra-m4-max-mlx-llamacpp-2026-05-22/glm-4-6-mac-ultra-m4-max-mlx-llamacpp-2026-05-22.png)
 
 2026-05-22 上午把智谱 GLM-4.6 在 Apple Silicon 上的几个量化仓数据实拉一遍。HuggingFace 的 `zai-org/GLM-4.6` 模型卡是 357B 总参 / 32B 激活（社区披露）/ 200K 上下文 / MIT 许可，2025-09-30 发布；MLX 社区版 `mlx-community/GLM-4.6-4bit` 文件 199GB，`mlx-community/GLM-4.6-6bit` 287GB；GGUF 这边 `unsloth/GLM-4.6-GGUF` 一共有 27 个量化档，从 1-bit 的 UD-TQ1_0（84.1GB）一路拉到 BF16（714GB），推荐档 UD-Q4_K_XL 是 204GB。同期硬件这边，Mac Studio M3 Ultra 国行 96GB 起售 32999 元，512GB 顶配 108749 元，256GB 中间档官网定制大致 7-9 万；M3 Ultra 内存带宽 819 GB/s。
 
@@ -40,7 +40,7 @@ image_alt_match_ignore:
 
 先把读者最关心的"我家这台 Mac 跑得动 GLM-4.6 吗"摆清楚。
 
-![GLM-4.6 在 HuggingFace 上的官方模型卡 banner](glm-4-6-hf.png)
+![GLM-4.6 在 HuggingFace 上的官方模型卡 banner](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/glm-4-6-mac-ultra-m4-max-mlx-llamacpp-2026-05-22/glm-4-6-hf.png)
 
 HuggingFace 上 `zai-org/GLM-4.6` 模型卡顶部 banner——智谱 9 月底开源时给的官方视觉。模型卡正文 verbatim 给的两段是：
 
@@ -73,7 +73,7 @@ M3 Ultra 819 GB/s 的内存带宽是把统一内存这件事做到极致的硬�
 
 GLM-4.6 在社区一共有两条量化路线：MLX 路线（Apple Silicon 原生）有 4bit / 6bit / bf16 三档，GGUF 路线（llama.cpp / Ollama / LM Studio 通用）由 Unsloth 维护，一共 27 档。
 
-![mlx-community 上 GLM-4.6 4bit 量化仓视觉](mlx-glm-4bit-hf.png)
+![mlx-community 上 GLM-4.6 4bit 量化仓视觉](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/glm-4-6-mac-ultra-m4-max-mlx-llamacpp-2026-05-22/mlx-glm-4bit-hf.png)
 
 MLX 路线的三档：
 
@@ -87,7 +87,7 @@ MLX 路线的三档：
 
 GGUF 路线由 Unsloth 维护——这是一支专做 LoRA 微调与量化的开源团队，他们对 GLM-4.6 这种大型 MoE 用 UD（Unsloth Dynamic）量化算法重做了一遍，比标准 GGUF Q2/Q3 在低比特档保留得更稳。
 
-![Unsloth GLM-4.6-GGUF 量化仓视觉](unsloth-glm-gguf-hf.png)
+![Unsloth GLM-4.6-GGUF 量化仓视觉](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/glm-4-6-mac-ultra-m4-max-mlx-llamacpp-2026-05-22/unsloth-glm-gguf-hf.png)
 
 27 档 GGUF 实数（精选最常用的 9 档）：
 
@@ -117,7 +117,7 @@ Unsloth Dynamic 量化（UD 前缀）和标准 GGUF Q2 / Q3 / Q4 的差别值得
 
 Apple ML 团队的 MLX 是给统一内存架构量身写的张量库，2026-05-22 实测 `ml-explore/mlx` 26351 star、`ml-explore/mlx-lm` 5383 star。llama.cpp 这边归在 `ggml-org` 名下 112125 star——是 mlx-lm 的 20 多倍，是 GLM 系列在 GitHub 上邻居仓 `zai-org/GLM-4.5` 4344 star 的 25 倍。
 
-![llama.cpp 主仓库视觉](llamacpp-gh.png)
+![llama.cpp 主仓库视觉](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/glm-4-6-mac-ultra-m4-max-mlx-llamacpp-2026-05-22/llamacpp-gh.png)
 
 [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) ｜ [ml-explore/mlx](https://github.com/ml-explore/mlx) ｜ [ml-explore/mlx-lm](https://github.com/ml-explore/mlx-lm)
 

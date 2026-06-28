@@ -13,7 +13,7 @@ cover: "deepseek-v4-engram-missing-knowledge-lookup.png"
 
 > Engram-27B 在 MMLU 上 +3.4、BBH 上 +5.0、Multi-Query NIAH 从 84.2% 直接拉到 97.0%——这是 DeepSeek 与北京大学 1 月联合开源的记忆模块的成绩单。但 4 月 24 日上线的 DeepSeek V4 Preview 没有它。
 
-![DeepSeek V4 没集成 Engram · 封面](deepseek-v4-engram-missing-knowledge-lookup.png)
+![DeepSeek V4 没集成 Engram · 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/deepseek-v4-engram-missing-knowledge-lookup/deepseek-v4-engram-missing-knowledge-lookup.png)
 
 ## 一、先把数字摆出来
 
@@ -38,7 +38,7 @@ Engram-27B 是 DeepSeek 团队在 2026 年 1 月 12 日发表的论文里给出�
 
 要理解为什么这件事在 AI 圈引发的反应这么强烈，先看 Engram 的架构定位。
 
-![Engram 架构图：Transformer 主干 + 哈希查表旁路](deepseek-v4-engram-architecture.png)
+![Engram 架构图：Transformer 主干 + 哈希查表旁路](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/deepseek-v4-engram-missing-knowledge-lookup/deepseek-v4-engram-architecture.png)
 
 过去几年大模型的"稀疏化"基本上只走一条路——MoE（Mixture of Experts，混合专家）。每个 token 只激活全部专家中的少数几个，剩下的不参与计算，节约的是浮点算力。从 Mixtral 到 DeepSeek V3、V4，从千问 3-MoE 到美团 LongCat-Flash，这条路已经被反复验证。
 
@@ -60,7 +60,7 @@ Engram 提出的是**第二条稀疏轴**——记忆稀疏。
 
 把基准全摊开看，Engram 的提升不是某一项的偶然亮点，而是**通用知识、中文知识、复杂推理、长文本检索四个维度全面发力**。
 
-![Engram-27B 六项基准](deepseek-v4-engram-27b-bench.png)
+![Engram-27B 六项基准](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/deepseek-v4-engram-missing-knowledge-lookup/deepseek-v4-engram-27b-bench.png)
 
 中文知识（CMMLU）+4.0 这一栏特别值得国内开发者注意——它意味着哈希查表机制对中文这种"知识密度高、固定搭配多"的语言是有结构性优势的。中文里大量"专名 + 关系"的固定知识（"李白 → 唐朝"、"凯恩斯 → 经济学"），刚好是 Engram 这种"按名字直接取知识行"的机制最擅长的类型。把这条规律放大到法律条文、医学诊断、工程文档这类知识密度更高的领域，效果只会更明显。
 
@@ -91,7 +91,7 @@ DeepSeek V4 Preview 2026 年 4 月 24 日上线。两个版本：
 
 DeepSeek 提出 Engram 的同一个时间窗口里，海外几条平行路径也都在往"模型级 / 应用级记忆"方向走。把它们摆到同一张表里看，能看清 Engram 在全球记忆层方案中的具体位置。
 
-![全球大模型记忆层方案横评](deepseek-v4-engram-landscape.png)
+![全球大模型记忆层方案横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/deepseek-v4-engram-missing-knowledge-lookup/deepseek-v4-engram-landscape.png)
 
 **Meta Memory Layers** 是和 Engram 最像的一条路——同样在模型架构内部嵌入"记忆参数"，训练时学习。差别在 Meta 方案的参数耦合度更高，DeepSeek Engram 走的是"参数解耦 + DRAM 卸载"路线，工程友好度更高。
 

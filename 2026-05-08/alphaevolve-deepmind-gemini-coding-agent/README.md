@@ -16,7 +16,7 @@ tags:
 ---
 # 会自己进化的代码 agent：DeepMind AlphaEvolve
 
-![会自己进化的代码 agent：DeepMind AlphaEvolve](alphaevolve-deepmind-gemini-coding-agent.png)
+![会自己进化的代码 agent：DeepMind AlphaEvolve](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/alphaevolve-deepmind-gemini-coding-agent/alphaevolve-deepmind-gemini-coding-agent.png)
 
 ## 一、5 月 7 日 DeepMind 在博客上发了什么
 
@@ -28,7 +28,7 @@ tags:
 
 > 论点先放这里：AlphaEvolve 把"LLM 出主意 + 自动评测器打分 + 进化算法挑下一代"做成了一条工业化产线，跑出了一批跨域的真实数字（Borg 0.7%、Gemini 训练 1%、FlashAttention 32.5%、Klarna 2×、FM Logistic 10.4%、Schrödinger 4×）。和 Claude Code、OpenAI o3 这些"对话式编码 agent"是两个物种——一个解定义良好的硬问题，一个跑业务流程的软任务。国产同行（DeepSeek、千问、Kimi、智谱）目前还集中在第二类，第一类的位置空出来了。
 
-![AlphaEvolve 进化 loop 流程图](alphaevolve-evolution-loop.png)
+![AlphaEvolve 进化 loop 流程图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/alphaevolve-deepmind-gemini-coding-agent/alphaevolve-evolution-loop.png)
 
 ## 二、AlphaEvolve 是什么：进化算法 + Gemini + 自动评测器
 
@@ -55,7 +55,7 @@ AlphaEvolve 的工程结构出奇地朴素——朴素到一篇本科算法课�
 
 社区已经有开源对位了——**OpenEvolve**，Hugging Face 上 codelion（Asankhaya Sharma）维护，是首个公开的 AlphaEvolve 复刻。它已经被独立用户跑出真实数字：Apple Silicon 上 GPU kernel 解码速度提升 21.8%，长上下文 transformer attention 提升 36.7%。这两个数字侧面验证了 AlphaEvolve 范式的可复现性。
 
-![AlphaEvolve 架构图：Gemini Flash + Pro + 评测器](alphaevolve-architecture-diagram.png)
+![AlphaEvolve 架构图：Gemini Flash + Pro + 评测器](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/alphaevolve-deepmind-gemini-coding-agent/alphaevolve-architecture-diagram.png)
 
 ## 三、跨域成果实据：每条都带数字
 
@@ -98,7 +98,7 @@ DeepMind 5 月 7 日博客明确点名的合作方与具体战绩：
 - **编译器存储优化**：软件存储占用**降低 9%**。
 - **缓存替换策略**：人类研究月级才能找到的方案，AlphaEvolve **两天给出**。
 
-![AlphaEvolve 跨域成果网格图](alphaevolve-results-grid.png)
+![AlphaEvolve 跨域成果网格图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/alphaevolve-deepmind-gemini-coding-agent/alphaevolve-results-grid.png)
 
 把这些数字罗列在一起，AlphaEvolve 干的活其实是同一件事——**把人类工程师"差不多就行"的局部最优，往后再推一格**。每一格 0.5% 到 30% 不等，加总就是巨型数字。
 
@@ -119,7 +119,7 @@ AlphaEvolve 是 FunSearch 的"工程化大表哥"——把单函数搜索升级�
 
 跟 AlphaCode 也不重叠：AlphaCode 是"一次性写出能过样例的程序"，没进化、没迭代；AlphaEvolve 是"反复改一个程序往更优推"，没有"做完"这个状态。
 
-![DeepMind Alpha 系列对照表](alphaevolve-vs-alphacode-vs-alphaproof.png)
+![DeepMind Alpha 系列对照表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/alphaevolve-deepmind-gemini-coding-agent/alphaevolve-vs-alphacode-vs-alphaproof.png)
 
 ## 五、和 Claude / OpenAI 编码 agent 的范式差异
 
@@ -144,7 +144,7 @@ HN 帖子里另一条高赞评论说得很到位：**Claude 在"实现已知算�
 
 所以这不是"谁取代谁"的事，是**两个物种**：硬问题给 AlphaEvolve，软任务给 Claude / o3。
 
-![AlphaEvolve vs Claude Code vs o3 对照表](alphaevolve-vs-claude-vs-o3.png)
+![AlphaEvolve vs Claude Code vs o3 对照表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/alphaevolve-deepmind-gemini-coding-agent/alphaevolve-vs-claude-vs-o3.png)
 
 ## 六、国产编码 agent 的对位：路线分叉点已现
 

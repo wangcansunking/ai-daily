@@ -11,7 +11,7 @@ cover: cn-llm-1m-context-local-2026-05-11.png
 
 # 国产模型 1M 上下文本地跑起来：从 YaRN 到磁盘 KV 的完整拆解
 
-![封面：1M 上下文本地跑起来](cn-llm-1m-context-local-2026-05-11.png)
+![封面：1M 上下文本地跑起来](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/cn-llm-1m-context-local-2026-05-11/cn-llm-1m-context-local-2026-05-11.png)
 
 5 月 6 日深夜 antirez 推第一版 `ds4.c`，5 月 7 日前后 DeepSeek 把 V4 Flash 同步到 ModelScope（国内镜像），5 月初 Unsloth 把 Qwen3-Next 80B 的 UD-Q4_K_XL 量化包推上 HuggingFace、M3 Ultra 256GB 跑出 25+ t/s 已被多个社区帖记录。三条独立时间线汇到一起，给国内开发者第一次留下一个清晰判断：**1M 上下文本地跑起来已经不再是 PPT，而是四档硬件四条路径的工程问题**。
 
@@ -39,7 +39,7 @@ cover: cn-llm-1m-context-local-2026-05-11.png
 
 先把"谁真有 1M"这件事讲清楚。海外报道经常把 1M 上下文混在一起说，但国产开源阵营里 1M 路径真正可本地复现的只有两家半：
 
-![三家国产开源模型 1M 上下文路径](long-ctx-1m-models-matrix.png)
+![三家国产开源模型 1M 上下文路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/cn-llm-1m-context-local-2026-05-11/long-ctx-1m-models-matrix.png)
 
 **第一档：DeepSeek V4 Flash / V4 Pro · 1M 原生**
 
@@ -65,7 +65,7 @@ Kimi K2.5 / K2.6 在 256K 上停住，至今未公开发布 1M 版本——所�
 
 1M 上下文真正的成本不是模型权重，是 KV cache。这件事讲透就能看清四档硬件的边界。
 
-![1M 上下文 KV 量化显存账](long-ctx-kv-mem-tab.png)
+![1M 上下文 KV 量化显存账](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/cn-llm-1m-context-local-2026-05-11/long-ctx-kv-mem-tab.png)
 
 **KV 显存的数学**
 
@@ -93,7 +93,7 @@ antirez 在 ds4.c 里把 KV cache 当一等公民放到 SSD 上。这个思路�
 
 四家主流引擎对 YaRN + 长上下文 + FP8 KV 的支持，差异比想象中大。
 
-![四家推理引擎对 YaRN 与长上下文支持对比](long-ctx-engine-yarn-support.png)
+![四家推理引擎对 YaRN 与长上下文支持对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/cn-llm-1m-context-local-2026-05-11/long-ctx-engine-yarn-support.png)
 
 **vLLM ≥ 0.8.5 · 服务器端首选**
 
@@ -152,7 +152,7 @@ ml-explore/mlx-examples issue #909 显示 MLX 主线只支持线性 RoPE 缩放�
 
 把社区真人帖里的实测数字串起来，能看到 1M 上下文今天能在什么硬件上跑。所有数字都给来源，未经独立验证项明确标注。
 
-![1M 上下文六档硬件实测号码](long-ctx-hw-bench-real.png)
+![1M 上下文六档硬件实测号码](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/cn-llm-1m-context-local-2026-05-11/long-ctx-hw-bench-real.png)
 
 **2×H20 96GB（国内服务器常见）**
 
@@ -192,7 +192,7 @@ ds4.c README 给的实测：DeepSeek V4 Flash Q2 + 磁盘 KV cache 模式下，1
 
 把 1M 跑起来只完成一半，真正让国内开发者用得上还要看 IDE 端的对接。
 
-![国内 IDE 接 1M 本地后端的四条配置流](long-ctx-cn-ide-flow.png)
+![国内 IDE 接 1M 本地后端的四条配置流](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/cn-llm-1m-context-local-2026-05-11/long-ctx-cn-ide-flow.png)
 
 **通义灵码 · VSCode / JetBrains 插件**
 
@@ -246,7 +246,7 @@ Trae 在 2026-Q1 更新里把 Kimi K2.5（256K）作为 SOLO 模式默认的长�
 
 把前五节的结论收拢成可执行的四条路径——四档硬件、四档模型、四种引擎搭配。
 
-![四档硬件四条落地路径](long-ctx-action-paths.png)
+![四档硬件四条落地路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/cn-llm-1m-context-local-2026-05-11/long-ctx-action-paths.png)
 
 **路径 A · RTX 4090 24GB 单卡（个人开发者常见配置）**
 

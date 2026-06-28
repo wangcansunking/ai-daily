@@ -12,7 +12,7 @@ keywords: [Gemini 3.5 Flash, Gemini Omni, Google I/O 2026, Claude Opus 4.7, Deep
 
 # Gemini 3.5 Flash 追平 Opus 4.7，但单价涨了 3 倍
 
-![Google I/O 2026 Gemini 3.5 Flash 上线封面](gemini-3-5-flash-omni-io-2026-3x-pricing-2026-05-20.png)
+![Google I/O 2026 Gemini 3.5 Flash 上线封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/gemini-3-5-flash-omni-io-2026-3x-pricing-2026-05-20/gemini-3-5-flash-omni-io-2026-3x-pricing-2026-05-20.png)
 
 ## 开篇：一句话先把这件事说清楚
 
@@ -42,7 +42,7 @@ IT 之家用这样一句话当头条：「谷歌发布 Gemini 3.5 Flash 模型�
 | Gemini Omni 视频上限 | **10 秒** · Flash 版（部署决策非模型限制） | DeepMind 模型卡 / TechCrunch |
 | Omni 定价 / benchmark | **未公开** · 需 Google AI 订阅 | DeepMind 官方 |
 
-![Gemini 3.5 Flash Google blog 官方 hero](gemini-3-5-flash-google-blog-hero.png)
+![Gemini 3.5 Flash Google blog 官方 hero](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/gemini-3-5-flash-omni-io-2026-3x-pricing-2026-05-20/gemini-3-5-flash-google-blog-hero.png)
 
 这篇文章把三件事讲清楚：
 
@@ -63,7 +63,7 @@ Google 官方公告里的核心叙事可以浓缩成一句 verbatim：
 
 翻成大白话：**这一代 Flash 已经能在多项硬指标上摸到 Claude Opus 4.7 这种大旗舰的脚后跟，并且不用为了速度牺牲质量**。这句话能不能站得住，要看四项 benchmark 各自意味着什么。
 
-![Gemini 3.5 Flash 跑分对位 Claude 模型横评](gemini-flash-benchmark-bars.png)
+![Gemini 3.5 Flash 跑分对位 Claude 模型横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/gemini-3-5-flash-omni-io-2026-3x-pricing-2026-05-20/gemini-flash-benchmark-bars.png)
 
 四项分别看：
 
@@ -84,7 +84,7 @@ Google 官方公告里的核心叙事可以浓缩成一句 verbatim：
 
 把 289 tokens/s 放在国内外同档模型里比是什么水平：
 
-![Gemini 3.5 Flash 输出速度对比国产六家](gemini-flash-speed-vs-domestic.png)
+![Gemini 3.5 Flash 输出速度对比国产六家](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/gemini-3-5-flash-omni-io-2026-3x-pricing-2026-05-20/gemini-flash-speed-vs-domestic.png)
 
 按 Artificial Analysis 2026 年 5 月份的第三方实测数据：
 
@@ -117,7 +117,7 @@ Gemini 3.5 Flash 的 289 t/s，是国产 Flash 档位里最快的 DeepSeek V4 Fl
 | Gemini 3.0 Flash Preview | **$0.50** | **$3.00** | 输入 +67% · 输出 +20% |
 | Gemini 3.5 Flash | **$1.50** | **$9.00** | 输入 **5×** · 输出 **3.6×** |
 
-![Gemini Flash 代际涨价曲线 + 国产六家对照](gemini-flash-pricing-history.png)
+![Gemini Flash 代际涨价曲线 + 国产六家对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/gemini-3-5-flash-omni-io-2026-3x-pricing-2026-05-20/gemini-flash-pricing-history.png)
 
 涨价并不是 Google 第一次做，但**同一代号同一档位（Flash）一年内单价涨 5 倍**是新鲜事。HN 上的反应非常直接，几条顶赞的 verbatim 摘录：
 
@@ -186,9 +186,9 @@ DeepMind 模型卡上的核心定位 verbatim：
 > **「Gemini Omni is where Gemini's ability to reason meets the ability to create. It delivers a leap in world understanding, multimodality, and editing.」**
 > —— 同上
 
-![Gemini Omni 能力四象限图](gemini-omni-capability-quadrant.png)
+![Gemini Omni 能力四象限图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/gemini-3-5-flash-omni-io-2026-3x-pricing-2026-05-20/gemini-omni-capability-quadrant.png)
 
-![DeepMind Gemini Omni 官方 hero](gemini-omni-deepmind-hero.jpg)
+![DeepMind Gemini Omni 官方 hero](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/gemini-3-5-flash-omni-io-2026-3x-pricing-2026-05-20/gemini-omni-deepmind-hero.jpg)
 
 把 Omni 和 Sora 放一起对比，差别在于：
 

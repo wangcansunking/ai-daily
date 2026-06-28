@@ -25,7 +25,7 @@ description: "港大数据智能实验室（HKUDS）三月初挂上 GitHub 的 C
 
 # 港大开源 CLI-Anything：让 Agent 接管 18 款桌面软件
 
-![CLI-Anything：让 18+ 桌面软件都变成命令行](cli-anything-hkuds-agent-native-2026-05-18.png)
+![CLI-Anything：让 18+ 桌面软件都变成命令行](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/cli-anything-hkuds-agent-native-2026-05-18/cli-anything-hkuds-agent-native-2026-05-18.png)
 
 设想一个具体场景——把一张 PNG 套上高斯模糊半径 5、再叠一个图层、导出。GUI 路径下，这是 GIMP 里二十多次鼠标点击；今天有了 CLI-Anything，同样的活变成一行命令 `cli-anything-gimp --json filter blur --radius 5 image.png`，Claude Code 这种命令行 Agent 可以一口气把它接进自己的工作流里。这件事过去半年里很多人想做，但落到 18+ 款专业桌面软件、2,280+ 通过测试、35,482 stars 一起达成，目前只有港大数据智能实验室（HKUDS）这一家做到了。
 
@@ -56,7 +56,7 @@ description: "港大数据智能实验室（HKUDS）三月初挂上 GitHub 的 C
 
 读一遍这些数字最直观的感受是——**这不是另一个 MCP server**，而是想做一件更大的事：**让 Agent 真正接管原本只能给人类用的专业桌面软件**。70 天 35,000+ stars 的增速也说明社区接受这套定位，HN / 国内开发者群最近几周高频转发。
 
-![CLI-Anything GitHub 项目首页截图](cli-anything-og-github.png)
+![CLI-Anything GitHub 项目首页截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/cli-anything-hkuds-agent-native-2026-05-18/cli-anything-og-github.png)
 
 ## 一、它到底在做什么：一条命令把 Blender 变成 CLI
 
@@ -101,7 +101,7 @@ cli-anything-blender
 
 **一个容易被忽略的工程细节**：每个生成的 CLI 都自带 ReplSkin（统一的 REPL 皮肤）和 Session Management（持久化项目状态 + Undo / Redo）。这两件事让生成出来的 CLI 不是一次性玩具——它支持长会话、支持回退、支持把中间状态序列化下来。对 Agent 来说，这等于"专业软件项目状态机"已经被工程团队封装好了。
 
-![CLI-Anything 7 阶段流水线：源码自动变成完整 CLI 套件](cli-anything-mcp-vs-cli.png)
+![CLI-Anything 7 阶段流水线：源码自动变成完整 CLI 套件](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/cli-anything-hkuds-agent-native-2026-05-18/cli-anything-mcp-vs-cli.png)
 
 **收尾判断**：这 7 阶段读下来最深的感受是——**他们把"软件 Agent 化"这件事工程化了**，不再是一软件一谈判，而是变成一个跑得通的流水线。这就是 35,500 stars 增速背后的真正原因。
 
@@ -109,7 +109,7 @@ cli-anything-blender
 
 把 README 里已经支持的桌面软件按类别摆出来，看这套流水线已经吃掉了哪些类型的应用：
 
-![CLI-Anything 18+ 软件 × 5 项 CLI 能力 覆盖矩阵](cli-anything-coverage-matrix.png)
+![CLI-Anything 18+ 软件 × 5 项 CLI 能力 覆盖矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/cli-anything-hkuds-agent-native-2026-05-18/cli-anything-coverage-matrix.png)
 
 读这张矩阵图，几个判断浮上来：
 
@@ -154,7 +154,7 @@ cli-anything-blender
 
 CLI-Anything 火起来之前，HKUDS 已经因为 LightRAG / GraphRAG-Anything 在国内开源圈打出了名号。把这个实验室的三大代表项目摆出来看：
 
-![港大数据智能实验室（HKUDS）三大开源项目 stars 时间线](cli-anything-hkuds-stars-timeline.png)
+![港大数据智能实验室（HKUDS）三大开源项目 stars 时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/cli-anything-hkuds-agent-native-2026-05-18/cli-anything-hkuds-stars-timeline.png)
 
 - **LightRAG（2024-10 发布 · 35,304 stars · EMNLP'25）**——把 RAG 检索增强里"实体抽取 + 图谱构建 + 向量召回"三件事做成一个轻量框架。今天国内做 RAG 的开发者无论自己用不用，都至少听过它的名字
 - **GraphRAG-Anything（2024-12 发布 · 估约 8,200 stars）**——LightRAG 之上把图谱构建做成更通用的接口，对位微软 GraphRAG 这一档的开源替代

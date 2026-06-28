@@ -21,7 +21,7 @@ description: "量子位披露通义灵码累计为开发者生成 30 亿行代�
 
 # 免费无限量背后：通义灵码与 Qwen3-Coder 在补贴什么
 
-![通义灵码免费无限量背后封面](lingma-qwen3-coder-free-economics-2026-05-15.png)
+![通义灵码免费无限量背后封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/lingma-qwen3-coder-free-economics-2026-05-15/lingma-qwen3-coder-free-economics-2026-05-15.png)
 
 量子位 7 月那篇通义灵码报道里有一组数字很硬——**累计为开发者生成超 30 亿行代码、超 1 万家企业接入、IDE 端继续免费无限量调用**。把这三件事并排放，画面很特别：一边是国内最大体量的 AI Coding 工具用户基数，一边是「不收订阅费、不卖广告位、不限调用次数」的纯技术导向定价。这件事在国内互联网产品里并不常见——免费工具大多靠广告或后向数据变现回血，通义灵码两条都没走。
 
@@ -31,7 +31,7 @@ description: "量子位披露通义灵码累计为开发者生成 30 亿行代�
 
 先把单价摆出来。第三方比价站 llm-stats.com 上 Qwen3-Coder 480B 与同档海外旗舰编程模型的公开报价对位如下——
 
-![通义灵码价格底盘 · Qwen3-Coder 480B 与同档海外旗舰编程模型单价对照 lingma price overseas](lingma-price-vs-overseas.png)
+![通义灵码价格底盘 · Qwen3-Coder 480B 与同档海外旗舰编程模型单价对照 lingma price overseas](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/lingma-qwen3-coder-free-economics-2026-05-15/lingma-price-vs-overseas.png)
 
 | 模型 | 输入 / 百万 token | 输出 / 百万 token | 上下文 |
 |---|---|---|---|
@@ -49,7 +49,7 @@ description: "量子位披露通义灵码累计为开发者生成 30 亿行代�
 
 量子位披露的两组数字——**累计 30 亿行代码、超 1 万家企业接入**——给了一组可以拿来粗算的口径。把它折算到 token 上：
 
-![通义灵码免费无限量背后 · 阿里 token 成本粗算漏斗 lingma burn funnel](lingma-burn-funnel.png)
+![通义灵码免费无限量背后 · 阿里 token 成本粗算漏斗 lingma burn funnel](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/lingma-qwen3-coder-free-economics-2026-05-15/lingma-burn-funnel.png)
 
 漏斗按四档摆——
 
@@ -75,7 +75,7 @@ description: "量子位披露通义灵码累计为开发者生成 30 亿行代�
 
 通义灵码不是只押一个模型。背后是两条后端互相补位的设计——
 
-![通义灵码 lingma dual backend · Qwen3-Coder 480B 云端 vs Qwen3.6-27B Dense 本地双后端分工](lingma-dual-backend.png)
+![通义灵码 lingma dual backend · Qwen3-Coder 480B 云端 vs Qwen3.6-27B Dense 本地双后端分工](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/lingma-qwen3-coder-free-economics-2026-05-15/lingma-dual-backend.png)
 
 - **云端 IDE 后端 · Qwen3-Coder 480B**：通义灵码默认接入的就是这条，1 万家企业实战跑的也是这条。MoE 总参数 480B、单次激活 35B、百万 token 级上下文，公开报价 0.22 美元 / 1.80 美元。免费无限量给开发者的算力就压在这条线上。
 

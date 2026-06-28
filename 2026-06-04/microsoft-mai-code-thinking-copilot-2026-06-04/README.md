@@ -16,7 +16,7 @@ description: "6 月 2 日 Build 2026，微软一次端出两款自己从头训�
 ---
 # 微软把自研模型塞进 Copilot：MAI-Code 接管编码，MAI-Thinking 对标 Sonnet
 
-![微软 Build 2026 发布自研编码模型 MAI-Code-1-Flash，已进入 GitHub Copilot 的模型选择器](microsoft-mai-code-thinking-copilot-2026-06-04.png)
+![微软 Build 2026 发布自研编码模型 MAI-Code-1-Flash，已进入 GitHub Copilot 的模型选择器](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/microsoft-mai-code-thinking-copilot-2026-06-04/microsoft-mai-code-thinking-copilot-2026-06-04.png)
 
 当地时间 6 月 2 日的 Build 2026 上，微软一次性发布了一批以 MAI（Microsoft AI）命名的自研模型。最值得关注的有两款：一款叫 MAI-Code-1-Flash，专门为写代码而生，已经悄悄出现在 VS Code 里 GitHub Copilot 的模型选择器里；另一款叫 MAI-Thinking-1，是微软第一款自己从头训练的推理模型。
 
@@ -28,7 +28,7 @@ description: "6 月 2 日 Build 2026，微软一次端出两款自己从头训�
 
 ## MAI-Code-1-Flash：一款直接进了 Copilot 选择器的编码模型
 
-![MAI-Code-1-Flash 官方发布配图，一款为 GitHub Copilot 和 VS Code 量身打造的编码模型](source-mai-code-hero-2026-06-04.jpg)
+![MAI-Code-1-Flash 官方发布配图，一款为 GitHub Copilot 和 VS Code 量身打造的编码模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/microsoft-mai-code-thinking-copilot-2026-06-04/source-mai-code-hero-2026-06-04.jpg)
 
 *来源：微软 AI 官方发布页 microsoft.ai 2026-06-02*
 
@@ -43,7 +43,7 @@ MAI-Code-1-Flash 的定位很清楚：一款为 GitHub Copilot 和 VS Code 量�
 
 ### 51.2% 与省下的 60% token：两个值得记住的数字
 
-![MAI-Code-1-Flash 在多项编码基准上的成绩对照表](source-mai-code-benchmarks-2026-06-04.png)
+![MAI-Code-1-Flash 在多项编码基准上的成绩对照表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/microsoft-mai-code-thinking-copilot-2026-06-04/source-mai-code-benchmarks-2026-06-04.png)
 
 *来源：微软 AI 官方发布页 microsoft.ai 2026-06-02 基准对照图*
 
@@ -54,7 +54,7 @@ MAI-Code-1-Flash 的定位很清楚：一款为 GitHub Copilot 和 VS Code 量�
 
 把这两个数字放在一起看，MAI-Code-1-Flash 的卖点就清楚了：它不去硬碰最顶尖的大模型，而是在「轻量、快速、便宜」这一档里，把通过率和成本同时往好的方向推。
 
-![MAI-Code-1-Flash 通过率与 token 用量的对照，在更少 token 下达到更高通过率](source-mai-code-tokens-2026-06-04.png)
+![MAI-Code-1-Flash 通过率与 token 用量的对照，在更少 token 下达到更高通过率](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/microsoft-mai-code-thinking-copilot-2026-06-04/source-mai-code-tokens-2026-06-04.png)
 
 *来源：微软 AI 官方发布页 microsoft.ai 2026-06-02 通过率与 token 用量对照图*
 
@@ -62,7 +62,7 @@ MAI-Code-1-Flash 的定位很清楚：一款为 GitHub Copilot 和 VS Code 量�
 
 ## MAI-Thinking-1：约 1T 总参数、256K 上下文的自研推理模型
 
-![MAI-Thinking-1 官方发布配图，微软第一款自研推理模型](source-mai-thinking-2026-06-04.png)
+![MAI-Thinking-1 官方发布配图，微软第一款自研推理模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/microsoft-mai-code-thinking-copilot-2026-06-04/source-mai-thinking-2026-06-04.png)
 
 *来源：微软 AI 官方发布页 microsoft.ai 2026-06-02*
 
@@ -90,7 +90,7 @@ MAI-Code-1-Flash 的定位很清楚：一款为 GitHub Copilot 和 VS Code 量�
 
 把两款模型放在一张表里对照，微软这次的布局会清楚很多。
 
-![微软首批两款自研模型对照：编码 Flash 进 Copilot，推理 Thinking 私有预览](chart-mai-two-models-compare-2026-06-04.png)
+![微软首批两款自研模型对照：编码 Flash 进 Copilot，推理 Thinking 私有预览](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/microsoft-mai-code-thinking-copilot-2026-06-04/chart-mai-two-models-compare-2026-06-04.png)
 
 *来源：本文据微软 AI 官方发布信息整理*
 

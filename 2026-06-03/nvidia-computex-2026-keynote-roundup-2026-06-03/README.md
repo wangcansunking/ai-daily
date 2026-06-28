@@ -9,7 +9,7 @@ description: "5 月 31 日，黄仁勋在 Computex 台北 / GTC Taipei 主题演
 ---
 # 英伟达 Computex 2026：从机房一路铺到 Windows 桌面
 
-![黄仁勋在 Computex 台北 / GTC Taipei 主题演讲上一次摊开英伟达从数据中心到个人桌面的全套 AI 硬件](nvidia-computex-2026-keynote-roundup-2026-06-03.png)
+![黄仁勋在 Computex 台北 / GTC Taipei 主题演讲上一次摊开英伟达从数据中心到个人桌面的全套 AI 硬件](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/nvidia-computex-2026-keynote-roundup-2026-06-03/nvidia-computex-2026-keynote-roundup-2026-06-03.png)
 
 5 月 31 日，黄仁勋在 Computex 台北的 GTC Taipei 主题演讲上，把英伟达这一年要卖的东西一次摊开。两个多小时的演讲里，从机柜级的 Vera Rubin 超级系统，到给 Windows 的 DGX Station 工作站，到能装进普通笔记本和台式机的 RTX Spark，再到给机器人和自动驾驶用的一整套 Physical AI 模型，全部讲了一遍。
 
@@ -21,7 +21,7 @@ description: "5 月 31 日，黄仁勋在 Computex 台北 / GTC Taipei 主题演
 
 ## 主线只有一条：英伟达说，智能体已经能赚钱了
 
-![英伟达官方发布的 RTX Spark 超级芯片，把 Blackwell 架构装进个人 Windows 机器](source-nvidia-rtx-spark-official.png)
+![英伟达官方发布的 RTX Spark 超级芯片，把 Blackwell 架构装进个人 Windows 机器](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/nvidia-computex-2026-keynote-roundup-2026-06-03/source-nvidia-rtx-spark-official.png)
 
 *来源：英伟达官方新闻稿 RTX Spark 发布配图 nvidianews.nvidia.com*
 
@@ -41,7 +41,7 @@ description: "5 月 31 日，黄仁勋在 Computex 台北 / GTC Taipei 主题演
 
 ## 工作站到桌面：同一套能力，三个算力档位
 
-![英伟达 Computex 2026 主题演讲上，把数据中心的 AI 能力一路下放到个人 Windows 机器](source-nvidia-keynote-windows-pcs.png)
+![英伟达 Computex 2026 主题演讲上，把数据中心的 AI 能力一路下放到个人 Windows 机器](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/nvidia-computex-2026-keynote-roundup-2026-06-03/source-nvidia-keynote-windows-pcs.png)
 
 *来源：英伟达 Computex 2026 主题演讲 Windows PC 环节，StorageReview 报道整理 storagereview.com*
 
@@ -65,7 +65,7 @@ RTX Spark 的「装得下 vs 跑得快」这笔账——128GB 统一内存能装
 
 ## 给开发者：本地推理直接提速，DLSS 4.5 八月到
 
-![英伟达 GeForce 在 Computex 2026 公布 DLSS 4.5 与一整套 RTX 更新](source-nvidia-geforce-computex.png)
+![英伟达 GeForce 在 Computex 2026 公布 DLSS 4.5 与一整套 RTX 更新](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/nvidia-computex-2026-keynote-roundup-2026-06-03/source-nvidia-geforce-computex.png)
 
 *来源：英伟达 GeForce Computex 2026 官方发布页 nvidia.com/geforce*
 

@@ -26,7 +26,7 @@ description: "五月二十号，阿里巴巴在 2026 Cloud Summit 端出千问 3
 
 # 千问 3.7-Max 海外 HN 头条登顶 · 非幻觉率反超 Opus 4.7 / Gemini 3.1 Pro / GPT-5.5
 
-![千问 3.7-Max 海外 HN 头版封面 中漫风格 亚洲程序员手举笔记本电脑屏幕展示 Qwen3.7-Max 对话气泡 背景 HackerNews 橙红色调与英文评论气泡](qwen-3-7-max-overseas-hn-evaluation-hallucination-2026-05-21.png)
+![千问 3.7-Max 海外 HN 头版封面 中漫风格 亚洲程序员手举笔记本电脑屏幕展示 Qwen3.7-Max 对话气泡 背景 HackerNews 橙红色调与英文评论气泡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/qwen-3-7-max-overseas-hn-evaluation-hallucination-2026-05-21/qwen-3-7-max-overseas-hn-evaluation-hallucination-2026-05-21.png)
 
 ## 海外比国内先炸开的一次发布
 
@@ -111,7 +111,7 @@ description: "五月二十号，阿里巴巴在 2026 Cloud Summit 端出千问 3
 
 ## AA-Omniscience 非幻觉率榜单的工程含义
 
-![AA-Omniscience 非幻觉率排行 千问 3.7-Max 海外首发占位 Gemini 3.1 Pro Opus 4.7 Gemini 3.5 Flash GPT-5.5 DeepSeek V4](qwen-3-7-max-omniscience.png)
+![AA-Omniscience 非幻觉率排行 千问 3.7-Max 海外首发占位 Gemini 3.1 Pro Opus 4.7 Gemini 3.5 Flash GPT-5.5 DeepSeek V4](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/qwen-3-7-max-overseas-hn-evaluation-hallucination-2026-05-21/qwen-3-7-max-omniscience.png)
 
 把 AA-Omniscience 榜单这一项放大说。先抄一遍 Artificial Analysis 官方对评测的定义：
 
@@ -136,7 +136,7 @@ description: "五月二十号，阿里巴巴在 2026 Cloud Summit 端出千问 3
 
 ## 长程自治 35 小时 · 1000 次工具调用的演示
 
-![长程自治能力 千问 3.7-Max 海外开发者最看重的硬指标 35小时1000次工具调用 Terminal-Bench 69.7 compute kernel 加速 10 倍](qwen-3-7-max-long-horizon.png)
+![长程自治能力 千问 3.7-Max 海外开发者最看重的硬指标 35小时1000次工具调用 Terminal-Bench 69.7 compute kernel 加速 10 倍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/qwen-3-7-max-overseas-hn-evaluation-hallucination-2026-05-21/qwen-3-7-max-long-horizon.png)
 
 阿里云 5/20 主舞台上拿出来演示的硬指标，是这个：
 
@@ -155,7 +155,7 @@ Terminal-Bench 2.0-Terminus 69.7 分这个数字与 Cursor Composer 2.5 在同�
 
 ## LM Arena 五项分类的全球位次
 
-![千问 3.7-Max 在 LM Arena 五项分类的全球排位 数学第7 专家提示第9 软件IT第9 编码第10 总文本第13](qwen-3-7-max-arena-radar.png)
+![千问 3.7-Max 在 LM Arena 五项分类的全球排位 数学第7 专家提示第9 软件IT第9 编码第10 总文本第13](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/qwen-3-7-max-overseas-hn-evaluation-hallucination-2026-05-21/qwen-3-7-max-arena-radar.png)
 
 把 LM Arena 公开盲测的位次摆出来：
 
@@ -179,7 +179,7 @@ Terminal-Bench 2.0-Terminus 69.7 分这个数字与 Cursor Composer 2.5 在同�
 
 ## 国内六家旗舰大模型同档对位横评
 
-![国内六家旗舰大模型同档对位 千问 3.7-Max DeepSeek V4 智谱 GLM 4.5 文心 5.0 豆包 1.5-Pro Kimi K2.5 海外位置参考](qwen-3-7-max-china-landscape.png)
+![国内六家旗舰大模型同档对位 千问 3.7-Max DeepSeek V4 智谱 GLM 4.5 文心 5.0 豆包 1.5-Pro Kimi K2.5 海外位置参考](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/qwen-3-7-max-overseas-hn-evaluation-hallucination-2026-05-21/qwen-3-7-max-china-landscape.png)
 
 把国内六家旗舰大模型放到一张表上对位。注意这一节的视角是「海外开发者会怎么挑」，所以海外热议度与海外可直连这两项权重更高。
 

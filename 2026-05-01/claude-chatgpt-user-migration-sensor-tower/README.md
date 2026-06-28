@@ -10,7 +10,7 @@ cover: claude-chatgpt-migration.png
 
 # Anthropic 估值反超 OpenAI 那一夜
 
-![两块手机屏在街头对峙：一边红色卸载箭头向下，另一边蓝色下载箭头向上](claude-chatgpt-migration.png)
+![两块手机屏在街头对峙：一边红色卸载箭头向下，另一边蓝色下载箭头向上](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/claude-chatgpt-user-migration-sensor-tower/claude-chatgpt-migration.png)
 *封面图：两块手机屏的对峙——海外 App Store 下载榜上正在发生的用户迁移。*
 
 **3 月卸载量同比 +413%、4 月仍在 +132%、个别口径峰值 +563%——这是美国市场调研公司 Sensor Tower 给 ChatGPT 的成绩单。** 同期 Claude 下载量同比涨了 10 倍，在比利时、加拿大、德国、卢森堡、挪威、瑞士的 iPhone 免费榜爬到第 1 位，美国市场也短暂登顶。Anthropic 估值从年初的 6000 亿美元一路谈到 9000 亿美元，已经超过 OpenAI 的 8500 亿美元。
@@ -21,7 +21,7 @@ cover: claude-chatgpt-migration.png
 
 ## 一、Sensor Tower 把数据摊开：迁移到底有多猛
 
-![Sensor Tower 数据表：ChatGPT 卸载 vs Claude 下载（3-4 月，同比）](sensor-tower-claude-vs-chatgpt-2026-04.png)
+![Sensor Tower 数据表：ChatGPT 卸载 vs Claude 下载（3-4 月，同比）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/claude-chatgpt-user-migration-sensor-tower/sensor-tower-claude-vs-chatgpt-2026-04.png)
 *Sensor Tower 的 3-4 月数据汇总。来源：Sensor Tower 报告 / TechCrunch / Futurism / Seeking Alpha 综合整理。*
 
 Sensor Tower 是位于美国加州的应用市场情报公司，长期跟踪 App Store 与 Google Play 的下载、卸载、留存数据。这次它把 ChatGPT 与 Claude 放在同一张表上对比，时间窗口是 2026 年 2 月底到 4 月底。
@@ -89,7 +89,7 @@ V2EX 4 月 27 日有一条标题为《CC 的迷之速率限制》的热帖，原
 
 **计费与本地化这一档，国产路径的优势更直白**。Claude Code Max 月费 200 美元、Pro 月费 20 美元，账单走美元卡且仍受速率限制；Qoder Pro 月费 20 美元、Pro+ 60 美元，半价活动期间 10 美元就能上手；Qwen Code 与 DeepSeek V4 走 API 路径时，单位 token 价是 Claude 主线的 30%-50%，发票合规、支付走人民币、合规审计也方便。对一个常年跑代码审计 / 大批量 PR review 的国内技术团队来说，这一档的成本与稳定性差异，比任何一项 benchmark 分数更影响选型。
 
-![Qwen 3.6-Coder 主图](qwen3-coder-hero.jpg)
+![Qwen 3.6-Coder 主图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/claude-chatgpt-user-migration-sensor-tower/qwen3-coder-hero.jpg)
 *千问 Qwen 3.6-Coder 主图。图源：Qwen 官方博客。*
 
 ## 四、这场迁移给国内 AI 公司带来了什么

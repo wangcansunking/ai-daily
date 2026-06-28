@@ -13,7 +13,7 @@ cover: browserbase-skills-claude-agent-sdk-browser.png
 
 > Browserbase 把旗下 SDK Stagehand 的浏览器能力打包成 10 个 Claude Skill，2026-05-03 GitHub Trending Daily 当日 +347 ⭐、累计 1,451 ⭐、96 fork、33 个 open issue。仓库描述只一句：「Claude Agent SDK with a web browsing tool」。这是 Anthropic Skills 规范公开半年以来，浏览器场景做得最完整的一份场景化 skill 包。
 
-![browserbase/skills · Claude Agent 浏览器手脚](browserbase-skills-claude-agent-sdk-browser.png)
+![browserbase/skills · Claude Agent 浏览器手脚](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/browserbase-skills-claude-agent-sdk-browser/browserbase-skills-claude-agent-sdk-browser.png)
 
 ## 一、数字与节奏：1451 ⭐ 不是孤立事件
 
@@ -36,7 +36,7 @@ GitHub 仓库 API 当日返回的字段很直白：
 
 10 个 skill 完整清单一眼可见。
 
-![browserbase/skills · 10 个 skill 全表](browserbase-skills-list.png)
+![browserbase/skills · 10 个 skill 全表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/browserbase-skills-claude-agent-sdk-browser/browserbase-skills-list.png)
 
 10 个 skill 按职责切成三档：核心执行（browser / browserbase-cli / functions）、辅助调试（site-debugger / browser-trace / ui-test / bb-usage）、轻量工具（cookie-sync / fetch / search）。这三档分工很有产品经理的味道——Anthropic 的 Skills 规范允许一个仓库挂任意多个 SKILL.md，Browserbase 没有把所有能力塞进一个庞大的 skill，而是按场景切成颗粒，触发词彼此正交，让 Claude Code 在不同对话里只加载需要的那一份。
 
@@ -86,7 +86,7 @@ skills 仓库 2025 年 10 月 12 日创建，是这条工程史的最新一层�
 
 读到这里很多读者会想到一周前我们写过的另一篇 Claude Skills 题——`mattpocock/skills`，2026-04-26 GitHub Trending Daily #2、19,605 ⭐、单日 +857 ⭐、TypeScript 教师 Matt Pocock 把自己 `.claude/skills` 目录开源、21 个独立 skill。两篇文章的对位关系，是理解整个 Claude Skills 生态的最快办法。
 
-![Claude Agent Skills 生态地图](claude-agent-skills-ecosystem.png)
+![Claude Agent Skills 生态地图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/browserbase-skills-claude-agent-sdk-browser/claude-agent-skills-ecosystem.png)
 
 mattpocock/skills 是教学 cookbook——一个产业级 TypeScript 老师把每天怎么用 Claude Code 工作的私房菜公开。21 个 skill 横跨 TDD、git guardrails、refactor plan、article 编辑、issue triage、scaffold exercises 等十几个开发者通用场景，每个 skill 是一份 Markdown 文档加少量脚本，全部读完等于看一遍"产业级工程师如何编排 AI Coding"。它的价值在**视野广**——读 21 个不同场景下的 SKILL.md 写法，对自己写 skill 是最好的范本。
 
@@ -108,7 +108,7 @@ OBRA 的 superpowers、anthropic 官方 cookbook、Stagehand 这些都属于这�
 
 第二层，国内有没有工程化路径相当的同档项目？答案是：完整覆盖、各有侧重、本土化做得很到位。
 
-![国内浏览器 Agent 工具横评](cn-browser-agent-stack.png)
+![国内浏览器 Agent 工具横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/browserbase-skills-claude-agent-sdk-browser/cn-browser-agent-stack.png)
 
 字节这条线最完整。**扣子（Coze）的浏览器 Operator** 是字节面向普通用户和初级开发者的可视化 Agent 工作流平台，国内站 `coze.cn` 直接打开就能用，绑豆包 / DeepSeek 模型，把"打开网页 → 提取数据 → 调用 API → 触发飞书"这条链路做成可视化拖拽。**Trae** 是字节的 AI Coding IDE，2025 年下半年起开始内置浏览器自动化能力——开发者在 IDE 里写一段任务描述，Trae 自带的浏览器 Agent 会打开页面、点击、填表、读结果，然后把结果回灌到代码上下文。`trae.ai` 国内可访问，登录即用。
 

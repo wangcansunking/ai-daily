@@ -9,7 +9,7 @@ tags: [KV cache, PagedAttention, vLLM, SGLang, 上下文窗口, 推理系统, ag
 ---
 # 上下文窗口被当成虚拟内存来管：vLLM 分页之后，海外推理圈在补缺页调度这一层
 
-![封面：把 LLM 上下文窗口画成一台机器的内存层级，L1 是发光的小窗口，往下逐级是分页内存、压缩归档、跨会话长存](llm-context-demand-paging-2026-06-09.png)
+![封面：把 LLM 上下文窗口画成一台机器的内存层级，L1 是发光的小窗口，往下逐级是分页内存、压缩归档、跨会话长存](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/llm-context-demand-paging-2026-06-09/llm-context-demand-paging-2026-06-09.png)
 
 有一篇 3 月挂上 arXiv 的论文，开头第一句话很冲：「大模型的上下文窗口不是内存，它是 L1 缓存。」
 
@@ -42,7 +42,7 @@ tags: [KV cache, PagedAttention, vLLM, SGLang, 上下文窗口, 推理系统, ag
 
 问题出在怎么给它分显存。2023 年之前的主流做法，是给每个请求**预留一整块连续显存**，按这个请求可能用到的最大长度来留。这就像给每位客人都按「万一他要点满整桌」来订包厢——绝大多数请求根本用不到那么长，预留的显存就那么空着，谁也不能用。vLLM 那篇拿到 SOSP 2023 最佳论文的工作给出的测算是：旧式系统里 **60% 到 80% 的 KV cache 显存是被白白浪费掉的**。
 
-![PagedAttention 示意：左边是旧式连续显存分配，大片留白；右边把 KV cache 切成固定大小的页，非连续存放，再用页表映射回逻辑位置](llm-context-demand-paging-2026-06-09-img1.png)
+![PagedAttention 示意：左边是旧式连续显存分配，大片留白；右边把 KV cache 切成固定大小的页，非连续存放，再用页表映射回逻辑位置](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/llm-context-demand-paging-2026-06-09/llm-context-demand-paging-2026-06-09-img1.png)
 
 vLLM 的解法，名字就叫 PagedAttention，思路直接借自操作系统的虚拟内存分页：**不再要求一个请求的 KV cache 连续摆放，而是切成固定大小的「页」，哪里有空往哪儿放，再用一张「页表」记录逻辑位置到物理页的映射。** 操作系统几十年前就是这么治内存碎片的，vLLM 把它搬到了显存上。效果是显存浪费从 60%–80% 压到 4% 以下，同样延迟下吞吐提升到原来的 2 到 4 倍。
 
@@ -68,7 +68,7 @@ vLLM 的解法，名字就叫 PagedAttention，思路直接借自操作系统的
 
 省 93% 是相对什么？是相对「什么都不管、全堆在窗口里」的朴素做法。对一个要连续跑几百轮的 agent 来说，这个差距直接决定了它能不能在固定的窗口预算里把任务跑完，以及每跑一轮 API 账单是多少。
 
-![四级内存层级示意：L1 当前生成窗口（最小最快最贵）→ L2 工作集（按需分页+钉住）→ L3 会话历史（压缩，明示有损）→ L4 跨会话长存（建索引可检索）](llm-context-demand-paging-2026-06-09-img2.png)
+![四级内存层级示意：L1 当前生成窗口（最小最快最贵）→ L2 工作集（按需分页+钉住）→ L3 会话历史（压缩，明示有损）→ L4 跨会话长存（建索引可检索）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/llm-context-demand-paging-2026-06-09/llm-context-demand-paging-2026-06-09-img2.png)
 
 这篇论文真正补全的，是那个内存层级的完整形状。它提出上下文该分成四层来管：
 
@@ -129,7 +129,7 @@ vLLM 的解法，名字就叫 PagedAttention，思路直接借自操作系统的
 - **SGLang 的 RadixAttention**：把所有请求的 KV cache 存进一棵基数树（radix tree），新请求来了自动匹配最长公共前缀、自动复用，整个过程不用你配置。公开的实测里命中率从 50% 到接近 99% 不等，前缀重叠高的负载上能把吞吐拉到数倍。
 - **vLLM 的自动前缀缓存（APC）**：默认开启，多轮对话、共享系统提示这类场景下，重复前缀只算一次，后续请求直接复用。
 
-![前缀缓存示意：三个 agent 请求带着相同的长系统提示+工具说明前缀，第一次算完存进基数树，后两次命中直接复用，只算各自不同的尾部](llm-context-demand-paging-2026-06-09-img3.png)
+![前缀缓存示意：三个 agent 请求带着相同的长系统提示+工具说明前缀，第一次算完存进基数树，后两次命中直接复用，只算各自不同的尾部](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/llm-context-demand-paging-2026-06-09/llm-context-demand-paging-2026-06-09-img3.png)
 
 对一个跑多候选路径的 agent 来说，这一层尤其值钱。它经常要从同一个状态出发试好几条分支——这几条分支的前缀完全一样，前缀缓存命中就意味着这段公共前缀只算一次，几条分支分摊。在前缀占比高的负载下，命中能省掉的正是这段重复前缀的计算，命中率越高省得越多。
 

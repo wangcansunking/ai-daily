@@ -11,7 +11,7 @@ description: "6/3 两条主线指向同一个判断：编程这件事的底层�
 
 # 微软 Build 亮出七款自研模型挤进 Copilot · DeepSeek V4 正式版定档本月 · 350 亿参数 MAI 盲测压过 Claude Sonnet | AI 日报 | 2026-06-03
 
-![微软 Build 2026 主题演讲现场，一次亮出七款自研 MAI 模型](03.png)
+![微软 Build 2026 主题演讲现场，一次亮出七款自研 MAI 模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/daily/03.png)
 
 ## 📋 头版目录
 
@@ -38,7 +38,7 @@ description: "6/3 两条主线指向同一个判断：编程这件事的底层�
 
 ### 头条 1 · 微软在 Build 一次亮出七款自研模型，把"自研"从备胎抬成主引擎 ［跟进］
 
-![微软 Build 2026 主题演讲现场视觉，自研 MAI 模型集中登场](source-msbuild-official-2026-06-03.png)
+![微软 Build 2026 主题演讲现场视觉，自研 MAI 模型集中登场](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/daily/source-msbuild-official-2026-06-03.png)
 
 > 来源：微软官方博客 blogs.microsoft.com，Build 2026 主题演讲页 [1]
 
@@ -48,7 +48,7 @@ description: "6/3 两条主线指向同一个判断：编程这件事的底层�
 
 #### 头条 1.1 · MAI-Code-1-Flash：50 亿参数，已经躺在 Copilot 的模型选择器里
 
-![微软 Build 2026 自研 MAI 模型阵容，五款已命名模型的类型、规模与可用位置](chart-msbuild-mai-7models-2026-06-03.png)
+![微软 Build 2026 自研 MAI 模型阵容，五款已命名模型的类型、规模与可用位置](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/daily/chart-msbuild-mai-7models-2026-06-03.png)
 
 七款里最贴近开发者的是 MAI-Code-1-Flash。它是一款只有 50 亿参数的编码模型，专门针对 GitHub 上的真实工作负载调过，已经上线 GitHub Copilot 和 Visual Studio Code 的模型选择器 [3][4]。微软给的口径是：在难题上，它比同类模型少用约 60% 的词元就能完成。
 
@@ -62,7 +62,7 @@ description: "6/3 两条主线指向同一个判断：编程这件事的底层�
 
 #### 头条 1.3 · "从零训练、不蒸馏、授权数据"——Simon Willison 盯着这一条
 
-![微软 AI 负责人 Mustafa Suleyman，Build 2026 自研模型背后的掌舵人](source-msbuild-mai-geekwire-2026-06-03.png)
+![微软 AI 负责人 Mustafa Suleyman，Build 2026 自研模型背后的掌舵人](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/daily/source-msbuild-mai-geekwire-2026-06-03.png)
 
 > 来源：GeekWire 报道配图，微软 AI 负责人 Mustafa Suleyman [2]
 
@@ -74,7 +74,7 @@ description: "6/3 两条主线指向同一个判断：编程这件事的底层�
 
 ### 头条 2 · DeepSeek V4 正式版定档本月，国产开源继续把"长上下文 + 低成本"做成标配
 
-![DeepSeek-V4-Pro 在 HuggingFace 的开源模型页](source-deepseek-v4-hf-card-2026-06-03.png)
+![DeepSeek-V4-Pro 在 HuggingFace 的开源模型页](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/daily/source-deepseek-v4-hf-card-2026-06-03.png)
 
 > 来源：HuggingFace deepseek-ai/DeepSeek-V4-Pro 模型页 [5]
 
@@ -82,7 +82,7 @@ description: "6/3 两条主线指向同一个判断：编程这件事的底层�
 
 #### 头条 2.1 · 预览版打的底子：百万上下文是原生标配，不是高价选配
 
-![DeepSeek V4 预览版到正式版的规格与时间线，Pro 与 Flash 两款 MoE 模型](chart-deepseek-v4-spec-2026-06-03.png)
+![DeepSeek V4 预览版到正式版的规格与时间线，Pro 与 Flash 两款 MoE 模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/daily/chart-deepseek-v4-spec-2026-06-03.png)
 
 回看预览版的底子，DeepSeek V4 一代给了两款 MoE 模型 [6]：
 
@@ -132,11 +132,11 @@ description: "6/3 两条主线指向同一个判断：编程这件事的底层�
 
 - 🔴 **supermemory ——约 2.5 万星，AI 时代的记忆 API**。一个主打极快、可扩展的记忆引擎与应用，把"给智能体装长期记忆"做成一套 API [10]。本地优先与智能体记忆的题材已经连热一周，仓库仍在高频更新。值得看它和各家智能体框架的对接成熟度。
 
-![supermemory 仓库卡片：AI 时代的记忆引擎与 API，约 2.5 万星](source-github-supermemory-og-2026-06-03.png)
+![supermemory 仓库卡片：AI 时代的记忆引擎与 API，约 2.5 万星](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/daily/source-github-supermemory-og-2026-06-03.png)
 
 - 🔴 **ComfyUI ——越过 11.5 万星，图像/视频生成的节点式主力**。最强大、最模块化的扩散模型图形界面与后端，用节点图的方式编排生成流程 [11]。它长期占据图像 / 视频生成开源工作流的头部位置，是想自建生成管线绕不开的一站。
 
-![ComfyUI 仓库卡片：节点式扩散模型工作流，越过 11.5 万星](source-github-comfyui-og-2026-06-03.png)
+![ComfyUI 仓库卡片：节点式扩散模型工作流，越过 11.5 万星](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/daily/source-github-comfyui-og-2026-06-03.png)
 
 - 🟡 **nanochat ——约 5.5 万星，"100 美元能买到的最好 ChatGPT"**。Karpathy 的教学向项目，用极简代码完整复刻一个小型 ChatGPT 训练到推理的全流程 [12]。它的价值不在生产可用，而在把"一个语言模型从头是怎么搭起来的"讲得足够透，适合想补底层的人。
 

@@ -19,7 +19,7 @@ description: "5 月 20 日阿里云峰会发布的千问 Qwen3.7-Max，在平头
 cover: qwen3-7-max-35h-pingtouge-kernel-2026-05-26.png
 ---
 
-![封面](qwen3-7-max-35h-pingtouge-kernel-2026-05-26.png)
+![封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-7-max-35h-pingtouge-kernel-2026-05-26/qwen3-7-max-35h-pingtouge-kernel-2026-05-26.png)
 
 # 千问 Qwen3.7-Max 平头哥真武 35 小时跑出 10 倍加速
 
@@ -43,13 +43,13 @@ cover: qwen3-7-max-35h-pingtouge-kernel-2026-05-26.png
 
 本文的核心论点只有一句：**国产基座在「长任务自主跑、跑完不漂」这条最难评测的能力上，已经从论文段位走到了工程产物段位；千问 Qwen3.7-Max 是当下国内开发者最值得每天放在工作台旁的一把工具。** 后面九节围绕这条主线展开。
 
-![Qwen3.7-Max 35 小时跑表 + 10 倍加速曲线](qwen3-7-max-35h-timeline.png)
+![Qwen3.7-Max 35 小时跑表 + 10 倍加速曲线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-7-max-35h-pingtouge-kernel-2026-05-26/qwen3-7-max-35h-timeline.png)
 
 ## 5 月 20 日峰会上发生了什么：旗舰位置 + 一颗国产芯片
 
 阿里云今年峰会主题词是「Agent 时代的基础设施」，开场不到二十分钟就把镜头给了千问。三个月之内连出 Qwen3.5、Qwen3.6、Qwen3.7 三个旗舰版本，这个节奏在全球范围里没有第二家在保持。
 
-![千问 Qwen 三个月三次旗舰迭代节奏](qwen3-7-max-iteration-speed.png)峰会上正式上架的是 **Qwen3.7-Max**，前一日先放了 Preview 与 Plus Preview 两个预览版让外部团队跑评测，正式版当天进入阿里云百炼平台。
+![千问 Qwen 三个月三次旗舰迭代节奏](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-7-max-35h-pingtouge-kernel-2026-05-26/qwen3-7-max-iteration-speed.png)峰会上正式上架的是 **Qwen3.7-Max**，前一日先放了 Preview 与 Plus Preview 两个预览版让外部团队跑评测，正式版当天进入阿里云百炼平台。
 
 之所以选在峰会上做这次发布，是因为它要把两件事放在一起讲：
 
@@ -94,7 +94,7 @@ cover: qwen3-7-max-35h-pingtouge-kernel-2026-05-26.png
 - **吞吐敏感**：在多轮对话或 agent 长任务里，这条路径会被反复调用
 - **数值精度敏感**：bf16 累加路径上的数值偏差会被多轮放大
 
-![大模型推理路径里的三段注意力：Prefill / Decode / Extend](qwen3-7-max-attention-path.png)
+![大模型推理路径里的三段注意力：Prefill / Decode / Extend](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-7-max-35h-pingtouge-kernel-2026-05-26/qwen3-7-max-attention-path.png)
 
 SGLang 是当前开源社区里把 Extend Attention 这块抽象做得最清晰的推理框架，但它默认的实现是 **Triton 写的通用版本**。Triton 的好处是跨硬件移植性强、写起来容易；坏处是它对每个具体硬件的指令布局、内存层级、wavefront 调度的利用都不够极致。在英伟达 GPU 上用 Triton 写也只能拿到比手写 CUDA 低不少的性能；换到平头哥真武 M890 这种全新指令集架构的 PPU 上，Triton 参考实现的性能差距就更明显。
 
@@ -113,7 +113,7 @@ SGLang 是当前开源社区里把 Extend Attention 这块抽象做得最清晰�
 
 阿里把这同一道 Extend Attention 题给了另外三家国产旗舰模型也跑了一遍——智谱 GLM-5.1、月之暗面 Kimi K2.6、DeepSeek V4-Pro。结果如下：
 
-![四家国产模型在同一道 kernel 题上的加速比](qwen3-7-max-kernel-speedup.png)
+![四家国产模型在同一道 kernel 题上的加速比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-7-max-35h-pingtouge-kernel-2026-05-26/qwen3-7-max-kernel-speedup.png)
 
 | 模型 | 几何平均加速 | 实际跑时 | 结束原因 |
 |---|---|---|---|
@@ -150,7 +150,7 @@ Qwen3.7-Max 这次 35 小时不漂，**等于把这条上限往前推了一个�
 
 合在一起说一句话：**国内开发者把日常长任务从 Claude Opus 4.6 换到 Qwen3.7-Max 跑，已经不会是明显的能力降级，可能在 Terminal 类任务上反而拿到更好的稳定性**。
 
-![六项公开评测：千问 Qwen3.7-Max 与 Claude Opus 4.6 的领先项目](qwen3-7-max-bench-radar.png)
+![六项公开评测：千问 Qwen3.7-Max 与 Claude Opus 4.6 的领先项目](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-7-max-35h-pingtouge-kernel-2026-05-26/qwen3-7-max-bench-radar.png)
 
 ## 编程实测：SWE-Pro / SWE-Multilingual / Terminal-Bench 三项成绩
 
@@ -186,7 +186,7 @@ Cursor 默认支持 OpenAI 兼容的 API，把 `OPENAI_BASE_URL` 指到百炼的
 
 接基座的另一道现实题是钱。把日常 AI Coding 任务的成本量级估算放在一张表里看：
 
-![国内开发者三条路径每千行代码成本估算](qwen3-7-max-cost-comparison.png)
+![国内开发者三条路径每千行代码成本估算](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-7-max-35h-pingtouge-kernel-2026-05-26/qwen3-7-max-cost-comparison.png)
 
 按公开 API 报价折算（**估算非合同价**），假设单次任务平均消耗输入 12 k token + 输出 4 k token、对应大约一千行代码的工作量：
 

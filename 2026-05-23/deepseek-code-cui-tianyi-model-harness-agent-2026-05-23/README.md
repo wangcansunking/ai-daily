@@ -14,13 +14,13 @@ authors:
 
 # DeepSeek Code Agent 真要来了：ACM 金牌团队挂帅
 
-![DeepSeek Code Agent 主线浮现 · ACM 金牌团队 · Model+Harness=Agent 架构](deepseek-code-cui-tianyi-model-harness-agent-2026-05-23.png)
+![DeepSeek Code Agent 主线浮现 · ACM 金牌团队 · Model+Harness=Agent 架构](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/deepseek-code-cui-tianyi-model-harness-agent-2026-05-23/deepseek-code-cui-tianyi-model-harness-agent-2026-05-23.png)
 
 > 2026 年 5 月 22 日下午，量子位放出深度稿《融资 700 亿！DeepSeek Code 真要来了，ACM 金牌大神崔添翼挂帅》。同一时间，DeepSeek 资深研究员 Deli Chen 在 X 平台挂出两条岗位招聘，一句话把内部新组建的团队定义清楚：「DeepSeek is forming a new Harness team to build Code Harness from the ground up — may be you can call it DeepSeek Code or something like this。」加上一天前新浪财经报道的 DeepSeek 公司整体新一轮 700 亿元人民币融资推进至最后阶段、投后估值约 450 亿美元，三条信息组合起来，意味着国内 AI 圈期待了大半年的 DeepSeek 官方 Coding Agent 主线，终于浮出水面。
 
 国内开发者对这件事的第一反应大多是「又一个对标 Claude Code」。这次不太一样。DeepSeek 自家招聘帖把架构口号写得明白：**Model + Harness = Agent**——模型本体之外的所有工程动作，上下文管理、工具调用、文件读写、终端执行、测试反馈、错误恢复，统一收进 Harness 这一层。这个口号背后是一个判断：未来一年决定 Coding Agent 体验上限的，不是基座模型再涨多少分，而是 Harness 这层协作框架做得有多扎实。DeepSeek 这次没有再走「先开源模型权重、让社区折腾上层」的路，而是亲自下场把上层产品也吃下来。
 
-![量子位 2026 年 5 月 22 日深度稿头图：DeepSeek Code 主线浮现](deepseek-code-qbitai-hero.png)
+![量子位 2026 年 5 月 22 日深度稿头图：DeepSeek Code 主线浮现](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/deepseek-code-cui-tianyi-model-harness-agent-2026-05-23/deepseek-code-qbitai-hero.png)
 
 挂帅这条线的人，是浙江大学 ACM 国际大学生程序设计竞赛 6 次亚洲分区赛金牌得主、Jane Street 工作 9 年的崔添翼。这位河南安阳一中 2008 届毕业生，靠全国青少年信息学奥林匹克竞赛铜牌保送浙大，本科四年代表浙大六进 ACM-ICPC 亚洲金牌区，与 DeepSeek 创始人梁文锋同样是浙大毕业、同样在量化交易赛道深耕多年。2022 年前后他离开 Jane Street、联合创立 TSY Capital，2026 年 3 月正式加入 DeepSeek，挂帅这条新组建的 Harness 团队。**梁文锋的这位浙大学弟，是带着完整的工程履历和「让一群极客把一件复杂工程做扎实」的经验来的。**
 
@@ -30,7 +30,7 @@ authors:
 
 DeepSeek 这次的不同之处在于把这句话明明白白写进了团队名。Deli Chen 的招聘帖原文用了一种近乎自嘲的表达：「we're calling it Harness internally—maybe you can call it DeepSeek Code or something like this hhh🤣🤣🤣」。社区一边笑团队起名能力有限，一边记住了 Harness 这个术语。
 
-![DeepSeek 内部架构口号：Model + Harness = Agent 三块拆解](deepseek-model-harness-agent.png)
+![DeepSeek 内部架构口号：Model + Harness = Agent 三块拆解](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/deepseek-code-cui-tianyi-model-harness-agent-2026-05-23/deepseek-model-harness-agent.png)
 
 把 Harness 这一层拆开看，里面装着六件事：
 
@@ -67,7 +67,7 @@ ACM 6 次亚洲金牌是个什么概念？国内程序设计竞赛圈对这个�
 
 把 5 月 22 日这一波信息和过去半年的开源动作连起来看，DeepSeek 的产品线版图已经能看清三条主线。
 
-![DeepSeek 三条产品线浮现：基座模型 / 社区终端 / 官方 Code Agent](deepseek-three-product-lines.png)
+![DeepSeek 三条产品线浮现：基座模型 / 社区终端 / 官方 Code Agent](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/deepseek-code-cui-tianyi-model-harness-agent-2026-05-23/deepseek-three-product-lines.png)
 
 ### 第一条：基座模型（已发布）
 
@@ -75,7 +75,7 @@ DeepSeek V4 Pro / V4 Flash 两款基座模型，1M token 上下文，开源权�
 
 ### 第二条：DeepSeek-TUI（社区项目 · 已开源 · 33 466 stars）
 
-![社区项目 DeepSeek-TUI 仓库（由 Hmbown 维护，与 DeepSeek 官方无组织关系）](deepseek-tui-og.png)
+![社区项目 DeepSeek-TUI 仓库（由 Hmbown 维护，与 DeepSeek 官方无组织关系）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/deepseek-code-cui-tianyi-model-harness-agent-2026-05-23/deepseek-tui-og.png)
 
 这里需要给读者讲清楚一个常被混淆的事实：**DeepSeek-TUI 是社区开发者 Hmbown 维护的个人项目，README 第一句话就声明「Not affiliated with DeepSeek Inc.」**，与 DeepSeek 官方并无组织关系。本文 2026 年 5 月 22 日实查 GitHub API，该仓库 33 466 stars、2 867 forks、MIT 协议、Rust 实现，是一个 13-crate 工作区结构，支持 DeepSeek V4 Pro / V4 Flash / 1M token 上下文 / 流式推理块 / 文件审批 / 终端命令 / 子 Agent 并发，被 deepseek-ai 官方组织维护的 awesome-deepseek-agent 仓库（1 978 stars）收录推荐，是开发者社区在等待官方 Code Agent 期间最常用的 DeepSeek 终端入口。
 
@@ -96,7 +96,7 @@ DeepSeek V4 Pro / V4 Flash 两款基座模型，1M token 上下文，开源权�
 
 把这五月这一波信息放进国内外 Coding Agent 大图里，整个赛道已经从 2024 年的「IDE 助手」演化成了 2026 年的「Coding Agent」——形态、商业模式、协议选择各家都开始分流。
 
-![六家 Coding Agent 横评 · DeepSeek Code（即将） / Cursor 3.5 / Antigravity 2.0 / Trae / Qoder / Claude Code](deepseek-code-6way-comparison.png)
+![六家 Coding Agent 横评 · DeepSeek Code（即将） / Cursor 3.5 / Antigravity 2.0 / Trae / Qoder / Claude Code](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/deepseek-code-cui-tianyi-model-harness-agent-2026-05-23/deepseek-code-6way-comparison.png)
 
 | 产品 | 厂商 / 地区 | 状态 | 架构路线 | 协议 / 商业 | 底座模型 | 差异化定位 |
 |---|---|---|---|---|---|---|

@@ -14,7 +14,7 @@ authors:
 
 # 线性注意力擦写解耦：NVIDIA 把 KV cache 又压扁一档
 
-![Gated DeltaNet-2 NVIDIA 线性注意力擦写解耦](gated-deltanet-2-nvidia-erase-write-linear-attention-2026-05-23.png)
+![Gated DeltaNet-2 NVIDIA 线性注意力擦写解耦](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/gated-deltanet-2-nvidia-erase-write-linear-attention-2026-05-23/gated-deltanet-2-nvidia-erase-write-linear-attention-2026-05-23.png)
 
 > 5 月 21 日，NVIDIA 研究院（NVIDIA Research）三位作者 Ali Hatamizadeh、Yejin Choi、Jan Kautz 把一篇新论文《Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention》（中文「门控 Delta 网络 2 代：解耦线性注意力中的擦除与写入」）挂到 arxiv，编号 2605.22791；当晚被推到 HuggingFace Papers 趋势榜，截至次日 69 个 upvote。一句话讲清楚他们做了什么：上一代 Gated DeltaNet（门控 Delta 网络，简称 GDN）和今年 1 月月之暗面 Kimi 团队的 KDA（Kimi Delta Attention，中文「Kimi Delta 注意力」），都用同一个标量门控制两件事——擦掉旧关联和写入新值；NVIDIA 这次把这个标量门拆成两个独立的通道级门，**擦除门** b_t 管 key 那一侧的旧信息怎么清，**写入门** w_t 管 value 那一侧的新信息怎么入。改动看起来小，但 1.3B 模型在 100B FineWeb-Edu tokens 训练下，RULER 大海捞针长上下文多键检索那条最难的赛道——也就是 KV cache（键值缓存）压得越狠就越容易塌方的那条——上去了一档。
 
@@ -22,7 +22,7 @@ authors:
 
 千问的 Qwen3-Next 在去年底就已经把 3:1 的 Gated DeltaNet + 全注意力混合架构挂进了主线产品（每四层里三层用线性、一层用全注意力），那是一代论文；这一代 Gated DeltaNet-2 如果按相同节奏被国内旗舰模型团队消化，下一代千问、智谱、DeepSeek 的混合架构里，每四层中那三层「省 KV cache 的线性层」效率还能再压一档。
 
-![Gated DeltaNet-2 论文 HuggingFace 卡片](gated-deltanet-2-hf-paper.png)
+![Gated DeltaNet-2 论文 HuggingFace 卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/gated-deltanet-2-nvidia-erase-write-linear-attention-2026-05-23/gated-deltanet-2-hf-paper.png)
 
 ## 一、为什么「擦」和「写」要分开
 
@@ -43,7 +43,7 @@ authors:
 
 值得给一代论文留一句锚。一代 Gated DeltaNet（arxiv 2412.06464）的第一作者是 Songlin Yang，二作 Jan Kautz、三作 Ali Hatamizadeh——这次二代的三位作者其实就是把一代的二、三作上提到一作位置，团队连续性很强；NVIDIA 这条线不是单次发表，是研究院里一条持续被推进的赛道。
 
-![Gated DeltaNet 一代论文（2412.06464）HuggingFace 卡片](gated-deltanet-1-hf-paper.png)
+![Gated DeltaNet 一代论文（2412.06464）HuggingFace 卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/gated-deltanet-2-nvidia-erase-write-linear-attention-2026-05-23/gated-deltanet-1-hf-paper.png)
 
 ## 二、五家横评：线性注意力在 2026 年的真实分工
 
@@ -51,7 +51,7 @@ authors:
 
 把今天市面上还在被反复引用的五家放到一张图里看清楚：
 
-![五家线性注意力 1.3B 横评](gated-deltanet-2-five-way-benchmark.png)
+![五家线性注意力 1.3B 横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/gated-deltanet-2-nvidia-erase-write-linear-attention-2026-05-23/gated-deltanet-2-five-way-benchmark.png)
 
 数据来自论文 Table 2（LM 平均分综合常识推理与语言建模任务，1.3B 模型 + 100B FineWeb-Edu tokens 同等训练预算）：
 
@@ -82,7 +82,7 @@ authors:
 
 光看综合分还不够，线性注意力的真正考验在长上下文检索。把论文 Table 3 的 RULER S-NIAH-2（Single-Needle-In-A-Haystack 第二档，干扰最重那一档）数据拉出来：
 
-![RULER 长上下文多键检索对比](gated-deltanet-2-ruler-longcontext.png)
+![RULER 长上下文多键检索对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/gated-deltanet-2-nvidia-erase-write-linear-attention-2026-05-23/gated-deltanet-2-ruler-longcontext.png)
 
 在 1K、2K 短上下文档位上，几家纯线性模型大致都能拿到 99%+ 的检索准确率。差距从 4K 上下文开始显现：
 
@@ -97,7 +97,7 @@ authors:
 
 把话题落到大多数国内开发者最关心的一件事——**一颗 RTX 4090 24GB 或者 RTX 5090 32GB 显卡，想跑一个 32B 量级的模型 + 128K 上下文，可不可能、要多省 KV cache**。
 
-![32B 128K 上下文 KV cache 显存估算](gated-deltanet-2-kv-cache-vram.png)
+![32B 128K 上下文 KV cache 显存估算](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/gated-deltanet-2-nvidia-erase-write-linear-attention-2026-05-23/gated-deltanet-2-kv-cache-vram.png)
 
 注意这张图给的是 **KV cache 那一部分的显存占用**（不含模型权重和激活），数值是工程估算量级，实际跑起来会随实现细节、量化方式、batch size 浮动；放在这里只是为了让数量级一目了然：
 
@@ -114,7 +114,7 @@ authors:
 
 线性注意力赛道还有一个被反复问到的问题——**改成通道级双门控之后，训练效率会不会反而塌方**。论文 Fig.2 给了一张单卡 H100 训练吞吐随序列长度变化的图，把它转成更直观的形态：
 
-![H100 单卡训练吞吐对比](gated-deltanet-2-h100-throughput.png)
+![H100 单卡训练吞吐对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/gated-deltanet-2-nvidia-erase-write-linear-attention-2026-05-23/gated-deltanet-2-h100-throughput.png)
 
 序列长度从 2K 到 32K，吞吐变化：
 
@@ -129,7 +129,7 @@ authors:
 
 国内训练侧的工程团队，把这条进展往自家集群推的成本会比想象中低——一代 Gated DeltaNet 千问已经做过 production 落地的工程化，二代的核心改动是把标量门换成通道级门，kernel 改动局限在 attention 那一层，不动 MLP、不动 RoPE、不动 tokenizer，集成工作量按一线团队评估大致是「一个工程师两周」的量级。
 
-![NVlabs/GatedDeltaNet-2 GitHub 仓库 OG](gated-deltanet-2-nvlabs-repo.png)
+![NVlabs/GatedDeltaNet-2 GitHub 仓库 OG](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/gated-deltanet-2-nvidia-erase-write-linear-attention-2026-05-23/gated-deltanet-2-nvlabs-repo.png)
 
 ## 六、几个容易被读错的地方
 
@@ -145,7 +145,7 @@ authors:
 
 **第五，「线性注意力赛道国内外同步」不是营销话术**。论文 baseline 里明确把 KDA（月之暗面 1 月发布）放在 Mamba-2、Mamba-3 同一档对比；千问 Qwen3-Next 在去年底就把一代 Gated DeltaNet 推进 production——这条赛道是国内外研究团队你来我往的真正前沿，国内团队不是跟随，是参与定义。
 
-![NVlabs/GatedDeltaNet 一代仓库 OG](gated-deltanet-1-nvlabs-repo.png)
+![NVlabs/GatedDeltaNet 一代仓库 OG](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/gated-deltanet-2-nvidia-erase-write-linear-attention-2026-05-23/gated-deltanet-1-nvlabs-repo.png)
 
 ## 七、对国内同行的影响和适配窗口
 

@@ -18,7 +18,7 @@ summary: 5 月 8 日打开 ML Mastery 头条这篇 inference caching guide，作
 
 # LLM 推理缓存实战：5 类缓存 + 7 个开源项目 + 4 个国内场景，把 token 账单砍 9 成
 
-![LLM 推理缓存实战封面](llm-inference-caching-guide-2026-05-08.png)
+![LLM 推理缓存实战封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/llm-inference-caching-guide-2026-05-08/llm-inference-caching-guide-2026-05-08.png)
 
 5 月 8 日打开 [Machine Learning Mastery 今天的头条](https://machinelearningmastery.com/the-complete-guide-to-inference-caching-in-llms/)，标题是《The Complete Guide to Inference Caching in LLMs》。作者把整个推理缓存世界收成三层：KV cache、prefix cache、semantic cache。读完很顺，但作为国内开发者我们得多走两步——加上 exact-match 这一层、加上厂商内置 prompt cache 这一层、把每一层落到 Anthropic / OpenAI / DeepSeek / 千问的真实开通方式上、再把 vLLM / SGLang / GPTCache / LiteLLM / LangChain / llama.cpp / Langfuse 这 7 个开源实现的 star 数和最新更新查清楚。
 
@@ -26,7 +26,7 @@ summary: 5 月 8 日打开 ML Mastery 头条这篇 inference caching guide，作
 
 下面是 5 类缓存的全景图，我们按"从模型内部到应用最外层"的顺序铺开。
 
-![LLM 推理缓存五层全景对照](llm-inference-caching-overview-table.png)
+![LLM 推理缓存五层全景对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/llm-inference-caching-guide-2026-05-08/llm-inference-caching-overview-table.png)
 
 ## 一、把 5 类缓存按层拆清楚，先理解再选型
 
@@ -48,7 +48,7 @@ ML Mastery 原文把推理缓存压成三层：KV / prefix / semantic。但实�
 
 **核心论断**：prefix cache 是这一波缓存里 ROI 最高的一层——尤其当你的应用满足"长系统提示 + 短动态输入"这一条结构时。vLLM v1 已经把它做成默认行为，Anthropic 做成 cache_control 显式标记，DeepSeek 做成 disk-level 透明命中，三种姿势都能拿到 5 倍以上的成本降幅。
 
-![主流缓存开源/商业实现速查表](llm-inference-caching-repo-table.png)
+![主流缓存开源/商业实现速查表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/llm-inference-caching-guide-2026-05-08/llm-inference-caching-repo-table.png)
 
 vLLM 这一侧给的数字相当扎实。[vLLM 官方文档](https://docs.vllm.ai/en/stable/design/prefix_caching/)和 [llm-d 团队的 KV-Cache 博客](https://llm-d.ai/blog/kvcache-wins-you-can-see)一致显示：在共享前缀比例从 0.1 拉到 0.9 的合成基准下，vLLM 吞吐提升 32%、TensorRT-LLM 提升 49%；分布式调度配合 prefix cache 时，特定场景能拿到 57 倍的响应时间提升和双倍吞吐。更关键的一条来自 vLLM v1 的发布说明——**v1 的 prefix cache 在 0% 命中率下吞吐损失不到 1%，于是直接做成默认开启**。
 
@@ -167,7 +167,7 @@ LangChain 在缓存这件事上的角色介于 GPTCache 和 LiteLLM 之间：[la
 
 **核心论断**：缓存这件事最容易卡在"知道有用但不知道我自己的项目从哪开"。下面 4 个场景按"今天就能动手 → 一周内能见效 → 一个月内能压成本"排序，每个场景给可复制配置 + 一句踩坑提醒。
 
-![国内 + 海外 LLM 厂商 Prompt Cache 一览](llm-inference-caching-vendor-table.png)
+![国内 + 海外 LLM 厂商 Prompt Cache 一览](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/llm-inference-caching-guide-2026-05-08/llm-inference-caching-vendor-table.png)
 
 ### 场景 1：Claude Code 用户开 Anthropic prompt caching
 
@@ -236,7 +236,7 @@ curl http://localhost:8000/v1/completions -d '{
 }'
 ```
 
-![缓存命中实测：四个真实场景的成本与延迟变化](llm-inference-caching-real-numbers.png)
+![缓存命中实测：四个真实场景的成本与延迟变化](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/llm-inference-caching-guide-2026-05-08/llm-inference-caching-real-numbers.png)
 
 **踩坑提醒**：本地跑的好处之一是 prefix cache 命中数据可以直接观测——访问 `http://localhost:8000/metrics` 能看到 `vllm:gpu_prefix_cache_hit_rate` 这个 gauge，调一周看真实分布再决定要不要扩显存。
 
@@ -306,7 +306,7 @@ cache.init(
 
 更细一点的成本结构是这样的：假设你有一个日 100 万次调用的 chatbot，平均每次输入 5000 tokens、输出 500 tokens，未优化时每天烧 $1500（按 DeepSeek V4 Pro 价格估算）。开 prefix cache 后输入侧打 1 折，每天降到约 $300；再叠 semantic cache 60% 命中率，每天进一步降到约 $120——**单这一项工程优化每年省下 $50 万**。这条账给国内 AI 创业团队的意义在于：你不需要等模型再降价，缓存这一刀比降价更先到、且收益更稳定。
 
-![5 层缓存决策流：请求进来怎么过](llm-inference-caching-decision-flow.png)
+![5 层缓存决策流：请求进来怎么过](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/llm-inference-caching-guide-2026-05-08/llm-inference-caching-decision-flow.png)
 
 ## 六、什么时候不要用缓存：3 类场景请避开
 
@@ -359,7 +359,7 @@ cache.init(
 
 把这套缓存工具装上，2026 年的 AI 应用账单会比 2025 年好看很多。一个具体的实施节奏建议按 4 周拆解：
 
-![国内开发者 30 天落地缓存路线图](llm-inference-caching-rollout-plan.png)
+![国内开发者 30 天落地缓存路线图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/llm-inference-caching-guide-2026-05-08/llm-inference-caching-rollout-plan.png)
 
 - **第 1 周**：开 vLLM v1 prefix cache 和 DeepSeek 自动 cache，吃免费午餐
 - **第 2 周**：给 Claude / 千问 API 挂 cache_control，把长 prompt 输入价砍 1 折

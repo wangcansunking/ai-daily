@@ -25,7 +25,7 @@ description: "把 90 天本地大模型运维实战压成一份可直接抄的 r
 
 # 本地大模型 7×24 给团队跑 OpenClaw runbook
 
-![本地大模型运维拓扑总览](cn-local-llm-ops-runbook-2026-05-14.png)
+![本地大模型运维拓扑总览](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/cn-local-llm-ops-runbook-2026-05-14/cn-local-llm-ops-runbook-2026-05-14.png)
 
 > 2026 年 5 月，本地大模型已经不是"能不能跑"的问题，而是"能不能 7×24 给团队稳定跑"的问题。这份 runbook 是过去 90 天咱们家小机房压出来的工程结论。
 
@@ -109,7 +109,7 @@ services:
 
 这一层做完之后，单实例就有了基本的自愈能力——进程崩溃 3 秒自动拉起，宿主机重启后 systemd 自动启服务，OOM 之后能恢复，但是显存预算依然是手动算出来的硬约束。
 
-![systemd nginx 自愈数据流向 ops architecture flow diagram](cn-llm-ops-systemd-flow.png)
+![systemd nginx 自愈数据流向 ops architecture flow diagram](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/cn-local-llm-ops-runbook-2026-05-14/cn-llm-ops-systemd-flow.png)
 
 ## 服务化第二层：nginx SSE 反代 + basic auth + Host 重写三件套
 
@@ -150,7 +150,7 @@ basic auth 这条对 OpenClaw 客户端有个小坑：URL 里要带 `https://use
 
 国内团队四个选型咱们家小机房都跑过 演示，对比矩阵如下（stars 数据 2026-05-13 实查）：
 
-![LiteLLM OneAPI new-api FastGPT 网关 gateway matrix 选型矩阵](cn-llm-ops-gateway-matrix.png)
+![LiteLLM OneAPI new-api FastGPT 网关 gateway matrix 选型矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/cn-local-llm-ops-runbook-2026-05-14/cn-llm-ops-gateway-matrix.png)
 
 | 网关 | stars | 国内团队适用度 | 特点 | 坑 |
 |---|---|---|---|---|
@@ -208,7 +208,7 @@ SitePoint 那份 2026评测里有句话挺有意思——"At 128 concurrent requ
 
 ## OpenClaw 接共享后端 + 三档硬件 case
 
-![三档硬件配置 hardware tiers 卡片](cn-llm-ops-hardware-tiers.png)
+![三档硬件配置 hardware tiers 卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/cn-local-llm-ops-runbook-2026-05-14/cn-llm-ops-hardware-tiers.png)
 
 OpenClaw 客户端走 OneAPI 网关接共享后端这事，第一次配的时候踩过一个无声坑。Rogério Richa 那篇 Medium 文章里说得很到位——"OpenClaw 端只显示空响应不报错，要先在网关侧 mock 一次 tools=[] 跑通。" 表现就是 OpenClaw 发请求出去，nginx 日志看到 200，OpenAI 兼容接口返回也正常，但是 OpenClaw 客户端那一侧就是空响应，没报错没日志。
 
@@ -261,7 +261,7 @@ models:
 
 ## 90 天稳态：5000 元二手 3090 跑出 P99 480ms
 
-![90 天稳态 90day stability 关键数字 ops 月账单与 P99 TTFT](cn-llm-ops-90day-stability.png)
+![90 天稳态 90day stability 关键数字 ops 月账单与 P99 TTFT](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/cn-local-llm-ops-runbook-2026-05-14/cn-llm-ops-90day-stability.png)
 
 
 回到 4 月底关掉云端 LLM 充值那个故事——90 天压下来咱们家小机房的稳态数字是：

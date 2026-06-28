@@ -24,7 +24,7 @@ description: "Y Combinator P26 这一批刚跑出一个有意思的小公司：I
 
 # Supabase 给人用，InsForge 给 agent 用
 
-![InsForge YC P26 agent 原生后端封面图 等距 2.5D 插画 一名亚洲面孔 AI agent 站在七层后端组件堆叠之上](insforge-yc-s26-agent-backend-stack-2026-05-19.png)
+![InsForge YC P26 agent 原生后端封面图 等距 2.5D 插画 一名亚洲面孔 AI agent 站在七层后端组件堆叠之上](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/insforge-yc-s26-agent-backend-stack-2026-05-19/insforge-yc-s26-agent-backend-stack-2026-05-19.png)
 
 ## 这件事的意思先说清楚
 
@@ -68,7 +68,7 @@ Y Combinator 春季 P26 这一批刚把名字晒出来，里头有个叫 InsForg
 
 数字相互交叉对得上。**一万颗星 + Apache 2.0 + agent 原生定位 + YC 当前批次**，这四件事拼起来已经说明它不是一个仓库挂在那里晾着的玩具项目，而是有人真在每天提 PR、有真用户在用的开源产品。
 
-![InsForge GitHub 仓库 snapshot 一万零七十五颗星 八百四十二个 fork agentic coding 平台描述](insforge-github-snapshot.png)
+![InsForge GitHub 仓库 snapshot 一万零七十五颗星 八百四十二个 fork agentic coding 平台描述](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/insforge-yc-s26-agent-backend-stack-2026-05-19/insforge-github-snapshot.png)
 
 ## 核心论点：差异化不在功能，在『谁是主用户』
 
@@ -85,7 +85,7 @@ Y Combinator 春季 P26 这一批刚把名字晒出来，里头有个叫 InsForg
 
 『主用户是谁』这件事一变，所有产品决策的次序就跟着变了。Supabase 默认开 Row Level Security（行级安全策略），人写后端会主动写 policy，agent 不懂，第一次写库直接撞墙；InsForge 默认把 RLS 关掉，让 agent 顺利写进第一行，权限策略放到第二步引导生成。Supabase dashboard 上一项一项点配置，agent 看不到屏幕；InsForge 把每一项后端配置都做成 MCP tool 或 slash 命令，agent 在终端里一条命令搞定。
 
-![InsForge 给 agent 用的后端七件套 agent 居中 七个模块环绕 MCP CLI Skills 两条接口](insforge-seven-components.png)
+![InsForge 给 agent 用的后端七件套 agent 居中 七个模块环绕 MCP CLI Skills 两条接口](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/insforge-yc-s26-agent-backend-stack-2026-05-19/insforge-seven-components.png)
 
 ## 后端七件套架构逐项拆解
 
@@ -125,7 +125,7 @@ OpenAI 兼容的统一 API，背后挂多家 LLM 厂商。这是 Supabase 没有
 
 把 InsForge 放到国内 vibe coding 开发者熟悉的同档产品里横评——Supabase、Convex、Vercel + Neon 组合、Pocketbase，六个维度一起看：
 
-![InsForge baas 五家后端即服务平台横评对照表 给人 vs 给 agent 六项 compare](insforge-baas-compare.png)
+![InsForge baas 五家后端即服务平台横评对照表 给人 vs 给 agent 六项 compare](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/insforge-yc-s26-agent-backend-stack-2026-05-19/insforge-baas-compare.png)
 
 读这张表能看出几件事：
 
@@ -141,7 +141,7 @@ OpenAI 兼容的统一 API，背后挂多家 LLM 厂商。这是 Supabase 没有
 
 InsForge 自家放出来的 benchmark 数字写在 `insforge.dev/blog/mcpmark-benchmark-results-v2`，方法论按 MCPMark 开源套件来跑——**二十一个真实 Postgres 数据库任务，Claude Sonnet 4.6 模型，每个任务跑四次，严格 Pass⁴ 计分**。和 Supabase MCP 直接对比的数字如下：
 
-![MCPMark v2 InsForge 与 Supabase 三项实测对比柱状图](insforge-mcpmark-bars.png)
+![MCPMark v2 InsForge 与 Supabase 三项实测对比柱状图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/insforge-yc-s26-agent-backend-stack-2026-05-19/insforge-mcpmark-bars.png)
 
 - **Pass⁴ 准确率**：42.86% vs 33.33%，差 9.5 个百分点。
 - **单次任务 token 消耗**：7.3 M vs 17.9 M，省 2.5 倍。

@@ -10,7 +10,7 @@ category: "文档解析 / RAG / 开源工具"
 ---
 # liteparse：给 RAG 配个快的本地文档解析器
 
-![liteparse：LlamaIndex 团队开源的 Rust 文档解析器，登上 GitHub Trending](liteparse-rust-doc-parser-rag-2026-05-30.png)
+![liteparse：LlamaIndex 团队开源的 Rust 文档解析器，登上 GitHub Trending](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/liteparse-rust-doc-parser-rag-2026-05-30/liteparse-rust-doc-parser-rag-2026-05-30.png)
 
 做 RAG（检索增强生成）和知识库的人都懂一件事：**真正天天折磨人的，不是检索算法，也不是用哪个大模型，而是第一步——把一份 PDF、Word、PPT 干净地变成文字。** 这一步做不好，后面切片再精、向量再准、模型再强，都救不回来。
 
@@ -30,7 +30,7 @@ category: "文档解析 / RAG / 开源工具"
 - **仓库**2026 年 2 月初建立，到 5 月底约 7100 star、440 fork，5 月 29 日单日涨约 680 star
 - **当前版本**是 v2.0 系列，5 月底连发了 Python、Node、Crates、Docker、WASM 多个平台的 2.0.3
 
-![liteparse 仓库 README 里的解析演示](source-liteparse-readme-demo.png)
+![liteparse 仓库 README 里的解析演示](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/liteparse-rust-doc-parser-rag-2026-05-30/source-liteparse-readme-demo.png)
 <small>来源：run-llama/liteparse 仓库 README 配图</small>
 
 它支持的格式不止 PDF。官方说覆盖 50 多种文档类型，常见的有这几大类：
@@ -52,13 +52,13 @@ LlamaIndex 团队自己的说法很直白：传统工具逼着 Agent 做选择�
 - 要**快**，就用 pypdf 这类纯文本抽取库，结果版式经常乱、表格散架
 - 要**准**，就上云端服务、GPU 或视觉大模型（VLM），代价是延迟高、可能超时、还得把文档传出去
 
-![文档解析是 RAG / Agent 读文档的第一步，也是最容易出错的一步](liteparse-rag-flow-2026-05-30.png)
+![文档解析是 RAG / Agent 读文档的第一步，也是最容易出错的一步](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/liteparse-rust-doc-parser-rag-2026-05-30/liteparse-rag-flow-2026-05-30.png)
 
 对一个要实时响应的 Agent 来说，这两条路都别扭。让用户上传一份 PDF 等十几秒、或者动不动超时，体验直接崩。liteparse 的取舍是：**牺牲掉"啃最难版式"的那部分能力，换来又快、又能本地跑、又不依赖大模型的确定性。** 它把抽文字这件事做得快且稳，对 Agent 来说，确定性往往比"偶尔能解析出超复杂表格"更重要。
 
 它给出的输出也是奔着 Agent 设计的，一共三种：
 
-![liteparse 给 Agent 三种"看文档"的方式](liteparse-output-modes-2026-05-30.png)
+![liteparse 给 Agent 三种"看文档"的方式](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/liteparse-rust-doc-parser-rag-2026-05-30/liteparse-output-modes-2026-05-30.png)
 
 1. **保留版式的文字**：按空间网格还原排版，多栏、缩进不会串行，方便大模型理解文档结构
 2. **JSON + 边界框**：给出每段文字的坐标，方便精确定位某个元素在原文哪个位置
@@ -92,7 +92,7 @@ liteparse v1 是 TypeScript 写的，团队发现两个绕不过去的问题：�
 - **能塞进浏览器和边缘**：靠一个定制的 WASM 包，liteparse 能在浏览器里、在边缘运行时里直接跑——文档不用离开用户的浏览器
 - **速度肉眼可见地提上来**
 
-![liteparse v2.0 改用 Rust 重写后的提速](liteparse-speedup-2026-05-30.png)
+![liteparse v2.0 改用 Rust 重写后的提速](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/liteparse-rust-doc-parser-rag-2026-05-30/liteparse-speedup-2026-05-30.png)
 
 官方给的提速数字是这样的（口径是相对自家 v1）：
 
@@ -108,7 +108,7 @@ liteparse v1 是 TypeScript 写的，团队发现两个绕不过去的问题：�
 
 到这一步，国内开发者最想知道的是：**市面上能选的解析方案不少，liteparse 和它们到底差在哪、什么时候该换。** 这是本文的核心对照，先看表。
 
-![五个主流文档解析方案横评](liteparse-parser-matrix-2026-05-30.png)
+![五个主流文档解析方案横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/liteparse-rust-doc-parser-rag-2026-05-30/liteparse-parser-matrix-2026-05-30.png)
 
 逐个说清楚每一个的定位和厂商：
 
@@ -123,7 +123,7 @@ liteparse v1 是 TypeScript 写的，团队发现两个绕不过去的问题：�
 - liteparse = 本地、免费、无大模型的"快解析"，对付实时 Agent、本地工作流
 - LlamaParse = 云端、收费、上模型的"重解析"，对付精度要求极高的复杂文档
 
-![liteparse 主打给 AI Agent 做本地文档解析](source-liteparse-agents-blog-hero.png)
+![liteparse 主打给 AI Agent 做本地文档解析](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/liteparse-rust-doc-parser-rag-2026-05-30/source-liteparse-agents-blog-hero.png)
 <small>来源：LlamaIndex 官方博客 liteparse-local-document-parsing-for-ai-agents 配图</small>
 
 换句话说，LlamaIndex 团队自己也承认：**遇到密集表格、多栏排版、图表、手写、扫描 PDF，liteparse 不如 LlamaParse，建议你上云端版。** 这种坦诚反而让人放心——它没把 liteparse 吹成万能解析器。

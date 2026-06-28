@@ -12,7 +12,7 @@ description: "海外项目 Local Deep Research 五一假期前发 v1.6.9，GitHu
 ---
 # 本地深度研究开源 Qwen3.6 单卡命中 95%
 
-![本地深度研究开源 Qwen3.6 单卡命中 95%](local-deep-research-qwen3-95-simpleqa-single-3090.png)
+![本地深度研究开源 Qwen3.6 单卡命中 95%](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/local-deep-research-qwen3-95-simpleqa-single-3090/local-deep-research-qwen3-95-simpleqa-single-3090.png)
 
 ## 一台 3090，一个开源模型，把 Perplexity 的活搬回家
 
@@ -43,7 +43,7 @@ OpenAI 自己的 GPT-4.1-mini 是一款定位偏小、价格便宜的 mini 系�
 | gemini-2.0-flash-001 | SearXNG | 默认策略 | 82% |
 | Qwen3.6-27B 单卡 3090 | SearXNG（自建） | focused_iteration | 约 95%（项目宣称 preliminary） |
 
-![Local Deep Research SimpleQA 命中率](local-deep-research-simpleqa-table.png)
+![Local Deep Research SimpleQA 命中率](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/local-deep-research-qwen3-95-simpleqa-single-3090/local-deep-research-simpleqa-table.png)
 
 要诚实地说一句：这是项目方公布的早期测试，sample size 有限，没有像 OpenAI 官方那样跑全量两万多题。但这套数字最值得国内同行注意的不是"95% 真不真"，而是"如何用一套工程编排，把一颗便宜的小模型推到旗舰水位"。这条路走通之后，把外面任何一颗本地化模型替换进来都成立——这正是开源的真本事。
 
@@ -77,7 +77,7 @@ OpenAI 自己的 GPT-4.1-mini 是一款定位偏小、价格便宜的 mini 系�
 | 搜索源 | SearXNG 自建 + arXiv + PubMed | — | 内网或断网都能查 |
 | 数据存储 | SQLCipher AES-256 加密 | — | 管理员也读不到 |
 
-![国产模型 + 国民显卡的本地研究方案](local-deep-research-domestic-stack.png)
+![国产模型 + 国民显卡的本地研究方案](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/local-deep-research-qwen3-95-simpleqa-single-3090/local-deep-research-domestic-stack.png)
 
 速度上，3090 跑 Qwen3 32B Q4 大致是每秒 18-25 token（视上下文长度浮动），单次"研究 + 写报告"通常 2-4 分钟出结果。慢吗？比开 GPT-5 旗舰快了几个量级；比直接问 Perplexity Pro 慢了三五倍。但报告就在自己机器上、问题就在自己机器上、引用源就在自己机器上——这是另一种维度的快。
 
@@ -105,7 +105,7 @@ Local Deep Research 不是孤品。这条赛道上至少还有两个名字常被
 | gpt-researcher | 部分 | 默认走云搜索 | Tavily / SerpAPI 为主 | 主流云模型 |
 | Perplexity Pro | 不可 | 全程上云 | 官方闭源管道 | 官方闭源 |
 
-![本地化对位：三类研究助手的取舍](local-deep-research-vs-peers.png)
+![本地化对位：三类研究助手的取舍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/local-deep-research-qwen3-95-simpleqa-single-3090/local-deep-research-vs-peers.png)
 
 三家不是替代关系，是三种取舍。Perplexity Pro 适合个人随手问、不在乎隐私、追求极致流畅；gpt-researcher 适合已有 OpenAI 基础设施、追求成熟生态的开发者；Local Deep Research 适合那种愿意花一个周末搭一台属于自己的研究终端、并且对数据所有权很在意的工程师。三者并存，国内研究类工作流的选择面比一年前宽了一大圈。
 

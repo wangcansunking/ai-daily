@@ -4,7 +4,7 @@
 > 豆包语音通话 2025-01 上线，视频通话 2025-05 上线。两个功能对个人用户**全部免费、没有会话时长上限**（2026 春节除外）。
 > 把它当成一个 24 小时在线的助手——识字、识物、识屏，能听粤语和四川话。下面讲它到底能干什么。
 
-![豆包 × 浦东美术馆 · 视频通话逛美术馆官方合作主视觉](doubao-museum-cover.png)
+![豆包 × 浦东美术馆 · 视频通话逛美术馆官方合作主视觉](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-23/doubao-voice-video-guide/doubao-museum-cover.png)
 
 *图片来源：极客公园《豆包「入职」浦东美术馆》专题头图（官方合作主视觉）*
 
@@ -15,7 +15,7 @@
 
 ### 场景 1：英语口语陪练，带字幕 + 纠错
 
-![豆包视频通话旅行场景 · 极客公园实测](doubao-travel-scene.png)
+![豆包视频通话旅行场景 · 极客公园实测](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-23/doubao-voice-video-guide/doubao-travel-scene.png)
 
 *图片来源：极客公园《豆包为什么要给 AI 助手「开眼」？》（2025-05-26）*
 
@@ -62,7 +62,7 @@
 
 这背后是字节两套自研技术的组合：
 
-![豆包共享屏幕功能入口](doubao-screen-share-entry.png)
+![豆包共享屏幕功能入口](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-23/doubao-voice-video-guide/doubao-screen-share-entry.png)
 
 *图片来源：CSDN 博客《豆包 App 端终于也推出了【共享屏幕】的功能》（2025-07-16）*
 
@@ -71,7 +71,7 @@
 
 ### 怎么用（三步）
 
-![豆包共享屏幕的两种状态：共享中 / 防护中](doubao-screen-share-states.png)
+![豆包共享屏幕的两种状态：共享中 / 防护中](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-23/doubao-voice-video-guide/doubao-screen-share-states.png)
 
 *图片来源：CSDN 博客《豆包 App 端终于也推出了【共享屏幕】的功能》（2025-07-16）*
 
@@ -95,7 +95,7 @@
 ## 三、🏛 旅行讲解：豆包"入职"浦东美术馆
 
 
-![豆包视频通话打电话界面 · 故宫场景](doubao-call-entry.jpg)
+![豆包视频通话打电话界面 · 故宫场景](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-23/doubao-voice-video-guide/doubao-call-entry.jpg)
 
 *图片来源：腾讯新闻《字节豆包上线视频通话功能》（2025-05-23，字节跳动官方素材）*
 
@@ -126,7 +126,7 @@
 
 出国旅行场景更直接：
 
-![豆包视频通话做饭场景 · 极客公园实测](doubao-food-scene.png)
+![豆包视频通话做饭场景 · 极客公园实测](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-23/doubao-voice-video-guide/doubao-food-scene.png)
 
 *图片来源：极客公园《豆包为什么要给 AI 助手「开眼」？》（2025-05-26）*
 
@@ -141,7 +141,7 @@
 ## 四、🛒 生活场景：找东西、教做菜、陪看剧
 
 
-![豆包识别画面后，用户换角度拍摄，豆包动态纠正识别结果](doubao-angle-correct.png)
+![豆包识别画面后，用户换角度拍摄，豆包动态纠正识别结果](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-23/doubao-voice-video-guide/doubao-angle-correct.png)
 
 *图片来源：极客公园《豆包为什么要给 AI 助手「开眼」？》（2025-05-26）*
 
@@ -182,7 +182,7 @@
 ## 六、💾 底层三张牌：为什么豆包能做成
 
 
-![豆包 Seeduplex 实时语音大模型官方架构图](doubao-seeduplex-arch.jpeg)
+![豆包 Seeduplex 实时语音大模型官方架构图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-23/doubao-voice-video-guide/doubao-seeduplex-arch.jpeg)
 
 *图片来源：ByteDance Seed 官方介绍页 seed.bytedance.com/en/realtime_voice*
 
@@ -236,7 +236,7 @@
 - 通话中点**「视频」**切到视频通话，摄像头开启
 - PC 端：对话框下方点**"共享屏幕语音通话"**，可选应用级或全屏共享
 
-![豆包视频通话功能官方发布配图](doubao-video-launch.jpg)
+![豆包视频通话功能官方发布配图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-23/doubao-voice-video-guide/doubao-video-launch.jpg)
 
 *图片来源：快科技《豆包上线视频通话功能》（2025-05-23，字节跳动官方供图）*
 

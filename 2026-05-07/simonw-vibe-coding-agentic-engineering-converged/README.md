@@ -10,7 +10,7 @@ tags: [simon-willison, vibe-coding, agentic-engineering, ai-coding, code-review]
 ---
 # Simon Willison：100 个 commit 我不审了
 
-![Vibe Coding 与 Agentic Engineering 收敛时间线：从 2025 年 2 月并行到 2026 年 5 月汇合](simonw-vibe-coding-converged-timeline.png)
+![Vibe Coding 与 Agentic Engineering 收敛时间线：从 2025 年 2 月并行到 2026 年 5 月汇合](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/simonw-vibe-coding-agentic-engineering-converged/simonw-vibe-coding-converged-timeline.png)
 
 ## 一句话事实
 
@@ -136,7 +136,7 @@ HN 顶层评论的分歧也很真实：
 
 两个支柱塌掉之后，原本平行的两条线就只能交汇在一个新点上：**人不再是 review 的瓶颈，agent 才是 review 的执行者，人只 approve outcome**。
 
-![代码审查权重组：从人逐行审 → 人审 outcome → agent 审 commit](simonw-code-review-authority-shift.png)
+![代码审查权重组：从人逐行审 → 人审 outcome → agent 审 commit](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/simonw-vibe-coding-agentic-engineering-converged/simonw-code-review-authority-shift.png)
 
 ## 三、"代码审查权"在重组什么
 
@@ -190,7 +190,7 @@ HN 那篇热文说得更直白："The new moat is organizational, not technical"
 
 Simon 这条范式落在国内是什么样？我们一线开发者每天用的几款工具——通义灵码、Qoder、Trae、豆包 MarsCode、Kimi 编码、文心快码——目前各自走到哪一档？
 
-![六款国产 AI Coding 工具的代码审查权分配模式](simonw-china-ai-coding-review-authority.png)
+![六款国产 AI Coding 工具的代码审查权分配模式](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/simonw-vibe-coding-agentic-engineering-converged/simonw-china-ai-coding-review-authority.png)
 
 按公开信息整理一份对照（数据快照：2026 年 5 月）：
 

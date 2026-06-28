@@ -25,7 +25,7 @@ description: "academic-research-skills 把『科研写作』完整跑通的多 A
 
 # Claude Code 替你睡觉时写论文
 
-![Claude Code 跑科研多 Agent 工作台封面 multi-agent academic paper pipeline cover](academic-research-skills-claude-code-paper-pipeline-2026-05-18.png)
+![Claude Code 跑科研多 Agent 工作台封面 multi-agent academic paper pipeline cover](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/academic-research-skills-claude-code-paper-pipeline-2026-05-18/academic-research-skills-claude-code-paper-pipeline-2026-05-18.png)
 
 ## 全文核心：科研写作第一次真敢往顶会投了
 
@@ -33,7 +33,7 @@ description: "academic-research-skills 把『科研写作』完整跑通的多 A
 
 这位研究生用的不是科幻小说里的 AGI，而是吴政宜（Edward Cheng-I Wu）开源到 Claude Code 插件市场的 academic-research-skills——截至 5 月 17 日 GitHub 攒到 9238 个 star，2026 年 2 月 26 日上线、不到 3 个月跑到第一梯队 Claude Code skill。
 
-![academic-research-skills 量子位头条配图 qbitai hero](academic-research-skills-qbitai-hero.png)
+![academic-research-skills 量子位头条配图 qbitai hero](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/academic-research-skills-claude-code-paper-pipeline-2026-05-18/academic-research-skills-qbitai-hero.png)
 
 全文核心论断先摆出来：**academic-research-skills 是 Claude Code 插件市场时代第一个把『科研写作』完整跑通的多 Agent 套件，它通过 Semantic Scholar 引用核验、魔鬼代言人反谄媚协议、三层数据隔离三个机制，把 LLM 写论文从玩具演示推到了敢往顶会投的工程产品**。
 
@@ -41,7 +41,7 @@ description: "academic-research-skills 把『科研写作』完整跑通的多 A
 
 同一时间窗口，上海交通大学团队公开了走另一条技术路线的 ARIS（Auto-Research-in-sleep）系统——一个『多 Agent 工程编排』、一个『跨模型对抗 + 自主训练』，2026 年 5 月这一周正好凑成中国 AI 科研助手两大流派的对照样本。
 
-![academic-research-skills GitHub og image](academic-research-skills-github-og.png)
+![academic-research-skills GitHub og image](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/academic-research-skills-claude-code-paper-pipeline-2026-05-18/academic-research-skills-github-og.png)
 
 把核心数据一次摊出来：4 个 skill 串联 32 个 agent 跑 10 阶段流水线，写一篇 1.5 万字论文成本 4-6 美元，真实测试里抓出 15 条捏造引用 + 3 处统计错误，目前在 Claude Code、Codex CLI、Cursor 三个平台上都已经跑通。9238 star / 1026 fork / 43 watcher 的社区规模，让这套 skill 直接成为 Claude Code 插件市场学术轨头部产品。
 
@@ -56,7 +56,7 @@ academic-research-skills 把整个科研流水线拆成四件相互衔接的工�
 - **Academic Paper Reviewer（7 agent）**：审稿团队侧——同行评审、终审定稿两件，7 个 agent 分饰不同审稿身份（领域专家 / 方法学家 / 统计审稿人 / 写作教练 / 伦理审查 / 复现性审查 / 元审稿人）
 - **Academic Pipeline**：编排器——把上面三个 skill 的 32 个 agent 按 10 阶段串起来，给出标准默认顺序，也允许研究者在任意阶段插入手动操作
 
-![十阶段流水线 与 各阶段 Agent 数](academic-research-skills-10-stage-pipeline.png)
+![十阶段流水线 与 各阶段 Agent 数](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/academic-research-skills-claude-code-paper-pipeline-2026-05-18/academic-research-skills-10-stage-pipeline.png)
 
 这套分工的工程价值在于：研究者不需要『从头训一个能写论文的大模型』，也不需要『手写 prompt 拼一个万行 chain』，安装命令两行就能把整条流水线装到自己的 Claude Code 终端：`/plugin marketplace add Imbad0202/academic-research-skills` 然后 `/plugin install academic-research-skills`。装好之后 Claude Code v3.7.0+ 的插件市场会自动管理依赖、版本和 skill 之间的引用关系。30 秒装好、即装即用，这是 Claude Code 插件市场出现之前完全做不到的体验。
 
@@ -92,7 +92,7 @@ Layer 3 是物理隔离——它只在『元审稿人 agent』和『终审定稿
 
 把镜头拉到 2026 年 5 月这一周，国内还有另一条同主题的硬路线被同步公开：上海交通大学团队的 ARIS（Auto-Research-in-sleep）系统，5 月 16 日机器之心做了专访（昨天的「上交 SDAR 自主 RL 训练写论文」专题已经做过深度展开）。ARIS 走的是『跨模型对抗 + 自主训练 + 模型自身进化』路线，跟 academic-research-skills 的『多 Agent 工程编排』路线形成 2026 年中国 AI 科研助手两大流派的对照。
 
-![ARS 工程化路线 vs SDAR 自主 RL 路线对比](academic-research-skills-vs-sdar-paradigm.png)
+![ARS 工程化路线 vs SDAR 自主 RL 路线对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/academic-research-skills-claude-code-paper-pipeline-2026-05-18/academic-research-skills-vs-sdar-paradigm.png)
 
 把两条路线的本质区别摊清楚：
 

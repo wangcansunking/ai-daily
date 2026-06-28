@@ -29,7 +29,7 @@ image_alt_match_ignore:
 
 # Mac Studio 跑 Kimi K2：192GB 是真门槛
 
-![Kimi K2 在 Mac Studio M3 Ultra 上跑两条引擎路线的封面](kimi-k2-mac-ultra-mlx-llamacpp-2026-05-21.png)
+![Kimi K2 在 Mac Studio M3 Ultra 上跑两条引擎路线的封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/kimi-k2-mac-ultra-mlx-llamacpp-2026-05-21/kimi-k2-mac-ultra-mlx-llamacpp-2026-05-21.png)
 
 5 月 20 日晚上把几个仓库的实数拉一下。Moonshot 团队的 Kimi-K2 主仓在 GitHub 上 10,786 star，当天 16:38 还在推送。Apple ML 团队那边，mlx 库 26,338 star，mlx-lm 5,374 star，当晚都有提交。llama.cpp 这一档归在 ggml-org 名下 111,810 star，晚 21:01 推送一次。HuggingFace 上 `moonshotai/Kimi-K2-Instruct` 上月下载 81.4 万次，1T 参数 / 32B 激活 / 128K 上下文，BF16 原生 2.05TB，4-bit GGUF（UD-Q4_K_XL）落到 587GB。
 
@@ -39,7 +39,7 @@ image_alt_match_ignore:
 
 下面这张矩阵把读者最关心的"我家 Mac 能跑 Kimi K2 吗"摊开。
 
-![Kimi K2 在三档 Mac 上 MLX 与 llama.cpp 的位置图](kimi-mac-position-matrix.png)
+![Kimi K2 在三档 Mac 上 MLX 与 llama.cpp 的位置图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/kimi-k2-mac-ultra-mlx-llamacpp-2026-05-21/kimi-mac-position-matrix.png)
 
 | 配置 | MLX-LM | llama.cpp + GGUF | 实测预期 |
 |---|---|---|---|
@@ -51,7 +51,7 @@ image_alt_match_ignore:
 
 数字摊开后翻译成一句判断：**Kimi K2 在 Mac 上不是"跑得动 vs 跑不动"的二元问题，是"统一内存够不够吃下量化文件"的容量问题。192GB 是入门门槛，512GB 才是舒适档；想从 128GB 硬挤一套，要接受磁盘换页带来的 1-3 tok/s 体验。**
 
-![Kimi K2 在 Hugging Face 上的官方模型卡 banner](kimi-k2-hf-banner.png)
+![Kimi K2 在 Hugging Face 上的官方模型卡 banner](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/kimi-k2-mac-ultra-mlx-llamacpp-2026-05-21/kimi-k2-hf-banner.png)
 
 Hugging Face 上 `moonshotai/Kimi-K2-Instruct` 的模型卡顶图——Moonshot 团队在 7 月开源时给的官方视觉。模型卡下方明确写："1T 总参数 / 32B 激活 / 128K 上下文 / Modified MIT 许可"，BF16 + F8_E4M3 两种张量类型同时发布。这个许可特别值得注意：**Modified MIT 不是 Apache 2.0 也不是真正的 MIT，是 Moonshot 在 MIT 基础上加了一段"如果月活用户超过 1 亿，需向 Moonshot 申请商用许可"的条款**——对绝大多数读者来说完全无感，对要做大规模 SaaS 产品的团队需要先看协议条款。
 
@@ -112,7 +112,7 @@ llama.cpp 在 ggml-org 名下的 111,810 star 排名远高于 mlx，2026 年 5 �
 
 `unsloth/Kimi-K2-Instruct-GGUF` 是社区做得最系统的一份量化仓，上月下载 30,359 次，是 MLX 2-bit 仓的 137 倍——可见 **GGUF 仍是国内外 K2 本地玩家的主流路径**。
 
-![Kimi K2-Instruct GGUF 各量化档位文件大小](kimi-quant-sizes.png)
+![Kimi K2-Instruct GGUF 各量化档位文件大小](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/kimi-k2-mac-ultra-mlx-llamacpp-2026-05-21/kimi-quant-sizes.png)
 
 这张图把所有量化档摆开。读者直接抓三条参考线就够用：
 
@@ -170,7 +170,7 @@ Unsloth 文档明确写了关键参数：**`LLAMA_SET_ROWS=1` 环境变量能给
 
 翻译过来：要在 Mac 上跑 Q4 全量 Kimi K2 拿到真正可用速度，**单机 512GB 是基础线，双机 512GB 是舒适线**。
 
-![llamacpp 主仓库 5 月最新推送状态](llamacpp-gh-og.png)
+![llamacpp 主仓库 5 月最新推送状态](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/kimi-k2-mac-ultra-mlx-llamacpp-2026-05-21/llamacpp-gh-og.png)
 
 llama.cpp 的另一个工程优势是**社区把 MoE expert offload 这件事做得最系统**：可以把部分 expert 权重放统一内存里、部分放 SSD swap，比 MLX 在边缘场景更鲁棒。Unsloth 文档里给的策略是 `--fit on` + `LLAMA_SET_ROWS=1`，让 llama.cpp 自动判断哪些 expert 高频活跃、哪些常驻磁盘也无碍。
 
@@ -180,7 +180,7 @@ llama.cpp 的另一个工程优势是**社区把 MoE expert offload 这件事做
 
 Jeff Geerling 在 2025 年 12 月做了一次广泛传播的实测：四台 Mac Studio M3 Ultra（每台 512GB 统一内存，合计 2TB）通过 Thunderbolt 5 互联，用 Exolabs 的 Exo 1.0 做分布式推理 + MLX 后端，跑 Kimi K2 Thinking 拿到约 **28 tokens/s 生成速度，整套系统峰值功耗 500W 以内**。
 
-![不同硬件配置跑 Kimi K2 的生成速度对比](kimi-tokens-per-sec.png)
+![不同硬件配置跑 Kimi K2 的生成速度对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/kimi-k2-mac-ultra-mlx-llamacpp-2026-05-21/kimi-tokens-per-sec.png)
 
 把这张速度图和上面的量化档位图放一起看，**Mac 路线真正能进入 15 tok/s 阅读舒适线的，要么是 M3 Ultra 512GB 4-bit 全量、要么是多机 Exo 集群**。192GB 单机能拿到 5-10 tok/s 区间——能用，但和云端 API 的 50-100 tok/s 体验差距明显。
 
@@ -190,7 +190,7 @@ Exo 集群这条路有个反直觉的工程细节值得注意：**Thunderbolt 5 
 
 四机 Mac Studio M3 Ultra 512GB 这套配置在欧洲市场大约 47,000 欧元——是科研机构或工作室级别的预算，不是个人开发者的常规选项。**它的意义不在"普通人能不能买"，在"它证明了 Kimi K2 这种 1T MoE 模型在桌面统一内存架构上的工程路径是通的"**。
 
-![Kimi K2 在 GitHub 上的 MoonshotAI 主仓库视觉](kimi-k2-gh-og.png)
+![Kimi K2 在 GitHub 上的 MoonshotAI 主仓库视觉](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/kimi-k2-mac-ultra-mlx-llamacpp-2026-05-21/kimi-k2-gh-og.png)
 
 把 Geerling 这次集群实测的工程意义再说细一点。28 tok/s 在云端 API 标准下不算快——Kimi 官方 API 实测 50-100 tok/s 是常态——但**这是在四台桌面级机器、500W 总功耗、不到 5 万欧元一次性投入的前提下达成的**。对比传统跑 1T 模型的方式（8×H100 80GB 服务器，几十万美元 + 数千瓦功耗），桌面集群把成本降了一个数量级。
 
@@ -202,7 +202,7 @@ Exo 集群这条路有个反直觉的工程细节值得注意：**Thunderbolt 5 
 
 国内拉 K2 权重不需要梯子。两条主路径都已经稳定，写本文时实测均能跑通。
 
-![国内拉 Kimi K2 权重的两条主要路径](kimi-download-paths.png)
+![国内拉 Kimi K2 权重的两条主要路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/kimi-k2-mac-ultra-mlx-llamacpp-2026-05-21/kimi-download-paths.png)
 
 **路径一：魔搭 ModelScope**
 

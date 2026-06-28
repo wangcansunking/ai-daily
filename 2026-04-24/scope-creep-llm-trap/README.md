@@ -1,6 +1,6 @@
 # LLM 写一小时，代码全删了——Kevin Lynagh 的"Scope Creep 守恒定律"
 
-![AI scope creep 陷阱封面](ai-scope-creep-cover.png)
+![AI scope creep 陷阱封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/scope-creep-llm-trap/ai-scope-creep-cover.png)
 
 > **HackerNews 288 票、27 条顶层讨论，国内零翻译零解读**。Kevin Lynagh 估计"用 LLM 几小时搞定"的 Emacs 插件，最后花了一整天，LLM 写的代码**全删了**。他在 2026-04-20 的 newsletter 里甩出一句话，比任何 AI coding 教程都更值得贴在显示器边上。Kevin 是阿姆斯特丹的 UI 设计师，做过 UI 设计工具 Subform 和 ClojureScript 数据可视化库 C2。
 
@@ -82,7 +82,7 @@ LLM 的问题不是不够聪明，是**太好用了**。"顺便加一下 anchor"
 
 人脑稀缺的是**注意力**，不是手速。AI 把手速拉上去了好几档，注意力的总量却没涨——**省下来的时间会被全部花在不该加的功能上**。
 
-![Scope Creep 守恒定律 · 避坑三条](scope-creep-three-rules.png)
+![Scope Creep 守恒定律 · 避坑三条](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/scope-creep-llm-trap/scope-creep-three-rules.png)
 
 ---
 

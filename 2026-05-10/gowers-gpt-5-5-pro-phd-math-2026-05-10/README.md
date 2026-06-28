@@ -21,7 +21,7 @@ tags:
 
 # 菲尔兹奖得主实测 GPT-5.5 Pro 解博士级数学题
 
-![Gowers 实测 GPT-5.5 Pro 17 分 5 秒时间轴](gowers-gpt55-pro-timeline.png)
+![Gowers 实测 GPT-5.5 Pro 17 分 5 秒时间轴](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/gowers-gpt-5-5-pro-phd-math-2026-05-10/gowers-gpt55-pro-timeline.png)
 
 **17 分 5 秒，一道五月份没人解出的开放题被 GPT-5.5 Pro 独立做了出来。** 5 月 8 日，剑桥三一学院的菲尔兹奖得主 Timothy Gowers 在自己用了快二十年的 wordpress 博客上贴出一篇标题朴素的短文「A recent experience with ChatGPT 5.5 Pro」。当晚被搬上 Hacker News，24 小时内冲到 540+ 分、近 400 条评论。
 
@@ -63,7 +63,7 @@ Gowers 给质量定调那一段需要逐字看：
 
 直译：「我会把 ChatGPT 在两小时内找到的这个结果的水平，判为组合学博士论文里完全合理的一章。」他后面又补了一句更具体的限制：「Had the result been produced by a human mathematician, it would definitely have been publishable... but it seems pointless even to think about putting it in a journal.」——如果这个结果是人写的，绝对够得上学术期刊发表标准；但既然它是 LLM 几分钟跑出来的，再投期刊就没意义了。这句话本身就是对模型水准的一次冷静校准。
 
-![Nathanson 问题与 GPT-5.5 Pro 给出的二次上界对照](gowers-nathanson-problem-solved.png)
+![Nathanson 问题与 GPT-5.5 Pro 给出的二次上界对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/gowers-gpt-5-5-pro-phd-math-2026-05-10/gowers-nathanson-problem-solved.png)
 
 值得对比的另一组锚点是同一份配套论文里的整体规模。这次实测案例其实是论文 [arXiv:2511.16072 「Early science acceleration experiments with GPT-5」](https://arxiv.org/abs/2511.16072) 里的一章。那篇 89 页的论文 2025 年 11 月 20 日上线，14 位作者署名，包括 Sébastien Bubeck（OpenAI 副总裁，前微软研究院高级研究员）、Christian Coester、Ronen Eldan、Timothy Gowers、Mehtaab Sawhney（MIT 数学系）、Mark Sellke、Yin Tat Lee 等。摘要里关键句：
 
@@ -101,7 +101,7 @@ Gowers 给质量定调那一段需要逐字看：
 
 陶哲轩在 [量子位 2025 年 9-10 月报道](https://www.qbitai.com/2025/10/340468.html) 和他自己的 Mastodon 账号上多次说过近似的话：当前 AI 模型最适合 Erdős 问题列表的「**长尾**」——大约只有一两成的开放题足够简单，AI 能在最少人工介入下独立解出。陶哲轩观察到一个重要现象：「**数学正在从证明稀缺时代进入证明过剩时代**」。AI 对 Erdős 问题贡献的 GitHub 页面上，「待评估」那一栏堆着 20 多份 AI 提交的全部或部分解，而此前这个分类常年只有一两份。他还坦率承认，自己用上 AI 之后，核心数学工作其实并没有快多少——加速的是整理和点子推送，最后的难关仍然只能人去啃。
 
-![Erdős 问题待评估提交激增示意](gowers-erdos-queue-surge.png)
+![Erdős 问题待评估提交激增示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/gowers-gpt-5-5-pro-phd-math-2026-05-10/gowers-erdos-queue-surge.png)
 
 Gowers 5 月 8 日博文里有一句和陶哲轩这一观察非常合拍的发言：
 
@@ -109,7 +109,7 @@ Gowers 5 月 8 日博文里有一句和陶哲轩这一观察非常合拍的发�
 
 「数学贡献的下限，现在要变成『证明 LLM 也证不出的东西』。」配合他另一句对学界招生的提醒——「It is no longer enough that somebody asks a problem: it needs to be hard enough for an LLM not to be able to solve it」（现在仅仅有人问出一个问题已经不够了，问题要难到 LLM 解不出才行）——你会看到顶级研究者的注意力正在从「**完成更多结果**」转向「**找到更值得做的问题**」。这是 AI 协作给学术界带来的最实在的红利之一。
 
-![顶级数学家对 AI 协作的态度光谱](gowers-mathematicians-stance.png)
+![顶级数学家对 AI 协作的态度光谱](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/gowers-gpt-5-5-pro-phd-math-2026-05-10/gowers-mathematicians-stance.png)
 
 国内数学界对此的接受度其实比舆论想象的要高。2026 年初澎湃新闻、量子位多次报道过陶哲轩在播客和访谈里给出的判断：「**广度归于 AI，深度留给人类**」。中国科学院数学所、北大、清华、复旦的不少研究小组已经把 GPT-5.x、DeepSeek-Math-V2、GLM-5 当作日常的「证明助手」——整理粗草稿、检验文献遗漏、跑大量计算实验。颁奖与定理署名仍归人类研究者，这条共识并没有动摇。可以说：**国内数学家圈对这件事的态度，与 Gowers / 陶哲轩这一档欧美同行高度同步——温暖坚毅地把 AI 当成加速器，而不是焦虑地把它当作威胁。**
 
@@ -117,7 +117,7 @@ Gowers 5 月 8 日博文里有一句和陶哲轩这一观察非常合拍的发�
 
 Gowers 用的是 GPT-5.5 Pro。国内开发者做数学/物理/化学/生物科研，手头能直接用的国产模型在公开口径下报到什么数字？下面这一节把厂商自报与论文声称的数据按出处汇总，**所有数字均为厂商或论文方公开口径，独立第三方复测尚在进行中**，请按"厂商口径"读，不要当作中立 benchmark。
 
-![国内外大模型数学能力厂商自报数据汇总](gowers-frontier-math-benchmarks.png)
+![国内外大模型数学能力厂商自报数据汇总](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/gowers-gpt-5-5-pro-phd-math-2026-05-10/gowers-frontier-math-benchmarks.png)
 
 | 模型 | 厂商声称数据 | 来源（均为厂商自报，未独立验证） |
 |---|---|---|
@@ -138,7 +138,7 @@ Gowers 用的是 GPT-5.5 Pro。国内开发者做数学/物理/化学/生物科�
 
 ## 六、按场景选型：国内做基础科研的四种用法
 
-![国内做基础科研的四档场景与模型组合](gowers-scenario-matrix.png)
+![国内做基础科研的四档场景与模型组合](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/gowers-gpt-5-5-pro-phd-math-2026-05-10/gowers-scenario-matrix.png)
 
 做数学、物理、化学、生物方向的科研，把 LLM 用起来，国内开发者手头有这几种现实路径：
 
@@ -154,7 +154,7 @@ Gowers 用的是 GPT-5.5 Pro。国内开发者做数学/物理/化学/生物科�
 
 ## 七、研究工作流的真实变化：从单线到多线并行
 
-![单线作坊到多线并行的研究工作流](gowers-workflow-transformation.png)
+![单线作坊到多线并行的研究工作流](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/gowers-gpt-5-5-pro-phd-math-2026-05-10/gowers-workflow-transformation.png)
 
 把 Gowers 这次实测、陶哲轩的 Erdős 列表观察、国产模型的 benchmark 数据合到一起看，国内一线研究小组的工作流已经在变化。一年前的典型场景是：一个博士生抱着一个开放题啃半年，导师每周组会拍一次进度。现在很多组的现状是：博士生上午把昨晚生成的多份 LaTeX 草稿跟模型一起核一遍，下午用 GLM-5 跑长综述把方法论摘清楚，晚上让 DeepSeek V4 Pro 复跑数值实验。一个人的有效产出从「一条线」变成「三条线并行」，深度判断和最终把关仍归人。
 

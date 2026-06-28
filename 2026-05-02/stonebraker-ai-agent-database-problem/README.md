@@ -13,7 +13,7 @@ cover: "stonebraker-ai-agent-database.png"
 
 > 公开 benchmark 80%+，真实数据仓库 0%——图灵奖得主 Mike Stonebraker 把 LLM 写 SQL 的两套数据摆出来，并直接告诉同行：AI Agent 一旦从只读走向读写，就回到事务、一致性、原子性这三个老问题。
 
-![封面](stonebraker-ai-agent-database.png)
+![封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/stonebraker-ai-agent-database-problem/stonebraker-ai-agent-database.png)
 
 ## 事件本身：4 月 30 日的一段长访谈
 
@@ -53,7 +53,7 @@ read-write Agent 不一样。Stonebraker 在访谈里举的例子很具体：
 
 四个场景共同点：**Agent 的动作直接落到了一个有状态的系统上**，错了无法靠"刷新页面重来"撤销。这正好是事务（Transaction）这个概念被发明出来要解决的问题——把一组操作打包成原子单元，要么全部成功，要么全部回滚，过程中的中间态不被外部观察到。
 
-![read-only vs read-write Agent 对比](stonebraker-readonly-vs-readwrite.png)
+![read-only vs read-write Agent 对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/stonebraker-ai-agent-database-problem/stonebraker-readonly-vs-readwrite.png)
 
 Stonebraker 的提醒可以拆成三条：
 
@@ -81,7 +81,7 @@ Stonebraker 把团队过去半年做的一组实验摆了出来——**Beaver �
 | Beaver + 直接给出 join 条件 | 约 30-35% |
 | 熟手人类工程师 | 90%+ |
 
-![LLM 写 SQL 准确率](stonebraker-llm-sql-accuracy.png)
+![LLM 写 SQL 准确率](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/stonebraker-ai-agent-database-problem/stonebraker-llm-sql-accuracy.png)
 
 Stonebraker 给了一段非常工程师的解释：
 

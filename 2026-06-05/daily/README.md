@@ -11,7 +11,7 @@ description: "今天三条主线都在为‘把 AI 用得更久、更扎实、�
 
 # ChatGPT 学会「边睡边记」· 英伟达开源最强模型仍输 Kimi · CVPR 拆深度学习老地基 | AI 日报 | 2026-06-05
 
-![ChatGPT 做梦记忆推送免费用户、CVPR 重估深度学习地基、英伟达开源 550B 仍落后 Kimi 三线并进](05.png)
+![ChatGPT 做梦记忆推送免费用户、CVPR 重估深度学习地基、英伟达开源 550B 仍落后 Kimi 三线并进](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/daily/05.png)
 
 ## 📋 头版目录
 
@@ -40,7 +40,7 @@ description: "今天三条主线都在为‘把 AI 用得更久、更扎实、�
 
 ### 头条 1 · OpenAI 让 ChatGPT「边睡边记」，免费用户第一次用上持久记忆
 
-![ChatGPT 记忆做梦机制：免费用户算力降到约五分之一、Plus 与 Pro 记忆容量翻倍](chart-chatgpt-dreaming-memory-2026-06-05.png)
+![ChatGPT 记忆做梦机制：免费用户算力降到约五分之一、Plus 与 Pro 记忆容量翻倍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/daily/chart-chatgpt-dreaming-memory-2026-06-05.png)
 
 > 来源：OpenAI 官网说明页 [1]，9to5Mac 报道 [2]
 
@@ -62,7 +62,7 @@ description: "今天三条主线都在为‘把 AI 用得更久、更扎实、�
 
 ### 头条 2 · CVPR 2026 开幕：深度学习用了多年的「标准件」被逐个重写，浙大 SegQuant 代表国内贡献
 
-![CVPR 2026 重估深度学习底层默认件、浙大 SegQuant 自动量化框架入选的报道](source-cvpr-segquant-sina-2026-06-05.png)
+![CVPR 2026 重估深度学习底层默认件、浙大 SegQuant 自动量化框架入选的报道](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/daily/source-cvpr-segquant-sina-2026-06-05.png)
 
 > 来源：雷锋网报道（新浪科技转载）[3]
 
@@ -70,7 +70,7 @@ description: "今天三条主线都在为‘把 AI 用得更久、更扎实、�
 
 #### 头条 2.1 · 从 1 比特注意力到自动量化，五处底层默认设计都在被翻新
 
-![CVPR 2026 五篇代表论文重写注意力归一化可逆性，BinaryAttention 比 FlashAttention2 快两倍](chart-cvpr-five-papers-2026-06-05.png)
+![CVPR 2026 五篇代表论文重写注意力归一化可逆性，BinaryAttention 比 FlashAttention2 快两倍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/daily/chart-cvpr-five-papers-2026-06-05.png)
 
 最抓眼球的一篇是 BinaryAttention：它把注意力里的 Q、K 两个矩阵压成 1 比特的符号，用 XNOR 加 popcount 这两个位运算，替掉了原来的浮点矩阵乘法。结果是在 A100 显卡上，比目前主流的 FlashAttention2 还快两倍以上 [3]。另外几篇也各拆一处默认设计：JiT 论证直接预测干净图像比预测噪声在几何上更优；BiFlow 放弃严格可逆的约束、改用一个独立学的反向模型做近似逆映射；Derf 干脆用一个基于误差函数的逐点非线性，替掉了归一化层。
 
@@ -84,7 +84,7 @@ description: "今天三条主线都在为‘把 AI 用得更久、更扎实、�
 
 ### 头条 3 · 英伟达开源 550B 的 Nemotron 3 Ultra：最快的美国开源前沿模型，综合智能仍落后中国
 
-![NVIDIA Nemotron 3 Ultra 550B 开源前沿模型发布的报道](source-nemotron3-ultra-2026-06-05.png)
+![NVIDIA Nemotron 3 Ultra 550B 开源前沿模型发布的报道](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/daily/source-nemotron3-ultra-2026-06-05.png)
 
 > 来源：英伟达 Nemotron 研究页 [4]，MarkTechPost 报道 [5]，Artificial Analysis 横评 [6]
 
@@ -92,7 +92,7 @@ description: "今天三条主线都在为‘把 AI 用得更久、更扎实、�
 
 #### 头条 3.1 · 吞吐快，权重也是真开放
 
-![NVIDIA Nemotron 3 Ultra 推理吞吐相对 GLM-5.1 高 5.9 倍、智能指数 48 落后 Kimi K2.6 的 54](chart-nemotron3-ultra-throughput-2026-06-05.png)
+![NVIDIA Nemotron 3 Ultra 推理吞吐相对 GLM-5.1 高 5.9 倍、智能指数 48 落后 Kimi K2.6 的 54](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/daily/chart-nemotron3-ultra-throughput-2026-06-05.png)
 
 Nemotron 3 Ultra 最硬的指标是速度。在 8k 输入、64k 输出的设定下，它的推理吞吐相对 GLM-5.1-754B 高 5.9 倍、相对 Kimi-K2.6-1T 高 4.8 倍、相对 Qwen-3.5-397B 高 1.6 倍，而准确率与这几款顶尖开源模型大致持平 [4]。更值得开发者注意的是开放程度：权重、训练数据和配方一起按 OpenMDW-1.1 许可放出，HuggingFace、OpenRouter、ModelScope 和英伟达自家的 NIM 当天就能取，允许商用 [5]。混合架构带来的次二次方扩展，让它在长任务上比纯注意力模型更省，这正是智能体长时间运行最吃紧的地方。
 
@@ -130,7 +130,7 @@ Nemotron 3 Ultra 最硬的指标是速度。在 8k 输入、64k 输出的设定�
 
 - **阿里 AgentScope 的国产个人助手 QwenPaw 新增子智能体拆分**：QwenPaw 是一款本地或云端都能装的个人 AI 助手，能接进多个聊天应用、能力可扩展，背后是阿里的 AgentScope 团队 [9]。它最近的 v1.1.10 版本加了两件实事：一是支持派生子智能体，让助手把一个大任务拆成几个小任务分头去办；二是接入了腾讯元宝渠道。把"派生子智能体"做进一个面向普通人的本地助手，意味着国产个人助手开始从"一问一答"走向"自己拆活、分步办完"，正好踩在个人 AI 助手这条最高权重的线上。
 
-![阿里 AgentScope 的国产个人助手 QwenPaw 新增子智能体拆分、星标约 1.7 万的仓库卡](source-github-qwenpaw-2026-06-05.png)
+![阿里 AgentScope 的国产个人助手 QwenPaw 新增子智能体拆分、星标约 1.7 万的仓库卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/daily/source-github-qwenpaw-2026-06-05.png)
 
 - **华为 KVarN 给推理引擎 vLLM 补上原生 KV 缓存量化**：上面快讯提到的 KVarN，对国内做本地部署的人格外有用 [18]。它直接把 KV 缓存量化做进 vLLM 的原生后端，免标定、一行开关，就能在同样的显存里塞下三到五倍的上下文。对在自己机器上跑长文档、长对话的国内开发者，这是实打实的省显存——上下文一长，吃显存最凶的往往就是 KV 缓存，把它压下来等于变相扩了显存。开源、能直接接现成的 vLLM，是它落地门槛低的关键。
 
@@ -142,11 +142,11 @@ Nemotron 3 Ultra 最硬的指标是速度。在 8k 输入、64k 输出的设定�
 
 - 🔴 **chopratejas/headroom（约 1.24 万星）**：专门在内容进大模型前先压缩工具输出、日志和检索片段，号称在真实负载上省下六到九成词元、答案不变；既是库，也能当代理和 MCP 服务器用 [7]。6 月 4 至 5 日登上 GitHub 单日趋势榜首，单日涨约三千星。给智能体省词元是这周最热的主题，它正好踩中。
 
-![开源项目 headroom 登上 GitHub 单日趋势榜首、星标约 1.24 万的仓库卡](source-github-headroom-2026-06-05.png)
+![开源项目 headroom 登上 GitHub 单日趋势榜首、星标约 1.24 万的仓库卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/daily/source-github-headroom-2026-06-05.png)
 
 - 🔴 **openclaw/openclaw（约 37.7 万星）**：跨任意操作系统帮你把日常事务真正办完的开源个人助手，仍是个人 AI 助手赛道里最大的项目 [8]。它定义的那张"能装、能常驻、能办完活"的能力清单，现在是国产几款助手对标的参照系。
 
-![开源个人助手 OpenClaw 越过 37 万星、仍是个人 AI 助手最大项目的仓库卡](source-github-openclaw-2026-06-05.png)
+![开源个人助手 OpenClaw 越过 37 万星、仍是个人 AI 助手最大项目的仓库卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/daily/source-github-openclaw-2026-06-05.png)
 
 - 🟡 **github/spec-kit（约 10.9 万星）**：GitHub 官方的"规格驱动开发"工具包，把一份规格说明转成智能体能执行的实现计划 [20]。当 AI 生成的代码越来越多、也越来越乱，先写清规格再让智能体落地的做法重新被重视。
 

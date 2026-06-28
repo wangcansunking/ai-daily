@@ -4,7 +4,7 @@
 >
 > 最近更新：2026-04-22 · 双版本输出 + 表格转图 + 封面像素词边界修复
 
-![每天自动写一份 AI 日报 · 工程手册](how-to-write-cover.png)
+![每天自动写一份 AI 日报 · 工程手册](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-22/how-to-write-ai-daily-report/how-to-write-cover.png)
 
 ---
 

@@ -16,7 +16,7 @@ source_links:
 
 # DeepClaude 把 Claude Code 大脑换成 DeepSeek
 
-![DeepClaude 用本地代理把 Claude Code 接到 DeepSeek V4 Pro](deepclaude-claude-code-deepseek-proxy.png)
+![DeepClaude 用本地代理把 Claude Code 接到 DeepSeek V4 Pro](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/deepclaude-claude-code-deepseek-v4-pro-proxy/deepclaude-claude-code-deepseek-proxy.png)
 
 > 1024 stars（实测 2026-05-05，7 天破千）、HN 头页 630 分、Top 5、单作者一周内打磨成型。aattaran/deepclaude 不发模型、不写新 CLI，只在你本机起一个 `localhost:3200` 代理——把 Claude Code 原本要发给 Anthropic 的 API 调用半路截下，转给 DeepSeek V4 Pro、OpenRouter 或 Fireworks AI。Claude Code 的 ToolUse 流、文件 Edit、bash、git、子 agent 一样都不少；输出 token 单价从 Claude Opus 4.7 \$15/M 降到 DeepSeek V4 Pro 折扣期 \$0.87/M（**75% off 至 2026-05-31**），差 17 倍；折扣结束后回到标准价 \$1.74/M，差仍有 8-9 倍。
 
@@ -82,7 +82,7 @@ flowchart LR
 
 代理内部还暴露了 4 个控制端点——`/_proxy/mode`（POST 切换后端）、`/_proxy/status`（GET 看当前状态）、`/_proxy/cost`（GET 看累计 token / 节省金额）、其它路径全部 passthrough 透传回 Anthropic。也就是说，认证 / billing / sub-agent 这类杂项调用照样走 Anthropic，只有真正烧 token 的 `/v1/messages` 主推理被换走。
 
-![DeepClaude proxy 架构 · 5 个端点速查](deepclaude-proxy-endpoints.png)
+![DeepClaude proxy 架构 · 5 个端点速查](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/deepclaude-claude-code-deepseek-v4-pro-proxy/deepclaude-proxy-endpoints.png)
 
 最有意思的是 `/_proxy/mode` 这个端点。作者把它做成了 Claude Code 内的 slash command——`~/.claude/commands/` 下放三个 markdown 文件 `deepseek.md` / `anthropic.md` / `openrouter.md`，每个里面就一行 `curl -sX POST http://127.0.0.1:3200/_proxy/mode -d "backend=deepseek"`。在 Claude Code 会话里输入 `/deepseek` 就实时切换，无需重启。
 
@@ -92,7 +92,7 @@ flowchart LR
 
 把 DeepClaude 放回市场坐标系——它不是孤例。"用 Claude Code 跑国产 / 开源模型"这条路至少有四种主流走法。
 
-![Claude Code 跑国产模型 · 四种接法横评](deepclaude-four-routes-comparison.png)
+![Claude Code 跑国产模型 · 四种接法横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/deepclaude-claude-code-deepseek-v4-pro-proxy/deepclaude-four-routes-comparison.png)
 
 四种方案的差异化点拆开看——
 
@@ -138,7 +138,7 @@ DeepClaude README 在「What works and what doesn't」一节给出了诚实的�
 
 把 DeepClaude 放到国内开发者的实际网络环境里，能用的后端不止 DeepSeek 官方一家。
 
-![国内开发者实操：DeepSeek V4 Pro 三条接入路径](deepclaude-china-routes.png)
+![国内开发者实操：DeepSeek V4 Pro 三条接入路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/deepclaude-claude-code-deepseek-v4-pro-proxy/deepclaude-china-routes.png)
 
 **渠道一：DeepSeek 官方 API**——`platform.deepseek.com`。注册一个账号、充值人民币、拿 API key、`export DEEPSEEK_API_KEY=sk-...`、`deepclaude` 命令直接跑起来。这是最直接的路径，国内网络访问 DeepSeek 官方完全顺畅。月度成本估算（25 天重度使用、cache 命中后）大约 ¥350——是 Claude Sonnet 走 Anthropic 走代理走出去的 1/6 还不止。
 

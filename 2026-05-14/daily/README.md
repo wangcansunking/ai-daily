@@ -26,7 +26,7 @@ cover: 14.png
 
 # Qwen 林俊旸 20 亿独立 · 百度立 DAA | AI 日报 | 2026-05-14
 
-![Qwen 林俊旸 20 亿独立创业 · 百度立 DAA · k10s 弃 vibe coding 三轨共振](14.png)
+![Qwen 林俊旸 20 亿独立创业 · 百度立 DAA · k10s 弃 vibe coding 三轨共振](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/daily/14.png)
 
 ## 📋 头版目录（一屏扫完今日）
 
@@ -63,7 +63,7 @@ cover: 14.png
 
 ## 🔥 头条：林俊旸 20 亿独立 · 百度立 DAA · k10s 弃 vibe——AI 行业三个动作同周发生
 
-![Qwen 林俊旸 startup 20 亿种子轮卡位 · 国产开源 lab 去中心化时代](lin-junyang-qwen-startup-2026-05-14.png)
+![Qwen 林俊旸 startup 20 亿种子轮卡位 · 国产开源 lab 去中心化时代](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/daily/lin-junyang-qwen-startup-2026-05-14.png)
 
 5/13 这一天，中国 AI 和海外 AI 在三个不同维度同时进了一步：
 
@@ -99,7 +99,7 @@ cover: 14.png
 
 ### 二、李彦宏立 DAA：AI 时代的尺子换了一把
 
-![百度 Create 2026 李彦宏首提 DAA · DuMate 百度搭子统一入口](baidu-create2026-dumate-daa-2026-05-14.png)
+![百度 Create 2026 李彦宏首提 DAA · DuMate 百度搭子统一入口](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/daily/baidu-create2026-dumate-daa-2026-05-14.png)
 
 百度 Create 2026 大会上李彦宏的原话："Token 只代表成本，并不代表收益，衡量的是投入而不是产出。" 紧接着他抛出 **DAA · Daily Active Agents · 日活智能体数**，对标移动互联网时代的 DAU，并预测全球 DAA 未来可能超过 100 亿。地球人口 80 亿，每人配 1 个常用 Agent 就接近 100 亿，配 5 个就过 400 亿——这件事的算法上限很大。
 
@@ -119,7 +119,7 @@ DAA 把账算法换了：算"有多少 Agent 在替人交付结果"。秒哒 3.0
 
 ### 三、k10s 弃 vibe coding：AI Coding 进入"先架构后实现"阶段
 
-![k10s vibe coding 7 个月 234 commits collapse · AI 写功能不写架构](k10s-vibe-coding-collapse-2026-05-14.png)
+![k10s vibe coding 7 个月 234 commits collapse · AI 写功能不写架构](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/daily/k10s-vibe-coding-collapse-2026-05-14.png)
 
 海外这边 HN 5/12 顶贴是独立开发者 k10s 的 devlog《I'm going back to writing code by hand》——1006 分 607 评，连续 24 小时挂在首页。他承认 7 个月、**234 commits**、纯 Claude Code 协同跑下来的 GPU 版 k9s 项目最终需要归档：
 
@@ -178,7 +178,7 @@ DAA 把账算法换了：算"有多少 Agent 在替人交付结果"。秒哒 3.0
 
 ### 🔴 必读 · Needle 26M：手机端跑 Gemini Pro 同款 tool calling 的开源方案
 
-![Needle 26M tool call distill 蒸馏 Gemini Pro 到 14MB 装进手机](needle-26m-tool-call-distill-2026-05-14.png)
+![Needle 26M tool call distill 蒸馏 Gemini Pro 到 14MB 装进手机](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/daily/needle-26m-tool-call-distill-2026-05-14.png)
 
 Cactus Compute（YC 投资）开源 [cactus-compute/needle](https://github.com/cactus-compute/needle)（MIT，1234⭐）——把 Gemini 3.1 Pro 的 tool calling 蒸馏到 26M 参数 / INT4 量化 14MB 的"简化注意力网络"。HN 5/13 Show HN 帖 607 分 175 评。
 
@@ -188,7 +188,7 @@ Cactus Compute（YC 投资）开源 [cactus-compute/needle](https://github.com/c
 
 ### 🔴 必读 · 欧洲开发者集体搬 Forgejo：Copilot 默认开训之后的反击
 
-![Forgejo github copilot exodus 搬迁路线 自托管栈 KVM 五层隔离](forgejo-github-copilot-exodus-2026-05-14.png)
+![Forgejo github copilot exodus 搬迁路线 自托管栈 KVM 五层隔离](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/daily/forgejo-github-copilot-exodus-2026-05-14.png)
 
 GitHub 2026-04-24 起把 Copilot Free / Pro / Pro+ 的"交互数据"（输入提示、模型输出、被接受/修改的代码片段、文件上下文）**默认改成用于训练**——不点 opt-out 视同同意。同月 Forgejo 项目放出 v15.0 LTS（维护到 2027-07-15）。
 
@@ -200,7 +200,7 @@ GitHub 2026-04-24 起把 Copilot Free / Pro / Pro+ 的"交互数据"（输入提
 
 5/10 unix.foo 博客《Local AI Needs to be the Norm》冲到 HN 首页拿下 **1860 分 / 740 条评论**，连续两天首页停留。核心论证三件事：(1) 把功能做成"调一下海外大模型云端 API"不是发功能而是发分布式系统；(2) 口袋里的 silicon 已经比十年前服务器更快；(3) 用户信任不是靠 2000 字隐私政策而是靠"数据没离开过设备"建立的。
 
-![本地 AI 必为常态 local AI norm 国产端侧矩阵全景](local-ai-norm-2026-05-14.png)
+![本地 AI 必为常态 local AI norm 国产端侧矩阵全景](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/daily/local-ai-norm-2026-05-14.png)
 
 国内同行手里的牌：Ollama / llama.cpp / MLX 三栈成熟、Qwen3-30B-A3B / DeepSeek 蒸馏 7B / GLM-Edge / MiniCPM / 千问 0.6B / OpenClaw 都能扛起 80% 日常用法。完整价值观纲领与国产同档对位见 [本地 AI 才是个人 AI 终局：Ollama 与千问、DeepSeek](../../public/2026/05/14/local-ai-must-be-norm-2026-05-14.md)。
 
@@ -226,7 +226,7 @@ ChatGPT for Excel and Google Sheets 全球放开给 Business 用户，spreadshee
 
 ### 3 · 国产 AI IDE 接本地千问兼容矩阵：3 款开放 4 款锁死
 
-![cn ai ide local backend matrix 国产 AI IDE 接本地千问 endpoint 锁死开放对比](cn-ai-ide-local-backend-matrix-2026-05-14.png)
+![cn ai ide local backend matrix 国产 AI IDE 接本地千问 endpoint 锁死开放对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/daily/cn-ai-ide-local-backend-matrix-2026-05-14.png)
 
 一台 RTX 4090 跑 Qwen3-Coder-30B-A3B 当 AI Coding 后端，7 款国产 IDE 实测：
 
@@ -244,7 +244,7 @@ ChatGPT for Excel and Google Sheets 全球放开给 Business 用户，spreadshee
 
 ### 4 · 本地大模型 7×24 给团队跑：OpenClaw runbook 实战
 
-![cn local llm ops runbook 本地大模型 90 天稳定运行 systemd 守护 nginx 网关](cn-local-llm-ops-runbook-2026-05-14.png)
+![cn local llm ops runbook 本地大模型 90 天稳定运行 systemd 守护 nginx 网关](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/daily/cn-local-llm-ops-runbook-2026-05-14.png)
 
 国内 GPU 单卡 / 双卡机给小团队（5-15 人）跑 OpenClaw 后端的 90 天稳定运行手册：Ollama / vLLM / SGLang 三栈对比 + systemd 守护 + nginx 网关 + Prometheus 监控 + 周维 health check 全流程。完整 runbook 见 [本地大模型 7×24 给团队跑 OpenClaw runbook](../../public/2026/05/14/cn-local-llm-ops-runbook-2026-05-14.md)。
 

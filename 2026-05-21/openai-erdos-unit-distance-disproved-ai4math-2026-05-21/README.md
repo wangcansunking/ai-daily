@@ -35,7 +35,7 @@ source_urls:
 
 # OpenAI 模型反证 Erdős 80 年单位距离猜想：通用推理首次自主推翻领域核心开放题
 
-![OpenAI 反证 Erdős 单位距离猜想 水彩研究笔记封面 数学公式与单位距离点集](openai-erdos-unit-distance-disproved-ai4math-2026-05-21.png)
+![OpenAI 反证 Erdős 单位距离猜想 水彩研究笔记封面 数学公式与单位距离点集](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/openai-erdos-unit-distance-disproved-ai4math-2026-05-21/openai-erdos-unit-distance-disproved-ai4math-2026-05-21.png)
 
 ## 一句话先把这件事讲清楚
 
@@ -69,7 +69,7 @@ source_urls:
 
 ## 二、单位距离猜想为什么是「核心」
 
-![单位距离猜想 80 年关键节点时间线](erdos-timeline.png)
+![单位距离猜想 80 年关键节点时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/openai-erdos-unit-distance-disproved-ai4math-2026-05-21/erdos-timeline.png)
 
 ### 题目本身只有一行
 
@@ -93,7 +93,7 @@ OpenAI 官博的原话措辞很克制：「provides an infinite family of exampl
 
 ## 三、模型怎么自己走完这条证明路
 
-![Erdős 单位距离反证 OpenAI 模型证明五步流程 类域塔 Golod-Shafarevich proof pipeline](erdos-proof-pipeline.png)
+![Erdős 单位距离反证 OpenAI 模型证明五步流程 类域塔 Golod-Shafarevich proof pipeline](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/openai-erdos-unit-distance-disproved-ai4math-2026-05-21/erdos-proof-pipeline.png)
 
 OpenAI 公告里把模型自主走的链条交代得不算多，但关键节点全部点到。结合 scitechdaily 与 erdosproblems.com 第 90 号词条的补充信息，可以拼出五步推演的轮廓。
 
@@ -111,7 +111,7 @@ OpenAI 公告里把模型自主走的链条交代得不算多，但关键节点�
 
 ## 四、上下界 80 年的两道夹缝，被打开一道
 
-![单位距离上下界 80 年对比](erdos-bound-comparison.png)
+![单位距离上下界 80 年对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/openai-erdos-unit-distance-disproved-ai4math-2026-05-21/erdos-bound-comparison.png)
 
 把 80 年的上下界推进画到一张表上，会看到一个有点辛酸的事实：
 
@@ -125,7 +125,7 @@ OpenAI 模型选了那个冷门方向，并且选对了。这是这次结果最�
 
 ## 五、和此前几次 AI 数学进展的对照
 
-![Erdős 单位距离反证 AI 数学突破对照 IMO 金牌 728 comparison](erdos-ai-math-comparison.png)
+![Erdős 单位距离反证 AI 数学突破对照 IMO 金牌 728 comparison](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/openai-erdos-unit-distance-disproved-ai4math-2026-05-21/erdos-ai-math-comparison.png)
 
 要看清这次反证的位置，把过去两年的几个标志事件并排放一下。
 

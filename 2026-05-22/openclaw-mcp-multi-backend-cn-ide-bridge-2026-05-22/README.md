@@ -30,7 +30,7 @@ image_alt_match_ignore:
 
 # OpenClaw 把多模型与国产 IDE 接到一起：MCP 编排范式实测
 
-![OpenClaw MCP 多后端与国产 IDE 反向接入封面](openclaw-mcp-multi-backend-cn-ide-bridge-2026-05-22.png)
+![OpenClaw MCP 多后端与国产 IDE 反向接入封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/openclaw-mcp-multi-backend-cn-ide-bridge-2026-05-22/openclaw-mcp-multi-backend-cn-ide-bridge-2026-05-22.png)
 
 这周五 2026-05-22 早上，OpenClaw 主仓库 `openclaw/openclaw` 定格在 **373,751 Star、77,646 fork、7,403 open issue**，最新稳定版 `v2026.5.20` 在 5 月 21 日 20:44 Z 发出，半年来几乎一天一个 stable release。同一时刻 `modelcontextprotocol/servers` 在 **86,057 Star / 10,780 fork**，`cline/cline` 在 **62,147 Star**，`continuedev/continue` 在 **33,308 Star**，`BerriAI/litellm` 在 **47,840 Star**。把这四条数字摆在一起，能讲清楚一件已经发生但还没有被命名的事：**多模型后端、MCP 工具、国产 IDE 这三条线，第一次能在一台主机上被同一个进程串起来。**
 
@@ -42,7 +42,7 @@ image_alt_match_ignore:
 
 先把规模的位置钉死，再谈编排。
 
-![OpenClaw 主仓库 OpenGraph 截图](openclaw-gh.png)
+![OpenClaw 主仓库 OpenGraph 截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/openclaw-mcp-multi-backend-cn-ide-bridge-2026-05-22/openclaw-gh.png)
 
 `gh api repos/openclaw/openclaw` 当日返回的字段全在下表里，每一个都是实拉而不是估算：
 
@@ -188,7 +188,7 @@ openclaw mcp set <name> --command ... --args ... --env ...
 openclaw mcp unset <name>
 ```
 
-![MCP servers 仓库 OpenGraph 截图](mcp-servers-gh.png)
+![MCP servers 仓库 OpenGraph 截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/openclaw-mcp-multi-backend-cn-ide-bridge-2026-05-22/mcp-servers-gh.png)
 
 注册结果写到 `~/.openclaw/config.yaml` 的 `mcpServers` 节点，下面这个片段是本篇三个 case 用到的工具集合，可以直接抄：
 
@@ -244,7 +244,7 @@ openclaw acp
 
 把上面的编排能力翻译到桌面端，就要把 IDE 这一侧的配置摆清楚。下面是通义灵码、Trae、Cline、RooCode、千问 Code 五款国内开发者每天在用的客户端，每款的接入字段都按真实设置位置给出。
 
-![Cline 主仓库 OpenGraph 截图](cline-gh.png)
+![Cline 主仓库 OpenGraph 截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/openclaw-mcp-multi-backend-cn-ide-bridge-2026-05-22/cline-gh.png)
 
 ### 通义灵码（VSCode 插件，阿里）
 
@@ -269,7 +269,7 @@ openclaw acp
 
 ### RooCode（fork 自 Cline，24,124 Star）
 
-![RooCode 主仓库 OpenGraph 截图](roocode-gh.png)
+![RooCode 主仓库 OpenGraph 截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/openclaw-mcp-multi-backend-cn-ide-bridge-2026-05-22/roocode-gh.png)
 
 - API Provider 同样选 `OpenAI Compatible`
 - 三字段同上
@@ -350,7 +350,7 @@ OpenClaw 在这件事上的编排逻辑也是五步：
 
 GLM-4.6 这一步是这条 case 的关键。中文长文档翻译有一个普遍现象：模型直翻没问题，但读起来满满的「翻译味」。GLM 系列在中文母语任务上的偏好分数更高，把它放在最后一道做改写，比让 Qwen3 单模型做完所有事顺得多。**这种「多个模型分工跑同一份文档」的能力，在 5-19 那篇单后端方案里根本做不出来**。
 
-![LiteLLM 主仓库 OpenGraph 截图](litellm-gh.png)
+![LiteLLM 主仓库 OpenGraph 截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/openclaw-mcp-multi-backend-cn-ide-bridge-2026-05-22/litellm-gh.png)
 
 数据流上的几个实测数字：50 页 A4 扫描件 OCR 在 PaddleOCR 上耗时约 4 分钟；DeepSeek V4-Flash 在双 4090 + TP=2 上输入 80K token 输出 60K token 的整段对照翻译，总耗时约 11 分钟，全程生成速率维持在 30-50 token/s 区间；GLM-4.6 中文润色阶段输入输出都在 30K token 级别，约 6 分钟。一份合同 30 分钟内可检索化，全程零数据出网。
 

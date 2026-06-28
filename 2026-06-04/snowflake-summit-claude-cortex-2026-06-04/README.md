@@ -17,13 +17,13 @@ description: Snowflake Summit 26 上，Claude 成了 CoWork 和 CoCo 的基础�
 ---
 # Snowflake 把 Claude、千问微调和 MCP 一起缝进了企业数据栈
 
-![Snowflake Summit 26 现场，Anthropic 总裁 Daniela Amodei 与 Snowflake CEO Sridhar Ramaswamy 同台](snowflake-summit-claude-cortex-2026-06-04.png)
+![Snowflake Summit 26 现场，Anthropic 总裁 Daniela Amodei 与 Snowflake CEO Sridhar Ramaswamy 同台](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/snowflake-summit-claude-cortex-2026-06-04/snowflake-summit-claude-cortex-2026-06-04.png)
 
 当地时间 6 月 1 日下午 5 点，旧金山 Snowflake Summit 26 的开场主舞台上，坐着两个人：Snowflake CEO Sridhar Ramaswamy，和 Anthropic 总裁 Daniela Amodei。两人聊的不是某个新模型多强，而是一件更具体的事——**企业的智能体，应该直接长在数据所在的地方**。
 
 这场大会真正值得开发者看的，不是数据仓库本身又快了多少，而是三件事被同时摆上台：Claude 成了 Snowflake 两个核心智能体产品的基础模型；一个叫 Cortex Training 的服务，让你在托管 GPU 上直接微调千问（Qwen）、Mistral 这类开放模型；公司还宣布拟收购一家做 MCP（模型上下文协议）网关的公司 Natoma。
 
-![Snowflake Summit 26 keynote 现场，旧金山，逾两万人到场，AI 与智能体是全场主线](source-summit26-keynote-2026-06-04.png)
+![Snowflake Summit 26 keynote 现场，旧金山，逾两万人到场，AI 与智能体是全场主线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/snowflake-summit-claude-cortex-2026-06-04/source-summit26-keynote-2026-06-04.png)
 
 <small>来源：Snowflake Newsroom「Snowflake Makes AI Real at Snowflake Summit 26」配图</small>
 
@@ -37,7 +37,7 @@ description: Snowflake Summit 26 上，Claude 成了 CoWork 和 CoCo 的基础�
 - **Cortex Code 改名 CoCo**：定位是「让你更快开发的编码智能体」，这次新增了桌面端（CoCo Desktop）、移动端、Slack 机器人、VS Code 插件和 Excel 插件；
 - 两者背后，Claude 都是被点名的基础模型——按 Snowflake 与 Anthropic 的口径，**Claude 模型驱动 CoWork 和 CoCo**，Anthropic 成了这套智能体平台的基础模型方。
 
-![CoCo（原 Cortex Code）的桌面端，编码智能体从数据仓库里直接长出来](source-coco-desktop-2026-06-04.png)
+![CoCo（原 Cortex Code）的桌面端，编码智能体从数据仓库里直接长出来](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/snowflake-summit-claude-cortex-2026-06-04/source-coco-desktop-2026-06-04.png)
 
 <small>来源：Snowflake Newsroom「Snowflake CoCo Redefines Enterprise AI Development」2026-06-02</small>
 
@@ -64,7 +64,7 @@ Cortex Training 的做法是把训练这步直接放进数据所在地：
 - **数据不出门**：训练就在数据已经在的地方进行，不需要把敏感数据搬到外部环境；
 - **支持强化学习等技术**：让工程团队能用强化学习这类方法，做出在特定推理任务上比通用 API 模型更准的领域模型。
 
-![Snowflake 与 Anthropic 把合作推向生产环境，Claude 做基础模型，开放模型在 Cortex Training 里微调](source-anthropic-snowflake-partnership-2026-06-04.png)
+![Snowflake 与 Anthropic 把合作推向生产环境，Claude 做基础模型，开放模型在 Cortex Training 里微调](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/snowflake-summit-claude-cortex-2026-06-04/source-anthropic-snowflake-partnership-2026-06-04.png)
 
 <small>来源：Anthropic「Snowflake and Anthropic announce $200 million partnership」公告配图 2026-06-01</small>
 
@@ -94,7 +94,7 @@ Cortex Training 的做法是把训练这步直接放进数据所在地：
 
 补几个事实背景：Natoma 成立于 2024 年，团队 27 人，创始人 Pratyus Patnaik 此前把一家叫 atSpoke 的工作流公司卖给了 Okta。这笔收购**目前是「拟收购 / 已签署最终协议」状态**，Snowflake 没有披露金额，也没说预计何时完成。这个状态要标清楚——它还没正式落定。
 
-![chart：Snowflake 三件 AI 落子，分别对应数据栈的智能体层、模型层、工具接入层；右列是国内数据平台目前的对位状态](chart-snowflake-stack-layers-2026-06-04.png)
+![chart：Snowflake 三件 AI 落子，分别对应数据栈的智能体层、模型层、工具接入层；右列是国内数据平台目前的对位状态](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/snowflake-summit-claude-cortex-2026-06-04/chart-snowflake-stack-layers-2026-06-04.png)
 
 <small>来源：自制对位图，依据 Snowflake Newsroom、Anthropic 公告、SiliconANGLE 报道整理（Snowflake Summit 26）</small>
 
@@ -110,7 +110,7 @@ Cortex Training 的做法是把训练这步直接放进数据所在地：
 
 把镜头转回国内。Snowflake 这套打法，对国内的数据平台和国产模型托管，是一个很清楚的对位参照。客观摆几个对照点：
 
-![Snowflake 三层落子与国内数据平台对位状态对照](table-snowflake-vs-domestic-2026-06-04.png)
+![Snowflake 三层落子与国内数据平台对位状态对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/snowflake-summit-claude-cortex-2026-06-04/table-snowflake-vs-domestic-2026-06-04.png)
 
 <small>来源：自制对照表，依据 Snowflake Newsroom 与 SiliconANGLE 报道整理</small>
 

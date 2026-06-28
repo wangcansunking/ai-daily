@@ -7,7 +7,7 @@ description: "Qwen3.6-27B（dense, Apache 2.0, 2026-04-22 开源）SWE-bench Ver
 ---
 # 16.8 GB 装下 SWE 77.2：本地能否顶替 Claude
 
-![16.8 GB 装下 SWE 77.2：本地能否顶替 Claude](2026-04-27-qwen3.6-27b-local-coding.png)
+![16.8 GB 装下 SWE 77.2：本地能否顶替 Claude](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-27/qwen3.6-27b-local-coding/2026-04-27-qwen3.6-27b-local-coding.png)
 
 > **77.2 vs 80.8——SWE-bench Verified 上，本地 27B 距 Claude Opus 4.6 只差 3.6 分。** 16.8 GB 量化体积，单 RTX 4090 / 24 GB Mac 就能跑。Simon Willison 在普通笔记本上跑出 25.57 tok/s，原话是 *"an outstanding result for a 16.8GB local model"*。
 >
@@ -37,7 +37,7 @@ description: "Qwen3.6-27B（dense, Apache 2.0, 2026-04-22 开源）SWE-bench Ver
 
 直接看表：
 
-![SWE-bench Verified 对比](qwen3.6-27b-swe-comparison.png)
+![SWE-bench Verified 对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-27/qwen3.6-27b-local-coding/qwen3.6-27b-swe-comparison.png)
 
 *数据来源：HF Qwen3.6-27B 模型卡 / Anthropic 官方 / DeepSeek 官方文档 / Moonshot 官方博客 / OpenRouter，全部 2026-04-27 抓取*
 
@@ -66,7 +66,7 @@ description: "Qwen3.6-27B（dense, Apache 2.0, 2026-04-22 开源）SWE-bench Ver
 
 ## 16.8 GB 能不能跑起来：硬件门槛 + Simon Willison 实测
 
-![硬件门槛](qwen3.6-27b-hardware-tiers.png)
+![硬件门槛](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-27/qwen3.6-27b-local-coding/qwen3.6-27b-hardware-tiers.png)
 
 *量化档位来源：bartowski/Qwen_Qwen3.6-27B-GGUF（HF 实测）+ Unsloth 官方文档*
 
@@ -108,7 +108,7 @@ description: "Qwen3.6-27B（dense, Apache 2.0, 2026-04-22 开源）SWE-bench Ver
 
 Simon Willison 的 25.57 tok/s 是基线。再往上换档位、再往下退档位，体感差几倍？
 
-![Qwen3.6-27B 类 · 本地硬件实测速度对比](qwen3.6-27b-hardware-realworld.png)
+![Qwen3.6-27B 类 · 本地硬件实测速度对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-27/qwen3.6-27b-local-coding/qwen3.6-27b-hardware-realworld.png)
 
 *数据来源详见各档位段落末尾。所有数字 2026-04 实测或基于同尺寸模型推算。*
 

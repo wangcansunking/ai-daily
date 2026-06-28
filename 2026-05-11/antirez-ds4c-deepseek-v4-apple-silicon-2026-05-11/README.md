@@ -10,7 +10,7 @@ cover: antirez-ds4c-deepseek-v4-apple-silicon-2026-05-11.png
 ---
 # Redis 之父手写 DeepSeek V4 专属 Mac 引擎
 
-![封面：antirez 给 DeepSeek V4 写 ds4.c](antirez-ds4c-deepseek-v4-apple-silicon-2026-05-11.png)
+![封面：antirez 给 DeepSeek V4 写 ds4.c](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/antirez-ds4c-deepseek-v4-apple-silicon-2026-05-11/antirez-ds4c-deepseek-v4-apple-silicon-2026-05-11.png)
 
 5 月 6 日深夜，Salvatore Sanfilippo——也就是 Redis 作者 antirez——往个人仓库推了第一版 `ds4.c`。仓库描述一句话：「DeepSeek 4 Flash local inference engine for Metal」。一个用 C + Metal 写的本地推理引擎，专门跑一个模型，专门跑在一类机器上：Apple Silicon 的 Mac。到 5 月 10 日傍晚，这个仓库 5950 Star、435 Fork，量子位、36氪、ITBear、Linux.do、搜狐先后头版报道；Mac M3 / M4 用户的本地大模型群里讨论度只低于 DeepSeek V4 Flash 自己发布那一天。
 
@@ -64,7 +64,7 @@ DeepSeek V4 Flash 自带「压缩 KV cache」（基于 Compressed Sparse Attenti
 **4. Tool call 协议层做精确字节对齐**
 这是文章里其他媒体都没讲清楚的一段。Agent 客户端会把模型上次输出的工具调用规整成 JSON 再回传给模型；如果服务器二次渲染时少一个空格，KV cache 命中失效，下一轮就要从头 prefill。`ds4-server` 直接给每次工具调用分配 ID，把模型采样出的 DSML 原始字节存进基数树，下次客户端送回 ID 时直接拿原字节回放——KV cache 永不失效。这种「字节级精确回放」是把 Claude Code、opencode 这种 Agent 客户端跑顺的隐形主功臣。
 
-![ds4.c 与 llama.cpp / MLX-LM / Ollama 的定位差异](ds4c-vs-llamacpp-mlx-positioning.png)
+![ds4.c 与 llama.cpp / MLX-LM / Ollama 的定位差异](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/antirez-ds4c-deepseek-v4-apple-silicon-2026-05-11/ds4c-vs-llamacpp-mlx-positioning.png)
 
 ## 二、跟 llama.cpp、MLX-LM、Ollama 同台跑分
 
@@ -88,7 +88,7 @@ DeepSeek V4 Flash 4 月底刚发布，社区很快把它塞进各家 Mac 推理�
 - **专属化 vs 通用化的代价摆出来了**：MLX-LM 通用、什么模型都能跑；ds4.c 只跑这一个，但同硬件比 MLX 4-bit 高出约 10–15%。这是「单点深度优化」对「框架抽象」的胜利。
 - **国产模型第一次成为生态主语**：以前是「Mac 用户能跑 Llama」「Mac 用户能跑 Qwen」；这次是「antirez 给 DeepSeek 单独写了一个引擎」。主语换了。
 
-![ds4.c 编译 + 跑通 DeepSeek V4 Flash 的完整命令链](ds4c-build-run-commands.png)
+![ds4.c 编译 + 跑通 DeepSeek V4 Flash 的完整命令链](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/antirez-ds4c-deepseek-v4-apple-silicon-2026-05-11/ds4c-build-run-commands.png)
 
 ## 三、上手实操：从 clone 到 chat 一共多少步
 
@@ -157,7 +157,7 @@ OpenAI 兼容端口默认 `127.0.0.1:8000`，opencode 在 `~/.config/opencode/op
 
 Claude Code 用户走 `/v1/messages` 端点，配置一行环境变量就能把 ds4-server 当 Anthropic API 使。这是国内本地大模型生态今年最有用的一项工程：开源模型 + 自家 IDE 的组合，不再需要任何中转。
 
-![ds4.c Q2 在 M3 Max 128GB 与 M3 Ultra 512GB 的实测吞吐](ds4c-throughput-bench.png)
+![ds4.c Q2 在 M3 Max 128GB 与 M3 Ultra 512GB 的实测吞吐](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/antirez-ds4c-deepseek-v4-apple-silicon-2026-05-11/ds4c-throughput-bench.png)
 
 ## 四、antirez 这个人，跟这件事的份量
 

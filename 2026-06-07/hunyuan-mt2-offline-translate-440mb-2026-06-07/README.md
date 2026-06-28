@@ -14,7 +14,7 @@ feishu_doc_id: null
 
 # 腾讯混元 Hy-MT2：440MB 塞进手机的离线翻译模型
 
-![腾讯混元 Hy-MT2 端侧离线翻译](hunyuan-mt2-offline-translate-440mb-2026-06-07.png)
+![腾讯混元 Hy-MT2 端侧离线翻译](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/hunyuan-mt2-offline-translate-440mb-2026-06-07/hunyuan-mt2-offline-translate-440mb-2026-06-07.png)
 
 一个能装进手机、断网也能用的翻译模型，体积只有 440MB——比很多人手机里一首无损音乐还小。这就是腾讯混元这次开源的 Hy-MT2-1.8B 留给人最直接的印象。
 
@@ -32,15 +32,15 @@ feishu_doc_id: null
 - **Hy-MT2-7B**：均衡档，效果和体量取中间
 - **Hy-MT2-30B-A3B**：专业效果档，采用混合专家（MoE）架构，每次推理动态激活约 3B 参数，在接近 30B 翻译质量的同时，显存消耗与 7B 模型相当
 
-![腾讯混元 Hy-MT2 三档模型对照](hunyuan-mt2-offline-translate-440mb-2026-06-07-tiers.png)
+![腾讯混元 Hy-MT2 三档模型对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/hunyuan-mt2-offline-translate-440mb-2026-06-07/hunyuan-mt2-offline-translate-440mb-2026-06-07-tiers.png)
 
 语言覆盖方面，Hy-MT2 支持 33 种语言互译，另外还支持 5 种民族语言与方言互译，方言里明确包含粤语、闽南语等国内日常会用到的语种。对一个翻译模型来说，国内民族语言和方言的支持往往是海外开源模型最薄弱的一环，这一块的加入很务实。
 
 模型权重已经在 GitHub、HuggingFace、ModelScope（魔搭）等平台同步开放，硬件适配也做得比较广——官方说明 1.8B 量化版本可以在苹果、高通、联发科等主流手机芯片上流畅运行。
 
-![Hy-MT2-1.8B 的 HuggingFace 模型卡](hy-mt2-huggingface-card.png)
+![Hy-MT2-1.8B 的 HuggingFace 模型卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/hunyuan-mt2-offline-translate-440mb-2026-06-07/hy-mt2-huggingface-card.png)
 
-![Hy-MT2-1.8B 在魔搭 ModelScope 上的模型页](hy-mt2-modelscope-card.png)
+![Hy-MT2-1.8B 在魔搭 ModelScope 上的模型页](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/hunyuan-mt2-offline-translate-440mb-2026-06-07/hy-mt2-modelscope-card.png)
 
 这一节的核心结论就一句：Hy-MT2 不是单点放一个模型，而是用同一套翻译能力切出三个尺寸，把「手机端离线」和「服务器侧专业翻译」一次性都覆盖了。
 
@@ -93,7 +93,7 @@ feishu_doc_id: null
 
 要判断 Hy-MT2 端侧路线的分量，得把海外几条主流路线拉到同一张桌子上对照。这里主要看三个维度：模型大小、语言覆盖、离线能力。
 
-![端侧 / 离线翻译方案语言覆盖横评](hunyuan-mt2-offline-translate-440mb-2026-06-07-langs.png)
+![端侧 / 离线翻译方案语言覆盖横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/hunyuan-mt2-offline-translate-440mb-2026-06-07/hunyuan-mt2-offline-translate-440mb-2026-06-07-langs.png)
 
 先看几条有代表性的对位方案：
 

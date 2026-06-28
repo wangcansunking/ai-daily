@@ -8,7 +8,7 @@ cover: xiaomi-mimo-v25-api-99pct-pricecut-pricewar-2026-05-28.png
 ---
 # 小米 MiMo-V2.5 永久降价 99%：缓存命中 0.025 元/M token，对标 DeepSeek V4-Pro 的国产 token 价格战进入新档
 
-![小米 MiMo-V2.5 永久降价封面](xiaomi-mimo-v25-api-99pct-pricecut-pricewar-2026-05-28.png)
+![小米 MiMo-V2.5 永久降价封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/xiaomi-mimo-v25-api-99pct-pricecut-pricewar-2026-05-28/xiaomi-mimo-v25-api-99pct-pricecut-pricewar-2026-05-28.png)
 
 > 2026 年 5 月 27 日凌晨零点，小米把 MiMo-V2.5 API 三档价格一次性砍到 DeepSeek V4-Pro 的同档水平：缓存命中输入 0.025 元 / 百万 tokens，未命中输入 3 元 / 百万 tokens，输出 6 元 / 百万 tokens。雷军本人在微博转发官方公告时强调一句话——「最高降幅 99%，不再区分上下文窗口」。这次国产大模型对外公开报价的最低档，正式从「DeepSeek 一家撑着」变成了「DeepSeek + 小米 两家对齐」。
 
@@ -23,7 +23,7 @@ cover: xiaomi-mimo-v25-api-99pct-pricecut-pricewar-2026-05-28.png
 - **Token Plan 同步加量**：四档月费 39 / 99 / 329 / 659 元保持不变，可用 token 额度提升至原来的 **5–8 倍**
 - **工程支撑**：SGLang HiCache 完整支持 SWA（滑动窗口注意力），KV cache 在 GPU 显存 / CPU 内存 / SSD 三级之间的累计搬运量降到原本的 **1/7**——这是「0.025 元 / 百万 tokens 长期可持续」的工程前提
 
-![新浪财经 5-27 凌晨头条](sina-leijun-mimo-hero.jpg)
+![新浪财经 5-27 凌晨头条](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/xiaomi-mimo-v25-api-99pct-pricecut-pricewar-2026-05-28/sina-leijun-mimo-hero.jpg)
 
 数字摆完之后，这篇文章的核心论点其实只有一句话——**国产大模型对外公开 token 价的「合理水位」已经被定在缓存命中输入 0.025 元 / 百万 tokens 这一档，而支撑这一档长期可持续供给的，是 SGLang HiCache + SWA 这套已经走出实验室的推理工程栈**。这不是一次单点的促销，而是国产推理工程能力第一次以「永久价」的形式向开发者交付。
 
@@ -57,7 +57,7 @@ cover: xiaomi-mimo-v25-api-99pct-pricecut-pricewar-2026-05-28.png
 
 **第三**，0.025 元 / 百万 tokens 这个数字本身值得停下来看一眼——它意味着输入 1 亿 tokens（约 7000 万字中文）的开发者，缓存命中时账单只有 **2.5 元**。这是国产对外公开报价区间里第一次出现「输入端基本免费」的状态。
 
-![小米 MiMo HuggingFace 主页](xiaomi-mimo-hf-og.png)
+![小米 MiMo HuggingFace 主页](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/xiaomi-mimo-v25-api-99pct-pricecut-pricewar-2026-05-28/xiaomi-mimo-hf-og.png)
 
 这次三档对齐之后，国产对外公开报价的最低档形成了「小米 + DeepSeek 双子星」的格局。对开发者而言，这是非常实在的好事——意味着同档价格至少有两家可选，不会因为某一家临时调整服务策略而被迫迁移；也意味着这个价位的供给从「孤品」变成了「常态」。
 
@@ -81,7 +81,7 @@ cover: xiaomi-mimo-v25-api-99pct-pricecut-pricewar-2026-05-28.png
 
 下面这张横评图把国产 4 家在三档价格上的相对水位整理在一起——
 
-![国内 4 家大模型 API token 价横评（2026-05-28 实价）](cn-llm-token-price-4way.png)
+![国内 4 家大模型 API token 价横评（2026-05-28 实价）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/xiaomi-mimo-v25-api-99pct-pricecut-pricewar-2026-05-28/cn-llm-token-price-4way.png)
 
 横评图上有两个观察值得停下来想——
 
@@ -96,7 +96,7 @@ cover: xiaomi-mimo-v25-api-99pct-pricecut-pricewar-2026-05-28.png
 
 SGLang 是国内外推理工程社区目前最活跃的开源推理引擎之一，由 LMSys.org 主导，国内大量做推理服务的团队都在用。它最被广泛引用的核心技术叫 RadixAttention——简单说，就是把多个请求里相同的前缀（系统提示词、工具列表、历史对话开头那段）合并存一份 KV cache，新请求来了直接复用，省下重复计算和重复存储。
 
-![SGLang 主仓库 GitHub 卡片](sglang-github-og.png)
+![SGLang 主仓库 GitHub 卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/xiaomi-mimo-v25-api-99pct-pricecut-pricewar-2026-05-28/sglang-github-og.png)
 
 RadixAttention 本身已经是一个非常好的工程，但它过去有一个长期问题——**当部署规模上去之后，命中的前缀 KV cache 总量会大到 GPU 显存装不下**。一台 A100 80G 服务器跑一个稍有用户量的 agent 业务，命中前缀的 KV cache 总量轻松 100GB 起步，必须搬到 CPU 内存或者 SSD 上存。
 
@@ -108,7 +108,7 @@ HiCache 就是为了解决这件事的——它是 SGLang 在 KV cache 之上加
 
 下面这张图把这件事拆得很清楚——
 
-![HiCache + SWA 把 KV cache 搬运量压到 1/7](hicache-kv-transfer-7x.png)
+![HiCache + SWA 把 KV cache 搬运量压到 1/7](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/xiaomi-mimo-v25-api-99pct-pricecut-pricewar-2026-05-28/hicache-kv-transfer-7x.png)
 
 「搬运量是原本的 1/7」这件事，正是 0.025 元 / 百万 tokens 长期可持续的工程前提。把推理过程中最贵的那部分——GPU 内外的 KV cache 数据带宽——降到原来的 1/7，单 token 的实际推理成本才能压到「输入端基本免费」的水位。
 

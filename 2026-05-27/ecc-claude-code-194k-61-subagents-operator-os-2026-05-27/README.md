@@ -27,7 +27,7 @@ feishu_doc_id: null
 ---
 # ECC 给 Claude Code 装了个 19.4 万星操作系统：61 个子 agent、246 个 skill、28 个 hook 实测
 
-![ECC 给 Claude Code 装了个 19.4 万星操作系统](ecc-claude-code-194k-61-subagents-operator-os-2026-05-27.png)
+![ECC 给 Claude Code 装了个 19.4 万星操作系统](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/ecc-claude-code-194k-61-subagents-operator-os-2026-05-27/ecc-claude-code-194k-61-subagents-operator-os-2026-05-27.png)
 
 ## 30 秒速览
 
@@ -45,13 +45,13 @@ ECC 的全称是 Enterprise Claude Code，作者 affaan-m 自我描述是 Anthro
 
 ## 一、ECC 到底是什么：4 个月 8 次发布跑出的「操作系统层」
 
-![ECC longform guide header — 作者用海报式封面解释 ECC 的定位](ecc-longform-header.png)
+![ECC longform guide header — 作者用海报式封面解释 ECC 的定位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/ecc-claude-code-194k-61-subagents-operator-os-2026-05-27/ecc-longform-header.png)
 
 仓库的 `created_at` 字段是 `2026-01-18T00:51:51Z`，到今天 5 月 26 日刚好 128 天。README 里写「evolved over 10+ months of intensive daily use」——意思是公开仓库 4 个月，但作者把自己 10 个月以来日用 Claude Code 攒下的配置、agent、skill 一次性开源了出来。
 
 实查 `releases` 接口拿到的 8 个版本时间线：
 
-![ECC 4 个月 8 次发布版本时间轴](ecc-version-timeline.png)
+![ECC 4 个月 8 次发布版本时间轴](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/ecc-claude-code-194k-61-subagents-operator-os-2026-05-27/ecc-version-timeline.png)
 
 | 版本 | 日期 | 主题 |
 |---|---|---|
@@ -156,7 +156,7 @@ skill 的层级还能再细。`skills/agent-payment-x402/` 干的事是把 HTTP 
 
 PreToolUse 那条 dispatcher 一个文件就包含了「质量预检 / tmux 检查 / push 检查 / GateGuard 安全检查」四件事。GateGuard 这个词在 README 里反复出现，对应的就是 AgentShield 安全层。
 
-![ECC observability 仪表盘示意——把 agent 的每一次工具调用画成时间轴](ecc-observability.png)
+![ECC observability 仪表盘示意——把 agent 的每一次工具调用画成时间轴](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/ecc-claude-code-194k-61-subagents-operator-os-2026-05-27/ecc-observability.png)
 
 AgentShield 在仓库里出现 84 次（实查 `search/code?q=AgentShield+repo:affaan-m/ECC`），它不是一个模糊的口号，而是落到几个真东西上：
 
@@ -167,7 +167,7 @@ AgentShield 在仓库里出现 84 次（实查 `search/code?q=AgentShield+repo:a
 
 供应链攻击层面，ECC 把它当一等公民处理：
 
-![ECC sandboxing 架构示意——把 agent 执行环境关进沙箱](ecc-sandboxing.png)
+![ECC sandboxing 架构示意——把 agent 执行环境关进沙箱](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/ecc-claude-code-194k-61-subagents-operator-os-2026-05-27/ecc-sandboxing.png)
 
 `rules/` 目录下分 13 个语言子目录（angular、arkts、cpp、csharp、dart、fsharp、golang、java、kotlin、perl、php、python、ruby、rust、swift、typescript、web、zh），每个目录里是该语言的 lint 规则与坏味道清单。`rules/common/` 下还有 10 条跨语言基线：agents.md、code-review.md、coding-style.md、development-workflow.md、git-workflow.md、hooks.md、patterns.md、performance.md、security.md、testing.md。
 
@@ -216,7 +216,7 @@ PostToolUse 那 10 个匹配器更有意思：覆盖 Write 之后自动跑 lint�
 
 这是本文最值得说的部分——国内的 AI Coding 工具线很拥挤，但几乎没人在做 ECC 这种 harness-native 操作系统层。
 
-![ECC 与国内 4 款 AI Coding 工具的 harness 抽象层能力对照](ecc-vs-domestic-comparison.png)
+![ECC 与国内 4 款 AI Coding 工具的 harness 抽象层能力对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/ecc-claude-code-194k-61-subagents-operator-os-2026-05-27/ecc-vs-domestic-comparison.png)
 
 逐个看：
 

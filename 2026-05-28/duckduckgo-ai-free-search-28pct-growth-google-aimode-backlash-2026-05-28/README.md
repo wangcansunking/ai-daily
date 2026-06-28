@@ -17,7 +17,7 @@ authors:
 
 # DuckDuckGo 一周流量涨 28%：Google 推 AI mode 反弹出反 AI 搜索用户群
 
-![DuckDuckGo 一周流量涨 28% · Google AI mode 反弹专题封面](duckduckgo-ai-free-search-28pct-growth-google-aimode-backlash-2026-05-28.png)
+![DuckDuckGo 一周流量涨 28% · Google AI mode 反弹专题封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/duckduckgo-ai-free-search-28pct-growth-google-aimode-backlash-2026-05-28/duckduckgo-ai-free-search-28pct-growth-google-aimode-backlash-2026-05-28.png)
 
 > Google I/O 2026 在 5 月 20 日把 AI mode 正式定为搜索默认体验之后第 5 天，DuckDuckGo 提供纯链接结果的子站 noai.duckduckgo.com 周访问量同比上涨 27.7%。同一天 DuckDuckGo 的美国 iOS 安装量周同比涨幅冲到 69.9%。这两个数字背后是一群早就对搜索结果页堆满生成式摘要、广告位和长篇 AI 段落感到挫败的用户——他们不是反对 AI，是反对默认替自己做决定。
 
@@ -41,7 +41,7 @@ PC Gamer 5 月 26 日早晨发出来的这篇分析文章当天就被顶到了 H
 
 5 月 26 日上午 PC Gamer 资深记者 Andy Edser 写了一篇分析，标题直接点出反差：「DuckDuckGo 的无 AI 搜索访问量在 Google 坚称大家爱 AI mode 的下一周涨了将近 28%」。文章里给出的核心数据来源是 DuckDuckGo 官方提供的 noai.duckduckgo.com 子站访问量同比。
 
-![DuckDuckGo 纯链接搜索周访问量增长曲线对照 Google AI mode 推广关键节点](ddg-google-timeline-2026-05-28.png)
+![DuckDuckGo 纯链接搜索周访问量增长曲线对照 Google AI mode 推广关键节点](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/duckduckgo-ai-free-search-28pct-growth-google-aimode-backlash-2026-05-28/ddg-google-timeline-2026-05-28.png)
 
 把这个数字摆清楚很重要。这里的「28%」不是 DuckDuckGo 整站的访问量，是专门为屏蔽 AI 摘要而设的 noai.duckduckgo.com 子站。这个子站默认关掉所有 AI 摘要、AI 助手浮窗、AI 自动总结等组件，只输出 10 条蓝色链接。访问量同比基准是 2026 年 5 月 13-18 日的同一时段。5 月 20-25 日 6 天均值同比 +22.7%，5 月 24 日单日同比 +27.7% 是峰值——这天恰好是 Memorial Day 假期周末，按往年规律美国互联网整体访问量会回落，但 DuckDuckGo 反向走高，说明这波增长不是节假日效应推上去的。
 
@@ -63,7 +63,7 @@ PC Gamer 5 月 26 日早晨发出来的这篇分析文章当天就被顶到了 H
 
 **痛点四：没有关闭入口。**这是用户挫败感最集中的一点。Google 搜索设置里没有提供「关闭 AI mode 回到经典蓝链结果」的开关。要绕开 AI Overviews 只能用 udm=14 这种非官方查询参数，或者切换到非登录态浏览器。Gabriel Weinberg 在 X 上的原话——「Google is force-feeding AI with no way to opt out」（Google 在强行喂 AI，没有给关闭的入口）——之所以广泛传播，是因为这正是用户实际体验的写照。
 
-![TechCrunch 报道的 DuckDuckGo 无 AI 搜索默认页面](techcrunch-ddg-noai-hero.png)
+![TechCrunch 报道的 DuckDuckGo 无 AI 搜索默认页面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/duckduckgo-ai-free-search-28pct-growth-google-aimode-backlash-2026-05-28/techcrunch-ddg-noai-hero.png)
 
 这 4 个痛点叠加在一起，等于把那些「我能接受 AI 帮我整理摘要，但请把开关给我」的用户推向了任何一个仍然提供纯链接结果的替代品。DuckDuckGo 是首选，因为它原本就在「隐私 + 反追踪」赛道上有 14 年积累，noai 子站又恰好把「关掉 AI」做成了独立产品形态。
 
@@ -71,7 +71,7 @@ PC Gamer 5 月 26 日早晨发出来的这篇分析文章当天就被顶到了 H
 
 很多国内同行对 DuckDuckGo 的印象还停留在「美国那个不追踪用户的搜索引擎」。这一年 DuckDuckGo 实际做了两件值得记下的事。
 
-![DuckDuckGo 品牌社交图像 · 公开 Logo 资产](ddg-logo-social-media.png)
+![DuckDuckGo 品牌社交图像 · 公开 Logo 资产](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/duckduckgo-ai-free-search-28pct-growth-google-aimode-backlash-2026-05-28/ddg-logo-social-media.png)
 
 第一件，AI 不是不上，而是按用户意愿可选上。2024 年 DuckDuckGo 上线了 DuckDuckGo AI Chat（接 Claude、ChatGPT、Mistral 三家可选）和结果页 AI 摘要功能，但默认状态是「摘要默认折叠 + AI Chat 在独立入口」，不会霸占主搜索结果。用户在设置里可以一键关闭所有 AI 功能。
 
@@ -115,7 +115,7 @@ PC Gamer 文章 Hacker News 评论区里有一段对话很有代表性。原贴�
 
 回到国内市场。过去 18 个月国产 AI 搜索做出了让人意外的产品创新——秘塔、夸克、360 AI 搜索三家走了三条不同路径。
 
-![5 家搜索引擎 6 维体验对比雷达图](ddg-search-radar-2026-05-28.png)
+![5 家搜索引擎 6 维体验对比雷达图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/duckduckgo-ai-free-search-28pct-growth-google-aimode-backlash-2026-05-28/ddg-search-radar-2026-05-28.png)
 
 **秘塔 AI 搜索（CN · metaso.cn）** 的路径是把搜索结果做成「研究报告」。一次查询返回一份带目录、引用编号、附图、相关问题的结构化文档。对学术、咨询、市场研究场景非常顺手。Hacker News 上偶尔有海外华人开发者发帖说「秘塔比 Perplexity 更好用」，国内学术圈对它评价也不错。
 
@@ -147,7 +147,7 @@ PC Gamer 文章 Hacker News 评论区里有一段对话很有代表性。原贴�
 
 把视角拉回 PC Gamer 这篇文章本身。
 
-![PC Gamer 原文头图 · 反映搜索引擎产品对比](pcgamer-ddg-hero.jpg)
+![PC Gamer 原文头图 · 反映搜索引擎产品对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/duckduckgo-ai-free-search-28pct-growth-google-aimode-backlash-2026-05-28/pcgamer-ddg-hero.jpg)
 
 文章作者 Andy Edser 在结尾写了一句被 Hacker News 顶到楼层第一的话：「Google 不是输给了 DuckDuckGo，是输给了自己过去 20 年训练用户养成的『十条蓝链接』产品哲学。」这句话之所以打动人，是因为它点出了搜索这个产品形态的本质——搜索的价值不是给答案，是组织信息让人自己判断。
 

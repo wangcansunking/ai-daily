@@ -10,13 +10,13 @@ category: "图像生成 / 端侧 AI / 模型量化 / 开源"
 ---
 # Bonsai Image 4B：1-bit 量化把画图模型塞进手机
 
-![Bonsai Image 4B：1-bit 量化的 4B 图像生成模型，能在 iPhone 和笔电本地出图](bonsai-1bit-local-image-gen-2026-06-01.png)
+![Bonsai Image 4B：1-bit 量化的 4B 图像生成模型，能在 iPhone 和笔电本地出图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/bonsai-1bit-local-image-gen-2026-06-01/bonsai-1bit-local-image-gen-2026-06-01.png)
 
 一个 4B 参数的画图模型，全精度状态下扩散主干就有 7.75 GB，跑起来要十几 GB 显存，过去只能待在带独显的台式机或云端 GPU 上。PrismML（一家位于美国帕萨迪纳的高性能模型团队）5 月 26 日放出的 Bonsai Image 4B，把这个主干用 1-bit 二值量化压到了 0.93 GB，用三值（ternary）量化压到 1.21 GB，然后让它在 iPhone 17 Pro Max 上 512×512 出图约 9.4 秒、在 Mac M4 Pro 上约 6 秒。**这是第一个 4B 量级、能整个装进手机内存直接跑的图像生成模型。**
 
 这件事最反直觉的地方是：把每个权重压到只剩 1 个比特，按常识画质应该崩掉，但官方评测里三值版仍保留约 95% 的质量、纯 1-bit 版保留约 88%。它还是 Apache 2.0 开源，权重和推理代码都在 Hugging Face 上。
 
-![PrismML 官方放出的 Bonsai Image 4B 生成样张网格](source-bonsai-sample-grid-2026-06-01.png)
+![PrismML 官方放出的 Bonsai Image 4B 生成样张网格](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/bonsai-1bit-local-image-gen-2026-06-01/source-bonsai-sample-grid-2026-06-01.png)
 <small>来源：PrismML 官方发布页样张网格</small>
 
 这篇文章想讲清楚一件事：**Bonsai Image 4B 的真正价值不在于多了一个画图模型，而在于它把"高质量扩散模型必须配大显存"这个前提撕开了一道口子——靠的是激进到 1-bit 的量化，而不是把模型砍小。** 下面顺着五个问题往下走：1-bit 怎么把画图模型压这么狠还不崩、它和要大显存的 SDXL / FLUX 横比差多少、质量和体积到底怎么取舍、本地出图对隐私和成本意味着什么、以及国产手机的 NPU 能不能接住它。
@@ -79,12 +79,12 @@ category: "图像生成 / 端侧 AI / 模型量化 / 开源"
 
 反过来和大块头比，它也没装。SDXL 主干 5.14 GB，是三值版的四倍多，GenEval 却只有 0.300，被 Bonsai 甩开一大截——这说明 Bonsai 赢的不只是省体积，是连绝对质量都压过了老一代的大模型。当然天花板还在：FLUX.2 Klein 4B 全精度的 0.819 仍是这组里最高的，Bonsai 是去无限逼近它，不是超过它。
 
-![Bonsai Image 4B 与全精度 FLUX 的同提示词出图对照](source-bonsai-comparison-grid-2026-06-01.png)
+![Bonsai Image 4B 与全精度 FLUX 的同提示词出图对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/bonsai-1bit-local-image-gen-2026-06-01/source-bonsai-comparison-grid-2026-06-01.png)
 <small>来源：PrismML 官方同提示词出图对照网格</small>
 
 把质量和体积这两个轴画在一张图上，Bonsai 两个点的位置就一目了然——它们牢牢落在"体积小、质量高"那个理想角落，而老一代小模型挤在右下、SDXL 这类大块头浮在中间偏左。
 
-![本地图像生成质量与体积取舍：Bonsai 落在小体积高质量的理想区](source-bonsai-quality-footprint-chart-2026-06-01.png)
+![本地图像生成质量与体积取舍：Bonsai 落在小体积高质量的理想区](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/bonsai-1bit-local-image-gen-2026-06-01/source-bonsai-quality-footprint-chart-2026-06-01.png)
 <small>数据来源：PrismML 官方评测表（GenEval / HPSv3 / DPG-Bench 综合）</small>
 
 社区的真人反馈和这张表大体对得上。一些上手试过的人说，它在环境氛围、光影、景深、电影感这类整体观感上表现得出乎意料地好；短板也很明确——精确的文字渲染、物体计数、严格的构图约束、复杂排版仍会翻车。不过这几样恰恰是连全精度大模型也没完全解决的老大难，不能全算到量化头上。也有人提醒，三值版选 0.723 这种分数放在两三年前是顶尖水平、但不是当下的最强，期待它打平云端旗舰并不现实。
@@ -114,7 +114,7 @@ category: "图像生成 / 端侧 AI / 模型量化 / 开源"
 
 PrismML 自己也顺手放了个叫 Bonsai Studio 的 iOS App，整模型完全在 iPhone 本地跑，等于给了个现成的端侧出图样板。
 
-![Bonsai Image 4B 的推理代码与权重以 Apache 2.0 在开源仓库放出](source-bonsai-github-og-2026-06-01.png)
+![Bonsai Image 4B 的推理代码与权重以 Apache 2.0 在开源仓库放出](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/bonsai-1bit-local-image-gen-2026-06-01/source-bonsai-github-og-2026-06-01.png)
 <small>来源：PrismML-Eng/Bonsai-Image-Demo 仓库社交卡片</small>
 
 ## 国产手机 NPU 能不能接住它：适配这条路通不通

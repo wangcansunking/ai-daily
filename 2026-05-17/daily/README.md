@@ -31,7 +31,7 @@ cover: 17.png
 
 # 国产 Coding 涨价潮 · 混元 3T 登顶 | AI 日报 | 2026-05-17
 
-![国产 AI Coding 涨价潮 · 混元 Hy3 3 万亿 Token 登顶 OpenRouter · 单卡 4090 国产模型量化矩阵跑通了](17.png)
+![国产 AI Coding 涨价潮 · 混元 Hy3 3 万亿 Token 登顶 OpenRouter · 单卡 4090 国产模型量化矩阵跑通了](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/daily/17.png)
 
 ## 📋 头版目录（一屏扫完今日）
 
@@ -67,7 +67,7 @@ cover: 17.png
 
 ## 🔥 头条：国产 Coding 涨价潮 + 混元 Hy3 3 万亿登顶——同一周国产 AI 一硬一软两件事
 
-![国内 6 家 AI Coding 套餐三档月费横评 pricing overview cn coding](cn-ai-coding-pricing-overview.png)
+![国内 6 家 AI Coding 套餐三档月费横评 pricing overview cn coding](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/daily/cn-ai-coding-pricing-overview.png)
 
 把过去两周国产 AI 圈里的两件事叠在一张图上看——**消费侧的 AI Coding 套餐集体抬价**与**模型侧的腾讯混元 Hy3 周调用 3 万亿 Token 登顶 OpenRouter 全球总榜**。一硬一软：硬的是钱、软的是货。对国内开发者来说，5 月 17 日这个周末刚好是「重新做一遍 AI Coding 工具选型」的时点——通义灵码 0 元限免 5/20 截止、智谱 GLM Coding Plan 海外档刚翻完倍、混元 Hy3 OpenRouter 上面的能力数字出炉。下面把硬币的两面分别讲清楚。
 
@@ -91,7 +91,7 @@ cover: 17.png
 
 ### 二、模型侧：腾讯混元 Hy3 周调用 3.03 万亿 Token，国产大模型跟海外横评上桌
 
-![腾讯混元 Hy3 OpenRouter token ranking 周调用排行 hunyuan hy3](hunyuan-hy3-token-ranking.png)
+![腾讯混元 Hy3 OpenRouter token ranking 周调用排行 hunyuan hy3](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/daily/hunyuan-hy3-token-ranking.png)
 
 涨价的同周，OpenRouter 全球周榜出了一个让国内圈内人措手不及的数字。腾讯混元 Hy3 preview 上线两周——周调用量 **3.03 万亿 Token、环比涨 799%**——一家就占掉 OpenRouter 中国模型总盘 7.94 万亿的 **38%**。Kimi K2.6 单周 1.28 万亿、DeepSeek V4-Flash 单周 0.704 万亿、Qwen3-Max 单周 0.62 万亿，全被甩在后面。
 
@@ -107,7 +107,7 @@ cover: 17.png
 
 ### 三、本地部署侧：单卡 RTX 4090 国产模型量化矩阵跑通了（对比 Llama 蒸馏档，承接 5/16 头条 [跟进]）
 
-![Qwen3-Coder Q4 三家格式 throughput 4090 吞吐对比 awq gptq gguf](qwen3-q4-three-formats-throughput-2026-05-17.png)
+![Qwen3-Coder Q4 三家格式 throughput 4090 吞吐对比 awq gptq gguf](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/daily/qwen3-q4-three-formats-throughput-2026-05-17.png)
 
 国产 Coding 涨价 + 海外 Coding 一直贵的同期，本地部署矩阵这周也跑通了完整决策表（承接 5/16 日报头条 Qwen3-Coder-30B + RTX 4090 的进一步深化 [跟进]）。把过去三周的本地大模型专题摞起来——4 月 Qwen3-Coder-30B 落地 4090、5 月初 DeepSeek-V4 蒸馏版选型、5 月中三家 Q4 量化横评 + 五档显卡阶梯——单卡 RTX 4090 24GB 这一档现在终于能跑出**国产开源模型完整的「装得下 + 跑得快 + 精度保得住」决策表**：
 
@@ -120,7 +120,7 @@ cover: 17.png
 
 「4090 跑 Qwen3-Coder：Q4 三家格式怎么选」把三家 Q4 在 vLLM / SGLang / llama.cpp 三个引擎下的实测吞吐 tokens/s、首 token 延迟、并发性能拉成一张完整矩阵——结论是 **服务化部署选 AWQ Marlin、个人本地跑选 GGUF Q4_K_M、需要第三方平台兼容选 GPTQ Int4**。
 
-![DeepSeek R1 Distill 显卡决策 五档 1.5B 7B 8B 14B 32B 选卡](deepseek-r1-distill-decision-2026-05-17.png)
+![DeepSeek R1 Distill 显卡决策 五档 1.5B 7B 8B 14B 32B 选卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/daily/deepseek-r1-distill-decision-2026-05-17.png)
 
 往下一档——DeepSeek-R1-Distill 蒸馏家族 1.5B / 7B / 8B-Llama / 14B / 32B 五档参数量，对位国内消费级 NVIDIA 卡的显存阶梯。结论是：**1.4 万元买 RTX 4090 跑 32B-Q4 是这条阶梯的唯一甜蜜点**（往下 4080 SUPER 16GB 只能跑到 14B，往上 5090 32GB 跑 70B 蒸馏版 + 价格翻倍 + 国内没货）。RTX 4070 Ti SUPER 16GB 跑 14B 是性价比中段、RTX 4060 Ti 16GB 跑 8B 是最低预算起步。往上每爬一档卡，能解锁的不只是吞吐 tokens/s，而是 **AIME 24 / GPQA Diamond / LiveCodeBench v6 一整条 reasoning 智力曲线**——14B 在 LiveCodeBench 上能拿到 47.3 分、32B 直接跳到 56.9 分，这中间 10 个百分点要靠 4090 才能解锁。「DeepSeek-R1-Distill 五档怎么选卡」专题把卡价 / 模型档 / 能力数字三栏对齐成一张实购决策表。
 
@@ -151,7 +151,7 @@ cover: 17.png
 
 ### 🔴 必读：NVIDIA Labs 5/16 arxiv 挂出 SANA-WM——26 亿参数开源世界模型，单 H100 一次 60 秒 720p
 
-![NVIDIA SANA-WM VBench throughput cn 720p 世界模型吞吐 sana wm](sana-wm-vbench-throughput-cn.png)
+![NVIDIA SANA-WM VBench throughput cn 720p 世界模型吞吐 sana wm](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/daily/sana-wm-vbench-throughput-cn.png)
 
 NVIDIA Labs 5/16 在 arxiv 挂出 SANA-WM——**26 亿参数的开源世界模型，单 H100 一次性吐出 60 秒 720p 视频，对位工业基准 LingBot-World 吞吐量高 36 倍；蒸馏版 RTX 5090 + NVFP4 量化 34 秒一条**。这是第一个把世界模型推到「单 H100 + 60 秒长视频」+ 「消费级卡 5090 + NVFP4 + 34 秒」双甜蜜点的开源工作。架构是混合线性注意力——帧级 Gated DeltaNet 替代标准注意力、配合 patch-level 自蒸馏；训练数据 5800 万视频片段、ALFWorld / VBench / GameBench 三套基准全过。
 
@@ -159,7 +159,7 @@ NVIDIA Labs 5/16 在 arxiv 挂出 SANA-WM——**26 亿参数的开源世界模�
 
 ### 🔴 必读：Orthrus 双视图 diffusion 解码——Qwen3-8B 平均加速 5.36×、MATH-500 6×、峰值 7.8×
 
-![Orthrus Qwen3 size speedup 1.7B 4B 8B 解码加速 orthrus](orthrus-speedup-by-qwen3-size.png)
+![Orthrus Qwen3 size speedup 1.7B 4B 8B 解码加速 orthrus](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/daily/orthrus-speedup-by-qwen3-size.png)
 
 University of Oregon、Google DeepMind、Adobe Research 三家合作的 Orthrus 5/15 上 arxiv，HuggingFace 同日放出 Qwen3-1.7B / 4B / 8B 三个权重、HN 5/17 顶到 207 分、HuggingFace Daily Papers 5/17 早盘第 1（93 upvote）。它解决一件具体的事——**把并行 diffusion 解码塞进冻结的 Qwen3 里，让每次前向 pass 能一次性吐出多个 token，且输出分布逐位与原 AR 模型完全一致**。
 
@@ -169,7 +169,7 @@ University of Oregon、Google DeepMind、Adobe Research 三家合作的 Orthrus 
 
 ### 🔴 必读：Shopify River 公开复盘——「不许私聊」把内部 Agent 变成全员车间课堂
 
-![Shopify River merge rate 合并率 36 到 77 公共频道](shopify-river-merge-rate.png)
+![Shopify River merge rate 合并率 36 到 77 公共频道](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/daily/shopify-river-merge-rate.png)
 
 Shopify CEO Tobi Lütke 5/16 罕见公开复盘内部 Coding Agent River 一年成绩单：**30 天 5938 个员工活跃使用、4450 个公开频道、每周 1870 个 PR、公司合并的 PR 里大约每 8 个就有 1 个 River 写的、合并率两个月从 36% 涨到 77%**。最反直觉的设计：**River 不接受私聊**——开私聊会被婉拒、并被建议另开一个公开频道。
 
@@ -220,7 +220,7 @@ xAI 5/16 把 Grok 4.5 长上下文从 64k 升到 128k、保持 $20 月费不变�
 
 ### transformers.js v4 把 WebGPU 后端 C++ 重写——Qwen3.5 / Gemma 4 / GPT-OSS 20B 跑进 Chrome
 
-![transformers.js v4 WebGPU 提速 tjs v4 cn speedup C++ 重写](tjs-v4-speedup-cn.png)
+![transformers.js v4 WebGPU 提速 tjs v4 cn speedup C++ 重写](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/daily/tjs-v4-speedup-cn.png)
 
 Hugging Face 官方 5/13 push transformers.js v4.0.1：WebGPU 后端**全部用 C++ 重写**、相比 v3 实测加速 2.8-3.2×；Qwen3.5 / Gemma 4 / GPT-OSS 20B 三个浏览器内 demo 同周上线。对国内 Web 开发者，**这把 LLM 推到前端的工程能力终于补齐了**——之前 v3 的 WebGPU 是 JS 包装、显存利用率偏低；v4 直接接管 GPU 调度、显存占用降到 8-10 GB（Qwen3-4B Q4 在 Chrome 上的实测）、首 token 延迟 800ms 内。
 

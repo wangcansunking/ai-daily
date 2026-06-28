@@ -25,7 +25,7 @@ description: "一张 RTX 4090 24GB，能跑 Qwen3-Coder-30B、DeepSeek-R1-Distil
 
 # Claude / Cursor 的离线替代怎么选：4090 实测国产模型
 
-![国产开源四模型 × 三任务 4090 横评封面](cn-local-llm-task-matrix-coding-rag-translate-2026-05-16.png)
+![国产开源四模型 × 三任务 4090 横评封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/cn-local-llm-task-matrix-coding-rag-translate-2026-05-16/cn-local-llm-task-matrix-coding-rag-translate-2026-05-16.png)
 
 ## 关键数字一览
 
@@ -40,7 +40,7 @@ description: "一张 RTX 4090 24GB，能跑 Qwen3-Coder-30B、DeepSeek-R1-Distil
 
 满分 10 含质量、速度、易用性三维。GLM-4.5-Air 整体偏保守，是因为单卡 4090 跑它要走 IQ2_K_XL + MoE 路由层 CPU 卸载这条非主流路径，速度上不到交互档。
 
-![4 个国产开源大模型 × 3 类任务 体感得分矩阵 4090 24GB](cn-llm-task-matrix-overview.png)
+![4 个国产开源大模型 × 3 类任务 体感得分矩阵 4090 24GB](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/cn-local-llm-task-matrix-coding-rag-translate-2026-05-16/cn-llm-task-matrix-overview.png)
 
 一眼看下去四个模型各有一片色块亮起来：Qwen3-Coder 写代码最猛，DeepSeek-R1-Distill 啃长文档最稳，GLM-4.5-Air 整体均衡但速度拖后腿，ERNIE-4.5 中文翻译亲和度第一。下面把每一格的来历拆开摊到台面上。
 
@@ -56,9 +56,9 @@ description: "一张 RTX 4090 24GB，能跑 Qwen3-Coder-30B、DeepSeek-R1-Distil
 
 四个候选模型为什么是这四个，要先把选型逻辑讲清楚，因为有一个标准答案明显落选——Kimi-K2.6。Moonshot AI 把 K2.6 做到了 1T 参数 MoE，单卡 4090 24GB 的官方部署路径是 unsloth 给出的 UD-Q2_K_XL 量化档，模型文件 375GB，需要搭配 256GB 系统内存做 CPU 卸载，速度只有 5-6 tok/s。这不是单卡可用档，已经踩到「至少 256GB RAM + 至少 1TB SSD KV swap」的服务器门槛，不在本文「单卡 4090 + 普通台式机」的射程内。Moonshot 至今没有放出 K2 系列的小档蒸馏，所以本次横评把这一席换成百度刚开源不久的 ERNIE-4.5-21B-A3B-PT，21B 总参 / 3B 激活的 MoE，跟 Qwen3-Coder 同档位，4090 上跑起来非常轻松。
 
-![cn-llm-task-matrix-kimi-swap Kimi-K2.6 单卡 4090 不可达本次以 ERNIE-4.5 替换说明](cn-llm-task-matrix-kimi-swap.png)
+![cn-llm-task-matrix-kimi-swap Kimi-K2.6 单卡 4090 不可达本次以 ERNIE-4.5 替换说明](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/cn-local-llm-task-matrix-coding-rag-translate-2026-05-16/cn-llm-task-matrix-kimi-swap.png)
 
-![4 模型 Coding 任务基准分对比 + 4090 实测吞吐](cn-llm-task-matrix-coding-bench.png)
+![4 模型 Coding 任务基准分对比 + 4090 实测吞吐](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/cn-local-llm-task-matrix-coding-rag-translate-2026-05-16/cn-llm-task-matrix-coding-bench.png)
 
 ## 四款模型在单卡 4090 上的可跑版本：HF 模型卡硬数据先摆清
 
@@ -98,7 +98,7 @@ ERNIE-4.5-21B-A3B-PT 在 coding 上是垫底的那一个。HumanEval 大致在 7
 
 RAG 这一项关心两件事：召回率（Recall@5：检索出来的前 5 个 chunk 里有几个真的相关）和引用准确率（模型在回答里说「根据第 N 段」时，那一段是不是真的支撑结论）。这两个指标在 LongBench-CN 多文档子集 + 知乎实测帖汇总下，DeepSeek-R1-Distill-Qwen-32B 排第一，召回 80% / 引用准确 76%。
 
-![4 模型 RAG 任务召回 / 引用准确率 + 上下文窗口](cn-llm-task-matrix-rag-recall.png)
+![4 模型 RAG 任务召回 / 引用准确率 + 上下文窗口](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/cn-local-llm-task-matrix-coding-rag-translate-2026-05-16/cn-llm-task-matrix-rag-recall.png)
 
 DeepSeek-R1-Distill 在 RAG 上的领先有具体来源：它的蒸馏教师 R1 是 RL 训练出来的「先推理再回答」模型，蒸馏到 32B 后这套先验保留得很好，遇到「请基于这 10 个段落回答」这种 RAG prompt 时，它会先把段落之间的逻辑关系梳理一遍再回答，引用粘性显著高于其他三家。一篇 emergent-mind 写的技术综述里提到「For RAG, the model demonstrates superior IoU (+14% over alternatives) for token alignment in domain-specific QA」——这个 +14% 的 IoU 提升不是营销话术，是实测出来的数字。
 
@@ -116,7 +116,7 @@ ERNIE-4.5-21B-A3B 在 RAG 上的位置是「中文检索亲和、英文检索普
 
 翻译这一项的横评数据来源稍微特别：BLEU 这种自动指标在中英互译上口径分歧大（TranslationFlow CN→EN 子集 vs FLORES vs WMT22 数字差异显著），所以这一节既看 BLEU 又看场景体感分。
 
-![cn-llm-task-matrix-translate-quality 4 模型翻译双向能力对比 + 开发者场景体感](cn-llm-task-matrix-translate-quality.png)
+![cn-llm-task-matrix-translate-quality 4 模型翻译双向能力对比 + 开发者场景体感](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/cn-local-llm-task-matrix-coding-rag-translate-2026-05-16/cn-llm-task-matrix-translate-quality.png)
 
 CN→EN BLEU 一栏，ERNIE-4.5-21B-A3B 跑出 33.6 的数字，比第二名 GLM-4.5-Air 的 30.8 高了 2.8 分。这个领先在翻译领域不是小幅，相当于「文章语义全对 + 用词更地道」之间的差距。EN→CN 方向 COMET 分（已对齐到 0-10 量纲）ERNIE 拿到 8.6，同样领先一截。这一项 ERNIE 的优势可以追到百度自家做了二十年的搜索 + 翻译业务积累——文心系列模型的中文语料密度、中英对齐语料覆盖度是这四家里最深的。
 
@@ -148,7 +148,7 @@ ERNIE-4.5-21B-A3B 是四款里 KV cache 压力最小的，权重 13.5GB，剩 10
 
 ## 决策矩阵：场景 → 推荐模型 → 理由 → 限制
 
-![cn-llm-task-matrix-decision-flow 4090 24GB 国产开源四模型按场景的决策流](cn-llm-task-matrix-decision-flow.png)
+![cn-llm-task-matrix-decision-flow 4090 24GB 国产开源四模型按场景的决策流](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/cn-local-llm-task-matrix-coding-rag-translate-2026-05-16/cn-llm-task-matrix-decision-flow.png)
 
 
 把前面四节合并到一张决策矩阵，开发者照着场景挑：

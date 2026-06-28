@@ -25,7 +25,7 @@ description: "Shopify 内部编码 Agent River 跑了一年，最近被 CEO Tobi
 
 # Shopify 把 Agent 摆进公共频道：合并率从 36% 到 77%
 
-![Shopify River 公共频道 Agent 封面](shopify-river-public-channel-agent-2026-05-17.png)
+![Shopify River 公共频道 Agent 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/shopify-river-public-channel-agent-2026-05-17/shopify-river-public-channel-agent-2026-05-17.png)
 
 > 5938 个员工、4450 个公开频道、每周 1870 个 PR、合并率两个月从 36% 提到 77%——Shopify 内部 Agent River 走的不是技术路线，而是一条产品决策：**不让任何人和它私聊**。今天聊聊这套机制能不能搬到 Trae、通义灵码、字节 MarsCode、智谱 CodeGeeX，搬之前先把账算清楚。
 
@@ -35,7 +35,7 @@ Shopify CEO Tobi Lütke 在 5 月 11 日的一段公开复盘里第一次给了 
 
 先把这一年的几个核心数字看完。
 
-![River 30 天规模四维卡片](shopify-river-30day-scale.png)
+![River 30 天规模四维卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/shopify-river-public-channel-agent-2026-05-17/shopify-river-30day-scale.png)
 
 四个数字背后的含义，比数字本身更值得看：
 
@@ -46,7 +46,7 @@ Shopify CEO Tobi Lütke 在 5 月 11 日的一段公开复盘里第一次给了 
 
 光看这几个数字，已经是国内任何一家大厂内部 Agent 没摸到的体量。但更值得抠的是下一组：**合并率的变化曲线**。
 
-![River 合并率从 36% 提到 77%](shopify-river-merge-rate.png)
+![River 合并率从 36% 提到 77%](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/shopify-river-public-channel-agent-2026-05-17/shopify-river-merge-rate.png)
 
 两个月时间，River 写的 PR 合并率从 36% 提到 77%。换句话说，最开始工程师们看到 River 写的 PR，10 个里有 6 个直接关掉重写；两个月后倒过来，10 个里 7-8 个真合进主干。
 
@@ -64,7 +64,7 @@ Shopify CEO Tobi Lütke 在 5 月 11 日的一段公开复盘里第一次给了 
 
 这个反直觉的决策能带来什么？看下面这张矩阵。
 
-![公共频道 vs 私聊 五维对比](shopify-river-channel-vs-dm.png)
+![公共频道 vs 私聊 五维对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/shopify-river-public-channel-agent-2026-05-17/shopify-river-channel-vs-dm.png)
 
 五个维度的对照，每一项都是工程团队管理多年来一直想解的老问题：
 
@@ -119,7 +119,7 @@ Shopify 这套机制走的不是模型微调路线，是 skill 复用 + 提问�
 
 讲了这么多机制，落到实操：**国内 AI Coding 工具的产品经理、国内工程团队的负责人，能学这套机制的哪一档？** 三档分级如下。
 
-![国内同型工具能不能学公共频道这一招](shopify-river-cn-roadmap.png)
+![国内同型工具能不能学公共频道这一招](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/shopify-river-public-channel-agent-2026-05-17/shopify-river-cn-roadmap.png)
 
 ### 第一档：现在就能学（不需要改产品）
 

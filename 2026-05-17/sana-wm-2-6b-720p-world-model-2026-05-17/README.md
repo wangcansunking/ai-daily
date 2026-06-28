@@ -26,7 +26,7 @@ description: "NVIDIA Labs 五月十六号在 arxiv 挂出 SANA-WM——26 亿参
 
 # SANA-WM：5090 跑 720p 世界模型 vs 万相
 
-![SANA-WM 单卡 720p 世界模型封面](sana-wm-2-6b-720p-world-model-2026-05-17.png)
+![SANA-WM 单卡 720p 世界模型封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/sana-wm-2-6b-720p-world-model-2026-05-17/sana-wm-2-6b-720p-world-model-2026-05-17.png)
 
 五月十六号晚上，arxiv 上挂出一篇标题克制的论文——*SANA-WM: Efficient Minute-Scale World Modeling*，作者 9 人来自 NVIDIA Labs。次日清晨它出现在 Hacker News 头版，最高顶到 259 分、104 条评论，提交者 `mjgil` 给的一句话是「a 2.6B open-source world model for 1-minute 720p video」。这是过去半年里第一个把「单卡 + 一分钟 + 720p + 开源」四件事同时凑齐的世界模型。
 
@@ -59,7 +59,7 @@ description: "NVIDIA Labs 五月十六号在 arxiv 挂出 SANA-WM——26 亿参
 
 读一遍这十几条数字最直观的感受是——**这不是要刷 VBench 榜首的论文**。VBench 80.62 在国内开源视频模型里只算中等（阿里万相 2.1 拿到 86.22 总分），但 SANA-WM 走的是另一条路：**质量够用、单卡能跑、出片快**。它对位的不是 Sora 这一档「最强单镜头」，而是「让世界模型从研究院出来，落到每个开发者的显卡上」。
 
-![SANA-WM 项目页截图 ※ MarkTechPost 引用](sana-wm-project-page.png)
+![SANA-WM 项目页截图 ※ MarkTechPost 引用](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/sana-wm-2-6b-720p-world-model-2026-05-17/sana-wm-project-page.png)
 
 ## 二、混合线性注意力：为什么吞吐量能拉到 36 倍
 
@@ -73,13 +73,13 @@ SANA-WM 最核心的工程改造是 attention 层——把传统视频生成模�
 
 跨帧依赖则保留了 softmax attention——这是必须的，因为视频帧之间的对齐（同一物体在不同时刻的位置）需要精确的全局匹配。SANA-WM 的混合策略可以理解成：**帧内用快但稍粗的线性注意力，帧间用慢但精的 softmax 注意力**。结果就是 20 M token 序列下，单 H100 一次前向能跑通 60 秒视频。
 
-![SANA-WM 720p 生成示例 ※ 第一人称视角飞行](sana-wm-demo-720p.png)
+![SANA-WM 720p 生成示例 ※ 第一人称视角飞行](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/sana-wm-2-6b-720p-world-model-2026-05-17/sana-wm-demo-720p.png)
 
 ## 三、单卡 H100 跑 60 秒 720p：吞吐量是 LingBot 的 36 倍
 
 把吞吐量这件事用一张图说清楚——同样跑单卡 H100，**LingBot-World 一小时只能出 0.6 条视频，SANA-WM 能出 22 条**。倍数关系就是 36 倍，这是 MarkTechPost 报道里直接给出的数字，与论文 §4 一致。
 
-![SANA-WM vs 国内三家视频模型 VBench 与吞吐量横评](sana-wm-vbench-throughput-cn.png)
+![SANA-WM vs 国内三家视频模型 VBench 与吞吐量横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/sana-wm-2-6b-720p-world-model-2026-05-17/sana-wm-vbench-throughput-cn.png)
 
 这张横评图把 VBench 总分和吞吐量两个维度同时摆出来，对国内开发者最有参考价值的几个判断：
 
@@ -94,7 +94,7 @@ SANA-WM 最核心的工程改造是 attention 层——把传统视频生成模�
 
 整篇论文里对国内开发者最直接的福利是这一条——**蒸馏版 SANA-WM + NVFP4 量化，能在单张 RTX 5090（32 GB）上 34 秒出一条 60 秒 720p 视频**。把这件事的具体硬件路径摊开看：
 
-![单卡跑 SANA-WM：显存与出片时间](sana-wm-single-gpu-cost.png)
+![单卡跑 SANA-WM：显存与出片时间](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/sana-wm-2-6b-720p-world-model-2026-05-17/sana-wm-single-gpu-cost.png)
 
 这张图把当前能买到的几张主流显卡的可行性分档：
 
@@ -115,7 +115,7 @@ SANA-WM 最核心的工程改造是 attention 层——把传统视频生成模�
 
 把 SANA-WM 的训练成本和同档世界模型 / 视频基座模型对比一下：
 
-![SANA-WM 训练成本 vs 同类世界模型](sana-wm-training-cost.png)
+![SANA-WM 训练成本 vs 同类世界模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/sana-wm-2-6b-720p-world-model-2026-05-17/sana-wm-training-cost.png)
 
 64 H100 × 18.5 天 = **1184 GPU-day**，按目前云端 H100 按需价 $2.5/小时折算，**整套训练大约 7.1 万美金**。这是什么概念：
 

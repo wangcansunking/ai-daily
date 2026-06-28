@@ -16,7 +16,7 @@ description: 字节跳动扣子 Coze 3.0 于 2026-06-01 全量上线，五端同
 ---
 # 扣子 3.0 把 Claude Code 接进项目编排 AI 团队
 
-![扣子 Coze agent team 封面 claude code bridge](coze-3-agent-team-claude-code-bridge-2026-06-05.png)
+![扣子 Coze agent team 封面 claude code bridge](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/coze-3-agent-team-claude-code-bridge-2026-06-05/coze-3-agent-team-claude-code-bridge-2026-06-05.png)
 
 2026 年 6 月 1 日，字节跳动旗下的 AI 智能体平台扣子（Coze）把 3.0 版本全量推了出来，iOS、Android、Mac、Windows 和网页端 coze.cn 五端同步迭代。
 
@@ -28,7 +28,7 @@ description: 字节跳动扣子 Coze 3.0 于 2026-06-01 全量上线，五端同
 
 这篇就沿着这条主线往下走：3.0 的「编排一支团队」到底怎么落、用 @ 派活的项目空间长什么样、它把本地 CLI Agent 接进来意味着什么，再把它和 Kimi、智谱 AutoGLM 以及海外的编排框架摆到一起对照，最后落到个人开发者和小团队怎么上手。
 
-![扣子 3.0 全平台同步上线，多智能体团队协作 · sina coze3](source-sina-coze3-hero-2026-06-05.jpg)
+![扣子 3.0 全平台同步上线，多智能体团队协作 · sina coze3](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/coze-3-agent-team-claude-code-bridge-2026-06-05/source-sina-coze3-hero-2026-06-05.jpg)
 
 <small>来源：新浪科技 2026-06-01 扣子 3.0 上线报道配图 finance.sina.com.cn</small>
 
@@ -46,7 +46,7 @@ description: 字节跳动扣子 Coze 3.0 于 2026-06-01 全量上线，五端同
 
 > 一个要先讲清楚的口径：截至 2026-06-05 凌晨核对，扣子官方功能说明与新浪科技、IT之家、53AI 等多家报道，**都没有给出 3.0 的具体用户量数字**。所以本文不引用任何「X 亿用户 / 超过 X」类口径——凡涉及规模的说法，都按「官方未披露」处理，只谈能力本身。
 
-![扣子 3.0 多智能体团队协作界面 · coze3 team collab](source-coze3-team-collab-2026-06-05.png)
+![扣子 3.0 多智能体团队协作界面 · coze3 team collab](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/coze-3-agent-team-claude-code-bridge-2026-06-05/source-coze3-team-collab-2026-06-05.png)
 
 <small>来源：扣子 3.0 官方产品截图，经 AITOP100 2026-06-02 报道转载</small>
 
@@ -98,7 +98,7 @@ description: 字节跳动扣子 Coze 3.0 于 2026-06-01 全量上线，五端同
 
 下面这张图把整条编排流程画了出来——人用 @ 派活、项目空间统一上下文、云端 Agent 与本地 CLI Agent 按角色协同、产出再沉淀回项目：
 
-![扣子 3.0 多智能体团队编排流程图 · coze3 orchestration](chart-coze3-orchestration-2026-06-05.png)
+![扣子 3.0 多智能体团队编排流程图 · coze3 orchestration](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/coze-3-agent-team-claude-code-bridge-2026-06-05/chart-coze3-orchestration-2026-06-05.png)
 
 <small>来源：本文据扣子 3.0 官方功能说明（coze.cn）+ 新浪科技 / IT之家 / 53AI 报道整理绘制</small>
 
@@ -130,7 +130,7 @@ description: 字节跳动扣子 Coze 3.0 于 2026-06-01 全量上线，五端同
 - 编程项目卡在某一步，手机上先 @ 调研类 Agent 把方案查清楚，回工位让本地 Claude Code 接着改；
 - 视频 / 设计这类长项目，手机随时推进一小步，进度跨端连续，不用每台设备重新对齐上下文。
 
-![扣子 3.0 跨端同步，手机远程推进电脑项目 · coze3 cross end](source-coze3-cross-end-2026-06-05.png)
+![扣子 3.0 跨端同步，手机远程推进电脑项目 · coze3 cross end](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/coze-3-agent-team-claude-code-bridge-2026-06-05/source-coze3-cross-end-2026-06-05.png)
 
 <small>来源：扣子 3.0 官方产品截图，经 AITOP100 2026-06-02 报道转载</small>
 
@@ -151,7 +151,7 @@ description: 字节跳动扣子 Coze 3.0 于 2026-06-01 全量上线，五端同
 
 把这几个本地 Agent 接进项目后，它们能在你授权下处理本地文件——这是云端 Agent 做不到的那部分执行力。扣子负责编排和协作，本地 Agent 负责贴着你机器干那些必须在本地完成的活。两边各司其职。
 
-![扣子 3.0 接入本地 Agent，授权处理本地文件](source-coze3-local-agent-2026-06-05.png)
+![扣子 3.0 接入本地 Agent，授权处理本地文件](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/coze-3-agent-team-claude-code-bridge-2026-06-05/source-coze3-local-agent-2026-06-05.png)
 
 <small>来源：扣子 3.0 官方产品截图，经 AITOP100 2026-06-02 报道转载</small>
 
@@ -193,7 +193,7 @@ description: 字节跳动扣子 Coze 3.0 于 2026-06-01 全量上线，五端同
 
 国内外做「多 Agent / 智能体」的产品不少，但侧重点很不一样。按编排主体、是否接本地 CLI Agent、跨端、最适合谁四个维度摆一张表：
 
-![扣子 3.0 与同类编排 / 助手产品定位对照 · coze3 positioning](chart-coze3-positioning-2026-06-05.png)
+![扣子 3.0 与同类编排 / 助手产品定位对照 · coze3 positioning](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-05/coze-3-agent-team-claude-code-bridge-2026-06-05/chart-coze3-positioning-2026-06-05.png)
 
 <small>来源：本文据各产品官方说明 + 公开报道（coze.cn / 智谱 docs.bigmodel.cn / 月之暗面 / LangGraph 文档）整理</small>
 

@@ -17,7 +17,7 @@ track_score: 9.2
 
 # Claude Code Dynamic Workflows 配合 Opus 4.8 上线：16 个 subagent 并行 + 对抗审计，季度级代码审计被压到几天
 
-![Claude Code Dynamic Workflows 配合 Opus 4.8 上线](anthropic-dynamic-workflows-100-parallel-subagents-2026-05-29.png)
+![Claude Code Dynamic Workflows 配合 Opus 4.8 上线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/anthropic-dynamic-workflows-100-parallel-subagents-2026-05-29/anthropic-dynamic-workflows-100-parallel-subagents-2026-05-29.png)
 
 > 5 月 28 日凌晨，Anthropic 公司在自家博客同时发布两件事——旗舰模型 Claude Opus 4.8 上线，且 Claude Code 增加 Dynamic Workflows（动态工作流）功能，目前处于研究预览阶段。国内开发者群早上看到的 36 氪文章只截了一个角度，叫「自愈式 Claude Code」，主讲终端渲染和错误提示优化；但海外 Hacker News 头版那条帖子，吵的根本不是 UI 优化，是 Claude 第一次「自己写一段 JavaScript 脚本来调度一批 subagent 干活、还顺手叫两个 subagent 互相挑刺」这件事。这是一个范式变化——从「让模型一步一步思考」走到「让模型先写出怎么协调一批分身的代码」。本文把官方 blog、docs、HN 顶贴和 TechCrunch 报道一次性摆清楚，拆出这次更新对国内 AI Coding 用户实际意味着什么。
 
@@ -34,7 +34,7 @@ track_score: 9.2
 - **官方公布的内部案例**：Anthropic 公司用这套机制做了 20 多个 token 精简优化、若干个 WebAssembly 到 TypeScript 移植，以及 **69 个代码精简 PR、删了 1 万行以上**
 - **国内对照**：6 家国内 AI Coding 工具（Cursor / Codex CLI / Qoder / Trae / SkyClaw V1 / Claude Code）只有 SkyClaw V1 有内置 Reviewer agent 雏形对标对抗审计
 
-![Anthropic 官方 Dynamic Workflows 博客 OG 图](anthropic-dynamic-workflows-blog-og.jpg)
+![Anthropic 官方 Dynamic Workflows 博客 OG 图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/anthropic-dynamic-workflows-100-parallel-subagents-2026-05-29/anthropic-dynamic-workflows-blog-og.jpg)
 
 数字摆完之后，这篇文章的核心论点其实就一句话——**Dynamic Workflows 的真正变化不是「Claude 跑得更快」，而是 Claude 第一次以「脚本作者」身份出现：它写编排代码，再让一批分身按照那段代码并行干活、互相挑刺。这把以前要规划一个季度的「跨千文件迁移 / 全库安全审计 / 多源核对的深度研究」压到几天就能完成，前提是用户愿意付那个 token 账。**
 
@@ -54,7 +54,7 @@ track_score: 9.2
 
 **第三，subagent 池有硬上限。** docs 表格列得很清楚——「同时最多 16 个并发 subagent，本机 CPU 核心数更少时上限相应下降；单次工作流总共最多调用 1000 个 subagent」。这条与官方 blog 文案的「几十到几百个并行」是一致的——blog 那句「hundreds of parallel」指的是「单次运行调用的 subagent 总数」，不是「同一时刻在跑的 subagent 数」。这个口径差异不澄清，社区就会出现「Claude 一次起 100 个 subagent」的误传。
 
-![Anthropic 官方 Claude Code Dynamic Workflows 文档截图](anthropic-workflows-docs-og.png)
+![Anthropic 官方 Claude Code Dynamic Workflows 文档截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/anthropic-dynamic-workflows-100-parallel-subagents-2026-05-29/anthropic-workflows-docs-og.png)
 
 官方还配套发了一个内置工作流命令——`/deep-research`。这个命令把一个问题拆成多个角度，让 subagent 并行去搜不同来源，互相交叉验证，最后给出一份带引用的报告，且会主动过滤掉「过不了交叉验证的结论」。这条命令本身就是 Dynamic Workflows 的能力展示——把一个研究问题拆成可并行的子问题，再用对抗式的交叉核验过滤幻觉。
 
@@ -83,7 +83,7 @@ Claude Code 之前已经有了 Plan 模式（先规划再执行）、Agent 模�
 
 **第三，同一段脚本可以保存为命令、下次一键重跑。** 你在 `/workflows` 视图里按 s，就能把脚本保存到 `.claude/workflows/`（项目共享）或 `~/.claude/workflows/`（个人专用），下次直接 `/<command-name>` 就能再跑一遍。这是把一次 ad hoc 的工作流，沉淀成可复用的团队工作流模板。对国内有大型 monorepo 的团队，这条意味着「每个 PR 自动跑一遍 review workflow」「每周自动跑一遍 security audit workflow」可以低成本铺开。
 
-![Claude Code Dynamic Workflows 内部架构时序图](claude-code-dynamic-workflow-flowchart-2026-05-29.png)
+![Claude Code Dynamic Workflows 内部架构时序图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/anthropic-dynamic-workflows-100-parallel-subagents-2026-05-29/claude-code-dynamic-workflow-flowchart-2026-05-29.png)
 
 ## 三、16 并行 subagent + 对抗审计 agent 的内部架构拆解
 
@@ -111,7 +111,7 @@ Claude Code 之前已经有了 Plan 模式（先规划再执行）、Agent 模�
 
 5 月 28 日 Hacker News 头版那条 Dynamic Workflows 帖子（item 48311705）拿到 94 点赞、82 条评论。把顶赞前几条整理出来，能看出海外开发者社区对这个范式的真实想法。
 
-![Hacker News 顶贴讨论快照](anthropic-dynamic-workflows-blog-og.jpg)
+![Hacker News 顶贴讨论快照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/anthropic-dynamic-workflows-100-parallel-subagents-2026-05-29/anthropic-dynamic-workflows-blog-og.jpg)
 
 **第一条顶贴 SkyPuncher：「我现在的瓶颈不是 Claude 跑代码有多快，是它干得对不对。」** 这条话的潜在含义是——并行 16 个 subagent 不能直接转化为「质量翻 16 倍」。如果每个 subagent 的单次错误率不变，16 个并行只是把同样的错误率分布扩到 16 个并行轨迹上，最终质量取决于那个对抗审计 subagent 能挑出多少错。换句话说，并行规模红利得叠加「审计能挑得动错」这个前提才成立。
 
@@ -139,7 +139,7 @@ Claude Code 之前已经有了 Plan 模式（先规划再执行）、Agent 模�
 
 官方还给了一个明确的成本控制建议——「每个 agent 默认用你会话当前的模型；脚本可以指定某些阶段换更小的模型。」翻译过来——长链路工作流可以把「探索性筛选」阶段换 Sonnet（便宜 5 倍），只在「关键判定」阶段用 Opus 4.8。这是国内开发者特别要留意的优化点，因为国内大多数团队的 token 预算是受控的。
 
-![TechCrunch Opus 4.8 报道 header](techcrunch-opus-4.8-header.jpg)
+![TechCrunch Opus 4.8 报道 header](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/anthropic-dynamic-workflows-100-parallel-subagents-2026-05-29/techcrunch-opus-4.8-header.jpg)
 
 TechCrunch 在 5 月 28 日同步报道里强调一个细节：Opus 4.8 距 Opus 4.7 仅 41 天，是 Anthropic 公司近一年最快的迭代节奏。配合 Dynamic Workflows 一起发布，TechCrunch 给的解读是——「Anthropic 公司在面对 OpenAI 和 Google 公司最新模型的竞争压力下，需要用产品形态的差异化（不只是模型 benchmark）巩固 AI Coding 这个核心阵地。」
 
@@ -163,7 +163,7 @@ TechCrunch 在 5 月 28 日同步报道里强调一个细节：Opus 4.8 距 Opus
 
 国内 AI Coding 工具能不能给出对标的「写脚本式 agent 编排」？把 6 家放在同一张能力矩阵上对照——
 
-![国内 AI Coding 工具 Dynamic Workflows 对标横评](cn-ai-coding-orchestration-bakeoff-2026-05-29.png)
+![国内 AI Coding 工具 Dynamic Workflows 对标横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/anthropic-dynamic-workflows-100-parallel-subagents-2026-05-29/cn-ai-coding-orchestration-bakeoff-2026-05-29.png)
 
 逐家说几句——
 

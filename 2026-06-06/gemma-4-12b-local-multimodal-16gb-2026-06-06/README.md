@@ -16,7 +16,7 @@ description: Google 于 2026-06-03 发布的 Gemma 4 12B 是第一个把「文�
 ---
 # Gemma 4 12B 本地实测：16GB 笔记本跑原生多模态
 
-![Gemma 4 12B 在 16GB 笔记本与单卡 GPU 上本地运行文字图片声音多模态的等距示意图](gemma-4-12b-local-multimodal-16gb-2026-06-06.png)
+![Gemma 4 12B 在 16GB 笔记本与单卡 GPU 上本地运行文字图片声音多模态的等距示意图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/gemma-4-12b-local-multimodal-16gb-2026-06-06/gemma-4-12b-local-multimodal-16gb-2026-06-06.png)
 
 一个能同时读文字、看图片、听声音的开源模型，4-bit 量化后只占 7.5GB 显存——这意味着一台 16GB 内存的笔记本，或者一张二手 4090，就能在完全离线的情况下把它跑起来。这是 Google 于 2026-06-03 放出的 Gemma 4 12B 给本地用户的第一句话。
 
@@ -26,13 +26,13 @@ description: Google 于 2026-06-03 发布的 Gemma 4 12B 是第一个把「文�
 
 先看一眼它在 Unsloth 部署文档里的真实样子——一行直链就能拉起 4-bit 量化版，参数照抄即可：
 
-![Unsloth 部署文档里 Gemma 4 12B 的 llama.cpp 运行命令与 Q4_K_XL 量化直链](gemma-4-12b-local-multimodal-16gb-2026-06-06-source-unsloth-run.png)
+![Unsloth 部署文档里 Gemma 4 12B 的 llama.cpp 运行命令与 Q4_K_XL 量化直链](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/gemma-4-12b-local-multimodal-16gb-2026-06-06/gemma-4-12b-local-multimodal-16gb-2026-06-06-source-unsloth-run.png)
 
 ## 4-bit 只要 7.5GB：先把本地的账算清楚
 
 显存够不够，是本地能不能跑的第一道也是唯一一道硬门槛。Gemma 4 12B 在三档常见精度下的占用是这样的：
 
-![Gemma 4 12B 三档量化显存占用对比，4-bit 约 7.5GB 在 16GB 与 24GB 硬件红线之内](gemma-4-12b-local-multimodal-16gb-2026-06-06-chart-vram.png)
+![Gemma 4 12B 三档量化显存占用对比，4-bit 约 7.5GB 在 16GB 与 24GB 硬件红线之内](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/gemma-4-12b-local-multimodal-16gb-2026-06-06/gemma-4-12b-local-multimodal-16gb-2026-06-06-chart-vram.png)
 
 - **4-bit（Q4_K_XL）：约 7.5GB。** 一张 8GB 显存的入门卡刚好够本体，16GB 笔记本或 24GB 的 4090 还能留出大半空间放上下文。
 - **8-bit：约 13.5GB。** 16GB 这档机器还能上，但留给长上下文的余量就紧了。
@@ -58,7 +58,7 @@ export LLAMA_CACHE="unsloth/gemma-4-12B-it-GGUF"
 
 Gemma 4 这次一口气放了五个尺寸，把 12B 放回家族里看，才能明白它为什么是本地用户最该关注的那一档：
 
-![Gemma 4 家族 E4B、12B、26B-A4B、31B 四档在 4-bit 下的显存阶梯，12B 卡在 16GB 甜点线](gemma-4-12b-local-multimodal-16gb-2026-06-06-chart-family.png)
+![Gemma 4 家族 E4B、12B、26B-A4B、31B 四档在 4-bit 下的显存阶梯，12B 卡在 16GB 甜点线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/gemma-4-12b-local-multimodal-16gb-2026-06-06/gemma-4-12b-local-multimodal-16gb-2026-06-06-chart-family.png)
 
 | 尺寸 | 定位 | 4-bit 显存 | 上下文 |
 |---|---|---|---|
@@ -75,7 +75,7 @@ Gemma 4 这次一口气放了五个尺寸，把 12B 放回家族里看，才能�
 
 Gemma 4 12B 最值得拆的不是分数，而是它的结构改动——这次它把「多模态」做成了一个单独的解码器，没有任何独立的视觉或语音编码器。
 
-![Google 官方博客介绍 Gemma 4 12B 是统一的、去编码器的多模态模型](gemma-4-12b-local-multimodal-16gb-2026-06-06-source-google-blog.png)
+![Google 官方博客介绍 Gemma 4 12B 是统一的、去编码器的多模态模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/gemma-4-12b-local-multimodal-16gb-2026-06-06/gemma-4-12b-local-multimodal-16gb-2026-06-06-source-google-blog.png)
 
 具体改了两处：
 
@@ -95,7 +95,7 @@ Gemma 4 12B 最值得拆的不是分数，而是它的结构改动——这次�
 
 速度会随量化档、上下文长度、输入模态浮动，没有一个放之四海的固定值，但 4-bit 在消费级卡上跑到二十几 tokens/秒这个量级，对个人使用来说是「能用」的线。
 
-![Hacker News 上 Gemma 4 12B 的讨论线程，社区聚焦本地运行与量化表现](gemma-4-12b-local-multimodal-16gb-2026-06-06-source-hn-thread.png)
+![Hacker News 上 Gemma 4 12B 的讨论线程，社区聚焦本地运行与量化表现](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/gemma-4-12b-local-multimodal-16gb-2026-06-06/gemma-4-12b-local-multimodal-16gb-2026-06-06-source-hn-thread.png)
 
 量化这块，Google 在 2026-06-05 又补了一组 QAT（量化感知训练）权重，专门优化移动端和笔记本：
 

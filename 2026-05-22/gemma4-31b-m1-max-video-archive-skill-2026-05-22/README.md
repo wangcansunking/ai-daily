@@ -33,7 +33,7 @@ image_alt_match_ignore:
 
 # 五年前 MacBook 跑 Gemma 4 31B 建一整年视频索引
 
-![五年前的 MacBook 把家庭录像变成可检索索引的封面](gemma4-31b-m1-max-video-archive-skill-2026-05-22.png)
+![五年前的 MacBook 把家庭录像变成可检索索引的封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/gemma4-31b-m1-max-video-archive-skill-2026-05-22/gemma4-31b-m1-max-video-archive-skill-2026-05-22.png)
 
 5 月 21 日傍晚 simbastack 博客上线一篇长文，作者把 2021 年买的 16 寸 MacBook Pro 放回桌上跑了几天 Gemma 4 31B，回头看一整年的家庭录像已经被打成可以 grep 的索引。HackerNews 那条同名讨论 198 分、15 条回复，作者在评论区追着甩出一个 MIT 协议的开源仓库 `Simbastack-hq/framedex`，整套流程公开。
 
@@ -47,7 +47,7 @@ image_alt_match_ignore:
 
 simbastack 在原文里把 hero 段落写得很克制。他的硬件就是一台 **2021 年下单的 16 寸 MacBook Pro，M1 Max 芯片、10 核 CPU + 32 核 GPU、64GB 统一内存**——苹果当年最高配的 BTO 配置，五年前的电脑放到 2026 年的语境下属于"早就不是主力机"。
 
-![仿原帖 hero：simbastack 把 2021 款 MacBook 跑成视频索引机](simbastack-hero.png)
+![仿原帖 hero：simbastack 把 2021 款 MacBook 跑成视频索引机](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/gemma4-31b-m1-max-video-archive-skill-2026-05-22/simbastack-hero.png)
 
 作者的工作流非常朴素：本机 LM Studio 加载 **Gemma 4 31B 的 Q4 量化版**，REST 服务监听 127.0.0.1:1234；他把这台机器丢在书房，自己用另一台电脑写代码，索引脚本在背景里一段一段处理家庭录像。原文里那句让 HN 顶赞的话是这么说的：「我的笔记本跑得发烫、风扇转起来了，它一边出 sidecar，我一边干别的事。」——这种把高端模型跑成离线后台任务的状态，正是本地大模型最该有的形态。
 
@@ -57,7 +57,7 @@ simbastack 在原文里把 hero 段落写得很克制。他的硬件就是一台
 
 framedex（作者把开源版本起了这个名字）每段视频走十步，但归并成读者好抓的四步：
 
-![framedex 四模块流水架构](pipeline-architecture.png)
+![framedex 四模块流水架构](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/gemma4-31b-m1-max-video-archive-skill-2026-05-22/pipeline-architecture.png)
 
 第一步是**元数据 + GPS**。ffprobe 抓时长、分辨率、码率；exiftool 提取经纬度和海拔；Nominatim 把 GPS 反查成地名，"杭州西湖断桥北"这种字段直接落到 YAML 里。这一步开销几乎为零，但提供了后续语义检索最重要的两个锚点：**时间与地点**。
 
@@ -77,7 +77,7 @@ framedex（作者把开源版本起了这个名字）每段视频走十步，但
 
 原文里把硬件压力交代得很硬核。Gemma 4 31B Q4 加载到 LM Studio 后，**驻留内存 28.40 GB**，跑批过程里 macOS 内存压力指示一直停在黄区；最关键的数字是 **swap 峰值 50.89 GB**——加起来接近 80GB 的数据流，跑在只有 64GB 物理统一内存的笔电上。
 
-![M1 Max 跑 Gemma 4 31B 的资源占用时间线](m1max-resource-timeline.png)
+![M1 Max 跑 Gemma 4 31B 的资源占用时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/gemma4-31b-m1-max-video-archive-skill-2026-05-22/m1max-resource-timeline.png)
 
 这张曲线复刻了原文给的画面：开机后第一段加载模型，内存从 8GB 直接跳到 28.40GB；从第 1 小时开始 swap 进场，第 3 小时左右抵达峰值 50.89GB；CPU 利用率在 30%-70% 区间小幅起伏，GPU 利用率反而更高，跑视觉推理时常年压在 70%-90%。
 
@@ -93,7 +93,7 @@ simbastack 原话的诚实之处在于他不藏问题——「**笔记本跑得�
 
 每段视频一份同名 `.description.md`。原文给出的字段排布如下：
 
-![.description.md 字段结构表](sidecar-md-structure.png)
+![.description.md 字段结构表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/gemma4-31b-m1-max-video-archive-skill-2026-05-22/sidecar-md-structure.png)
 
 YAML 前置元数据 11 个字段，按重要性排序：
 
@@ -115,13 +115,13 @@ YAML 之下是一段 `## Description` 描述正文，自然语言写场景、人
 
 下面这张图是这份 sidecar 在一个普通编辑器里的渲染样子，能更直观感受这份索引落到文件系统后是什么形态：
 
-![编辑器里渲染 .description.md sidecar 的样子](sidecar-render-mockup.png)
+![编辑器里渲染 .description.md sidecar 的样子](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/gemma4-31b-m1-max-video-archive-skill-2026-05-22/sidecar-render-mockup.png)
 
 ## 五、国产视觉大模型对比横评：千问 / DeepSeek / 智谱 三家在 M 系列上的位置
 
 simbastack 用 Gemma 4 31B 是因为他熟悉 LM Studio 的本地路径。但国内读者更关心的问题是：**同一套 Claude Code skill，把视觉模型换成国产三家，能不能跑、跑多快？** 这一节给一个综合社区帖与模型卡讨论得到的位置图，数字属社区中位区间，没有独立复测，看的是相对量级。
 
-![Gemma 4 31B 与三家国产 VL 在 Apple Silicon 上的速度对位](gemma4-vs-cn-vl-bench.png)
+![Gemma 4 31B 与三家国产 VL 在 Apple Silicon 上的速度对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/gemma4-31b-m1-max-video-archive-skill-2026-05-22/gemma4-vs-cn-vl-bench.png)
 
 **千问 Qwen3-VL 32B（阿里）**：阿里这条线最有意思的地方在于 MLX 移植非常完整。社区在 codersera 的实测报告里给出 M4 Max 32GB 用 4-bit MLX 跑出约 68 tok/s 的吞吐；放到 M1 Max 64GB 这一档，社区帖给出的实测是 6-11 tok/s 区间。这个模型本身是阿里 2025 年下半年的开源主力，**对 OCR、表格、图表理解都做了专门优化**，跑视频帧描述也很顺。国内开发者从 ModelScope 拉模型可以走 hf-mirror 镜像，速度稳定。
 

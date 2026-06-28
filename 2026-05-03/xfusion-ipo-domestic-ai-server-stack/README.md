@@ -13,7 +13,7 @@ cover: "xfusion-ipo-domestic-ai-server-stack.png"
 
 > 910 亿估值、2025 年营收冲刺 600 亿、国内 X86 服务器整机第二（12.7%）、辅导四个多月就走完——这家从华为 X86 服务器业务剥出来的公司，现在站在了国产 AI 算力交付链的最后一公里。
 
-![超聚变 IPO · 封面](xfusion-ipo-domestic-ai-server-stack.png)
+![超聚变 IPO · 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/xfusion-ipo-domestic-ai-server-stack/xfusion-ipo-domestic-ai-server-stack.png)
 
 ## 一、先把数字摆出来
 
@@ -21,7 +21,7 @@ cover: "xfusion-ipo-domestic-ai-server-stack.png"
 
 营收轨迹是这家公司被关注的核心理由：2021 年成立当年 100 亿元，2022 年突破 200 亿元，2023 年超过 280 亿元，2024 年券商一致口径在 400—435 亿元区间（财联社、东方财富、证券时报披露口径略有差异），2025 年上半年已超 300 亿元，全年公司公开目标是冲刺 500—600 亿元。五年六倍。
 
-![超聚变营收轨迹：5 年 6 倍](xfusion-ipo-revenue-trajectory.png)
+![超聚变营收轨迹：5 年 6 倍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/xfusion-ipo-domestic-ai-server-stack/xfusion-ipo-revenue-trajectory.png)
 
 国内市占根据 IDC 数据：2025 年超聚变以 12.7% 的份额位列国内 X86 服务器整机厂商第二，第一是浪潮信息（31.3%），第三是新华三（12.5%）。在中国标准液冷服务器细分领域，公司连续两年市占第一。
 
@@ -55,7 +55,7 @@ cover: "xfusion-ipo-domestic-ai-server-stack.png"
 
 把视角拉回到行业层面，国内 AI 服务器整机牌桌目前是这样一张图。
 
-![国产 AI 服务器格局：超聚变 vs 同行](xfusion-vs-cn-ai-server.png)
+![国产 AI 服务器格局：超聚变 vs 同行](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/xfusion-ipo-domestic-ai-server-stack/xfusion-vs-cn-ai-server.png)
 
 按 IDC 2025 上半年数据，中国加速服务器市场规模达 160 亿美元，同比增长超过一倍；本土 AI 芯片品牌的市场份额已升至约 35%。互联网行业仍是最大采购方，占比约 69%。也就是说，AI 服务器在中国是一个一年翻倍、本土化深化中的产业。
 
@@ -98,7 +98,7 @@ cover: "xfusion-ipo-domestic-ai-server-stack.png"
 
 需求一旦从「能不能跑」切换成「哪家整机交付靠谱、哪家液冷管得好、哪家运维生态成熟」，超聚变的工程出身和华为体系积累就有了真实的转化场景。
 
-![国产 AI 算力栈：超聚变在哪一层](xfusion-ai-server-supply-chain.png)
+![国产 AI 算力栈：超聚变在哪一层](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/xfusion-ipo-domestic-ai-server-stack/xfusion-ai-server-supply-chain.png)
 
 ## 六、产业链上下游：从一片 PCB 到一台机柜，国内能自己干完
 

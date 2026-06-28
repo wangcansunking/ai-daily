@@ -10,7 +10,7 @@ description: 当地时间 6 月 9 日，Anthropic 把内部最强内核装上安
 
 # Anthropic 放出最强公开模型 Fable 5·微信开放 AI 操作小程序·你常用的编程工具一周全接上 | AI 日报 | 2026-06-10
 
-![一只由发光代码线条组成的强力 AI 内核与一部用语音直接操作小程序的手机，几款开发工具同时汇向同一束光](10.png)
+![一只由发光代码线条组成的强力 AI 内核与一部用语音直接操作小程序的手机，几款开发工具同时汇向同一束光](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/daily/10.png)
 
 ## 📋 头版目录
 
@@ -43,7 +43,7 @@ description: 当地时间 6 月 9 日，Anthropic 把内部最强内核装上安
 
 它有多强，先看一组编程数字。在贴近真实软件工程的基准 SWE-Bench Pro 上，Fable 5 拿到 **80.3%**，把自家 Opus 4.8 的 69.2% 甩开 11 个百分点，也明显高过 GPT-5.5 的 58.6% 和 Gemini 3.1 Pro 的 54.2%。Anthropic 给的落地例子是：Stripe 用它一天迁完一个 5000 万行的 Ruby 代码库，这活原本要一支全队两个月。
 
-![Claude Fable5 编程基准 benchmark 对比：SWE-Bench Pro 与 FrontierCode 上对 Opus 4.8、GPT-5.5、Gemini 3.1 Pro 的领先](daily-2026-06-10-fable5-benchmark.png)
+![Claude Fable5 编程基准 benchmark 对比：SWE-Bench Pro 与 FrontierCode 上对 Opus 4.8、GPT-5.5、Gemini 3.1 Pro 的领先](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/daily/daily-2026-06-10-fable5-benchmark.png)
 
 差距最能拉开的不是 SWE-Bench Pro，而是按生产标准卡的 FrontierCode——代码要可维护、要符合工程规范、要经得起真实评审。这一栏 GPT-5.5 只剩 5.7%，Opus 4.8 是 13.4%，Fable 5 拿到 **29.3%**，是第二名的两倍多。常规脚本各家都够用，越往遗留系统重构、跨框架迁移这种硬骨头走，Fable 5 的领先越成倍数。
 
@@ -56,7 +56,7 @@ description: 当地时间 6 月 9 日，Anthropic 把内部最强内核装上安
 
 也就是说，公开和受限不是两个模型，而是同一个内核的两种开放程度——一种给所有人、装了闸，一种给审批过的防御方、开了闸。对普通开发者，这意味着你拿到的不是一个被整体阉割的弱化版，而是一个只在三类边缘话题上降速、其余满血的最强公开模型。Anthropic 说约 95% 的会话完整跑在 Fable 5 自己的回答上，换算下来约 5% 触发那道闸——也就是说，绝大多数日常编程、写作、分析场景，你用到的都是它的满血状态。
 
-![Anthropic 官方公告页 Claude Fable 5 与 Claude Mythos 5](fable5-source-anthropic-news.png)
+![Anthropic 官方公告页 Claude Fable 5 与 Claude Mythos 5](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/daily/fable5-source-anthropic-news.png)
 *来源：Anthropic 官方公告 `anthropic.com/news/claude-fable-5-mythos-5`，2026-06-09*
 
 #### 价格翻倍，但给了 13 天免费窗口
@@ -65,7 +65,7 @@ Fable 5 的定价是每百万输入 token **10 美元**、每百万输出 token 
 
 时间点要记一下：6 月 22 日之前，Fable 5 含在 Pro、Max、Team 和按席位计费的企业版里，不额外收费；6 月 23 日起从这些订阅里撤出，之后调用按信用额度计量。Anthropic 还披露了一项安全数据——超过 1000 小时测试中没有出现通用越狱。对想试水的开发者，这 13 天免费窗口是低成本上手的好时机。
 
-![TechCrunch 报道 Claude Fable 5 发布与定价、免费期细节](fable5-source-techcrunch.png)
+![TechCrunch 报道 Claude Fable 5 发布与定价、免费期细节](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/daily/fable5-source-techcrunch.png)
 *来源：TechCrunch 报道页，2026-06-09*
 
 这次发布的分寸感，正是它值得放在头条的原因：强能力照样开发、照样给最需要它的防御方用满血，面向大众的那一份则把高危方向单独摁住、其余全开。Anthropic 不必在"把强能力藏起来"和"把强能力裸放出去"之间二选一，而是给出了第三种答案。
@@ -76,7 +76,7 @@ Fable 5 的定价是每百万输入 token **10 美元**、每百万输出 token 
 
 6 月 8 日，微信面向开发者开放了接入微信 AI 生态的能力。落到用户那头是一句很具体的体验：你说一句话，微信 AI 理解意图后，可以**直接操作小程序的页面**，把订餐、预约、下单这些原本要点好几屏的事一气做完。
 
-![微信把操作小程序 applet 的能力开放给开发者，自动模式与开发模式两种接入流程 flow](daily-2026-06-10-wechat-applet-flow.png)
+![微信把操作小程序 applet 的能力开放给开发者，自动模式与开发模式两种接入流程 flow](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/daily/daily-2026-06-10-wechat-applet-flow.png)
 
 对开发者，这次开放给了两种接入方式：
 
@@ -93,7 +93,7 @@ Fable 5 的定价是每百万输入 token **10 美元**、每百万输出 token 
 
 Fable 5 不只是多了一个 API 选项。发布当天，几大开发者平台同步把它推成正式可用：GitHub Copilot、AWS Bedrock、GitLab Duo 同日 GA，命令行侧的 Codex CLI、Copilot CLI 也在新版里加上了 Fable 5。一个新顶配模型当天就铺满主流入口，这种渠道速度本身就说明了 Anthropic 在开发者市场的位置。
 
-![一周内 GitHub Copilot、AWS、GitLab、命令行工具集体接入 Fable 5，调用计费同步调整](daily-2026-06-10-coding-tools-week.png)
+![一周内 GitHub Copilot、AWS、GitLab、命令行工具集体接入 Fable 5，调用计费同步调整](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/daily/daily-2026-06-10-coding-tools-week.png)
 
 但更值得国内开发者留意的是同期一项计费调整。**6 月 15 日起，Claude Agent SDK、`claude -p`、Claude Code 的 GitHub Actions 以及第三方 agent，不再占用 Pro / Max 订阅额度，改走独立的月度信用池**，按完整 API 费率计量、不滚存。
 
@@ -147,19 +147,19 @@ Fable 5 不只是多了一个 API 选项。发布当天，几大开发者平台�
 
 🔴 **HKUDS/nanobot** — ⭐ 4.4 万。港大数据智能实验室出品的轻量级开源 AI agent，把工具、聊天、工作流串成一个本地能跑的助手。2 月开源后涨星很快，6 月 9 日仍有活跃提交，是当前热度最高的新生 agent 项目之一。[18]
 
-![HKUDS nanobot 轻量级开源 AI agent 仓库](source-github-nanobot-og-2026-06-10.png)
+![HKUDS nanobot 轻量级开源 AI agent 仓库](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/daily/source-github-nanobot-og-2026-06-10.png)
 
 🟡 **agentscope-ai/QwenPaw** — ⭐ 1.7 万。基于通义千问（Qwen）的个人 AI 助手，本地或云端一键部署，接入多个聊天 App、能力可扩展。个人 AI 助手叠加国内模型，正中"个人 AI"这个最高权重题材。[19]
 
-![QwenPaw 基于通义千问的个人 AI 助手仓库](source-github-qwenpaw-og-2026-06-10.png)
+![QwenPaw 基于通义千问的个人 AI 助手仓库](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/daily/source-github-qwenpaw-og-2026-06-10.png)
 
 🟡 **cline/cline** — ⭐ 6.3 万。自主编码 agent，可作为 SDK、IDE 插件或命令行助手使用，6 月 10 日仍在持续提交，近期把定位往 SDK 化调整。[20]
 
 🟡 **BasedHardware/omi** — ⭐ 1.3 万。能看你屏幕、听你对话并据此给下一步建议的随身 AI，个人 AI 助手 / 随身硬件方向的代表项目，6 月 9 日活跃。[21]
 
-![BasedHardware omi 随身个人 AI 仓库](source-github-omi-og-2026-06-10.png)
+![BasedHardware omi 随身个人 AI 仓库](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/daily/source-github-omi-og-2026-06-10.png)
 
-![GitHub 当日仍在高频提交的 agent 与编程仓库星标对比](daily-2026-06-10-github-stars.png)
+![GitHub 当日仍在高频提交的 agent 与编程仓库星标对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/daily/daily-2026-06-10-github-stars.png)
 
 ## 🛠 AI Coding 工具动态
 

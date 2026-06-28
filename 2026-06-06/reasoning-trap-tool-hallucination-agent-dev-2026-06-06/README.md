@@ -12,7 +12,7 @@ tags: [Agent, MCP, 工具调用, 推理模型, 幻觉, DeepSeek-R, Qwen, Kimi]
 
 # 推理开越猛，Agent 工具调用越爱凭空捏造
 
-![推理增强反而放大工具调用幻觉](reasoning-trap-tool-hallucination-agent-dev-2026-06-06.png)
+![推理增强反而放大工具调用幻觉](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/reasoning-trap-tool-hallucination-agent-dev-2026-06-06/reasoning-trap-tool-hallucination-agent-dev-2026-06-06.png)
 
 > 一个反直觉的发现：你给 Agent 换上推理（reasoning）更强的模型、把"深度思考"开到最大，它在工具调用（tool call，函数调用）这一环节，反而更容易凭空捏造一个根本不存在的工具或参数。这不是个别现象，而是一条可量化、可复现、跨模型成立的规律。
 
@@ -31,7 +31,7 @@ tags: [Agent, MCP, 工具调用, 推理模型, 幻觉, DeepSeek-R, Qwen, Kimi]
 
 这两类任务的共同点是：**正确答案就是"不调用任何工具"**。任务被设计成"靠现有工具绝对完不成"，于是只要模型动手去调了某个工具，就记一次幻觉。幻觉率就是"在这些本该拒绝的场景里，模型却伸手去调工具"的比例——NTA 任务的幻觉率记作 R_NTA，DT 任务的记作 R_DT。
 
-![论文给出的工具幻觉概览图](reasoning-trap-tool-hallucination-agent-dev-2026-06-06-paper-overview.png)
+![论文给出的工具幻觉概览图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/reasoning-trap-tool-hallucination-agent-dev-2026-06-06/reasoning-trap-tool-hallucination-agent-dev-2026-06-06-paper-overview.png)
 
 *来源：The Reasoning Trap（arXiv:2510.22977）论文 Figure，工具幻觉两类失败模式概览*
 
@@ -43,7 +43,7 @@ tags: [Agent, MCP, 工具调用, 推理模型, 幻觉, DeepSeek-R, Qwen, Kimi]
 
 下面这张图是按原文 Table 1 数值绘制的对照——同一家族、同一规模量级，区别只在"有没有经过推理强化"：
 
-![基线 vs 推理增强模型的工具幻觉率对照](reasoning-trap-tool-hallucination-agent-dev-2026-06-06-chart1.png)
+![基线 vs 推理增强模型的工具幻觉率对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/reasoning-trap-tool-hallucination-agent-dev-2026-06-06/reasoning-trap-tool-hallucination-agent-dev-2026-06-06-chart1.png)
 
 具体数字（均为论文 Table 1 原文值）：
 
@@ -56,7 +56,7 @@ tags: [Agent, MCP, 工具调用, 推理模型, 幻觉, DeepSeek-R, Qwen, Kimi]
 
 更妙的是，论文还给了一组"同一个模型、只切推理开关"的对照——这是对开发者最有用的一组数据，因为它最接近我们日常的操作：同一个 Qwen3，把 thinking（推理模式）开起来 vs 关掉。
 
-![Qwen3 开关推理模式对工具幻觉率的影响](reasoning-trap-tool-hallucination-agent-dev-2026-06-06-chart2.png)
+![Qwen3 开关推理模式对工具幻觉率的影响](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/reasoning-trap-tool-hallucination-agent-dev-2026-06-06/reasoning-trap-tool-hallucination-agent-dev-2026-06-06-chart2.png)
 
 按原文 Table 1：
 
@@ -99,7 +99,7 @@ tags: [Agent, MCP, 工具调用, 推理模型, 幻觉, DeepSeek-R, Qwen, Kimi]
 
 - **工具可靠性相关的分布外（out-of-distribution）表征显著动摇**：在早层和中层，CKA 一路掉到 0.75 以下。
 
-![论文的逐层表征动摇热力图](reasoning-trap-tool-hallucination-agent-dev-2026-06-06-paper-heatmap.png)
+![论文的逐层表征动摇热力图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/reasoning-trap-tool-hallucination-agent-dev-2026-06-06/reasoning-trap-tool-hallucination-agent-dev-2026-06-06-paper-heatmap.png)
 
 *来源：The Reasoning Trap（arXiv:2510.22977）论文 Figure，逐层表征差异热力图*
 
@@ -117,7 +117,7 @@ tags: [Agent, MCP, 工具调用, 推理模型, 幻觉, DeepSeek-R, Qwen, Kimi]
 
 DPO 这一组的数据值得细看。论文 Table 2 拿一个工具幻觉很严重的模型 ReCall-7B 做对齐：
 
-![DPO 缓解前后的取舍对照](reasoning-trap-tool-hallucination-agent-dev-2026-06-06-chart3.png)
+![DPO 缓解前后的取舍对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/reasoning-trap-tool-hallucination-agent-dev-2026-06-06/reasoning-trap-tool-hallucination-agent-dev-2026-06-06-chart3.png)
 
 按原文 Table 2：
 
@@ -140,7 +140,7 @@ DPO 确实把幻觉压下来了：NTA 幻觉率从 90.2% 降到 55.8%，降了 3
 
 **第二，把"规划"和"执行工具"在架构上分开。** 一个常见且有效的模式是：用推理强的模型负责"想清楚要干什么、分几步"，但真正落到"调哪个工具、填什么参数"时，交给一个推理档更低、更克制的执行步骤来做。让敢想的归敢想、稳手的归稳手，避免同一次调用里既要发散又要精确。
 
-![按环节分配推理档的 Agent 架构示意](reasoning-trap-tool-hallucination-agent-dev-2026-06-06-chart4.png)
+![按环节分配推理档的 Agent 架构示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/reasoning-trap-tool-hallucination-agent-dev-2026-06-06/reasoning-trap-tool-hallucination-agent-dev-2026-06-06-chart4.png)
 
 **第三，给工具调用上"硬约束"，不要只靠模型自觉。** 论文里 DT 任务的高幻觉率说明：光靠提示词让模型"别乱调"效果有限。工程上更靠谱的是在模型外面加一层校验——调用前用代码检查这个工具名是否真在已注册的工具表里、参数 schema 是否对得上、必填字段是否齐全；对不上就直接拦下来，不让这次幻觉的调用真正发出去。MCP 这类协议天然适合在这一层做白名单校验。
 

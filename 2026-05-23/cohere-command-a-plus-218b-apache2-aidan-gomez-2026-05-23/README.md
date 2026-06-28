@@ -14,7 +14,7 @@ authors:
 
 # Cohere 2180 亿真开源：千问 / DeepSeek 怎么打
 
-![Cohere Command A+ 218B Apache 2.0 真开源](cohere-command-a-plus-218b-apache2-aidan-gomez-2026-05-23.png)
+![Cohere Command A+ 218B Apache 2.0 真开源](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/cohere-command-a-plus-218b-apache2-aidan-gomez-2026-05-23/cohere-command-a-plus-218b-apache2-aidan-gomez-2026-05-23.png)
 
 > 5 月 20 日，Cohere（Cohere · 加拿大 AI 公司，由 Transformer 共同作者 Aidan Gomez 创立）把旗舰模型 Command A+ 用 Apache 2.0 完全开源。2180 亿总参 / 250 亿激活的稀疏 MoE 架构，128 个专家、每 token 激活 8 个，再加一个共享专家挂在所有 token 上，两张 H100 或一张 Blackwell B200 就能本地起服务。τ²-Bench Telecom（电信领域 agent 基准）从前代 37% 拉到 85%，Terminal-Bench Hard（终端命令行 agent 困难档）从 3% 拉到 25%，AIME 25 数学竞赛（非 thinking 模式）拿下 90%。主导这件事的是 Cohere 联合创始人兼 CEO Aidan Gomez——9 年前 20 岁、还在谷歌大脑实习的时候，他是《Attention Is All You Need》论文 8 位共同作者中最年轻的一个；今天，他把一台旗舰模型的全部权重，无授权费、无商用限制、无竞业条款地放到了 HuggingFace 公开页上。
 
@@ -24,13 +24,13 @@ authors:
 
 二层是**基准**。Command A+ 在 Terminal-Bench Hard 这条 agent 实战赛道上，把上一代的 3% 拉到了 25%，相当于把「能跑通几步终端命令」的能力翻了 8 倍以上。这两条凑齐，国内集成商和我们自己的旗舰模型团队，都得正眼看一看这个 2180 亿稀疏 MoE 到底打到了哪一档。
 
-![Cohere CohereLabs HuggingFace 组织页头像](cohere-command-a-plus-huggingface-avatar.png)
+![Cohere CohereLabs HuggingFace 组织页头像](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/cohere-command-a-plus-218b-apache2-aidan-gomez-2026-05-23/cohere-command-a-plus-huggingface-avatar.png)
 
 ## 一、2180 亿真开源：Apache 2.0 这四个字值多少钱
 
 先看许可证。Cohere 这次放的是 **Apache 2.0**，没有任何附加条款。VentureBeat 的报道引用 Cohere 联合创始人 Nick Frosst（Geoffrey Hinton 的早期学生、力推 Apache 2.0 转向的主要推动者）一句话：「任何人都可以使用、修改、分发并商业化这个模型，不付授权费，也没有竞业条款。」对照前代 Command R / R+ 走的 CC-BY-NC 4.0（禁止商业用途、仅供研究和评测），这是一次彻底的姿态转变。
 
-![Cohere Command A+ 官方 hero 图](cohere-command-a-plus-official-hero.png)
+![Cohere Command A+ 官方 hero 图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/cohere-command-a-plus-218b-apache2-aidan-gomez-2026-05-23/cohere-command-a-plus-official-hero.png)
 
 对国内开发者来说，Apache 2.0 的实际价值得跟 Llama 系列那份「社区许可证」放在一起看才清楚。下面这张许可证差异表把企业部署最关心的五条全摆开。
 
@@ -52,7 +52,7 @@ authors:
 
 光看许可证不够，得看模型实力。Cohere 官博给出四档关键基准，每一档都得拆解一句，不然容易被「90% 拿了第一」这类标题骗到。
 
-![Cohere Command A+ 与前代基准对比（36kr 转载 Cohere 官方）](cohere-command-a-plus-36kr-benchmark.png)
+![Cohere Command A+ 与前代基准对比（36kr 转载 Cohere 官方）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/cohere-command-a-plus-218b-apache2-aidan-gomez-2026-05-23/cohere-command-a-plus-36kr-benchmark.png)
 
 第一档 **τ²-Bench Telecom 85%**（前代 37%）。τ²-Bench 是 Tau-squared Bench 的简写，专门测大模型在电信业务场景的多轮 agent 操作能力——查套餐、改订单、处理投诉、跨系统接单。国内同行可能没听过这个基准，因为它是西方电信集成商主导的，对中国电信 / 中国移动 / 中国联通的内部业务系统并不直接对应。但 85% 这条线本身在 agent 实战赛道上是有意义的，相当于「跑 5 步业务工作流，第一次端到端跑通的概率从 37% 提到了 85%」。读这条数字时要注意：85% 是单次 pass 率，不是「能不能在重试后跑通」，所以提升空间确实大。
 
@@ -87,7 +87,7 @@ Cohere 这次开源的份量，离不开背后这位 33 岁的 CEO。
 
 Aidan Gomez 是 Cohere 联合创始人兼 CEO，也是 2017 年那篇改变了整个 AI 行业的 **《Attention Is All You Need》**8 位共同作者之一。论文发表时他 20 岁，还是 University of Toronto 的本科生，在谷歌大脑当暑期实习生。他不是论文的「唯一一作」——这个荣誉属于 Ashish Vaswani（论文一作通讯位）；但 8 位共同作者按谷歌大脑当时的署名惯例，是共同贡献、不分主次的协作产物。Aidan Gomez 在这 8 人里是最年轻的。
 
-![Cohere Command A+ 36kr 头条配图](cohere-command-a-plus-36kr-hero.png)
+![Cohere Command A+ 36kr 头条配图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/cohere-command-a-plus-218b-apache2-aidan-gomez-2026-05-23/cohere-command-a-plus-36kr-hero.png)
 
 这一段历史在国内媒体里经常被写成「Transformer 一作 Aidan Gomez」——这是不准确的。准确的说法是「《Attention Is All You Need》8 位共同作者之一」或「Transformer 论文共同作者」。这次专题坚持这个口径，因为对当年那群 20-30 岁的研究者来说，每个人的贡献都是协作的一部分，把单一作者的名字拎出来与论文绑定，不是这个领域看待历史的方式。
 

@@ -8,7 +8,7 @@ summary: 昆仑万维天工 AI 5 月 26 日发布 SkyClaw v1.0 + lite 双 Agent 
 ---
 # 昆仑万维 SkyClaw v1.0 限免登场：国产 Agent 模型第一次把 OpenClaw / Claude Code 兼容做进训练目标
 
-![SkyClaw v1.0 发布封面](kunlun-skyclaw-v1-agent-opus-46-free-2026-05-27.png)
+![SkyClaw v1.0 发布封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/kunlun-skyclaw-v1-agent-opus-46-free-2026-05-27/kunlun-skyclaw-v1-agent-opus-46-free-2026-05-27.png)
 
 > 2026 年 5 月 26 日下午量子位、IT 之家、新浪科技、CSDN、网易科技几乎同时挂出昆仑万维天工 AI 的发布稿，主角叫 SkyClaw v1.0。看完所有原文之后，最值得拎出来说的不是「对标 Opus 4.6」这种营销标语，而是另一个技术细节：这家公司声称在 mid-training 阶段就把大量复杂 Agent 任务并入训练数据，并明确把 OpenClaw、Claude Code、Hermes、Nanobot、Codex 五套 agentic harness 当成训练目标来对齐。这是国产模型公开材料里第一次把「harness 兼容」当成训练目标本身写进通稿，而不是发完模型再去靠 OpenAI 接口糊一层兼容皮。
 
@@ -34,7 +34,7 @@ summary: 昆仑万维天工 AI 5 月 26 日发布 SkyClaw v1.0 + lite 双 Agent 
 
 发布方式有两个口子。一个是 ToC 侧的天工 Skywork 平台 tiangong.cn，5 月 22 日就已经把 SkyClaw v1.0 接入了平台后端，普通用户直接登录就能用，配套 Skill 保存与定时任务设置（量子位通稿明确提到）。另一个是 ToD 侧的 APIFree（apifree.ai），开发者注册之后拿 API Key 直接调，目前免费，限免期 2 至 4 周。这个安排显然是有节奏的——5 月 22 日先把 ToC 平台接上做内测和稳定性观察，5 月 26 日同步开放 ToD 的 API 入口和宣发，把开发者口子打开。
 
-![量子位发布稿首图（昆仑万维 SkyClaw v1.0 logo 与定位）](skyclaw-qbitai-hero.webp)
+![量子位发布稿首图（昆仑万维 SkyClaw v1.0 logo 与定位）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/kunlun-skyclaw-v1-agent-opus-46-free-2026-05-27/skyclaw-qbitai-hero.webp)
 
 值得提一句的是，这是昆仑万维天工 AI 团队继年初天工 Skywork 通用智能体平台升级之后第一次单独推大模型本身，而且是直接对准 Agent 这一个赛道。这跟此前同一团队的产品节奏（通用智能体平台为主、模型本身只是底座）是个明显的方向转折——这一次模型本身被推到台前，而且打的是「能干活、能调工具、能跑长 Agent 链路」的卖点。
 
@@ -55,11 +55,11 @@ summary: 昆仑万维天工 AI 5 月 26 日发布 SkyClaw v1.0 + lite 双 Agent 
 
 **当下是限免状态**——昆仑万维通稿原话「即日起，SkyClaw-v1.0 与 SkyClaw-v1.0-lite 开放 2 至 4 周免费试用」，意思是开发者拿 APIFree key 在限免期内白嫖，到期后才是上面的挂牌价。
 
-![SkyClaw v1.0 定价表（量子位发布稿截图）](skyclaw-qbitai-pricing.webp)
+![SkyClaw v1.0 定价表（量子位发布稿截图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/kunlun-skyclaw-v1-agent-opus-46-free-2026-05-27/skyclaw-qbitai-pricing.webp)
 
 把这个数字放到国内主流 Agent 模型的价格梯队里看，整体大致是这样：
 
-![国产 Agent 模型 API 价格对比图](skyclaw-pricing-compare.png)
+![国产 Agent 模型 API 价格对比图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/kunlun-skyclaw-v1-agent-opus-46-free-2026-05-27/skyclaw-pricing-compare.png)
 
 几个口径需要说清楚：
 
@@ -78,7 +78,7 @@ summary: 昆仑万维天工 AI 5 月 26 日发布 SkyClaw v1.0 + lite 双 Agent 
 
 发布稿里反复强调的一个技术点：SkyClaw 把大量复杂 Agent 任务在 mid-training 阶段就注入训练数据，不像多数国产 Agent 模型那样在 SFT 阶段才补。这个点值得单独拆开看，因为它决定了 SkyClaw 是真做了路线差异化，还是只是改了个营销 narrative。
 
-![mid-training 与 SFT 后期补差异对比图](skyclaw-training-timeline.png)
+![mid-training 与 SFT 后期补差异对比图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/kunlun-skyclaw-v1-agent-opus-46-free-2026-05-27/skyclaw-training-timeline.png)
 
 从量子位转引的官方说明看，SkyClaw 训练管线大致是这样：
 
@@ -104,7 +104,7 @@ summary: 昆仑万维天工 AI 5 月 26 日发布 SkyClaw v1.0 + lite 双 Agent 
 
 通稿里第二个反复出现的点：SkyClaw v1.0「深度适配」OpenClaw、Claude Code、Hermes、Nanobot、Codex 五套主流 agentic harness。这个说法值得拆穿一下，因为「适配」在国产模型发布稿里通常有两种完全不同的含义。
 
-![五套 harness 适配状态矩阵](skyclaw-harness-matrix.png)
+![五套 harness 适配状态矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/kunlun-skyclaw-v1-agent-opus-46-free-2026-05-27/skyclaw-harness-matrix.png)
 
 **含义一（弱）**：OpenAI 接口兼容。任何提供 OpenAI 兼容协议的模型理论上都能通过修改 `base_url` 接入 OpenClaw、Claude Code 等支持自定义 endpoint 的 harness。这一档「适配」的工程难度等于零，本质上是 harness 本身的能力，跟模型训练完全无关。
 
@@ -117,7 +117,7 @@ SkyClaw v1.0 的通稿写的是哪一档？把所有公开通稿的相关表述�
 - **网易科技通稿**：明确点出「Nanobot 已经率先完成对 SkyClaw-v1.0 的适配，只需填入 API 密钥即可使用」——这是唯一一家被点名「率先完成适配」的 harness。
 - **其余几家通稿**：均使用「兼容主流 Agent 环境」「适配主流 Agent 框架」这类弱口径表述。
 
-![量子位发布稿 harness 兼容性图（来源截图）](skyclaw-qbitai-harness.webp)
+![量子位发布稿 harness 兼容性图（来源截图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/kunlun-skyclaw-v1-agent-opus-46-free-2026-05-27/skyclaw-qbitai-harness.webp)
 
 按现有信息推断真实情况大致是：
 
@@ -157,7 +157,7 @@ SkyClaw v1.0 的通稿写的是哪一档？把所有公开通稿的相关表述�
 
 把 SkyClaw v1.0 放到 2026 年 5 月底国内 Agent 模型档位里看，对比维度按「定价、Agent 任务能力、上下文长度、harness 兼容、试用门槛」五项展开。
 
-![国产 Agent 模型横评四象限图（价格 vs 能力）](skyclaw-quadrant.png)
+![国产 Agent 模型横评四象限图（价格 vs 能力）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/kunlun-skyclaw-v1-agent-opus-46-free-2026-05-27/skyclaw-quadrant.png)
 
 **SkyClaw v1.0** vs **千问 3.6 Plus**（阿里）：
 
@@ -185,7 +185,7 @@ MiniMax 2.7 是 SkyClaw 在通稿里明确点名「超越」的对手，价格�
 
 把 5 个国产同档放在一起看，会发现一个有趣的事实——**没有哪一家在五个维度（base-model 能力、Agent 能力、长上下文、价格、harness 兼容）上同时做到最强**。每家都有自己的偏科。这对国内开发者来说反而是好事：可以根据自己的实际工作流挑最匹配的那一家，而不是被绑死在某个万能模型上。2024-2025 年「一个模型打通所有场景」的旧思路在 2026 年开始失效，多模型、多供应商的工作流配置反而成了主流。
 
-![量子位发布稿能力对比图](skyclaw-qbitai-bench.webp)
+![量子位发布稿能力对比图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/kunlun-skyclaw-v1-agent-opus-46-free-2026-05-27/skyclaw-qbitai-bench.webp)
 
 横评一句话总结：**国产 Agent 模型 2026 年 5 月已经分化出 4 条清晰的赛道**——千问的 base-model 大底座路线、DeepSeek 的通用 + 性价比路线、GLM 的企业 Agent 路线、SkyClaw 的开源 harness 原生兼容路线。哪条路线最终更主流目前看不清楚，但对个人开发者来说，SkyClaw 这条路线最贴近日常的 OpenClaw / Claude Code 工作流，限免期内值得试一试。
 

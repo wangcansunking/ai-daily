@@ -23,7 +23,7 @@ description: "tinyhumansai/openhuman 这一周从冷启动冲到 GitHub Trending
 
 # OpenHuman 桌面级私人助理
 
-![OpenHuman 桌面 AI 封面](openhuman-desktop-personal-assistant-2026-05-15.png)
+![OpenHuman 桌面 AI 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/openhuman-desktop-personal-assistant-2026-05-15/openhuman-desktop-personal-assistant-2026-05-15.png)
 
 单日加 3476 stars，仓库今天实测 7609 stars / 608 forks / GPL-3.0 / Rust 主语言，pushed_at 还停留在几个小时之前。这就是 `tinyhumansai/openhuman` 这一周在 GitHub Trending 上一路冲到第二的成绩单。说实话，最近一年这种「桌面级私人 AI 助理」开源项目密度已经高得离谱，能在这个红海里一天涨三千多 stars 不是因为 README 写得漂亮，是因为它把过去一年大家一直在拼图的几块东西——桌面壳、长期记忆、第三方集成、本地落盘、模型路由——一次性按主流开发者最想要的方式拼齐了。
 
@@ -33,7 +33,7 @@ description: "tinyhumansai/openhuman 这一周从冷启动冲到 GitHub Trending
 
 先把 README 上的关键数字拍在桌上看。
 
-![OpenHuman 本地数据流：118 OAuth 到记忆树到桌面代理](openhuman-architecture.png)
+![OpenHuman 本地数据流：118 OAuth 到记忆树到桌面代理](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/openhuman-desktop-personal-assistant-2026-05-15/openhuman-architecture.png)
 
 第一层，**桌面壳**。Rust 1.93.0 + Tauri，pnpm 10.10.0 管 Node 24+ 那部分前端。不是 Electron，不是套 web view，整个壳的内存占用、冷启动、原生体验是写在仓库 README 第一段就能查到的 commit 要求。Tauri 这个选择很关键，意味着发行包是 DMG / EXE 级的体量，不是动辄 200MB 的 chromium 嵌入；同时 Rust 那一层可以直接调系统 API 做桌面吉祥物（mascot）、做麦克风采集、做剪贴板监听，不需要走 web 的 sandbox 绕一圈。
 
@@ -51,7 +51,7 @@ description: "tinyhumansai/openhuman 这一周从冷启动冲到 GitHub Trending
 
 我自己日常 OpenClaw 是主力，Claude Cowork 偶尔做长上下文活，Hermes Agent 在终端里跑。把 OpenHuman 拉过来对照，能看出几条很明确的路线分歧。
 
-![OpenHuman vs OpenClaw / Cowork / 国产矩阵](openhuman-vs-matrix.png)
+![OpenHuman vs OpenClaw / Cowork / 国产矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/openhuman-desktop-personal-assistant-2026-05-15/openhuman-vs-matrix.png)
 
 **第一条分歧：UI 优先 vs 终端优先**。OpenHuman 走的是"装完点几下就能用，没有 config 文件，没有 .env"，目标是把上手时间从「几周」压到「几分钟」。OpenClaw 和 Hermes Agent 都是 terminal-first，前者靠 MIT 协议下的插件生态，后者靠自学习。对我个人来说，OpenClaw 的"终端就是首页"是优点不是缺点——它意味着我可以把它丢进任何 shell 流程、任何 CI 里。OpenHuman 的桌面吉祥物 + 语音 + 加入 Google Meet 当真实参会者的玩法，更像是给"产品经理 / 内容创作者 / 销售"这类不写命令行的人准备的。
 
@@ -67,7 +67,7 @@ description: "tinyhumansai/openhuman 这一周从冷启动冲到 GitHub Trending
 
 光说"118 个"是数字游戏，把类目拆开看才有意思。
 
-![118 OAuth 类目分布 + stars 增长](openhuman-stars-curve.png)
+![118 OAuth 类目分布 + stars 增长](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/openhuman-desktop-personal-assistant-2026-05-15/openhuman-stars-curve.png)
 
 按 GitBook 文档里能数出来的分布大致是这样：生产力工具（Notion、Obsidian、Linear、Jira）约 28 个，通讯（Gmail、Slack、Discord、Teams）约 24 个，研发（GitHub、GitLab、Bitbucket、Sentry）约 18 个，文件存储（Drive、Dropbox、OneDrive）约 12 个，日历会议（Google Calendar、Outlook、Zoom、Meet）约 11 个，CRM / 财务（HubSpot、Salesforce、Stripe）约 13 个，其他长尾（Spotify、Twitter、网盘、IoT）约 12 个，加起来 118。这个分布有意思的地方在于——它几乎完整覆盖了一个海外开发者一天会接触的所有 SaaS。
 

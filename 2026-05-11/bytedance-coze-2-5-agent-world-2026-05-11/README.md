@@ -20,7 +20,7 @@ tags:
 
 > 4 月 10 日，字节跳动旗下扣子（Coze）正式发布 2.5 版本，给每个 AI Agent 配一台 Ubuntu 云电脑（2 核 4 GB）、一台 Android 13 云手机（2 vCPU、6 GB 内存、45 GB 存储），外加一个 `@coze.email` 独立邮箱。再加上一个叫 Agent World 的开放协作网络，AI Agent 第一次在国内拿到了对等于人类员工的工程化容器。
 
-![扣子 2.5 给 Agent 配独立工位](bytedance-coze-2-5-agent-world-2026-05-11.png)
+![扣子 2.5 给 Agent 配独立工位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/bytedance-coze-2-5-agent-world-2026-05-11/bytedance-coze-2-5-agent-world-2026-05-11.png)
 
 > 关于 5 月 11 日同日另一篇 antirez 谈数据库设计的文章：那篇是海外开发者口径的工程哲学讨论，关注点是「如何写更耐用的代码」；这一篇是国内 Agent 工程化的产品形态讨论，关注点是「如何给 Agent 一套工位」。两条线索完全不重叠。
 
@@ -35,7 +35,7 @@ tags:
 
 ## 一、Agent 第一次拿到「全栈员工座舱」
 
-![扣子 2.5 Agent 全栈员工座舱架构](coze-2-5-cockpit-architecture.png)
+![扣子 2.5 Agent 全栈员工座舱架构](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/bytedance-coze-2-5-agent-world-2026-05-11/coze-2-5-cockpit-architecture.png)
 
 **核心论断**：扣子 2.5 把 Agent 从「Bot 实例」升级为「数字员工」，标志是它给每个 Agent 配了四件套实体装备：云电脑、云手机、独立邮箱、独立记忆。
 
@@ -77,9 +77,9 @@ tags:
 
 ## 二、Computer Use 时间线横评 · 扣子的位置
 
-![Computer Use Agent 工程化时间线 · 2022-09 至 2026-04](coze-2-5-timeline.png)
+![Computer Use Agent 工程化时间线 · 2022-09 至 2026-04](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/bytedance-coze-2-5-agent-world-2026-05-11/coze-2-5-timeline.png)
 
-![全球 Computer Use Agent 工程化形态对比](coze-2-5-global-comparison.png)
+![全球 Computer Use Agent 工程化形态对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/bytedance-coze-2-5-agent-world-2026-05-11/coze-2-5-global-comparison.png)
 
 **核心论断**：扣子 2.5 不是 Computer Use 的发明者，但是「全栈员工座舱」这个工程化形态全球第一次合并发售；海外四家走的是 desktop / browser 单 session 的更窄路径。
 
@@ -186,7 +186,7 @@ tags:
 
 ## 四、实操开通五步 + 与本地框架桥接
 
-![扣子 2.5 实操开通五步](coze-2-5-onboarding-flow.png)
+![扣子 2.5 实操开通五步](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/bytedance-coze-2-5-agent-world-2026-05-11/coze-2-5-onboarding-flow.png)
 
 **核心论断**：扣子 2.5 的最短上手路径是「注册 → 建 Agent → 调用云装备 → 进 Agent World」五步；想留架构控制权的开发者可以让本地 OpenClaw / Claude Agent SDK 走 API 调用扣子云装备。
 
@@ -202,7 +202,7 @@ tags:
 
 ### 4.1 与 OpenClaw / Claude Agent SDK / AutoGen 的三种桥接
 
-![扣子 Agent World 与本地框架的三种桥接形态](coze-2-5-openclaw-bridge.png)
+![扣子 Agent World 与本地框架的三种桥接形态](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/bytedance-coze-2-5-agent-world-2026-05-11/coze-2-5-openclaw-bridge.png)
 
 国内开发者最关心的一件事是：「我已经在本地用了 OpenClaw / Claude Agent SDK / AutoGen 这种 Agent 框架，现在扣子云端工位来了，怎么搭？」三种桥接形态：
 
@@ -237,7 +237,7 @@ tags:
 
 ### 4.3 Agent World 五个站点的当下用法
 
-![Agent World 平行网络 · 6 个公开站点](coze-2-5-agent-world-sites.png)
+![Agent World 平行网络 · 6 个公开站点](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/bytedance-coze-2-5-agent-world-2026-05-11/coze-2-5-agent-world-sites.png)
 
 把 Agent World 的五个站点单独说一下——这是国内首发稿里被反复提到、但少有体验稿讲透的部分：
 

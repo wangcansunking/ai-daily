@@ -17,7 +17,7 @@ keywords: Nolan Lawson, Using AI to write better code more slowly, HN 1078, Clau
 ---
 # Nolan Lawson 反共识冲上 HN 1078 分：与其用 Claude Code 写得更快，不如让 Claude＋Codex＋Cursor 三路 review 写得更稳
 
-![Nolan Lawson 反共识：用 AI 更慢写更好的代码](nolan-lawson-ai-better-code-slowly-hn-1078-2026-05-27.png)
+![Nolan Lawson 反共识：用 AI 更慢写更好的代码](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/nolan-lawson-ai-better-code-slowly-hn-1075-2026-05-27/nolan-lawson-ai-better-code-slowly-hn-1078-2026-05-27.png)
 
 ## 30 秒速览
 
@@ -29,7 +29,7 @@ keywords: Nolan Lawson, Using AI to write better code more slowly, HN 1078, Clau
 
 ---
 
-![同一周，两个一线工程师同时给 AI 编程降温](two-voices-same-week.png)
+![同一周，两个一线工程师同时给 AI 编程降温](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/nolan-lawson-ai-better-code-slowly-hn-1075-2026-05-27/two-voices-same-week.png)
 
 ## 一、Nolan Lawson 是谁，这篇为什么能冲到 1078 分
 
@@ -53,7 +53,7 @@ Nolan Lawson 在前端圈是熟面孔。PouchDB（IndexedDB 上的离线数据�
 
 ## 二、「慢但稳」工作流：三模型 review 是怎么把误报率压到零的
 
-![三模型并行 review：Claude + Codex + Cursor 投票挑 bug](multi-model-vote-pipeline.png)
+![三模型并行 review：Claude + Codex + Cursor 投票挑 bug](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/nolan-lawson-ai-better-code-slowly-hn-1075-2026-05-27/multi-model-vote-pipeline.png)
 
 Nolan 把整个流程拆成三步，每一步都和「快」反着来。
 
@@ -65,7 +65,7 @@ Nolan 把整个流程拆成三步，每一步都和「快」反着来。
 
 **第三步：触发 PR-level 决策**。如果 Critical 出现得太多，意味着这份 diff 本身的设计有问题；他会直接把 PR 退回去，而不是堆补丁。这一条直接对应一类常见反模式——AI 写出一坨能跑但结构错位的代码，用 reviewer 模式当时给过了，半年后才发现整个模块该重写。
 
-![「快 10 倍写代码」 对比 「慢但稳的多模型 review」](fast-vs-slow-workflow.png)
+![「快 10 倍写代码」 对比 「慢但稳的多模型 review」](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/nolan-lawson-ai-better-code-slowly-hn-1075-2026-05-27/fast-vs-slow-workflow.png)
 
 两边的取舍是明牌的：用 AI 当 author，首次 commit 极快但隐藏成本高；用 AI 当 reviewer，首次 commit 显著变慢，但代码可读、可维护、半年后回来还认得。Nolan 在原文里给这套方法的人格画像极克制——「careful, methodical, quality-obsessed, focused on making things better for the next coder」——谨慎、有方法、对质量执着、为下一个写代码的人考虑。这种人当下在硅谷数量稀少，但帖子能冲 1078 分本身说明：愿意承认这一点的工程师远比时间线上看起来的要多。
 
@@ -101,7 +101,7 @@ Nolan 与 Hotz 之间没有任何串联痕迹，两篇文章发表时间相差�
 
 ## 四、Uber 5000 工程师烧光全年预算：账单端的真实代价
 
-![Uber 5000 工程师烧光 2026 全年 AI 预算只用 4 个月](uber-burn-budget.png)
+![Uber 5000 工程师烧光 2026 全年 AI 预算只用 4 个月](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/nolan-lawson-ai-better-code-slowly-hn-1075-2026-05-27/uber-burn-budget.png)
 
 如果说 Nolan 与 Hotz 是从「质量」端给主流叙事降温，Uber 这边的数字则是从「钱包」端给一耳光。
 

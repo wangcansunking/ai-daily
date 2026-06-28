@@ -7,7 +7,7 @@ description: "WUPHF (nex-crm/wuphf) 把 5 种 AI agent 角色装进一间 Slack 
 ---
 # 把 Slack 和 The Office 杂交一下：WUPHF 给 5 种 AI 员工开了一间办公室
 
-![cover](2026-04-26-wuphf.png)
+![cover](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-26/wuphf-ai-office/2026-04-26-wuphf.png)
 
 `nex-crm/wuphf` 在 4 月 25 日 20:00 UTC 时 GitHub 上 **409 star、18 fork、11 个 open issue**——一个月前才建仓——同一晚 HN 已经把它顶到了 213 分、97 条评论的位置（展示标题完整版是 *"Show HN: A Karpathy-style LLM wiki your agents maintain (Markdown and Git)"*）。
 
@@ -50,7 +50,7 @@ npx wuphf
 
 WUPHF 第一个不像 mem0 / Letta 的地方，是它把 *角色团* 当成一等公民。仓库 `internal/agent/packs.go` 里写死了 5 套缺省团队，可以用 `--pack <name>` 切换：
 
-![5 个 pack 对比](wuphf-team-packs.png)
+![5 个 pack 对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-26/wuphf-ai-office/wuphf-team-packs.png)
 
 `README` 在 *Options* 表里给的标准化解释是这样的：
 
@@ -133,7 +133,7 @@ README 注明："The two tool sets never coexist on one server instance — back
 
 WUPHF 把 ARCHITECTURE.md 当成产品说明书写——一页纸搞定。我把里面三句最值钱的话提出来：
 
-![三大选择](wuphf-three-choices.png)
+![三大选择](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-26/wuphf-ai-office/wuphf-three-choices.png)
 
 这三个选择对应仓库里三个具体文件：`internal/team/headless_claude.go` / `internal/teammcp/` / `internal/team/broker.go`。读这三个 Go 文件就能看到整个 WUPHF 的实现骨架。
 
@@ -229,7 +229,7 @@ WUPHF 给"已经在跑 OpenClaw"的玩家留了一道桥——这是这篇文章
 
 WUPHF 不是 mem0、Letta、Stash 的替代品，它是上一层。当晚 GitHub API 取的实数：
 
-![Agent Memory 横评](agent-memory-comparison.png)
+![Agent Memory 横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-26/wuphf-ai-office/agent-memory-comparison.png)
 
 - **mem0** (`mem0ai/mem0`)：54,058 ⭐ / 6,084 fork / Apache-2.0。`description` 是 `Universal memory layer for AI Agents`。**SDK 形态**——你 import mem0、调 API，给一个 agent 加长期记忆。它不管 agent 之间怎么协作。
 - **Letta** (`letta-ai/letta`)：22,287 ⭐ / 2,362 fork / Apache-2.0。`description` 是 `Letta is the platform for building stateful agents: AI with advanced memory that can learn and self-improve over time`。**stateful agent 服务器形态**——前身是 MemGPT 论文，现在做成 Postgres + 向量库、跑一台 server，让 agent 在 server 上有持久 state。
@@ -262,7 +262,7 @@ WUPHF 默认走 Claude Code 和 Codex 两条 CLI，国内开发者要落地需�
 
 WUPHF 在 README 末尾有 *Benchmark* 节，和 `scripts/benchmark.sh` 一起放出。我把架构层的逻辑拆出来——这是它能省 token 的四个机制：
 
-![省 token 的四个机制](wuphf-benchmark.png)
+![省 token 的四个机制](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-26/wuphf-ai-office/wuphf-benchmark.png)
 
 简言之：fresh session per turn 让前缀稳定 → prompt cache 命中 → 省 token；scoped MCP 让 schema 短 → 省 token；push-driven broker 让 idle 不烧；prompt 中没有 conversation 历史的累积 → 不会越聊越贵。
 

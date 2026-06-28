@@ -23,7 +23,7 @@ description: "OpenClaw 主仓库 5/10 实查 37.05 万 Star、MIT、TypeScript�
 
 # OpenClaw 接 4 个国产模型场景的端到端配置
 
-![OpenClaw + 国产本地大模型 4 大场景集成总览](openclaw-cn-local-4case-2026-05-11.png)
+![OpenClaw + 国产本地大模型 4 大场景集成总览](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/openclaw-cn-local-4case-2026-05-11/openclaw-cn-local-4case-2026-05-11.png)
 
 5 月 10 日傍晚，OpenClaw 主仓库 `openclaw/openclaw` 在 `gh api` 里实查到 370,539 Star、76,562 Fork、MIT 许可、TypeScript 写、1,805 个 watcher。同一晚国内开发者群里在转的，是昨日上线的 agentmemory 持久记忆栈把 OpenClaw 列为第二位 native 集成。
 
@@ -74,7 +74,7 @@ OpenClaw 客户端的另一条路径是把模型推理后端切到本地。vLLM 
 
 两条主线常常组合使用：**主线 B 决定模型在哪里跑、主线 A 决定模型能调哪些工具**。下面 4 个 Case 全部按这个心智模型来配。
 
-![性能 / 成本 / 隐私三维度对比表](openclaw-4case-cost-priv-comp.png)
+![性能 / 成本 / 隐私三维度对比表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/openclaw-cn-local-4case-2026-05-11/openclaw-4case-cost-priv-comp.png)
 
 ## 三、Case 1 · 50 页学术论文中英对照翻译
 
@@ -130,7 +130,7 @@ python -m vllm.entrypoints.openai.api_server \
 
 ### 实测对比
 
-![Case 1 翻译流程与实测对比](openclaw-4case-translate-flow.png)
+![Case 1 翻译流程与实测对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/openclaw-cn-local-4case-2026-05-11/openclaw-4case-translate-flow.png)
 
 50 页 arxiv 长文 · 约 20K 输入 token 场景下三档方案对比：
 
@@ -218,7 +218,7 @@ docker run -d -p 6333:6333 -p 6334:6334 \
 
 ### 数据流向
 
-![Case 2 RAG 数据导入 + 实时查询双流](openclaw-4case-rag-flow.png)
+![Case 2 RAG 数据导入 + 实时查询双流](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/openclaw-cn-local-4case-2026-05-11/openclaw-4case-rag-flow.png)
 
 数据流拆成两条：
 
@@ -265,7 +265,7 @@ RTX 4090 24GB · 10000 段合同知识库：
 
 ### 4 个 MCP 工具
 
-![Case 3 财务对账 Agent + 4 个 MCP 工具](openclaw-4case-finance-flow.png)
+![Case 3 财务对账 Agent + 4 个 MCP 工具](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/openclaw-cn-local-4case-2026-05-11/openclaw-4case-finance-flow.png)
 
 财务 Agent 在 OpenClaw 里实质上是「一个 skill 调度 4 个 MCP 工具」：
 
@@ -371,7 +371,7 @@ ACP 协议是 Zed 1.0 团队主导的开放协议，与 Claude Code / Cursor / C
 | 千问 Code | ACP 官方支持（Zed 同生态） | 配置项已开放 |
 | 文心快码 | Custom Models 配置 | 部分版本支持 |
 
-![国产 IDE 接本地后端的现状](openclaw-4case-cn-ide-status.png)
+![国产 IDE 接本地后端的现状](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/openclaw-cn-local-4case-2026-05-11/openclaw-4case-cn-ide-status.png)
 
 通义灵码已经在阿里云文档里明确「STDIO 类型本地服务运行 + SSE 类型远端服务托管」两种 MCP 模式（help.aliyun.com/zh/lingma 实查）；字节 Trae 桌面版已实现 LM Studio / Ollama 支持（GitHub bytedance/trae-agent issue #379 verbatim）。这意味着开发者既可以用 OpenClaw 作为主客户端，也可以反过来把本地模型挂进通义灵码 / Trae 当二级工具——两条路殊途同归。
 
@@ -439,7 +439,7 @@ OpenClaw 客户端因为是 MIT 许可、TypeScript 全开源，可以直接 for
 
 5 条电路并存时，单 4090 主机峰值显存约 20GB（推理触发那一刻），平时约 5GB（idle）。内存峰值约 8GB。一杯咖啡时间装齐。
 
-![一台 4090 主机上的 5 条电路图](openclaw-4case-one-machine-5lanes.png)
+![一台 4090 主机上的 5 条电路图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/openclaw-cn-local-4case-2026-05-11/openclaw-4case-one-machine-5lanes.png)
 
 中型团队可以把这一套搬到内网服务器上——把 4090 换成 H800 或 A100 80GB、把 Ollama 换成 vLLM、把 Qdrant 起多副本、把 OpenClaw 客户端发到每个开发者本机。后端共享、前端各自一台，是大多数公司 IT 部署最舒服的形态。
 

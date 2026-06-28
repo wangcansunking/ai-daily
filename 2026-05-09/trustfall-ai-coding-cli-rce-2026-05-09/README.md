@@ -12,7 +12,7 @@ cover: trustfall-ai-coding-cli-rce-2026-05-09.png
 
 # TrustFall：Claude Code 一个回车交出 SSH key，Cursor / Gemini CLI / Copilot 同坑
 
-![封面](trustfall-ai-coding-cli-rce-2026-05-09.png)
+![封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/trustfall-ai-coding-cli-rce-2026-05-09/trustfall-ai-coding-cli-rce-2026-05-09.png)
 
 > 当地时间 2026 年 5 月 7 日，Adversa AI 公开 TrustFall：克隆一个 Git 仓库、按一次回车——Claude Code v2.1.129、Cursor CLI、Gemini CLI、GitHub Copilot CLI 即在用户全权限下静默调度本地命令；同一根因，过去 7 个月已是第 4 起。这不是工具崩了，是 AI Coding 工具链开始进入工程化下半场。
 
@@ -24,7 +24,7 @@ The Register 同日跟进，Dark Reading、SecurityWeek、Help Net Security 跟�
 
 7 个月时间轴拉出来，问题更清晰：
 
-![过去 7 个月的 4 次信任边界事件](cve-timeline-trustfall.png)
+![过去 7 个月的 4 次信任边界事件](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/trustfall-ai-coding-cli-rce-2026-05-09/cve-timeline-trustfall.png)
 
 - **CVE-2025-59536**（2025-10）：MCP 钩子在信任对话框之前抢跑执行；
 - **CVE-2026-21852**（2026-01）：`ANTHROPIC_BASE_URL` 重定向劫持 API key；
@@ -39,7 +39,7 @@ The Register 同日跟进，Dark Reading、SecurityWeek、Help Net Security 跟�
 
 Adversa AI 在博客里给出 3 条互不依赖的攻击路径，全部命中 Claude Code v2.1.129。3 条都不需要预装恶意二进制、不需要漏洞利用代码、只需要 Git 仓库根目录两个文本文件。
 
-![三条攻击路径示意](attack-paths-trustfall.png)
+![三条攻击路径示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/trustfall-ai-coding-cli-rce-2026-05-09/attack-paths-trustfall.png)
 
 **路径 ① · `enableAllProjectMcpServers`**
 
@@ -71,7 +71,7 @@ Adversa AI 在博客里给出 3 条互不依赖的攻击路径，全部命中 Cl
 
 Adversa AI 把同一份恶意仓库分别交给 Claude Code v2.1.129、Gemini CLI、Cursor CLI、GitHub Copilot CLI，发现 4 家在「告警措辞」上差异明显，但**回车之后的执行结果完全相同**。
 
-![4 大 CLI 信任对话框横评](cli-comparison-trustfall.png)
+![4 大 CLI 信任对话框横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/trustfall-ai-coding-cli-rce-2026-05-09/cli-comparison-trustfall.png)
 
 Polyakov 在 The Register 的采访里给出一句关键判断：
 
@@ -132,7 +132,7 @@ Utevsky 给的更技术化的一句：
 
 国产 AI Coding 工具走的不是同一条治理曲线。把通义灵码、千问 Code（Qwen Code 开源 CLI）、字节 Trae、字节扣子（Coze）四家放一起看，差异在「治理层在哪里」。
 
-![国产 AI Coding 工具治理路径对照](domestic-tools-governance-trustfall.png)
+![国产 AI Coding 工具治理路径对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/trustfall-ai-coding-cli-rce-2026-05-09/domestic-tools-governance-trustfall.png)
 
 四条路径各自的取舍：
 

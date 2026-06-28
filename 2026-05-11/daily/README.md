@@ -18,7 +18,7 @@ cover: 11.png
 
 # Agent 工程化分三路：字节·antirez·Anthropic | AI 日报 | 2026-05-11
 
-![Agent 工程化分三路 · 字节·antirez·Anthropic](11.png)
+![Agent 工程化分三路 · 字节·antirez·Anthropic](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/daily/11.png)
 
 ## 📋 头版目录（一屏扫完今日）
 
@@ -62,7 +62,7 @@ cover: 11.png
 
 三条路径对应三种用户决策：要不要让 Agent 像员工一样工作（字节）；要不要让本地模型像专机一样跑（antirez）；要不要让 Coding Agent 像生产系统一样可靠（Anthropic）。下面把每一条拆开。
 
-![扣子 2.5 给每个 Agent 配独立工位的"人格 + 装备 + 平行网络"架构图](coze-2-5-cockpit-architecture.png)
+![扣子 2.5 给每个 Agent 配独立工位的"人格 + 装备 + 平行网络"架构图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/daily/coze-2-5-cockpit-architecture.png)
 
 ### 一、字节扣子 2.5：给 Agent 配工位
 
@@ -105,7 +105,7 @@ cover: 11.png
 
 详细工程拆解见 5/11 同期 auto-research 专题 《Redis 之父手写 DeepSeek V4 专属 Mac 引擎》。
 
-![ds4.c 在 M3 Max 128GB 上的吞吐基准 · 生成 26.68 t/s · 预填充 58.52 t/s](ds4c-throughput-bench.png)
+![ds4.c 在 M3 Max 128GB 上的吞吐基准 · 生成 26.68 t/s · 预填充 58.52 t/s](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/daily/ds4c-throughput-bench.png)
 
 ### 三、Anthropic Claude Code：把 Coding Agent 卷到生产级
 
@@ -120,7 +120,7 @@ cover: 11.png
 
 这条路径的关键词是**稳定与边界**。Anthropic 5/6 一夜把 Claude Code 五小时额度翻倍把用户引进来，本周这一连串补丁是顺着把"自动模式失控"这类企业部署的卡点逐个补掉。Claude Code 在 SWE-bench Verified 上保住 87.6% 第一（Opus 4.7 加持），但**反过来真正决定企业愿不愿付钱、能不能跑生产的，是这套"硬拒规则 + OTEL 反馈 + 跨项目命令历史"的运维边界**。
 
-![Agent 工程化海外全景对比 · 字节扣子 2.5 与海外 Computer Use 同档矩阵](coze-2-5-global-comparison.png)
+![Agent 工程化海外全景对比 · 字节扣子 2.5 与海外 Computer Use 同档矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/daily/coze-2-5-global-comparison.png)
 
 ### 把三条路拼起来看
 
@@ -150,7 +150,7 @@ Anthropic 4/16 起把 Claude Opus 4.7 推到通用可用，已覆盖 Claude 自�
 
 5/5 Google 公布 File Search 三项升级——多模态、自定义元数据、页级引用。文件类型从 PDF / DOCX / TXT / JSON / 代码扩到 PNG / JPEG 图像，分辨率上限 4K×4K。底层用 `gemini-embedding-2`，图像直接 embedding 不走 OCR。免费的部分覆盖存储和查询时的 embedding，只对初始索引 embedding 和标准 Gemini 输入输出 token 计费。详细工程拆解见 5/11 同期 auto-research 专题《Gemini File Search 多模态升级实战》。
 
-![Bun Rust 移植测试通过率走势 · 6 天到 99.8%](bun-rust-pass-rates.png)
+![Bun Rust 移植测试通过率走势 · 6 天到 99.8%](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/daily/bun-rust-pass-rates.png)
 
 ### Bun 实验 Rust 移植 99.8% 测试通过率
 
@@ -226,7 +226,7 @@ run-rate revenue 已超 300 亿美元（对比 2025 年底约 90 亿）；年化
 
 ## 🇨🇳 国内 AI 观察
 
-![国产 1M 上下文模型矩阵 · DeepSeek V4 / Qwen3-Next / GLM-4.6](long-ctx-1m-models-matrix.png)
+![国产 1M 上下文模型矩阵 · DeepSeek V4 / Qwen3-Next / GLM-4.6](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/daily/long-ctx-1m-models-matrix.png)
 
 ### DeepSeek V4 系列 1.6T MoE + 1M 上下文 · 长上下文 FLOPs 仅 V3.2 的 27%
 
@@ -244,7 +244,7 @@ DeepSeek V4 系列（V4-Pro 1.6T 总参 / 49B 激活；V4-Flash 284B / 13B 激�
 
 国内开发者群里本周流传的 OpenClaw 4 场景实测：(1) Qwen3-235B-A22B 跑 50 页论文翻译；(2) GLM-4.6 跑私有合同 RAG；(3) Qwen3-30B-A3B 跑 500 张凭证财务对账；(4) DeepSeek V4 Flash 跑跨仓代码图谱。RTX 4090 24GB 二手单卡可启动 30B-A3B 全程；Mac M3 Max 128GB 跑 DeepSeek V4 Flash Q2；双卡 A100 80GB 跑 Qwen3-235B-A22B FP8。详细命令 + 显存吞吐实测见 5/11 同期 《OpenClaw 接 4 个国产模型场景的端到端配置》。
 
-![OpenClaw 接 4 个国产模型场景的端到端架构 · 4 卡硬件 4 场景 4 模型](openclaw-4case-architecture.png)
+![OpenClaw 接 4 个国产模型场景的端到端架构 · 4 卡硬件 4 场景 4 模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/daily/openclaw-4case-architecture.png)
 
 ## 📦 GitHub Trending（5/11 实查）
 

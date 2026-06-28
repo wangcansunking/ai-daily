@@ -12,7 +12,7 @@ description: "Reflex 博客 5 月帖在 React-admin 后台跑同样 4 步任务�
 ---
 # 「浏览器自动化比 API 贵 45 倍 慢 51 倍」
 
-![浏览器自动化比 API 贵 45 倍 慢 51 倍](computer-use-vs-structured-api-45x-cost-reflex.png)
+![浏览器自动化比 API 贵 45 倍 慢 51 倍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/computer-use-vs-structured-api-45x-cost-reflex/computer-use-vs-structured-api-45x-cost-reflex.png)
 
 ## 一、53 步 vs 8 步：同一模型，两条路径，账单差出一个数量级
 
@@ -24,7 +24,7 @@ description: "Reflex 博客 5 月帖在 React-admin 后台跑同样 4 步任务�
 
 这是 Reflex 团队在 5 月发布的一篇技术博客里跑出来的实测数字，作者 Palash Awasthi。文章在 Hacker News 拿到 153 个赞、92 条评论。这个差距不是设计选择，是工程选型时绕不开的一道账。
 
-![Vision agent vs API agent 同任务实测](computer-use-vs-api-steps.png)
+![Vision agent vs API agent 同任务实测](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/computer-use-vs-structured-api-45x-cost-reflex/computer-use-vs-api-steps.png)
 
 ## 二、实验设计：React-admin 后台 + 4 步交叉任务
 
@@ -59,7 +59,7 @@ Reflex 选的测试基线是 react-admin 官方的 Posters Galore 演示后台�
 
 更难受的是——这种重算没有任何复用。第 12 步的截图和第 11 步的截图 90% 内容是一样的，但模型每次都得重新看一遍。结构化 API 不存在这个开销，每次都是直接拿数据、直接判断。
 
-![Vision 路径单步耗费拆账](computer-use-vs-api-vision-breakdown.png)
+![Vision 路径单步耗费拆账](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/computer-use-vs-structured-api-45x-cost-reflex/computer-use-vs-api-vision-breakdown.png)
 
 ## 四、API 路径对比：同样一份模型权重，几乎没花钱
 
@@ -106,7 +106,7 @@ API 路径完全没这个问题。分页是查询参数，过滤是 WHERE 条件
 
 横向看下来，国内还没有看到完全对位的中文实测——就是「同一个国产模型 + 同一个后台 demo + 视觉 vs API 双路径」这种 head-to-head 数字对照。AutoGLM 的官方数据倾向描述能跑多远，Kimi 偏强调推理深度，没人专门拆「这条路径跟另一条路径相比差多少」这本账。Reflex 这篇博客的价值就在这里：它把工程选型的决策依据具象成了一组可读的数字。
 
-![国内浏览器/桌面自动化 agent 横评](computer-use-vs-api-domestic.png)
+![国内浏览器/桌面自动化 agent 横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/computer-use-vs-structured-api-45x-cost-reflex/computer-use-vs-api-domestic.png)
 
 ## 七、Browser Use 与 Computer Use：同一个故事的两个版本
 
@@ -137,7 +137,7 @@ CSDN 在 2024 年底有一篇 BrowserUse 评测，结论很直接：Anthropic Co
 
 **桌面端非浏览器软件**——只能视觉 + 系统级 GUI 识别。AutoGLM 沉思、Anthropic Computer Use 在这里有发挥空间。
 
-![工程选型：什么时候只能用视觉路径](computer-use-vs-api-engineering.png)
+![工程选型：什么时候只能用视觉路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/computer-use-vs-structured-api-45x-cost-reflex/computer-use-vs-api-engineering.png)
 
 ## 九、再往后：自动化分层正在变成标配
 

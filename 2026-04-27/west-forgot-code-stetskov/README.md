@@ -8,7 +8,7 @@ tags: [AI 行业, AI Coding, Junior 培养, 工程文化]
 cover: 2026-04-27-west-forgot-code.png
 ---
 
-![cover](2026-04-27-west-forgot-code.png)
+![cover](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-27/west-forgot-code-stetskov/2026-04-27-west-forgot-code.png)
 
 # HN 1007 赞的爆文：他比对了西方造不出导弹和西方雇不到 junior 程序员
 

@@ -11,7 +11,7 @@ cover: "doubao-paid-tier-cover.png"
 
 # 豆包披露付费订阅三档：68/200/500 月费，免费保留
 
-![豆包披露付费订阅三档：68 / 200 / 500 月费封面](doubao-paid-tier-cover.png)
+![豆包披露付费订阅三档：68 / 200 / 500 月费封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/doubao-paid-subscription-three-tier/doubao-paid-tier-cover.png)
 
 > **2026 年 5 月 4 日 12:01，第一财经首发**——「豆包将在免费模式外新增付费订阅，官方回应」。豆包 App Store 页面披露三档付费订阅定价：标准版连续包月 **¥68**（连续包年 ¥688）、加强版 **¥200**（包年 ¥2048）、专业版 **¥500**（包年 ¥5088）。豆包官方对正观新闻回应：「**豆包始终提供免费服务**，在免费服务的基础上，豆包也在探索推出更多增值服务，相关方案细节还在测试阶段。」
 
@@ -67,7 +67,7 @@ cover: "doubao-paid-tier-cover.png"
 
 ## 三、国内 C 端 AI 助手付费会员图谱
 
-![国内 C 端 AI 助手付费会员图谱（2026-05-04）](doubao-cn-c-ai-membership.png)
+![国内 C 端 AI 助手付费会员图谱（2026-05-04）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/doubao-paid-subscription-three-tier/doubao-cn-c-ai-membership.png)
 
 把豆包放回国内 C 端 AI 助手会员体系——
 

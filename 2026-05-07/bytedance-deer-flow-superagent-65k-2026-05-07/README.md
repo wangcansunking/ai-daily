@@ -10,7 +10,7 @@ tags: [deer-flow, bytedance, super-agent, langgraph, claude-code, ai-agent, open
 ---
 # 字节 deer-flow 满一周年：65,827 颗星撑起的国产 super agent 底座
 
-![字节 deer-flow 满一周年](bytedance-deer-flow-superagent-65k-2026-05-07.png)
+![字节 deer-flow 满一周年](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/bytedance-deer-flow-superagent-65k-2026-05-07/bytedance-deer-flow-superagent-65k-2026-05-07.png)
 
 如果你今天点开 `github.com/bytedance/deer-flow` 这个仓库，会看到 65,827 颗星、8,693 个 fork、712 个开放 issue、454 个未关 PR——一个非常活跃的工程项目。再看顶上那一行小字：「Created on 2025-05-07」。今天是 2026-05-07，**这个项目正好满一岁**。
 
@@ -39,7 +39,7 @@ tags: [deer-flow, bytedance, super-agent, langgraph, claude-code, ai-agent, open
 - 主页：[https://deerflow.tech](https://deerflow.tech)，含可玩 demo
 - 关键 topic 标签：`agentic-framework / multi-agent / langgraph / skill / superagent / deep-research`
 
-![deer-flow 一年 GitHub Star 曲线](deer-flow-star-history.png)
+![deer-flow 一年 GitHub Star 曲线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/bytedance-deer-flow-superagent-65k-2026-05-07/deer-flow-star-history.png)
 
 曲线上有两个肉眼可见的拐点。一个是 2026-02-28——这天 v2.0 发布、GitHub Trending 第一，README 顶部那一行专门写了纪念：「On February 28th, 2026, DeerFlow claimed the #1 spot on GitHub Trending following the launch of version 2.」从 9.5k 跳到 25k 只用了三天。另一个是 3 月 28 日往后，国内自媒体（知乎、腾讯云开发者社区、博客园、CSDN AtomGit）开始扎堆出第一波中文解读，给曲线又加了一个台阶，再到 5 月 7 日今天落到 65,827。
 
@@ -47,7 +47,7 @@ v2.0 跟 v1 之间没共用代码——README 自己写得很重的话："**Deer
 
 贡献者结构这一年里出现了一个有意思的形状：
 
-![deer-flow 贡献者结构 Top 15](deer-flow-contributors.png)
+![deer-flow 贡献者结构 Top 15](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/bytedance-deer-flow-superagent-65k-2026-05-07/deer-flow-contributors.png)
 
 `MagicCube` 一个人 609 commits，几乎是第二名（hetaoBackend 231 commits）的三倍。`MagicCube` 是字节内部团队 ID（GitHub handle 公开），项目的核心架构由这一只手稳住；后面四位 hetaoBackend、henry-byted、WillemJiang、LofiSu 加起来再撑起项目主干（合计 1,243 commits）。**这不是字节常见那种"开源出来 PR 没人接"的项目**——`gh api` 拉最近 closed PR 排序按评论数，#1403「在 Gateway 层重写 LangGraph Platform API」一条 PR 22 条评论，#1056「LoopDetectionMiddleware：打断重复 tool call 死循环」9 条评论，#1851「unified persistence layer」3 条评论——这些 PR 多数是社区贡献者发起，字节核心团队 review 合入。
 
@@ -61,7 +61,7 @@ v2.0 跟 v1 之间没共用代码——README 自己写得很重的话："**Deer
 
 按 README §核心特性 一节归纳，整个系统由六块组成：
 
-![DeerFlow 2.0 架构示意](deer-flow-architecture.png)
+![DeerFlow 2.0 架构示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/bytedance-deer-flow-superagent-65k-2026-05-07/deer-flow-architecture.png)
 
 四件最关键的事，分别讲清楚。
 
@@ -94,7 +94,7 @@ skills 本身可写可换可叠加。一个团队可以把自己的代码评审 
 
 两种模式都对应明确的资源配置基准。README 给了一张部署 sizing 表：
 
-![DeerFlow 部署资源配置基准](deer-flow-deployment-sizing.png)
+![DeerFlow 部署资源配置基准](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/bytedance-deer-flow-superagent-65k-2026-05-07/deer-flow-deployment-sizing.png)
 
 注意这张表只覆盖 deer-flow 本身。如果你顺便在同一台机器跑本地大模型（vLLM + 千问 / DeepSeek），那部分要单独算。
 
@@ -114,7 +114,7 @@ skills 本身可写可换可叠加。一个团队可以把自己的代码评审 
 
 光看架构图很容易感觉"市面 agent 框架不都长这样吗"。把 deer-flow 跟同期开源 super-agent 框架放在一张表上对比，差异点会清楚一些：
 
-![开源 super agent 框架横评](deer-flow-framework-comparison.png)
+![开源 super agent 框架横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/bytedance-deer-flow-superagent-65k-2026-05-07/deer-flow-framework-comparison.png)
 
 > 表里 LangGraph / AutoGen / CrewAI 的 star 数取近 30 天公开报道值（DataCamp / Turing.com / o-mega 等横评），数字会动；deer-flow 与 Anthropic Managed Agents 数据来自本文写稿当日 GitHub API 与本日报当日同期发布的另一篇专题（详见今日 `anthropic-managed-agents-outcomes-dreaming` 一文，主题为 Code w/ Claude 大会推出的 outcome-driven 子智能体托管服务）。
 
@@ -124,7 +124,7 @@ skills 本身可写可换可叠加。一个团队可以把自己的代码评审 
 
 **第二，落地手册写得很完整。** README 单是 quick-start 一节就讲清楚了 Docker 推荐路径、本地开发路径、Sandbox 模式、MCP server 接入、IM 渠道接入、LangSmith / Langfuse 双追踪、部署 sizing 表、安全建议清单。`make setup` 是个交互式 wizard，两分钟生成 `config.yaml` 和 `.env`。`make doctor` 一键诊断环境。这种 "我要起跑前还差什么" 的可观测性，在开源 agent 框架里其实不常见。
 
-![火山引擎方舟 Coding Plan 横幅](deer-flow-codingplan.png)
+![火山引擎方舟 Coding Plan 横幅](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/bytedance-deer-flow-superagent-65k-2026-05-07/deer-flow-codingplan.png)
 
 > 图：deer-flow README 顶部嵌入的"字节跳动火山引擎方舟 Coding Plan"国内入口横幅（来源：项目 README）
 

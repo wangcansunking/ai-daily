@@ -22,7 +22,7 @@ description: "William Angel 5/17 一篇硬核算账帖在 HN 拿到 249 赞、21
 
 # M5 Max 跑本地大模型比云 API 贵 3 倍
 
-![M5 Max 跑本地大模型 vs OpenRouter API 成本算账封面](apple-silicon-energy-vs-openrouter-economics-2026-05-18.png)
+![M5 Max 跑本地大模型 vs OpenRouter API 成本算账封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/apple-silicon-energy-vs-openrouter-economics-2026-05-18/apple-silicon-energy-vs-openrouter-economics-2026-05-18.png)
 
 5 月 17 日凌晨，William Angel 在个人博客发了一篇硬核算账帖《Offline LLM Energy Use》。这篇帖子在 HN 当天冲到首页，拿到 249 赞、213 条讨论，是这周本地大模型话题里最热的一帖。结论挑衅但直白——一台 4,299 美元的 M5 Max 64GB MacBook Pro 跑 Gemma 4 31B，单百万 token 折算 1.61 到 4.79 美元；同款模型在 OpenRouter 上只要 0.38 到 0.50 美元，**而且快 3 到 7 倍**。本地大模型的隐私、离线、合规优势，在数字上要付大约 3 倍溢价加 3 到 7 倍延迟代价。
 
@@ -83,7 +83,7 @@ OpenRouter 上同款 Gemma 4 31B 模型的定价是 0.38 到 0.50 美元一百�
 
 更扎心的是速度。OpenRouter 上 Gemma 4 31B 推理速度 60 到 70 tokens/秒；M5 Max 本地 10 到 40 tokens/秒。云端是本地的 1.5 到 7 倍。
 
-![本地大模型 vs 云 API · 单流推理速度对照](apple-silicon-energy-speed-compare.png)
+![本地大模型 vs 云 API · 单流推理速度对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/apple-silicon-energy-vs-openrouter-economics-2026-05-18/apple-silicon-energy-speed-compare.png)
 
 这个对比刺到 HN 里很多人。但要承认的是——云端推理批处理共享 H100 / B200 集群，硬件本身就是 M5 Max 性价比的另一个维度。Angel 的论点不是「Mac 慢，所以本地大模型没意义」，而是「**这两个数字摆出来，本地大模型只能靠非数字优势赢**」。
 
@@ -162,7 +162,7 @@ Angel 的框架可以直接套到国内，但每一项数字都要换：电价�
 
 参照线放在右边对比：**DeepSeek V4 API ¥3.5/百万 token，阿里百炼 Qwen3-Coder ¥4.5/百万 token**。
 
-![国内电价 × 国产 API 重算的单百万 token 成本对比柱状图](apple-silicon-energy-china-recompute.png)
+![国内电价 × 国产 API 重算的单百万 token 成本对比柱状图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/apple-silicon-energy-vs-openrouter-economics-2026-05-18/apple-silicon-energy-china-recompute.png)
 
 结论挑衅但清晰：**国内自建本地大模型在最理想工况下（40 tok/s + 10 年折旧 + 24h 跑满）才能压到云 API 同档线下面（¥2.8 vs ¥3.5）；任何不是"最理想"的工况下，本地至少贵 2 到 10 倍**。
 
@@ -180,7 +180,7 @@ Angel 的框架可以直接套到国内，但每一项数字都要换：电价�
 
 把三种机器都收齐，再变化折旧年限，能看到一条非常关键的曲线：**本地大模型成本对折旧年限的敏感度远大于对电费、对吞吐的敏感度**。
 
-![M5 Max 不同折旧年限下的本地推理成本曲线](apple-silicon-energy-depreciation-curve.png)
+![M5 Max 不同折旧年限下的本地推理成本曲线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/apple-silicon-energy-vs-openrouter-economics-2026-05-18/apple-silicon-energy-depreciation-curve.png)
 
 10 tokens/秒保守工况下，折旧从 3 年拉到 10 年，单百万 token 成本从 ¥33.5 压到 ¥11.2——降了 66%。40 tokens/秒乐观工况下，同样从 3 年到 10 年，从 ¥8.4 压到 ¥2.8——降了同样的比例。
 
@@ -240,7 +240,7 @@ Angel 算账的局限在哪？他没给「**隐私 / 离线 / 合规**」这三�
 
 把所有维度收成一张二维决策图——X 轴是隐私 / 离线需求强度，Y 轴是单百万 token 实际成本。六个对照点全部摆上去：
 
-![本地大模型 vs 云 API · 隐私强度 × 单价四象限](apple-silicon-energy-quadrant.png)
+![本地大模型 vs 云 API · 隐私强度 × 单价四象限](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/apple-silicon-energy-vs-openrouter-economics-2026-05-18/apple-silicon-energy-quadrant.png)
 
 四象限对应四种决策：
 

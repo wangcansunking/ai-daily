@@ -11,7 +11,7 @@ description: "2026-05-28，巴黎的 KOG 公布了一项推理优化：8 张 AMD
 ---
 # KOG 把单请求解码做到 3000 tokens/s
 
-![赛博风格示意：标准 GPU 上数据流以极高速率流动，象征单请求实时解码](kog-laneformer-3000tps-inference-2026-05-30.png)
+![赛博风格示意：标准 GPU 上数据流以极高速率流动，象征单请求实时解码](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/kog-laneformer-3000tps-inference-2026-05-30/kog-laneformer-3000tps-inference-2026-05-30.png)
 
 巴黎一家只有 11 个人的初创公司 KOG，5 月 28 日发了一篇博客，给出一个让做推理部署的人会愣一下的数字：在 8 张 AMD MI300X 上、批大小（batch size）等于 1、不开投机解码、不做量化，单个请求的输出速度跑到了 **3000 tokens/s**；换成 8 张 NVIDIA H200，也有 2100 tokens/s。
 
@@ -25,7 +25,7 @@ description: "2026-05-28，巴黎的 KOG 公布了一项推理优化：8 张 AMD
 
 KOG 在博客里给了一张横向对照图，把自己和市面上主流的推理路径摆在同一个坐标里。这张图信息量很大，值得逐列读。
 
-![来源：KOG 官方博客基准图 2026-05-28，横向对照 GPU 推理引擎 / 公共推理 API / 专用推理硬件 / GPU 单核研究四类，批大小 1](source-kog-benchmark-speed.png)
+![来源：KOG 官方博客基准图 2026-05-28，横向对照 GPU 推理引擎 / 公共推理 API / 专用推理硬件 / GPU 单核研究四类，批大小 1](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/kog-laneformer-3000tps-inference-2026-05-30/source-kog-benchmark-speed.png)
 
 > 来源：KOG 官方博客 `blog.kog.ai` 2026-05-28 发布的速度基准图。柱状高度是单用户单请求的每秒输出 token 数，批大小均为 1。
 
@@ -38,7 +38,7 @@ KOG 在博客里给了一张横向对照图，把自己和市面上主流的推�
 
 所以 KOG 这条柱子的真正看点是：**它是在标准 GPU 上、用纯软件协同设计，把单请求速度推到了过去要靠 Cerebras 这类专用硬件才够得着的区间。** 这是它和国内读者关心的成本结构直接相关的地方——不用换芯片。
 
-![自制对照：KOG Laneformer 2B 在 MI300X / H200 上的单请求速度，与标准推理栈理论上限对照](kog-speed-bench-2026-05-30.png)
+![自制对照：KOG Laneformer 2B 在 MI300X / H200 上的单请求速度，与标准推理栈理论上限对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/kog-laneformer-3000tps-inference-2026-05-30/kog-speed-bench-2026-05-30.png)
 
 需要立刻说清楚的边界有三条，免得把这个数字读歪：
 
@@ -48,7 +48,7 @@ KOG 在博客里给了一张横向对照图，把自己和市面上主流的推�
 
 这一节记住一句话：3000 tokens/s 是"标准 GPU + 纯软件 + 单请求"三个条件叠在一起的成绩，它对标的是延迟，参照系是 Cerebras 那种专用硬件，而不是 vLLM 的高并发吞吐。
 
-![来源：KOG 官方博客 hero 图 2026-05-28，四类推理路径单请求速度全景](source-kog-blog-hero.png)
+![来源：KOG 官方博客 hero 图 2026-05-28，四类推理路径单请求速度全景](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/kog-laneformer-3000tps-inference-2026-05-30/source-kog-blog-hero.png)
 
 > 来源：KOG 官方博客 `blog.kog.ai` 2026-05-28 题图。同一张全景把开源引擎、云端 API、专用芯片、单核研究四条线一次性铺开。
 
@@ -71,7 +71,7 @@ KOG 给了一笔很具体的账：
 
 而要达到 3000 tokens/s，留给每个 token 的总预算只有约 **333 微秒**。1125 远大于 333，等式根本不成立——单是核启动这一项，就把标准栈的速度上限锁死在每秒约 890 个 token。
 
-![自制示意：核边界开销累积，标准栈 1125µs / 激进融合 563µs / KOG 目标 333µs 对照](kog-kernel-overhead-2026-05-30.png)
+![自制示意：核边界开销累积，标准栈 1125µs / 激进融合 563µs / KOG 目标 333µs 对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/kog-laneformer-3000tps-inference-2026-05-30/kog-kernel-overhead-2026-05-30.png)
 
 有人会说，那把核融合（kernel fusion）做激进一点不就行了？把注意力、归一化、前馈这些原本分开的核尽量合并成大核，确实是过去几年推理优化的主流手段，TensorRT-LLM、FlashAttention 这类工作都在这条线上。KOG 也算了这一档：哪怕把每层压到 5 个核，开销还有 563 微秒，对应上限约 1780 tokens/s——仍然到不了 3000。
 
@@ -87,7 +87,7 @@ KOG 给了一笔很具体的账：
 
 KOG 的核心判断是——既然瓶颈是"核太多、边界太碎"，那就别在现成推理栈上打补丁，而是把模型、运行时、底层代码、通信库这四层重新一起设计，让它们彼此适配。这是典型的协同设计思路。
 
-![自制示意：KOG 四层协同设计 —— Laneformer 架构 / monokernel 运行时 / 底层核代码 / KCCL 通信库](kog-codesign-stack-2026-05-30.png)
+![自制示意：KOG 四层协同设计 —— Laneformer 架构 / monokernel 运行时 / 底层核代码 / KCCL 通信库](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/kog-laneformer-3000tps-inference-2026-05-30/kog-codesign-stack-2026-05-30.png)
 
 四层各自做的事：
 
@@ -135,7 +135,7 @@ KOG 自己也把目标用户说得很直白：面向构建编码 agent 和交互
 
 这是国内读者最该看清的一节。**单请求低延迟和高并发吞吐，是两个不同的优化目标，不能直接拿一个数字盖过另一个。**
 
-![自制对照：单请求低延迟（KOG 赛道）vs 高并发吞吐（vLLM / SGLang 主战场）两个目标的差异](kog-two-goals-2026-05-30.png)
+![自制对照：单请求低延迟（KOG 赛道）vs 高并发吞吐（vLLM / SGLang 主战场）两个目标的差异](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/kog-laneformer-3000tps-inference-2026-05-30/kog-two-goals-2026-05-30.png)
 
 vLLM、SGLang、TensorRT-LLM 这三个国内工程师天天打交道的引擎，主战场是**高并发吞吐**——连续批处理（continuous batching）、PagedAttention、KV cache 管理，这些技术全是为了"同一时刻塞进尽量多的请求，让单位时间总产出最大"。在那个目标下，它们做得非常好，KOG 完全没有要替代它们的意思。
 

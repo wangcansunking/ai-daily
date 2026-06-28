@@ -26,7 +26,7 @@ description: "supertone-inc/supertonic 这一周冲到 GitHub Trending 第九，
 
 # Supertonic 3：99M 跑 31 种语言的本地 TTS，跟 CosyVoice / GPT-SoVITS / ChatTTS 是另一条路
 
-![Supertonic 3 封面 · 99M 本地 TTS 跑 31 语言](supertonic-3-99m-tts-31lang-2026-05-15.png)
+![Supertonic 3 封面 · 99M 本地 TTS 跑 31 语言](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/supertonic-3-99m-tts-31lang-2026-05-15/supertonic-3-99m-tts-31lang-2026-05-15.png)
 
 如果你最近也在挑本地 TTS，过去两周大概率刷到过一个叫 Supertonic 的仓库。这一周它从冷启动冲到 GitHub Trending 第九，单日加 1163 stars，今天实测 5243 stars / 508 forks / MIT 协议 / Swift 主语言。看仓库简介只有一句话：「Lightning-Fast, On-Device, Multilingual TTS — running natively via ONNX」。
 
@@ -38,7 +38,7 @@ description: "supertone-inc/supertonic 这一周冲到 GitHub Trending 第九，
 
 先把出身讲清楚。supertone-inc 这个组是韩国 Supertone 公司，2020 年成立做 AI 语音合成，2023 年被 Hybe 收购成为旗下子公司。Hybe 是韩国最大的娱乐公司之一，BTS、SEVENTEEN、TXT、LE SSERAFIM、NewJeans 等顶流团体都在它旗下。Supertone 早期最被业内记住的产品是给已故歌手做的 AI 声音复刻，2023 年还参与了金光石声音重建项目。一家娱乐巨头投资语音 AI 子公司，主线本来就是商业级歌手嗓音建模、配音、虚拟偶像，但 4 月 29 日这一版 Supertonic 3，团队选择把研究侧的成果以 MIT 协议放出，外加 v2 兼容的公开 ONNX 资产 — 这个动作本身就比纯论文级开源要重一档。
 
-![Supertonic 3 GitHub 仓库主页](supertonic-og.png)
+![Supertonic 3 GitHub 仓库主页](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/supertonic-3-99m-tts-31lang-2026-05-15/supertonic-og.png)
 
 仓库 README 这两周写得非常克制：没有列融资、没有写商业版定价，只挂了三件东西。第一是 v3 的 Demo 和模型卡，分别托管在 Hugging Face 的 `Supertone/supertonic-3` Space 与 model repo；第二是论文链接，主架构论文是 `arXiv:2503.23108`，标题「SupertonicTTS: Towards Highly Efficient and Streamlined Text-to-Speech System」，里面写明用了 flow-matching 风格的文本到潜变量模块加上一个语音自编码器，配合一种叫 LARoPE（Length-Aware Rotary Position Embedding）的位置编码改进文-语对齐；第三是十种以上语言示例代码（Python、Node.js、浏览器、Java、C++、C#、Go、Swift、iOS、Rust、Flutter），全部走 ONNX Runtime 推理。
 
@@ -66,7 +66,7 @@ description: "supertone-inc/supertonic 这一周冲到 GitHub Trending 第九，
 
 这是看完 README 第一个会被问的问题。99M 这个体量在 2026 年的 TTS 圈是真小——不到当下 ChatTTS 480M 的四分之一、不到 XTTS v2 1.1B 的十分之一、跟 VoxCPM2 这种 0.7B 量级的同期开源对手相比也只有它的 1/7 上下。但 README 里 Supertonic 3 的几个 metrics 图给出的结论是：词错误率（WER）和字错误率（CER）落在「与大模型可比的范围」内，部分语言上甚至更稳。
 
-![Supertonic 3 与同类开源 TTS 参数量对照](supertonic-params-comparison.png)
+![Supertonic 3 与同类开源 TTS 参数量对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/supertonic-3-99m-tts-31lang-2026-05-15/supertonic-params-comparison.png)
 
 这张图把这一周大家在讨论的几个本地 TTS 一字排开。看体量分布，本地 TTS 圈现在大致有四档：第一档 25M 上下的 Piper，主打英文场景的极轻量端侧；第二档 80M-100M 的 Kokoro 与 Supertonic 3，做的是「轻 + 宽语种」；第三档 500M 上下的 ChatTTS、VibeVoice Realtime 0.5B，主打表现力和实时性；第四档 0.7B-1.1B 的 VoxCPM2、XTTS v2，主打音色克隆和最高级别的自然度。
 
@@ -112,7 +112,7 @@ description: "supertone-inc/supertonic 这一周冲到 GitHub Trending 第九，
 
 这是本文最值得展开的一节。把视野拉回到中文圈，过去一年本地 TTS 卷得非常厉害，国产几家各有非常清晰的差异化定位。我把当下最被讨论的几家拉到一张表上看。
 
-![本地 TTS 语言覆盖横向对比](supertonic-language-table.png)
+![本地 TTS 语言覆盖横向对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/supertonic-3-99m-tts-31lang-2026-05-15/supertonic-language-table.png)
 
 **CosyVoice 2（阿里达摩院 · 2024 年底放出 · 2025-26 持续更新）**：体量约 500M，主打中英日韩粤五语种 + 表现力极强的少样本克隆。社区里几乎是中文场景默认推荐之一，长文朗读、对话情绪、方言（粤语稳）都有口碑。和 Supertonic 比，CosyVoice 2 在中文 + 表现力这条线上是国内最稳的选项，但体量大、对 GPU / 较好 CPU 资源有更明显诉求。
 
@@ -160,7 +160,7 @@ description: "supertone-inc/supertonic 这一周冲到 GitHub Trending 第九，
 
 讲完语种和场景，把视角拉回工程。Supertonic 3 在端侧的真实优势，不是任何一个单点指标特别夸张，而是它把「体积、启动、CPU 实时率、内存」这四件事一起压到普通笔电可承受的范围。
 
-![本地部署四张关键牌：体积 启动 CPU 实时率 内存](supertonic-perf-bars.png)
+![本地部署四张关键牌：体积 启动 CPU 实时率 内存](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/supertonic-3-99m-tts-31lang-2026-05-15/supertonic-perf-bars.png)
 
 **第一张牌：体积**。公开 ONNX 资产约 99M，是 0.7B-2B 同类的 1/7 到 1/20。这个数字带来的实际差异是——Chrome 扩展可以把整个模型嵌进 manifest，电纸书可以装进内置存储，树莓派可以从 SD 卡冷启动。
 

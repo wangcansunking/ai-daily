@@ -9,7 +9,7 @@ description: "英伟达 2026-05-31 在 Computex 台北主题演讲发布 RTX Spa
 ---
 # 英伟达 RTX Spark：Windows 机本地跑 120B 模型
 
-![英伟达 RTX Spark 超级芯片，把 128GB 统一内存的个人 AI 算力装进 Windows 笔记本和台式机](nvidia-rtx-spark-128gb-local-120b-2026-06-02.png)
+![英伟达 RTX Spark 超级芯片，把 128GB 统一内存的个人 AI 算力装进 Windows 笔记本和台式机](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/nvidia-rtx-spark-128gb-local-120b-2026-06-02/nvidia-rtx-spark-128gb-local-120b-2026-06-02.png)
 
 5 月 31 日，英伟达在 Computex 台北的主题演讲上发布了 RTX Spark：一颗把 Grace CPU 和 Blackwell GPU 封在一起的超级芯片，最高 128GB 统一内存，官方说本地能跑 120B 参数的大模型，外加 100 万词元的上下文。它要进的不是数据中心，而是普通人桌上的 Windows 笔记本和台式机。
 
@@ -21,7 +21,7 @@ description: "英伟达 2026-05-31 在 Computex 台北主题演讲发布 RTX Spa
 
 ## RTX Spark 是什么：一颗芯片，把超算搬上桌
 
-![英伟达官方发布的 RTX Spark 超级芯片，Grace CPU 加 Blackwell GPU 封在一起](source-nvidia-rtx-spark-official.png)
+![英伟达官方发布的 RTX Spark 超级芯片，Grace CPU 加 Blackwell GPU 封在一起](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/nvidia-rtx-spark-128gb-local-120b-2026-06-02/source-nvidia-rtx-spark-official.png)
 
 *来源：英伟达官方新闻稿 RTX Spark 发布配图*
 
@@ -39,7 +39,7 @@ description: "英伟达 2026-05-31 在 Computex 台北主题演讲发布 RTX Spa
 
 ## 「本地跑 120B」难在哪：不是算力，是内存
 
-![微软联手英伟达，把 RTX Spark 平台带进 Windows，秋季 30 多款笔记本、10 多款台式机上市](source-rtx-spark-tomshardware.png)
+![微软联手英伟达，把 RTX Spark 平台带进 Windows，秋季 30 多款笔记本、10 多款台式机上市](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/nvidia-rtx-spark-128gb-local-120b-2026-06-02/source-rtx-spark-tomshardware.png)
 
 *来源：Tom's Hardware 关于 RTX Spark 在 Computex 2026 发布的报道*
 
@@ -55,7 +55,7 @@ RTX Spark 的 128GB 统一内存，正是冲着这道门槛来的。CPU 和 GPU 
 
 要判断 RTX Spark 跑大模型到底快不快，最好的参照不是它自己的宣传，而是已经上市、有真实成绩的同类机器。把四台摆在一起算账：
 
-![统一内存大不等于跑得快：RTX Spark、DGX Spark、M5 Max、4090 的带宽对比](rtx-spark-spec-compare-2026-06-02.png)
+![统一内存大不等于跑得快：RTX Spark、DGX Spark、M5 Max、4090 的带宽对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/nvidia-rtx-spark-128gb-local-120b-2026-06-02/rtx-spark-spec-compare-2026-06-02.png)
 
 - **英伟达 RTX Spark**：约 128GB 统一内存，内存带宽约 300 GB/s（第三方报道口径，官方发布稿未给出），本地可跑约 120B，参考价位据报道约 1.8 到 2.5 万元（同样是第三方口径）。
 - **英伟达 DGX Spark**（已上市的前身）：128GB，带宽 273 GB/s，跑 70B 到 120B，上市价 3999 美元、2026 年 2 月起因内存涨价上调到约 4699 美元。
@@ -68,7 +68,7 @@ RTX Spark 的 128GB 统一内存，正是冲着这道门槛来的。CPU 和 GPU 
 
 ## 它跑起来大概什么速度：看已上市的 DGX Spark
 
-![英伟达 DGX Spark：已上市的 Grace-Blackwell 个人 AI 开发机，128GB 统一内存、273 GB/s 带宽](source-dgx-spark-product.png)
+![英伟达 DGX Spark：已上市的 Grace-Blackwell 个人 AI 开发机，128GB 统一内存、273 GB/s 带宽](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/nvidia-rtx-spark-128gb-local-120b-2026-06-02/source-dgx-spark-product.png)
 
 *来源：英伟达 DGX Spark 官方产品页*
 
@@ -80,7 +80,7 @@ RTX Spark 还没上市，但它的「前身」DGX Spark 已经卖了一阵，用
 
 ## 对国内开发者，这台机器排在哪
 
-![Computex 期间，RTX Spark 与微软 Surface Laptop Ultra 同期成为讨论热点](source-hn-front-rtx-spark.png)
+![Computex 期间，RTX Spark 与微软 Surface Laptop Ultra 同期成为讨论热点](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/nvidia-rtx-spark-128gb-local-120b-2026-06-02/source-hn-front-rtx-spark.png)
 
 *来源：Hacker News 首页，RTX Spark 与 Surface Laptop Ultra 同日登上讨论榜*
 

@@ -19,7 +19,7 @@ tags:
 
 > 当地时间 5 月 7 日下午，一位用户名 bsuh 的工程师在个人博客 bearblog.dev 抛出一篇 600 字的短文，标题是「agents need control flow, not more prompts」。当晚提交到 Hacker News，24 小时内冲到 561 pts、280 条评论。**核心论断：可靠的 agent 不来自越写越长的 prompt 链，而来自把控制流写进代码——把 LLM 当成一个组件，不是整个系统。**这一刀直接切到了今天 agent 工程的中线，国内开发者完全可以借这套框架重新审视手里的 LangChain / Dify / 扣子 / 千问 Agent。
 
-![两派 Agent 工程范式对比](prompt-vs-control-flow-paradigm.png)
+![两派 Agent 工程范式对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/agents-need-control-flow-not-prompts/prompt-vs-control-flow-paradigm.png)
 
 ## 一、561 pts 的一句话立论：把逻辑搬出 prose、放进 runtime
 
@@ -69,7 +69,7 @@ bsuh 的原话是「**Reliability requires moving logic out of prose and into ru
 
 最后一条是 bsuh 自己加的补丁：光有控制流还不够，**「a system prone to silent failure」**（一个容易静默失败的系统）必须有 aggressive error detection。如果 agent 没有程序化的验证检查点，那只剩 Babysitter / Auditor / Prayer 三条死路——这是对很多「我搭了一个 LangGraph 状态机就万事大吉」工程师的当头一棒。
 
-![控制流派的代码长什么样](bsuh-control-flow-pseudocode.png)
+![控制流派的代码长什么样](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/agents-need-control-flow-not-prompts/bsuh-control-flow-pseudocode.png)
 
 ## 三、控制流派的代码长什么样：一段 QA 流程的两种写法
 
@@ -123,7 +123,7 @@ bob1029 在另一条 HN 顶赞里给出了一组数字：「**I saw a major upli
 
 ## 五、HN 280 评论分布：65% 强支持 · 25% 中立 · 10% 反对
 
-![HN 280 条评论立场分布](hn-280-comments-distribution.png)
+![HN 280 条评论立场分布](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/agents-need-control-flow-not-prompts/hn-280-comments-distribution.png)
 
 逐条扫完顶级评论后，本文按立场把 HN 280 条评论分成三派，每派挑了实测 verbatim 引语作为代表。
 
@@ -171,7 +171,7 @@ HN 顶赞 fny 给出了一个非常聪明的折中方案：「**you can just dro
 
 ## 七、国产 Agent 框架对位：哪些已经走在控制流路线上
 
-![国产 Agent 框架分类](domestic-agent-framework-classification.png)
+![国产 Agent 框架分类](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/agents-need-control-flow-not-prompts/domestic-agent-framework-classification.png)
 
 bsuh 这套立论对国内同样适用，但国内开发者其实手上有比硅谷更多的「混合派」工具——尤其是字节扣子工作流和 Dify Workflow 这类可视化 DAG 编排平台。本文按公开文档与社区共识，把国产主流 agent 框架做了一次范式分类。
 
@@ -197,7 +197,7 @@ bsuh 这套立论对国内同样适用，但国内开发者其实手上有比硅
 
 ## 八、什么场景选 Prompt 派，什么场景选控制流派
 
-![Prompt 派 vs 控制流派决策矩阵](prompt-vs-control-decision-matrix.png)
+![Prompt 派 vs 控制流派决策矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/agents-need-control-flow-not-prompts/prompt-vs-control-decision-matrix.png)
 
 不要因为 HN 一波热度就冲动迁移。两派各有适用场景，本文给出一个九维决策矩阵——读者可以拿去对照自己手上的项目。
 

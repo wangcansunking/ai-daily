@@ -22,7 +22,7 @@ summary: Nous Research 把开源派招牌的 hermes-agent 推到 v0.13.0，144K 
 
 # Nous Hermes-agent：开源派给个人 AI 的新答卷
 
-![Hermes Agent 与一位东亚开发者一起在桌面上长大](nous-hermes-agent-personal-ai-2026-05-12.png)
+![Hermes Agent 与一位东亚开发者一起在桌面上长大](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/nous-hermes-agent-personal-ai-2026-05-12/nous-hermes-agent-personal-ai-2026-05-12.png)
 
 ## 一、过去一年，个人 AI 这件事卡在什么地方
 
@@ -52,7 +52,7 @@ summary: Nous Research 把开源派招牌的 hermes-agent 推到 v0.13.0，144K 
 
 架构层面，单一 gateway 进程对外提供入口，agent 核心承担学习闭环，LLM backend 随时切换，部署位有 7 种可选：
 
-![hermes-agent 核心架构 · 学习闭环 + 多 LLM + 多 Gateway](hermes-architecture.png)
+![hermes-agent 核心架构 · 学习闭环 + 多 LLM + 多 Gateway](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/nous-hermes-agent-personal-ai-2026-05-12/hermes-architecture.png)
 
 四层意思要分清楚：
 
@@ -77,7 +77,7 @@ hermes              # 进入 TUI 开始对话
 
 `hermes-agent` 不是凭空出现的。把 Nous Research 的 GitHub 实测拉出来看时间线：
 
-![Nous Research 从 LLM 微调到 Agent 框架的演化](nous-timeline.png)
+![Nous Research 从 LLM 微调到 Agent 框架的演化](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/nous-hermes-agent-personal-ai-2026-05-12/nous-timeline.png)
 
 - **2024-02-24** `Hermes-Function-Calling` 公开（1,338 star）——函数调用微调数据集是这一支最早的招牌，那一年大部分人还在用文本提示拼 tool use，Nous 拿出数据 + 评测让函数调用变成可微调的目标。
 - **2024-03** Hermes 2 Pro 系列上 HuggingFace——Llama 3、Mistral 的函数调用微调权重在那段时间被大量 fine-tune 项目当作"会用工具的开源 LLM"参考底子。
@@ -144,7 +144,7 @@ hermes gateway start
 
 本仓库读者群最关心的一个问题：能不能完全本地跑、不出网络。`hermes-agent` 走的是 OpenAI 兼容协议，所以本地 runtime 全部能接：
 
-![本地大模型接入 hermes-agent 的 3 条实操路径](local-llm-onramp.png)
+![本地大模型接入 hermes-agent 的 3 条实操路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/nous-hermes-agent-personal-ai-2026-05-12/local-llm-onramp.png)
 
 **Ollama 路径（最低门槛）**
 
@@ -192,7 +192,7 @@ mlx_lm.server --model mlx-community/Qwen3-14B-4bit
 
 不站队，列实测维度：
 
-![7 维度对比表 · hermes-agent vs 主流 agent 框架（含 OpenClaw）](agent-frameworks-compare.png)
+![7 维度对比表 · hermes-agent vs 主流 agent 框架（含 OpenClaw）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/nous-hermes-agent-personal-ai-2026-05-12/agent-frameworks-compare.png)
 
 每一格的取值都是从对方仓库 README / pyproject.toml 实测，star 数是 2026-05-11 GitHub snapshot：
 
@@ -235,7 +235,7 @@ mlx_lm.server --model mlx-community/Qwen3-14B-4bit
 
 把视线放回国内，按定位分轨：
 
-![国内 agent 框架 mapping · 8 家覆盖](cn-agent-mapping.png)
+![国内 agent 框架 mapping · 8 家覆盖](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/nous-hermes-agent-personal-ai-2026-05-12/cn-agent-mapping.png)
 
 - **个人 AI / 本地优先**：OpenClaw（370K star）、hermes-agent（144K star，海外项目但中文 README 齐全）。
 - **平台 / B 端 agent**：扣子 Coze 2.5（coze-studio 20K star）、Dify（140K star，国际化平台、国内可用）、阿里百炼 Agent（云平台，无独立 GitHub）。
@@ -247,7 +247,7 @@ mlx_lm.server --model mlx-community/Qwen3-14B-4bit
 
 把 cron 调度 + 技能自创建 + messaging gateway 三大能力捏在一起，画三种典型画像怎么用：
 
-![一周用 hermes-agent · 3 个画像的实操工作流](user-story-flow.png)
+![一周用 hermes-agent · 3 个画像的实操工作流](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/nous-hermes-agent-personal-ai-2026-05-12/user-story-flow.png)
 
 **个人开发者（本仓库主用户）**：
 

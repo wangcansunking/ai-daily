@@ -13,7 +13,7 @@ cover: "domestic-gpu-three-q1-2026.png"
 
 > 寒武纪一个季度赚 10 亿、摩尔线程靠夸娥智算单子首次单季扭亏、沐曦把亏损线性压回 1 亿以内——三家 Q1 2026 财报放在一起，国产 GPU 第一次有了硬数据可比的横切面。
 
-![国产 GPU 三家 Q1 财报对比 · 封面](domestic-gpu-three-q1-2026.png)
+![国产 GPU 三家 Q1 财报对比 · 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/domestic-gpu-three-q1-2026-financials/domestic-gpu-three-q1-2026.png)
 
 ## 一、三组硬数字：先看完，再说判断
 
@@ -25,7 +25,7 @@ cover: "domestic-gpu-three-q1-2026.png"
 
 沐曦股份（前科创板申报）一季度营业收入 5.62 亿元，同比 +75.37%；归母净亏损 0.99 亿元（业绩预告区间为 0.91 亿—1.82 亿元），扣非净亏损 1.03 亿元——同比减亏幅度超过 1.4 亿元。这是沐曦自上市以来亏损绝对值最低的一个季度。
 
-![三家 Q1 2026 财报关键科目对比](domestic-gpu-three-q1-financials-table.png)
+![三家 Q1 2026 财报关键科目对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/domestic-gpu-three-q1-2026-financials/domestic-gpu-three-q1-financials-table.png)
 
 注意三个数字的分布形状：寒武纪是断层领先的盈利者，摩尔线程刚踩过盈亏平衡线，沐曦在亏损面上做线性收窄。半年前国产 GPU 的常用形容是"还在烧钱"，Q1 季报之后这句话已经只能继续用在沐曦一家身上。
 
@@ -63,7 +63,7 @@ cover: "domestic-gpu-three-q1-2026.png"
 
 把这些数字叠加：摩尔线程目前的商业模式更像是「自研 GPU + 服务器 + 集群交付」的重资产模式，单季能不能盈利，取决于当期是不是签下了一张大集群单+政府补助节奏。盈利的可持续性，要看下一笔夸娥级别订单何时再来、以及主营毛利能不能继续往上爬。
 
-![国产 GPU 三家产品线 vs 海外对位](domestic-gpu-product-vs-overseas.png)
+![国产 GPU 三家产品线 vs 海外对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/domestic-gpu-three-q1-2026-financials/domestic-gpu-product-vs-overseas.png)
 
 ## 四、沐曦：亏损线性压缩，盈亏平衡指向 2026 年内
 
@@ -85,7 +85,7 @@ cover: "domestic-gpu-three-q1-2026.png"
 
 回到行业层面，这次三家季报最重要的一个共同点不是数字本身，而是数字开始可比了。
 
-![国产 GPU 商业化阶段：三种路径同时跑通](domestic-gpu-stage-paths.png)
+![国产 GPU 商业化阶段：三种路径同时跑通](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/domestic-gpu-three-q1-2026-financials/domestic-gpu-stage-paths.png)
 
 可以这样概括三种路径：
 

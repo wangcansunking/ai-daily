@@ -15,7 +15,7 @@ source_links:
 
 # jcode 启动比 Claude Code 快 245 倍：Rust harness 怎么做到的
 
-![jcode harness vs Claude Code 性能与生态](jcode-rust-agent-harness-vs-claude-code.png)
+![jcode harness vs Claude Code 性能与生态](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/jcode-rust-agent-harness-vs-claude-code/jcode-rust-agent-harness-vs-claude-code.png)
 
 > 3911 stars、4 个月、当日 +587、GitHub Trending Daily Top 8。jcode 不是又一个绑定单一模型的终端 CLI，也不是多 agent 集群编排层，它是一个 **harness（外壳）**——把 Claude / OpenAI / 阿里云 / DeepSeek / Ollama 等 13 家 LLM 用同一套 Rust 二进制串起来，给开发者一个比 Claude Code 启动快 245 倍、内存省 56.7% 的统一入口。作者 Jeremy Huang 一个人写，仓库 2026-01-05 才创建。
 
@@ -66,7 +66,7 @@ jcode 的定位是——**做一个不绑任何家的、性能优先的、Rust �
 
 jcode 最大的卖点是性能，但所有数据都来自作者 README 自报的对比，未经第三方独立复测——这一点先讲清楚。下面引用的数字按 README 原文转录。
 
-![jcode 内存与启动延迟对比](jcode-perf-vs-claude-copilot.png)
+![jcode 内存与启动延迟对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/jcode-rust-agent-harness-vs-claude-code/jcode-perf-vs-claude-copilot.png)
 
 **首帧启动延迟**——
 
@@ -104,7 +104,7 @@ jcode 最大的卖点是性能，但所有数据都来自作者 README 自报的
 
 jcode 在 LLM 接入上做的覆盖度，比同类项目都广。
 
-![jcode 原生支持的 13 家 LLM 厂商](jcode-13-llm-providers-matrix.png)
+![jcode 原生支持的 13 家 LLM 厂商](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/jcode-rust-agent-harness-vs-claude-code/jcode-13-llm-providers-matrix.png)
 
 `jcode login --provider` 命令一览——
 
@@ -138,7 +138,7 @@ vLLM 这一项 README 没单独点名，但通过 OpenAI 兼容协议接入是�
 
 把 jcode 放进同代 agent 工具里看位置就清楚了——它和 Claude Code、aider、ruflo 不是同一个东西。
 
-![jcode vs Claude Code vs aider vs ruflo 横评](jcode-vs-claude-aider-ruflo-harness-table.png)
+![jcode vs Claude Code vs aider vs ruflo 横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/jcode-rust-agent-harness-vs-claude-code/jcode-vs-claude-aider-ruflo-harness-table.png)
 
 四个项目各自的定位——
 

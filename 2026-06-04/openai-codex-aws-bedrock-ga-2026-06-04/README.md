@@ -16,7 +16,7 @@ description: "OpenAI 的 GPT-5.5、GPT-5.4 和 Codex 编码智能体正式上架
 ---
 # Codex 上了 AWS：换一朵云，同一套编码工作流还能不能跑
 
-![Codex 与 OpenAI 前沿模型上架 AWS Bedrock](openai-codex-aws-bedrock-ga-2026-06-04.png)
+![Codex 与 OpenAI 前沿模型上架 AWS Bedrock](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/openai-codex-aws-bedrock-ga-2026-06-04/openai-codex-aws-bedrock-ga-2026-06-04.png)
 
 > 北京时间 6 月 1 日，OpenAI 的 GPT-5.5、GPT-5.4 和 Codex 编码智能体正式在 AWS Bedrock 转入正式可用。一句话定调：你那套写在 Codex 上的编码工作流，从今天起换一朵云也能照常跑，价格不变、计费方式不变，多出来的是一整套 AWS 的企业合规控制。
 
@@ -40,7 +40,7 @@ Codex 这边，目前每周有数百万开发者用它来写代码、重构、�
 
 ## Codex 怎么进来：CLI、桌面 App、IDE 插件三条路都通
 
-![Codex 在 AWS Bedrock 上运行的命令行界面](source-codex-cli-bedrock-2026-06-04.png)
+![Codex 在 AWS Bedrock 上运行的命令行界面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/openai-codex-aws-bedrock-ga-2026-06-04/source-codex-cli-bedrock-2026-06-04.png)
 <small>来源：AWS News Blog《Get started with OpenAI GPT-5.5, GPT-5.4 models, and Codex on Amazon Bedrock》2026-06-01</small>
 
 本节核心：**Codex 在 Bedrock 上的入口和它在 OpenAI 自营时一模一样，你不用换工具。**
@@ -51,7 +51,7 @@ Codex on Amazon Bedrock 通过三种方式接入，和你现在熟悉的用法�
 - **Codex App**：桌面端应用；
 - **IDE 插件**：覆盖 Visual Studio Code、JetBrains、Xcode 三大编辑器阵营。
 
-![Codex 桌面端应用在 AWS Bedrock 上的界面](source-codex-desktop-bedrock-2026-06-04.jpg)
+![Codex 桌面端应用在 AWS Bedrock 上的界面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/openai-codex-aws-bedrock-ga-2026-06-04/source-codex-desktop-bedrock-2026-06-04.jpg)
 <small>来源：AWS Machine Learning Blog《OpenAI models and Codex on Amazon Bedrock are now generally available》2026-06-01</small>
 
 这一点对开发者其实是最直接的安心来源：换云不等于换工具链。你团队里那些已经习惯在 VS Code 里唤起 Codex 的人，迁到 Bedrock 之后看到的还是同一个界面、同一套交互；底层的模型推理改走 AWS，对日常敲代码的人几乎是无感的。Codex 跨仓库保持上下文、能在失败时自己推理、调用工具做验证这些能力也都还在，由 GPT-5.5 驱动后，效率和质量比早期版本有提升。
@@ -80,7 +80,7 @@ Codex on Amazon Bedrock 通过三种方式接入，和你现在熟悉的用法�
 
 ## 真正多出来的东西：一整套 AWS 企业合规控制
 
-![AWS 数据中心，模型推理停留在选定区域内以满足数据驻留要求](source-aws-openai-announcement-hero-2026-06-04.png)
+![AWS 数据中心，模型推理停留在选定区域内以满足数据驻留要求](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/openai-codex-aws-bedrock-ga-2026-06-04/source-aws-openai-announcement-hero-2026-06-04.png)
 <small>来源：About Amazon 官方新闻配图，2026-06-01</small>
 
 本节核心：**上 Bedrock 换来的不只是另一朵云，而是 AWS 那套企业级合规控制原封不动地套在了 Codex 上。**
@@ -100,7 +100,7 @@ Codex on Amazon Bedrock 通过三种方式接入，和你现在熟悉的用法�
 
 ## 换一朵云还能不能跑：三类云的可用性对位
 
-![同一套 Codex 工作流在三类云上的可用性对位](chart-codex-three-clouds-2026-06-04.png)
+![同一套 Codex 工作流在三类云上的可用性对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/openai-codex-aws-bedrock-ga-2026-06-04/chart-codex-three-clouds-2026-06-04.png)
 <small>来源：根据 OpenAI、AWS 官方公告整理</small>
 
 本节核心：**Codex 工作流从"只在微软家能跑"变成"AWS 也能原样跑"，但闭源模型这条路目前仍是 Azure 与 AWS 两家，国内云走的是另一条开源权重的路。**

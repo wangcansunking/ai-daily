@@ -11,7 +11,7 @@ weekday: "星期日"
 ---
 # Windows 想从装 AI 应用的电脑，变成原生跑 Agent 的系统
 
-![Windows Agent 平台：微软 Build 2026 把操作系统重新定位成跑智能体的运行时](microsoft-build-windows-agent-os-2026-05-31.png)
+![Windows Agent 平台：微软 Build 2026 把操作系统重新定位成跑智能体的运行时](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/microsoft-build-windows-agent-os-2026-05-31/microsoft-build-windows-agent-os-2026-05-31.png)
 
 过去三十年，Windows 一直是一台"装应用的电脑"——你装 Office、装浏览器、装微信，操作系统负责把它们跑起来。微软 Build 2026 想改的，正是这句话的最后半截：**让 Windows 不只是跑应用的地方，而是原生跑 AI 智能体（Agent）的系统。**
 
@@ -32,7 +32,7 @@ weekday: "星期日"
 
 最值得注意的是授权模型。WAR 在装 Agent 的时候让用户逐条审批它申请的能力，跟手机装应用要你同意定位、相机权限是一个路子。微软还给了一个 AgentPolicy API，让企业 IT 管理员能做细到"剪贴板限制"这种粒度的访问控制——举的例子是一个扫描文档的 Agent 可以被限死只能读某个文件夹、且禁用网络，全程不需要开发者自己手写沙箱。
 
-![Windows Agent 平台四层架构：底层硬件 → WAR 运行时 → Mesh 编排 → Store 分发，是一套架构不是四个独立产品](msbuild-windows-agent-architecture-2026-05-31.png)
+![Windows Agent 平台四层架构：底层硬件 → WAR 运行时 → Mesh 编排 → Store 分发，是一套架构不是四个独立产品](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/microsoft-build-windows-agent-os-2026-05-31/msbuild-windows-agent-architecture-2026-05-31.png)
 
 为什么这件事重要？过去你在 Windows 上做一个能自动干活的 AI 助手，本质上是写一个普通程序，自己去调系统接口、自己想办法拿权限、自己管自己的进程。系统不认识"Agent"这个概念，它只看见一个 .exe。WAR 做的事，是把"Agent"这个抽象提升到操作系统认得的层级——系统知道它是个智能体，知道该给它什么样的权限围栏，知道怎么记录它干了什么。**这跟 Android 当年把"应用"做成系统一等公民、配上权限弹窗和应用商店，是同一类动作，只不过这次的主角换成了 Agent。**
 
@@ -72,7 +72,7 @@ weekday: "星期日"
 
 第二块是 **Windows Agent Store，智能体的分发和发现层。** 开发者把 Agent 提交上来，要过微软的安全审核——审能力声明、审数据处理政策、审是否符合沙箱规范，整套流程跟 Microsoft Store 的认证很像。分成是开发者拿 85%、微软留 15%，对标 Microsoft Store 的模式。会上演示的早期合作方里，有 Adobe 拿出一个能学设计师排版习惯、自动准备 InDesign 模板的 Agent；还有 Zoom 展示了一个能代用户进会、把行动项直接总结进 Planner 的 Agent。
 
-![三家端侧智能体路线对照：微软 Windows、苹果 App Intents、谷歌安卓 AppFunctions](msbuild-three-vendor-agent-compare-2026-05-31.png)
+![三家端侧智能体路线对照：微软 Windows、苹果 App Intents、谷歌安卓 AppFunctions](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/microsoft-build-windows-agent-os-2026-05-31/msbuild-three-vendor-agent-compare-2026-05-31.png)
 
 把这两块和 WAR、WSL 3 拼起来看，微软想讲的是一个完整的故事：**底层硬件出算力 → WAR 运行时把 Agent 做成系统对象 → Mesh 把单机能力接到云上编排 → Store 负责分发和分账。** 用微软自己的话说，这四样不是四个独立产品，而是一套架构的四个面。这个判断对开发者有实际意义——你不该把它们当成四条独立新闻分别评估，而该看它们合起来对你这套技术栈意味着什么。
 
@@ -80,7 +80,7 @@ weekday: "星期日"
 
 把视野放大，2026 年其实是三大操作系统厂商不约而同把 OS 改造成"原生 Agent 平台"的一年。微软不是孤例，苹果和谷歌走在同一个方向上，但路子各有侧重。
 
-![微软 Build 2026 把智能体运行时、多模型 Copilot 和整套智能体技术栈作为开发者主线](source-msbuild-agentic-stack-2026-05-31.png)
+![微软 Build 2026 把智能体运行时、多模型 Copilot 和整套智能体技术栈作为开发者主线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/microsoft-build-windows-agent-os-2026-05-31/source-msbuild-agentic-stack-2026-05-31.png)
 <small>来源：DEV Community 对 Build 2026 智能体技术栈的拆解配图</small>
 
 **苹果走的是复用老接口的路。** 它的 App Intents 框架从 iOS 16 时代（2016 年那套 Shortcuts 体系演进而来）就在了，允许开发者把应用能做的、带参数的离散动作暴露出来。到了 2026 年，传闻 WWDC 2026 的重头戏"Agent Siri"会把这些 App Intents 串起来，完成跨应用的多步任务。它的好处是——已经为快捷指令暴露过 App Intents 的应用，会自动被 Agent Siri 发现，开发者不用做新集成。端侧靠的是约 30 亿参数的苹果基础模型，在新芯片上能本地处理约 80% 的请求，剩下的走"私有云计算"。**苹果的哲学是隐私优先：尽量在端上做完，云只是溢出兜底。**
@@ -95,7 +95,7 @@ weekday: "星期日"
 
 这一节说最实际的：**对国内开发者来说，这套东西有的能直接用，有的隔着一层，得分开看。**
 
-![四件套各自什么时候能拿到、初期给谁：WSL 3 与开源 Agent Framework 最先能上手，视觉类 Agent 推到 2027](msbuild-availability-timeline-2026-05-31.png)
+![四件套各自什么时候能拿到、初期给谁：WSL 3 与开源 Agent Framework 最先能上手，视觉类 Agent 推到 2027](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/microsoft-build-windows-agent-os-2026-05-31/msbuild-availability-timeline-2026-05-31.png)
 
 先说能用的部分：
 

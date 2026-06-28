@@ -13,11 +13,11 @@ tags: [ai-coding, agent-skills, claude-code, cursor, addy-osmani, google, open-s
 
 # Google Director 开源 AI Coding 工程手册：32k⭐ 一周封神
 
-![封面](addyosmani-agent-skills-32k-2026-05-08.png)
+![封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/addyosmani-agent-skills-32k-2026-05-08/addyosmani-agent-skills-32k-2026-05-08.png)
 
 5 月 8 日盘前，`addyosmani/agent-skills` 在 GitHub 累计 32,728⭐、3,791 fork、70 个 open issue，过去 24 小时净增 3,058⭐。仓库 2026 年 2 月 15 日才建立，还不到三个月，速度排在今年 GitHub Trending 总榜前列。它不是又一个新模型、新 IDE 或新 Agent 框架——它是一份把"资深工程师怎么写代码"塞进 markdown、让 AI Coding agent 照着做事的工程手册。20 个 skill、7 条斜杠命令、3 个评审 persona、4 份参考清单，全部 MIT，可以直接在 Claude Code、Cursor、Gemini CLI、Antigravity、Windsurf、OpenCode、Kiro 上跑。这一篇要拆的不是营销话术，而是这份手册的工程意义：在所有人都在卷模型卷 IDE 的 2026 年春，谷歌一位 Director 选择开源他过去十几年攒下的代码评审纪律——这件事比仓库⭐数本身更值得国内 AI 开发者读一遍。
 
-![README 截图](addyosmani-agent-skills-readme.png)
+![README 截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/addyosmani-agent-skills-32k-2026-05-08/addyosmani-agent-skills-readme.png)
 
 ## 32,728⭐ 不是热度，是资深工程师对 AI 失控写法的集体共识
 
@@ -37,7 +37,7 @@ HackerNews 那一头同样能交叉验证。Addy 在自己博客挂了一篇 `Ag
 
 这是一个值得停一下的信号。不是粉丝在刷 star——是同样在 2025-2026 年自己摸出 AI Coding 工作流的开发者，看到这套手册之后决定换掉自己手写的版本。AI 编码代理在 2024-2025 年的最大问题不是模型不够强，而是默认行为太"省事"——跳 spec、跳测试、把"看起来对"当成"已经对"。`agent-skills` 这套手册的工程价值，就是把 Google 内部那套写代码的纪律——`Software Engineering at Google` 一书里描述的 trunk-based development、code-as-liability、change sizing、Beyoncé Rule、Hyrum's Law、Chesterton's Fence——拆成 agent 能机械执行的 markdown 工作流，强行让模型走完每一步。
 
-![Stars 增长曲线](addyosmani-agent-skills-stars-trend.png)
+![Stars 增长曲线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/addyosmani-agent-skills-32k-2026-05-08/addyosmani-agent-skills-stars-trend.png)
 
 ## 7 条斜杠命令把开发生命周期切成 6 段，每段都有出口
 
@@ -98,7 +98,7 @@ HackerNews 那一头同样能交叉验证。Addy 在自己博客挂了一篇 `Ag
 **Meta（1 个，不计入 20 个工程 skill 总数）**
 - `using-agent-skills`：怎么用这一整包（meta 类，不计入 20 个工程 skill 总数）
 
-![20 个 skill 一览](addyosmani-agent-skills-skill-list.png)
+![20 个 skill 一览](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/addyosmani-agent-skills-32k-2026-05-08/addyosmani-agent-skills-skill-list.png)
 
 读完会发现：这一份不是泛用 prompt 集合，而是 opinionated 工作流。比如 `git-workflow-and-versioning` 直接把 change size 卡在 100 行左右，`code-review-and-quality` 把评审速度写成规范，`test-driven-development` 强制 80/15/5 的 unit/integration/E2E 比例。这种程度的具体度，才是这份手册被 AI Coding 圈集体认可的原因。模型默认的"看起来对"在这里没空间——每条 skill 收尾都有 Verification 段，要求拿出测试通过、构建产物、运行时数据这种证据。"Seems right is never sufficient" 是 README 里直接挑明的一句话。
 
@@ -108,7 +108,7 @@ GitHub 给出的 bio 当前是"Director at Google working on Gemini and Google C
 
 这次开源的 `agent-skills`，可以理解成他把过去十几年在 Google 内部走过的代码评审、上线流程、性能 review 那一套实战打包成 markdown 给外部用。README 里他直接点了来源：*Software Engineering at Google* 这本书，加上 Google 公开的 [eng-practices](https://google.github.io/eng-practices/) 指南。Hyrum's Law 写进了 API 设计 skill，Beyoncé Rule（"if you liked it, you should have put a test on it"）写进了测试 skill，Chesterton's Fence 写进了简化 skill，Shift Left 与 feature flag 写进了 CI/CD skill——这些不是抽象原则，全部嵌进 step-by-step 工作流里。
 
-![Addy Osmani](addyosmani-portrait.png)
+![Addy Osmani](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/addyosmani-agent-skills-32k-2026-05-08/addyosmani-portrait.png)
 
 这件事的份量在哪——一个 Director 级别 Google 工程师把自己团队工作方式开源，意味着两层含义。第一层，谷歌内部对 AI Coding 工程纪律的理解被外部直接看到，国内开发者不需要再隔着翻译过来的 SWE@Google 单行书摘去揣摩。第二层，这种纪律可以机器执行——skill 是给 agent 读的，不是给人读的；放进 Claude Code 之后，模型每写一段代码都被这套手册兜底。AI Coding 这件事从"个人 prompt 黑话"走向"团队工程标准"，这一份是当下最具代表性的尝试。
 
@@ -125,7 +125,7 @@ GitHub 给出的 bio 当前是"Director at Google working on Gemini and Google C
 | Anti-rationalization | 无 | 无 | 有（Rationalizations 表） |
 | 适配工具 | 单工具 | 单工具 | 跨工具：Claude Code / Cursor / Gemini CLI / Windsurf / OpenCode / Kiro / Copilot |
 
-![skill / rule / context 对比](skill-vs-rule-vs-context.png)
+![skill / rule / context 对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/addyosmani-agent-skills-32k-2026-05-08/skill-vs-rule-vs-context.png)
 
 最关键差异在于"过程式"而不是"陈述式"。`.cursorrules` 写的是"项目用 TypeScript、不要写 any、commit 用 conventional commits"——一组陈述。skill 写的是"现在你要进入 Build 阶段，第一步先写测试，第二步实现最小切片，第三步跑测试，跑过才能 commit；如果模型想跳第一步，对照 Rationalizations 表给出反驳"——一段过程。陈述式规则模型容易"知道但不做"，过程式工作流模型必须按 step 走完。
 
@@ -146,7 +146,7 @@ README 里专门列了一节 Quick Start，覆盖 7 种 agent 客户端的安装
 | Kiro IDE & CLI | `.kiro/skills/` 目录，project / global 都行 | 是 | 否 | 低 |
 | Codex / 其他 | 把 markdown 当 system prompt | 视客户端 | 否 | 高 |
 
-![不同客户端覆盖矩阵](claude-code-vs-cursor-vs-antigravity-coverage.png)
+![不同客户端覆盖矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/addyosmani-agent-skills-32k-2026-05-08/claude-code-vs-cursor-vs-antigravity-coverage.png)
 
 仓库 topic 里挂了 `antigravity` 和 `antigravity-ide`——Antigravity 是 Google 自家在内部测试的下一代 AI IDE，Addy 提前埋了适配点。Claude Code 是 first-class，因为 Anthropic 自己 2025 年 10 月发布的 Skills 协议是这套手册技术原型的源头之一。Cursor 和 Windsurf 因为没有原生 skill 概念，只能"复制粘贴 SKILL.md 当 rule"，把过程式手册降级为陈述式规则——能用但损失了 anti-rationalization 这一层。
 

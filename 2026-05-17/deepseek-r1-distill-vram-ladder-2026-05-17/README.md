@@ -21,7 +21,7 @@ description: "DeepSeek-R1-Distill 蒸馏家族 1.5B / 7B / 8B-Llama / 14B / 32B 
 
 # DeepSeek-R1-Distill 五档怎么选卡
 
-![DeepSeek-R1-Distill 五档参数对位 4 张 NVIDIA 消费卡显存阶梯封面](deepseek-r1-distill-vram-ladder-2026-05-17.png)
+![DeepSeek-R1-Distill 五档参数对位 4 张 NVIDIA 消费卡显存阶梯封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/deepseek-r1-distill-vram-ladder-2026-05-17/deepseek-r1-distill-vram-ladder-2026-05-17.png)
 
 ## 关键数字一览
 
@@ -57,7 +57,7 @@ description: "DeepSeek-R1-Distill 蒸馏家族 1.5B / 7B / 8B-Llama / 14B / 32B 
 
 社区给的答案散落在几十个 reddit 帖、知乎专栏、B 站本地大模型 UP 主的实测视频里，没人把"五档蒸馏 × 四张卡 × 三类任务"这张完整地图画清楚。这一篇把它画出来。
 
-![deepseek r1 distill overview · 5 档蒸馏 × 4 张卡显存阶梯总览图](deepseek-r1-distill-overview-2026-05-17.png)
+![deepseek r1 distill overview · 5 档蒸馏 × 4 张卡显存阶梯总览图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/deepseek-r1-distill-vram-ladder-2026-05-17/deepseek-r1-distill-overview-2026-05-17.png)
 
 总览看下来，结论比想象的硬：
 
@@ -137,7 +137,7 @@ DeepSeek 官方推荐推理参数：**temperature 0.5-0.7（默认 0.6）+ 无 s
 
 DeepSeek-R1-Distill-Qwen-14B 基于 Qwen2.5-14B 蒸馏出来，月下载 53.4 万，在 AIME 2024 上 Pass@1 跑到 **69.7%**。这个数字什么概念？OpenAI o1-mini 在同测试上是 63.6%——一个能塞进单卡 16GB 显存的开源蒸馏模型，在数学奥赛题上反超了 OpenAI 闭源 reasoning 模型一档。
 
-![deepseek r1 distill vram budget · 14B / 32B 蒸馏在 16GB / 24GB 卡上的显存预算图](deepseek-r1-distill-vram-budget-2026-05-17.png)
+![deepseek r1 distill vram budget · 14B / 32B 蒸馏在 16GB / 24GB 卡上的显存预算图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/deepseek-r1-distill-vram-ladder-2026-05-17/deepseek-r1-distill-vram-budget-2026-05-17.png)
 
 14B-Q4_K_M 权重大小约 9.0 GB，加上 32K 上下文 KV cache 约 1.8 GB（GQA-8 配置 + q8_0 量化），整机 VRAM 占用约 11-12 GB。4070 Ti SUPER 16GB 余 4-5 GB，4080 SUPER 同 16GB 余量一样——**两张卡能跑的模型完全一样，差距在吞吐**。
 
@@ -192,7 +192,7 @@ DeepSeek-R1-Distill-Qwen-32B 这一档是整个蒸馏家族的旗舰——AIME 2
 
 但代价是 32B 在 Q4_K_M 下权重 19.9 GB，加上 32K 上下文 KV cache 约 2.2 GB，整机占用约 22-23 GB——**4060 Ti / 4070 Ti SUPER / 4080 SUPER 三张 16GB 卡全部装不下**。要纯 GPU 跑 32B-Q4，只有 4090 24GB 是消费级唯一选项。
 
-![deepseek r1 distill accuracy · 5 档蒸馏 reasoning 智力阶梯图](deepseek-r1-distill-accuracy-2026-05-17.png)
+![deepseek r1 distill accuracy · 5 档蒸馏 reasoning 智力阶梯图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/deepseek-r1-distill-vram-ladder-2026-05-17/deepseek-r1-distill-accuracy-2026-05-17.png)
 
 把五档智力曲线摆到一起：
 
@@ -262,7 +262,7 @@ vllm serve deepseek-ai/DeepSeek-R1-Distill-Qwen-32B \
 
 工程选型这件事单独拎出来讲一节。同一个 R1-Distill 模型，跑在 4 张消费卡上，到底选哪个推理引擎？
 
-![deepseek r1 distill engine matrix · 5 档蒸馏 × 3 引擎适配矩阵](deepseek-r1-distill-engine-matrix-2026-05-17.png)
+![deepseek r1 distill engine matrix · 5 档蒸馏 × 3 引擎适配矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/deepseek-r1-distill-vram-ladder-2026-05-17/deepseek-r1-distill-engine-matrix-2026-05-17.png)
 
 三个主流引擎的定位：
 
@@ -313,7 +313,7 @@ SGLang 在 4090 上跑 R1-Distill-Qwen-32B 走 RadixAttention 路径，对"反�
 
 **千问 Code** 是阿里今年新推出的开发者 IDE，自定义模型支持比通义灵码更开放，对个人本地化路径更友好。
 
-![deepseek r1 distill decision · 预算 × 任务 决策流程图](deepseek-r1-distill-decision-2026-05-17.png)
+![deepseek r1 distill decision · 预算 × 任务 决策流程图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/deepseek-r1-distill-vram-ladder-2026-05-17/deepseek-r1-distill-decision-2026-05-17.png)
 
 把"预算 × 任务"两条线收成一张决策流程：
 
@@ -356,7 +356,7 @@ SGLang 在 4090 上跑 R1-Distill-Qwen-32B 走 RadixAttention 路径，对"反�
 
 ## 八、收束：从 4060 Ti 到 4090，是一条 reasoning 智力阶梯
 
-![DeepSeek-R1-Distill 显存阶梯加买上一档卡边际收益决策图（再现）](deepseek-r1-distill-decision-2026-05-17.png)
+![DeepSeek-R1-Distill 显存阶梯加买上一档卡边际收益决策图（再现）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/deepseek-r1-distill-vram-ladder-2026-05-17/deepseek-r1-distill-decision-2026-05-17.png)
 
 R1-Distill 蒸馏家族在 2026 年 5 月这个时间点，已经把"本地能跑的最强 reasoning 模型"这件事从 H100 数据中心搬到了个人开发者书桌上。
 

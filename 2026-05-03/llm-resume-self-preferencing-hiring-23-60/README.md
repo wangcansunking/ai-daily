@@ -13,7 +13,7 @@ cover: llm-resume-self-preferencing-hiring-23-60.png
 
 > 同一份简历，让 ChatGPT 改写后再投给 ChatGPT 筛选，入选率比人写的版本高 23%-60%。这是 arXiv 2509.00462 在 24 个职业上做完受控实验的结论。HN 47987256 顶上首页，308 分、160 评论。论文同一周，国内 BOSS 直聘、智联招聘、猎聘全部把 DeepSeek-R1 接入到了简历筛选与匹配链路。求职这件事，第一次出现"工具决定下限"这层结构。
 
-![LLM 招聘自我偏好 23-60%：国内求职者怎么用](llm-resume-self-preferencing-hiring-23-60.png)
+![LLM 招聘自我偏好 23-60%：国内求职者怎么用](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/llm-resume-self-preferencing-hiring-23-60/llm-resume-self-preferencing-hiring-23-60.png)
 
 ## 一、几个值得记下来的硬数字
 
@@ -27,7 +27,7 @@ cover: llm-resume-self-preferencing-hiring-23-60.png
 
 ## 二、论文做了什么：受控实验设计
 
-![arXiv 2509.00462 核心数据](llm-self-preferencing-paper-data.png)
+![arXiv 2509.00462 核心数据](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/llm-resume-self-preferencing-hiring-23-60/llm-self-preferencing-paper-data.png)
 
 实验思路并不复杂——拿一份真实的人写简历做基线，让多个 LLM 在内容质量持平的前提下生成对照版本，再让另一组 LLM（包含同款和异款）来评分。三种身份在循环里轮转：求职者改写者、求职者本人原稿、招聘方筛选者。
 
@@ -71,7 +71,7 @@ benashford 给了一条非常工程的解释——同款模型对自己生成的
 
 ## 四、国内招聘平台 AI 化现状：BOSS / 智联 / 猎聘 全接 DeepSeek-R1
 
-![国内主流招聘平台 AI 化栈](cn-recruiting-platforms-ai-stack.png)
+![国内主流招聘平台 AI 化栈](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/llm-resume-self-preferencing-hiring-23-60/cn-recruiting-platforms-ai-stack.png)
 
 国内三家头部招聘平台 2025 年完成了一轮"自研垂直模型 + 接入开源大模型"的双线落地——
 
@@ -87,7 +87,7 @@ benashford 给了一条非常工程的解释——同款模型对自己生成的
 
 ## 五、求职者实操矩阵：哪个平台用什么模型写简历
 
-![求职者实操矩阵](cn-job-seeker-tactic.png)
+![求职者实操矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/llm-resume-self-preferencing-hiring-23-60/cn-job-seeker-tactic.png)
 
 把论文结论翻译成求职者侧能落地的动作，关键是三步——
 

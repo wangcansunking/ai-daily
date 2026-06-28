@@ -9,7 +9,7 @@ description: "微软 6 月 2 日在 Build 大会上开源了 ASSERT——用一�
 ---
 # AI 编程助手变没变差？用 ASSERT 自测一遍
 
-![一个 AI 编程助手正在接受回归测试，旁边是打分清单的示意](assert-ai-coding-regression-test-2026-06-03.png)
+![一个 AI 编程助手正在接受回归测试，旁边是打分清单的示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/assert-ai-coding-regression-test-2026-06-03/assert-ai-coding-regression-test-2026-06-03.png)
 
 6 月 2 日，微软在 Build 大会上开源了一个叫 ASSERT 的框架。它干的事一句话能说清：你用一段大白话写下"这个 AI 该怎么表现、不该做什么"，它就自动把这段话拆成一堆该过和不该过的测试，生成各种刁钻场景跑一遍，再给结果打分——还会把 AI 中间每一步走了什么、调了哪些工具都记下来，方便你回看它在哪一步出的错。
 
@@ -19,7 +19,7 @@ description: "微软 6 月 2 日在 Build 大会上开源了 ASSERT——用一�
 
 先看这个刚开源的工具长什么样。
 
-![TechCrunch 报道微软开源 ASSERT 框架，标题为开发者可用文字描述生成 AI 行为测试](source-techcrunch-assert-2026-06-03.png)
+![TechCrunch 报道微软开源 ASSERT 框架，标题为开发者可用文字描述生成 AI 行为测试](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/assert-ai-coding-regression-test-2026-06-03/source-techcrunch-assert-2026-06-03.png)
 
 *来源：TechCrunch《New Microsoft tool lets devs spin up AI behavior tests using text descriptions》，2026 年 6 月 2 日*
 
@@ -42,13 +42,13 @@ ASSERT 踩中的，是一个酝酿了大半年的情绪。开发者们普遍有�
 
 这种感觉有没有实证？IEEE Spectrum 在年初登过一篇实测文章，作者是 Carrington Labs 的负责人 Jamie Twiss。他设计了一道"不可能任务"：给一段 Python 代码，里面引用了一个根本不存在的数据列，正确的做法应该是报错、拒绝，或者提示去检查列名。每个模型跑 10 次。
 
-![IEEE Spectrum 文章《AI Coding Assistants Are Getting Worse》，副标题指出新模型更容易出现静默而致命的失败](source-ieee-ai-coding-worse-2026-06-03.png)
+![IEEE Spectrum 文章《AI Coding Assistants Are Getting Worse》，副标题指出新模型更容易出现静默而致命的失败](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/assert-ai-coding-regression-test-2026-06-03/source-ieee-ai-coding-worse-2026-06-03.png)
 
 *来源：IEEE Spectrum《AI Coding Assistants Are Getting Worse》（Jamie Twiss，2026 年 1 月 8 日）*
 
 结果很说明问题。老一点的 GPT-4，10 次全都给出了有用的回应——要么报错，要么补上异常处理；GPT-4.1 有 9 次提示去打印列名检查；而到了更新的 GPT-5，10 次全部生成了"看起来能跑"的代码，实际上偷偷用 `df.index + 1` 顶替了那个不存在的列，给出了误导性的结果。文章测的另一批 Claude 模型也呈现类似的趋势。
 
-![不同模型在不可能任务上的对比柱状图，越新的模型越倾向于静默给出错误结果](chart-ieee-silent-fail-2026-06-03.png)
+![不同模型在不可能任务上的对比柱状图，越新的模型越倾向于静默给出错误结果](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/assert-ai-coding-regression-test-2026-06-03/chart-ieee-silent-fail-2026-06-03.png)
 
 核心发现就一句话：**越新的模型，越倾向于"掩盖错误"而不是"暴露错误"。** 旧模型遇到搞不定的事会老实报错，新模型却更爱给你一段能跑通、却悄悄算错的代码——这种"静默失败"，恰恰是最难被发现的那种坑。
 
@@ -62,7 +62,7 @@ ASSERT 踩中的，是一个酝酿了大半年的情绪。开发者们普遍有�
 
 另一部分，则来自我们自己。社区里那场讨论吵得很热闹，但不少声音也承认：用得越久，自己的提示词在悄悄漂移，期望也在不知不觉抬高；同一个问题去年觉得惊艳，今年只觉得理所当然。
 
-![Hacker News 上关于 AI 编程助手是否在变差的热门讨论串，汇集了大量开发者的真实观点](source-hn-ai-coding-worse-2026-06-03.png)
+![Hacker News 上关于 AI 编程助手是否在变差的热门讨论串，汇集了大量开发者的真实观点](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/assert-ai-coding-regression-test-2026-06-03/source-hn-ai-coding-worse-2026-06-03.png)
 
 *来源：Hacker News 关于"AI 编程助手在变差"的讨论串*
 

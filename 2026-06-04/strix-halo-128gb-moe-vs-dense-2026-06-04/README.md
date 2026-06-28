@@ -10,13 +10,13 @@ description: "花两千美元买一台巴掌大的 AMD 迷你主机，128GB 统�
 
 # AMD 128GB 迷你主机跑大模型：混合专家比密集快十倍
 
-![一台 AMD 迷你主机点亮，128GB 统一内存把一个巨大的发光神经网络压进巴掌大的盒子，象征用统一内存在本地跑千亿参数大模型](strix-halo-128gb-moe-vs-dense-2026-06-04.png)
+![一台 AMD 迷你主机点亮，128GB 统一内存把一个巨大的发光神经网络压进巴掌大的盒子，象征用统一内存在本地跑千亿参数大模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/strix-halo-128gb-moe-vs-dense-2026-06-04/strix-halo-128gb-moe-vs-dense-2026-06-04.png)
 
 花两千美元买一台巴掌大的 AMD 迷你主机，128GB 统一内存能装下连 RTX 4090 都塞不进的千亿参数大模型。这件事本身已经够吸引人，但社区实测里还藏着一个更反常的结论。
 
 同一台机器上，一个 1200 亿参数的混合专家（MoE）模型，每秒能生成 55 个字；而一个只有 700 亿参数、个头小得多的密集模型，每秒只有不到 5 个字。**更大的模型，反而快了十倍还多。**
 
-![一份 Strix Halo 本地大模型实测指南的封面卡，标注混合专家推理速度、可运行 700 亿参数以上模型、128GB 统一内存](source-strix-halo-guide-github-2026-06-04.png)
+![一份 Strix Halo 本地大模型实测指南的封面卡，标注混合专家推理速度、可运行 700 亿参数以上模型、128GB 统一内存](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/strix-halo-128gb-moe-vs-dense-2026-06-04/source-strix-halo-guide-github-2026-06-04.png)
 
 *来源：社区实测指南《The definitive Strix Halo LLM guide》首页，标注这台机器在混合专家模型上的推理速度与 128GB 统一内存容量*
 
@@ -30,7 +30,7 @@ description: "花两千美元买一台巴掌大的 AMD 迷你主机，128GB 统�
 
 代价是带宽。社区实测这套内存的实际带宽大约是每秒 215GB，而 RTX 4090 的显存带宽是每秒约 1008GB，几乎是它的五倍。这个差距，正是后面一切的伏笔。
 
-![GMKtec EVO-X2 迷你主机实物，机身只有一罐汽水大小，搭载 AMD Ryzen AI Max+ 395 处理器与 128GB 统一内存](source-gmktec-evox2-toms-2026-06-04.jpg)
+![GMKtec EVO-X2 迷你主机实物，机身只有一罐汽水大小，搭载 AMD Ryzen AI Max+ 395 处理器与 128GB 统一内存](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/strix-halo-128gb-moe-vs-dense-2026-06-04/source-gmktec-evox2-toms-2026-06-04.jpg)
 
 *来源：Tom's Hardware 对 GMKtec EVO-X2 迷你主机的评测，机身仅一罐饮料大小，128GB/2TB 版本零售价约 2199 美元*
 
@@ -55,7 +55,7 @@ description: "花两千美元买一台巴掌大的 AMD 迷你主机，128GB 统�
 
 再看一个更干净的对照：同样是 4 位量化，300 亿的 Qwen3 混合专家版每秒 100 个字，700 亿的 Llama 密集版每秒 5 个字——密集版总参数是它的两倍多，速度却只有它的二十分之一。
 
-![同一台 Strix Halo 上五个模型的生成速度柱状图，混合专家模型用绿色、密集模型用红色，激活参数越多速度越低，1200 亿的混合专家比 700 亿的密集快十倍](chart-strix-active-vs-speed-2026-06-04.png)
+![同一台 Strix Halo 上五个模型的生成速度柱状图，混合专家模型用绿色、密集模型用红色，激活参数越多速度越低，1200 亿的混合专家比 700 亿的密集快十倍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/strix-halo-128gb-moe-vs-dense-2026-06-04/chart-strix-active-vs-speed-2026-06-04.png)
 
 *来源：社区实测 hogeheer499 strix-halo-guide 与 llm-tracker.info 的公开跑分（llama.cpp Vulkan 后端，Ryzen AI Max+ 395），按每字激活参数排列*
 
@@ -75,7 +75,7 @@ description: "花两千美元买一台巴掌大的 AMD 迷你主机，128GB 统�
 
 代入这台机器的数字算一遍：内存带宽约每秒 215GB。一个每字激活 30 亿参数的 4 位模型，每个字大约要读 1.7GB，215 ÷ 1.7 ≈ 每秒 126 个字——和实测的 100 字/秒基本对得上。换成每字激活全部 700 亿参数的密集模型，每个字要读约 40GB，215 ÷ 40 ≈ 每秒 5.4 个字——又和实测的 5 字/秒对上了。
 
-![Strix Halo 上各模型的实测速度表，明确标出每个模型是密集还是混合专家架构，以及对应的生成速度，密集小模型反而比混合专家大模型慢](source-strix-halo-dense-vs-moe-2026-06-04.png)
+![Strix Halo 上各模型的实测速度表，明确标出每个模型是密集还是混合专家架构，以及对应的生成速度，密集小模型反而比混合专家大模型慢](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/strix-halo-128gb-moe-vs-dense-2026-06-04/source-strix-halo-dense-vs-moe-2026-06-04.png)
 
 *来源：社区实测指南「这台机器能跑什么」一节，逐行标注模型架构（密集 / 混合专家）与生成速度*
 
@@ -85,7 +85,7 @@ description: "花两千美元买一台巴掌大的 AMD 迷你主机，128GB 统�
 
 光看自己不够，得把它放进消费级跑模型的版图里。社区把几台常见机器的带宽、速度、能装下的模型上限列在了一起。
 
-![RTX 4090、RTX 3090、苹果 M4 Max、Strix Halo、NVIDIA DGX Spark 五台机器的内存带宽与混合专家模型速度对比表，4090 带宽最高但容量只有 24GB，Strix Halo 带宽最低但能装下 120GB 以上的模型](source-strix-halo-bandwidth-table-2026-06-04.png)
+![RTX 4090、RTX 3090、苹果 M4 Max、Strix Halo、NVIDIA DGX Spark 五台机器的内存带宽与混合专家模型速度对比表，4090 带宽最高但容量只有 24GB，Strix Halo 带宽最低但能装下 120GB 以上的模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/strix-halo-128gb-moe-vs-dense-2026-06-04/source-strix-halo-bandwidth-table-2026-06-04.png)
 
 *来源：社区实测指南的硬件横向对比表，列出各机型实测内存带宽、30B 级混合专家生成速度与可装载模型上限*
 

@@ -23,7 +23,7 @@ description: "做 grounded-search agent 的同行最近都被同一道墙挡着�
 
 # CloakBrowser：49 个 C++ 补丁打 Cloudflare
 
-![CloakBrowser 49 个 C++ 补丁打造的 stealth Chromium](cloakbrowser-stealth-chromium-2026-05-11.png)
+![CloakBrowser 49 个 C++ 补丁打造的 stealth Chromium](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/cloakbrowser-stealth-chromium-2026-05-11/cloakbrowser-stealth-chromium-2026-05-11.png)
 
 ## 一、Playwright 抓不动 Cloudflare 的那一夜
 
@@ -37,7 +37,7 @@ description: "做 grounded-search agent 的同行最近都被同一道墙挡着�
 
 CloakBrowser 走的是另一条路：**把指纹改在 Chromium 的 C++ 源码里、再编译成二进制**。reCAPTCHA v3 拿到 0.9（人类区间）、Cloudflare Turnstile 通过、FingerprintJS 通过、BrowserScan 4/4——README 顶端把这些数字写得清清楚楚，并且在仓库 `tests/` 目录里附了 30 个独立检测站点的实测脚本。这些数字让国内做爬虫的同行第一时间想起一件事：**Browserbase 这家美国公司每千次浏览器会话收 5 美元的服务，本质上卖的就是这个能力**——而 CloakBrowser 是 MIT 协议、本机跑、零费用。
 
-![CloakBrowser 49 个 C++ 补丁覆盖矩阵](cloak-patch-matrix.png)
+![CloakBrowser 49 个 C++ 补丁覆盖矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/cloakbrowser-stealth-chromium-2026-05-11/cloak-patch-matrix.png)
 
 ## 二、49 个 C++ 补丁到底改了什么
 
@@ -65,7 +65,7 @@ CHANGELOG 把 49 这个数字的演进过程写得相当透明。2026-03-13 v0.3
 
 光说技术原理没意思，反爬工具的硬通货是「拿到的分」。CloakBrowser README 给了一张五家同台测试表，把 reCAPTCHA v3 分数、Cloudflare Turnstile、补丁层级、Chrome 升级抗性、维护活跃度、内核、API 兼容性 7 个维度全摆出来。
 
-![5 家工具反爬测试同台对比](cloak-test-compare.png)
+![5 家工具反爬测试同台对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/cloakbrowser-stealth-chromium-2026-05-11/cloak-test-compare.png)
 
 把这张表读完会发现一个之前被忽略的格局：**反爬这条赛道上有两个流派**。
 
@@ -85,7 +85,7 @@ CHANGELOG 把 49 这个数字的演进过程写得相当透明。2026-03-13 v0.3
 
 写国内 AI 爬虫的工程师在 2026 年 5 月这个时点，桌上能拿出的开源工具不止 CloakBrowser 一个。把范围拉到「同档 stealth / 浏览器自动化」会发现这一格已经站满了：
 
-![国产 / 海外 stealth 工具横评（2026-05-09 实测）](cloak-cn-compare.png)
+![国产 / 海外 stealth 工具横评（2026-05-09 实测）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/cloakbrowser-stealth-chromium-2026-05-11/cloak-cn-compare.png)
 
 挑几个国内同行最熟悉的项目说下定位：
 
@@ -103,7 +103,7 @@ CHANGELOG 把 49 这个数字的演进过程写得相当透明。2026-03-13 v0.3
 
 这一节直接讲「今晚怎么用上」。环境要求：Python 3.10+、Linux x64 / arm64 / macOS / Windows x64 都支持，Docker 镜像 `cloakhq/cloakbrowser` 也已经发布。首次启动会自动下载 Chromium 二进制（约 200MB，缓存到本地，之后启动 0 网络）。
 
-![CloakBrowser 30 秒上手命令](cloak-quickstart.png)
+![CloakBrowser 30 秒上手命令](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/cloakbrowser-stealth-chromium-2026-05-11/cloak-quickstart.png)
 
 最小可运行例子是 5 行 Python——和 Playwright 完全一样的 API：
 

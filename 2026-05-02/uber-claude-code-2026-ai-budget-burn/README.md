@@ -13,7 +13,7 @@ cover: uber-claude-code-2026-ai-budget-burn.png
 
 > 12 月推、2 月翻倍、4 月见底——Uber 把全年 AI 预算用完只花了 4 个月。CTO Praveen Neppalli Naga 把话说得很直白：「我现在重做预算，因为原本以为够用的那一份，已经被打穿了。」HN 47976415 顶帖 345 分、374 评论。这是大型企业第一次把 Claude Code 全员铺开后的真实账单。
 
-![Uber 4 个月烧光 2026 全年 AI 预算](uber-claude-code-2026-ai-budget-burn.png)
+![Uber 4 个月烧光 2026 全年 AI 预算](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/uber-claude-code-2026-ai-budget-burn/uber-claude-code-2026-ai-budget-burn.png)
 
 ## 一、事件还原：从 12 月铺开到 4 月见底
 
@@ -39,7 +39,7 @@ cover: uber-claude-code-2026-ai-budget-burn.png
 
 紧跟其后的动作是测试 OpenAI Codex，作为 Claude Code 的成本对照实验。Anthropic 同期内部讨论的处置方向是"让 Cursor 这条线在 Uber 内部稳定下来作为补充"——但 The Information 同期数据显示，Uber 工程师的 Cursor 用量在过去两个月已经平稳，主力工具是 Claude Code。
 
-![HN 47976415 顶赞五条评论](hn-uber-claude-code.png)
+![HN 47976415 顶赞五条评论](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/uber-claude-code-2026-ai-budget-burn/hn-uber-claude-code.png)
 
 ## 二、HN 上一线工程师在讨论什么
 
@@ -81,7 +81,7 @@ abuani 自己是大模型重度用户，每月也只到 $200-$400。他对同事
 
 把过去 18 个月 AI Coding 工具的计费演进画成一条曲线，能看见一个清晰的拐点。
 
-![AI Coding 工具计费模式拐点](ai-coding-pricing-shift.png)
+![AI Coding 工具计费模式拐点](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/uber-claude-code-2026-ai-budget-burn/ai-coding-pricing-shift.png)
 
 **2023-2024 年：席位制时代。** GitHub Copilot $10/月、Cursor Pro $20/月、ChatGPT Plus $20/月——所有 AI Coding 工具的主力计费形态是按人头按月。这套模式下，CFO 把"工程师人数 × 月费 × 12"算出来就锁定了年度预算，厂商承担算力风险。Anthropic 当时还没有自己的 IDE 形态产品。
 
@@ -101,7 +101,7 @@ GitHub Copilot 同样在 2025 年 12 月把 Premium Request 改成可买扩展�
 
 国内 AI 开发者面对同样的拐点，能选的路其实比海外宽。这里不做行动建议，只把对应方案的具体价位和能力点摆出来。
 
-![AI Coding 工具月度成本对比表](ai-coding-cost-comparison.png)
+![AI Coding 工具月度成本对比表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/uber-claude-code-2026-ai-budget-burn/ai-coding-cost-comparison.png)
 
 **第一类：Claude Code 的成本控制路径。** Claude Code Pro $20/月本身没问题，问题在于触发 Enterprise 转切后单工程师月度无上限。控制成本的可行做法是 sub-agent 拆分——把 main agent 用 Sonnet、子 agent 用 Haiku 处理子任务、调度层加 token cap。Anthropic 公开的 Claude Code Hooks API 支持自定义 token 阈值告警；超阈值后回退到 Anthropic Team plan 的硬上限模式（牺牲部分能力换可预测）。
 

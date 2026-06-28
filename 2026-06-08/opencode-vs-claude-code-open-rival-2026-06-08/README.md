@@ -16,7 +16,7 @@ description: 终端里的编程 agent，过去一年几乎是 Claude Code 一家
 ---
 # OpenCode 对标 Claude Code：开源接本地但慢 78%
 
-![黏土定格风格的两条岔路场景：左边一条窄而快的轨道上 Claude Code 的机器人飞驰而过只留下少量痕迹，右边一条更宽的轨道上 OpenCode 的开源机器人走得慢一些但身后铺开了通往多家模型和一台本地服务器的支线，象征一个为速度而生一个为全面而生](opencode-vs-claude-code-open-rival-2026-06-08.png)
+![黏土定格风格的两条岔路场景：左边一条窄而快的轨道上 Claude Code 的机器人飞驰而过只留下少量痕迹，右边一条更宽的轨道上 OpenCode 的开源机器人走得慢一些但身后铺开了通往多家模型和一台本地服务器的支线，象征一个为速度而生一个为全面而生](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/opencode-vs-claude-code-open-rival-2026-06-08/opencode-vs-claude-code-open-rival-2026-06-08.png)
 
 过去一年，要在终端里用一个编程 agent 帮你写代码、跑测试、改 bug，大多数人脑子里只有一个名字：Claude Code。它好用、稳，但它是 Anthropic 自家的闭源产品，只能用 Anthropic 自家的模型，换不了别家。
 
@@ -26,7 +26,7 @@ description: 终端里的编程 agent，过去一年几乎是 Claude Code 一家
 
 这篇就把这笔账一格一格摆开：17 万 star 是怎么来的、同任务实测里快的一边和全的一边各让出了什么、两条路各自怎么花钱，最后给一个明确判断——什么团队该上 OpenCode，什么场景留在 Claude Code 更省心。看完你不需要立刻换工具，但你手里会多一个清楚的判断：自己这摊活儿，到底该押哪一条路。
 
-![OpenCode 在 GitHub 上的仓库主页，顶部显示 17 万颗 star、MIT 许可证标识，简介写明这是一个开源的终端编程 agent](opencode-source-github-repo.png)
+![OpenCode 在 GitHub 上的仓库主页，顶部显示 17 万颗 star、MIT 许可证标识，简介写明这是一个开源的终端编程 agent](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/opencode-vs-claude-code-open-rival-2026-06-08/opencode-source-github-repo.png)
 
 ## 17 万 star 是怎么来的：开源 + 接 75+ provider + 本地模型
 
@@ -54,7 +54,7 @@ star 数有时候虚，但下载量不太会骗人——收藏只要点一下，
 
 值得点明的是，这套路线不是凭空冒出来的实验品。它背后是 terminal.shop——一个本来就在终端工具这件事上较劲的团队，对「开发者天天盯着的那块黑底白字的窗口」该是什么样有自己的主意。把编程 agent 做成开源、可切换、能接本地，对他们来说是顺理成章的延伸，而不是赶时髦。
 
-![OpenCode 官网首页，展示终端里运行的编程 agent 界面，强调开源、可接入多家模型 provider 与本地模型](opencode-source-homepage.png)
+![OpenCode 官网首页，展示终端里运行的编程 agent 界面，强调开源、可接入多家模型 provider 与本地模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/opencode-vs-claude-code-open-rival-2026-06-08/opencode-source-homepage.png)
 
 ## 同任务实测：快 vs 全（9 分 vs 16 分、73 vs 94 测试）
 
@@ -70,7 +70,7 @@ star 数有时候虚，但下载量不太会骗人——收藏只要点一下，
 
 把秒数换算一下：980 秒 ÷ 549 秒约等于 1.78，也就是 **OpenCode 慢约 78%**。但同一趟下来，它多写了 21 个测试。
 
-![Builder.io 同任务对照实测的耗时与测试数量对比图，Claude Code 9 分 09 秒写出 73 个测试、OpenCode 16 分 20 秒写出 94 个测试](opencode-chart-headtohead.png)
+![Builder.io 同任务对照实测的耗时与测试数量对比图，Claude Code 9 分 09 秒写出 73 个测试、OpenCode 16 分 20 秒写出 94 个测试](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/opencode-vs-claude-code-open-rival-2026-06-08/opencode-chart-headtohead.png)
 
 这两个数字放一起看，才是这次对照测真正有意思的地方。如果只看耗时，OpenCode 像是输了；但把测试数量摆进来，画风立刻变了：它不是单纯地慢，是把那多出来的七分钟花在了多写 21 个测试上。Builder.io 给的判断也很到位：**一个为速度而生，一个为周全而生。**
 
@@ -81,7 +81,7 @@ star 数有时候虚，但下载量不太会骗人——收藏只要点一下，
 
 慢 78% 听着刺眼，但要落到你自己的判断上，得先问一句：**这趟任务你更在乎几分钟交活儿，还是更在乎交出来的东西被测试网兜得更密？** 写一个临时脚本、改个小 bug，9 分钟和 16 分钟的差别你大概懒得管谁；但如果是给一个要长期维护的模块补测试覆盖，多出来的 21 个测试，可能比省下的 7 分钟值钱得多。同一个差距，放在不同的活儿上，可能是劣势，也可能正好是优势。
 
-![第三方对 OpenCode 与 Claude Code 的功能对照评测页面，逐项列出开源与否、可切换 provider、是否支持本地模型、定价等差异](opencode-source-firecrawl-compare.png)
+![第三方对 OpenCode 与 Claude Code 的功能对照评测页面，逐项列出开源与否、可切换 provider、是否支持本地模型、定价等差异](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/opencode-vs-claude-code-open-rival-2026-06-08/opencode-source-firecrawl-compare.png)
 
 说回那条慢的代价：它不是无脑慢，是用时间换了一层更厚的周全。这跟它的产品路线是一脉相承的——OpenCode 整条路都在用一点速度，换更多的选择权和更密的兜底。
 
@@ -102,7 +102,7 @@ OpenCode 这边是另一套逻辑，核心一句话：**自带 API 钥匙时，�
 - **Go 档：每月 10 美元**（首月 5 美元）。
 - **Zen 档：按量付费。**
 
-![两条路的成本档对照图，Claude Code 走 Pro 每月 20 美元、Max 每月 100 到 200 美元订阅，OpenCode 走自带钥匙核心免费、Go 档每月 10 美元、Zen 档按量付费](opencode-chart-cost-tiers.png)
+![两条路的成本档对照图，Claude Code 走 Pro 每月 20 美元、Max 每月 100 到 200 美元订阅，OpenCode 走自带钥匙核心免费、Go 档每月 10 美元、Zen 档按量付费](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/opencode-vs-claude-code-open-rival-2026-06-08/opencode-chart-cost-tiers.png)
 
 这两套定价不能简单比谁便宜，因为它们卖的是不一样的东西。Claude Code 卖的是一套打磨到位的自家组合，模型、客户端、限额一口价打包，钱花得明白、用得省心，你不用知道一次调用烧了多少 token 也能照常干活；OpenCode 卖的是选择权——你自带钥匙、自己挑模型、自己控成本，省下的是中间这层的钱，换来的是要自己操心模型和账单这点麻烦。
 
@@ -110,7 +110,7 @@ OpenCode 这边是另一套逻辑，核心一句话：**自带 API 钥匙时，�
 
 但有一种情况几乎是白赚：如果你本来就有 OpenAI、Gemini 或某家国内模型的 API 钥匙，OpenCode 核心免费这条对你就特别实在。模型钱你本来也要付，OpenCode 这层不抽成，等于白送你一个能接本地模型、能切 75 家 provider 的终端 agent 外壳。对已经手握一堆钥匙的开发者，这道门槛基本等于没有。
 
-![Hacker News 上 OpenCode 的开发者展示帖，位于首页，标题介绍这是一个开源的终端编程 agent，下方有大量讨论](opencode-source-hn-showhn.png)
+![Hacker News 上 OpenCode 的开发者展示帖，位于首页，标题介绍这是一个开源的终端编程 agent，下方有大量讨论](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/opencode-vs-claude-code-open-rival-2026-06-08/opencode-source-hn-showhn.png)
 
 ## 什么团队该用哪个
 

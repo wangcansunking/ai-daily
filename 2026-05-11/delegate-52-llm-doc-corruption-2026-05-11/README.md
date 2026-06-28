@@ -22,7 +22,7 @@ description: "Microsoft Research 论文 DELEGATE-52（arxiv 2604.15597）实测 
 
 # AI 改文档悄悄篡改 25%·DELEGATE-52 全景
 
-![DELEGATE-52 全景封面](delegate-52-llm-doc-corruption-2026-05-11.png)
+![DELEGATE-52 全景封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/delegate-52-llm-doc-corruption-2026-05-11/delegate-52-llm-doc-corruption-2026-05-11.png)
 
 ## 一、为什么这次值得专门拆一篇
 
@@ -50,7 +50,7 @@ description: "Microsoft Research 论文 DELEGATE-52（arxiv 2604.15597）实测 
 
 ## 三、20 轮过完一份文档：到底坏在哪
 
-![DELEGATE-52 长 workflow 文档腐化率](delegate-52-corruption-rate.png)
+![DELEGATE-52 长 workflow 文档腐化率](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/delegate-52-llm-doc-corruption-2026-05-11/delegate-52-corruption-rate.png)
 
 先看一组论文摘要里直接给出的数字：
 
@@ -72,7 +72,7 @@ description: "Microsoft Research 论文 DELEGATE-52（arxiv 2604.15597）实测 
 
 ## 四、5 类典型腐化模式·都是不报错的错
 
-![5 类典型腐化模式](delegate-52-error-modes.png)
+![5 类典型腐化模式](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/delegate-52-llm-doc-corruption-2026-05-11/delegate-52-error-modes.png)
 
 论文把腐化分成两大族：**deletion**（直接吞段）和 **corruption**（改字不改长）。弱档模型偏 deletion，前沿档偏 corruption。把 HN 顶贴里大家自发举的真实例子合并进来，能整理出 5 类反复出现的模式：
 
@@ -94,7 +94,7 @@ description: "Microsoft Research 论文 DELEGATE-52（arxiv 2604.15597）实测 
 
 ## 五、国产 AI 写作工具长文档保真度公开口径对照
 
-![国产 AI 写作工具长文档处理能力](delegate-52-cn-tools-table.png)
+![国产 AI 写作工具长文档处理能力](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/delegate-52-llm-doc-corruption-2026-05-11/delegate-52-cn-tools-table.png)
 
 ⚠️ 必要的诚实：DELEGATE-52 论文的 19 个模型主要覆盖海外六大模型家族（细节见 §三论文方法论描述）；**国产 AI 写作工具——千问 / 文心 / 豆包 / 智谱 / WPS AI / 飞书智能伙伴 / 百度文库 AI——并未在论文中单独跑分**。下面这张表是把各家公开口径合并展示，便于读者对照各自手头工具的"长文档保真"位置，不能直接代入 DELEGATE-52 的腐化率结论。
 
@@ -113,7 +113,7 @@ description: "Microsoft Research 论文 DELEGATE-52（arxiv 2604.15597）实测 
 
 ## 六、5 条把腐化率从 25% 砍到 5% 以下的工程化对策
 
-![5 条工程化止损策略](delegate-52-mitigations.png)
+![5 条工程化止损策略](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/delegate-52-llm-doc-corruption-2026-05-11/delegate-52-mitigations.png)
 
 这 5 条按"最便宜先上"到"工程量最大"排序，做完前 3 条一般已经够用：
 

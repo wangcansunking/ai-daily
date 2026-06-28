@@ -14,7 +14,7 @@ authors:
 
 # 微软暂别 Claude Code：国内自建路反而走通了
 
-![微软暂别 Claude Code · 切回 GitHub Copilot CLI](microsoft-cancels-claude-code-token-economics-copilot-cli-2026-05-23.png)
+![微软暂别 Claude Code · 切回 GitHub Copilot CLI](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/microsoft-cancels-claude-code-token-economics-copilot-cli-2026-05-23/microsoft-cancels-claude-code-token-economics-copilot-cli-2026-05-23.png)
 
 > 5 月 15 日前后，The Verge、Windows Central 等多家海外科技媒体相继披露：微软 Experiences + Devices 事业部高级副总裁 Rajesh Jha 发出一份内部备忘录，要求该事业部工程师在 6 月 30 日（微软 2026 财年结束日）之前，把大部分 Claude Code（Anthropic 官方 AI 编程命令行工具）的内部许可逐步交回，统一迁回 GitHub Copilot CLI（GitHub 官方 AI 编程命令行工具）。这则消息在 36 氪、X 平台、Reddit 同步发酵。表面上是工具切换，底子里是 Token 按量计费的账单——同一时段，Uber CTO 公开承认 2026 年全年 AI 预算「四个月就烧光了」，主要原因是工程师对 Claude Code 的重度使用。
 >
@@ -22,13 +22,13 @@ authors:
 
 国内同行刷到这条新闻的第一反应，大多是「微软都用不起 Claude Code，那我那点机器学习预算还能撑住吗」。这种焦虑不必有。这件事真正的关键词，不是「谁打败了谁」，而是 **Token 经济学**——一台旗舰模型在重度 agent 工作流下，每天烧掉的 Token 数量已经走到了让所有按量付费方案都要重新算账的临界点。微软这次的选择，本质是把账单从「外部按量」切回「内部包月 + 自家议价」，逻辑跟国内团队过去半年逐步把高频任务迁到 DeepSeek 缓存命中 + 本地千问自建上是一回事。
 
-![36 氪头条配图：Token 计费与包月对照拆解 · microsoft claude code 视角](microsoft-claude-code-36kr-fig2.png)
+![36 氪头条配图：Token 计费与包月对照拆解 · microsoft claude code 视角](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/microsoft-cancels-claude-code-token-economics-copilot-cli-2026-05-23/microsoft-claude-code-36kr-fig2.png)
 
 ## 一、事件时间线：从 12 月放开到 6 月 30 日切回
 
 把这次切换的关键节点按时间排开，能看清楚它不是一次突发决策。
 
-![微软 Claude Code 内部使用时间线（含待官方确认条目）](microsoft-claude-code-timeline.png)
+![微软 Claude Code 内部使用时间线（含待官方确认条目）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/microsoft-cancels-claude-code-token-economics-copilot-cli-2026-05-23/microsoft-claude-code-timeline.png)
 
 - **2025 年 12 月**：微软首次对内开放 Claude Code 使用许可。员工拿到一份 Anthropic 的企业许可，可以在内部代码库上跑 agent 工作流。
 - **2026 年 2-3 月**：The Verge 据微软内部人士披露，Claude Code 的使用量在六个月内快速攀升，部分团队反馈它在多步骤 agent 任务上比当时的 GitHub Copilot CLI 更顺手。
@@ -50,7 +50,7 @@ authors:
 
 把五种主流路径放在同一张图上看，账单层次差距一目了然。
 
-![8 小时工作日 5 种 AI 编程工具实际花费对比 · Claude Code / Copilot CLI / Cursor / DeepSeek / Antigravity 成本对照](microsoft-claude-code-cost-comparison.png)
+![8 小时工作日 5 种 AI 编程工具实际花费对比 · Claude Code / Copilot CLI / Cursor / DeepSeek / Antigravity 成本对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/microsoft-cancels-claude-code-token-economics-copilot-cli-2026-05-23/microsoft-claude-code-cost-comparison.png)
 
 | 工具 | 计费方式 | 单人月度成本（人民币口径） | 主要适用场景 |
 | :--- | :--- | :--- | :--- |
@@ -82,7 +82,7 @@ authors:
 
 把视角拉回国内。重度 AI 编程工具用户在过去半年其实已经悄悄分出了三条主流路径。把它们摆在一起，比单看一个数字更有信心。
 
-![国内开发者三条降本路径 · 对照微软 Claude Code 切换事件的实操参考：DeepSeek 缓存命中 / 千问 本地自建 / Cursor 包月混合](microsoft-claude-code-paths.png)
+![国内开发者三条降本路径 · 对照微软 Claude Code 切换事件的实操参考：DeepSeek 缓存命中 / 千问 本地自建 / Cursor 包月混合](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/microsoft-cancels-claude-code-token-economics-copilot-cli-2026-05-23/microsoft-claude-code-paths.png)
 
 **路径一：DeepSeek V4 Pro API + 缓存命中**。适合独立开发者和小团队。组合是 Cursor 或本地 IDE 接 DeepSeek API，靠系统提示 + 项目上下文长期复用拉高缓存命中率。月度成本控制在 ￥60–￥300，质量在中文场景接近第一梯队。5 月 31 日前还有 75% 折扣可以吃。
 

@@ -10,7 +10,7 @@ cover: 08.png
 
 # DeepSeek 450 亿国资领投 · Kimi 翻倍 200 亿 | AI 日报 | 2026-05-08
 
-![AI 日报封面](08.png)
+![AI 日报封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/daily/08.png)
 
 **今日关键词：DeepSeek 首轮外部融资 450 亿美元（约 3000 亿元）由大基金三期领投、梁文锋直接持股升至 34% · Kimi C 轮 20 亿美元关账、估值半年翻倍到 200 亿美元、美团龙珠领投 · DeepMind AlphaEvolve 用 Gemini 双模型 + 进化算法在 Borg / TPU / 4×4 矩阵乘 / Erdős 数学问题上拿出真实数字 · Anthropic Claude Mythos Preview 单次评估给 Firefox 找出 271 个漏洞、Mozilla 4 月修了 423 个 · Meta FAIR + Stanford + Harvard 发布 ProgramBench 让 9 个前沿模型从零重写 ffmpeg / SQLite，全员 0% 通关 · Addy Osmani 开源 AI Coding 工程手册一周冲到 32k⭐ · Anthropic 拿下 xAI Colossus 1 全部算力、>22 万张 GPU**
 
@@ -57,7 +57,7 @@ cover: 08.png
 
 ---
 
-![今日 6 篇深度专题封面合集](kimi-20b-financing-yang-zhilin-return.png)
+![今日 6 篇深度专题封面合集](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/daily/kimi-20b-financing-yang-zhilin-return.png)
 
 > *图片来源：Kimi C 轮关账 / 月之暗面 200 亿估值（daily-report-images repo）*
 
@@ -67,7 +67,7 @@ cover: 08.png
 
 国产大模型估值锚一周内被改写两次。一头是国资基金第一次正式投模型层（[36 氪头版](https://36kr.com/)、[观察者网财经头条](https://www.guancha.cn/)、[新浪财经港股头条](https://finance.sina.com.cn/)），另一头是互联网龙头收割六小虎赛道（[晚点 LatePost 5/6 独家](https://www.latepost.com/) → 新浪、网易、虎嗅 5/7 同日跟进）。
 
-![DeepSeek + Kimi 同周融资 · 估值天花板被改写](deepseek-450b-state-fund-leading.png)
+![DeepSeek + Kimi 同周融资 · 估值天花板被改写](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/daily/deepseek-450b-state-fund-leading.png)
 
 > *图片来源：daily-report-images（公开融资数据合成图）*
 
@@ -183,7 +183,7 @@ Karpathy 5/7 在 X 上转推 Simon Willison 关于 LLM 安全的科普（综合�
 
 开源对照实现 [OpenEvolve（codelion）](https://github.com/codelion/openevolve) 同日热度上升、HN 顶贴评论里有早期 reproduction 报告。完整解读见今日专题：[会自己进化的代码 agent：DeepMind AlphaEvolve](../../public/2026/05/08/alphaevolve-deepmind-gemini-coding-agent.md)。
 
-![DeepMind AlphaEvolve · Borg / TPU / 矩阵乘 / 数学问题真实数字](alphaevolve-deepmind-gemini-coding-agent.png)
+![DeepMind AlphaEvolve · Borg / TPU / 矩阵乘 / 数学问题真实数字](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/daily/alphaevolve-deepmind-gemini-coding-agent.png)
 
 > *图片来源：DeepMind 官方博客 + daily-report-images（公开数据合成图）*
 
@@ -215,7 +215,7 @@ Karpathy 5/7 在 X 上转推 Simon Willison 关于 LLM 安全的科普（综合�
 
 完整数据 + Meta SI Labs 出题政治意涵见今日专题：[让 LLM 从零重写 ffmpeg：Meta 新 benchmark 出炉](../../public/2026/05/08/programbench-meta-si-lab-rebuild.md)。
 
-![ProgramBench · 9 前沿模型从零重写 ffmpeg / SQLite](programbench-meta-si-lab-rebuild.png)
+![ProgramBench · 9 前沿模型从零重写 ffmpeg / SQLite](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/daily/programbench-meta-si-lab-rebuild.png)
 
 > *图片来源：Meta SI Labs ProgramBench 论文 + daily-report-images（leaderboard 合成图）*
 
@@ -231,7 +231,7 @@ Karpathy 5/7 在 X 上转推 Simon Willison 关于 LLM 安全的科普（综合�
 
 完整对照（Simon Willison 转述 vs Mozilla 一手数据 / Anthropic 红队上下文）见今日专题：[Firefox 一个月修 423 个漏洞：Claude 当上了 Mozilla 的安全审计员](../../public/2026/05/08/firefox-claude-mythos-423-vulnerabilities.md)。
 
-![Firefox 423 漏洞修复 · 271 由 Claude Mythos 单次找出](firefox-claude-mythos-423-vulnerabilities.png)
+![Firefox 423 漏洞修复 · 271 由 Claude Mythos 单次找出](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/daily/firefox-claude-mythos-423-vulnerabilities.png)
 
 > *图片来源：Mozilla Hacks 博客 + Anthropic 红队博客 + daily-report-images*
 
@@ -278,7 +278,7 @@ block diffusion 加速投机解码、给推理加速。搞本地推理 / vLLM �
 
 纯本地 deep research agent，多搜索引擎聚合，宣称 SimpleQA 95% 准确率。对标 OpenAI Deep Research 但本地跑、不上传 query，隐私党刚需。从昨天上榜到今天继续上升，跨 2 天追踪有效。
 
-![Addy Osmani agent-skills · Google Director 工程化方法论手册](addyosmani-agent-skills-32k-2026-05-08.png)
+![Addy Osmani agent-skills · Google Director 工程化方法论手册](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/daily/addyosmani-agent-skills-32k-2026-05-08.png)
 
 > *图片来源：addyosmani/agent-skills GitHub repo + daily-report-images*
 

@@ -23,7 +23,7 @@ description: "千问 Qwen3-VL 系列 4B/8B/30B-A3B-Instruct/Thinking 2025 年 10
 
 # 千问 Qwen3-VL 在 4090 上跑出本地多模态：发票与论文两条线
 
-![千问 Qwen3-VL 本地多模态部署实战封面](qwen3-vl-local-multimodal-openclaw-2026-05-12.png)
+![千问 Qwen3-VL 本地多模态部署实战封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/qwen3-vl-local-multimodal-openclaw-2026-05-12/qwen3-vl-local-multimodal-openclaw-2026-05-12.png)
 
 5 月 12 日上午，杭州一个 indie 开发者在小红书晒了一组截图：二手 RTX 4090D 48GB、Ubuntu 24、vLLM v0.11.0 容器，跑的是 Qwen3-VL-30B-A3B-Thinking-FP8。屏幕一侧 OpenClaw 客户端开着任务，另一侧摄像头对着一摞财务发票。`nvtop` 显示 45.2 GB 显存占用，token 速度小上下文里 90 t/s，40K 上下文 60 t/s，128K 上下文 35 t/s。
 
@@ -45,7 +45,7 @@ description: "千问 Qwen3-VL 系列 4B/8B/30B-A3B-Instruct/Thinking 2025 年 10
 
 ## 二、Qwen3-VL 四档参数全表
 
-![千问 Qwen3-VL 四档参数对照](qwen3-vl-lineup-2026-05-12.png)
+![千问 Qwen3-VL 四档参数对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/qwen3-vl-local-multimodal-openclaw-2026-05-12/qwen3-vl-lineup-2026-05-12.png)
 
 四档的本质差异不只是参数大小，而是**能力侧重 + 推理路径**的分叉。一句话总结：
 
@@ -71,7 +71,7 @@ description: "千问 Qwen3-VL 系列 4B/8B/30B-A3B-Instruct/Thinking 2025 年 10
 
 ## 三、三套消费级硬件 × 四套推理引擎实测
 
-![三套消费级硬件 × 四套推理引擎实测对照](qwen3-vl-hardware-bench-2026-05-12.png)
+![三套消费级硬件 × 四套推理引擎实测对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/qwen3-vl-local-multimodal-openclaw-2026-05-12/qwen3-vl-hardware-bench-2026-05-12.png)
 
 下面这组数字以 30B-A3B 为主轴，合并自 HuggingFace 用户公开报告 + 公开 benchmark + 各家官方文档；具体 RTX 4090D 48GB FP8 一组是 SlavikF 在 HuggingFace `Qwen3-VL-30B-A3B-Thinking-FP8` discussions/1 帖里贴出的实测，原文 verbatim：
 
@@ -98,7 +98,7 @@ description: "千问 Qwen3-VL 系列 4B/8B/30B-A3B-Instruct/Thinking 2025 年 10
 
 ## 四、OpenClaw 视觉 agent 端到端：财务 OCR 流水
 
-![OpenClaw 视觉 agent 端到端](qwen3-vl-openclaw-flow-2026-05-12.png)
+![OpenClaw 视觉 agent 端到端](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/qwen3-vl-local-multimodal-openclaw-2026-05-12/qwen3-vl-openclaw-flow-2026-05-12.png)
 
 第一条主线场景是财务同行最常问的：**500 张发票一摞，能不能不传任何境外 API 全程跑在本机**？
 
@@ -259,7 +259,7 @@ python -m mlx_vlm.server \
 
 ## 六、国产 IDE / Agent 框架接入 Qwen3-VL 本地后端
 
-![国产 IDE / Agent 框架接入 Qwen3-VL 本地后端可行性矩阵](qwen3-vl-cn-ide-matrix-2026-05-12.png)
+![国产 IDE / Agent 框架接入 Qwen3-VL 本地后端可行性矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/qwen3-vl-local-multimodal-openclaw-2026-05-12/qwen3-vl-cn-ide-matrix-2026-05-12.png)
 
 OpenClaw 之外，国产 IDE / Agent 框架接 Qwen3-VL 本地后端各自的姿态不同。下面按官方文档实查整理：
 
@@ -301,7 +301,7 @@ OpenClaw 之外，国产 IDE / Agent 框架接 Qwen3-VL 本地后端各自的姿
 
 ## 八、三维对比：OpenClaw + Qwen3-VL vs 云端
 
-![OpenClaw + Qwen3-VL 与三家云端多模态方案三维对比](qwen3-vl-vs-cloud-2026-05-12.png)
+![OpenClaw + Qwen3-VL 与三家云端多模态方案三维对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/qwen3-vl-local-multimodal-openclaw-2026-05-12/qwen3-vl-vs-cloud-2026-05-12.png)
 
 | 方案 | 首字延迟 | OCR 准确率 | 月成本（人均） | 数据驻留 | 国内访问 |
 |---|---|---|---|---|---|

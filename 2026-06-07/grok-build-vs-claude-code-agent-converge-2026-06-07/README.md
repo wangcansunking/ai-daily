@@ -16,7 +16,7 @@ description: 到 2026 年 6 月，Claude Code、Cursor、Codex、Antigravity 这
 ---
 # Grok Build 入场：五个编程 agent 趋同，竞争转向价格
 
-![剪纸风格的五张近乎一样的命令行编程助手卡片排成一列，第五张正带着价签滑入队伍，象征编程 agent 形态趋同后转入价格竞争](grok-build-vs-claude-code-agent-converge-2026-06-07.png)
+![剪纸风格的五张近乎一样的命令行编程助手卡片排成一列，第五张正带着价签滑入队伍，象征编程 agent 形态趋同后转入价格竞争](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/grok-build-vs-claude-code-agent-converge-2026-06-07/grok-build-vs-claude-code-agent-converge-2026-06-07.png)
 
 把今天市面上的五个主流编程 agent 摆在一起——Claude Code、Cursor、Codex、Antigravity，再加上刚入场的 Grok Build——你会发现一件有意思的事：它们越长越像。
 
@@ -30,7 +30,7 @@ description: 到 2026 年 6 月，Claude Code、Cursor、Codex、Antigravity 这
 
 先说这个「趋同」到底趋到了什么程度。
 
-![The New Stack 文章标题页：Claude Code、Cursor、Codex、Antigravity 半年回顾，副标题指出四家已收敛到同一套 agent 编程范式，Grok Build 加入价格之争](grok-build-vs-claude-code-agent-converge-2026-06-07-source-newstack-converge.png)
+![The New Stack 文章标题页：Claude Code、Cursor、Codex、Antigravity 半年回顾，副标题指出四家已收敛到同一套 agent 编程范式，Grok Build 加入价格之争](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/grok-build-vs-claude-code-agent-converge-2026-06-07/grok-build-vs-claude-code-agent-converge-2026-06-07-source-newstack-converge.png)
 
 这四个产品收敛到的，是同一套范式，主要是三件事：
 
@@ -44,7 +44,7 @@ description: 到 2026 年 6 月，Claude Code、Cursor、Codex、Antigravity 这
 
 Grok Build 是 xAI 的编程 agent 加命令行工具，2026 年 5 月中旬以早期测试版的形式上线，6 月初又把一个叫 Composer 2.5 的新模型放进了它，主打长任务和复杂指令的执行。
 
-![DigitalApplied 整理的 Grok Build 关键要点：5 月中旬上线早期测试版，用 Git 工作树隔离并行子 agent，99 美元为 6 个月促销价、标价 300 美元](grok-build-vs-claude-code-agent-converge-2026-06-07-source-grokbuild-takeaways.png)
+![DigitalApplied 整理的 Grok Build 关键要点：5 月中旬上线早期测试版，用 Git 工作树隔离并行子 agent，99 美元为 6 个月促销价、标价 300 美元](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/grok-build-vs-claude-code-agent-converge-2026-06-07/grok-build-vs-claude-code-agent-converge-2026-06-07-source-grokbuild-takeaways.png)
 
 它最值得说的，不是又一个能写代码的模型，而是一个在工程设计上真有新意的选择——**用 Git 工作树来隔离并行子 agent。**
 
@@ -58,7 +58,7 @@ Grok Build 是 xAI 的编程 agent 加命令行工具，2026 年 5 月中旬以�
 
 把五个编程 agent 的入门月费排出来，差距一眼就看出来了：
 
-![五个编程 agent 入门月费柱状图：Antigravity、Claude Code、Codex、Cursor 挤在 20 到 32 美元，Grok Build 标价 300 美元单开一档](grok-build-vs-claude-code-agent-converge-2026-06-07-chart-monthly-price.png)
+![五个编程 agent 入门月费柱状图：Antigravity、Claude Code、Codex、Cursor 挤在 20 到 32 美元，Grok Build 标价 300 美元单开一档](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/grok-build-vs-claude-code-agent-converge-2026-06-07/grok-build-vs-claude-code-agent-converge-2026-06-07-chart-monthly-price.png)
 
 - **Antigravity AI Pro、Claude Code Pro、Codex（含在 ChatGPT Plus 里）：** 都在每月 20 美元上下。
 - **Cursor 标准席位：** 每月 32 美元（按年付的单席价）。
@@ -68,7 +68,7 @@ Grok Build 是 xAI 的编程 agent 加命令行工具，2026 年 5 月中旬以�
 
 再看这三家的成熟度和定位差异：
 
-![codersera 三家编程 agent 对照表：Claude Code 用 Anthropic 旗舰、已正式发布且成熟；Codex CLI 用 GPT-5.5、已正式发布；Grok Build 用 grok-build-0.1、仍是早期测试版](grok-build-vs-claude-code-agent-converge-2026-06-07-source-three-contenders.png)
+![codersera 三家编程 agent 对照表：Claude Code 用 Anthropic 旗舰、已正式发布且成熟；Codex CLI 用 GPT-5.5、已正式发布；Grok Build 用 grok-build-0.1、仍是早期测试版](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/grok-build-vs-claude-code-agent-converge-2026-06-07/grok-build-vs-claude-code-agent-converge-2026-06-07-source-three-contenders.png)
 
 - **Claude Code** 是多数团队已经在用的那一个，最成熟、文档全、在持续集成里跑得稳，跑的是 Anthropic 当前的旗舰模型。
 - **Codex CLI** 同样是正式版、成熟，背后是 GPT-5.5，而且已经被打包进了 ChatGPT 的各档订阅里，等于「顺手就有」。
@@ -80,7 +80,7 @@ Grok Build 是 xAI 的编程 agent 加命令行工具，2026 年 5 月中旬以�
 
 个人订阅是一回事，一个十人小组一年要花多少，是另一笔更现实的账：
 
-![十人团队一年订阅成本对比：GitHub Copilot 商业版 2280 美元，Antigravity 2400 美元，Cursor 团队版 3840 美元，Windsurf/Devin 桌面团队版 4800 美元](grok-build-vs-claude-code-agent-converge-2026-06-07-chart-team-cost.png)
+![十人团队一年订阅成本对比：GitHub Copilot 商业版 2280 美元，Antigravity 2400 美元，Cursor 团队版 3840 美元，Windsurf/Devin 桌面团队版 4800 美元](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-07/grok-build-vs-claude-code-agent-converge-2026-06-07/grok-build-vs-claude-code-agent-converge-2026-06-07-chart-team-cost.png)
 
 同样十个人，一年的账能差出一倍多：GitHub Copilot 商业版约 2280 美元，Antigravity 约 2400 美元，Cursor 团队标准版约 3840 美元，Windsurf（现已并入 Devin 桌面版）团队版约 4800 美元。
 

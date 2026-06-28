@@ -12,7 +12,7 @@ description: "库克谢幕 WWDC：新 Siri 底层换用谷歌定制约 1.2 万�
 
 # 库克最后一场 WWDC·Siri 改用谷歌 Gemini·Claude 第一次上 iPhone | AI 日报 | 2026-06-09
 
-![库克谢幕 WWDC·新 Siri 换用 1.2 万亿参数定制 Gemini·Claude 第一次成为 iPhone 可选助手](09.png)
+![库克谢幕 WWDC·新 Siri 换用 1.2 万亿参数定制 Gemini·Claude 第一次成为 iPhone 可选助手](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/daily/09.png)
 
 ## 📋 头版目录
 
@@ -51,7 +51,7 @@ description: "库克谢幕 WWDC：新 Siri 底层换用谷歌定制约 1.2 万�
 
 底层模型来自谷歌一套定制的约 1.2 万亿参数 Gemini，苹果为此每年向谷歌支付约 10 亿美元 [2]。运行方式上，据《The Information》等报道，苹果采用分层路由：简单请求在端侧处理，一部分走苹果自己的私有云计算（Private Cloud Compute），而这个万亿参数模型最重的推理，实测在私有云计算上跑太慢，最终路由到谷歌云上的英伟达 B200 芯片，由苹果做加密与隐私代理 [26]。也就是说，谷歌提供模型权重、最重的计算也落在谷歌云硬件上，苹果想用加密代理这层尽量把"用谷歌模型"和"数据敞开给谷歌"分开——这层隐私边界到底有多硬，要看落地后的实际细节。
 
-![库克谢幕 WWDC·新 Siri 底层换用谷歌定制约 1.2 万亿参数 Gemini·最重推理路由到谷歌云英伟达 B200](source-wwdc-keynote-siri-gemini-2026-06-09.png)
+![库克谢幕 WWDC·新 Siri 底层换用谷歌定制约 1.2 万亿参数 Gemini·最重推理路由到谷歌云英伟达 B200](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/daily/source-wwdc-keynote-siri-gemini-2026-06-09.png)
 
 #### 1.2 多 AI 扩展：Claude 第一次成为 iPhone 的内置选项
 
@@ -67,7 +67,7 @@ description: "库克谢幕 WWDC：新 Siri 底层换用谷歌定制约 1.2 万�
 
 Ternus 2001 年加入苹果，一路在硬件部门成长，经手过 iPad、AirPods、Apple Watch 和多代 iPhone [4]。他本人没有出现在这次主题演讲里，但他将接手的，正是一家把模型层外包、把赌注押在硬件与系统体验上的苹果。从这个角度看，新 Siri 既是库克任内的收尾之作，也是 Ternus 时代的起手式。
 
-![库克最后一场 WWDC 新 Siri 做了三件事·换底层模型为定制 Gemini·多 AI 扩展三选一·库克交棒 Ternus](daily-2026-06-09-wwdc-three-things.png)
+![库克最后一场 WWDC 新 Siri 做了三件事·换底层模型为定制 Gemini·多 AI 扩展三选一·库克交棒 Ternus](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/daily/daily-2026-06-09-wwdc-three-things.png)
 
 **产业含义**：苹果这步棋，给所有做端侧助手和应用层的团队提了个醒——在模型这一层，"自研到底"不是唯一正解。手握分发入口和用户信任的一方，完全可以把模型当成可替换的供应方，自己专注在隐私架构、系统集成和体验上。对国内做 AI 硬件和系统级助手的团队，这是一个可以直接对照的样本：你的护城河到底是模型，还是模型之上的那一层。
 
@@ -79,7 +79,7 @@ Ternus 2001 年加入苹果，一路在硬件部门成长，经手过 iPad、Air
 
 第一笔账来自模型结构。国产主力模型普遍走混合专家（MoE）路线，总参数动辄几千亿，但每次推理只激活其中一小部分。以国内团队的做法为例，一个总参数两三千亿的模型，每个 token 真正参与计算的可能只有百分之几。参数规模撑住了能力上限，激活比例压住了单次计算成本——这是降价的第一块地基。
 
-![国产大模型把价格和长上下文成本一起压低·MiniMax 稀疏注意力是其中一条主线](source-github-minimax-m3-2026-06-09.png)
+![国产大模型把价格和长上下文成本一起压低·MiniMax 稀疏注意力是其中一条主线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/daily/source-github-minimax-m3-2026-06-09.png)
 
 #### 2.2 第二笔账：稀疏注意力，长上下文不再按平方涨
 
@@ -91,7 +91,7 @@ Ternus 2001 年加入苹果，一路在硬件部门成长，经手过 iPad、Air
 
 第三笔账来自工程和硬件。同样一张卡，靠更好的推理引擎把吞吐拉高一个数量级，单位 token 的折旧成本就摊薄了；再叠加国产算力把采购和折旧往下压，最后一段成本也被吃掉。三笔账叠在一起，国产大模型这一轮的低价才不是赔本赚吆喝，而是有结构支撑的。
 
-![国产大模型把价格打下来的三笔技术账·稀疏激活只算一小部分参数·稀疏注意力压住长上下文·国产算力压采购折旧](daily-2026-06-09-cn-cost-three-accounts.png)
+![国产大模型把价格打下来的三笔技术账·稀疏激活只算一小部分参数·稀疏注意力压住长上下文·国产算力压采购折旧](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/daily/daily-2026-06-09-cn-cost-three-accounts.png)
 
 **产业含义**：对国内开发者来说，这件事的意义不在"又降价了"，而在长上下文这个过去舍不得用的能力，正在变成可以放开手脚用的基础能力。RAG、长文档处理、长周期智能体这些场景，过去要精打细算地省 token，现在的成本曲线已经不一样了。这三笔技术账也解释了一个常被问到的问题：国产模型的低价到底能不能持续——只要这三层还在往前走，价格就有继续下探的空间。
 
@@ -109,7 +109,7 @@ Ternus 2001 年加入苹果，一路在硬件部门成长，经手过 iPad、Air
 
 更有意思的是用户这一侧。最新一期统计里，全球聊天助手的份额已经和一年前大不一样：ChatGPT 占 54.7%，相比 2025 年 2 月的 76.5% 明显回落；谷歌 Gemini 升到 27.4%，半年涨了 104%；Claude 全球占 8.2%、在美国市场占 12.5%，单季增速达 306%；DeepSeek 占 4.1%，Grok 占 2.8% [7]。
 
-![全球聊天助手份额洗牌·ChatGPT 降到 54.7%·Gemini 升到 27.4%·Claude 单季涨 306%](daily-2026-06-09-chatbot-share-shuffle.png)
+![全球聊天助手份额洗牌·ChatGPT 降到 54.7%·Gemini 升到 27.4%·Claude 单季涨 306%](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/daily/daily-2026-06-09-chatbot-share-shuffle.png)
 
 把这两件事放一起看就清楚了：苹果把默认助手交给份额已经升到第二的 Gemini，是顺着大势走；而它愿意把 Claude 也放进可选项，是因为 Claude 是增速最快的那个。份额数字背后，是各家在分发入口上的争夺——谁能进到用户每天已经在用的地方，谁就能把增速换成留存。
 
@@ -157,7 +157,7 @@ Ternus 2001 年加入苹果，一路在硬件部门成长，经手过 iPad、Air
 
 - 🔴 **openclaw/openclaw**｜约 37.77 万星｜TypeScript [18]。个人 AI 助手里最大的开源项目，跨操作系统、不绑定模型，能接各家大模型并在文件、浏览器、脚本和常见聊天工具之间替你跑任务。它从年初爆红一路涨到今天，仍是"个人 AI 助手"这个方向的标杆，值得长期跟踪它的版本节奏和社区采纳。
 
-![个人助手 OpenClaw 越过 37.7 万星·跨平台不绑定模型的个人 AI 助手](source-github-openclaw-2026-06-09.png)
+![个人助手 OpenClaw 越过 37.7 万星·跨平台不绑定模型的个人 AI 助手](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/daily/source-github-openclaw-2026-06-09.png)
 
 - 🔴 **obra/superpowers**｜约 22.14 万星｜Shell [19]。给智能体配技能的框架，把一套可复用的开发方法论做成智能体能直接调用的技能集，是 Claude Code 这类工具的技能层里最大的一个。
 

@@ -11,7 +11,7 @@ cover: meituan-longcat.png
 
 > 5 至 6 万张国产算力卡，撑起一次万亿参数训练。这是迄今为止国产卡上跑过的最大规模大模型训练，发生在美团手里。和 DeepSeek V4 同一天，2026-04-24，LongCat-2.0-Preview 在 longcat.ai 开放邀请测试，每天送 1000 万免费 token。
 
-![美团 LongCat-2.0 · 万亿参数 · 全程国产算力训练](meituan-longcat.png)
+![美团 LongCat-2.0 · 万亿参数 · 全程国产算力训练](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/meituan-longcat-2-trillion-domestic-chip/meituan-longcat.png)
 
 王兴在 2026 年 3 月美团财报电话会上把话讲得很白：「**在 AI 领域，美团唯一的策略是进攻**」、自 2023 年初以来，美团在资本支出和 AI 人才上做了大规模投入，「除云厂商外，可能是中国 AI 领域投入最大的公司之一」，目标是「**争取把美团 App 率先升级成为 AI-Powered App**」。三年时间，LongCat 系列从 2025 年 9 月的 Flash-Chat 开源起步，一路走到 2026-04-24 的 LongCat-2.0-Preview 万亿基座——这条线索连起来，比单看一个发布事件清楚得多。
 
@@ -44,7 +44,7 @@ DeepSeek V4-Pro 1.6T 总参 / 49B 激活、SWE-Bench Pro 55.4 分、Codeforces 3
 
 具体到芯片厂家，美团**没有在 LongCat-2.0 的官方公告里点名**。这是国内厂商发布国产卡训练成果时常见的处理——下游模型方不主动绑定上游硬件名字，给芯片厂留足谈判空间。但我们可以从美团已公开的投资生态拼出一条合理的猜测路径。
 
-![美团生态投资 · 算力 + 模型双线布局](longcat-meituan-ecosystem.png)
+![美团生态投资 · 算力 + 模型双线布局](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/meituan-longcat-2-trillion-domestic-chip/longcat-meituan-ecosystem.png)
 
 公开报道里美团已投资的算力 / 半导体公司包括：
 
@@ -63,7 +63,7 @@ DeepSeek V4-Pro 1.6T 总参 / 49B 激活、SWE-Bench Pro 55.4 分、Codeforces 3
 
 ChatGPT / Claude 这条主线是通用助手，给的是回答。LongCat 系列的差异化方向，王兴说得很具体——**让 App 帮用户完成物理世界里的任务**。
 
-![AI Powered App · 找店选券订座的 Agent 链路](longcat-ai-powered-app.png)
+![AI Powered App · 找店选券订座的 Agent 链路](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/meituan-longcat-2-trillion-domestic-chip/longcat-ai-powered-app.png)
 
 美团把目标拆成「找到这家店、选出最佳的团购券、然后预定座位」这种端到端任务，本质上是一条 Agent 链路：
 
@@ -83,7 +83,7 @@ ChatGPT / Claude 这条主线是通用助手，给的是回答。LongCat 系列�
 
 把视角拉远一点，2026 年 4 月这一个月里国产大模型的发布节奏：
 
-![2026 年 4 月 · 国产万亿大模型阵营](longcat-domestic-trillion-camp.png)
+![2026 年 4 月 · 国产万亿大模型阵营](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/meituan-longcat-2-trillion-domestic-chip/longcat-domestic-trillion-camp.png)
 
 - **DeepSeek V4-Pro / V4-Flash**：4-24 凌晨，1.6T 总参 / 49B 激活双 MoE，1M 上下文，MIT License 开源，输出价 ¥24/M
 - **美团 LongCat-2.0-Preview**：4-24 下午，万亿总参 MoE，1M 上下文，5-6 万张国产卡训练

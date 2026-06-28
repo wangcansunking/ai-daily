@@ -11,7 +11,7 @@ description: "一个开源小工具 Lathe 把大模型的用法掉了个头：�
 
 # Claude Code 反着用：让大模型出教程逼你自己敲，而不是替你写代码
 
-![用 AI 当陪练，不是代写](lathe-llm-tutor-learn-by-doing-2026-06-08.png)
+![用 AI 当陪练，不是代写](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/lathe-llm-tutor-learn-by-doing-2026-06-08/lathe-llm-tutor-learn-by-doing-2026-06-08.png)
 
 这两年很多人都有一种说不太清的别扭：Claude Code、Cursor、Codex 把代码写得越来越顺手，活儿是干完了，但有时候合上电脑会有点心虚——这段逻辑到底是我想明白的，还是它替我想明白的？查文档、踩坑、调试这些最磨人也最长功夫的环节，慢慢都交给了模型。
 
@@ -30,7 +30,7 @@ Lathe 的作者是 Deven Jarvis，项目 2026 年 5 月 4 日建在 GitHub 上�
 
 这个分工是 Lathe 设计上最聪明的一点：**真正花钱、花算力的"思考"部分，借用你已经在用的大模型；本地程序只干存储和展示这种确定性的脏活累活。** 所以它装起来很轻——就是一个自包含的二进制文件，扔到 `$PATH` 里就行。
 
-![Lathe 在 Claude Code 里 prompt 出题，先选难度再生成教程](source-lathe-lathe-prompt-cc.png)
+![Lathe 在 Claude Code 里 prompt 出题，先选难度再生成教程](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/lathe-llm-tutor-learn-by-doing-2026-06-08/source-lathe-lathe-prompt-cc.png)
 <small>来源：Lathe 项目 README 截图，`docs/img/lathe-prompt-cc.png`，2026-06-07</small>
 
 上面这张图是作者在 Claude Code 里实际跑的样子：敲一句 `/lathe build a 3D Slicer in Erlang`（用 Erlang 写一个 3D 切片软件），它不会一上来就甩代码，而是先反过来问你一个问题——你对这个领域的底子有多厚？是新手、半懂、还是已经很熟只想要点深度。你选完，它才据此调整教程的讲法。这个"先摸底再讲课"的动作，已经很像一个真人老师了。
@@ -39,7 +39,7 @@ Lathe 的作者是 Deven Jarvis，项目 2026 年 5 月 4 日建在 GitHub 上�
 
 把一次完整的使用拆开，Lathe 的流程是四步走，每一步职责清楚。
 
-![同一个大模型，AI 代写和 AI 陪练两条路径，以及 Lathe 的四步工作流](lathe-two-paths-chart.png)
+![同一个大模型，AI 代写和 AI 陪练两条路径，以及 Lathe 的四步工作流](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/lathe-llm-tutor-learn-by-doing-2026-06-08/lathe-two-paths-chart.png)
 
 **第一步，出题。** 在 Claude Code、Cursor 或 Codex 里敲 `/lathe`，跟一句你想学什么。可以让它生成单篇教程，也可以生成一个多章节的系列。
 
@@ -55,7 +55,7 @@ Lathe 的作者是 Deven Jarvis，项目 2026 年 5 月 4 日建在 GitHub 上�
 
 如果只是生成几个 Markdown 文件，那直接在对话框里问模型也能要到，何必多装个程序？作者把心思花在了阅读界面上，这也是 Lathe 真正的产品感所在。
 
-![Lathe 本地 read tutorial 阅读界面：顶部标注用了哪个模型、哪种文风、参考了几个来源](source-lathe-read-tutorial.png)
+![Lathe 本地 read tutorial 阅读界面：顶部标注用了哪个模型、哪种文风、参考了几个来源](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/lathe-llm-tutor-learn-by-doing-2026-06-08/source-lathe-read-tutorial.png)
 <small>来源：Lathe 项目 README 截图，`docs/img/read-tutorial.png`，2026-06-07</small>
 
 看上面这张真实截图，一份生成出来的《3D Slicer Erlang》教程，顶部清清楚楚写着一行署名：**这份教程由哪个模型生成（Claude Opus 4.8）、用的是哪种文风（plainspoken）、研究时参考了几个来源**。点开来源那一栏，能看到模型当时实际查过的链接清单。
@@ -67,14 +67,14 @@ Lathe 的作者是 Deven Jarvis，项目 2026 年 5 月 4 日建在 GitHub 上�
 
 界面上还有几个为"动脑子"专门设计的小机关：鼠标移到右侧边栏会浮出整篇的目录导航；正文里穿插着旁注，时不时戳你想深一点；每篇教程末尾还留了"课后练习"，把一部分内容故意留给你自己去补完。
 
-![Lathe tutorial content 教程正文里穿插旁注，提示读者多想一层](source-lathe-tutorial-content.png)
+![Lathe tutorial content 教程正文里穿插旁注，提示读者多想一层](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/lathe-llm-tutor-learn-by-doing-2026-06-08/source-lathe-tutorial-content.png)
 <small>来源：Lathe 项目 README 截图，`docs/img/tutorial-content.png`，2026-06-07</small>
 
 ## 教程攒多了怎么管：一个本地的"私人技术书架"
 
 用上一阵子，你手上的教程会越攒越多。Lathe 把所有教程存在本地的 `~/.lathe/tutorials/` 目录里，一个教程一个文件夹，里面是编号的 Markdown 章节加一份元数据文件（`metadata.json`）。这份元数据记着教程的标题、主题、创建时间、状态、标签、用了哪个模型、什么文风、研究时参考了哪些来源。整套数据都在你本地，离线也能看。
 
-![Lathe tutorial selection 教程列表页，支持搜索、排序和按状态/类型/标签筛选](source-lathe-tutorial-selection-dark-mode.png)
+![Lathe tutorial selection 教程列表页，支持搜索、排序和按状态/类型/标签筛选](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/lathe-llm-tutor-learn-by-doing-2026-06-08/source-lathe-tutorial-selection-dark-mode.png)
 <small>来源：Lathe 项目 README 截图（深色模式），`docs/img/tutorial-selection-dark-mode.png`，2026-06-07</small>
 
 `lathe serve` 打开的列表页就是你的私人技术书架：
@@ -89,7 +89,7 @@ Lathe 的作者是 Deven Jarvis，项目 2026 年 5 月 4 日建在 GitHub 上�
 
 前面提过 Lathe 对"AI 会不会胡说"的两层应对，其中机制那一层，核心就是来源可追溯这件事，值得单拎出来说。
 
-![Lathe sources and extend 教程末尾的来源面板，列出生成时实际查过的链接](source-lathe-sources-and-extend.png)
+![Lathe sources and extend 教程末尾的来源面板，列出生成时实际查过的链接](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/lathe-llm-tutor-learn-by-doing-2026-06-08/source-lathe-sources-and-extend.png)
 <small>来源：Lathe 项目 README 截图，`docs/img/sources-and-extend.png`，2026-06-07</small>
 
 Lathe 把每份教程"研究时实际查过的链接"完整留了下来，存在元数据的 `sources` 字段里，在阅读页面顶部用一个"参考了 N 个来源"的面板展开，点开就是完整链接清单。这跟教程正文里那种零散的 `## Sources` 引用不一样——它是一条**教程级别、持久保存**的研究脚印，让你能去核对材料从哪来，而不是只能对着文字干信。

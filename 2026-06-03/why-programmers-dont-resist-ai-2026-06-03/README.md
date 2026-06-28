@@ -9,7 +9,7 @@ description: "2022 年底，画师在 ArtStation 刷屏黑图抗议 AI，美国�
 ---
 # 画师抵制 AI 时，程序员在排队用 Copilot
 
-![一名开发者正在给一个 AI 助手编写扩展插件，背景里另一群创作者举着抗议牌，构成鲜明对照](why-programmers-dont-resist-ai-2026-06-03.png)
+![一名开发者正在给一个 AI 助手编写扩展插件，背景里另一群创作者举着抗议牌，构成鲜明对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/why-programmers-dont-resist-ai-2026-06-03/why-programmers-dont-resist-ai-2026-06-03.png)
 
 2022 年 12 月，画师们把同一张图刷上了 ArtStation——黑底白字，写着「No to AI Generated Images」。短短几天，这张抗议图就霸占了平台的热门页。
 
@@ -46,7 +46,7 @@ description: "2022 年底，画师在 ArtStation 刷屏黑图抗议 AI，美国�
 
 结果呢？到 2024 年，法官驳回了其中绝大多数核心主张——包括最关键的几项版权与署名指控，因为原告拿不出「Copilot 原样吐出了我的代码」的证据。22 项最后只剩下 2 项还在走程序。**程序员唯一一次集体起诉，基本上是败了。**
 
-![GitHub Copilot 诉讼专题网站首页，由律师马修·巴特里克牵头发起对 GitHub、微软、OpenAI 的集体诉讼](source-copilot-litigation-2026-06-03.png)
+![GitHub Copilot 诉讼专题网站首页，由律师马修·巴特里克牵头发起对 GitHub、微软、OpenAI 的集体诉讼](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/why-programmers-dont-resist-ai-2026-06-03/source-copilot-litigation-2026-06-03.png)
 
 *来源：GitHub Copilot 集体诉讼官方网站 githubcopilotlitigation.com（Matthew Butterick 等发起，2022 年 11 月立案）*
 
@@ -73,7 +73,7 @@ description: "2022 年底，画师在 ArtStation 刷屏黑图抗议 AI，美国�
 
 这套价值观有清晰的来源。1983 年，理查德·斯托曼（Richard Stallman）发起 GNU 项目，主张软件应当自由流动、人人可读可改；1991 年，林纳斯·托瓦兹（Linus Torvalds）发布 Linux 内核，第二年采用 GPL 许可证，把「谁都能拿去用、改完得继续开放」写成了规则；1998 年，开放源代码促进会（OSI）成立，「open source」正式成为一面旗帜。
 
-![开放源代码的几个关键年份：1983 GNU、1985 自由软件基金会、1991 Linux、1998 开放源代码促进会，构成程序员复用文化的来源](chart-open-source-timeline-2026-06-03.png)
+![开放源代码的几个关键年份：1983 GNU、1985 自由软件基金会、1991 Linux、1998 开放源代码促进会，构成程序员复用文化的来源](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/why-programmers-dont-resist-ai-2026-06-03/chart-open-source-timeline-2026-06-03.png)
 
 这不是少数极客的信仰，而是渗进了每个程序员的日常：
 
@@ -100,7 +100,7 @@ description: "2022 年底，画师在 ArtStation 刷屏黑图抗议 AI，美国�
 
 这种态度有很深的历史。有个常被引用的说法：「自动编程（automatic programming）这个词，一直不过是『用比当时更高级的语言来编程』的委婉说法。」（据计算机科学家戴维·帕纳斯，David Parnas）翻译过来就是——**程序员这个职业，从诞生那天起就在不停地自动化自己。**
 
-![程序员一直在自动化自己：从汇编、编译器，到 IDE、自动补全，再到 AI 编程助手，每一代工具都让写代码更省力，程序员每次都第一时间用上](chart-tool-automation-timeline-2026-06-03.png)
+![程序员一直在自动化自己：从汇编、编译器，到 IDE、自动补全，再到 AI 编程助手，每一代工具都让写代码更省力，程序员每次都第一时间用上](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/why-programmers-dont-resist-ai-2026-06-03/chart-tool-automation-timeline-2026-06-03.png)
 
 回头看每一代「让写代码更省力」的工具，程序员的反应高度一致：第一时间用上，而不是抵制。
 
@@ -110,13 +110,13 @@ description: "2022 年底，画师在 ArtStation 刷屏黑图抗议 AI，美国�
 
 每一代工具都在「替程序员干掉一部分活」，程序员每一次都欢迎。到了 AI 编程助手这一代，逻辑没有变。看采用速度就知道这股势头有多强：
 
-![程序员对 AI 工具的采用速度：Stack Overflow 调查中正在使用 AI 工具的开发者占比从 2023 年的 44% 升到 2024 年的 62%，GitHub Copilot 累计用户从 1500 万增到 2000 万](chart-ai-adoption-2026-06-03.png)
+![程序员对 AI 工具的采用速度：Stack Overflow 调查中正在使用 AI 工具的开发者占比从 2023 年的 44% 升到 2024 年的 62%，GitHub Copilot 累计用户从 1500 万增到 2000 万](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/why-programmers-dont-resist-ai-2026-06-03/chart-ai-adoption-2026-06-03.png)
 
 - 据 Stack Overflow 2024 年开发者调查，正在使用 AI 工具的开发者占比达到 62%，比上一年的 44% 大幅上升；把「正在用」和「计划用」加起来是 76%；在用 AI 的人里，82% 用它来写代码；
 - 据科技媒体 TechCrunch，GitHub Copilot 的累计用户到 2025 年 7 月突破 2000 万，其中 130 万是付费用户；
 - AI 编程工具 Cursor 的年化经常性收入（ARR），据 TechCrunch，2025 年 1 月还是 1 亿美元，6 月就超过了 5 亿美元。
 
-![科技媒体 TechCrunch 报道 GitHub Copilot 累计用户突破 2000 万的文章配图](source-techcrunch-copilot-20m-2026-06-03.jpg)
+![科技媒体 TechCrunch 报道 GitHub Copilot 累计用户突破 2000 万的文章配图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/why-programmers-dont-resist-ai-2026-06-03/source-techcrunch-copilot-20m-2026-06-03.jpg)
 
 *来源：TechCrunch《GitHub Copilot crosses 20 million all-time users》，2025 年 7 月 30 日*
 
@@ -134,7 +134,7 @@ description: "2022 年底，画师在 ArtStation 刷屏黑图抗议 AI，美国�
 
 **程序员恰恰相反，退出的成本低到几乎为零。** 不喜欢一个工具？换一个就是。一个开源项目走向让你不满？fork 出来自己维护。没有趁手的东西？那就自己造一个。这是这个职业与生俱来的能力。
 
-![退出 vs 呼吁：画师、编剧、配音演员退出成本高，只能集体发声抗议；程序员退出成本极低，不满直接转成换工具、fork、自建，抵制因此组织不起来](chart-exit-vs-voice-2026-06-03.png)
+![退出 vs 呼吁：画师、编剧、配音演员退出成本高，只能集体发声抗议；程序员退出成本极低，不满直接转成换工具、fork、自建，抵制因此组织不起来](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/why-programmers-dont-resist-ai-2026-06-03/chart-exit-vs-voice-2026-06-03.png)
 
 回头再看前面那几次反弹，全都是「退出」，不是「呼吁」：
 

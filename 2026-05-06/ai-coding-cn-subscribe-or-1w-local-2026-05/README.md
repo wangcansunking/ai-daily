@@ -15,7 +15,7 @@ description: "2026-05 把国内开发者用 AI 写代码的所有合理花钱方
 ---
 # 通义灵码、Kimi、Claude Code 拼车，还是 1 万本地：2026-05 国内 AI 编程账单怎么算
 
-![1 万元国内 AI 编程订阅与本地部署对照](ai-coding-cn-subscribe-or-1w-local-2026-05.png)
+![1 万元国内 AI 编程订阅与本地部署对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/ai-coding-cn-subscribe-or-1w-local-2026-05/ai-coding-cn-subscribe-or-1w-local-2026-05.png)
 
 > **本文核心论断**：2026 年 5 月这个时点，国内开发者用 AI 写代码已经有三条平行可走的路——零成本起步（通义灵码限免 + Kimi 本地）、月付 ¥40-200 续命（Kimi Andante / GLM Lite / Copilot Pro）、1 万元本地自建（5060 Ti 16G / Mac mini M4 24G / 3080 20G 魔改）。"必须海外订阅才能写好代码"这条硬约束已经彻底拆掉，剩下的是怎么按场景选组合。本文把每条路的真实账单 + 真人体验摊开。
 
@@ -29,7 +29,7 @@ description: "2026-05 把国内开发者用 AI 写代码的所有合理花钱方
 
 这两个极端中间，是 2026 年 5 月这一周国内开发者群里反复传阅的一张表。本周一（5/4）我们在《海外 5 家 vs 国产 5 家：AI Coding 选档与组合实操》里拆过订阅档，今天这篇把视角推进两步——加进 5 月新出的拼车与中转风险，以及 1 万元本地部署的三套替代方案。所有数字均为 2026-05-06 当日核对，人民币标价，每条带可验证来源。
 
-![国内 AI 编程订阅一览](ai-coding-2026-05-cn-subscription-overview.png)
+![国内 AI 编程订阅一览](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/ai-coding-cn-subscribe-or-1w-local-2026-05/ai-coding-2026-05-cn-subscription-overview.png)
 
 ## 二、国产订阅：从 0 元到 ¥469，每个档位都有人在用
 
@@ -107,9 +107,9 @@ DeepSeek 没有自家 IDE 订阅，但通过火山方舟的 Coding Plan 进了�
 
 国际侧 2026 上半年的故事是定价反复横跳。先把海外与国产订阅放在同一张表里看：
 
-![海外 vs 国产 AI Coding 订阅对照](ai-coding-overseas-vs-domestic-subscription.png)
+![海外 vs 国产 AI Coding 订阅对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/ai-coding-cn-subscribe-or-1w-local-2026-05/ai-coding-overseas-vs-domestic-subscription.png)
 
-![Claude Code 4 月价格反复时间线](claude-code-april-2026-pricing-rollback.png)
+![Claude Code 4 月价格反复时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/ai-coding-cn-subscribe-or-1w-local-2026-05/claude-code-april-2026-pricing-rollback.png)
 
 ### Claude Code：4 月差点把 Pro 档撤掉
 
@@ -174,7 +174,7 @@ OpenAI 这边 4 月 9 日加了一档新中间价位：
 
 国内开发者用 Claude Code、Cursor Ultra、ChatGPT 这件事，常会用到两条非官方途径——拼车和中转。
 
-![拼车与中转风险象限](pinche-and-relay-api-cn-2026-05.png)
+![拼车与中转风险象限](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/ai-coding-cn-subscribe-or-1w-local-2026-05/pinche-and-relay-api-cn-2026-05.png)
 
 ### 拼车真实价位
 
@@ -220,7 +220,7 @@ OpenRouter 是直连官方聚合，pass-through 价格与官方同价，Claude S
 
 把订阅说完，回到本文的另一个核心：1 万元预算在家自己跑大模型，今天能跑出什么。
 
-![1 万元内本地推理硬件四档](local-1w-cn-hardware-2026-05.png)
+![1 万元内本地推理硬件四档](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/ai-coding-cn-subscribe-or-1w-local-2026-05/local-1w-cn-hardware-2026-05.png)
 
 ### 全新质保档：RTX 5060 Ti 16GB ¥3599
 
@@ -270,7 +270,7 @@ NVIDIA 的甜品新卡，京东自营 5 月 6 日最低 ¥3599（微星 5060 Ti 
 
 硬件说完，模型这边的真实进展超出很多人的认知。
 
-![本地编程模型显存档决策](local-coding-models-by-vram-2026-05.png)
+![本地编程模型显存档决策](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/ai-coding-cn-subscribe-or-1w-local-2026-05/local-coding-models-by-vram-2026-05.png)
 
 | 显存档 | 第一推荐 | SWE-bench | 速度（4090 / 3090） |
 |---|---|---|---|
@@ -322,7 +322,7 @@ Qwen3-Coder-Next（80B 总 / 3B 激活 MoE）SWE-Bench 70.6%，Q4 总内存 ≈4
 
 数据是数据，手感是手感。
 
-![真人 token/s 实测对照](real-user-tokens-per-sec-2026-05.png)
+![真人 token/s 实测对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/ai-coding-cn-subscribe-or-1w-local-2026-05/real-user-tokens-per-sec-2026-05.png)
 
 ### 5060 Ti 16GB：14B 是甜点，30B-A3B MoE 也能跑
 
@@ -385,7 +385,7 @@ V2EX 用户 ShadowPower 早期帖子里对 DeepSeek 的吐槽放今天还成立�
 
 把订阅 + 本地两边都说完，给到三套不同身份的真实组合。
 
-![三类开发者真实组合方案](three-personas-recipes-2026-05.png)
+![三类开发者真实组合方案](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/ai-coding-cn-subscribe-or-1w-local-2026-05/three-personas-recipes-2026-05.png)
 
 ### 在校学生 / 刚入行：月成本 ¥0-50
 

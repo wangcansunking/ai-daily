@@ -10,7 +10,7 @@ tags: [memory-wall, hbm, micron, sk-hynix, samsung, cxmt, huawei-ascend, ai-infe
 ---
 # AI 推理瓶颈不再是算力是内存：美光产能售罄，国产 HBM 接力
 
-![AI 推理瓶颈不再是算力是内存](micron-memory-wall-ai-inference-2026-05-07.png)
+![AI 推理瓶颈不再是算力是内存](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/micron-memory-wall-ai-inference-2026-05-07/micron-memory-wall-ai-inference-2026-05-07.png)
 
 > 2026 年 3 月美光（Micron）发布的 Q2 FY2026 财报，单季度营收 238.6 亿美元，同比 +196%，HBM 产能整个 2026 年售罄。同一周，36氪头条问的不是「美光要赚多少钱」——是「内存为什么追不上 AI 推理」。
 
@@ -32,7 +32,7 @@ tags: [memory-wall, hbm, micron, sk-hynix, samsung, cxmt, huawei-ascend, ai-infe
 - **HBM4 12-Hi 36 GB**：2026 年第一季度开始量产出货
 - **HBM 业务年化收入跑率**：约 80 亿美元
 
-![美光 + SK 海力士 + 三星 HBM 市场份额](hbm-market-share-2026.png)
+![美光 + SK 海力士 + 三星 HBM 市场份额](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/micron-memory-wall-ai-inference-2026-05-07/hbm-market-share-2026.png)
 
 > 数据口径：Counterpoint Research 与 TrendForce 公布的 2025 Q2/Q3 出货金额份额；2026 出货状态来自三家公司各自的投资者沟通记录。
 
@@ -56,7 +56,7 @@ tags: [memory-wall, hbm, micron, sk-hynix, samsung, cxmt, huawei-ascend, ai-infe
 
 围绕"内存墙"概念国内同行讨论得很热。机器之心、量子位、半导体行业观察都做过深度梳理，结论是一致的——**LLM 在 decode 阶段几乎所有 GPU 都跑不满 FLOPS，瓶颈是显存带宽**。
 
-![算力 vs 显存带宽：十年增速差](memory-wall-compute-vs-bandwidth.png)
+![算力 vs 显存带宽：十年增速差](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/micron-memory-wall-ai-inference-2026-05-07/memory-wall-compute-vs-bandwidth.png)
 
 > 同口径横评 NVIDIA 2012–2022 GPU 产品规格：FP64 算力增长约 80 倍，HBM 带宽只增长约 17 倍，差距在十年间放大约 4.7 倍。
 
@@ -96,7 +96,7 @@ tags: [memory-wall, hbm, micron, sk-hynix, samsung, cxmt, huawei-ascend, ai-infe
 
 值得注意的是 2026 年 3 月谷歌 TurboQuant 论文出来后，美光、西部数据股价当天有显著回调——市场担心内存厂商靠"AI 装更大内存"的故事被算法路径削弱。但站到 5 月这个时点回看，HBM 全年依旧售罄、长鑫和华为的国产线一片量产消息——**算法压缩和硬件扩容更像合奏，而不是一方挤掉另一方**。
 
-![HBM 节点路线图：算力跑赢内存](hbm-roadmap-bandwidth-2026.png)
+![HBM 节点路线图：算力跑赢内存](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/micron-memory-wall-ai-inference-2026-05-07/hbm-roadmap-bandwidth-2026.png)
 
 > HBM4 单 stack 带宽达到 2 TB/s，相比 HBM3E 翻倍；单 stack 容量也从 36 GB 提到 48 GB。这是 2026 年内存侧确定能落地的最大代际跃迁。
 
@@ -165,7 +165,7 @@ DeepSeek V4 这次明确表态会和华为昇腾深度配合，意味着 MoE 路
 
 把镜头转回国内。过去半年里有三件事是绕不过去的标志事件，把国内存储链的位置顶到了一个全新高度。
 
-![国产存储 + AI 芯片配套时间线](china-memory-roadmap-2026.png)
+![国产存储 + AI 芯片配套时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/micron-memory-wall-ai-inference-2026-05-07/china-memory-roadmap-2026.png)
 
 > 公开信息整理（截至 2026-05-07）。三条线在 2026 年同步推进——长鑫做基础 HBM 产能、海思做面向自家 AI 加速器的专用 HBM、长江存储扩 NAND。
 

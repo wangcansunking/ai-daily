@@ -21,7 +21,7 @@ description: "智谱 GLM-4.5-Air（106B / 12B 激活 MoE）与阿里 Qwen3-32B�
 
 # GLM-4.5-Air vs Qwen3-32B 单卡 4090 实测
 
-![GLM-4.5-Air vs Qwen3-32B 本地双平台对决 · flat 封面](glm-4-5-air-vs-qwen3-32b-local-2026-05-19.png)
+![GLM-4.5-Air vs Qwen3-32B 本地双平台对决 · flat 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/glm-4-5-air-vs-qwen3-32b-local-2026-05-19/glm-4-5-air-vs-qwen3-32b-local-2026-05-19.png)
 
 中文开源大模型这一年最有意思的两件事，一件是智谱 GLM-4.5 系列把 MoE 路线推到了 106B 总参 / 12B 激活的「Air」轻量版，另一件是阿里 Qwen3 系列把 dense 路线在 32.8B 这一档稳稳钉死。两条路线的开源许可证都松到能直接商用：GLM-4.5-Air 用 MIT，Qwen3-32B 用 Apache-2.0。**但落到本地部署，这两条路线在 RTX 4090 24GB 单卡和 Mac M3 Max 64GB / 128GB 上的可行性完全错位——MoE 想吃 4090 单卡得 CPU offload 一档，dense 反而是 4090 真正能纯 GPU 跑的那一档；到了 Mac M3 Max 这边角色又倒过来，统一内存让 GLM-4.5-Air 这种大块头反而更舒服**。这件事如果不算清楚，1.5 万买 4090 跑 GLM-4.5-Air 会失望，2 万买 64GB M3 Max 想跑 Qwen3-32B 会觉得没榨干硬件。
 
@@ -71,7 +71,7 @@ description: "智谱 GLM-4.5-Air（106B / 12B 激活 MoE）与阿里 Qwen3-32B�
 
 也就是说，**MoE 是「拿内存换智能」，Dense 是「拿算力换确定性」**。这一观察跟 r/LocalLLaMA 上一位用户在测完 GLM-4.5 系列后的总结一致：「GLM-4.5 Air runs on a single 3090 or 4090, even on lower VRAM using quantized INT4 versions」（[GGUF/AWQ vLLM 部署综述](https://jarvislabs.ai/blog/vllm-quantization-complete-guide-benchmarks)）——这句话只在「能跑」意义上成立，跑通的代价是 CPU offload，吞吐会从 30+ tok/s 掉到 8~12 tok/s。
 
-![GLM-4.5-Air vs Qwen3-32B：MoE 稀疏 vs Dense 全参激活架构对比](glm-4-5-air-vs-qwen3-32b-local-2026-05-19-1-architecture.png)
+![GLM-4.5-Air vs Qwen3-32B：MoE 稀疏 vs Dense 全参激活架构对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/glm-4-5-air-vs-qwen3-32b-local-2026-05-19/glm-4-5-air-vs-qwen3-32b-local-2026-05-19-1-architecture.png)
 
 智谱与阿里给这两条路线的官方部署门槛差距同样很大：GLM-4.5-Air 的 FP8 版本在 HuggingFace 模型卡里写得很坦白——「H100 × 2 或 H200 × 1，系统内存超过 1TB」（[GLM-4.5-Air-FP8 模型卡](https://huggingface.co/zai-org/GLM-4.5-Air-FP8)），完整 128K 上下文需要 H100 × 4 或 H200 × 2 走 SGLang。Qwen3-32B 的官方建议则朴素得多——24GB 显存的消费卡能跑 AWQ Q4 单卡推理（[Qwen3-32B-AWQ 模型卡](https://huggingface.co/Qwen/Qwen3-32B-AWQ)）。两个团队对「轻量」的定义不在同一档：智谱的「Air」是相对 GLM-4.5 旗舰的轻量，落到消费级硬件依然是巨兽；通义的「32B」是真正按消费级硬件做的目标。
 
@@ -140,9 +140,9 @@ vllm serve Qwen/Qwen3-32B-AWQ \
 
 值得单独说一下「为什么 4090 跑 GLM-4.5-Air 的瓶颈是内存带宽」。MoE 模型每个 token 只激活一小撮专家，但「哪些专家被激活」是动态决定的——理论上 8 个专家选 2 个，每次推理需要把 2 个 expert 的权重从内存读到计算单元。在纯 GPU 单卡部署里这不是问题，专家权重全部在 24 GB 显存里；但 CPU offload 时，每次激活的专家可能在 CPU 内存而不在 GPU 显存里，需要走 PCIe 4.0 把专家权重搬过去——PCIe 4.0 x16 单向带宽 32 GB/s，而 GDDR6X 是 1008 GB/s，差出 31 倍。结果就是吞吐被 PCIe 带宽锁死，专家路由越频繁（thinking 模式下尤甚），瓶颈越明显。这件事在 [llama.cpp Apple Silicon 性能讨论 #4167](https://github.com/ggml-org/llama.cpp/discussions/4167) 里被反复印证：Apple Silicon 的统一内存把这个瓶颈彻底消除，所以 M3 Max 跑 MoE 比 4090 + CPU offload 体验顺得多。
 
-![bandwidth 带宽差对比：GDDR6X 1008 GB/s vs PCIe 4.0 32 GB/s 差 31 倍](glm-4-5-air-vs-qwen3-32b-local-2026-05-19-5-bandwidth.png)
+![bandwidth 带宽差对比：GDDR6X 1008 GB/s vs PCIe 4.0 32 GB/s 差 31 倍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/glm-4-5-air-vs-qwen3-32b-local-2026-05-19/glm-4-5-air-vs-qwen3-32b-local-2026-05-19-5-bandwidth.png)
 
-![双模型 vram-budget 矩阵：4090 24GB 与 M3 Max 64GB / 128GB 三档量化预算](glm-4-5-air-vs-qwen3-32b-local-2026-05-19-2-vram-budget.png)
+![双模型 vram-budget 矩阵：4090 24GB 与 M3 Max 64GB / 128GB 三档量化预算](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/glm-4-5-air-vs-qwen3-32b-local-2026-05-19/glm-4-5-air-vs-qwen3-32b-local-2026-05-19-2-vram-budget.png)
 
 ### 海外开源对比的实操差异点
 
@@ -181,7 +181,7 @@ mlx_lm.server --model mlx-community/Qwen3-32B-4bit-AWQ \
 
 [llama.cpp issue #19366](https://github.com/ggml-org/llama.cpp/issues/19366) 报告 「Llama.cpp token generation speed is roughly one third of speed in MLX for Qwen 3 coder next for Apple Silicon」——Apple 自家 MLX 在 Qwen3 系列上明显快于 llama.cpp，64GB M3 Max 跑 Qwen3-32B MLX Q4 实测在 22 tok/s 一档，跟 4090 AWQ 走 vLLM 接近。
 
-![throughput 吞吐对比：4090 + M3 Max 双平台五种部署姿势 tokens/s 柱状图](glm-4-5-air-vs-qwen3-32b-local-2026-05-19-3-throughput.png)
+![throughput 吞吐对比：4090 + M3 Max 双平台五种部署姿势 tokens/s 柱状图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/glm-4-5-air-vs-qwen3-32b-local-2026-05-19/glm-4-5-air-vs-qwen3-32b-local-2026-05-19-3-throughput.png)
 
 把这件事总结成一句：**M3 Max 128GB 选 GLM-4.5-Air，M3 Max 64GB 选 Qwen3-32B；4090 24GB 也选 Qwen3-32B**。同一个钱包预算下，硬件决定模型，而不是反过来。
 
@@ -199,7 +199,7 @@ LM Studio 与 Ollama 这两个面向桌面的封装层值得单独提一下：LM
 
 **长文摘要 / RAG 生成**：与翻译类似，长上下文是 GLM-4.5-Air 的强项；但实际工作流里，RAG 通常会把上下文切到 32K 以内，所以 32K 原生上下文的 Qwen3-32B 在主流 RAG 场景里完全够用。MTEB 这一档与生成模型分数无关，看的是嵌入与重排——把昨天那篇 Qwen3 三件套（[Qwen3-Embedding-8B](https://huggingface.co/Qwen/Qwen3-Embedding-8B) + Qwen3-Reranker-8B + Qwen3-Coder-30B-A3B）跟 GLM-4.5-Air 组合也是可行的，事实上 GLM-4.5-Air 自己没出嵌入与重排专项模型，要做 RAG 仍然需要靠 BGE 系列或 Qwen3-Embedding。
 
-![三任务质量四象限：代码 / 翻译 / 长文摘要 横评](glm-4-5-air-vs-qwen3-32b-local-2026-05-19-4-task-matrix.png)
+![三任务质量四象限：代码 / 翻译 / 长文摘要 横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/glm-4-5-air-vs-qwen3-32b-local-2026-05-19/glm-4-5-air-vs-qwen3-32b-local-2026-05-19-4-task-matrix.png)
 
 数学这条线的对比是 GLM-4.5-Air 最亮眼的一段——AIME 2024 拿到 89.4，Qwen3-32B 81.4，相差 8 分；MATH-500 是 98.1，几乎吃满。这一段优势对学术、量化、复杂业务规则建模这一类场景有直接价值。但同样的问题——这一档 GLM-4.5-Air 在 4090 上跑不到 20 tok/s，研究员要么有 M3 Max 128GB，要么用智谱开放平台 API，本地 4090 单卡跑大量数学题不现实。
 
@@ -305,7 +305,7 @@ GLM-4.5 完整版在 [ModelScope](https://modelscope.cn/models/ZhipuAI/GLM-4.5) 
 
 把硬件预算从 1.5 万到 5 万元这一档拉齐摆一张表，对正在做硬件采购决策的开发者更直观——每升级一档预算，能稳跑的模型谱系往上抬一档：
 
-![cost-budget 预算档对位：4090 单卡 / M3 Max 64GB / 128GB / Mac Studio M3 Ultra 各档能跑什么](glm-4-5-air-vs-qwen3-32b-local-2026-05-19-6-cost-budget.png)
+![cost-budget 预算档对位：4090 单卡 / M3 Max 64GB / 128GB / Mac Studio M3 Ultra 各档能跑什么](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/glm-4-5-air-vs-qwen3-32b-local-2026-05-19/glm-4-5-air-vs-qwen3-32b-local-2026-05-19-6-cost-budget.png)
 
 跟昨天那篇「Qwen3 RAG 三件套」（详见 5/18 专题）放在一起看会更完整：Qwen3-Embedding-8B + Qwen3-Reranker-8B + Qwen3-Coder-30B-A3B 是 RAG 工程链路，本篇讲的 GLM-4.5-Air vs Qwen3-32B 是「主对话 / 主推理」这一档。两者在工作流里是并列的两个组件——RAG 三件套负责检索召回，主模型负责生成；4090 用户走「Qwen3 三件套 + Qwen3-32B」全栈同源，128GB Mac 用户可以走「Qwen3 三件套 + GLM-4.5-Air」混搭，把主模型的智商再往上抬一档。
 

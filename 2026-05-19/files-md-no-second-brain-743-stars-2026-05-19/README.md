@@ -25,7 +25,7 @@ description: "5 月 14 日塞浦路斯独立开发者 Artem Zakirullin 把自己
 
 # Obsidian 用户该听听的另一种声音：files.md 拒绝第二大脑
 
-![files.md 项目封面](files-md-no-second-brain-743-stars-2026-05-19.png)
+![files.md 项目封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/files-md-no-second-brain-743-stars-2026-05-19/files-md-no-second-brain-743-stars-2026-05-19.png)
 
 5 月 14 日，塞浦路斯独立开发者 Artem Zakirullin 把自己和朋友用了 5 年的私人笔记工具 files.md 开源到 GitHub，README 第一句话就是「Your life in plain `.md` files」——你的人生用纯 markdown 文件装下来。
 
@@ -95,7 +95,7 @@ zakirullin 在 HN 上还披露了另一个细节——他给这个项目最初�
 
 files.md 的 README 比一般 Show HN 项目长得多。在介绍完功能后，zakirullin 用了 6 个段落写产品哲学。下面把这 6 处论点的关键句逐句 verbatim 摘出来——
 
-![files.md app 界面真实截图](files-md-app-screenshot.png)
+![files.md app 界面真实截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/files-md-no-second-brain-743-stars-2026-05-19/files-md-app-screenshot.png)
 
 **论点一：所有权延伸到打开文件的软件**。README 引言段——「You should own your files, **and the software that opens them**. You grow your knowledge with your brain. You grow software around it with an LLM. Both can last through the ages.」翻译——你应该拥有自己的文件，**也应该拥有打开这些文件的软件**。你用大脑去生长知识，用大语言模型在边上长出工具，两者都能传得长久。
 
@@ -123,7 +123,7 @@ zakirullin 紧跟着一句 verbatim 收尾——「The Second Brain is thrilling
 
 HN item 48179677 是 5/14 的 Show HN 帖，标题朴素：「Files.md – Open-source alternative to Obsidian」。一周积累 430 pts / 232 cmt，主帖前 50 条按内容归类是这样分布——
 
-![HN 三派声音](files-md-hn-voices.png)
+![HN 三派声音](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/files-md-no-second-brain-743-stars-2026-05-19/files-md-hn-voices.png)
 
 **派别一：克制即创造（约 38%）**——这一派的代表声音是 zakirullin 自己。他在帖子下面回了一条很长的话 verbatim——「I believe that not only you should own your data in plain files, but also you should own the software that opens those files. So that your files and tools can grow together, fully under your ownership, through the ages. The app can be easily tweaked for your own needs via an LLM — code is optimized for that.」翻译——「我相信你不仅应该拥有纯文件形式的数据，也应该拥有打开这些文件的软件。这样你的文件和工具就可以一起生长，完全归你所有，传得长久。这套 app 可以借助 LLM 轻松改成你想要的样子——代码就是为这一点优化的。」
 
@@ -187,7 +187,7 @@ README 还把这套结构以 LLM-friendly 的格式挂在 files.md/llms.txt—�
 
 把市面上能想到的笔记工具放到二维坐标里，可以看清 files.md 的真实位置——
 
-![笔记工具哲学矩阵](files-md-philosophy-matrix.png)
+![笔记工具哲学矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/files-md-no-second-brain-743-stars-2026-05-19/files-md-philosophy-matrix.png)
 
 横轴是**功能复杂度**，从左到右是「仅必要功能 → 数据库 / 插件 / 协作齐全」。
 
@@ -216,7 +216,7 @@ Logseq 与 Anytype 在**右下**——图谱与本地优先的取舍接近 Obsid
 
 把 6 个候选工具按 9 个真实场景维度铺开——
 
-![files.md tool 工具对照实操表](files-md-tool-comparison.png)
+![files.md tool 工具对照实操表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/files-md-no-second-brain-743-stars-2026-05-19/files-md-tool-comparison.png)
 
 | 维度 | files.md | Obsidian | Notion | 思源笔记 | wolai | 飞书文档 |
 |---|---|---|---|---|---|---|

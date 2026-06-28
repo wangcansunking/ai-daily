@@ -46,7 +46,7 @@ image_alt_match_ignore:
 
 # 智谱港股四个月 11 倍 · 代码图谱双流派同上 Trending · HBM 占 AI 芯片成本 63% | AI 日报 | 2026-05-25
 
-![智谱港股四个月十一倍 代码图谱双流派同日上榜 HBM 占 AI 芯片成本 63% AI 芯片成本三线交织](25.png)
+![智谱港股四个月十一倍 代码图谱双流派同日上榜 HBM 占 AI 芯片成本 63% AI 芯片成本三线交织](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/daily/25.png)
 
 ## 📋 头版目录
 
@@ -74,7 +74,7 @@ image_alt_match_ignore:
 
 ### 头条 1 · 国产 AI 估值梯队成型：智谱港股四个月 11 倍 + 五家算力同台
 
-![国产 AI 公开市场估值梯队 智谱 5800 亿 + 寒武纪 7168 亿 + 海光 6885 亿 + 摩尔 3363 亿 + 沐曦 3032 亿 + 壁仞 740 亿](cn-ai-valuation-tier-2026-05.png)
+![国产 AI 公开市场估值梯队 智谱 5800 亿 + 寒武纪 7168 亿 + 海光 6885 亿 + 摩尔 3363 亿 + 沐曦 3032 亿 + 壁仞 740 亿](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/daily/cn-ai-valuation-tier-2026-05.png)
 
 #### 1.1 智谱港股 5/22 单日涨 30%：四个月十一倍是怎么走出来的
 
@@ -93,7 +93,7 @@ image_alt_match_ignore:
 
 第三件触发因素是 DeepSeek 5/22 同日宣布的 700 亿融资 + V4 永久降到 1/4 价（5/23 日报头条已展开）。国产模型公司一级市场出现 100 亿美元级融资 + 永久降价信号之后，二级市场把"国产模型这条赛道单笔可以拿到顶级资本"的判断兑现到智谱股价里——智谱是当下港股唯一上市的国产模型一线公司，**资本对国产模型整条赛道的看多预期，目前只有一个标的可以下单**。
 
-![智谱港股 5/22 单日异动 + 四个月四级跳时间线](zhipu-mcap-timeline-2026-05.png)
+![智谱港股 5/22 单日异动 + 四个月四级跳时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/daily/zhipu-mcap-timeline-2026-05.png)
 
 #### 1.2 五家算力同台：寒武纪 / 海光 / 摩尔 / 沐曦 / 壁仞 Q1 业绩硬证
 
@@ -112,7 +112,7 @@ image_alt_match_ignore:
 
 摩尔线程营收 7.38 亿同比 155.35% / 净利润同比扭亏，沐曦 5.62 亿同比 75.37% / 减亏 57.49%——两家在 IPO 启动到上市过程中给出"营收高速增长 + 亏损快速收窄"的曲线，对应资本市场过去给到 3,000+ 亿元市值的乘数前提。壁仞作为去年港股 IPO 的国产 GPU 第二家，市值压在 740 亿这一档，意味着资本对"做到智谱十分之一规模 + 寒武纪十分之一规模"这种二线算力公司还在持观望立场。
 
-![寒武纪 / 海光 / 摩尔 Q1 2026 营收与净利润对比](cambricon-hygon-q1-revenue.png)
+![寒武纪 / 海光 / 摩尔 Q1 2026 营收与净利润对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/daily/cambricon-hygon-q1-revenue.png)
 
 #### 1.3 这张估值表对国内开发者意味着什么
 
@@ -122,7 +122,7 @@ image_alt_match_ignore:
 
 ### 头条 2 · 客户端代码 Graph RAG 双流派同日上 Trending：在线可视化 vs 100% 本地
 
-![Understand-Anything 项目主页交互式可视化代码图谱 14 家 AI 客户端](understand-anything-hero.png)
+![Understand-Anything 项目主页交互式可视化代码图谱 14 家 AI 客户端](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/daily/understand-anything-hero.png)
 
 #### 2.1 Lum1104/Understand-Anything：25,658 stars + 14 家 AI 客户端 + 在线交互式可视化
 
@@ -151,7 +151,7 @@ codegraph 走 MCP（Model Context Protocol）server 路径接 5 家 AI Coding ha
 
 工具调用次数省 71% 这个数字最值得读——意味着 AI Coding agent 不用反复跑 `grep` / `find` / `read_file` / `ls` 去探索仓库结构，而是直接从预索引图谱里捞出来。**对长上下文任务、大型 monorepo、需要跨文件改动的 refactor 任务**，codegraph 这条路相当于把 RAG 的"检索"那一步从"运行时调 API + 调大模型摘要"前置到"一次预索引"。
 
-![codegraph 6 家代码图谱对比 在线可视化 vs 100% 本地预索引两条流派](codegraph-6way-comparison.png)
+![codegraph 6 家代码图谱对比 在线可视化 vs 100% 本地预索引两条流派](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/daily/codegraph-6way-comparison.png)
 
 #### 2.3 两条流派同上 Trending：客户端代码 Graph RAG 累计 N=5 已稳定 Tier 1
 
@@ -163,7 +163,7 @@ codegraph 走 MCP（Model Context Protocol）server 路径接 5 家 AI Coding ha
 
 ### 头条 3 · 算力底座两件 paper-grade 工程信号：HBM 占 AI 芯片成本 63% + 8 框架塌 30 个百分点
 
-![AI 芯片成本结构 HBM 占比从 2024 Q1 52% 涨到 2025 Q4 63% 八季度变化](hbm-cost-share-trend.png)
+![AI 芯片成本结构 HBM 占比从 2024 Q1 52% 涨到 2025 Q4 63% 八季度变化](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/daily/hbm-cost-share-trend.png)
 
 #### 3.1 Epoch AI 5/21 数据：HBM 占 AI 芯片成本从 52% 涨到 63%
 
@@ -186,7 +186,7 @@ codegraph 走 MCP（Model Context Protocol）server 路径接 5 家 AI Coding ha
 
 对国产开发者最值得追踪的是**国产 HBM 的拐点窗口**——**长鑫存储 HBM3 量产目标定在 2026 H1**、长江存储路线图覆盖到 HBM3E，是国产 AI 芯片这一英寸真正能不能跑通的关键变量。Epoch AI 的数字给出的工程含义是：如果国产 HBM 没在 2026 下半年实现量产 + 良率爬坡，国产 AI 芯片设计厂（寒武纪 / 海光 / 摩尔 / 沐曦 / 壁仞）继续给客户出货的 BOM 里这 63% 的钱将持续被海外赚走。
 
-![NVIDIA AMD Google Amazon 四家 HBM 一年支出 120 亿 → 320 亿 翻 2.67 倍](hbm-spend-quadruple.png)
+![NVIDIA AMD Google Amazon 四家 HBM 一年支出 120 亿 → 320 亿 翻 2.67 倍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/daily/hbm-spend-quadruple.png)
 
 #### 3.2 EURECOM arxiv 2605.06445：agent 写后端 8 框架塌 30 个百分点实证
 
@@ -213,7 +213,7 @@ codegraph 走 MCP（Model Context Protocol）server 路径接 5 家 AI Coding ha
 
 这条 paper-grade 信号对国内 Coding agent 团队（通义灵码 / Trae / 字节扣子 / 智谱 Code / 千问 Code）的工程含义直接：**当前 LLM agent 写"加了 ORM + typed schema + 鉴权"的 FastAPI / Django 代码，断言通过率只剩 24%**，意味着复杂后端服务这一英寸 agent 还远没到"开发者可以放心交付"的拐点。
 
-![Constraint Decay 8 框架横评 L0 → L3 通过率塌 30 个百分点曲线](constraint-decay-curve.png)
+![Constraint Decay 8 框架横评 L0 → L3 通过率塌 30 个百分点曲线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/daily/constraint-decay-curve.png)
 
 ---
 
@@ -292,7 +292,7 @@ Knowledge Project 播客 2026-05-22 上线，HN 顶赞 147 分。原话「Comput
 
 「100% local code knowledge graph — MCP server for Claude Code, Codex, Cursor, Windsurf, Cline.」——MIT / TypeScript / 零 API key / 断网可用 / 7 仓 benchmark 平均省 35% token + 工具调用省 71%。今日实查 **21,895 stars，单日 +2,993**，GitHub Trending Daily 第二。本地优先路线的代表作，**对长上下文任务 / monorepo / 隐私敏感代码这三类场景，目前没有同档替代**。
 
-![codegraph 一行命令预索引大型 monorepo 7 仓 benchmark 平均省 35% token](codegraph-install-demo.png)
+![codegraph 一行命令预索引大型 monorepo 7 仓 benchmark 平均省 35% token](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/daily/codegraph-install-demo.png)
 
 ### 🟡 推荐 / manaflow-ai/cmux · 累计 19,001 stars
 

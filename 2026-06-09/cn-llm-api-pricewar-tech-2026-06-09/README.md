@@ -13,7 +13,7 @@ feishu_doc_id: null
 ---
 # DeepSeek 把输入价压到每百万 token 1 元：国产模型降价背后的技术账
 
-![国产大模型 API 价格战背后的四笔技术账](cn-llm-api-pricewar-tech-2026-06-09.png)
+![国产大模型 API 价格战背后的四笔技术账](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/cn-llm-api-pricewar-tech-2026-06-09/cn-llm-api-pricewar-tech-2026-06-09.png)
 
 DeepSeek 的 V4-Flash 现在输入每百万 token 1 元、输出 2 元，缓存命中的输入价压到 0.2 元；通义千问的 Qwen-Long 输入每百万 token 0.5 元；MiniMax M2 的输入折成人民币不到两毛。这些数字摆在一起，第一反应往往是"又在烧钱抢市场"。
 
@@ -45,7 +45,7 @@ DeepSeek 的 V4-Flash 现在输入每百万 token 1 元、输出 2 元，缓存�
 - **缓存命中价是这一轮降价里最狠的一档。** DeepSeek 把缓存命中的输入价压到未命中的 1/5（V4-Flash 是 0.2 元对 1 元），Kimi K2.6 的缓存命中保底价折成美元约 0.07，是全场最低之一。缓存命中指的是这次请求的开头部分（通常是系统提示词、固定的工具说明）和上一次请求重复，服务端不必重新计算，直接复用算好的结果。对 agent 这种每次都带一长串固定提示词的场景，这一档价是真金白银的差别，下文会专门算。
 - **不是所有模型都在降。** 同一时间，月之暗面的 Kimi K2.6 把 API 定价相对上一代上调了约 58%。一个旗舰模型敢逆势涨价，恰恰说明价格不是被补贴绑死的——它反映的是这个模型在能力、调用成本、目标客群上的综合定位。这条反例很重要：它证明价格战的底层不是谁补贴得起，而是谁的成本结构和产品定位允许它定在哪个点。
 
-![国产主力模型输入与输出价格对比](cn-llm-api-pricewar-tech-2026-06-09-img1.png)
+![国产主力模型输入与输出价格对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/cn-llm-api-pricewar-tech-2026-06-09/cn-llm-api-pricewar-tech-2026-06-09-img1.png)
 
 把价格确认清楚之后，真正的问题来了：DeepSeek V4-Flash 输入每百万 token 1 元这个价，背后的单位成本到底由什么决定？接下来四节，一笔一笔算。
 
@@ -83,7 +83,7 @@ DeepSeek 的 V4-Flash 现在输入每百万 token 1 元、输出 2 元，缓存�
 
 这条弯路恰恰是技术账真实的证据：**稀疏注意力不是免费的午餐，做不好会掉精度，几家是真在工程上反复试出来的。** 它带来的降价空间也是实打实的——长上下文的计算量和显存占用同时往下压，长文档、长对话、agent 这些重上下文场景的服务成本才有可能跟着降。
 
-![标准注意力与稀疏注意力的计算量增长对比](cn-llm-api-pricewar-tech-2026-06-09-img2.png)
+![标准注意力与稀疏注意力的计算量增长对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/cn-llm-api-pricewar-tech-2026-06-09/cn-llm-api-pricewar-tech-2026-06-09-img2.png)
 
 把前两笔账放一起看：MoE 省的是"每个 token 要算多少参数"，稀疏注意力省的是"上下文一长，注意力要算多少关系"。这两笔都是模型架构层面的省，省的是浮点计算量和显存占用本身。接下来第三笔，省的是另一个维度——同一张显卡，能不能多干活。
 
@@ -114,7 +114,7 @@ DeepSeek 的 V4-Flash 现在输入每百万 token 1 元、输出 2 元，缓存�
 
 需要客观说明的是，这笔账目前还没完全兑现。DeepSeek V4-Pro 现在 12 元/24 元的价格，官方明确说是"受限于高端算力产能的阶段性定价"——意思是高端算力的产能还没完全铺开，等下半年昇腾 950 的后续型号大规模部署，这一档价还有进一步下探的空间。所以第四笔账更像是一张"已经开始兑现、还在继续兑现"的账：它解释了为什么现在能降，也预示了为什么后面还能再降。
 
-![四笔技术账对单 token 成本的贡献拆解](cn-llm-api-pricewar-tech-2026-06-09-img3.png)
+![四笔技术账对单 token 成本的贡献拆解](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/cn-llm-api-pricewar-tech-2026-06-09/cn-llm-api-pricewar-tech-2026-06-09-img3.png)
 
 ## 四笔账各占多少：一个定性的拆解
 

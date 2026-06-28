@@ -14,7 +14,7 @@ tags: [Anthropic, MTS, IC通道, 海外大厂, 国内对比, 职业路径]
 
 > 2025-07 到 2026-03，18 个月里六位百亿美元级公司的 CTO 先后加入 Anthropic，出任 Member of Technical Staff。同一时间窗，Anthropic 估值从 615 亿一路冲到正在谈的 9000 亿美元。这条路径背后，是一线模型权重正在重构整个工程师职级体系。
 
-![百亿公司 CTO 集体辞职去 Anthropic 当工程师](cto-exodus-anthropic-mts-power-shift.png)
+![百亿公司 CTO 集体辞职去 Anthropic 当工程师](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/cto-exodus-anthropic-mts-power-shift/cto-exodus-anthropic-mts-power-shift.png)
 
 ## 六个名字、六张时间戳
 
@@ -27,7 +27,7 @@ tags: [Anthropic, MTS, IC通道, 海外大厂, 国内对比, 职业路径]
 - **Bryan McCann**，You.com 联合创始人 / CTO，2026-03 加入 Anthropic 出任 MTS。Salesforce Research 出身，在 NLP 深度学习领域贡献过 CoVe、decaNLP 等被引用上千次的论文。
 - **Peter Bailis**，Workday CTO，2026-03 加入 Anthropic 出任 MTS，主攻强化学习工程。他原本是 Stanford CS 助理教授，DAWN 项目联合负责人；创办 Sisu Data 融资 1.28 亿美元后被 Snowflake 收购；之后在 Google Cloud 做企业数据 AI 产品，再去 Workday 当 CTO 主导 agentic AI 战略。
 
-![百亿公司 CTO 加入 Anthropic 时间轴](cto-exodus-anthropic-timeline.png)
+![百亿公司 CTO 加入 Anthropic 时间轴](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/cto-exodus-anthropic-mts-power-shift/cto-exodus-anthropic-timeline.png)
 
 这六个人有几个共同点值得记住。**第一**，他们不是普通工程师转 IC，全部带着完整的研究履历——Stanford CS 教师、Salesforce Research、Adept 联创、Transformer 论文作者；**第二**，他们都不是「年轻人想体验前沿」，而是已经做过一轮甚至两轮成功创业 / 上市公司高管之后，主动选择在工程师职级表上「向下走一格」；**第三**，他们去的同一个目的地——Anthropic，而不是分散到 OpenAI、Google DeepMind、Meta Superintelligence Labs 几家之间。
 
@@ -47,7 +47,7 @@ tags: [Anthropic, MTS, IC通道, 海外大厂, 国内对比, 职业路径]
 
 把这六张时间戳放回 Anthropic 估值曲线上看，会非常清楚。Anthropic 从 2025-03 的 615 亿美元估值起步，2025-09 Series F 时到 1830 亿，2026-02 涨到 3800 亿，4 月底正在谈 9000 亿美元的新一轮、约 500 亿美元规模的融资。同一时间点 OpenAI 在前一轮 Series F 拿到 8520 亿美元估值。
 
-![原公司估值 vs Anthropic 9000 亿目标估值](cto-exodus-anthropic-valuation.png)
+![原公司估值 vs Anthropic 9000 亿目标估值](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/cto-exodus-anthropic-mts-power-shift/cto-exodus-anthropic-valuation.png)
 
 这张表的意义不是「Anthropic 估值大」，而是**这六位 CTO 在原公司的股权 + 加入 Anthropic 时的入职 package，加在一起的金融体量足够说服他们「换个职位重要」**。Anthropic 年化收入已经到 300 亿美元，9000 亿目标估值如果拿下，就是当今全球最高估值私营公司。一位顶尖工程师在这种增速曲线里拿到的 RSU，单年净增可以覆盖原公司 CTO 三五年薪资。
 
@@ -57,7 +57,7 @@ tags: [Anthropic, MTS, IC通道, 海外大厂, 国内对比, 职业路径]
 
 外界容易把 Anthropic 和 OpenAI 看成「同一种公司，规模略有差异」。但 2026 这一波 CTO 流向告诉我们，两家在用人哲学上的差异其实很大。
 
-![Anthropic vs OpenAI 用人哲学差异](cto-exodus-anthropic-culture.png)
+![Anthropic vs OpenAI 用人哲学差异](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/cto-exodus-anthropic-mts-power-shift/cto-exodus-anthropic-culture.png)
 
 **Anthropic 的 IC 通道权重，仍然显著高于 OpenAI 的产品向团队**。Anthropic 公开宣称的核心价值是 social-impact 和 flat hierarchy，研究优先于层级决策；这套文化的工程结果就是中级 IC 的代码 / 模型方案能直接进训练。OpenAI 早期也是这个调子，但 ChatGPT 商业化之后，产品节奏被几亿用户外驱动，IC 自主性相对减弱。
 

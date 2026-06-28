@@ -24,7 +24,7 @@ tags:
 
 > 5 月 12 日，中央网信办的署名稿件登上新华网头条。明确事项有三件：发布短视频前，发布者必须在「含有虚构演绎内容 / 含有 AI 生成内容 / 含有营销信息 / 内容为转载 / 内容为个人观点 / 无需标注」6 类标签中选一项才能发；这套规则先在抖音、快手、腾讯、百度等 12 家平台试点跑通；存量短视频会分批回溯补标，未标注的账号严惩并公开曝光。这是 2025 年 9 月 1 日《人工智能生成合成内容标识办法》施行之后，落到产品层、覆盖到普通创作者的第一个全国动作。
 
-![网信办 6 类必选标签 + 12 家平台试点｜AI 生成内容进入必标阶段](cac-genai-six-label-12-platforms-2026-05-13.png)
+![网信办 6 类必选标签 + 12 家平台试点｜AI 生成内容进入必标阶段](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/cac-genai-six-label-12-platforms-2026-05-13/cac-genai-six-label-12-platforms-2026-05-13.png)
 
 刷开抖音准备发条小剧情，会发现发布弹窗多了一行。原本只让你勾「同城 / 不可见」的位置，现在多了 6 个橙色小标签，写着「含有虚构演绎内容」「含有 AI 生成内容」「含有营销信息」「内容为转载」「内容为个人观点」「无需标注」——必须选一个，否则发布按钮置灰。这一刻不是临时灰度，是从 5 月 12 日起，国内 12 家主流平台同步落地的新规。
 
@@ -40,7 +40,7 @@ tags:
 
 ## 一、6 类标签的官方原话与适用边界
 
-![6 类必选标签：发布短视频前必须选一项](cac-genai-six-labels.png)
+![6 类必选标签：发布短视频前必须选一项](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/cac-genai-six-label-12-platforms-2026-05-13/cac-genai-six-labels.png)
 
 **核心判断**：6 类标签覆盖的不是「内容好不好」，而是「内容的身份是什么」。判断维度只有一个——读者刷到这条视频时，需不需要一个额外的解释框架。
 
@@ -59,7 +59,7 @@ tags:
 
 ## 二、12 家平台四象限：内容、社交、电商、搜索全覆盖
 
-![12 家先行先试平台：分内容、电商、本地、搜索四象限](cac-genai-12-platforms.png)
+![12 家先行先试平台：分内容、电商、本地、搜索四象限](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/cac-genai-six-label-12-platforms-2026-05-13/cac-genai-12-platforms.png)
 
 **核心判断**：12 家平台不是随便挑的——内容、社交、电商、本地服务、搜索五条主赛道每条都覆盖了头部，等于在国内短视频生态里全网铺开。
 
@@ -87,7 +87,7 @@ tags:
 
 ## 三、国产 AI 工具的元数据准备：显式 + 隐式双轨已经就位
 
-![国产 AI 内容工具元数据标识进度](cac-genai-ai-tools.png)
+![国产 AI 内容工具元数据标识进度](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/cac-genai-six-label-12-platforms-2026-05-13/cac-genai-ai-tools.png)
 
 **核心判断**：六家国产 AI 内容工具——通义万相、即梦、可灵、混元、元宝、千问——在 2025-09-01《标识办法》施行后，已经完成了显式 + 隐式双轨标识的基础工程；5-12 必选标签上线后，平台发布弹窗会自动读取这些元数据，给创作者建议「AI 生成」。
 
@@ -112,7 +112,7 @@ tags:
 
 ## 四、从 2025-03 四部门发文，到 5-12 必选标签：13 个月分三段落地
 
-![从《标识办法》到必选标签：13 个月分三段落地](cac-genai-timeline.png)
+![从《标识办法》到必选标签：13 个月分三段落地](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/cac-genai-six-label-12-platforms-2026-05-13/cac-genai-timeline.png)
 
 **核心判断**：AI 治理不是一刀切，是按「办法 → 国标 → 平台试点 → 全量推广」分档加密，给行业留了 6-12 个月的适配窗口。
 
@@ -130,7 +130,7 @@ tags:
 
 ## 五、国内 AI 开发者 5 条合规落地清单
 
-![国内 AI 开发者 5 条合规落地清单](cac-genai-developer-checklist.png)
+![国内 AI 开发者 5 条合规落地清单](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/cac-genai-six-label-12-platforms-2026-05-13/cac-genai-developer-checklist.png)
 
 **核心判断**：自动产视频 / 文案 / 图 agent pipeline 的同行，把 5 条钩子落到代码里，未来跨平台分发的合规摩擦会显著小一截。这一节属于合规红线建议——CLAUDE.md 默认不写「国内开发者该怎么做」，但内容标识属于明确的合规红线，给具体建议是负责任的做法。
 
@@ -221,7 +221,7 @@ client.video.upload(
 
 ## 六、读者怎么看：刷视频时多了一行小字
 
-![读者视角：刷视频时多了一行小字](cac-genai-reader-view.png)
+![读者视角：刷视频时多了一行小字](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/cac-genai-six-label-12-platforms-2026-05-13/cac-genai-reader-view.png)
 
 把视角切回普通读者：5 月 12 日之后刷抖音、快手、视频号、小红书，会发现视频信息栏多了一行小字——「含有 AI 生成内容」或「内容为转载」或「含有营销信息」。这一行字看上去普通，但意义不小。
 

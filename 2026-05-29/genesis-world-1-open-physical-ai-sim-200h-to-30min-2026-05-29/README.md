@@ -11,7 +11,7 @@ cover: genesis-world-1-open-physical-ai-sim-200h-to-30min-2026-05-29.png
 
 # Genesis World 1.0 把 200 小时压成 30 分钟
 
-![Genesis World 1.0 开源：Genesis AI 把多物理引擎、跨平台 GPU 编译器、光线追踪渲染器三件套合在一份 Apache-2.0 仓库](genesis-world-1-open-physical-ai-sim-200h-to-30min-2026-05-29.png)
+![Genesis World 1.0 开源：Genesis AI 把多物理引擎、跨平台 GPU 编译器、光线追踪渲染器三件套合在一份 Apache-2.0 仓库](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/genesis-world-1-open-physical-ai-sim-200h-to-30min-2026-05-29/genesis-world-1-open-physical-ai-sim-200h-to-30min-2026-05-29.png)
 
 ## 30 秒速览：国内团队开源 200 小时压成 30 分钟的具身智能仿真基础设施
 
@@ -47,7 +47,7 @@ Genesis World 1.0 一次开源了三个层次的东西。读懂这三层各自�
 
 第三层是 **Nyx 光线追踪渲染器**。Nyx 不是通用渲染器，它是从一开始就为机器人设计的：官方博客 verbatim 数据是「在消费级 GPU 上做到 1080p 单帧 4 毫秒以内的去噪路径追踪」。240 FPS 的实时光追，对应到强化学习训练里就是仿真器里每秒能跑 240 个视觉决策步。
 
-![Quadrants 跨平台 GPU 编译器架构：一份 Python 仿真核函数下到六种后端](genesis-quadrants-arch.png)
+![Quadrants 跨平台 GPU 编译器架构：一份 Python 仿真核函数下到六种后端](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/genesis-world-1-open-physical-ai-sim-200h-to-30min-2026-05-29/genesis-quadrants-arch.png)
 
 | 组件 | 解决的问题 | 技术亮点 |
 |---|---|---|
@@ -65,7 +65,7 @@ Genesis AI 不是一支新冒出来的队伍。这支团队最早被海内外开
 
 从产业位置上看，Genesis AI 目前的市场策略也很清楚：基础设施开源，把社区做大；自家在跑的具身智能基础大模型（也就是他们口中的 Robotics Foundation Model）作为闭源服务对外，把客户做窄。这是典型的「左手开源仓 + 右手商业模型」结构，参考对照是 Meta 的 Llama 之于 Meta AI、Mistral 的开源仓之于 Mistral Large API。
 
-![36氪 5 月 28 日头条报道：让机器人学会番茄炒蛋爆红网络的 Genesis AI 开源机器人训练场](genesis-cn-36kr-screenshot.png)
+![36氪 5 月 28 日头条报道：让机器人学会番茄炒蛋爆红网络的 Genesis AI 开源机器人训练场](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/genesis-world-1-open-physical-ai-sim-200h-to-30min-2026-05-29/genesis-cn-36kr-screenshot.png)
 
 国内同行第一时间在朋友圈、知乎、即刻上的反应比较一致：积极认可。一是因为 Genesis 团队过去几年低调出活，从去年那段炒菜视频到今天这份基础设施，每一步都对得上路；二是因为这份仓库是 Apache-2.0，没有像 Isaac Sim 那样在核心模块上留闭源后门，国内团队拿来就能改、改完可以商用、商用不用回馈代码。
 
@@ -73,7 +73,7 @@ Genesis AI 不是一支新冒出来的队伍。这支团队最早被海内外开
 
 要看清楚 Genesis World 1.0 在生态里的位置，必须把它和现役主流仿真栈摆在一张表里对照。
 
-![物理仿真栈四家横评：从 MuJoCo 到 Genesis World 1.0](physics-sim-stack-bakeoff-2026-05-29.png)
+![物理仿真栈四家横评：从 MuJoCo 到 Genesis World 1.0](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/genesis-world-1-open-physical-ai-sim-200h-to-30min-2026-05-29/physics-sim-stack-bakeoff-2026-05-29.png)
 
 MuJoCo（DeepMind 美 · Apache-2.0）是这条赛道上活得最久、用户群最广的物理引擎。它的强项是刚体动力学和关节求解，代码精炼、文档清晰、社区论文多；MJX 这条 JAX 后端的分支也让它在 RL 训练里继续保持竞争力。但 MuJoCo 在柔性体、布料、流体这几个范畴上一直偏弱，这也是为什么烹饪、拆解、缝合、清洁这类任务在 MuJoCo 圈子里始终是研究热点而不是工业话题。
 
@@ -83,7 +83,7 @@ Isaac Sim（英伟达美 · BSD-3 + 闭源核心）是工业 Robotics 的标杆�
 
 Genesis World 1.0 在这四家里的占位非常清楚：**它把 MuJoCo 的精炼、Isaac Sim 的工业级广度、上一代 Genesis 的多物理范畴这三家长板，第一次合在一份 Apache-2.0 开源仓里，并且额外补上了一个 MuJoCo 和 Isaac Sim 都没有的跨平台 GPU 编译器层**。
 
-![36氪报道里截取的 Genesis World 1.0 三件套架构示意](genesis-cn-36kr-architecture.png)
+![36氪报道里截取的 Genesis World 1.0 三件套架构示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/genesis-world-1-open-physical-ai-sim-200h-to-30min-2026-05-29/genesis-cn-36kr-architecture.png)
 
 | 维度 | MuJoCo | Isaac Sim | Genesis 0.x | Genesis World 1.0 |
 |---|---|---|---|---|
@@ -139,7 +139,7 @@ Nyx 在 Genesis 组织下还另开了一个独立仓库（genesis-nyx），方�
 | 相关系数 | Pearson r = 0.8996 |
 | 压缩倍数 | 约 400 倍 |
 
-![200 小时真实评测 vs 30 分钟仿真评测对照](genesis-200h-vs-30min-2026-05-29.png)
+![200 小时真实评测 vs 30 分钟仿真评测对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/genesis-world-1-open-physical-ai-sim-200h-to-30min-2026-05-29/genesis-200h-vs-30min-2026-05-29.png)
 
 这里要保留两条诚实标注。一是 14 任务是 Genesis 团队选的，未必覆盖国内同行最关心的所有场景（比如户外移动操作、双臂协作、超长时序烹饪流程都不在公开列表里），其他团队拿过去复现时可能拿不到 0.8996 这个数字。二是 Pearson 相关只衡量「排序一致性」，不衡量绝对成功率差异——仿真里 95%、真机 70% 也可能拿到高相关性，这意味着仿真评测可以做策略筛选，但不能直接替代真机部署前的最后一轮验证。
 

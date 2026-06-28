@@ -4,7 +4,7 @@
 >
 > 真实定位不是"反超 GPT-5.4"。V4-Pro 的 SWE-Bench Pro 55.4 分，低于 Kimi K2.6（58.6）、GPT-5.4 xhigh（57.7）和 Claude Opus 4.6 Max（57.3）三家。看点是另外三件事：**1M 上下文开源独家**、**输出价 ¥24/M 是 Claude Opus 4.7 的 1/7.5**、**华为昇腾深度适配**（但未完全脱 CUDA）。
 
-![DeepSeek V4 开源 · 1.6T MoE + 1M 上下文 + MIT License](deepseek-v4-article-cover.png)
+![DeepSeek V4 开源 · 1.6T MoE + 1M 上下文 + MIT License](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/deepseek-v4-release/deepseek-v4-article-cover.png)
 
 ---
 
@@ -21,7 +21,7 @@
 
 官方口径是 "Preview"（预览版），正式版时间未公告。没有单独拆 Coder / Math / VL 变体——同一个 Pro 模型同时吃文本、代码、推理。
 
-![V4-Pro 与 V4-Flash 官方规格对比](deepseek-v4-pro-flash-specs.png)
+![V4-Pro 与 V4-Flash 官方规格对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/deepseek-v4-release/deepseek-v4-pro-flash-specs.png)
 
 *图片来源：新浪财经 2026-04-24 转载 DeepSeek 官方规格对比表*
 
@@ -43,7 +43,7 @@
 
 **一年前被 V3 带火的 MLA（Multi-head Latent Attention）已经不够用。** V4 上了一套组合拳：
 
-![V4 注意力机制技术说明图](deepseek-v4-attention-arch.png)
+![V4 注意力机制技术说明图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/deepseek-v4-release/deepseek-v4-attention-arch.png)
 
 *图片来源：新浪财经 2026-04-24 DeepSeek 官方注意力机制图解*
 
@@ -76,7 +76,7 @@ V4-Pro 的 MoE 专家跑 **FP4**（4-bit 浮点），其余层（attention、gat
 
 ## 三、📊 Benchmark：强在 Codeforces，弱在 SWE-Bench Pro
 
-![V4-Pro 官方 benchmark vs Claude Opus 4.6 Max / GPT-5.4 xHigh / Gemini 3.1 Pro High](deepseek-v4-hf-benchmark.png)
+![V4-Pro 官方 benchmark vs Claude Opus 4.6 Max / GPT-5.4 xHigh / Gemini 3.1 Pro High](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/deepseek-v4-release/deepseek-v4-hf-benchmark.png)
 
 *图片来源：HuggingFace deepseek-ai/DeepSeek-V4-Pro 官方 model card · assets/dsv4_performance.png*
 
@@ -160,7 +160,7 @@ DeepSeek 没官方声明"V4 脱离 CUDA"。技术栈同时保留 NVIDIA 和华�
 
 **V4 对英伟达的真实冲击**：不在性能级（昇腾仍慢 40%），在**叙事级**——打破"前沿模型必须跑在 NVIDIA 上"的心智绑定。冲的是议价权和股价故事，不是市场份额。
 
-![V4 发布当天国产 AI 芯片股拉升 · 海光信息 +6%、寒武纪 +1%](deepseek-v4-chip-stocks.jpg)
+![V4 发布当天国产 AI 芯片股拉升 · 海光信息 +6%、寒武纪 +1%](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/deepseek-v4-release/deepseek-v4-chip-stocks.jpg)
 
 *图片来源：每日经济新闻 2026-04-24《DeepSeek-V4 预览版本正式上线并开源》行情截图*
 
@@ -196,7 +196,7 @@ Qwen3.6-Max 4 月 20 日首次闭源后，国产开源前沿阵营只剩三家�
 
 ### 方式 1：网页端（最快，零配置）
 
-![chat.deepseek.com 新版三模式：default / expert / vision](deepseek-v4-chat-interface.png)
+![chat.deepseek.com 新版三模式：default / expert / vision](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/deepseek-v4-release/deepseek-v4-chat-interface.png)
 
 *图片来源：量子位 2026-04-24 实测 chat.deepseek.com 新版界面*
 
@@ -244,7 +244,7 @@ curl https://api.deepseek.com/anthropic/v1/messages \
 
 ## 八、👤 实测：Expert 和 Fast 差在哪
 
-![V4 快速模式与专家模式的代码生成对比动图](deepseek-v4-tetris-gif.gif)
+![V4 快速模式与专家模式的代码生成对比动图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/deepseek-v4-release/deepseek-v4-tetris-gif.gif)
 
 *图片来源：量子位 V4 双模式实测动图*
 

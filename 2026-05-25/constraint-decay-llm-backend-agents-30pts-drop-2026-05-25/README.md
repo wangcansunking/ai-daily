@@ -15,7 +15,7 @@ authors:
 
 # Coding Agent 写 FastAPI 掉 30 个百分点
 
-![LLM 后端代码 constraint decay：约束累积 30 个百分点通过率断崖](constraint-decay-llm-backend-agents-30pts-drop-2026-05-25.png)
+![LLM 后端代码 constraint decay：约束累积 30 个百分点通过率断崖](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/constraint-decay-llm-backend-agents-30pts-drop-2026-05-25/constraint-decay-llm-backend-agents-30pts-drop-2026-05-25.png)
 
 > 5 月 22 日，意大利 EURECOM 团队 Francesco Dente、Dario Satriani、Paolo Papotti 把一份 100 任务、8 框架、5 模型的后端代码生成 benchmark 摆上 arXiv（论文 ID `2605.06445`，正文不放原文链接）。结论一句话：**LLM agent 写后端代码，一旦把"结构约束"层层叠加上去——typed schema、ORM、鉴权、迁移——断言通过率会从 L0 基线的 56% 直接掉到 L3 全规约的 26%，平均下降 30 个百分点**。轻约束的 Express、Koa、Flask 还能跑到 50% 上下，约定密集的 FastAPI、Django 跌到 24%，差距 25-32 个百分点。错因分析里最显眼的一项：数据层（查询逻辑 + ORM 运行时）占到逻辑错误的 46.5%。
 
@@ -37,7 +37,7 @@ authors:
 
 接下来一节一节往下拆。
 
-![arXiv 2605.06445 论文首页：Constraint Decay The Fragility of LLM Agents in Backend Code Generation](constraint-decay-arxiv-hero.png)
+![arXiv 2605.06445 论文首页：Constraint Decay The Fragility of LLM Agents in Backend Code Generation](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/constraint-decay-llm-backend-agents-30pts-drop-2026-05-25/constraint-decay-arxiv-hero.png)
 
 ## 一、100 任务 benchmark 的核心结构：5 个模型 × 8 个框架 × 4 个约束档
 
@@ -71,7 +71,7 @@ authors:
 
 把曲线画出来最直观。
 
-![L0→L3 约束累积下的通过率断崖曲线](constraint-decay-curve.png)
+![L0→L3 约束累积下的通过率断崖曲线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/constraint-decay-llm-backend-agents-30pts-drop-2026-05-25/constraint-decay-curve.png)
 
 四条主曲线（Qwen3-235B、GPT-5.2、Kimi-K2.5、MiniMax-M2.5）在 L0 基本都在 50% 上下，L3 都掉到 20% 出头。Qwen3-235B 从 56.2% → 41.5% → 31.4% → 26.1%，每一档掉 10-15 个百分点。GPT-5.2 走势几乎一模一样：54.8% → 40.2% → 30.1% → 24.5%。Kimi-K2.5 从 51% 起步，掉到 22%。MiniMax-M2.5 起步就低（48.5%），L3 掉到 18.9%。
 
@@ -85,7 +85,7 @@ authors:
 
 把 8 个框架的平均 A%（跨所有约束档平均）摆开看，差距更直观。
 
-![8 个框架平均 A%：轻约束与重约束差 25-32 个百分点](constraint-decay-frameworks.png)
+![8 个框架平均 A%：轻约束与重约束差 25-32 个百分点](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/constraint-decay-llm-backend-agents-30pts-drop-2026-05-25/constraint-decay-frameworks.png)
 
 | 框架 | 生态 | 平均 A% | 约束密度 |
 |---|---|---|---|
@@ -110,7 +110,7 @@ Hono 排末位（18.5%）有点意外，但论文的解释合理——Hono 是 2
 
 约束的塌方有个具体位置——数据层。这是论文 Table 5 的核心发现。
 
-![逻辑错误来源构成：数据层占 46.5%](constraint-decay-failure-breakdown.png)
+![逻辑错误来源构成：数据层占 46.5%](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/constraint-decay-llm-backend-agents-30pts-drop-2026-05-25/constraint-decay-failure-breakdown.png)
 
 把 Qwen3-235B 顶配档跑出来的所有逻辑错误（不算编译错、不算类型错，只算"代码能跑但跑出错结果"的那一类）按错因分类：
 
@@ -173,7 +173,7 @@ Hono 排末位（18.5%）有点意外，但论文的解释合理——Hono 是 2
 
 论文里 Qwen3-Coder-Next 是直接测过的，Kimi-K2.5 也直接测过。其他几家我们结合 SWE-Bench / SWE-Bench Pro 公开成绩、官方博客、知乎掘金的实测博文做对位估算，画在一张图里——口径不完全等同于论文 benchmark，但相对位次有参考价值。
 
-![国产 Coding Agent × 框架约束档：Flask 都能跑、FastAPI/Django 普遍掉档](constraint-decay-domestic.png)
+![国产 Coding Agent × 框架约束档：Flask 都能跑、FastAPI/Django 普遍掉档](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/constraint-decay-llm-backend-agents-30pts-drop-2026-05-25/constraint-decay-domestic.png)
 
 | Agent | Flask（轻约束） | FastAPI（typed schema） | Django（ORM + 约定） |
 |---|---|---|---|
@@ -198,7 +198,7 @@ Hono 排末位（18.5%）有点意外，但论文的解释合理——Hono 是 2
 
 constraint decay 是当下范式问题，没有 silver bullet。但工程上可以做的事情不少，我们整理了 5 条今天就能上的路径：
 
-![国内工程师可落地的 5 条规避路径](constraint-decay-mitigation.png)
+![国内工程师可落地的 5 条规避路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/constraint-decay-llm-backend-agents-30pts-drop-2026-05-25/constraint-decay-mitigation.png)
 
 **第一条：Schema-first，把约束写在 system prompt 头部**。Pydantic schema、SQLModel 表定义、Prisma model 全部贴在 system prompt 最前面，让模型在每一次生成之前都"看见"约束。这条路径的核心思想是——**把隐式约束变成前置事实**。论文里没单独测这条，但 OpenHands 自带的 file-context 机制实际上就在做类似的事，L3 档比 Mini-SWE-Agent 高 5-8 个百分点。
 

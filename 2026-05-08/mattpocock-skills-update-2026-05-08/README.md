@@ -13,17 +13,17 @@ tags: [ai-coding, claude-code, agent-skills, mattpocock, plugin, tdd, diagnose, 
 
 # Matt Pocock 的 .claude 目录 11 天涨到 6.5 万⭐：从 21 个散文件变成插件
 
-![cover](mattpocock-skills-update-2026-05-08.png)
+![cover](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/mattpocock-skills-update-2026-05-08/mattpocock-skills-update-2026-05-08.png)
 
 5 月 8 日凌晨 4 点，把 `gh api repos/mattpocock/skills` 跑一遍，返回的字段比 11 天前那次刺眼很多：`stargazers_count: 65192`、`forks_count: 5616`、`open_issues_count: 24`、`subscribers_count: 489`，仓库大小 93 KB，最后一次 push 是 5 月 7 日 06:34 UTC——也就是不到一天前。4 月 26 日我们写第一篇时，这个仓库是 19,605⭐、1,641 fork、21 个并列在根目录的 skill 文件夹。11 天里，星标 3.3 倍、fork 3.4 倍、subscribers 多了 4 倍——这种增长曲线在 GitHub Trending 总榜上不算夸张，夸张的是 Matt 这 11 天里**没有把它当作一个躺平的明星仓库**：他重排了目录、加了 `.claude-plugin/plugin.json` 把整个 repo 装成了 Claude Code 插件、加了 3 个新 skill、把 4 个旧 skill 挪进 deprecated。这是一篇资深 TypeScript 教师把"我个人的 .claude 笔记"运营成"产品"的 11 天复盘。
 
-![README 顶部新加的 skills.sh badge + newsletter banner](mattpocock-skills-update-newsletter.png)
+![README 顶部新加的 skills.sh badge + newsletter banner](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/mattpocock-skills-update-2026-05-08/mattpocock-skills-update-newsletter.png)
 
 ## 11 天数字对账：星标 3.3 倍、fork 3.4 倍、订阅者 4 倍
 
 先把数字摆齐。下面这张表是 4 月 26 日和 5 月 8 日两次 GitHub API 实查的字段对比，不是热度感觉。
 
-![mattpocock/skills 11 天增长曲线](mattpocock-skills-update-growth.png)
+![mattpocock/skills 11 天增长曲线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/mattpocock-skills-update-2026-05-08/mattpocock-skills-update-growth.png)
 
 | 指标 | 4 月 26 日 | 5 月 8 日凌晨 | 变化 |
 |---|---|---|---|
@@ -76,7 +76,7 @@ tags: [ai-coding, claude-code, agent-skills, mattpocock, plugin, tdd, diagnose, 
 
 旁边那张目录树图是这次重排的全貌——21 个并列目录被切成了 6 个语义分组。
 
-![20 个 skill 按 4 大类归位](mattpocock-skills-update-tree.png)
+![20 个 skill 按 4 大类归位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/mattpocock-skills-update-2026-05-08/mattpocock-skills-update-tree.png)
 
 新结构是这样的：
 
@@ -99,7 +99,7 @@ tags: [ai-coding, claude-code, agent-skills, mattpocock, plugin, tdd, diagnose, 
 
 11 天里最实质的内容增量在 3 个新 skill。下面这张表是这 11 天里所有"新加 / 改名 / 弃用" 的清单。
 
-![新加 / 改名 / 弃用 11 天清单](mattpocock-skills-update-changes.png)
+![新加 / 改名 / 弃用 11 天清单](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/mattpocock-skills-update-2026-05-08/mattpocock-skills-update-changes.png)
 
 ### diagnose——给 bug 一份诊断纪律
 

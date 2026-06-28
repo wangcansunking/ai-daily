@@ -9,7 +9,7 @@ tags: ["Xata", "PostgreSQL", "copy-on-write", "数据库分支", "scale to zero"
 ---
 # Xata 把 Postgres 开源了：给每个 agent 一个秒建秒销的数据库分支
 
-![Xata 开源 Postgres 平台，主打存储层 copy-on-write 分支与缩容到零](xata-agent-postgres-cow-branch-2026-06-09.png)
+![Xata 开源 Postgres 平台，主打存储层 copy-on-write 分支与缩容到零](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/xata-agent-postgres-cow-branch-2026-06-09/xata-agent-postgres-cow-branch-2026-06-09.png)
 
 一个跑得正常的 AI 编程 agent，可能在十分钟里开出几十个数据库分支：试一条迁移、看看结果、留下能用的、丢掉跑坏的，再换一条路重来。人类开发者一天建一两次数据库副本就算多了，agent 一次任务就要几十上百次。这两种用法对数据库的要求，根本不是一回事。
 
@@ -49,7 +49,7 @@ agent 把这个假设打破了。Xata 在开源说明里列了 agent 的几个�
 
 数量级一旦到这里，问题就变味了。一个用户每天跑 10 个 agent，10 万用户就是 100 万个 agent;如果每个 agent 还要好几个库，那就是数百万个数据库同时存在。传统那套「按团队规模配一个库」的做法，到这个量级完全转不动。
 
-![Xata 开源公告页配图：把 TB 级数据库在几秒内复制成一个轻量分支](xata-agent-postgres-cow-branch-2026-06-09-img1.png)
+![Xata 开源公告页配图：把 TB 级数据库在几秒内复制成一个轻量分支](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/xata-agent-postgres-cow-branch-2026-06-09/xata-agent-postgres-cow-branch-2026-06-09-img1.png)
 
 ## 二、传统做法到底卡在哪
 
@@ -85,7 +85,7 @@ Xata 的解法核心是把分支做在存储层，用 copy-on-write（写时复�
 
 全量复制和 CoW 分支的差别，对照起来一目了然：
 
-![全量复制 vs copy-on-write 分支：前者按库大小线性增长，后者建分支耗时与库大小无关](xata-agent-postgres-cow-branch-2026-06-09-img2.png)
+![全量复制 vs copy-on-write 分支：前者按库大小线性增长，后者建分支耗时与库大小无关](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/xata-agent-postgres-cow-branch-2026-06-09/xata-agent-postgres-cow-branch-2026-06-09-img2.png)
 
 存储层的实现也值得一提，因为它决定了分支不只是「建得快」，还得「跑得不慢」：
 
@@ -120,7 +120,7 @@ CoW 分支管「建得起、占得起」，缩容到零管「养得起」。两�
 - **模型可选、可扩展**：支持主流大模型供应商，也能接本地模型;工具侧能通过 MCP 接自定义能力。
 - **部署不重**：用 Docker 镜像跑，额外依赖只有一个用来存它自己配置、状态和历史的 Postgres。技术上是个用了 Vercel AI SDK 的 Next.js 应用，主要用 TypeScript 写。
 
-![Xata Agent：开源的 PostgreSQL 运维 agent，盯指标日志、按 playbook 诊断、原生接 RDS / Aurora / Cloud SQL](xata-agent-postgres-cow-branch-2026-06-09-img3.png)
+![Xata Agent：开源的 PostgreSQL 运维 agent，盯指标日志、按 playbook 诊断、原生接 RDS / Aurora / Cloud SQL](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/xata-agent-postgres-cow-branch-2026-06-09/xata-agent-postgres-cow-branch-2026-06-09-img3.png)
 
 把这两个项目放一起看，Xata 这次想表达的是一套完整的判断：agent 不只是数据库的「新用户」，它既会把数据库用出新形态（要海量短命分支），也能反过来帮你运维数据库（自动盯、自动诊断）。
 

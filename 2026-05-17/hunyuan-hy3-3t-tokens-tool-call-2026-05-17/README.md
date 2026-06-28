@@ -23,7 +23,7 @@ description: "腾讯混元 Hy3 preview 上线两周周调用 3.03 万亿 Token�
 
 # 混元 Hy3 周调用 3 万亿登顶 国内开发者怎么接
 
-![腾讯混元 Hy3 preview 周调用 3 万亿 Token 登顶 OpenRouter 封面 hunyuan ranking cover](hunyuan-hy3-3t-tokens-tool-call-2026-05-17.png)
+![腾讯混元 Hy3 preview 周调用 3 万亿 Token 登顶 OpenRouter 封面 hunyuan ranking cover](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/hunyuan-hy3-3t-tokens-tool-call-2026-05-17/hunyuan-hy3-3t-tokens-tool-call-2026-05-17.png)
 
 ## 全文核心：3 万亿不是泡沫，国产工具能力跟海外横评上桌
 
@@ -37,7 +37,7 @@ description: "腾讯混元 Hy3 preview 上线两周周调用 3.03 万亿 Token�
 
 把核心一句话先写出来：**混元 Hy3 这一波不是"腾讯赢了"叙事，而是国产大模型在质量、价格、生态三条腿上同时把门槛压低 — 对国内开发者来说，能用、能调、能落到自己产品里**。
 
-![OpenRouter 国内大模型周调用排行 4 月 27 至 5 月 3 日 hunyuan token ranking openrouter](hunyuan-hy3-token-ranking.png)
+![OpenRouter 国内大模型周调用排行 4 月 27 至 5 月 3 日 hunyuan token ranking openrouter](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/hunyuan-hy3-3t-tokens-tool-call-2026-05-17/hunyuan-hy3-token-ranking.png)
 
 ## 3.03 万亿 Token 怎么来的：单周 OpenRouter 榜单实拆
 
@@ -64,7 +64,7 @@ description: "腾讯混元 Hy3 preview 上线两周周调用 3.03 万亿 Token�
 
 混元 Hy3 是限时免费推的，那腾讯到底为这一波免费策略花了多少钱？看 Q1 财报披露的数字最直接。
 
-![腾讯 2026 Q1 AI 相关投入分布 capex 研发 基础设施 hunyuan q1 capex distribution](hunyuan-hy3-q1-capex.png)
+![腾讯 2026 Q1 AI 相关投入分布 capex 研发 基础设施 hunyuan q1 capex distribution](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/hunyuan-hy3-3t-tokens-tool-call-2026-05-17/hunyuan-hy3-q1-capex.png)
 
 2026 Q1 财报里跟 AI 直接相关的支出有五项：
 
@@ -78,7 +78,7 @@ description: "腾讯混元 Hy3 preview 上线两周周调用 3.03 万亿 Token�
 
 把单周的成本算个量级。假设混元 Hy3 单周 3.03 万亿 Token 中输入与输出比例为 4:1，那就是 2.42 万亿输入 + 0.61 万亿输出。按四档参考价分别估算单周成本：
 
-![混元 Hy3 单周 3 万亿 Token 免费调用四档成本估算 hunyuan free cost estimate](hunyuan-hy3-free-cost-estimate.png)
+![混元 Hy3 单周 3 万亿 Token 免费调用四档成本估算 hunyuan free cost estimate](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/hunyuan-hy3-3t-tokens-tool-call-2026-05-17/hunyuan-hy3-free-cost-estimate.png)
 
 - 腾讯自有算力边际成本（H800 折旧 + 电按 ¥0.3/M 综合估算）：单周约 0.9 亿元
 - OpenRouter 中位价（综合输入 ¥1.5/M）：单周约 4.5 亿元
@@ -97,7 +97,7 @@ description: "腾讯混元 Hy3 preview 上线两周周调用 3.03 万亿 Token�
 
 3 万亿调用量是表观数据，国内开发者更关心的是：**Hy3 真做 Agent、真调工具的时候表现怎么样**？
 
-![主流大模型工具调用能力对照 BFCL ToolBench 中位数 hunyuan tool call benchmark](hunyuan-hy3-tool-call-benchmark.png)
+![主流大模型工具调用能力对照 BFCL ToolBench 中位数 hunyuan tool call benchmark](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/hunyuan-hy3-3t-tokens-tool-call-2026-05-17/hunyuan-hy3-tool-call-benchmark.png)
 
 把当前主流大模型在工具调用三个维度的能力摆一张表（参考 BFCL V3 公开榜 + 第三方 ToolBench 横评近 30 天中位数）：
 
@@ -130,7 +130,7 @@ description: "腾讯混元 Hy3 preview 上线两周周调用 3.03 万亿 Token�
 
 模型再强，接不进自己产品也是别人的故事。混元 Hy3 跟其他几家大模型相比，最独特的优势在于 — **它直接绑着微信、腾讯文档、QQ 浏览器这三条流量主管道**。开发者要把 AI 能力放到读者手里，混元给的是离 C 端最近的三条路。
 
-![混元 Hy3 接入微信腾讯生态开发者三条路 hunyuan wechat integration paths](hunyuan-hy3-wechat-integration.png)
+![混元 Hy3 接入微信腾讯生态开发者三条路 hunyuan wechat integration paths](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/hunyuan-hy3-3t-tokens-tool-call-2026-05-17/hunyuan-hy3-wechat-integration.png)
 
 把三条路摊清楚。
 

@@ -8,7 +8,7 @@ description: OpenAI 5/8 一次发了三个实时语音模型，把"听 → 推�
 ---
 # OpenAI 三发实时语音 GPT-Realtime-2：把 GPT-5 推理塞进同传，传统 ASR+MT+TTS 流水线要被替代
 
-![封面](openai-gpt-realtime-2-voice-stack-2026-05-09.png)
+![封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/openai-gpt-realtime-2-voice-stack-2026-05-09/openai-gpt-realtime-2-voice-stack-2026-05-09.png)
 
 当地时间 2026 年 5 月 8 日凌晨，OpenAI 在官方博客一次性放出了三个实时语音模型——**GPT-Realtime-2**、**GPT-Realtime-Translate**、**GPT-Realtime-Whisper**——并宣布 Realtime API 正式结束 beta 进入 GA。北京时间当天 04:35，量子位抢出首发稿，36氪、新浪科技、IT 之家、网易科技、B 站 AI 早报全天跟进。
 
@@ -22,7 +22,7 @@ description: OpenAI 5/8 一次发了三个实时语音模型，把"听 → 推�
 
 OpenAI 这次发布走的是"分工套装"思路，不是单一旗舰。三个模型对应三类场景，价格也分开计费——可以理解成 OpenAI 把语音能力拆成了三档商品线。
 
-![三款模型规格](gpt-realtime-2-three-models-spec.png)
+![三款模型规格](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/openai-gpt-realtime-2-voice-stack-2026-05-09/gpt-realtime-2-three-models-spec.png)
 
 三款模型的关键差异：
 
@@ -56,7 +56,7 @@ Translate 模型是这次三发里最直接挑战国产同传赛道的一发。�
 
 **语种覆盖**：70+ 输入识别、13 输出语音。
 
-![语种覆盖](language-coverage-translate.png)
+![语种覆盖](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/openai-gpt-realtime-2-voice-stack-2026-05-09/language-coverage-translate.png)
 
 13 个输出语种刚好覆盖了主流出海市场——英语 / 中文 / 日语 / 韩语 / 西班牙语 / 法语 / 德语 / 葡萄牙语 / 意大利语 / 印地语 / 阿拉伯语 / 俄语 / 印尼语，这是一个明显冲着"全球 to-B 商业会议 + 跨境直播 + 国际播客"的市场切片。
 
@@ -82,7 +82,7 @@ Whisper 这条线很多人会以为只是把 Whisper-3 包了个流式接口，�
 
 把三发模型放在一起看，OpenAI 这次释放的不是产品，是**架构信号**。
 
-![流水线对比](realtime-pipeline-old-vs-new.png)
+![流水线对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/openai-gpt-realtime-2-voice-stack-2026-05-09/realtime-pipeline-old-vs-new.png)
 
 传统语音应用的拼装方式是这样的：
 
@@ -109,7 +109,7 @@ GPT-Realtime-2 一根 WebSocket 接进来，整套链路压成单一 API。**对
 
 这是中国开发者最关心的一章。**先把国产能力摆清楚，再看 OpenAI 这次是补短板还是开新场。**
 
-![国产对位](domestic-voice-models-comparison.png)
+![国产对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/openai-gpt-realtime-2-voice-stack-2026-05-09/domestic-voice-models-comparison.png)
 
 国内同档玩家的实力地图：
 
@@ -146,7 +146,7 @@ Kimi 实时语音延时约 3614 毫秒（第三方实测），主要在 App 内�
 
 把工程节奏摆出来——国产语音同行有完整能力跟进，关键看接入动作。
 
-![国产追赶节奏](domestic-catch-up-roadmap.png)
+![国产追赶节奏](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/openai-gpt-realtime-2-voice-stack-2026-05-09/domestic-catch-up-roadmap.png)
 
 **30 天内**：国产语音四家会陆续放出"对位 demo"——更多 SDK 接入豆包实时语音、通义 Qwen-Omni 出同传 demo、讯飞同传扩展更多语种切片。基础设施已经在，主要是产品包装和 API 暴露。
 

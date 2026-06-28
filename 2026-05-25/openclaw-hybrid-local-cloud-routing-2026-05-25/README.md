@@ -17,7 +17,7 @@ authors:
 
 # OpenClaw 混合路由：本地千问 + 云端 DeepSeek 80/20 真账
 
-![OpenClaw 混合路由封面](openclaw-hybrid-local-cloud-routing-2026-05-25.png)
+![OpenClaw 混合路由封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/openclaw-hybrid-local-cloud-routing-2026-05-25/openclaw-hybrid-local-cloud-routing-2026-05-25.png)
 
 ## 30 秒速览
 
@@ -29,7 +29,7 @@ authors:
 
 下面这一篇就把 OpenClaw 这个生态、本地 + 云端 8 档任务路由矩阵、Trae + Qwen Code + Cherry Studio 三条国内 IDE 接入路径、三方案一年总账拆开讲清。
 
-![OpenClaw 主项目 GitHub OG card](openclaw-main-gh-card.png)
+![OpenClaw 主项目 GitHub OG card](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/openclaw-hybrid-local-cloud-routing-2026-05-25/openclaw-main-gh-card.png)
 
 ## 一、OpenClaw 374k stars 是个什么生态
 
@@ -50,7 +50,7 @@ ClawRouter 是 BlockRunAI 团队 2025 年开始维护的路由层（github.com/B
 
 值得一提的是，ClawRouter 的付费链路用的是 USDC + x402 协议（基于 Base / Solana），**国内开发者实际付费有合规摩擦**——这条线对国内用户更多是"看技术架构"的参考价值，真要落地国内一般会换成 OpenAI 兼容协议直接挂自家 DeepSeek / 智谱 API key，绕开 USDC 付费层。
 
-![ClawRouter 仓库 GitHub OG card](clawrouter-gh-card.png)
+![ClawRouter 仓库 GitHub OG card](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/openclaw-hybrid-local-cloud-routing-2026-05-25/clawrouter-gh-card.png)
 
 ## 二、本地侧两道菜：千问 Coder 30B + GLM-4.6 Air
 
@@ -104,7 +104,7 @@ ClawRouter 是 BlockRunAI 团队 2025 年开始维护的路由层（github.com/B
 
 OpenRouter 国内中转截至 2026-05-25 的常见报价是 DeepSeek V3.2 在 $0.28-$0.42 区间（开源 coding 模型成本下限）；通过 OpenRouter 走 DeepSeek V4 输入价仍有第三方报价 $0.07 但未拿到官方背书，**真实合规走法是绕道 DeepSeek 官方 API 或华为云 / 阿里云 / 腾讯云的中转通道**。
 
-![DeepSeek V3 仓库 GitHub OG card](deepseek-v3-gh-card.png)
+![DeepSeek V3 仓库 GitHub OG card](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/openclaw-hybrid-local-cloud-routing-2026-05-25/deepseek-v3-gh-card.png)
 
 ## 四、8 档任务路由矩阵：把任务摆清楚
 
@@ -125,9 +125,9 @@ OpenRouter 国内中转截至 2026-05-25 的常见报价是 DeepSeek V3.2 在 $0
 
 ClawRouter 这一层可以把这张矩阵直接编码成路由规则——OpenClaw 收到一条用户请求时，ClawRouter 在 1ms 内完成 8 档分类，自动决定走哪个 provider。如果不用 ClawRouter，OpenClaw 也支持用户在 IM 渠道手动 `@千问` / `@DeepSeek` / `@Kimi` 显式选模型。
 
-![Cherry Studio 仓库 GitHub OG card](cherry-studio-gh-card.png)
+![Cherry Studio 仓库 GitHub OG card](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/openclaw-hybrid-local-cloud-routing-2026-05-25/cherry-studio-gh-card.png)
 
-![8 档任务路由矩阵](hybrid-routing-8tasks-matrix.png)
+![8 档任务路由矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/openclaw-hybrid-local-cloud-routing-2026-05-25/hybrid-routing-8tasks-matrix.png)
 
 ## 五、三方案一年总账：全云端、全本地、80/20 混合
 
@@ -182,7 +182,7 @@ ClawRouter 这一层可以把这张矩阵直接编码成路由规则——OpenCl
 
 混合方案的成本控制关键不是"省钱"，是**把高敏代码 100% 留本地、长上下文任务交给云端**。设备已有的存量 5090 / 4090 用户，月度只花 55 元就能跑满 80/20 全工作流；新购 5090 用户在前 3 年硬件折旧期内，混合方案与全本地方案差距很小，因为本地这边的边际成本主要是折旧 + 电费、不是 token 单价。
 
-![三方案月度成本对比](hybrid-routing-cost-3plans.png)
+![三方案月度成本对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/openclaw-hybrid-local-cloud-routing-2026-05-25/hybrid-routing-cost-3plans.png)
 
 ## 六、Trae + Qwen Code + Cherry Studio 三条国内 IDE 接入路径
 

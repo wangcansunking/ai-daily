@@ -24,7 +24,7 @@ description: "5 月 10 日 unix.foo 一篇博客冲上 HN 首页，48 小时拿�
 
 # 本地 AI 才是个人 AI 终局：Ollama 与千问、DeepSeek
 
-![本地 AI 才是个人 AI 终局封面](local-ai-norm-2026-05-14.png)
+![本地 AI 才是个人 AI 终局封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/local-ai-must-be-norm-2026-05-14/local-ai-norm-2026-05-14.png)
 
 5 月 10 日傍晚，一篇标题叫 *Local AI Needs to be the Norm* 的小博客冲上了 Hacker News 首页。作者 unix.foo 是个连个人简介都没写全的独立开发者，文章发出来 48 小时之内，顶贴拿下 **1860 分、740 条评论**，整整两天没掉出首页。我把 5 月 10–12 日 HN 顶贴的截图、整页评论翻完，又把 r/LocalLLaMA、知乎、CSDN、微信公众号那一阵子相关的讨论拉到一起对照——这是过去两个月里最干净的一次社区共识：**云端大模型只是过渡形态，本地 AI 才是个人 AI 的终局。**
 
@@ -36,7 +36,7 @@ description: "5 月 10 日 unix.foo 一篇博客冲上 HN 首页，48 小时拿�
 
 先看现象。
 
-![HN 顶贴现象快照：1860 分 / 740 条评论 / 48 小时首页停留](local-ai-norm-hn-top-snapshot.png)
+![HN 顶贴现象快照：1860 分 / 740 条评论 / 48 小时首页停留](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/local-ai-must-be-norm-2026-05-14/local-ai-norm-hn-top-snapshot.png)
 
 unix.foo 那篇博客的论证骨架非常短，三件事说完：
 
@@ -57,7 +57,7 @@ HN 顶贴里几条点赞最高的评论，把这个论证延伸到了具体使�
 
 把 unix.foo 那三件事翻成更精确的语言，国内开发者更熟悉的版本就是：**隐私越境、单点故障、租金税**。
 
-![云端大模型的三条结构性短板](local-ai-norm-three-sins-of-cloud.png)
+![云端大模型的三条结构性短板](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/local-ai-must-be-norm-2026-05-14/local-ai-norm-three-sins-of-cloud.png)
 
 这三条单独看每一条都有人反驳「能接受」，叠加在一起就完全不是一回事。
 
@@ -95,7 +95,7 @@ unix.foo 在原文里那句被反复引用——「You don't build trust with yo
 
 把云端 vs 本地的一年总成本摆一起，重度个人开发者这层的对位现在已经很扎眼：
 
-![重度个人开发者一年成本对位（保守口径）](local-ai-norm-cloud-vs-local-cost.png)
+![重度个人开发者一年成本对位（保守口径）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/local-ai-must-be-norm-2026-05-14/local-ai-norm-cloud-vs-local-cost.png)
 
 | 方案 | 一年总成本 | 备注 |
 |---|---|---|
@@ -110,7 +110,7 @@ unix.foo 在原文里那句被反复引用——「You don't build trust with yo
 
 具体到工具层，过去这两年逐渐稳定下来的格局是「三栈分工」：**Ollama 做开发体验层，llama.cpp 做底层引擎，Apple MLX 做苹果生态原生**。三者不是互相替代的关系，而是各占一段定位。
 
-![本地推理三栈定位（2026-05 实测口径）](local-ai-norm-three-stack-matrix.png)
+![本地推理三栈定位（2026-05 实测口径）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/local-ai-must-be-norm-2026-05-14/local-ai-norm-three-stack-matrix.png)
 
 ### Ollama：让本地模型像 docker pull 一样简单
 
@@ -140,7 +140,7 @@ MLX 是 Apple 自家做的 ML 框架，2024 年开源，原生利用 M 系列芯
 
 讲完工具栈，关键的一层是模型。过去半年最让人安心的事是——**国产模型在本地这一档的进步速度，超过了海外同档**。原因很简单：海外大厂主力放在云端旗舰，中型 / 小型模型迭代相对慢；中国厂商正好相反，**一边出 671B 旗舰，一边把同源蒸馏出的 7B / 14B / 30B-A3B 当一等公民做**，社区拿到手就能跑。
 
-![国产端侧 / 本地模型同档对位（2026-05）](local-ai-norm-cn-edge-models-matrix.png)
+![国产端侧 / 本地模型同档对位（2026-05）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/local-ai-must-be-norm-2026-05-14/local-ai-norm-cn-edge-models-matrix.png)
 
 把当前这一档值得装机的国产本地模型列一遍：
 
@@ -157,7 +157,7 @@ MLX 是 Apple 自家做的 ML 框架，2024 年开源，原生利用 M 系列芯
 
 这一节最难写的不是数据，是把「体验」翻译成具体的话。我把过去这一周 r/LocalLLaMA、知乎、CSDN、HN 顶贴、几个微信公众号读者来信里最具体的描述汇总了一下，**真实开发者的话比评测数字更有说服力**：
 
-![六条来自一线开发者的真实声音](local-ai-norm-user-voices-bubble.png)
+![六条来自一线开发者的真实声音](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/local-ai-must-be-norm-2026-05-14/local-ai-norm-user-voices-bubble.png)
 
 - 「我把 Qwen3 30B-A3B 跑在三年前的 3090 上，写代码体验和云端 Claude 已经没拉开本质差距。」（r/LocalLLaMA 周更帖 412 赞）
 - 「OpenClaw 默认包跑在我笔记本上，断网开飞机模式照样写日报，再不慌服务器繁忙四个字。」（知乎匿名用户 1.2k 赞）

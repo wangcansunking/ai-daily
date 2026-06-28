@@ -11,7 +11,7 @@ weekday: "星期一"
 ---
 # 三个全天候个人 AI 助手，国内怎么选
 
-![三个全天候个人 AI 助手如同夜里持续运行的光球，谷歌 Spark 借一束光连向远端云端数据中心，在设备休眠时仍在工作](gemini-spark-always-on-agent-showdown-2026-06-01.png)
+![三个全天候个人 AI 助手如同夜里持续运行的光球，谷歌 Spark 借一束光连向远端云端数据中心，在设备休眠时仍在工作](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/gemini-spark-always-on-agent-showdown-2026-06-01/gemini-spark-always-on-agent-showdown-2026-06-01.png)
 
 100 美元一个月，换一个关了电脑还在替你干活的 AI 助手——这是谷歌 5 月 30 日摆到美区用户面前的价码。这一天，谷歌把 I/O 上预告的 Gemini Spark 正式开放给了 Google AI Ultra 订阅者，安卓、iOS、网页端同时上线。它最招人的一句宣传是：给它一个任务，它在后台 7×24 小时干，**哪怕你的手机和笔记本都关着机。**
 
@@ -25,7 +25,7 @@ weekday: "星期一"
 
 这决定了它那句"设备关机也在干活"不是营销话术。传统的 AI 助手要么是你打开 App 跟它聊、关了就停，要么是装在你电脑上、电脑睡眠它也跟着停。Spark 把执行环节整个挪到了谷歌的服务器：你下了一个指令，比如"盯着这几家公司的实习岗位、有新的就整理给我"，它就在云端持续跑这个任务，你这边手机锁屏、笔记本合盖，都不影响它继续盯。
 
-![谷歌 Gemini 官方页面对 Spark 的定位：7×24 小时在你身边，给它任务它在后台一直做](source-spark-gemini-overview-2026-06-01.png)
+![谷歌 Gemini 官方页面对 Spark 的定位：7×24 小时在你身边，给它任务它在后台一直做](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/gemini-spark-always-on-agent-showdown-2026-06-01/source-spark-gemini-overview-2026-06-01.png)
 
 底层模型是谷歌 5 月 19 日发布的 Gemini 3.5 Flash，外面套着一层名叫 Antigravity 的智能体框架——这是谷歌那套能并行调度多个子任务的智能体平台。谷歌把 3.5 Flash 定位成"为行动而生、不只是回答问题"的默认模型，Gemini App 和搜索里的 AI 模式现在都换成了它，Spark 是它在"个人助手"这条线上的落地。
 
@@ -67,7 +67,7 @@ Anthropic 给它的定位是"给其余工作用的 Claude Code"。Claude Code �
 
 它的工作方式是：你在 ChatGPT 里点开"Tools"选 agent 模式，用大白话描述任务，它就在一台自带的虚拟电脑上开干——这台虚拟机里有可视化浏览器、纯文本浏览器、能跑代码的终端，还能连 Gmail、GitHub 这些应用拉数据。需要登录的网站，它会开一个特殊的浏览器视图让你安全登进去，它再接着深入操作，比如查收件箱、替你填表。它是 OpenAI 把更早的 Operator（网页操作）和 Deep Research（深度检索）两个工具合并升级来的，能在浏览、跑代码、出文件之间无缝切换，整个过程你随时能打断、改方向、暂停，它从断点接着来。
 
-![Anthropic Claude Cowork 把同一份智能体能力做成桌面版，直接在你电脑的本地文件和应用里干活](source-spark-claude-cowork-2026-06-01.png)
+![Anthropic Claude Cowork 把同一份智能体能力做成桌面版，直接在你电脑的本地文件和应用里干活](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/gemini-spark-always-on-agent-showdown-2026-06-01/source-spark-claude-cowork-2026-06-01.png)
 
 但它和前两家最大的区别是：**ChatGPT Agent 是"一次会话"的智能体，会话结束、任务交付，它就停了，不会在你不在的时候继续替你盯着什么。** 它没有 Spark 那种云端常驻，也没有 Cowork 那种派发后台。你要它干什么，它当场干完给你，仅此而已。这让它更像一个随叫随到、能力很强的临时工，而不是一个一直在岗的助手。
 
@@ -77,7 +77,7 @@ Anthropic 给它的定位是"给其余工作用的 Claude Code"。Claude Code �
 
 把上面三段拆开的东西并到一起，差异就清楚了。下面这张表把架构、价格、国内可用性放在一处，方便直接对照。
 
-![三家全天候个人 AI 助手横评表：运行位置、设备关机后是否继续跑、触发方式、入门月费、任务配额、国内可用性逐项对照](source-spark-three-way-matrix-2026-06-01.png)
+![三家全天候个人 AI 助手横评表：运行位置、设备关机后是否继续跑、触发方式、入门月费、任务配额、国内可用性逐项对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/gemini-spark-always-on-agent-showdown-2026-06-01/source-spark-three-way-matrix-2026-06-01.png)
 
 几个判断可以直接落下来：
 
@@ -99,7 +99,7 @@ Anthropic 给它的定位是"给其余工作用的 Claude Code"。Claude Code �
 - **月之暗面 Kimi**：Kimi K2.5 本身有很强的工具调用和智能体能力，官方提供了一整套工具（联网搜索、代码执行、Excel 分析、记忆存储等），开发者能基于它快速搭专业智能体。它的长处在长文本理解和多文档处理，更偏内容创作和专业文档分析，办公自动化、定时任务这类"全场景事务"覆盖得相对浅一些。
 - **开源这一支也热闹**：像 CountBot 这类轻量中文优先框架，两万行出头的代码就实现了记忆系统、定时任务、多渠道（飞书/钉钉/QQ/微信），深度适配智谱、千问、Kimi、MiniMax、DeepSeek 这些国产模型，给想自己折腾的开发者留了口子。
 
-![两条架构主线映射图：云端常驻一线海外是谷歌 Spark、国内对位字节 ArkClaw，本地优先一线海外是 Claude Cowork、国内对位智谱 AutoClaw，ChatGPT Agent 走会话触发第三条路单列](source-spark-route-map-2026-06-01.png)
+![两条架构主线映射图：云端常驻一线海外是谷歌 Spark、国内对位字节 ArkClaw，本地优先一线海外是 Claude Cowork、国内对位智谱 AutoClaw，ChatGPT Agent 走会话触发第三条路单列](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/gemini-spark-always-on-agent-showdown-2026-06-01/source-spark-route-map-2026-06-01.png)
 
 所以格局大致是这样：**海外三家用三条不同的架构定义了"全天候个人助手"该长什么样，国内则沿着同样的两条主线——云端常驻（字节 ArkClaw）和本地优先（智谱 AutoClaw）——给出了能落地的对位答案，模型底座换成了 GLM、Kimi、豆包、千问这些国产大模型。** 对国内用户来说，想要 Spark 那种"关机也在跑"的体验，ArkClaw 是现成的路；想要 Cowork 那种"数据在本地"的踏实，AutoClaw 和开源框架都能上手。
 

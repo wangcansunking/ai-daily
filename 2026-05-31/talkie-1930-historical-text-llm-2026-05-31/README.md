@@ -12,7 +12,7 @@ weekday: "星期日"
 
 # GPT 之父训了个 1930 年的模型：只读古书，却写出了 Python
 
-![Alec Radford 等人发布 talkie：一个只用 1931 年前文本训练的 130 亿参数复古语言模型](talkie-1930-historical-text-llm-2026-05-31.png)
+![Alec Radford 等人发布 talkie：一个只用 1931 年前文本训练的 130 亿参数复古语言模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/talkie-1930-historical-text-llm-2026-05-31/talkie-1930-historical-text-llm-2026-05-31.png)
 
 一个只读过 1931 年以前书报的 130 亿参数模型，被丢去做 Python 编程题，居然答对了几道——而 Python 这门语言要等到 1991 年才被发明出来。
 
@@ -30,7 +30,7 @@ weekday: "星期日"
 
 talkie 把这个问题一刀切干净了。它训练数据里最晚的文本停在 1930 年，而几乎所有现代评测集都诞生在那之后。
 
-![数据时代性对照：talkie 复古语料止于 1931 年，现代大模型语料延伸到当下，Python 诞生于 1991 年](talkie-corpus-timeline-2026-05-31.png)
+![数据时代性对照：talkie 复古语料止于 1931 年，现代大模型语料延伸到当下，Python 诞生于 1991 年](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/talkie-1930-historical-text-llm-2026-05-31/talkie-corpus-timeline-2026-05-31.png)
 
 用作者自己的话说，这是一个"干净的实验环境，用来测一个语言模型能在多大程度上泛化到它预训练数据之外"。换句话说：**当我们能 100% 确定模型从没见过某类知识时，它在相关任务上的表现，就是泛化能力的纯净读数，没有任何记忆的水分。**
 
@@ -57,7 +57,7 @@ talkie 把这个问题一刀切干净了。它训练数据里最晚的文本停�
 | 专利 | 专利说明书 |
 | 判例 | 法律判决文书 |
 
-![talkie 复古语料里的真实样张：1935 年飞行器专利图、图灵 1936 年《论可计算数》论文、1942 年专利文献](source-talkie-papers-composite-2026-05-31.png)
+![talkie 复古语料里的真实样张：1935 年飞行器专利图、图灵 1936 年《论可计算数》论文、1942 年专利文献](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/talkie-1930-historical-text-llm-2026-05-31/source-talkie-papers-composite-2026-05-31.png)
 
 <small>来源：talkie 项目页展示的语料样张</small>
 
@@ -91,11 +91,11 @@ talkie 把这个问题一刀切干净了。它训练数据里最晚的文本停�
 
 作者的解法分两步走，核心是**让现代模型只教"怎么说话"，绝不教"说什么内容"**。
 
-![talkie 训练流程：复古语料预训练出基座模型，再用 Claude Opus 4.6 生成对话、Claude Sonnet 4.6 当裁判做对齐](talkie-pipeline-flow-2026-05-31.png)
+![talkie 训练流程：复古语料预训练出基座模型，再用 Claude Opus 4.6 生成对话、Claude Sonnet 4.6 当裁判做对齐](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/talkie-1930-historical-text-llm-2026-05-31/talkie-pipeline-flow-2026-05-31.png)
 
 第一步是**找到 1930 年自己的"对话教材"**。那个年代虽然没有聊天机器人，却有大量结构化的指导类文本——礼仪手册、书信写作指南、菜谱、字典、百科全书。这些文本天然带着"提问—回答""指令—执行"的格式。作者先用这类古籍给模型做了初步微调，让它学会"被问就答"的基本姿态。
 
-![talkie 用作微调素材的 1930 年代指导类古籍：礼仪手册、社交礼节读本、书信写作指南](source-talkie-posttraining-composite-2026-05-31.png)
+![talkie 用作微调素材的 1930 年代指导类古籍：礼仪手册、社交礼节读本、书信写作指南](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/talkie-1930-historical-text-llm-2026-05-31/source-talkie-posttraining-composite-2026-05-31.png)
 
 <small>来源：talkie 项目页展示的后训练素材样张</small>
 
@@ -124,7 +124,7 @@ talkie 把这个问题一刀切干净了。它训练数据里最晚的文本停�
 - **再往后**：把语料扩到一万亿 token 以上，目标做出一个 GPT-3.5 级别、能力接近初代 ChatGPT 的复古模型
 - **多语种**：把英文之外的公有领域文本也纳进来
 
-![talkie-1930-13b 在 HuggingFace 上的模型卡，可下载基座版与指令微调版](source-talkie-hf-modelcard-2026-05-31.png)
+![talkie-1930-13b 在 HuggingFace 上的模型卡，可下载基座版与指令微调版](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/talkie-1930-historical-text-llm-2026-05-31/source-talkie-hf-modelcard-2026-05-31.png)
 
 <small>来源：talkie-1930-13b-base 模型卡</small>
 

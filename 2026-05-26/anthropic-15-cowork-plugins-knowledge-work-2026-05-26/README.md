@@ -11,7 +11,7 @@ description: Anthropic 把自家 17 个工种的 plugin 全部开源到 anthropi
 ---
 # Anthropic 一次开源 17 个工种 plugin：212 个 skill 全家桶，财务、销售、市场也能挂进 Claude Code
 
-![Anthropic 17 工种 plugin 全家桶封面](anthropic-15-cowork-plugins-knowledge-work-2026-05-26.png)
+![Anthropic 17 工种 plugin 全家桶封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/anthropic-15-cowork-plugins-knowledge-work-2026-05-26/anthropic-15-cowork-plugins-knowledge-work-2026-05-26.png)
 
 ## 30 秒速览
 
@@ -23,7 +23,7 @@ description: Anthropic 把自家 17 个工种的 plugin 全部开源到 anthropi
 - **安装一行命令**：`claude plugin marketplace add anthropics/knowledge-work-plugins && claude plugin install finance@knowledge-work-plugins`
 - **历史节奏**：1 月 30 日首发 11 个 plugin，2 月 24 日企业版扩展，5 月 12 日加 small-business，5 月 18-21 日批量修 MCP 死链 + 给每个 marketplace 项目补 displayName
 
-![Cowork plugin 总盘 49 个 · 一方 17 + 合作伙伴打包 5 + 外部独立仓 27](anthropic-cowork-marketplace-49.png)
+![Cowork plugin 总盘 49 个 · 一方 17 + 合作伙伴打包 5 + 外部独立仓 27](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/anthropic-15-cowork-plugins-knowledge-work-2026-05-26/anthropic-cowork-marketplace-49.png)
 
 ## 一、Cowork 这个产品，和它为什么要把 17 个 plugin 全部开源
 
@@ -70,7 +70,7 @@ Anthropic 在 2026-01-12 推出 Claude Cowork，定位是「面向不会写代�
 | **+ 合作伙伴随仓 5 个**（apollo / brand-voice / common-room / slack / zoom-plugin） | **71 个**（其中 zoom-plugin 57 个） | — | — |
 | **= 仓库内总计** | **212 个 SKILL.md** | — | — |
 
-![17 个一方 plugin 的 skill 数对比 · skills 是 Claude 自动调用的领域知识](anthropic-cowork-skills-per-plugin.png)
+![17 个一方 plugin 的 skill 数对比 · skills 是 Claude 自动调用的领域知识](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/anthropic-15-cowork-plugins-knowledge-work-2026-05-26/anthropic-cowork-skills-per-plugin.png)
 
 几个细节值得展开：
 
@@ -92,7 +92,7 @@ engineering 的 10 个 skill 也很全：架构设计、代码评审、调试、
 
 挑 finance 来拆，因为它是最典型的「领域知识 + 外部数据库 + 工作流」三件套。
 
-![一个 plugin 的三件套：skills + commands + MCP 接口](anthropic-cowork-anatomy.png)
+![一个 plugin 的三件套：skills + commands + MCP 接口](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/anthropic-15-cowork-plugins-knowledge-work-2026-05-26/anthropic-cowork-anatomy.png)
 
 `finance/` 目录下的结构：
 
@@ -207,7 +207,7 @@ Anthropic 提供的兜底方案：所有 skill 都设计成「不连数据源也
 
 国内有三家在做类似的事：
 
-![Anthropic Cowork plugins vs 国内办公 AI 助手 · 6 维对照](anthropic-cowork-cn-alternatives.png)
+![Anthropic Cowork plugins vs 国内办公 AI 助手 · 6 维对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/anthropic-15-cowork-plugins-knowledge-work-2026-05-26/anthropic-cowork-cn-alternatives.png)
 
 **飞书智能伙伴**：飞书把 AI 助手做成「场景包」——文档润色、表格函数、会议纪要、人事审批。优势是和飞书生态深度耦合：你的多维表、群消息、会议录音 Claude 都直接调得到，不需要装 MCP。劣势是这些场景包闭源，你想加一个「合规自查」助手只能走飞书的低代码平台搭，不能 fork 一份改 markdown 就上。
 

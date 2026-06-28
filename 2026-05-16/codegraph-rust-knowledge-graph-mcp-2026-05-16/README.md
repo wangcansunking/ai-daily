@@ -26,7 +26,7 @@ description: "Jakedismo/codegraph-rust 是 Finland 单作者 8 个月写出来�
 
 # Claude Code 终于看得懂大仓库：CodeGraph 上场
 
-![CodeGraph Rust 代码知识图谱 MCP 封面](codegraph-rust-mcp-2026-05-16.png)
+![CodeGraph Rust 代码知识图谱 MCP 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/codegraph-rust-knowledge-graph-mcp-2026-05-16/codegraph-rust-mcp-2026-05-16.png)
 
 8 个月时间，单作者，一个 GitHub 主页除了这个项目什么都没有的 Finland 开发者 Jakedismo，安安静静把一个 Rust workspace 写到了 12 个 crate、15 个安装脚本变体、`schema/` 下面同时维护关系型与图数据库两套 SurrealQL schema 的体量。这个仓 **681 stars / 63 forks / 32 open issues / MIT OR Apache-2.0 双协议**，createdAt 是 2025-09-12，pushed_at 还停在 2025-12-20——也就是说，这是个已经成型但还没进入营销推广期的项目。
 
@@ -38,7 +38,7 @@ description: "Jakedismo/codegraph-rust 是 Finland 单作者 8 个月写出来�
 
 先把这一周看到的"Rust 单作者 coding 项目"放在一张地图上看。
 
-![Rust 代码图谱 / Agent Harness 类项目 star 横评](codegraph-stars-chart.png)
+![Rust 代码图谱 / Agent Harness 类项目 star 横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/codegraph-rust-knowledge-graph-mcp-2026-05-16/codegraph-stars-chart.png)
 
 近两周连续命中的同段位项目，技术站位差异其实非常大：
 
@@ -61,7 +61,7 @@ description: "Jakedismo/codegraph-rust 是 Finland 单作者 8 个月写出来�
 
 CodeGraph 没有遵循"MCP 服务器就暴露一堆细粒度工具"的常规打法。它 README 第二节明确写：**4 个 consolidated agentic tools**——`agentic_context` / `agentic_impact` / `agentic_architecture` / `agentic_quality`。
 
-![codegraph tool flow：agentic_impact 一次调用 vs 传统 grep+RAG 多次往返](codegraph-tool-flow.png)
+![codegraph tool flow：agentic_impact 一次调用 vs 传统 grep+RAG 多次往返](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/codegraph-rust-knowledge-graph-mcp-2026-05-16/codegraph-tool-flow.png)
 
 工具的职责分工 README 写得很清楚：
 
@@ -88,7 +88,7 @@ README 的解释是：**LLM 选工具是有 context 成本的**。给它 40 个�
 
 把代码理解外置成服务器，存储层和检索层是绕不开的硬骨头。CodeGraph 给的答案不太常见——**SurrealDB**。
 
-![SurrealDB 与 HNSW 向量索引（来源：surrealdb.com 官方）](codegraph-surrealdb-hero.jpg)
+![SurrealDB 与 HNSW 向量索引（来源：surrealdb.com 官方）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/codegraph-rust-knowledge-graph-mcp-2026-05-16/codegraph-surrealdb-hero.jpg)
 
 SurrealDB 是 Rust 写的多模数据库——同时支持文档、图、键值、向量四种范式，2024 年 1.0 GA。CodeGraph 选它有几个具体理由能从代码里读出来：
 
@@ -113,7 +113,7 @@ SurrealDB 是 Rust 写的多模数据库——同时支持文档、图、键值�
 
 国内开发者拿到一个海外开源项目最关心的两件事：依赖云 API 吗？能不能本地跑？CodeGraph 在这点上做得格外干净。
 
-![codegraph provider matrix：3 档索引 + Embedding/推理/DB 三层 + 国内三档搭配](codegraph-provider-matrix.png)
+![codegraph provider matrix：3 档索引 + Embedding/推理/DB 三层 + 国内三档搭配](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/codegraph-rust-knowledge-graph-mcp-2026-05-16/codegraph-provider-matrix.png)
 
 | 维度 | 可选 provider |
 |---|---|

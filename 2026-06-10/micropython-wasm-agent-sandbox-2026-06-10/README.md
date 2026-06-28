@@ -17,7 +17,7 @@ category: AI Coding · agent 代码执行沙箱
 
 本文要讲清的核心是一件事：**安全地"运行" agent 写的代码，是一道独立于"生成代码"的工程题，而 WASM 沙箱是一条值得国内团队认真评估的轻量解法。** 下面先看 Simon 这套东西到底是什么、隔离强度如何，再对位国内开发者熟悉的 Docker 沙箱、E2B 类云执行、Pyodide 三条路线讲清取舍，最后给出本地上手的锚点。
 
-![Simon Willison 博客文章《Running Python code in a sandbox with MicroPython and WASM》的分享卡片，2026 年 6 月 6 日发布。图片来源：simonwillison.net，2026-06-06](micropython-sandbox-source-blog-card.png)
+![Simon Willison 博客文章《Running Python code in a sandbox with MicroPython and WASM》的分享卡片，2026 年 6 月 6 日发布。图片来源：simonwillison.net，2026-06-06](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/micropython-wasm-agent-sandbox-2026-06-10/micropython-sandbox-source-blog-card.png)
 
 ## 一周内连发的三个包，分别解决执行、接入、编辑
 
@@ -29,7 +29,7 @@ category: AI Coding · agent 代码执行沙箱
 | datasette-agent-micropython | 0.1a0 | 6 月 2 日 | 把上面的沙箱包装成一个 `execute_micropython` 工具，暴露给 Datasette Agent 里的模型调用 |
 | datasette-agent-edit | 0.1a0 | 6 月 7 日 | 一套 `view` / `str_replace` / `insert` 的文本编辑工具，设计参照 Claude 的文件编辑工具 |
 
-![一周内发布的三个开源包对比：micropython-wasm 0.1a2 管执行、datasette-agent-micropython 0.1a0 管接入、datasette-agent-edit 0.1a0 管改文件。自制对比表](micropython-sandbox-chart2-three-packages.png)
+![一周内发布的三个开源包对比：micropython-wasm 0.1a2 管执行、datasette-agent-micropython 0.1a0 管接入、datasette-agent-edit 0.1a0 管改文件。自制对比表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/micropython-wasm-agent-sandbox-2026-06-10/micropython-sandbox-chart2-three-packages.png)
 
 三个包的版本号全是 `0.1a` 开头的 alpha 预发布。Simon 自己把话说得很直白：他特意打了 alpha 的版本号，"还没准备好推荐给任何不愿意承担明显风险的人"（据 Simon Willison，2026-06-06）。这一点后文谈隔离强度时会回扣——它现在的定位是一个可用、可玩、但别拿去扛生产流量的实验件。
 
@@ -54,7 +54,7 @@ micropython-wasm 的隔离强度，来自 WebAssembly 加 wasmtime 这套组合�
 
 fuel 这个机制值得单独说。它给每次执行一个"操作预算"，预算烧完调用就被掐断。Simon 试的默认值是 2000 万 fuel，但他坦言这个单位"很难直观理解"，自己也不确定这是不是最合适的值（据 Simon Willison，2026-06-06）。实际效果是：你写一段 `s = ""; while True: s += "longer"` 这样的死循环，fuel 烧完进程以退出码 1 结束，不会把机器拖垮。
 
-![四道隔离闸默认状态对比：网络默认关闭、文件系统默认无访问需显式预开只读目录、内存可配上限、CPU 用 fuel 燃料预算限制。自制示意图](micropython-sandbox-chart1-isolation-gates.png)
+![四道隔离闸默认状态对比：网络默认关闭、文件系统默认无访问需显式预开只读目录、内存可配上限、CPU 用 fuel 燃料预算限制。自制示意图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/micropython-wasm-agent-sandbox-2026-06-10/micropython-sandbox-chart1-isolation-gates.png)
 
 为什么选 WASM 而不是别的？Simon 给的理由是：JavaScript 引擎"极其复杂，而且本就不是为嵌入别的项目设计的"，而 WebAssembly"从一开始就是奔着我在意的这些特性去设计的，而且在浏览器里被测试了将近十年"（据 Simon Willison，2026-06-06）。换句话说，WASM 的隔离模型经过了浏览器多年的实战检验，比临时拿一个 JS 引擎来关代码要可靠。
 
@@ -106,7 +106,7 @@ with MicroPythonSession() as session:
 | 能跑的库 | MicroPython 精简库，无 pandas | 完整 CPython 加任意依赖 | 完整 CPython 加任意依赖 | 较完整 CPython 加部分科学栈 |
 | 依赖外部服务 | 无 | 需 Docker 守护进程 | 需第三方服务和账号 | 无 |
 
-![四条代码执行路线取舍对比：MicroPython 加 WASM、Docker 沙箱、E2B 类云执行、Pyodide，从隔离强度、启动开销、运行位置、能跑的库、外部依赖五个维度对照。自制对比表](micropython-sandbox-chart3-four-routes.png)
+![四条代码执行路线取舍对比：MicroPython 加 WASM、Docker 沙箱、E2B 类云执行、Pyodide，从隔离强度、启动开销、运行位置、能跑的库、外部依赖五个维度对照。自制对比表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/micropython-wasm-agent-sandbox-2026-06-10/micropython-sandbox-chart3-four-routes.png)
 
 口径说明：Docker、E2B、Pyodide 三列为本文基于公开认知的对位整理，非 Simon 原文逐条对比；Simon 原文明确提到的对照是 Pyodide——他指出 Pyodide 由 Emscripten 工具链构建，"只能在浏览器或 Node.js 里跑"（据 Simon Willison 引述，时间口径为其文中标注的 2024 年 10 月）。也就是说服务端的 Python-in-WASM，此前一直缺一个成熟选项，这正是 micropython-wasm 想补的位置。
 
@@ -164,7 +164,7 @@ pip install micropython-wasm
 
 它需要 Python 3.10 及以上，依赖官方的 wasmtime 模块，许可证是 Apache-2.0。项目仓库目前约 98 星（口径为本文核验时的近似值，星数会变）。要把它接到 agent 上，再装 datasette-agent-micropython，模型那边就会多出一个 `execute_micropython` 工具，每个对话各自维持独立的解释器状态，输出从 `print()` 的 stdout/stderr 捕获，还带一个 `read_only_sql_query()` 帮手用来只读查库——网络和文件系统照旧默认全关。
 
-![Datasette Agent 中模型调用 execute_micropython 工具执行 MicroPython 代码的界面截图。图片来源：simonwillison.net，2026-06-06](micropython-sandbox-source-datasette-agent.png)
+![Datasette Agent 中模型调用 execute_micropython 工具执行 MicroPython 代码的界面截图。图片来源：simonwillison.net，2026-06-06](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/micropython-wasm-agent-sandbox-2026-06-10/micropython-sandbox-source-datasette-agent.png)
 
 ## 结尾：这条路的意义，是把"安全执行"从重活变成轻活
 

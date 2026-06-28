@@ -26,7 +26,7 @@ description: "五月十九日西蒙·威利森（Simon Willison）在 PyCon US 2
 
 # Simon 复盘：千问 35B 笔记本超 Opus 4.7
 
-![Simon Willison 5/19 PyCon US 2026 闪电演讲幻灯片首页](simon-willison-6-months-llm-recap-glm-qwen-openclaw-2026-05-20.png)
+![Simon Willison 5/19 PyCon US 2026 闪电演讲幻灯片首页](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/simon-willison-6-months-llm-recap-glm-qwen-openclaw-2026-05-20/simon-willison-6-months-llm-recap-glm-qwen-openclaw-2026-05-20.png)
 
 先把范围划清楚。五月十九日西蒙·威利森（Simon Willison）在博客发了两篇文章。一篇是凌晨发的《Not so locked in any more》——把 Mitchell Hashimoto 关于编程语言可互换的 X 发言串到 Bun PR #30412 的故事上，5 月 19 日我们已经写过一篇专题拆解。本文聚焦的是他同一天**晚些时候发出来的第二份独立内容**：PyCon US 2026 上的 5 分钟闪电演讲幻灯片，标题《The last six months in LLMs, in five minutes》（《过去半年的 LLM，5 分钟讲完》）。
 
@@ -45,7 +45,7 @@ description: "五月十九日西蒙·威利森（Simon Willison）在 PyCon US 2
 
 先把演讲幻灯片里点过名字的全部模型一字不漏摆出来。下面这张时间线图是按 Simon 原话口径还原的——日期都是各厂官博公开发布日，颜色按厂商分。
 
-![Simon 复盘 6 个月 LLM 王座 5 次易主时间线](simon-6m-recap-timeline.png)
+![Simon 复盘 6 个月 LLM 王座 5 次易主时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/simon-willison-6-months-llm-recap-glm-qwen-openclaw-2026-05-20/simon-6m-recap-timeline.png)
 
 Simon 自己定的起点是 2025 年 11 月。原话：
 
@@ -88,7 +88,7 @@ Simon 自己解释过为什么用这个题：
 2. **自行车也难画**。三角车架、辐条、链条、坐管全是规则但很容易彼此挡住的部件。
 3. **任何 AI 实验室都不可能专门为这道题训练**。这是 Simon 反复强调的一条——它不是 benchmark，没有泄漏到训练集的机会，因此每次发布新模型，鹈鹕骑自行车这道题就是一个零作弊空间的定性观察。
 
-![Simon 半年内 7 款模型 pelican 评分卡](simon-6m-recap-pelican-scorecard.png)
+![Simon 半年内 7 款模型 pelican 评分卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/simon-willison-6-months-llm-recap-glm-qwen-openclaw-2026-05-20/simon-6m-recap-pelican-scorecard.png)
 
 这就是为什么 5 月 19 日演讲幻灯片上半张图全是各家模型画的鹈鹕图。Simon 拿这个题做对比，**不是想说哪家模型 benchmark 高**——而是要让台下听众用 5 分钟时间，在视觉上感受半年里『最佳模型』这件事到底有多少在动。
 
@@ -133,7 +133,7 @@ Simon 在演讲幻灯片里最让人意外的一句是这条 verbatim：
 
 把 Simon 提到的所有开源模型横向摊开，今天笔记本能不能跑、云端要不要付钱、参数和许可证什么口径，做一张矩阵。
 
-![2026 年 4-5 月开源模型本地落点矩阵](simon-6m-recap-laptop-matrix.png)
+![2026 年 4-5 月开源模型本地落点矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/simon-willison-6-months-llm-recap-glm-qwen-openclaw-2026-05-20/simon-6m-recap-laptop-matrix.png)
 
 注意这张矩阵里有 2 个反差极大的中国开源模型：
 
@@ -186,7 +186,7 @@ Drew Breunig 在 Simon 那段引言里说的『数字宠物 + 水族箱』比喻
 
 下面这张表把 Simon 笔下半年顶级模型按『是否开源 / 笔记本可跑 / 性价比』4 维摊开，**国产 2 家（千问 / 智谱）整行底色高亮**：
 
-![Simon 笔下半年顶级模型 4 维评价矩阵](simon-6m-recap-eval-matrix.png)
+![Simon 笔下半年顶级模型 4 维评价矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/simon-willison-6-months-llm-recap-glm-qwen-openclaw-2026-05-20/simon-6m-recap-eval-matrix.png)
 
 按这张矩阵给国内开发者 3 条可落地的路线：
 

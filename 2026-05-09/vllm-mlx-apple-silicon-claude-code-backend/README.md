@@ -15,7 +15,7 @@ keywords:
 cover: vllm-mlx-apple-silicon-claude-code-backend.png
 ---
 
-![封面](vllm-mlx-apple-silicon-claude-code-backend.png)
+![封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/vllm-mlx-apple-silicon-claude-code-backend/vllm-mlx-apple-silicon-claude-code-backend.png)
 
 # vllm-mlx · M 系 Mac 跑 Claude Code 本地后端：单机 463 tok/s + 10 路并行 agent 不抖
 
@@ -43,7 +43,7 @@ claude
 
 之后的 IDE / MCP 工具调用 / 流式输出全部走本机，**数据不出本机一步**。
 
-![Claude Code 接入流程](claude-code-local-backend-flow.png)
+![Claude Code 接入流程](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/vllm-mlx-apple-silicon-claude-code-backend/claude-code-local-backend-flow.png)
 
 这就是 vllm-mlx 在 2026 年带给 M 系 Mac 用户的真正变化——把"本地 AI"从"自己玩的玩具"推进到"能扛业务的服务后端"。
 
@@ -101,7 +101,7 @@ vLLM 之所以快，靠的是三件核心工程：
 
 `vllm-mlx` 的工程心智是：**保留 vLLM 上层的服务抽象（API / 调度器 / batching 语义），把热点 kernel 与 KV 管理对齐到 MLX 后端**。
 
-![vllm-mlx 架构示意](vllm-mlx-architecture.png)
+![vllm-mlx 架构示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/vllm-mlx-apple-silicon-claude-code-backend/vllm-mlx-architecture.png)
 
 具体做了什么（按工作量从重到轻）：
 
@@ -126,7 +126,7 @@ vLLM 之所以快，靠的是三件核心工程：
 
 下面这张图是把三家公开数据合并在 M4 Max 上的实测对比（单请求 + 32 并发 + TTFT + API 协议 + 推荐场景）：
 
-![vllm-mlx vs Ollama vs llama.cpp 对比](vllm-mlx-vs-ollama-benchmark.png)
+![vllm-mlx vs Ollama vs llama.cpp 对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/vllm-mlx-apple-silicon-claude-code-backend/vllm-mlx-vs-ollama-benchmark.png)
 
 ### 4.1 单请求场景：vllm-mlx 已赢
 
@@ -220,7 +220,7 @@ vllm-mlx 与 Docker vllm-metal 都跑 `mlx-community` 名下的 MLX 量化模型
 
 海外模型方面：Llama 4 Scout / Maverick、Mistral Small 3、Gemma 3、Phi 4 在 mlx-community 也都齐了，但**国产模型第一次出现"和海外模型同期上架 mlx 量化版本"的现象**——这是 2026 年值得国内开发者关注的细节。
 
-![Mac 显存与模型选型](mac-tier-model-mapping.png)
+![Mac 显存与模型选型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/vllm-mlx-apple-silicon-claude-code-backend/mac-tier-model-mapping.png)
 
 **本节小结**：在 vllm-mlx 这条路径上，国产模型不再是"海外社区做完了我们再追赶"——Qwen3-Coder-Next 是 Claude Code 后端的首选模型，Kimi K2.6 是 M3 Ultra 顶配的旗舰选项。国内有 M 系 Mac 的同行，**第一次能在本机跑国产模型 + 国外编程工具的组合**，这是端侧 AI 给国内开发者的实在红利。
 

@@ -14,7 +14,7 @@ authors:
 
 # Datasette Agent · SQLite 插上 LLM 插件
 
-![Datasette Agent 在 SQLite 之上挂载 LLM 插件的工程范式](simon-willison-datasette-agent-llm-plugin-2026-05-23.png)
+![Datasette Agent 在 SQLite 之上挂载 LLM 插件的工程范式](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/simon-willison-datasette-agent-llm-plugin-2026-05-23/simon-willison-datasette-agent-llm-plugin-2026-05-23.png)
 
 > 5 月 21 日，西蒙·威利森（Simon Willison · Datasette 作者）在个人博客挂出了一篇短文，标题就一行——「Datasette Agent」。配套的开源仓库 0.1a3 当天发到 PyPI，三个官方插件（datasette-agent-charts、datasette-agent-openai-imagegen、datasette-agent-sprites）同步开放。一行 uvx 命令，把 Google Gemini 3.1 Flash-Lite 默认接进 SQLite 数据库；想断网就换 LM Studio 本地跑 Google gemma-4-26b-a4b（26B 总参 / 4B 激活的 MoE 模型）。这不是又一个 NL2SQL，而是一套插件式的 SQL agent 工程范式。
 
@@ -28,7 +28,7 @@ authors:
 
 Datasette Agent 在这个底座上加了一层 agent UI：把对话框塞到数据库浏览界面右侧，让用户用自然语言问问题，agent 自己去写 SQL、跑 SQL、读结果、决定下一步。
 
-![Datasette Agent 官方 demo 截图，对话给出 SQL + 数据表 + 自动绘制柱状图](datasette-agent-hero.jpg)
+![Datasette Agent 官方 demo 截图，对话给出 SQL + 数据表 + 自动绘制柱状图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/simon-willison-datasette-agent-llm-plugin-2026-05-23/datasette-agent-hero.jpg)
 
 这张图是 agent.datasette.io 上的官方 demo 实拍，用户问「按发电量排，美国前 10 大核电站是哪些」，agent 自己写了 SQL、跑出表格、调用 charts 插件画出横向柱状图，最下面那行小字「Powered by Datasette」直接点明底座。整个对话区从输入框到结果区是单页式的——没有左侧导航、没有花哨的步骤展开，所有 agent 中间过程（包括「View SQL query」按钮）都折叠在结果里随时可看。
 
@@ -64,11 +64,11 @@ agent.datasette.io 官方 demo 默认接的是 Google Gemini 3.1 Flash-Lite—�
 
 LM Studio 这个本地推理器最近一年是 Mac 用户跑本地大模型的事实标准。
 
-![LM Studio 官方主页，明确标注「Run AI models, locally and privately」，支持 gpt-oss / Qwen3 / Gemma3 / DeepSeek-R1 等开源模型](lm-studio-og.png)
+![LM Studio 官方主页，明确标注「Run AI models, locally and privately」，支持 gpt-oss / Qwen3 / Gemma3 / DeepSeek-R1 等开源模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/simon-willison-datasette-agent-llm-plugin-2026-05-23/lm-studio-og.png)
 
 LM Studio 本质是 GUI 化的 llama.cpp + OpenAI 兼容 API 服务，启动后默认在 `http://localhost:1234` 提供与 OpenAI Chat Completions 兼容的接口。Datasette Agent 通过 `llm-lmstudio` 这个适配器，把对话请求改写成 LM Studio 接口格式发出去，整个调用链跟用 OpenAI 几乎一模一样——这就是为什么本地切换只需要改一行配置。
 
-![Datasette Agent 双轨模型部署矩阵：云端便宜档与本地 26B 档对照](datasette-agent-model-tiers.png)
+![Datasette Agent 双轨模型部署矩阵：云端便宜档与本地 26B 档对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/simon-willison-datasette-agent-llm-plugin-2026-05-23/datasette-agent-model-tiers.png)
 
 这张矩阵图把双轨设计画清了——同一套 SQL agent UI 上面挂哪个模型不重要，重要的是「一行配置切换」让你在云端便宜档和本地 26B 档之间无缝来回。
 
@@ -87,7 +87,7 @@ LM Studio 本质是 GUI 化的 llama.cpp + OpenAI 兼容 API 服务，启动后�
 
 charts 插件做了几件不显眼但贴心的事：柱状图和华夫格图如果没指定颜色列，自动按数值大小做渐变着色；如果数据里有文本类别列，自动套用 Observable10 这套分类配色；图表自带交互式 tooltip，鼠标悬停在数据点上能看到精确数值；最关键的是，**渲染前会先检查 SQL 查询权限**——同一个 agent 实例上不同用户的 SQL 执行权限可能不同，charts 插件不会绕过这层权限。
 
-![Datasette Agent 用 charts 插件生成的 Observable Plot 图表 demo](datasette-agent-chart-demo.png)
+![Datasette Agent 用 charts 插件生成的 Observable Plot 图表 demo](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/simon-willison-datasette-agent-llm-plugin-2026-05-23/datasette-agent-chart-demo.png)
 
 这张图是西蒙·威利森在博客里贴的一张 demo——用户问数据集相关问题，agent 直接给出了一张柱状对比图，整个交互在对话流里完成。
 
@@ -108,7 +108,7 @@ datasette-agent-sprites 让 agent 在对话过程中可以执行任意代码：�
 
 四项能力靠四个独立插件按需挂载——这就是西蒙·威利森反复强调的那句话：「我最喜欢 Datasette Agent 的地方是，跟 Datasette 其他部分一样，它通过插件扩展。」
 
-![Datasette Agent 五层栈架构图：用户对话层 → 主仓库核心 → 插件层 → 模型抽象层 → SQLite 底层](datasette-agent-plugin-stack.png)
+![Datasette Agent 五层栈架构图：用户对话层 → 主仓库核心 → 插件层 → 模型抽象层 → SQLite 底层](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/simon-willison-datasette-agent-llm-plugin-2026-05-23/datasette-agent-plugin-stack.png)
 
 这张栈图把整套工程范式一眼讲清——上下五层每一层都可以独立替换。换模型？改第四层一行配置。换可视化库？换第三层 charts 插件。换沙箱后端？换第三层 sprites 插件。换底层数据库？这是唯一一层 Datasette Agent 选择不开放替换的——SQLite 是基础，所有上层设计都围绕它。这种「克制中的开放」是 Datasette 八年工程哲学的延续。
 
@@ -137,7 +137,7 @@ datasette-agent-sprites 让 agent 在对话过程中可以执行任意代码：�
 
 **Vanna AI** 是开源 Python 库路线，主打「向量库 + 训练样本注入」做 Text-to-SQL 准确率提升，去年底从「简单的 SQL 生成库」演进到「带 agent 架构 + 行级安全」的 2.0，模型支持 Claude 4.5 / GPT-5 / 本地 Ollama 全栈。Vanna 的定位偏「积木库」——你拿它去搭自己的 NL2SQL pipeline。Datasette Agent 是「成品」——你拿它当 agent UI 直接用。
 
-![SQL agent 6 家横评：开源协议 / 部署灵活度 / 模型自由切换 / 插件扩展性四维评分](datasette-agent-5-way-comparison.png)
+![SQL agent 6 家横评：开源协议 / 部署灵活度 / 模型自由切换 / 插件扩展性四维评分](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/simon-willison-datasette-agent-llm-plugin-2026-05-23/datasette-agent-5-way-comparison.png)
 
 这张柱状图把六家在四个维度的位置画清了：Datasette Agent 在「开源协议自由 + 部署灵活 + 模型自由 + 插件扩展」四项全 5 分，是六家里唯一的全 5；OpenAI Code Interpreter 和 Claude Computer Use 在四项都是低分，靠的是体验封装和品牌信任；LangChain SQL agent 和飞致云 SQLBot 是开源同档对手，差别在「成品 vs 积木」的取舍。
 

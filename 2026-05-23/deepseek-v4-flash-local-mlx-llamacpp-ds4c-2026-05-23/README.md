@@ -11,7 +11,7 @@ cover: deepseek-v4-flash-local-mlx-llamacpp-ds4c-2026-05-23.png
 
 # DeepSeek V4 Flash 四档硬件本地实测
 
-![国内开发者书房四档硬件本地跑 DeepSeek V4 Flash](deepseek-v4-flash-local-mlx-llamacpp-ds4c-2026-05-23.png)
+![国内开发者书房四档硬件本地跑 DeepSeek V4 Flash](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/deepseek-v4-flash-local-mlx-llamacpp-ds4c-2026-05-23/deepseek-v4-flash-local-mlx-llamacpp-ds4c-2026-05-23.png)
 
 截至 2026-05-23 中午实查，DeepSeek-V4-Flash 的 HuggingFace 模型卡月下载量已经爬到 255.65 万次，比 5/21 那篇双 4090 vLLM 专题写稿时（228.95 万）又多走了 11.6%；antirez/ds4 仓库 Star 数从 5/11 的 5950 翻到 11369，过去 12 天净增 5419（数据来自 `gh repo view antirez/ds4 --json stargazerCount,pushedAt`）。一个 284B 总参的国产开源 MoE，加上一个 Redis 之父亲手写的专属 C+Metal 推理引擎，加上 llama.cpp Q4_K_M 在 NV 路径的稳定支持，让「在自己书房的台式机或 MacBook Pro 上 24 小时跑国产准前沿模型」第一次从「极客玩法」变成「可重复部署方案」。
 
@@ -21,7 +21,7 @@ cover: deepseek-v4-flash-local-mlx-llamacpp-ds4c-2026-05-23.png
 
 DeepSeek V4 Flash 跟普通开源模型不同的一点是「专属引擎」这件事真的成立。同一张显卡或者同一台 Mac Studio，三种引擎能跑出三种不同的工程体验；选错路径，体验差距会直接反映到首 token 延迟、KV cache 持久化能力、IDE 接入流畅度上。
 
-![DeepSeek V4 Flash 三种推理框架 · 六维度对位](deepseek-v4-flash-framework-positioning.png)
+![DeepSeek V4 Flash 三种推理框架 · 六维度对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/deepseek-v4-flash-local-mlx-llamacpp-ds4c-2026-05-23/deepseek-v4-flash-framework-positioning.png)
 
 三种框架各有偏好的硬件区间和工程哲学：
 
@@ -70,7 +70,7 @@ make cuda-generic                          # 其他 N 卡
 
 这一节是本文的核心数据段。四档硬件都用同一个测试 protocol：短 prompt（256 token 输入 / 256 token 输出 / `--nothink` / 贪心解码 / `--ctx 32768`）+ 长 prompt（11709 token 输入 / 256 token 输出 / 同上）；M3 Max/Ultra 的 ds4 数字直接抄自 README §Speed 表（verbatim），其余数字基于国内开发者社群（V2EX / Linux.do / 量子位读者群 / 即刻）2026-05-15 至 2026-05-22 期间的第三方汇报取中位数，作者本人未独立复测。
 
-![四档硬件 × 三种推理框架 · DeepSeek V4 Flash 实测吞吐](deepseek-v4-flash-hardware-framework-throughput.png)
+![四档硬件 × 三种推理框架 · DeepSeek V4 Flash 实测吞吐](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/deepseek-v4-flash-local-mlx-llamacpp-ds4c-2026-05-23/deepseek-v4-flash-hardware-framework-throughput.png)
 
 | 硬件 | 内存 / 显存 | 量化 | 引擎 | 短提示 生成 t/s | 长提示 11709 token 生成 t/s | 首 token 延迟 | 启动到可用 |
 |---|---|---|---|---|---|---|---|
@@ -150,7 +150,7 @@ modelscope download \
 
 另一项细节：hf-mirror.com 由清华 TUNA 团队公益维护，每月运维带宽费用上万元；如果国内开发者群里有人有条件，定期捐赠是让这项基础设施持续可用的最直接方式。ModelScope 是阿里官方运维，免费且无后顾之忧；两条镜像并存是最稳的本地大模型工程姿势。
 
-![DeepSeek-V4-Flash HuggingFace 模型卡 og:image](deepseek-v4-flash-hf-og.png)
+![DeepSeek-V4-Flash HuggingFace 模型卡 og:image](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/deepseek-v4-flash-local-mlx-llamacpp-ds4c-2026-05-23/deepseek-v4-flash-hf-og.png)
 
 ## 主流 IDE 接本地后端的 JSON 配置
 
@@ -194,7 +194,7 @@ ds4-server 与 llama.cpp server 默认都是 OpenAI 兼容协议；ds4-server �
 
 `supportsPromptCache: true` 是因为 ds4 的磁盘 KV cache 对 Cline 来说就是 prompt cache 命中——把它打开，Cline 在多轮对话里会主动复用上下文，显著降低首 token 延迟。
 
-![Cline GitHub 仓库 og:image](cline-og.png)
+![Cline GitHub 仓库 og:image](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/deepseek-v4-flash-local-mlx-llamacpp-ds4c-2026-05-23/cline-og.png)
 
 **千问 Code（Qwen Code）**：终端 CLI 工具，配置文件 `~/.config/qwen-code/config.json`：
 
@@ -237,7 +237,7 @@ OpenClaw 走 Anthropic 协议接 ds4-server 的好处是 tool call 字节级精�
 
 值得多提一句的还有 RooCode 和 Continue。这两款也是国内开发者常用的 VSCode AI 插件——RooCode 是 Cline 的 fork，配置 JSON 字段基本与 Cline 兼容；Continue 是开源 IDE 助手老牌，配置在 `~/.continue/config.json` 里写 model provider 段，同样支持 OpenAI 兼容端点。这两家都能接 ds4-server，配置思路一致，本文不另列 JSON 避免重复。
 
-![通义灵码 GitHub 仓库 og:image](tongyi-lingma-og.png)
+![通义灵码 GitHub 仓库 og:image](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/deepseek-v4-flash-local-mlx-llamacpp-ds4c-2026-05-23/tongyi-lingma-og.png)
 
 ## 跟同档开源比，实操差在哪儿
 
@@ -253,7 +253,7 @@ DeepSeek V4 Flash 不是当前唯一可在消费级硬件上跑的开源 MoE 旗
 
 另一项国内开发者实操要注意的差异：**许可证清晰度**。V4 Flash 是 MIT 许可，weights、推理代码、衍生模型权重全部可商用；Llama 4 系列是「Llama 4 Community License」，月活 7 亿以上需要单独申请；Qwen3 全系 Apache-2.0；Phi-5 是 MIT。从「拿来直接给客户做项目」的工程合规视角，V4 Flash 与 Qwen3 系列是国内开发者最稳的本地路径——MIT / Apache-2.0 不需要任何条件触发，公司法务审一遍直接放行。Llama 系列虽然在英文场景模型质量很好，但合规审查会让小团队望而却步；这一项对国内开发者「能不能把本地模型用进客户项目」是硬约束。
 
-![antirez/ds4 GitHub 仓库 og:image](antirez-ds4-repo-og.png)
+![antirez/ds4 GitHub 仓库 og:image](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/deepseek-v4-flash-local-mlx-llamacpp-ds4c-2026-05-23/antirez-ds4-repo-og.png)
 
 ## 按使用场景给一份硬件配比建议
 

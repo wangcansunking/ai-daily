@@ -10,14 +10,14 @@ cover: qoderwake-digital-employee-launch.png
 
 # Cursor 不再独占 AI 编程：阿里 QoderWake 上岗
 
-![QoderWake 数字员工产品界面](qoderwake-digital-employee-launch.png)
+![QoderWake 数字员工产品界面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/qoderwake-digital-employee-launch/qoderwake-digital-employee-launch.png)
 *封面图：QoderWake 数字员工产品界面，已支持「数字程序员」角色。*
 
 **4 月 30 日上午，阿里云一次性发布两款 Agent 产品：QoderWake 数字员工和 Qoder 移动端。** 量子位、36 氪、品玩、界面新闻、新浪财经、网易科技等国内主流科技媒体当日全部跟进首发。这是阿里继 1 月 QoderWork 桌面 Agent 之后，把 Qoder 这条 Agent 产品线延展到「岗位级数字员工」的新一步。
 
 **根因分析耗时从 30 分钟缩到 2 分钟，全流程无人值守。** 这是阿里官方给出的内部数据——QoderWake 已经在 Qoder 团队上岗，自主完成反馈分类、日志分析、根因定位和自动生成修复代码，人只在最终确认环节介入。这条对比把「AI 编程助手」和「AI 数字员工」的差别具象化了。
 
-![Qoder 移动端界面](qoderwake-mobile.jpg)
+![Qoder 移动端界面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/qoderwake-digital-employee-launch/qoderwake-mobile.jpg)
 *Qoder 移动端：远程操作桌面端 Qoder 产品，支持思考链 + 工作流可视化。图源：量子位 4/30 报道。*
 
 ## 不是 Cursor，不是 Claude Code，是数字员工
@@ -30,7 +30,7 @@ cover: qoderwake-digital-employee-launch.png
 
 ## Harness-First 架构 + 五维记忆体系
 
-![Harness-First 五维记忆体系](qoderwake-sina-feature.jpg)
+![Harness-First 五维记忆体系](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/qoderwake-digital-employee-launch/qoderwake-sina-feature.jpg)
 *Harness-First 架构图。图源：新浪财经 4/30 报道。*
 
 阿里给 QoderWake 的技术框架取名 Harness-First。这个词在英文工程语境里指「马具」——固定主体的支撑结构。**核心是把 Agent 的执行能力之外那一层「岗位规范」做成产品基座**。
@@ -67,7 +67,7 @@ Qoder 移动端是 4 月 30 日同步上线的另一个产品。它做的事情�
 
 移动端首批接入的是 Qoder CLI 全部能力，后续会打通 Qoder IDE、QoderWork、QoderWake 全系产品。**这条路径相当于阿里把 Qoder 这条产品线的 control plane 做成全平台覆盖**。
 
-![QoderWake 数字员工工作流](qoderwake-sina-flow.jpg)
+![QoderWake 数字员工工作流](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/qoderwake-digital-employee-launch/qoderwake-sina-flow.jpg)
 *QoderWake 数字员工典型工作流。图源：新浪财经 4/30 报道。*
 
 ## 国内开发者最快路径

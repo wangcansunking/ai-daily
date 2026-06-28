@@ -13,7 +13,7 @@ cover: "harvard-o1-er-diagnosis.png"
 
 > 4 月 30 日，《Science》刊出哈佛医学院 + Beth Israel Deaconess 团队的一篇研究：把 76 例真实急诊病例丢给 OpenAI o1 和两位内科主治，AI 诊断准确率 67%，医生 50% 与 55%。但这不是"AI 取代医生"的故事——研究者自己第一时间表态：先别上临床。
 
-![封面](harvard-o1-er-diagnosis.png)
+![封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/harvard-o1-er-diagnosis-medical-ai/harvard-o1-er-diagnosis.png)
 
 ## 一、3 个数字 + 1 句研究者原话
 
@@ -41,7 +41,7 @@ cover: "harvard-o1-er-diagnosis.png"
 
 这三句原话叠在一起，整个研究的姿态就清楚了：成绩亮眼，但研究者自己反对直接进临床。这才是国内读者补这条新闻应该带回去的第一层信息。
 
-![研究方法](harvard-o1-study-design.png)
+![研究方法](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/harvard-o1-er-diagnosis-medical-ai/harvard-o1-study-design.png)
 
 ## 二、研究详情：76 例怎么测
 
@@ -83,7 +83,7 @@ cover: "harvard-o1-er-diagnosis.png"
 
 但 76 例数据里，o1 在这件事上拉开了悬崖式差距。Brodeur 的那句"评估标尺撞到天花板"——撞的就是这件事：以前学界用美国执业医师考试（USMLE）选择题来测 AI，现在 AI 接近满分。要继续测下去，必须用真实病例 + 多专家盲评的方式重做评估方法。
 
-![准确率对比](harvard-o1-er-accuracy-table.png)
+![准确率对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/harvard-o1-er-diagnosis-medical-ai/harvard-o1-er-accuracy-table.png)
 
 ## 四、o1 不是 GPT-5：研究用的是 2024 年的旧模型
 
@@ -115,7 +115,7 @@ cover: "harvard-o1-er-diagnosis.png"
 
 **部署侧**：截至 2025 年初，DeepSeek 已在 **90+ 家三甲医院**完成本地化部署（覆盖 20+ 省市），主要用在影像辅助、病理识别、病历摘要、临床决策支持。国家卫健委也明确要求 2025 年实现三甲医院 AI 辅助诊断全覆盖。
 
-![国内对位](harvard-o1-domestic-er-ai-comparison.png)
+![国内对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/harvard-o1-er-diagnosis-medical-ai/harvard-o1-domestic-er-ai-comparison.png)
 
 但要诚实地说一句：**国内目前缺的不是模型，是"哈佛 + Beth Israel 这种独立第三方、Science 期刊认可、76 例真实 ER 盲评对照"的临床实证范式**。我们更多看到的是厂商自报数据 + 三甲医院落地新闻 + 个案展示。把高质量的临床对照试验做出来、登上《Lancet》《NEJM》《Science》这种顶级期刊——这是国内医疗 AI 下一程要补的一课，也是真正会让国际同行无法绕过的硬成绩。
 
@@ -144,7 +144,7 @@ cover: "harvard-o1-er-diagnosis.png"
 
 下面 4 道闸，每一道都是研究室里测不出来的：
 
-![部署闸门](harvard-o1-deployment-gates.png)
+![部署闸门](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/harvard-o1-er-diagnosis-medical-ai/harvard-o1-deployment-gates.png)
 
 **第一道：临床责任。** AI 给的诊断错了，谁负责？是开 AI 的医生、医院、模型方、还是患者自己签的"知情同意"？目前国际国内都没有清晰答案。国内现行《互联网诊疗管理办法》的口径是：**AI 只能作为辅助决策工具，最终诊疗判断必须由具备执业资质的医生作出并签字**——也就是医生承担全部责任。这意味着即使 AI 诊断 99%，医生还是要花时间复核每一份输出。这也是为什么国内 90+ 家三甲医院部署 DeepSeek 后，主流用法是"病历摘要 + 辅助提醒"，而不是"AI 直接给诊断"。
 

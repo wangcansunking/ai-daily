@@ -11,7 +11,7 @@ description: 滑铁卢大学的 Code2LoRA 用超网络为每个仓库现场生�
 
 # 代码模型读不住你的仓库？让它现场长出专属插件
 
-![Code2LoRA 代码模型现场长出仓库专属适配器](code2lora-repo-adapter-zero-token-2026-06-08.png)
+![Code2LoRA 代码模型现场长出仓库专属适配器](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/code2lora-repo-adapter-zero-token-2026-06-08/code2lora-repo-adapter-zero-token-2026-06-08.png)
 
 > 当地时间 6 月 4 日，滑铁卢大学（University of Waterloo）的四位研究者把一篇叫 Code2LoRA 的论文挂上 arXiv，两天后它登上 Hugging Face 当日论文榜第一，拿到 69 个赞。它想解决的，是我们每天用代码补全时都遇到、却很少有人讲清楚的一个老问题。
 
@@ -31,7 +31,7 @@ description: 滑铁卢大学的 Code2LoRA 用超网络为每个仓库现场生�
 
 这些信息全在你的仓库里，不在模型的参数里。所以业界一直在想办法把"仓库知识"喂给模型。目前主流就两条路，各有各的难处。
 
-![Code2LoRA：三条路线怎么把仓库知识喂给代码模型](code2lora-three-routes.png)
+![Code2LoRA：三条路线怎么把仓库知识喂给代码模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/code2lora-repo-adapter-zero-token-2026-06-08/code2lora-three-routes.png)
 
 **第一条路：塞长上下文。** 用检索增强（RAG）或者依赖分析，把跟当前任务相关的代码片段拼进输入，让模型"现读现用"。这是 Cursor、通义灵码这类工具今天的主流做法。问题是：每补全一次都要把这些片段重新塞一遍，token 越塞越多，又慢又贵；而且检索拼进来的片段不一定刚好是模型需要的那段。
 
@@ -61,7 +61,7 @@ description: 滑铁卢大学的 Code2LoRA 用超网络为每个仓库现场生�
 
 下面这张图是论文 Table 2 里跨仓测试集的精确匹配率，数字逐项照搬，没有改动。
 
-![Code2LoRA 静态版各方法精确匹配率对比](code2lora-static-em.png)
+![Code2LoRA 静态版各方法精确匹配率对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/code2lora-repo-adapter-zero-token-2026-06-08/code2lora-static-em.png)
 
 几个对照很说明问题：
 
@@ -79,7 +79,7 @@ description: 滑铁卢大学的 Code2LoRA 用超网络为每个仓库现场生�
 
 静态版解决了"读懂一个固定快照"的问题，但真实开发里，代码库是天天在变的。今天合并一个重构，明天换一套接口——昨天生成的适配器又过时了。论文的第二个版本 Code2LoRA-Evo（演进版）就是冲着这个去的。
 
-![Code2LoRA 演进版：仓库每提交一次适配器跟着更新一次](code2lora-evo-timeline.png)
+![Code2LoRA 演进版：仓库每提交一次适配器跟着更新一次](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/code2lora-repo-adapter-zero-token-2026-06-08/code2lora-evo-timeline.png)
 
 它的做法是引入一个 GRU（一种循环网络）来维护一个"隐藏状态"：
 
@@ -120,11 +120,11 @@ description: 滑铁卢大学的 Code2LoRA 用超网络为每个仓库现场生�
 
 下面这两张图是它的论文页和 Hugging Face 论文页，方便你判断信息的来源。
 
-![Code2LoRA 在 Hugging Face 论文页当日登顶](code2lora-source-hf-papers.png)
+![Code2LoRA 在 Hugging Face 论文页当日登顶](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/code2lora-repo-adapter-zero-token-2026-06-08/code2lora-source-hf-papers.png)
 
 来源：Hugging Face Papers 页 2026-06-05，作者 Liliana Hotsko、Yinxi Li、Yuntian Deng、Pengyu Nie（滑铁卢大学）。
 
-![Code2LoRA 的 arXiv 摘要页](code2lora-source-arxiv-abs.png)
+![Code2LoRA 的 arXiv 摘要页](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/code2lora-repo-adapter-zero-token-2026-06-08/code2lora-source-arxiv-abs.png)
 
 来源：arXiv 摘要页，论文编号 2606.06492，2026 年 6 月 4 日提交。
 

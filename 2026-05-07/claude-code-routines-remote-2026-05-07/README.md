@@ -17,7 +17,7 @@ tags:
 ---
 # Claude Code 三件套落地：Routines / 远程控制 / Code Review，国内 AI Coding 用户该怎么看
 
-![Claude Code 三件套落地：Routines / 远程控制 / Code Review](claude-code-routines-remote-2026-05-07.png)
+![Claude Code 三件套落地：Routines / 远程控制 / Code Review](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/claude-code-routines-remote-2026-05-07/claude-code-routines-remote-2026-05-07.png)
 
 ## 一、Boris Cherny 在台上说：过去 7 个月我没手写过一行代码
 
@@ -37,7 +37,7 @@ tags:
 
 > 论点先放这里：**Claude Code 三件套把「IDE 侧 AI 助手」推到了下一阶段——AI Coding 不再是『敲代码时身边坐个 AI』，而是『随时随地把活派出去 / 醒来看结果』**。这条路线对国内 AI Coding 用户最直接的影响有两条：（1）Cursor 早就在做的 Background Agents、Bugbot 这些功能现在 Anthropic 都自己上了，Pro 套餐 20 美金月费就能用，国内通过镜像 / API 中转能跑起来；（2）Routines 那种云端 7×24 异步运行模式，对长跑、对 GitHub workflow 触发的活路，确实是新的工作方式，国产 AI Coding 工具（通义灵码 / 字节 Trae / 智谱 GLM CODING / 腾讯 CodeBuddy）距离这个能力组合还有半代差距，下半年看谁先补齐。
 
-![Claude Code Routines 官方介绍图](claude-code-routines-blog-hero.png)
+![Claude Code Routines 官方介绍图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/claude-code-routines-remote-2026-05-07/claude-code-routines-blog-hero.png)
 
 ## 二、Routines：云端的 Claude Code，「拍下任务，醒来看 PR」
 
@@ -89,7 +89,7 @@ HN [Claude Code Routines 帖（id 47768133）](https://news.ycombinator.com/item
 
 Remote Control 不在 Anthropic 云上跑——这点和 Routines 是反着的。你本地 `claude remote-control` 一跑（或者 `claude --remote-control` 起一个交互 session），它就**只发出站 HTTPS**到 Anthropic API 注册一下，然后 poll 着等远程指令。
 
-![Simon Willison 的 Remote Control 实测截图](claude-code-remote-control-simonw.jpg)
+![Simon Willison 的 Remote Control 实测截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/claude-code-routines-remote-2026-05-07/claude-code-remote-control-simonw.jpg)
 
 你打开手机 Claude app（iOS / Android）或浏览器开 [claude.ai/code](https://claude.ai/code)，扫一下二维码或者点 session 列表里那个带绿点的电脑图标，**手机和本地 session 就连上了**。`@` 触发本地文件系统补全，本地 MCP server 全部可用，本地 git 状态本地配置一切原样——但**输入框在你手机上**。
 
@@ -134,7 +134,7 @@ VS Code 扩展里也有 `/remote-control` 命令，2.1.79 起支持，banner 直
 
 Anthropic 这次的 Code Review 不是「Copilot Review 那种行内 suggestion」，是一组**专门角色分工的 agent**并行跑：逻辑错误、边界条件、API 误用、认证漏洞、项目惯例符合度——每个 agent 只盯一类。
 
-![Claude Code Review 官方头图](claude-code-review-blog-og.jpg)
+![Claude Code Review 官方头图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/claude-code-routines-remote-2026-05-07/claude-code-review-blog-og.jpg)
 
 跑完之后还有一个**verification 步骤**——拿候选发现去对照实际代码行为，把 false positive 滤掉，然后按严重度排序，作为 GitHub inline comment + 一条 summary 总结贴出来。
 
@@ -311,7 +311,7 @@ claude
 
 国内这边，智谱 4 月推的 GLM CODING PLAN 已经在补 CLI 体验那一格；通义灵码和字节 Trae 也在往 agent 方向走。Boris 在台上说的「我已经 7 个月没手写代码」是单点极端，但**「派活给 AI、去做别的」**这种工作方式，能稳稳出现在 2026 年下半年的国内开发者里。
 
-![Boris Cherny 在手机上跑 Claude Code](boris-150-prs-phone.jpg)
+![Boris Cherny 在手机上跑 Claude Code](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/claude-code-routines-remote-2026-05-07/boris-150-prs-phone.jpg)
 
 下一篇值得追的，应该是 5 月 6 日大会那一批 Anthropic 演讲人现场讲的细节——Cat Wu 那条「Sonnet 3.7 时代用户就在让 Claude 直接动生产数据库」放在 keynote 里没展开，但配合 Routines + Code Review，真实的「unsupervised AI 改生产代码」场景已经接近门口了。这个节奏下，国内 AI Coding 工具今年下半年的产品规划，估计要全部重排一遍。
 

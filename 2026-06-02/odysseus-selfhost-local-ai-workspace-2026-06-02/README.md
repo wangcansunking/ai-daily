@@ -12,13 +12,13 @@ track: arbitrage
 
 # PewDiePie 开源 Odysseus：本地跑的 ChatGPT 平替
 
-![Odysseus 自托管 AI 工作台封面](odysseus-selfhost-local-ai-workspace-2026-06-02.png)
+![Odysseus 自托管 AI 工作台封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/odysseus-selfhost-local-ai-workspace-2026-06-02/odysseus-selfhost-local-ai-workspace-2026-06-02.png)
 
 一个常被当成娱乐符号的名字，这次交出的是一份扎实的工程作品。瑞典 YouTube 创作者 PewDiePie（本名 Felix Kjellberg）在 2026-05-31 开源了一台名为 Odysseus 的自托管 AI 工作台，把聊天、自主智能体、本地模型服务、深度研究、邮件日历集成全部塞进同一台机器，主打本地优先、隐私优先、零遥测。仓库上线第一天就涨到约 1.8 万 stars——截至 2026-06-02 凌晨核对约 18624 stars、2290 个 fork，采用 MIT 许可证。
 
 核心一句话：它想做的，是让你在自己的硬件上得到接近 ChatGPT 和 Claude 桌面端的体验，但数据一步都不离开本机。对国内做个人 AI、跑本地大模型的开发者来说，这正好踩在最关心的点上——一套现成的前端外加智能体，底下能直接接 DeepSeek（深度求索）、千问（Qwen）、智谱 GLM。下面把它到底是什么、和国内同类自托管前端比怎样、国内开发者怎么接国产模型跑起来，一项项讲清楚。
 
-![Odysseus 仓库展示卡](source-odysseus-github-card-2026-06-02.png)
+![Odysseus 仓库展示卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/odysseus-selfhost-local-ai-workspace-2026-06-02/source-odysseus-github-card-2026-06-02.png)
 
 <small>来源：GitHub 仓库展示卡</small>
 
@@ -38,13 +38,13 @@ track: arbitrage
 
 把这些模块叠在一起，它更像一个装在自己机器上的「个人 AI 操作中心」，而不是单一对话工具。它没有把这些能力做成互相独立的小工具，而是让它们共享同一套模型后端、同一份记忆、同一个智能体——你在聊天里随口提的一件事，可能被记忆收下，几天后在深度研究里被重新引用，再变成日历里的一条定时任务。这种把场景串起来用的设计，才是它和单一聊天客户端真正拉开距离的地方。
 
-![Odysseus 七大模块功能矩阵](odysseus-modules-2026-06-02.png)
+![Odysseus 七大模块功能矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/odysseus-selfhost-local-ai-workspace-2026-06-02/odysseus-modules-2026-06-02.png)
 
 <small>来源：自制图表（数据据正文）</small>
 
 下面这张图把模块和后端的关系画在了一起。
 
-![Odysseus 模块与多后端架构图](odysseus-arch-2026-06-02.png)
+![Odysseus 模块与多后端架构图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/odysseus-selfhost-local-ai-workspace-2026-06-02/odysseus-arch-2026-06-02.png)
 
 <small>来源：依据项目 README 自制（截至 2026-06-02 凌晨核对）</small>
 
@@ -82,7 +82,7 @@ track: arbitrage
 
 也就是说，本机有独显就用 vLLM 追吞吐，笔记本没显卡就用 llama.cpp 跑量化模型，临时想试某个云端模型就挂 OpenRouter——同一个界面、同一套记忆，底下换后端互不影响。
 
-![Odysseus 本地后端选型适用场景表](odysseus-backends-2026-06-02.png)
+![Odysseus 本地后端选型适用场景表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/odysseus-selfhost-local-ai-workspace-2026-06-02/odysseus-backends-2026-06-02.png)
 
 <small>来源：自制图表（数据据正文）</small>
 
@@ -103,7 +103,7 @@ track: arbitrage
 
 国内开发者对自托管 AI 前端并不陌生——Cherry Studio、Chatbox、LobeChat 都很常用，再加上不少人手里的 OpenClaw 这类本地个人 AI。把 Odysseus 放进来横着看，差异就清楚了。
 
-![五款自托管 AI 前端横评表](odysseus-selfhost-compare-2026-06-02.png)
+![五款自托管 AI 前端横评表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/odysseus-selfhost-local-ai-workspace-2026-06-02/odysseus-selfhost-compare-2026-06-02.png)
 
 <small>来源：依据各项目公开资料与说明自制（截至 2026-06-02）</small>
 
@@ -171,7 +171,7 @@ Docker 里的 Odysseus 在设置中填入 `http://host.docker.internal:11434/v1`
 
 这种态度配上一份模块齐全、文档认真、连反向代理和密钥轮换都写进安全须知的代码，已经超出了「名人玩票」的范畴。它更像一个真在自己用、并且愿意把成果摊开给所有人的开发者交出来的东西。
 
-![Odysseus 项目展示图](source-odysseus-hero-2026-06-02.png)
+![Odysseus 项目展示图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/odysseus-selfhost-local-ai-workspace-2026-06-02/source-odysseus-hero-2026-06-02.png)
 
 <small>来源：项目仓库 docs/odysseus.jpg</small>
 

@@ -26,7 +26,7 @@ description: "HN 五月十七号顶到 518 分的小项目 zerostack：一个用
 
 # zerostack：8MB 跑完 Coding Agent
 
-![zerostack 8MB Rust coding agent 封面](zerostack-rust-8mb-coding-agent-2026-05-18.png)
+![zerostack 8MB Rust coding agent 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/zerostack-rust-8mb-coding-agent-2026-05-18/zerostack-rust-8mb-coding-agent-2026-05-18.png)
 
 五月十七号，HN 头版被一个标题平平的小项目顶到了 518 分 286 条评论——`Zerostack – A Unix-inspired coding agent written in pure Rust`。点进去 GitHub 仓库才几天前刚建（创建于 2026-05-12），代码量只有七千行 Rust，但作者甩出来的数字把所有人都拉住了停下来看一眼：**空会话 8 MB 内存、工作态 12 MB、单二进制 8.9 MB、启动时间 90 毫秒**。
 
@@ -63,7 +63,7 @@ description: "HN 五月十七号顶到 518 分的小项目 zerostack：一个用
 
 把这十几个数字读一遍就能感觉到一件事——**这个项目的设计哲学是"减法"，不是"加法"**。每一项功能都问一句"砍掉它客户端会塌吗"，答能就砍。
 
-![Coding Agent 客户端工作态运行内存对比](zerostack-memory-footprint-compare.png)
+![Coding Agent 客户端工作态运行内存对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/zerostack-rust-8mb-coding-agent-2026-05-18/zerostack-memory-footprint-compare.png)
 
 把内存数字按对数尺度画出来更直观——zerostack 的 12 MB 和 Claude Code 桌面客户端的 900 MB 量级在同一张图上根本不在一个段位。这不是优化能省下来的差距，是路线选择本身决定的。
 
@@ -79,7 +79,7 @@ zerostack 这条路线给了一个截然相反的选项——**把 Coding Agent 
 - **单二进制无依赖**。Rust 编译出来的 8.9 MB 单文件可执行，不带 Node 解释器、不带 Electron Chromium runtime、不带任何第三方依赖。`cargo install zerostack` 一行装完，或者直接从 GitHub Releases 拉 prebuilt binary。**这种"零依赖"的部署姿态在公司受限网络环境下就是质的区别**——不用关心 npm registry 通不通、不用关心 Python 虚拟环境冲不冲突。
 - **本地大模型用户的最佳搭档**。OpenRouter / OpenAI / Anthropic / Gemini / Ollama 全套供应商接口都内建，OpenAI-compatible 还支持 vLLM / LiteLLM 这类自托管推理服务的 base URL。你本地用 4090 跑 Qwen3-Coder-30B-A3B + Ollama，加上 zerostack 这套 8 MB 的客户端，整个组合在一台机器上吃的资源加起来都没 Cursor 单实例多。
 
-![发行体积对比：Rust 单二进制 vs 解释器加脚本](zerostack-binary-size-compare.png)
+![发行体积对比：Rust 单二进制 vs 解释器加脚本](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/zerostack-rust-8mb-coding-agent-2026-05-18/zerostack-binary-size-compare.png)
 
 发行体积这件事看起来是个细节，但它直接决定了"我能不能把这个工具塞进 CI 镜像 / Docker base image / 公司发行的轻量虚拟桌面里"。Aider 装下来连 Python 解释器算 80 MB，opencode 含 node runtime 100 MB 起步，Claude Code 桌面端打包后 145 MB——这些数字在云端按分钟计费的开发环境（Coder / Gitpod / GitHub Codespaces）里是直接增加冷启动延迟的真金白银。
 
@@ -120,7 +120,7 @@ zerostack 的代码量极克制——7000 行 Rust，覆盖了一个完整 Codin
 
 更巧的一个设计——**agent 会自动加载项目根目录或祖先目录里的 `AGENTS.md` 或 `CLAUDE.md`，注入到 system prompt**。这套约定刚好和 Claude Code / Cursor / Codex 已经形成的"项目根目录放 CLAUDE.md"开发者习惯无缝对接。已有 CLAUDE.md 的项目切到 zerostack 完全不用改任何配置文件。
 
-![两条路线：内置 prompt 集 vs 外挂 skill 仓库](zerostack-prompt-vs-skill-routes.png)
+![两条路线：内置 prompt 集 vs 外挂 skill 仓库](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/zerostack-rust-8mb-coding-agent-2026-05-18/zerostack-prompt-vs-skill-routes.png)
 
 这张图说的是路线分歧——Claude Code 这一脉走"外挂 skill 仓库"路线，superpowers 这种社区项目把上百个 skill 装进 git 仓库，运行时按需 git clone / npm install 加载；zerostack 走"内置 prompt 集"路线，十套 prompt 在编译时就装进二进制，不依赖任何外部仓库。
 
@@ -247,7 +247,7 @@ zerostack 走到这条赛道的另一端——**完全放弃 IDE 形态，只做
 
 ## 真实跑一遍要看什么：四个值得本地复现的实验
 
-![zerostack 五天 GitHub stars 增长曲线](zerostack-stars-growth.png)
+![zerostack 五天 GitHub stars 增长曲线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/zerostack-rust-8mb-coding-agent-2026-05-18/zerostack-stars-growth.png)
 
 如果你今天就想拉下来试试看，建议测四件事——下面这张表列了四个实验的目的、配置、观察指标和预期收获：
 

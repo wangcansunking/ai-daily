@@ -11,7 +11,7 @@ description: "今天三条主线都在回答同一个问题：智能体要真正
 
 # 华为云搭出 Agentic 算力基础设施 · 马斯克 Grok Build 让编程 agent 三分天下 · 智源脑模型登 Science | AI 日报 | 2026-06-06
 
-![华为云 INSPIRE 提出 Agentic Infra、Grok Build 入场编程 agent 三分天下、智源 Brainμ 登 Science 三线并进](06.png)
+![华为云 INSPIRE 提出 Agentic Infra、Grok Build 入场编程 agent 三分天下、智源 Brainμ 登 Science 三线并进](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/daily/06.png)
 
 ## 📋 头版目录
 
@@ -41,7 +41,7 @@ description: "今天三条主线都在回答同一个问题：智能体要真正
 
 ### 头条 1 · 华为云 INSPIRE 大会：把「卖算力」升级成「卖一整套能跑智能体的基础设施」
 
-![华为云 INSPIRE 大会周跃峰宣布开创全新 Agentic AI 时代、提出 Agentic Infra 新范式](source-huaweicloud-inspire-2026-06-06.png)
+![华为云 INSPIRE 大会周跃峰宣布开创全新 Agentic AI 时代、提出 Agentic Infra 新范式](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/daily/source-huaweicloud-inspire-2026-06-06.png)
 
 > 来源：新浪财经 [1]，量子位 [2]
 
@@ -51,7 +51,7 @@ description: "今天三条主线都在回答同一个问题：智能体要真正
 
 #### 头条 1.1 · 四款新品分别补上算力、记忆、调度、运行环境四块
 
-![华为云 INSPIRE 大会发布 Agentic Infra 四大新品的核心数字一览](chart-huaweicloud-agentic-infra-2026-06-06.png)
+![华为云 INSPIRE 大会发布 Agentic Infra 四大新品的核心数字一览](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/daily/chart-huaweicloud-agentic-infra-2026-06-06.png)
 
 周跃峰这次发布的四款新品，正好对应智能体跑起来要解决的四件事 [1][2]。
 
@@ -70,7 +70,7 @@ description: "今天三条主线都在回答同一个问题：智能体要真正
 
 ### 头条 2 · 编程 agent 的形态之争基本结束，Grok Build 入场把竞争推向价格与并行度
 
-![编程 agent 三分天下：Claude Code、Codex、Grok Build 形态对照与公开亮点](chart-coding-agent-three-way-2026-06-06.png)
+![编程 agent 三分天下：Claude Code、Codex、Grok Build 形态对照与公开亮点](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/daily/chart-coding-agent-three-way-2026-06-06.png)
 
 > 来源：The New Stack [4]，DevOps.com [3]，CNBC [5]
 
@@ -90,7 +90,7 @@ description: "今天三条主线都在回答同一个问题：智能体要真正
 
 ### 头条 3 · 智源与清华的脑科学模型 Brainμ 登《Science》，国产基础模型第一次撑起一篇神经科学正刊
 
-![智源清华 Brainμ 多模态脑模型登 Science：把三类脑信号统一成一套表征、揭示记忆与睡眠双向调控](chart-brainmu-science-2026-06-06.png)
+![智源清华 Brainμ 多模态脑模型登 Science：把三类脑信号统一成一套表征、揭示记忆与睡眠双向调控](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/daily/chart-brainmu-science-2026-06-06.png)
 
 > 来源：量子位 [6]，网易科技 [7]
 
@@ -138,19 +138,19 @@ description: "今天三条主线都在回答同一个问题：智能体要真正
 
 - 🔴 **openclaw/openclaw（约 37.7 万星）**：跨任意操作系统帮你把日常事务真正办完的开源个人助手，仍是个人 AI 助手赛道里最大的项目 [14]。在「给智能体配长期记忆、配运行环境」成为今天主线的背景下，它那张「能装、能常驻、能办完活」的能力清单，恰好是华为云 AMS、mem0 这些新基础设施要去填实的需求样板。
 
-![个人助手 OpenClaw 越过 37.7 万星、仍是个人 AI 助手最大开源项目的 GitHub 仓库卡](source-github-openclaw-2026-06-06.png)
+![个人助手 OpenClaw 越过 37.7 万星、仍是个人 AI 助手最大开源项目的 GitHub 仓库卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/daily/source-github-openclaw-2026-06-06.png)
 
 - 🔴 **farion1231/cc-switch（约 9.26 万星）**：一个跨平台的桌面工具，把 Claude Code、Codex、OpenCode、OpenClaw、Gemini CLI、Hermes Agent 这些命令行智能体集中到一处管理、一键切换 [15]。它的走红正好印证了头条二里的判断——当编程 agent 形态趋同、一个人手里同时装好几款时，「在它们之间顺滑切换」本身就成了一个真实需求。
 
-![多智能体切换器 cc-switch 约 9.26 万星、一处管好 Claude Code 与 Codex 的 GitHub 仓库卡](source-github-ccswitch-2026-06-06.png)
+![多智能体切换器 cc-switch 约 9.26 万星、一处管好 Claude Code 与 Codex 的 GitHub 仓库卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/daily/source-github-ccswitch-2026-06-06.png)
 
 - 🟡 **mem0ai/mem0（约 5.78 万星）**：面向 AI 智能体的通用记忆层，让智能体能跨会话记住用户与上下文 [16]。它和华为云这次把记忆做进基础设施是同一股潮流的两个侧面——一个走开源自托管，一个走云上交付，都在补「智能体记不住」这块短板。
 
-![智能体记忆层 mem0 约 5.78 万星、给 agent 配长期记忆的 GitHub 仓库卡](source-github-mem0-2026-06-06.png)
+![智能体记忆层 mem0 约 5.78 万星、给 agent 配长期记忆的 GitHub 仓库卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/daily/source-github-mem0-2026-06-06.png)
 
 - 🟡 **QwenLM/Qwen3.6（约 3500 星）**：阿里千问团队 Qwen3.6 系列的官方仓库，6 月 3 日仍在更新 [17]。星标还不算高，但作为国产开源旗舰系列的承载仓库，值得放进观察名单，看后续会不会随新版本放出而快速上量。
 
-![阿里千问 Qwen3.6 系列官方 GitHub 仓库卡、国产开源旗舰承载仓库](source-github-qwen-2026-06-06.png)
+![阿里千问 Qwen3.6 系列官方 GitHub 仓库卡、国产开源旗舰承载仓库](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/daily/source-github-qwen-2026-06-06.png)
 
 ## 🛠 AI Coding 工具动态
 

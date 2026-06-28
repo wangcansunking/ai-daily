@@ -23,7 +23,7 @@ description: "五月十八号 Anthropic 官宣收购纽约创业公司 Stainless
 
 # Anthropic 收购 Stainless：SDK 生成器易主
 
-![Anthropic Stainless 收购封面图 暖珊瑚色调连接节点抽象画](stainless-sdk-anthropic-mcp-infra-2026-05-19.png)
+![Anthropic Stainless 收购封面图 暖珊瑚色调连接节点抽象画](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/stainless-sdk-anthropic-mcp-infra-2026-05-19/stainless-sdk-anthropic-mcp-infra-2026-05-19.png)
 
 ## 这场收购的工程含义
 
@@ -60,9 +60,9 @@ OpenAI 官方的 `openai-python`、`openai-node`，Google 的 Gemini SDK，Cloud
 
 数字相互交叉口径一致。关停托管服务这一条由 Anthropic 官网正面写出，Alex Rattray 在 Stainless 博客补充口径——「从今天开始，新注册、新项目和新 SDK 将不可用」。
 
-![Stainless 客户依赖图表 OpenAI Google Cloudflare 八家公司向 Stainless 中心节点的连线图](stainless-customer-map.png)
+![Stainless 客户依赖图表 OpenAI Google Cloudflare 八家公司向 Stainless 中心节点的连线图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/stainless-sdk-anthropic-mcp-infra-2026-05-19/stainless-customer-map.png)
 
-![Anthropic 官方收购公告页面横幅图 暖珊瑚色背景节点造型](stainless-anthropic-announcement-og.png)
+![Anthropic 官方收购公告页面横幅图 暖珊瑚色背景节点造型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/stainless-sdk-anthropic-mcp-infra-2026-05-19/stainless-anthropic-announcement-og.png)
 
 ## 双方原话挑出来，看口径有没有错位
 
@@ -105,7 +105,7 @@ HN 用户还引述了 Stainless 迁移页（app.stainless.com/transition）的�
 
 把 Stainless 之外的同档生成器拉到一张表里看：
 
-![Stainless Fern Speakeasy OpenAPI Generator Apifox 五家生成器对比表格](stainless-generator-compare.png)
+![Stainless Fern Speakeasy OpenAPI Generator Apifox 五家生成器对比表格](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/stainless-sdk-anthropic-mcp-infra-2026-05-19/stainless-generator-compare.png)
 
 文字版要点：
 
@@ -131,7 +131,7 @@ HN 用户还引述了 Stainless 迁移页（app.stainless.com/transition）的�
 
 把这次收购和国内 AI 基建联系起来看，结论反高潮：**对国内开发者基本零冲击**。国产模型厂商一直就没押第三方托管 SDK 工厂这条路。
 
-![国产大模型 SDK 自维护现状卡片 DeepSeek 通义 智谱 火山 千帆 Kimi MiniMax 阶跃八家](stainless-china-sdk-status.png)
+![国产大模型 SDK 自维护现状卡片 DeepSeek 通义 智谱 火山 千帆 Kimi MiniMax 阶跃八家](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-19/stainless-sdk-anthropic-mcp-infra-2026-05-19/stainless-china-sdk-status.png)
 
 挨家看一眼：DeepSeek 自维护 Python、Node SDK + 兼容 OpenAI；通义千问的 DashScope 自维护 Python、Java、Node 三语言 + OpenAI 兼容接口；智谱 zhipuai-sdk-python 完全自研，外加 Go、Node SDK；火山方舟 Volcengine SDK 多语言齐，Coze 把 MCP 作一等公民；百度千帆 qianfan-sdk 覆盖 Python、Java、Go；Kimi、MiniMax、阶跃星辰大多走 OpenAI 协议兼容或自家 + 兼容层并行。
 

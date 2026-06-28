@@ -11,7 +11,7 @@ description: 当「能跑多长上下文、跑得多便宜」成了国产大模�
 ---
 # 长上下文的胜负手，下沉到了注意力这一层：DeepSeek NSA、MiniMax MSA 与国产稀疏注意力路线之争
 
-![国产大模型稀疏注意力长上下文路线对比封面](cn-sparse-attention-long-context-race-2026-06-09.png)
+![国产大模型稀疏注意力长上下文路线对比封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/cn-sparse-attention-long-context-race-2026-06-09/cn-sparse-attention-long-context-race-2026-06-09.png)
 
 过去一年，国产大模型在「长上下文」这件事上交出的成绩单，看起来都很像：千问（Qwen）能到 100 万 token、Kimi 能读整本书、DeepSeek 把 12.8 万 token 的推理价格压到了上一代的一半。但如果只盯着「支持多长」这个数字，你会错过真正发生变化的地方。
 
@@ -29,7 +29,7 @@ description: 当「能跑多长上下文、跑得多便宜」成了国产大模�
 
 数据先摆出来。DeepSeek 在 NSA 论文里给出的实测是：在 6.4 万（64k）token 的长度上，把稀疏注意力换成全量注意力，前向传播会慢到 9.0 倍、反向传播慢 6.0 倍、解码（decoding，也就是一个字一个字往外吐的阶段）慢 11.6 倍（来源：NSA 论文 arXiv:2502.11089）。换句话说，长上下文场景下，注意力这一块的优化空间，直接决定了模型能不能跑得起、跑得快。
 
-![长上下文下全量注意力与稀疏注意力的计算量对比示意](cn-sparse-attention-long-context-race-2026-06-09-img1.png)
+![长上下文下全量注意力与稀疏注意力的计算量对比示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/cn-sparse-attention-long-context-race-2026-06-09/cn-sparse-attention-long-context-race-2026-06-09-img1.png)
 
 稀疏注意力的共同思路其实很朴素：人读一本 50 万字的书找某个细节时，不会从头逐字重读，而是先翻目录定位章节，再到那一章里细看。稀疏注意力做的就是这件事——**不让每个 token 都去看前面全部 token，而是只挑出真正相关的那一小撮来算**。难点全在「怎么挑」「什么时候挑」「挑的时候会不会漏掉关键线索」这三个问题上。几家国产团队的路线分叉，本质上就是对这三个问题给出了不同答案。
 
@@ -45,7 +45,7 @@ NSA 的答案是：让稀疏从预训练第一天起就进到梯度里，模型�
 - **选择支路（细看重点）**：根据压缩支路算出的相关性分数，挑出最重要的若干个块（块大小 64，选 top-16 块），在这些块的原始 token 上做精细注意力；
 - **滑动窗口支路（盯住眼前）**：固定关注最近的 512 个 token，保证近处的上下文不丢，并通过门控（gating）与前两条支路隔开，防止模型偷懒只学近处。
 
-![NSA 三支路稀疏注意力架构示意](cn-sparse-attention-long-context-race-2026-06-09-img2.png)
+![NSA 三支路稀疏注意力架构示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/cn-sparse-attention-long-context-race-2026-06-09/cn-sparse-attention-long-context-race-2026-06-09-img2.png)
 
 这套设计的好处是数字会说话。在 64k 长度上，相对全量注意力，NSA 的前向传播快 9.0 倍、反向传播快 6.0 倍、解码快 11.6 倍（来源：NSA 论文 arXiv:2502.11089）。更关键的是质量没掉——在 64k 的「大海捞针」检索测试里，NSA 在所有位置都做到了满分检索，在通用基准、长文本任务、推理任务上与全量注意力打平甚至更好。
 
@@ -78,7 +78,7 @@ MiniMax 当时的结论很硬：一个又快又不够聪明的模型没有实用
 
 半年后的 M3，故事反转了。MiniMax 重新押注稀疏，但这一次不再赌线性注意力，而是走「softmax 表达力 + 块级 top-k 选择」这条路——既保住质量，又拿到次二次方（sub-quadratic）的复杂度。官方给出的数字相当亮眼：在 100 万 token 长度上，预填充（prefill）阶段加速 9.7 倍、解码阶段加速 15.6 倍（来源：VentureBeat 报道与 MiniMax 公开说明，2026 年 5 月）。
 
-![MiniMax 从 M2 全量到 M3 稀疏的路线转折示意](cn-sparse-attention-long-context-race-2026-06-09-img3.png)
+![MiniMax 从 M2 全量到 M3 稀疏的路线转折示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/cn-sparse-attention-long-context-race-2026-06-09/cn-sparse-attention-long-context-race-2026-06-09-img3.png)
 
 M3 的稀疏注意力（业界惯称 MSA，MiniMax Sparse Attention）和 NSA 是近亲，但更精简。它以 GQA（Grouped-Query Attention，分组查询注意力）为骨干，分两步走：先用一个共享的单头索引、配合块最大池化（BlockMaxPool）算出每个块的相关性分数，再用 Top-k 选出要算的块；然后——这是它和 DSA 的关键区别——直接在**未压缩的完整 K/V** 上做注意力，不像 DSA 那样先压成潜在向量。NSA 有压缩、选择、滑动窗口三条支路，MSA 砍到只剩选择一条，等于一个「瘦身版 NSA」，工程上更好和 vLLM、SGLang 这些主流推理框架对接。
 

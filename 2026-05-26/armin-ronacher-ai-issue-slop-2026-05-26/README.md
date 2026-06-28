@@ -15,7 +15,7 @@ image_alt_match_ignore: ["armin-slop-funnel-90days.png", "armin-slop-four-patter
 
 # Flask 作者 Armin：90 天收 3145 条外部 issue，2504 条是 AI 编的
 
-![一名亚洲面孔的开源维护者被汹涌而来的 AI 生成 GitHub issue 通知淹没，中间只有一张手写便签发光，强对比戏剧光影](armin-ronacher-ai-issue-slop-2026-05-26.png)
+![一名亚洲面孔的开源维护者被汹涌而来的 AI 生成 GitHub issue 通知淹没，中间只有一张手写便签发光，强对比戏剧光影](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/armin-ronacher-ai-issue-slop-2026-05-26/armin-ronacher-ai-issue-slop-2026-05-26.png)
 
 ## 30 秒速览：Pi 项目 90 天的真账单
 
@@ -27,7 +27,7 @@ image_alt_match_ignore: ["armin-slop-funnel-90days.png", "armin-slop-four-patter
 
 ## Armin 是谁：为什么他这次出声不一样
 
-![Armin Ronacher 主力开源项目 star 量级柱状图：Flask 71,581 / Sentry 43,961 / Click 17,510 / Jinja 11,635](armin-projects-stars.png)
+![Armin Ronacher 主力开源项目 star 量级柱状图：Flask 71,581 / Sentry 43,961 / Click 17,510 / Jinja 11,635](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/armin-ronacher-ai-issue-slop-2026-05-26/armin-projects-stars.png)
 
 Python 圈里抱怨 AI slop 的人不少，过去半年知乎、HN、Reddit r/programming 上类似的吐槽帖每周都有。但这次大家愿意停下来读完，原因有三条：
 
@@ -41,7 +41,7 @@ Armin 在原文里给 Pi 的定位是一句很克制的话："Pi 现在是 Earen
 
 ## 90 天数据是怎么收集的：一条自动关闭规则
 
-![Pi 项目 90 天 issue / PR 处理漏斗：3,145 外部提交 → 2,504 自动关闭 → 641 人工复核 → 167 最终修复](armin-slop-funnel-90days.png)
+![Pi 项目 90 天 issue / PR 处理漏斗：3,145 外部提交 → 2,504 自动关闭 → 641 人工复核 → 167 最终修复](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/armin-ronacher-ai-issue-slop-2026-05-26/armin-slop-funnel-90days.png)
 
 Pi 项目的 issue 治理规则比国内大部分开源项目都更激进。Armin 在文章里的原话翻译过来是这样：
 
@@ -67,7 +67,7 @@ Pi 项目的 issue 治理规则比国内大部分开源项目都更激进。Armi
 
 ## AI 编出来的 issue 长什么样：四种典型形态
 
-![AI 编出来的 issue 四大典型形态柱状图：错误根因诊断 38%、伪最小复现 27%、错位类比 19%、没观察就给实现建议 16%](armin-slop-four-patterns.png)
+![AI 编出来的 issue 四大典型形态柱状图：错误根因诊断 38%、伪最小复现 27%、错位类比 19%、没观察就给实现建议 16%](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/armin-ronacher-ai-issue-slop-2026-05-26/armin-slop-four-patterns.png)
 
 Armin 没有给一个分类表，但他在文中给的那句话基本是一份分类清单的原文。原话翻译："最终结果就是一堆根因纯粹靠猜、伪造的最小可复现、随手就给的实现方案、还有拿相邻但其实毫不相关的代码当类比。"——四种形态。展开看每一种是什么意思：
 
@@ -81,7 +81,7 @@ Armin 没有给一个分类表，但他在文中给的那句话基本是一份�
 
 ## 四行模板拆解：他给的写法和为什么有效
 
-![Armin 推荐的 issue 四段式模板可视化：1 我跑了什么命令、2 我以为会怎样、3 实际怎样、4 错误日志原文](armin-slop-template-4parts.png)
+![Armin 推荐的 issue 四段式模板可视化：1 我跑了什么命令、2 我以为会怎样、3 实际怎样、4 错误日志原文](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/armin-ronacher-ai-issue-slop-2026-05-26/armin-slop-template-4parts.png)
 
 Armin 给出的模板原文只有四行，翻译过来字面就是：
 

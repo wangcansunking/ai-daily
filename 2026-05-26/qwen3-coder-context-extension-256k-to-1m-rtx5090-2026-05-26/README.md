@@ -11,7 +11,7 @@ tags: [Qwen3-Coder, RTX 5090, 上下文扩展, YaRN, FlashAttention 3, FP8 KV ca
 
 # 256K → 1M：千问 Coder 30B 在 RTX 5090 上的上下文扩展工程账
 
-![封面：256K → 1M 上下文扩展工程账](qwen3-coder-context-extension-256k-to-1m-rtx5090-2026-05-26.png)
+![封面：256K → 1M 上下文扩展工程账](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-coder-context-extension-256k-to-1m-rtx5090-2026-05-26/qwen3-coder-context-extension-256k-to-1m-rtx5090-2026-05-26.png)
 
 ## 30 秒速览
 
@@ -25,7 +25,7 @@ tags: [Qwen3-Coder, RTX 5090, 上下文扩展, YaRN, FlashAttention 3, FP8 KV ca
 
 2026-04 之后，国内开发者群里聊 RTX 5090 的话题，从「显存够不够装 DeepSeek」迅速滑到了「能不能把千问 Coder 的上下文推到 1M」。这件事的吸引力很直接：一张消费级显卡，配上原生 256K 的 MoE 编码模型，再叠一个 YaRN，整个 monorepo 喂进去做跨文件改写——这是过去只有云端 API 才敢谈的能力。
 
-![千问 Coder HuggingFace 模型卡](qwen3-coder-hf-og.jpg)
+![千问 Coder HuggingFace 模型卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-coder-context-extension-256k-to-1m-rtx5090-2026-05-26/qwen3-coder-hf-og.jpg)
 
 但只要真正动手装机，第一道坎就不是模型本身，而是显存。把 BF16 权重塞进 32GB 是不可能的；Q8_0 塞得下，但留给 KV cache 的空间几乎归零；只有 Q4_K_M 这个档位才有腾挪余地。**真正卡在 5090 头上的瓶颈，从来不是 30B 模型够不够强，而是 KV cache 够不够省**——这是这篇文章自始至终要回扣的那一句。
 
@@ -33,7 +33,7 @@ tags: [Qwen3-Coder, RTX 5090, 上下文扩展, YaRN, FlashAttention 3, FP8 KV ca
 
 千问 Coder 30B-A3B 的结构信息已经公开：总参数 30.5B、激活 3.3B、num_hidden_layers 48、GQA num_key_value_heads 4。把这些数据代入显存预算公式，可以一行一行算清每个档位塞下之后剩多少。
 
-![5090 显存预算账](qwen3-coder-vram-budget-2026-05-26.png)
+![5090 显存预算账](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-coder-context-extension-256k-to-1m-rtx5090-2026-05-26/qwen3-coder-vram-budget-2026-05-26.png)
 
 | 量化档 | 权重显存 | 5090 32GB 剩余 KV 余量 |
 |---|---|---|
@@ -44,7 +44,7 @@ tags: [Qwen3-Coder, RTX 5090, 上下文扩展, YaRN, FlashAttention 3, FP8 KV ca
 
 这意味着，5090 上做长上下文实验，量化档几乎只剩 Q4 一条路。Unsloth 出的 UD-Q4_K_XL 是当前社区最稳的 GGUF 之一，截至 2026-05-26 在 HuggingFace 上每周下载量稳居 Qwen3-Coder 系列前三。
 
-![Unsloth Qwen3-Coder GGUF](unsloth-qwen3-coder-gguf-og.png)
+![Unsloth Qwen3-Coder GGUF](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-coder-context-extension-256k-to-1m-rtx5090-2026-05-26/unsloth-qwen3-coder-gguf-og.png)
 
 ## KV cache 才是真正的瓶颈
 
@@ -69,7 +69,7 @@ tags: [Qwen3-Coder, RTX 5090, 上下文扩展, YaRN, FlashAttention 3, FP8 KV ca
 
 千问 Coder 模型卡里专门有一节叫 Long-context Capabilities，写明原生 262,144、通过 YaRN 可外推到 1,048,576。这个 YaRN 不是工程师拍脑袋造的词；它是 2023 年 Bowen Peng、Jeffrey Quesnelle、Honglu Fan、Enrico Shippole 发在 arxiv 2309.00071 的论文，全名 Yet another RoPE extensioN method，EleutherAI 博客做过深度解读。
 
-![GitHub Qwen3-Coder repo](qwen3-coder-github-og.png)
+![GitHub Qwen3-Coder repo](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-coder-context-extension-256k-to-1m-rtx5090-2026-05-26/qwen3-coder-github-og.png)
 
 YaRN 的核心做法是同时改 RoPE 的频率基（base）和 attention 温度，再叠一个 ramp 函数对低频维度做特殊处理。论文摘要里给的对比数据是：相比早期 PI / NTK-aware 扩展，YaRN 训练只要 **1/10 的 token、1/2.5 的训练步**就能达到同等长度外推；s=8/16/32 都是论文给的典型档。
 
@@ -94,7 +94,7 @@ YaRN 的核心做法是同时改 RoPE 的频率基（base）和 attention 温度
 
 Flash Attention 3（arxiv 2407.08608，2024 年 Tri Dao 等人）是这一年 Hopper / Blackwell 数据中心卡上最主流的 attention 算子；在 H100 上 FA3 比 FA2 又翻一倍吞吐。但截至 2026-05-26，**FA3 在 RTX 5090（sm_120）上还没有完整官方支持**。
 
-![FlashAttention GitHub](flash-attention-github-og.png)
+![FlashAttention GitHub](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-coder-context-extension-256k-to-1m-rtx5090-2026-05-26/flash-attention-github-og.png)
 
 证据有两条：
 
@@ -103,7 +103,7 @@ Flash Attention 3（arxiv 2407.08608，2024 年 Tri Dao 等人）是这一年 Ho
 
 vLLM 后端兼容矩阵的现状是：sm_100（B100/B200 数据中心 Blackwell）走 FA4；**sm_120（5090 消费级 Blackwell）走 FlashInfer FA2 或 CUTLASS fallback**。这是一个反直觉的事实——5090 比 4090（sm_89）更新，但 attention 内核生态目前比 4090 还要折腾。
 
-![vLLM GitHub](vllm-github-og.png)
+![vLLM GitHub](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-coder-context-extension-256k-to-1m-rtx5090-2026-05-26/vllm-github-og.png)
 
 社区目前最稳的栈是 vLLM 0.9.x + PyTorch 2.9.0 cu128 + FlashInfer backend，5090 上跑 Qwen3-Coder 30B 不会爆错；但要拿到 H100 那种 attention 吞吐，需要等 FA3 的 sm_120 完整支持。
 
@@ -111,7 +111,7 @@ vLLM 后端兼容矩阵的现状是：sm_100（B100/B200 数据中心 Blackwell�
 
 把上面所有显存账和 attention 内核情况合起来，5090 上跑千问 Coder 的实战配方实际只有三档。
 
-![三档实战配方](qwen3-coder-three-recipes-2026-05-26.png)
+![三档实战配方](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-coder-context-extension-256k-to-1m-rtx5090-2026-05-26/qwen3-coder-three-recipes-2026-05-26.png)
 
 **第一档：256K + FP8 KV，vLLM**
 
@@ -140,7 +140,7 @@ python -m sglang.launch_server \
 
 SGLang 的 HiCache 是分三层（L1 GPU / L2 CPU / L3 NVMe）的 KV 缓存，配合 Mooncake 3FS 后端，cache hit 率能从 40% 拉到 80%；官方博客给的数字是同模型多轮对话场景**吞吐 6×、TTFT 降 80%**。这一档适合实际编码 IDE 接入场景，因为多轮上下文复用率高。
 
-![SGLang GitHub](sglang-github-og.png)
+![SGLang GitHub](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-coder-context-extension-256k-to-1m-rtx5090-2026-05-26/sglang-github-og.png)
 
 **第三档：1M + Q4 KV，llama.cpp + YaRN**
 
@@ -158,7 +158,7 @@ SGLang 的 HiCache 是分三层（L1 GPU / L2 CPU / L3 NVMe）的 KV 缓存，�
 
 这是把 5090 推到极限的玩法，权重 18.6 GB + Q4 KV 25 GB ≈ 43.6 GB，必须配合 llama.cpp 的分页 offload（部分层放 CPU 内存）才跑得起来；首 token 时间会从 256K 档的 956 ms 拉长到工程外推的 **8-12 秒**（这条数据基于 CloudRift 短上下文 TTFT 外推估算，**未独立验证**），decode 速度落到单路 60-80 tok/s。
 
-![llama.cpp GitHub](llamacpp-github-og.png)
+![llama.cpp GitHub](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-coder-context-extension-256k-to-1m-rtx5090-2026-05-26/llamacpp-github-og.png)
 
 ## 五家推理引擎对长上下文的支持现状
 
@@ -178,7 +178,7 @@ SGLang 的 HiCache 是分三层（L1 GPU / L2 CPU / L3 NVMe）的 KV 缓存，�
 
 CloudRift 在 2026-05 的实测里同时跑了 5090 和 4090，几组关键数字是这样：
 
-![5090 vs 4090 吞吐](qwen3-coder-5090-throughput-2026-05-26.png)
+![5090 vs 4090 吞吐](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/qwen3-coder-context-extension-256k-to-1m-rtx5090-2026-05-26/qwen3-coder-5090-throughput-2026-05-26.png)
 
 - 1× 5090 + Qwen3-Coder 30B AWQ + vLLM + MCR=16 + 114,688 ctx：**1,157 tok/s（4 并发）**，TTFT 956 ms；
 - 同上 SGLang MCR=28：**898 tok/s**，TTFT 2.8s；

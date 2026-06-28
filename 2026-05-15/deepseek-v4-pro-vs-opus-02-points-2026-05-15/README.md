@@ -11,7 +11,7 @@ domain: open-weights-frontier-model
 ---
 # DeepSeek V4 Pro 80.6 vs Claude Opus 4.7 80.8：开源端到端 0.2 分背后是 8 个月极限优化
 
-![cover](deepseek-v4-pro-vs-opus-02-points-2026-05-15.png)
+![cover](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/deepseek-v4-pro-vs-opus-02-points-2026-05-15/deepseek-v4-pro-vs-opus-02-points-2026-05-15.png)
 
 把数字直接摆到桌面上：在 akitaonrails 上周整理的 LLM Benchmarks Part 3 综合实测里，SWE-bench Verified（业内默认的编码任务已验证子集）这一项，Anthropic Claude Opus 4.7 拿到 80.8%，DeepSeek V4 Pro 拿到 80.6%，差距 0.2 分。同一张表里，Opus 综合分 97 居全场首位，DeepSeek V4 Pro 综合分 89 排在 Kimi K2.6 之上，Claude Sonnet 4.6 综合分排在 V4 Pro 之后。价格那一栏看得更清楚——Opus 的 API 报价是输入 5 美元、输出 25 美元每百万 token，DeepSeek V4 Pro 是输入 1.74 美元、输出 3.48 美元每百万 token，进价位档接近三分之一。
 
@@ -31,7 +31,7 @@ domain: open-weights-frontier-model
 | Grok 4.3（xAI） | — | 72 | n/a | n/a | 美国 |
 | Qwen3-Coder 480B-A35B（阿里） | 69.6% | — | 0.22 USD | 1.80 USD | 中国 |
 
-![DeepSeek V4 Pro vs Claude Opus 编码评测与价格对比](deepseek-v4-pro-bench-vs-price-2026-05-15.png)
+![DeepSeek V4 Pro vs Claude Opus 编码评测与价格对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/deepseek-v4-pro-vs-opus-02-points-2026-05-15/deepseek-v4-pro-bench-vs-price-2026-05-15.png)
 
 读这张表需要分两层。第一层是绝对位置：80.6 和 80.8 在 SWE-bench Verified 的方差里完全在噪声之内，业界把超过 0.5 分才算可解读差异。从分项指标看，DeepSeek V4 Pro 第一次跨进 Anthropic 旗舰这一档，不是擦边——它把 Sonnet 4.6 的 79.6% 留在了后面。
 
@@ -57,7 +57,7 @@ KV 缓存压到 10% 这件事对长上下文应用是分水岭。过去 1.6T 参
 
 这套优化的底子是 MoE 架构经济学。V4 Pro 总参 1.6T，单 token 推理只激活 49B，活跃比例 3.06%。HuggingFace 上 deepseek-ai/DeepSeek-V4-Pro 的模型卡把这一点写得很直接——不是参数堆得多就贵，是参数堆得多但只激活一小撮，每次推理付的是 49B 的钱、拿的是 1.6T 的能力。这套数学过去 Mistral 8x7B、Mixtral 8x22B 都尝试过，但 DeepSeek 是第一家把 MoE 经济学推到旗舰编码任务能与闭源旗舰打平这一档。
 
-![DeepSeek V4 Pro MoE 架构与推理算力流程](deepseek-v4-pro-moe-flow-2026-05-15.png)
+![DeepSeek V4 Pro MoE 架构与推理算力流程](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/deepseek-v4-pro-vs-opus-02-points-2026-05-15/deepseek-v4-pro-moe-flow-2026-05-15.png)
 
 ## 编排框架协议坑：opencode 跑 V4 Pro 是会卡的
 

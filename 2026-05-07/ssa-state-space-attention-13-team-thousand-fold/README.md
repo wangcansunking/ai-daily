@@ -10,7 +10,7 @@ tags: [ssa, subquadratic-attention, linear-attention, transformer, chinese-ai]
 ---
 # 13 人小团队 SSA：1200 万上下文叫板 Opus
 
-![SSA 与 Dense Attention 长上下文成本对照](ssa-kv-growth-dense-vs-linear.png)
+![SSA 与 Dense Attention 长上下文成本对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/ssa-state-space-attention-13-team-thousand-fold/ssa-kv-growth-dense-vs-linear.png)
 
 ## 一、5 月 6 日的事：13 个人，把 Opus 摆上台面
 
@@ -117,7 +117,7 @@ SSA 的稀疏选择不直接压 K/V 体积，但它让"每个 query 实际访问
 
 后面我们会看到，国产线性注意力的真实落地度其实远比 SubQ 更扎实，只是不容易出爆款标题。
 
-![国产 vs 海外两大阵营](ssa-camps-cn-vs-overseas.png)
+![国产 vs 海外两大阵营](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/ssa-state-space-attention-13-team-thousand-fold/ssa-camps-cn-vs-overseas.png)
 
 ---
 
@@ -209,7 +209,7 @@ Jamba 的意义在于证明了 "hybrid is the answer"——纯 Mamba 不行，�
 
 学术圈对这类"先发声明再补论文"的做派接受度比国内高。我们这一代国产开发者读这种新闻，最稳的姿势是——记下方向、看路演 demo、等开源再下结论。
 
-![SubQ 自报 benchmark 表](ssa-benchmarks-self-reported.png)
+![SubQ 自报 benchmark 表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/ssa-state-space-attention-13-team-thousand-fold/ssa-benchmarks-self-reported.png)
 
 ---
 
@@ -282,7 +282,7 @@ SGLang 也支持 Mamba 系列模型，启动命令和 vLLM 接近。issue 区有
 
 要让 vLLM / SGLang 支持 SubQ 的 SSA，最低门槛是模型权重 + sparse selection 内核公开。最快也要等团队走到下一个里程碑（一般是发 paper + 放小尺寸模型）。在那之前，国内开发者更现实的选择是部署 MiniMax-01 或 Qwen3-Next，把 SubQ 的论文当作下一步的方向参考。
 
-![国内开发者的实操路径](ssa-dev-path-cn-2026-05.png)
+![国内开发者的实操路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/ssa-state-space-attention-13-team-thousand-fold/ssa-dev-path-cn-2026-05.png)
 
 ### 6.4 如果你在做的是这几类工作
 

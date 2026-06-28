@@ -25,7 +25,7 @@ description: "5 月 12 日把国内桌面 LLM 客户端这一类聚到一处：O
 
 # 5 大桌面 LLM 客户端 + 国产开源模型实测横评
 
-![5 大桌面 LLM 客户端横评封面](desktop-llm-client-comparison-cn-models-2026-05-12.png)
+![5 大桌面 LLM 客户端横评封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/desktop-llm-client-comparison-cn-models-2026-05-12/desktop-llm-client-comparison-cn-models-2026-05-12.png)
 
 5 月 12 日上午，V2EX 一个上海 indie 开发者发了条「我刚买了 4090，想本地跑千问，到底装哪个客户端」的帖子，下面 38 条回复分成五大阵营——Ollama 党、LM Studio 党、Cherry Studio 党、Jan 党、Msty 党。同一天 r/LocalLLaMA 一则 Cherry Studio 主题帖在 12 小时内冲到 200+ 赞，评论区的中文用户和英文用户为「中文 UI 友好度」与「MCP 支持完整度」吵得难分难解。
 
@@ -67,7 +67,7 @@ Star 数差距背后是产品形态的本质差异：
 
 ## 三、10 维能力矩阵
 
-![5 大桌面 LLM 客户端 · 10 维能力矩阵](desktop-llm-client-capability-heatmap.png)
+![5 大桌面 LLM 客户端 · 10 维能力矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/desktop-llm-client-comparison-cn-models-2026-05-12/desktop-llm-client-capability-heatmap.png)
 
 把五家在「一键 GUI / Windows / macOS / Linux / 国内镜像 / 模型市场 / RAG / MCP / 多模型并排 / API server」10 个维度上的实测位置摆开（每一项独立查文档实证），可以看出三个分层：
 
@@ -87,7 +87,7 @@ Star 数差距背后是产品形态的本质差异：
 
 ## 四、4 款国产开源模型 × 5 大客户端兼容表
 
-![4 款国产开源模型 × 5 大客户端 · 实测兼容矩阵](desktop-llm-client-cn-model-compat.png)
+![4 款国产开源模型 × 5 大客户端 · 实测兼容矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/desktop-llm-client-comparison-cn-models-2026-05-12/desktop-llm-client-cn-model-compat.png)
 
 国内开发者最关心的「我要跑国产模型，这五家都能跑吗」一句话答案：**前三家国产开源主力（千问 / DeepSeek / GLM）在五款客户端里全部「一键拉 / 市场内置」**；Kimi 是唯一一个需要手动拉 GGUF 的，原因下文专门讲。
 
@@ -285,7 +285,7 @@ GLM-4-9B 与 GLM-Z1-9B 在五家全部一键可拉，重点是它的 MIT 许可�
 
 ## 六、内存占用对照
 
-![5 大客户端 · 桌面端内存占用](desktop-llm-client-memory-bar.png)
+![5 大客户端 · 桌面端内存占用](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/desktop-llm-client-comparison-cn-models-2026-05-12/desktop-llm-client-memory-bar.png)
 
 把五家在「客户端本体 idle 内存」与「加载完本地模型后非 GPU 内存」两个维度抽样实测（Activity Monitor / 任务管理器 / `ps -aux` 三家中位数）：
 
@@ -317,7 +317,7 @@ GLM-4-9B 与 GLM-Z1-9B 在五家全部一键可拉，重点是它的 MIT 许可�
 
 ## 八、三类读者 × 五款客户端 推荐表
 
-![「我该用哪个桌面 LLM 客户端」三步决策图](desktop-llm-client-decision-tree.png)
+![「我该用哪个桌面 LLM 客户端」三步决策图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/desktop-llm-client-comparison-cn-models-2026-05-12/desktop-llm-client-decision-tree.png)
 
 把推荐合并成「场景 → 客户端组合 → 国产模型」三列：
 

@@ -18,7 +18,7 @@ source_links:
 
 > 一个名字陌生的仓库，36,531 颗星。ruvnet/ruflo（原名 claude-flow）今天在 GitHub Trending Daily 排到第 2，单日 +1,258 stars，累计 36.5k 星 / 4.2k forks / 6,135 commits。它做的事很直接——把 Claude Code 从「一个会写代码的助手」拓展成「100+ 个分工明确的智能体一起干活」。一线 AI 开发者会先关心三件事：能不能本地跑，能不能接 Claude 之外的模型，国内有没有同档替代。三个问题都有答案。
 
-![ruflo 36.5k stars 多智能体 Claude 编排](ruvnet-ruflo-multi-agent-claude-orchestration.png)
+![ruflo 36.5k stars 多智能体 Claude 编排](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/ruvnet-ruflo-multi-agent-claude-orchestration/ruvnet-ruflo-multi-agent-claude-orchestration.png)
 
 ## 一、先看数字：36.5k stars 是怎么累出来的
 
@@ -54,7 +54,7 @@ ruvnet 这个作者圈子可以更具体一点。他个人 GitHub 有几个高 s
 
 ## 三、架构是怎么搭的：5 层、SONA 神经模式、HNSW 索引、GOAP A* 规划
 
-![ruflo 5 层架构](ruflo-architecture-layers.png)
+![ruflo 5 层架构](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/ruvnet-ruflo-multi-agent-claude-orchestration/ruflo-architecture-layers.png)
 
 ruflo 的架构在 README 里画成 5 层。逐层看：
 
@@ -72,7 +72,7 @@ ruflo 的架构在 README 里画成 5 层。逐层看：
 
 ## 四、32 个 plugin：v3.6.10 这次到底加了什么
 
-![ruflo 32 个插件分类](ruflo-32-plugins-categories.png)
+![ruflo 32 个插件分类](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/ruvnet-ruflo-multi-agent-claude-orchestration/ruflo-32-plugins-categories.png)
 
 v3.6.10（2026-04-30）的 release notes 把这次更新讲得很清楚——**插件数从 21 个扩到 32 个**。新增的 11 个里值得点名的：
 
@@ -97,7 +97,7 @@ v3.6.10（2026-04-30）的 release notes 把这次更新讲得很清楚——**�
 
 ## 五、国内对位横评：MetaGPT、Dify、Coze、autogen、Qwen-Agent、agentscope
 
-![ruflo 与国内多智能体框架横评](ruflo-vs-cn-multiagent.png)
+![ruflo 与国内多智能体框架横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-03/ruvnet-ruflo-multi-agent-claude-orchestration/ruflo-vs-cn-multiagent.png)
 
 把 ruflo 和国内多智能体框架放一起看，几个角度：
 

@@ -11,7 +11,7 @@ cover: manus-meta-blocked.png
 
 > **2026 年 4 月 27 日，国家发展改革委外商投资安全审查工作机制办公室依法依规对外资收购 Manus 项目作出禁止投资决定，要求当事人撤销该收购交易。这是 2021 年 1 月《外商投资安全审查办法》施行以来 AI 领域首次公开作出顶格裁决，也是国家依法保障关键技术领域产业与科技安全的标志性案例。**
 
-![国家发改委对 Manus 案的依规裁决](manus-meta-blocked.png)
+![国家发改委对 Manus 案的依规裁决](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-29/manus-meta-blocked/manus-meta-blocked.png)
 
 **预计阅读：21 分钟**
 
@@ -37,7 +37,7 @@ cover: manus-meta-blocked.png
 
 **从 12-30 收购公告到 4-27 裁决，119 天完整走完法定审查程序**——这与《外商投资安全审查办法》规定的程序匹配：评估 90 天 + 进一步审查 + 终裁。整个过程严格按章办事，对内对外都体现了中国依法依规处理跨境并购国家安全审查的成熟机制。
 
-![国家发改委 4 月 27 日禁止投资决定原文](manus-ndrc-decision.png)
+![国家发改委 4 月 27 日禁止投资决定原文](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-29/manus-meta-blocked/manus-ndrc-decision.png)
 *图片来源：观察者网，截自发改委 zfxxgk.ndrc.gov.cn 政府信息公开页（id=20623）*
 
 ### 1.2 发改委公告原文：依法作出顶格裁决
@@ -72,7 +72,7 @@ cover: manus-meta-blocked.png
 
 **数据合规**：Manus 用户行为日志、产品反馈数据、训练样本是否已并入 Meta AI 训练流程，需由专业审计机构核查。如数据已合入 Meta 模型权重训练，监管要求 Meta 在未来训练中不再使用相关数据子集，并定期接受合规审计。
 
-![Manus 融资轮次：从 ZhenFund 天使到 Benchmark 7500 万美元 B 轮](manus-funding-rounds.png)
+![Manus 融资轮次：从 ZhenFund 天使到 Benchmark 7500 万美元 B 轮](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-29/manus-meta-blocked/manus-funding-rounds.png)
 *图片来源：36 氪《Manus 「上岸」》深度报道*
 
 游云庭在 [虎嗅评论](https://www.huxiu.com/article/4854434.html) 里给出的判断是："交易最终将彻底回滚——股权退回、资金返还，Manus 团队重新依托国产模型走算法备案路径，而非寻找中资接盘方。"这条专业法律分析也指明了 Manus 在中国监管框架下重新取得合规资质的可行路径。
@@ -91,7 +91,7 @@ cover: manus-meta-blocked.png
 
 3 月 6 日，Butterfly Effect 推出 Manus，定位为通用 AI Agent 产品。产品演示视频的核心场景：用户用自然语言描述任务（"帮我做一份关于 X 的研究报告并整理成 PPT"），Manus 自主开浏览器、查资料、写代码、生成幻灯片。
 
-![Manus 2025 年 3 月 6 日邀请制发布演示截图](manus-product-launch.png)
+![Manus 2025 年 3 月 6 日邀请制发布演示截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-29/manus-meta-blocked/manus-product-launch.png)
 *图片来源：站长之家 / aibase 转载*
 
 24 小时内演示视频累计观看破千万。但产品技术路线本身值得关注——Manus 的模型基座是 Anthropic Claude 3.5/3.7 Sonnet 主力 + 阿里 Qwen 微调辅助（创始人季逸超在 [Aibase 报道](https://www.aibase.com/news/16140) 中本人确认了这个组合），自身不训练基础模型。
@@ -110,7 +110,7 @@ cover: manus-meta-blocked.png
 
 2025 年 7 月，Butterfly Effect 把总部正式从北京迁到新加坡 Funan Mall WeWork（109 North Bridge Road）。运营主体变更为 Butterfly Effect Pte Ltd。
 
-![SCMP 2025-07 报道：Manus 迁址新加坡](manus-singapore-scmp.jpg)
+![SCMP 2025-07 报道：Manus 迁址新加坡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-29/manus-meta-blocked/manus-singapore-scmp.jpg)
 *图片来源：South China Morning Post 2025-07-09 报道*
 
 [SCMP 7 月 9 日报道](https://www.scmp.com/tech/tech-trends/article/3317568/chinese-firm-behind-ai-agent-manus-relocates-singapore-amid-us-chip-curbs) 注意到一个关键事实：迁址当月，国内 120 人团队保留约 40 名核心赴新加坡、剩余 80 人在国内被裁；中文版网站和社交账号陆续删除；客服公告称国内服务于 2025-07-15 全面停止。
@@ -133,12 +133,12 @@ cover: manus-meta-blocked.png
 
 2025 年最后两天，Meta 内部一封信发到全员邮箱，宣布以约 20 亿美元收购 Butterfly Effect Pte Ltd（Manus 母公司），创始人肖弘出任 Meta 副总裁，向 Meta COO Javier Olivan 汇报。
 
-![Meta 12 月 30 日内部公告](manus-meta-internal-letter.png)
+![Meta 12 月 30 日内部公告](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-29/manus-meta-blocked/manus-meta-internal-letter.png)
 *图片来源：观察者网转 Meta 12 月 30 日 internal letter*
 
 [TechCrunch 同日报道](https://techcrunch.com/2025/12/29/meta-just-bought-manus-an-ai-startup-everyone-has-been-talking-about/) 把这一笔交易定位为「Meta 历史第三大并购」——前面两单是 2014 年 220 亿美元的 WhatsApp 和 2012 年 10 亿美元的 Instagram。20 亿美元是 Manus 此前 5 亿估值的 4 倍。
 
-![TechNode 报道头图：Meta 以 20 亿美元收购 Manus](manus-technode-meta.png)
+![TechNode 报道头图：Meta 以 20 亿美元收购 Manus](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-29/manus-meta-blocked/manus-technode-meta.png)
 *图片来源：TechNode 2025-12-30 报道*
 
 收购金额方面有几点需要明确——Reuters / NPR / TechCrunch / Fortune / CNBC 等英文媒体统一写「20 亿美元」（USD 2 billion）；少数源（Implicator.ai）写 25 亿美元（疑似含 earn-out 部分）；个别中文转载出现过 30 亿、50 亿的表述但缺乏一手依据。**Meta 与 Manus 双方均未在官方文件中具体披露金额**。最权威说法是约 20 亿美元。
@@ -151,7 +151,7 @@ cover: manus-meta-blocked.png
 
 **肖弘（CEO，1992 年生）**：江西吉安遂川县左安镇人，华中科技大学软件工程专业。2015 年学生时代在武汉创立夜莺科技（壹伴助手 / 微伴助手），公司年收入做到约 2000 万元后于 2019 年完成股权出售（具体出售价格未公开）。2021 年获腾讯 + 真格基金数亿元战略融资。
 
-![Manus / 蝴蝶效应创始人肖弘](manus-xiaohong-portrait.jpg)
+![Manus / 蝴蝶效应创始人肖弘](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-29/manus-meta-blocked/manus-xiaohong-portrait.jpg)
 *图片来源：百度百科*
 
 **季逸超（首席科学家，1992 年生）**：北京北大附中。12 岁开始自学编程，16 岁开发猛犸浏览器（Mammoth Browser），2012 年获真格基金 + 红杉资本 500 万美元天使创办 Peak Labs，同年成为《福布斯》中文版封面人物。北京信息科技大学计算机本硕。2022 年加入肖弘 + 张涛创办 Butterfly Effect。
@@ -234,7 +234,7 @@ IT 桔子 Judy 的法律分析 [《当收购遭遇红灯》](https://36kr.com/p/
 
 **第三，作出对等响应**。在中美 AI 产业博弈日趋激烈的背景下，美国 2025 年 5 月对 Benchmark 投 Manus 启动反向 CFIUS 审查时，中方依规启动了对等的国家安全审查程序。这种对等响应是国际通行的国家安全机制，体现了中国监管在跨境技术领域的成熟程度。
 
-![北京街头一部手机展示 Manus 启动页（AFP 摄）](manus-beijing-afp.jpg)
+![北京街头一部手机展示 Manus 启动页（AFP 摄）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-29/manus-meta-blocked/manus-beijing-afp.jpg)
 *图片来源：半岛电视台 / AFP——Manus 的用户和技术研发主体仍深植中国境内*
 
 ---
@@ -386,7 +386,7 @@ Manus 案推动了中国 AI Agent 赛道在三个维度上的合规体系建设�
 
 **Manus 案的明确意义**：路径 A 和路径 B 是当前中国 AI 公司最稳健的合规出海选择，路径 C 在合规建设进一步完善后是可行的。**中国 AI 产业不仅没有失去出海路径，反而通过 Manus 案获得了更清晰的合规预期**。
 
-![Manus 在 2025 年中的国内市场推广](manus-singapore-launch.png)
+![Manus 在 2025 年中的国内市场推广](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-29/manus-meta-blocked/manus-singapore-launch.png)
 *图片来源：36 氪《Manus 肖弘"超级激进"》报道，摄影 Isaac*
 
 ---

@@ -23,7 +23,7 @@ description: "五月十八号晚上，Cursor 发布 Composer 2.5——基座选�
 
 # Cursor 新模型用 Kimi K2.5 当底座，价格只要 1/10
 
-![Cursor Composer 2.5 封面图 戏剧化光影 一位亚洲工程师在终端前 Kimi K2.5 神经网络全息球与 Cursor IDE 代码瀑布对照](cursor-composer-2-5-kimi-k2-5-opus-1-10-cost-2026-05-20.png)
+![Cursor Composer 2.5 封面图 戏剧化光影 一位亚洲工程师在终端前 Kimi K2.5 神经网络全息球与 Cursor IDE 代码瀑布对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/cursor-composer-2-5-kimi-k2-5-opus-1-10-cost-2026-05-20/cursor-composer-2-5-kimi-k2-5-opus-1-10-cost-2026-05-20.png)
 
 ## 这一次的范式转换
 
@@ -64,7 +64,7 @@ description: "五月十八号晚上，Cursor 发布 Composer 2.5——基座选�
 
 ## Benchmark 三项实战拆解
 
-![Cursor Composer 2.5 对位 Claude Opus 4.7 三项编码 benchmark 柱状图](cursor-composer-25-benchmark.png)
+![Cursor Composer 2.5 对位 Claude Opus 4.7 三项编码 benchmark 柱状图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/cursor-composer-2-5-kimi-k2-5-opus-1-10-cost-2026-05-20/cursor-composer-25-benchmark.png)
 
 | Benchmark | Composer 2.5 | Claude Opus 4.7 | 差距 |
 | --- | --- | --- | --- |
@@ -91,7 +91,7 @@ CursorBench v3.1 是 Cursor 自家 benchmark，有自家训练数据倾斜的可
 | Moonshot Kimi K2.5 预训练 | 约 15% | 1T MoE 在 15T 多模态 token 上的原始预训练 |
 | Cursor 后训练（含 RL） | 约 85% | 定向反馈 RL · 合成数据扩 25 倍 · Sharded Muon 优化 |
 
-![Composer 2.5 训练算力 85% 归 Cursor RL 后训练 15% 归 Kimi K2.5 预训练 加三个改进点卡片](cursor-composer-25-compute.png)
+![Composer 2.5 训练算力 85% 归 Cursor RL 后训练 15% 归 Kimi K2.5 预训练 加三个改进点卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/cursor-composer-2-5-kimi-k2-5-opus-1-10-cost-2026-05-20/cursor-composer-25-compute.png)
 
 三个工程改进点值得拆开看：
 
@@ -119,7 +119,7 @@ Moonshot 在一月份发布 Kimi K2.5 时，明确按开源协议放出权重，
 
 把价格摆开看，差距非常直观：
 
-![Composer 2.5 标准版 vs 快速版 vs Opus 4.7 vs Sonnet 4.7 价格对照表 每百万 token 输入输出](cursor-composer-25-pricing.png)
+![Composer 2.5 标准版 vs 快速版 vs Opus 4.7 vs Sonnet 4.7 价格对照表 每百万 token 输入输出](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/cursor-composer-2-5-kimi-k2-5-opus-1-10-cost-2026-05-20/cursor-composer-25-pricing.png)
 
 | 模型 / 套餐 | 输入价 / 1M token | 输出价 / 1M token | 对 Opus 4.7 倍数 |
 | --- | --- | --- | --- |
@@ -149,7 +149,7 @@ Cursor blog 末段交代了一件大事：与 xAI / SpaceX AI 合作，**目标�
 
 把国内主流 AI Coding 工具栈摆到 Composer 2.5 旁边看，能看到这个市场已经成熟到有多条平行路径：
 
-![国内 AI Coding 工具栈四象限图 基座国别 X 订阅模式 通义灵码 Trae Cline Qwen Code DeepSeek Kimi DeepClaude](cursor-composer-25-china-landscape.png)
+![国内 AI Coding 工具栈四象限图 基座国别 X 订阅模式 通义灵码 Trae Cline Qwen Code DeepSeek Kimi DeepClaude](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-20/cursor-composer-2-5-kimi-k2-5-opus-1-10-cost-2026-05-20/cursor-composer-25-china-landscape.png)
 
 | 工具 | 厂商 | 基座 | 后训练自主权 | 国内开发者用法 | 月度成本量级 |
 | --- | --- | --- | --- | --- | --- |

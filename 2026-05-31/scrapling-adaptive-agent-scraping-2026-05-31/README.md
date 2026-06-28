@@ -10,13 +10,13 @@ category: "网络爬虫 / AI Agent 数据采集 / 开源工具"
 ---
 # Scrapling：网站改版后能自己找回元素的爬虫
 
-![Scrapling：自适应 Web 抓取框架，5 月底冲上 GitHub Trending](scrapling-adaptive-agent-scraping-2026-05-31.png)
+![Scrapling：自适应 Web 抓取框架，5 月底冲上 GitHub Trending](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/scrapling-adaptive-agent-scraping-2026-05-31/scrapling-adaptive-agent-scraping-2026-05-31.png)
 
 写过爬虫的人都被同一件事折磨过：脚本上线时跑得好好的，过几天网站改了个版，`class` 名换了、层级挪了一下，选择器立刻失效，抓回来的全是空值，半夜被告警叫醒去改 CSS 路径。**爬虫真正的成本从来不是写出来，而是维护——网站每改一次版，你的选择器就碎一次。**
 
 Scrapling（仓库 `D4Vinci/Scrapling`）这个开源框架想正面解决的就是这件事。5 月底它单日涨了约 600 颗 star 冲上 GitHub Trending，6 月 1 日凌晨核对仓库,总 star 约 5.7 万、5500 多 fork、BSD-3 协议、Python 写成。它给自己的定位是一句话：**一个自适应的 Web 抓取框架，从一个请求到全站爬都能接。**
 
-![Scrapling 仓库主页：自适应抓取、过反爬、内置 MCP 服务](source-scrapling-github-og-2026-05-31.png)
+![Scrapling 仓库主页：自适应抓取、过反爬、内置 MCP 服务](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/scrapling-adaptive-agent-scraping-2026-05-31/source-scrapling-github-og-2026-05-31.png)
 <small>来源：D4Vinci/Scrapling 仓库社交卡片</small>
 
 这篇文章想把一件事讲清楚：**Scrapling 所谓的"自适应"到底是什么机制、它凭什么能在网站改版后自己把元素找回来、给 AI Agent 喂数据这个场景它怎么接、以及它和大家天天用的 BeautifulSoup、Scrapy、Playwright 到底差在哪。** 结论先放这儿——如果你的痛点是"爬虫总因为网站改版碎掉"或者"想让 Agent 自己去抓网页但老被反爬挡住"，它现在是最对症的一个；但它也不是万能盾，页面整体重写或反爬升级照样会让它失手。
@@ -27,7 +27,7 @@ Scrapling（仓库 `D4Vinci/Scrapling`）这个开源框架想正面解决的就
 
 很多框架都说自己"智能"，但 Scrapling 的自适应是有具体机制的，不是糊弄。它分两步走，**第一步是记，第二步是认**。
 
-![选择器失效时 Scrapling 怎么自己把元素找回来](scrapling-adaptive-flow-2026-05-31.png)
+![选择器失效时 Scrapling 怎么自己把元素找回来](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/scrapling-adaptive-agent-scraping-2026-05-31/scrapling-adaptive-flow-2026-05-31.png)
 
 **第一次抓取时，你给选择器加一个 `auto_save=True`，它会把这个元素的一份"指纹"存到本地。** 这份指纹不是只记一个 CSS 路径那么简单，按它文档的说法，它会记下：
 
@@ -85,7 +85,7 @@ pip install "scrapling[ai]"
 
 讲完解析和喂数据，再看它怎么把网页"拿"回来。Scrapling 没有用一个万能抓取器硬扛所有情况，而是分了三个，按页面难度递进。
 
-![三种抓取器各管一段，和传统组合的取舍](scrapling-fetcher-matrix-2026-05-31.png)
+![三种抓取器各管一段，和传统组合的取舍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/scrapling-adaptive-agent-scraping-2026-05-31/scrapling-fetcher-matrix-2026-05-31.png)
 
 - **Fetcher**：最快的那个，走 HTTP 请求（底层用 `curl_cffi`），带 TLS 指纹伪装、支持 HTTP/3。适合静态页、没有 JavaScript 渲染的页面。它顶替的是大家常用的 `requests` + BeautifulSoup 这套组合。
 - **StealthyFetcher**：主打隐身，能伪装浏览器指纹，按官方说法**可以应对 Cloudflare 的 Turnstile 这类人机验证**。适合有反爬过滤的站。它顶替的是你过去为了过盾东拼西凑的一堆反爬补丁。
@@ -101,7 +101,7 @@ pip install "scrapling[ai]"
 
 **第一，解析速度上，它和最快的那一档站在一起，甩开 BeautifulSoup 几个数量级。** 这是它仓库自带基准里最扎眼的数字。
 
-![同一个 HTML，谁解析得快](scrapling-parse-bench-2026-05-31.png)
+![同一个 HTML，谁解析得快](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/scrapling-adaptive-agent-scraping-2026-05-31/scrapling-parse-bench-2026-05-31.png)
 
 同一份 HTML 解析下来，Scrapling 约 2.02 毫秒、Parsel（也就是 Scrapy 的解析层）约 2.04 毫秒、原生 lxml 约 2.54 毫秒，这三个基本一个水平。往下，PyQuery 约 24 毫秒、Selectolax 约 83 毫秒，而最常被新手当默认选项的 **BeautifulSoup 配 lxml 要约 1584 毫秒、配 html5lib 更是约 3392 毫秒——是 Scrapling 的上千倍。** 这意味着在大批量抓取里，光解析这一层换成 Scrapling 就能省下大量时间。
 

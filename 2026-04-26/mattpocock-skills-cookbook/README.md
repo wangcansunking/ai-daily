@@ -7,7 +7,7 @@ description: "Matt Pocock 把自己 .claude/skills 目录原样开源，21 个�
 ---
 # Matt Pocock 把全套 21 个 .claude/skills 私房菜放出来：1.96 万⭐、1641 fork
 
-![cover](2026-04-26-mattpocock.png)
+![cover](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-26/mattpocock-skills-cookbook/2026-04-26-mattpocock.png)
 
 `mattpocock/skills` 在 4 月 25 日 20:03 UTC 时 GitHub 上 **19,605 ⭐ / 1,641 fork / 15 个 open issue**，当晚 GitHub Trending Daily 排名 #2、单日新增约 857 ⭐。仓库描述写得直白：
 
@@ -58,7 +58,7 @@ README 把其中 16 个分类入册，剩下 5 个（`caveman`、`domain-model`�
 
 入册的 16 个分四类：
 
-![16 个分类](mattpocock-skills-table.png)
+![16 个分类](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-26/mattpocock-skills-cookbook/mattpocock-skills-table.png)
 
 每个 skill 在 README 里都给了一行 npx CLI 安装命令：
 
@@ -163,7 +163,7 @@ skill 的真正价值不是脚本本身（10 分钟自己也能写一份）—�
 
 ## 我推荐你最先抄的 5 个
 
-![Top 5](mattpocock-top5.png)
+![Top 5](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-26/mattpocock-skills-cookbook/mattpocock-top5.png)
 
 如果时间紧，先把这 5 个 add 到自己的 `.claude/`：
 

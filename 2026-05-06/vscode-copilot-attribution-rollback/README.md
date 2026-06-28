@@ -10,7 +10,7 @@ cover: vscode-copilot-attribution-rollback.png
 
 # VS Code 默认给 commit 挂 Copilot 署名 21 天，HN 1506 票后回退 | AI 日报 | 2026-05-06
 
-![VS Code Copilot 署名争议封面](vscode-copilot-attribution-rollback.png)
+![VS Code Copilot 署名争议封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/vscode-copilot-attribution-rollback/vscode-copilot-attribution-rollback.png)
 
 **核心事件**：4 月 22 日，VS Code v1.117 把 `git.addAICoAuthor` 设置默认值从 `off` 改成 `all`。结果就是——只要你用 VS Code 提交代码，commit 就会被悄悄挂上 `Co-authored-by: Copilot <copilot@github.com>`，连完全关掉 Copilot 的人也跑不掉。Hacker News 上的吐槽帖累计 1506 票，今天（5 月 6 日）VS Code v1.119 公开 rollout，默认值改回 `off`，并修复 `disableAIFeatures=true` 时的覆盖逻辑。
 
@@ -18,7 +18,7 @@ cover: vscode-copilot-attribution-rollback.png
 
 ## 一、21 天时间线
 
-![VS Code Copilot 署名事件 21 天时间线](vscode-copilot-attribution-timeline.png)
+![VS Code Copilot 署名事件 21 天时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/vscode-copilot-attribution-rollback/vscode-copilot-attribution-timeline.png)
 
 时间节点压得很紧：
 
@@ -56,7 +56,7 @@ HN 上的吐槽不全是技术细节，更多是对「commit 是开发者主权�
 
 ## 四、横向对比：AI 工具的 commit 署名默认值
 
-![AI Coding 工具 commit 署名默认值横评](vscode-copilot-attribution-defaults-table.png)
+![AI Coding 工具 commit 署名默认值横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/vscode-copilot-attribution-rollback/vscode-copilot-attribution-defaults-table.png)
 
 把主流 AI 编辑工具的 commit 署名默认行为放在一起看，VS Code v1.117 是孤例：
 
@@ -75,7 +75,7 @@ Claude Code 和 Codex 也是默认 opt-out，但都尊重 `disableAIFeatures`—
 
 ## 五、对国内开发者的实际影响
 
-![对国内开发者的 3 类实际影响](vscode-copilot-attribution-impact-cn.png)
+![对国内开发者的 3 类实际影响](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/vscode-copilot-attribution-rollback/vscode-copilot-attribution-impact-cn.png)
 
 国内 VS Code 装机量极大，而且大量同学是「装了 VS Code、但没买 Copilot」的状态。按 v1.117/1.118 的 bug 行为，**只要 VS Code 内 commit，就有概率被打 Copilot 共作者**，不需要装 Copilot 插件。
 

@@ -16,7 +16,7 @@ tags:
 ---
 # Anthropic 接手 agent 基础设施那一天
 
-![Anthropic 接手 agent 基础设施那一天](anthropic-managed-agents-outcomes-dreaming.png)
+![Anthropic 接手 agent 基础设施那一天](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/anthropic-managed-agents-outcomes-dreaming/anthropic-managed-agents-outcomes-dreaming.png)
 
 ## 一、5 月 6 日早上九点，Anthropic 不再只卖 API
 
@@ -32,7 +32,7 @@ tags:
 
 > 论点先放这里：Anthropic 这次发布让 agent 平台战进入新阶段——把 agent 编排提升到「目标驱动 + 自我反思」级抽象。国产 agent 平台这一边，阿里百炼、字节扣子、腾讯元器+元宝、智谱 AutoGLM 已经在长跑托管和多 agent 编排上各占一段位次，下一步比拼的是谁先把 Outcomes 这种「rubric + grader」抽象做成自己的原语。中国云的家底已经具备，窗口在打开。
 
-![你自管 Agent SDK vs Claude Managed Agents](managed-agents-vs-sdk.png)
+![你自管 Agent SDK vs Claude Managed Agents](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/anthropic-managed-agents-outcomes-dreaming/managed-agents-vs-sdk.png)
 
 ## 二、事件三段事实：大会发布 / Managed Agents 是什么 / 两个新原语
 
@@ -93,7 +93,7 @@ Memory store 这一层 4 月就上线了：每个 store 是 workspace 范围内�
 
 > Harvey（律所工具）披露的数据：dreaming 让任务完成率涨了约 **6 倍**。Netflix 把它用在跨数百次构建的 log 分析里，找出反复出现的 pattern。Spiral / Every 用 Haiku 当 lead agent、Opus 当 specialist subagent，Outcomes 强制编辑标准。Wisedocs 用它做文档质检，「review 速度快 50%，团队标准不丢」。
 
-![Outcomes：从 conversation 升级到 work](managed-agents-outcomes-loop.png)
+![Outcomes：从 conversation 升级到 work](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/anthropic-managed-agents-outcomes-dreaming/managed-agents-outcomes-loop.png)
 
 ## 三、和老 SDK 的差异：你少写多少代码
 
@@ -165,7 +165,7 @@ WaveSpeed 给的实战例子：一段 1 小时 Opus 4.6 session，烧 5 万 inpu
 
 国产这一边过去一年节奏很快，关键玩家四个，已经各自占住一段位次。
 
-![国产 agent 平台 vs Claude Managed Agents](managed-agents-cn-vs-anthropic.png)
+![国产 agent 平台 vs Claude Managed Agents](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/anthropic-managed-agents-outcomes-dreaming/managed-agents-cn-vs-anthropic.png)
 
 ### 5.1 阿里云百炼（Bailian / ModelStudio）
 

@@ -13,7 +13,7 @@ description: 数据 / AI 工程领域作者 Drew Breunig 在个人博客 5-04 �
 ---
 # 代码变白菜价后 10 条 AI 编程实战守则
 
-![代码变白菜价后 10 条 AI 编程实战守则](agentic-coding-cheap-code-10-lessons-dbreunig.png)
+![代码变白菜价后 10 条 AI 编程实战守则](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/agentic-coding-cheap-code-10-lessons-dbreunig/agentic-coding-cheap-code-10-lessons-dbreunig.png)
 
 ## 一、AI 把写代码这件事打到白菜价之后
 
@@ -23,13 +23,13 @@ Drew Breunig 是数据与 AI 工程方向写了多年的独立博客作者，关
 
 10 条守则总览先放在这里，后文逐条拆。
 
-![Drew Breunig 给 AI 编程的 10 条守则](cheap-code-10-lessons-overview.png)
+![Drew Breunig 给 AI 编程的 10 条守则](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/agentic-coding-cheap-code-10-lessons-dbreunig/cheap-code-10-lessons-overview.png)
 
 国内开发者读这 10 条会有一个特别的好处。Drew 写作时心里默认的工具栈是 Claude Code、Cursor 这一套；而国内同行已经有完整可用的同档替代——通义灵码（Qoder IDE）、字节 Trae、腾讯 CodeBuddy、月之暗面 Kimi Code、字节豆包 MarsCode、百度文心快码，再加上能用海外服务的 Claude Code 拼车与 Cursor 第三方通道。10 条原则在这套国产工具栈上怎么具体执行，正是这篇文章的写作主线。
 
 把数据放上来对照一下：Cursor 月活已经突破 500 万，Claude Code 在 SWE-bench 编程能力评测上突破 80 分，国内字节 Trae 占 41.2% 市场份额，阿里通义灵码占 18.5%，百度文心快码占 12.3%。这套国内外加起来七八个产品的工具栈，是 2025 年这一年从无到有搭起来的——2024 年 5 月这个时候很多产品还没开始做，2026 年 5 月已经是一线开发者每天都用的工具。Drew 写的 10 条守则正好踩在这个节点上：当工具变多变好，工程方法论也要跟着升级。
 
-![国产 AI Coding 工具栈速览](cheap-code-domestic-stack.png)
+![国产 AI Coding 工具栈速览](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/agentic-coding-cheap-code-10-lessons-dbreunig/cheap-code-domestic-stack.png)
 
 ## 二、10 条守则逐条翻译成国产工具栈动作
 
@@ -129,7 +129,7 @@ Drew 列了一串"真正难"的清单：直觉上对的设计、性能、安全�
 
 代码生命周期里，写作只占很小一块，下面这张占比表能说明问题。
 
-![代码生命周期成本结构变化](cheap-code-cost-shift.png)
+![代码生命周期成本结构变化](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/agentic-coding-cheap-code-10-lessons-dbreunig/cheap-code-cost-shift.png)
 
 写代码的占比从大约 30% 压到 8%，节省下来的预算并没有蒸发——它流到了维护、安全、合规这几个箱子里。国产工具栈在这一段的供给目前还偏弱，国内做 AI Code Review、AI 漏洞扫描、AI 依赖升级的产品远不如国外丰富。这里面有大量没被填的位置，对国内创业者是清晰的机会窗口。
 

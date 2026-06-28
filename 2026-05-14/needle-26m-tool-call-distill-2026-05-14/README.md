@@ -22,7 +22,7 @@ description: "Cactus Compute 把 Gemini 3.1 Pro 的 tool calling 行为蒸馏到
 
 # Needle 26M：Gemini tool call 装进手机
 
-![Needle 26M tool call 蒸馏封面](needle-26m-tool-call-distill-2026-05-14.png)
+![Needle 26M tool call 蒸馏封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/needle-26m-tool-call-distill-2026-05-14/needle-26m-tool-call-distill-2026-05-14.png)
 
 5 月 13 日 Hacker News 首页一条 Show HN（开发者秀作品） 帖子顶到 607 分、175 条评论：「Needle: We Distilled Gemini Tool Calling into a 26M Model」。发帖人是 YC 投的 cactus-compute 团队，他们在 GitHub 上开了一个 1234 star 的仓（MIT 协议），把 Google 自家 Gemini 3.1 Pro 这个大约 1500B 参数级别的云端模型，蒸馏到一个 26M 参数的「简化注意力网络」上。INT4 量化后整套权重 14MB，能塞进手表、眼镜、蓝牙耳机里跑。
 
@@ -34,7 +34,7 @@ description: "Cactus Compute 把 Gemini 3.1 Pro 的 tool calling 行为蒸馏到
 
 cactus-compute 的判断是：tool calling 这件事其实根本不需要那么大的模型。
 
-![Needle 蒸馏体量对比：从 60GB 到 14MB](needle-size-collapse.png)
+![Needle 蒸馏体量对比：从 60GB 到 14MB](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/needle-26m-tool-call-distill-2026-05-14/needle-size-collapse.png)
 
 把对比拉平来看：
 
@@ -54,7 +54,7 @@ cactus-compute 的判断是：tool calling 这件事其实根本不需要那么�
 
 Needle 没有用市面上常见的 SmolLM、Phi-2、Qwen-mini 任何一个做基座，而是从头训练了一个新架构 —— cactus-compute 称之为 Simple Attention Network（SAN）。
 
-![Needle SAN 架构对比图](needle-san-architecture.png)
+![Needle SAN 架构对比图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/needle-26m-tool-call-distill-2026-05-14/needle-san-architecture.png)
 
 它和标准 transformer 的差异只有一处，但很大：**砍掉了 FFN（feed-forward network）**。
 
@@ -82,7 +82,7 @@ Needle 的最终结构：12 层 encoder（self-attention + RoPE + GQA 8H/4KV + �
 
 如果 Needle 只是「架构妙」，国内复刻起来其实并不难。真正硬的是它的蒸馏数据 + 训练成本 —— cactus-compute 把这条路径压到了一个让人意外的低限。
 
-![Needle 蒸馏 pipeline 五阶段](needle-distill-pipeline.png)
+![Needle 蒸馏 pipeline 五阶段](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/needle-26m-tool-call-distill-2026-05-14/needle-distill-pipeline.png)
 
 五个阶段，从 Gemini 3.1 Pro 当老师到 INT4 量化导出，全套流程的算力账：
 
@@ -106,7 +106,7 @@ cactus-compute 在论文式说明文档里把这件事讲得很清楚：他们�
 
 cactus-compute 给的官方调用示例非常简洁。
 
-![Needle tool call JSON 示例](needle-tool-call-json.png)
+![Needle tool call JSON 示例](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/needle-26m-tool-call-distill-2026-05-14/needle-tool-call-json.png)
 
 输入是用户的自然语言 + 可用工具的 JSON schema，输出是结构化 JSON tool call。整个流程 ~200ms 在 Cactus 引擎上跑完。
 
@@ -143,7 +143,7 @@ cactus-compute README 给出的对比是「Needle 在单轮function call 上优�
 
 把已知数据整理到同一张图上看：
 
-![Needle accuracy speed 准确率速度图谱](needle-accuracy-speed.png)
+![Needle accuracy speed 准确率速度图谱](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/needle-26m-tool-call-distill-2026-05-14/needle-accuracy-speed.png)
 
 把这张图当作粗略的形势图，不要当作精确评测来用 —— Needle 在「小且快」这个角落几乎独占，但**只在单轮function call 这一条具体任务上**；离开这条窄道，国内的 0.6B-1.3B 通用小模型立刻夺回主场。
 
@@ -159,7 +159,7 @@ cactus-compute README 给出的对比是「Needle 在单轮function call 上优�
 
 把镜头从 Needle 拉回国内，桌面摊开看：
 
-![Needle 与国内 china lineup 端侧 tool calling 对位](needle-china-lineup.png)
+![Needle 与国内 china lineup 端侧 tool calling 对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/needle-26m-tool-call-distill-2026-05-14/needle-china-lineup.png)
 
 | 模型 | 参数 | 厂商 | tool call 路径 | 端侧形态 | 开源协议 |
 |---|---|---|---|---|---|
@@ -187,7 +187,7 @@ cactus-compute README 给出的对比是「Needle 在单轮function call 上优�
 
 Needle 公开发布的权重有几种格式选择，每条路径都有不同的国内对应技术栈。
 
-![Needle 部署版图：iOS / Android / 通用嵌入式](needle-deploy-matrix.png)
+![Needle 部署版图：iOS / Android / 通用嵌入式](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/needle-26m-tool-call-distill-2026-05-14/needle-deploy-matrix.png)
 
 三大端侧推理路线：
 

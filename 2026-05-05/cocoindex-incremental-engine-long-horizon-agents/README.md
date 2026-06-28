@@ -13,7 +13,7 @@ cover: "cocoindex-incremental-engine.png"
 
 > 200MB 代码库每改一行都要全量重 embed 一遍，18074 个 chunks 一次不落地重新计算？cocoindex 给的答案是只动那 12 个真正变了的——子秒级传播、99.9% 缓存命中、向量直追源字节。
 
-![CocoIndex 增量引擎封面](cocoindex-incremental-engine.png)
+![CocoIndex 增量引擎封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/cocoindex-incremental-engine-long-horizon-agents/cocoindex-incremental-engine.png)
 
 ## 一、先看一个让所有 RAG 工程师扎心的场景
 
@@ -31,7 +31,7 @@ cocoindex 这个项目要解决的就是这件事。GitHub 仓库 cocoindex-io/c
 
 cocoindex 不是 RAG 框架，也不是 agent 框架。它的位置在两者之间——**数据持续同步层**。
 
-![cocoindex 与同行边界](cocoindex-landscape-table.png)
+![cocoindex 与同行边界](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/cocoindex-incremental-engine-long-horizon-agents/cocoindex-landscape-table.png)
 
 它给开发者的核心抽象，可以用一个等式概括：**Target = F(Source)**。你声明一份目标状态——"我希望我的代码库里每个函数都有一行向量索引、每个跨文件调用都有一条图边"——然后把映射函数 F 写出来。剩下的事情交给 cocoindex：source 端任何一处变化，它自己算出**最小重做集**，把变化精确传播到 target 端。
 
@@ -102,7 +102,7 @@ flowchart LR
     SCHED --> FS_T
 ```
 
-![CocoIndex 架构与数据流](cocoindex-architecture-flow.png)
+![CocoIndex 架构与数据流](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/cocoindex-incremental-engine-long-horizon-agents/cocoindex-architecture-flow.png)
 
 **第一层，源端变化捕获。** 文件系统、S3、Slack、PostgreSQL、Kafka 这五类源都有适配器。文件系统这一类直接用 OS 级 watch；S3 用对象版本号；Slack 用 events API；PostgreSQL 走逻辑复制流；Kafka 走 consumer offset。每个 source 适配器只负责一件事——告诉引擎"哪些 record 在上次同步之后变了"。
 
@@ -116,7 +116,7 @@ flowchart LR
 
 把传统全量 RAG 和 cocoindex 的增量方式放在一张表里直观对比一下。
 
-![增量 vs 全量成本对比](cocoindex-incremental-vs-full-table.png)
+![增量 vs 全量成本对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/cocoindex-incremental-engine-long-horizon-agents/cocoindex-incremental-vs-full-table.png)
 
 embedding API 调用次数从 18074 次降到 12 次，是直接的成本数字差。OpenAI text-embedding-3-large 按 token 计费，按 200MB 代码库每个 chunk 平均 200 token 算，一次全量大约 36 万 token——按 $0.13/M 价格大约 $0.05 每次。听起来不多，但一个 agent 团队 100 个开发者每天每人触发 10 次 agent 任务，一年下来就是几万美元的 embedding 账单全部花在重新算昨天的 chunk 上。换成千问的 text-embedding-v3 大约人民币几千元，绝对值小，但浪费比例同样是 99.9%。
 

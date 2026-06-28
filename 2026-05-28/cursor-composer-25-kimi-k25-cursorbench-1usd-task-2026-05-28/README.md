@@ -17,7 +17,7 @@ track_score: 9.0
 
 # Cursor Composer 2.5 仍跑 Kimi K2.5 底座：CursorBench 63.2% 反超 Claude Opus 4.7、单任务成本不到 1 美元
 
-![Cursor Composer 2.5 仍跑 Kimi K2.5 底座](cursor-composer-25-kimi-k25-cursorbench-1usd-task-2026-05-28.png)
+![Cursor Composer 2.5 仍跑 Kimi K2.5 底座](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/cursor-composer-25-kimi-k25-cursorbench-1usd-task-2026-05-28/cursor-composer-25-kimi-k25-cursorbench-1usd-task-2026-05-28.png)
 
 > 5 月 27 日凌晨，美国 AI 编程工具 Cursor 把自家旗舰 agent 模型 Composer 升到 2.5 版。两件事在国内开发者群引爆——一是 CursorBench v3.1 跑出 63.2%，把 Anthropic 公司 Claude Opus 4.7 的 61.6% 反超；二是 Cursor 联合创始人 Aman Sanger 在博客和 X 平台公开承认：Composer 2.5 底座仍然是月之暗面 Kimi K2.5，没有换。他还补了一句——「上一代 Composer 2.0 发布时没在博客里点名 Kimi，是我们的疏漏」。这是过去一年里国产开源大模型第一次以「被海外旗舰编程产品长期采用」的形式出现在主流英文 AI 圈视野里，36 氪、新浪科技、智源社区当天就跟进推送。
 
@@ -34,7 +34,7 @@ track_score: 9.0
 - **后训练三件套**：定向 RL（model 执行错误那一步直接局部提示）+ 任务数较上一代 **25 倍** 的合成数据（功能删除法）+ Sharded Muon optimizer + 双 mesh HSDP 数据 / 张量并行
 - **商业基本盘**：Cursor 每日产出约 **10 亿行被接受代码**、财富 500 强 **67%** 客户在册；对手 Anthropic 公司 Claude Code 同期年化收入约 **25 亿美元**、企业客户 **30 万家**
 
-![36 氪 5-27 头版报道（首图截图）](36kr-composer-25-hero.jpg)
+![36 氪 5-27 头版报道（首图截图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/cursor-composer-25-kimi-k25-cursorbench-1usd-task-2026-05-28/36kr-composer-25-hero.jpg)
 
 数字摆完之后，这篇文章的核心论点其实就一句话——**Cursor Composer 2.5 的真实意义不是「又一个反超 Opus」的评测营销，而是验证了一条对国内开发者特别友好的工程路线：开源底座 + 重度后训练 + 自家评测校准产品，可以在不烧自研大底座的前提下，把 agent 编程能力推到全球第一档。**
 
@@ -48,7 +48,7 @@ track_score: 9.0
 
 5 月 27 日 Composer 2.5 发布，Aman Sanger 这次直接在博客和 X 上挂出来——**底座是月之暗面 Kimi K2.5**。他在 X 上加了一句话原文大意：「Composer 2.0 时我们没在博客里把 Kimi 写出来，这是我们的疏漏（this was an oversight on our part）。Composer 2.5 仍然基于 K2.5，并在它之上重度后训练。」
 
-![Cursor 官方 Composer 2.5 发布封面（OG 图）](cursor-composer-25-og.png)
+![Cursor 官方 Composer 2.5 发布封面（OG 图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/cursor-composer-25-kimi-k25-cursorbench-1usd-task-2026-05-28/cursor-composer-25-og.png)
 
 为什么这件事重要？三个角度——
 
@@ -62,7 +62,7 @@ track_score: 9.0
 
 5 月 27 日 Cursor 官方挂出三组硬指标，把 Composer 2.0、Composer 2.5、Claude Opus 4.7 三个模型放在同一张表里对比。把它整理成可视化图表——
 
-![Composer 2.5 / Composer 2.0 / Opus 4.7 四项硬指标横评](composer-25-bench-4way.png)
+![Composer 2.5 / Composer 2.0 / Opus 4.7 四项硬指标横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/cursor-composer-25-kimi-k25-cursorbench-1usd-task-2026-05-28/composer-25-bench-4way.png)
 
 四项指标分别看——
 
@@ -113,7 +113,7 @@ Cursor Composer 2.5 的官方定价是这样——
 
 Cursor 官方第一次公开训练投入结构——**Composer 2.5 把 85% 算力投入后训练，仅 15% 用于底座增量预训练**。这是一个非常重要的数据点，因为业内多数厂商不公开这个比例。
 
-![Cursor Composer 2.5 算力 85% 投后训练](composer-25-compute-allocation.png)
+![Cursor Composer 2.5 算力 85% 投后训练](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/cursor-composer-25-kimi-k25-cursorbench-1usd-task-2026-05-28/composer-25-compute-allocation.png)
 
 85% 后训练具体做了什么？官方 changelog 加上 Aman Sanger 在 X 上的细化补充，拆出来是三件套——
 
@@ -147,7 +147,7 @@ Cursor Composer 2.5 跑的是 Kimi K2.5 + 重度后训练后的结果，不能�
 
 把国产主流 AI Coding 工具放在「Composer 2.5 这条评测曲线」上对照看——
 
-![Cursor 主页 OG（每日 10 亿行代码 + 财富 500 强 67% 客户）](cursor-home-og.png)
+![Cursor 主页 OG（每日 10 亿行代码 + 财富 500 强 67% 客户）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-28/cursor-composer-25-kimi-k25-cursorbench-1usd-task-2026-05-28/cursor-home-og.png)
 
 **通义灵码（阿里云）**。底座是千问 Qwen3.7-Coder，做大量后训练。在国内开发者社区的实际反馈里，IDE 内补全和 agent 任务在国产工具中处于第一档，活跃用户体量是国产 AI Coding 工具里最大的一家。和 Cursor Composer 2.5 的路线对照——通义灵码本来就是「不自训大底座、深度后训练」路线，Cursor 这次的工程选择对通义灵码是直接的路线背书。
 

@@ -23,7 +23,7 @@ description: "Anthropic 5 月 13 日把 Claude 第一次下沉到美国中小企
 
 # Claude 把 15 个数字员工塞进美国小店：财务营销 HR 全打包，对位飞书钉钉怎么看
 
-![Claude for Small Business 15 个数字员工开箱即用封面](claude-smb-15-agent-workflows-2026-05-15.png)
+![Claude for Small Business 15 个数字员工开箱即用封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/claude-smb-15-agent-workflows-2026-05-15/claude-smb-15-agent-workflows-2026-05-15.png)
 
 5 月 13 日，Anthropic 官方博客挂出来一篇标题朴素得出奇的发布稿：「Introducing Claude for Small Business」（Claude 中小企业版上线）。当天晚上，这篇 800 字的公告同步登上 Hacker News 首页第二，495 赞 445 评论，把当天另一条 OpenAI 新闻都顶了下去。
 
@@ -35,7 +35,7 @@ description: "Anthropic 5 月 13 日把 Claude 第一次下沉到美国中小企
 
 中小企业（small business，SMB）这条线在美国市场的体量经常被低估。Anthropic 在发布稿里直接给了数字：占美国 GDP 的 44%、雇佣全美约 46% 的私营部门员工、构成美国经济的「真正基础设施」。但这套人群在 AI 应用渗透率上一直跟不上大企业——大公司有专人配 Claude Enterprise、有数据团队建私有 RAG，小老板这边的常见状态是「ChatGPT 月费 20 美元，平时偶尔写写邮件」。
 
-![Anthropic Claude for Small Business 官方公告 hero 图](claude-smb-anthropic-hero.png)
+![Anthropic Claude for Small Business 官方公告 hero 图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/claude-smb-15-agent-workflows-2026-05-15/claude-smb-anthropic-hero.png)
 
 Anthropic 在公告里把要害写得很直白：
 
@@ -49,7 +49,7 @@ Anthropic 在公告里把要害写得很直白：
 
 Anthropic 把这 15 个工作流分成三大类摆出来：财务运营、销售营销、人力客服。每一个都不是「让 Claude 写一段话」级别的玩具，而是预设了具体的输入数据源、操作 API、产出物形态——更像是「数字员工」而不是「AI 助手」。
 
-![Claude for Small Business 15 个 agent 三栏分类卡 财务营销 HR](claude-smb-15-agents-grid.png)
+![Claude for Small Business 15 个 agent 三栏分类卡 财务营销 HR](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/claude-smb-15-agent-workflows-2026-05-15/claude-smb-15-agents-grid.png)
 
 ### 2.1 财务 / 运营条线（7 个）
 
@@ -96,7 +96,7 @@ Anthropic 选了 Intuit QuickBooks、PayPal、HubSpot、Canva、Docusign、Googl
 
 Hacker News 这条帖子 5 月 13 日下午冲上首页，495 赞 445 评论，连着两天没掉出前五。评论结构很典型——一半是热烈，一半是冷静。
 
-![Hacker News Claude for Small Business 顶赞评论 verbatim 引语卡](claude-smb-hn-quote.png)
+![Hacker News Claude for Small Business 顶赞评论 verbatim 引语卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/claude-smb-15-agent-workflows-2026-05-15/claude-smb-hn-quote.png)
 
 最高赞那条评论说得是「90% of the power of Excel was that it was functionally a database that a normal person could actually use.」（Excel 真正的力量 90% 在于：它是普通人也能用的数据库。）——这位评论者 CSMastermind 把 Claude for Small Business 类比成 Excel 那一次的「让普通人能用」拐点，认为 AI agent 这一代有相同的「普及性 × 通用性」组合，可能催生类似量级的中小企业生产力革命。
 
@@ -112,7 +112,7 @@ Hacker News 这条帖子 5 月 13 日下午冲上首页，495 赞 445 评论，�
 
 把这场欧美中小企业 AI 化的剧本讲完，落点必须回到中国市场。国内中小企业的 AI 化路径其实走得比美国更早——飞书智能伙伴 2024 年就上线、钉钉 AI 助理 2025 年完成第二轮迭代、千问 Agent 平台百炼 ISV 数已经过万。这次 Claude for Small Business 让 SMB AI 这条赛道被海外正式正名，对国内同行而言不是被赶超而是被印证。
 
-![国产 SMB AI 平台 飞书 钉钉 千问 WPS 用友 金蝶 对位矩阵](claude-smb-cn-matrix.png)
+![国产 SMB AI 平台 飞书 钉钉 千问 WPS 用友 金蝶 对位矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/claude-smb-15-agent-workflows-2026-05-15/claude-smb-cn-matrix.png)
 
 把六家同档方案按「财务 / 营销 / HR / 客服」四个维度摆出来对位：
 

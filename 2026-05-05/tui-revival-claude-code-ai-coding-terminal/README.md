@@ -20,7 +20,7 @@ source_links:
 
 # 终端编辑器复兴：Claude Code 让 TUI 卷回来
 
-![终端编辑器复兴：Claude Code 让 TUI 卷回来](tui-revival-claude-code-ai-coding.png)
+![终端编辑器复兴：Claude Code 让 TUI 卷回来](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/tui-revival-claude-code-ai-coding-terminal/tui-revival-claude-code-ai-coding.png)
 
 > 葡萄牙里斯本大学计算机系研究员 Alcides Fonseca 2026-05-03 写的一篇博客「Why TUIs are back」当晚冲上 Hacker News 头页，401 分、406 条评论，连续两天挂在前十。文章核心观点很短：原生 GUI 框架在 Windows / macOS / Linux 三家集体失灵，开发者绕开混乱回到终端；而 Claude 和 Codex 在命令行做得太顺，"你专心做交互，把操作系统忘掉"——TUI 顺势成了 AI agent 时代的默认 UX 载体。第一条置顶评论直接拍板："真正原因就是 Claude Code，其他都是背景噪音。"国内开发者这半年聊 AI Coding 大多围绕 IDE 插件和 Web Chat，TUI 复兴这条线还没被系统拆开。本文把海外这场讨论拆开放进国内开发者视角：TUI 凭什么是 AI agent 的最优载体、六款 TUI agent 国内能用谁、国产厂商缺的是哪一块、未来三种 UX 形态怎么分。
 
@@ -72,7 +72,7 @@ Alcides Fonseca 博客原文不长，约 1500 词，结构干净。先讲「Nati
 
 要看清楚 TUI 这一波怎么起来的，把过去 18 个月的标志性事件按时间排开就一目了然。
 
-![TUI 在 AI Coding 这一波复兴时间线](tui-revival-timeline.png)
+![TUI 在 AI Coding 这一波复兴时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/tui-revival-claude-code-ai-coding-terminal/tui-revival-timeline.png)
 
 几个节点值得展开——
 
@@ -98,7 +98,7 @@ Alcides Fonseca 博客原文不长，约 1500 词，结构干净。先讲「Nati
 
 跳出博客作者的"GUI 框架烂"视角，从 AI agent 工程角度看，TUI 在 2026 年是 agent UX 的最优载体。这个判断有四条具体理由。
 
-![AI Agent UX 三种载体：信息密度对比](tui-vs-ide-vs-browser-density.png)
+![AI Agent UX 三种载体：信息密度对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/tui-revival-claude-code-ai-coding-terminal/tui-vs-ide-vs-browser-density.png)
 
 **第一条：信息密度。** 跑一次 agent 修 bug 的过程里，开发者实际需要同屏看到的东西是——agent 的推理流（thinking + 工具调用决策）、bash 命令的实时输出、文件 diff 预览、git status 的实时变化、项目里相关测试的运行结果、有时候还要看 htop / docker stats 确认进程状态。这些东西在 TUI 里用 tmux / zellij 分窗格一屏全摆下，IDE 把它们塞进侧栏窄条折叠掉，浏览器 chat 干脆只看最终结果。一屏估算下来，TUI 信息密度大约是 IDE 的两到三倍、是 browser chat 的三到四倍。
 
@@ -114,7 +114,7 @@ Alcides Fonseca 博客原文不长，约 1500 词，结构干净。先讲「Nati
 
 把当前主流的 TUI agent 摆开看，结合国内能不能直接用、模型支持、性能、成熟度四个维度做横评。
 
-![六款 TUI Coding Agent 横评（国内开发者视角）](tui-six-coding-agents-comparison.png)
+![六款 TUI Coding Agent 横评（国内开发者视角）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/tui-revival-claude-code-ai-coding-terminal/tui-six-coding-agents-comparison.png)
 
 逐个展开——
 
@@ -143,7 +143,7 @@ Alcides Fonseca 博客原文不长，约 1500 词，结构干净。先讲「Nati
 
 横评里的 Qwen Code 之外，Moonshot 在 2026-04-30 把 Kimi Code CLI（MoonshotAI/kimi-cli）推到 1.41.0，目前 GitHub 8.4k 星，是国内第二家自家做完整 TUI 的厂商。把国内主流厂商在 IDE 插件、Web Chat、官方 TUI 三栏的覆盖摆开看，就能看清一个仍然明显但正在被两家头部厂商先后填上的格局。
 
-![国产 AI Coding 工具：TUI 端缺位画像](domestic-ai-coding-tui-gap.png)
+![国产 AI Coding 工具：TUI 端缺位画像](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/tui-revival-claude-code-ai-coding-terminal/domestic-ai-coding-tui-gap.png)
 
 逐家看——
 

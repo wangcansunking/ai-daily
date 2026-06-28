@@ -14,7 +14,7 @@ authors:
 
 # Copilot Cowork 漏洞：一张图偷走 OneDrive，国内智能体同样警惕
 
-![微软 Copilot Cowork OneDrive 文件泄露漏洞封面](microsoft-copilot-cowork-onedrive-exfil-promptarmor-2026-05-27.png)
+![微软 Copilot Cowork OneDrive 文件泄露漏洞封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/microsoft-copilot-cowork-onedrive-exfil-promptarmor-2026-05-27/microsoft-copilot-cowork-onedrive-exfil-promptarmor-2026-05-27.png)
 
 ## 30 秒速览
 
@@ -26,7 +26,7 @@ authors:
 - **Simon Willison 实查引语**：「The biggest challenge in designing agentic systems continues to be preventing them from enabling attackers to exfiltrate data.」（agent 系统设计的最大挑战，至今仍是阻止它们被攻击者用来窃取数据）
 - **国内对位**：钉钉 AI 助理 / 飞书智能体 / 企业微信会话 AI 在「skill 来源、消息自动批准、外链图片渲染、预授权下载链接」这四条同结构链上技术原理可参照——本文摆原理 + 防御建议，不点名指控（无证据不发）
 
-![Anthropic Project Glasswing 官方更新头图 · 同周一币两面](anthropic-glasswing-update-hero.jpg)
+![Anthropic Project Glasswing 官方更新头图 · 同周一币两面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/microsoft-copilot-cowork-onedrive-exfil-promptarmor-2026-05-27/anthropic-glasswing-update-hero.jpg)
 
 ## 一、Copilot Cowork 是什么，为什么这次漏洞影响很大
 
@@ -42,7 +42,7 @@ PromptArmor 这次找到的漏洞，刚好就长在 Cowork 5 月 5 日新上的 
 
 ## 二、两阶段攻击链拆解：5 行代码偷走 OneDrive
 
-![两阶段攻击链流程图：投毒 + 自动批准 + 外链图片 + 预授权 GET](cowork-two-stage-attack-chain.png)
+![两阶段攻击链流程图：投毒 + 自动批准 + 外链图片 + 预授权 GET](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/microsoft-copilot-cowork-onedrive-exfil-promptarmor-2026-05-27/cowork-two-stage-attack-chain.png)
 
 PromptArmor 报告给出的攻击链分两个阶段。逐步拆开看。
 
@@ -82,7 +82,7 @@ PromptArmor 报告给出的证据维度有三类。
 
 **第三类是可观察的攻击残留**：用户视角下消息正文被隐藏、Teams 消息发送批准被默认豁免、外链图片自动加载——三条都是 Cowork / Teams 的默认行为，不需要任何 0day。
 
-![Simon Willison 5/26 引语视觉化](cowork-simon-thesis.png)
+![Simon Willison 5/26 引语视觉化](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/microsoft-copilot-cowork-onedrive-exfil-promptarmor-2026-05-27/cowork-simon-thesis.png)
 
 Simon Willison 在 5 月 26 日博客里把整篇 PromptArmor 报告拎出来转引，并给出了一段被广泛引用的判断。一字不动地引一下：
 
@@ -103,7 +103,7 @@ Simon Willison 在 5 月 26 日博客里把整篇 PromptArmor 报告拎出来转
 
 ## 四、对照 Anthropic Glasswing：同一周，AI 安全的攻与守
 
-![同周一币两面：5/22 Glasswing 攻 + 5/26 Copilot Cowork 守](cowork-vs-glasswing-twin.png)
+![同周一币两面：5/22 Glasswing 攻 + 5/26 Copilot Cowork 守](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/microsoft-copilot-cowork-onedrive-exfil-promptarmor-2026-05-27/cowork-vs-glasswing-twin.png)
 
 让这次事件特别值得记录的另一个原因，是同一周里 Anthropic 刚刚发完 Project Glasswing 第一阶段更新。
 
@@ -124,7 +124,7 @@ Simon Willison 在 5 月 26 日博客里把整篇 PromptArmor 报告拎出来转
 
 在不点名指控任何具体产品有同样漏洞的前提下（PromptArmor 没有发表针对国内产品的研究，我自己也没有任何实证），把这次 Copilot Cowork 漏洞的攻击链拆成四条原理，对位看一下国内主流企业 AI 产品在同一条链上分别是什么状态。
 
-![国内即时通讯智能体在同结构攻击链上的四条原理对位表](cowork-china-im-4-principles-v2.png)
+![国内即时通讯智能体在同结构攻击链上的四条原理对位表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/microsoft-copilot-cowork-onedrive-exfil-promptarmor-2026-05-27/cowork-china-im-4-principles-v2.png)
 
 **第一条原理：agent 是否能从用户云盘里的某个目录自动加载技能或插件，且不需要二次批准。**
 
@@ -152,7 +152,7 @@ Simon Willison 在 5 月 26 日博客里把整篇 PromptArmor 报告拎出来转
 
 ## 六、企业 Agent 安全防御七条建议
 
-![企业 Agent 安全防御七条建议清单](cowork-defense-checklist.png)
+![企业 Agent 安全防御七条建议清单](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/microsoft-copilot-cowork-onedrive-exfil-promptarmor-2026-05-27/cowork-defense-checklist.png)
 
 综合 PromptArmor 报告、Simon Willison 博客评论、HN 讨论串里的安全圈共识，给出适用于 Copilot Cowork / 钉钉 AI 助理 / 飞书智能体 / 企业微信会话 AI 任一同结构场景的七条防御建议。每一条都尽量给到技术上可落地的具体配置，不写「加强安全意识」这种口号。
 

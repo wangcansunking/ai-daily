@@ -19,7 +19,7 @@ tags:
 
 # 一张 4090 跑满血 DeepSeek 671B：靠大内存硬扛
 
-![KTransformers 单卡跑满血大模型 封面](ktransformers-cpu-offload-moe-4090-2026-05-30.png)
+![KTransformers 单卡跑满血大模型 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/ktransformers-cpu-offload-moe-4090-2026-05-30/ktransformers-cpu-offload-moe-4090-2026-05-30.png)
 
 > 显存不够，不代表跑不了大模型。这句话过去两周我们一直在用各种量化和引擎去验证它的反面——怎么把一个模型压进 24GB 显存里。今天换个方向：当模型根本压不进去的时候，还有没有办法在自己的机器上跑起来。
 
@@ -43,7 +43,7 @@ KTransformers 做的就是按计算特性把模型拆开放：
 - **稀疏专家矩阵**：放到 CPU / DRAM 上算，吃 Intel AMX 指令集，专家模块用 GGML 量化压体积；
 - **注意力 / 共享专家**：可以走 FP8，进一步省显存。
 
-![KTransformers 异构推理数据流：GPU 跑稠密层、CPU 内存放稀疏专家](kt-heterogeneous-arch-2026-05-30.png)
+![KTransformers 异构推理数据流：GPU 跑稠密层、CPU 内存放稀疏专家](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/ktransformers-cpu-offload-moe-4090-2026-05-30/kt-heterogeneous-arch-2026-05-30.png)
 
 它的项目原话把自己定位得很清楚："A Flexible Framework for Experiencing Heterogeneous LLM Inference/Fine-tune Optimizations"——一个体验异构大模型推理与微调优化的灵活框架。开发方是清华 KVCache.AI 团队和趋境科技，仓库托管在 GitHub 上（`kvcache-ai/ktransformers`，Apache-2.0 许可），约 1.7 万 star，到 2026 年 5 月 21 日仍在更新。
 
@@ -65,7 +65,7 @@ KTransformers 做的就是按计算特性把模型拆开放：
 
 很多人实测下来的占用是"显存约 14GB、内存约 380GB"——显存这一头，连一张 4090 都没占满；真正的门槛挪到了内存上。
 
-![单卡 4090 跑 671B Q4 的显存内存账与整机成本对比](kt-vram-dram-cost-2026-05-30.png)
+![单卡 4090 跑 671B Q4 的显存内存账与整机成本对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/ktransformers-cpu-offload-moe-4090-2026-05-30/kt-vram-dram-cost-2026-05-30.png)
 
 CPU 这一头有个国内 DIY 用户最容易忽略的硬门槛：**Intel AMX 指令集**。KTransformers 的 CPU 算子是专门为 AMX 写的，吃满 AMX 才有它宣传的速度。这意味着消费级的 AMD Ryzen 平台没有 AMX，跑不出效果；要 Intel Xeon 或至强 W 这一档才行。官方推荐的配置是 Intel Xeon Gold 6454S 这一档，单 socket 32 核，双 socket 64 核效果最佳。
 
@@ -100,7 +100,7 @@ CPU 这一头有个国内 DIY 用户最容易忽略的硬门槛：**Intel AMX �
 
 v0.3-preview 把预填充进一步推到最高 286.55 tok/s，约为 llama.cpp 的 27.79 倍——靠的是选择性只激活 6 个专家。
 
-![KTransformers 预填充与解码速度对比 llama.cpp 的倍数](kt-throughput-2026-05-30.png)
+![KTransformers 预填充与解码速度对比 llama.cpp 的倍数](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/ktransformers-cpu-offload-moe-4090-2026-05-30/kt-throughput-2026-05-30.png)
 
 这些倍数确实好看。但要老实说清楚两件事：
 
@@ -122,7 +122,7 @@ v0.3-preview 把预填充进一步推到最高 286.55 tok/s，约为 llama.cpp �
 | llama.cpp | 通用 CPU/GPU 混合，跨平台 | 较低 | 弱 | MoE 专家卸载效率低 |
 | KTransformers | 显存装不下，靠大内存换"能跑" | 高（专门优化） | 单用户串行 | 吃 AMX、单用户、速度个位数 |
 
-![vLLM/SGLang、llama.cpp、KTransformers 三条本地推理路线选型对照](kt-engine-fit-2026-05-30.png)
+![vLLM/SGLang、llama.cpp、KTransformers 三条本地推理路线选型对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/ktransformers-cpu-offload-moe-4090-2026-05-30/kt-engine-fit-2026-05-30.png)
 
 三句话记住它们的分工：
 
@@ -140,7 +140,7 @@ AMX 是 Intel 从第四代至强（Sapphire Rapids）开始引入的矩阵运算
 
 ## 五、权重走魔搭和镜像站拉，命令骨架照抄
 
-![KTransformers 两档硬件配置：满配双路至强与消费级单卡 4090，AMX 是真正的门槛](kt-hardware-tiers-2026-05-30.png)
+![KTransformers 两档硬件配置：满配双路至强与消费级单卡 4090，AMX 是真正的门槛](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/ktransformers-cpu-offload-moe-4090-2026-05-30/kt-hardware-tiers-2026-05-30.png)
 
 这一节给照着就能跑的安装与下载步骤，重点照顾国内的网络环境。结论先抛——装环境和拉权重是两件事，权重走国内镜像最省心。
 
@@ -211,7 +211,7 @@ KTransformers 起的是 OpenAI 兼容 server，所以国内主流 IDE 和 agent 
 
 官方数字是实验室条件下的上限，真正决定你要不要上这条路的，是社区里普通人跑出来的体感。这一节把那些没那么漂亮、但更真实的声音放回来。
 
-![KTransformers 在 6 到 8 字每秒下能干什么、不能干什么：能等的活都行，要实时的不行](kt-speed-fit-2026-05-30.png)
+![KTransformers 在 6 到 8 字每秒下能干什么、不能干什么：能等的活都行，要实时的不行](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/ktransformers-cpu-offload-moe-4090-2026-05-30/kt-speed-fit-2026-05-30.png)
 
 社区里反复出现的几个观察：
 

@@ -10,13 +10,13 @@ category: "AI 记忆 / Agent 基础设施 / 开源工具"
 ---
 # supermemory：给 AI Agent 装一层记得住你的记忆
 
-![supermemory 持久记忆引擎，给 AI Agent 装上跨会话长期记忆，霓虹科技风格示意](supermemory-agent-persistent-memory-2026-06-01.png)
+![supermemory 持久记忆引擎，给 AI Agent 装上跨会话长期记忆，霓虹科技风格示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/supermemory-agent-persistent-memory-2026-06-01/supermemory-agent-persistent-memory-2026-06-01.png)
 
 用过 ChatGPT、Claude 或者任何一个 AI 助手的人，都撞过同一堵墙：这一轮聊得好好的，它记得你是做后端的、偏好 Python、项目用的是 PostgreSQL；换个窗口重新开一段，它就像第一次见你，把所有偏好、项目背景、上次的结论统统忘光，又得从头交代一遍。**AI 真正的记忆问题不是它笨，而是它根本没有跨会话的长期记忆——一关窗口，关于你的一切清零。**
 
 supermemory（仓库 `supermemoryai/supermemory`）想正面补上的就是这一块。它给自己的定位是一句话：**AI 时代的记忆 API，给 AI 装上记得住事的那一层。** 6 月 1 日凌晨核对仓库，总 star 约 2.35 万、2100 多 fork、TypeScript 写成，2024 年 2 月建库，最近一直在 GitHub Trending 在榜。它对外宣称在 LongMemEval、LoCoMo、ConvoMem 这三个 AI 记忆主流基准上都排第一。
 
-![supermemory 仓库社交卡片：可扩展的记忆引擎，AI 时代的记忆 API](source-supermemory-github-og-2026-06-01.png)
+![supermemory 仓库社交卡片：可扩展的记忆引擎，AI 时代的记忆 API](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/supermemory-agent-persistent-memory-2026-06-01/source-supermemory-github-og-2026-06-01.png)
 <small>来源：supermemoryai/supermemory 仓库社交卡片</small>
 
 这篇文章想把几件事讲清楚：**Agent 的持久记忆到底要解决上下文窗口之外的哪个问题、supermemory 这套写入到检索的架构是怎么搭的、它和大家熟的 RAG、向量库、Mem0 差在哪、给 Claude Code 和 Cursor 接一层记忆怎么落地、以及隐私和本地化这条路能走多远。** 结论先放这儿——如果你的痛点是"Agent 老是忘记用户、每次都从零开始"，记忆层是当下最对症的补丁，supermemory 把记忆和检索打成了一个接口；但它是托管为主的方案，自建和数据自主这条线上要权衡的东西不少。
@@ -44,7 +44,7 @@ supermemory 在文档里把这件事拆成两个概念，值得国内开发者�
 
 把 supermemory 当成"又一个向量库"会错得很远。它官方把自己描述成**五层上下文收进一个接口**：用户画像、记忆图谱、检索、抽取器、连接器。
 
-![supermemory 五层上下文工作流：写入端自动抽取建图，读取端一次调用注入](supermemory-stack-2026-06-01.png)
+![supermemory 五层上下文工作流：写入端自动抽取建图，读取端一次调用注入](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/supermemory-agent-persistent-memory-2026-06-01/supermemory-stack-2026-06-01.png)
 
 拆开看，它分写入和读取两条线。
 
@@ -63,7 +63,7 @@ supermemory 在文档里把这件事拆成两个概念，值得国内开发者�
 
 这是最值得讲透的一点，因为大量团队踩的坑就是**用 RAG 来做记忆，然后纳闷 Agent 为什么总记错。**
 
-![RAG 只比文本相似，记忆层记的是关于用户的事实，两条路对照](supermemory-memory-vs-rag-2026-06-01.png)
+![RAG 只比文本相似，记忆层记的是关于用户的事实，两条路对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/supermemory-agent-persistent-memory-2026-06-01/supermemory-memory-vs-rag-2026-06-01.png)
 
 RAG 的本质是：把问题转成向量，去库里找语义最相似的片段，塞进提示词。它回答的是"**我知道什么**"——内容相不相关，是内容自己的属性，跟"谁在问"无关。
 
@@ -80,7 +80,7 @@ supermemory 的做法是**两个都给你**：文档走 RAG 那套（静态、�
 
 国内开发者选型时，supermemory 最直接的对手是 Mem0（约 5.1 万 star 的开源记忆层）。两个解决的是同一个"AI 健忘症"，但赌注下得不一样。
 
-![长程记忆基准 LongMemEval 准确率对照：supermemory 领先 Mem0 约 36 个百分点](supermemory-benchmark-2026-06-01.png)
+![长程记忆基准 LongMemEval 准确率对照：supermemory 领先 Mem0 约 36 个百分点](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/supermemory-agent-persistent-memory-2026-06-01/supermemory-benchmark-2026-06-01.png)
 
 | 维度 | supermemory | Mem0 |
 |---|---|---|

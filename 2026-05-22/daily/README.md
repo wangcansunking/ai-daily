@@ -33,7 +33,7 @@ cover: "daily-2026-05-22-cover.png"
 
 # Anthropic 单季 109 亿首盈 · OpenAI 今日递 IPO | AI 日报 | 2026-05-22
 
-![Anthropic 109 亿与 OpenAI 今日 IPO 双叙事封面](daily-2026-05-22-cover.png)
+![Anthropic 109 亿与 OpenAI 今日 IPO 双叙事封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/daily/daily-2026-05-22-cover.png)
 
 ## 📋 头版目录（一屏扫完今日）
 
@@ -76,7 +76,7 @@ cover: "daily-2026-05-22-cover.png"
 
 ### 头条 1 · Anthropic 五月节奏收尾在 5/22：单季 109 亿首盈 + 450 亿美元 4 年算力大单
 
-![Anthropic 单季 Q1→Q2 跃迁 四档指标](daily-2026-05-22-anthropic-q2-jump.png)
+![Anthropic 单季 Q1→Q2 跃迁 四档指标](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/daily/daily-2026-05-22-anthropic-q2-jump.png)
 
 #### 1.1 Q2 109 亿美元这个数到底意味着什么
 
@@ -107,7 +107,7 @@ cover: "daily-2026-05-22-cover.png"
 
 Anthropic 总裁 Daniela Amodei 当天在 X 上公开确认：「与 SpaceX 的合作正在扩展到 Colossus 2，6 月起 GB200 容量按计划上量。」这是 Anthropic 第一次在公开场合承认 Colossus 2 已落地，此前公司只承认 Colossus 1。
 
-![Anthropic 五月节奏时间线 八个动作收尾在 5/22](daily-2026-05-22-anthropic-may-timeline.png)
+![Anthropic 五月节奏时间线 八个动作收尾在 5/22](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/daily/daily-2026-05-22-anthropic-may-timeline.png)
 
 #### 1.3 五月节奏看下来的产业含义
 
@@ -127,7 +127,7 @@ Anthropic 总裁 Daniela Amodei 当天在 X 上公开确认：「与 SpaceX 的�
 
 ### 头条 2 · OpenAI 今日递保密 IPO + CNBC 价格对比 + 海外开发者用脚投票
 
-![Benchmark cost comparison 同基准工作流端到端账单 Claude 4811 vs GLM 544](daily-2026-05-22-benchmark-cost-comparison.png)
+![Benchmark cost comparison 同基准工作流端到端账单 Claude 4811 vs GLM 544](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/daily/daily-2026-05-22-benchmark-cost-comparison.png)
 
 #### 2.1 OpenAI 这次 IPO 节奏的三个关键节点
 
@@ -156,7 +156,7 @@ CNBC 的论点很直接：当国产模型同任务便宜 4-9 倍且基准准确�
 
 #### 2.3 OpenRouter 数据对比：海外开发者已经用脚投了票
 
-![OpenRouter 国产模型占比 14 个月从 1% 抬到 61%](daily-2026-05-22-cn-models-openrouter-share.png)
+![OpenRouter 国产模型占比 14 个月从 1% 抬到 61%](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/daily/daily-2026-05-22-cn-models-openrouter-share.png)
 
 Databricks CEO Ali Ghodsi 5/22 在 X 上引用 OpenRouter 公开统计：国产模型在 OpenRouter 平台（聚合 200+ 模型的开发者 API 网关）的 token 消耗占比已从 2024 年底的约 1% 抬升到 2026 年 5 月的 61%。
 
@@ -233,7 +233,7 @@ DeepSeek 创始人梁文锋本周未在公开渠道发声，但 DeepSeek 工程�
 
 [Toto 2.0 GitHub](https://github.com/DataDog/toto)（Apache 2.0）。Datadog AI 研究院 5/14 一次性开源 4M、22M、84M、500M、2.5B 五档权重，2.5B 旗舰版同时拿下 BOOM、GIFT-Eval、TIME 三大基准 SOTA，22M 档位用 1/7 参数量追平上一代 Toto 1.0 的 152M 精度。同期上线 OBSREASON 推理评测基准，把运维场景（时序异常归因、容量规划、故障定位）塞进 Agent 推理 benchmark。完整国内对位与部署路径见今日「Datadog 把 Toto 拉到 2.5B 五档全开源」专题。
 
-![Datadog Toto 2.0 五档基准对位 三大 SOTA](toto-2-benchmark-three.png)
+![Datadog Toto 2.0 五档基准对位 三大 SOTA](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/daily/toto-2-benchmark-three.png)
 
 ### 🔴 必读 / Anthropic Self-hosted Sandbox + MCP Tunnel
 
@@ -247,7 +247,7 @@ DeepSeek 创始人梁文锋本周未在公开渠道发声，但 DeepSeek 工程�
 
 [multica-ai/andrej-karpathy-skills GitHub](https://github.com/multica-ai/andrej-karpathy-skills) (143120 stars 累计)。社区根据 Karpathy 5 月初公开的 65 行 CLAUDE.md 提炼出四条核心规则（明确边界、测试驱动、上下文最小化、显式假设），整理成单文件配置 + 13 条 Skill 集合上传 GitHub，5/22 单日新增 2614 颗跻身今日 Trending 第 3。这份配置本质上是把 Karpathy 在 OpenAI / Tesla 时期的工程哲学翻译给 Claude Code 使用——对刚开始用 Claude Code 的开发者是最值得读的入门文档之一。完整解读见今日「Karpathy 65 行 CLAUDE.md 拿下 14 万 stars」专题。
 
-![Karpathy CLAUDE.md 4 条核心规则结构](karpathy-claude-md-4-rules-220k-2026-05-22.png)
+![Karpathy CLAUDE.md 4 条核心规则结构](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/daily/karpathy-claude-md-4-rules-220k-2026-05-22.png)
 
 ### 🔵 了解 / Cursor Composer 2.5 + Cursor Automations
 
@@ -265,7 +265,7 @@ DeepSeek 创始人梁文锋本周未在公开渠道发声，但 DeepSeek 工程�
 
 腾讯混元 5/22 开源的 HY-MT2 是国产端侧翻译模型第一次同时跨过三条门槛：33 语种 + 5 方言全覆盖（直接对标 Google Translate）、1.8B 参数 440MB 量化版跑通手机端（小米 / vivo / OPPO 端侧 AI 接口可调用）、0.18 秒平均响应时间（接近实时对话需求）。完整国内对位 + 三档落地路径见今日「腾讯混元 Hy-MT2」专题。
 
-![Hunyuan HY-MT2 33 语种端侧翻译性能对位](hunyuan-hy-mt2-end-side-translation-33lang-2026-05-22.png)
+![Hunyuan HY-MT2 33 语种端侧翻译性能对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/daily/hunyuan-hy-mt2-end-side-translation-33lang-2026-05-22.png)
 
 ### 腾讯 Marvis 三端桌面 Agent · 1 主 5 专家协作架构
 
@@ -279,13 +279,13 @@ DeepSeek 创始人梁文锋本周未在公开渠道发声，但 DeepSeek 工程�
 
 [antoinezambelli/forge GitHub](https://github.com/antoinezambelli/forge) (1481 stars 累计，5/22 单日新增 398 颗)。美国德州仪器 AI 总监开源的 Python 框架在 Show HN 一天拿下 667 赞、累计 1440 颗。本地 8B 模型挂上四件套 guardrails 后，端到端工作流完成率从 53% 拉到 99%。完整横评千问 Qwen3-8B、深度求索 V2.5-Lite、智谱 GLM-4-9B、月之暗面 Kimi K1.5-mini、阶跃 Step-2-8B、MiniMax M2-8B 六家 8B 级模型见今日「本地 8B 工具调用 53→99」专题。
 
-![Forge 框架四模块流水线架构图](forge-pipeline-4modules.png)
+![Forge 框架四模块流水线架构图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/daily/forge-pipeline-4modules.png)
 
 ---
 
 ## 📦 GitHub Trending
 
-![GitHub Trending 今日 12 强 6 条 Agent Skills Coding 主题](daily-2026-05-22-github-trending-12.png)
+![GitHub Trending 今日 12 强 6 条 Agent Skills Coding 主题](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/daily/daily-2026-05-22-github-trending-12.png)
 
 ### 🔴 必看 / colbymchenry/codegraph · 单日 +4294
 
@@ -295,7 +295,7 @@ DeepSeek 创始人梁文锋本周未在公开渠道发声，但 DeepSeek 工程�
 
 [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) (143120 stars 累计)。把 Karpathy 5 月初公开的 65 行 CLAUDE.md 提炼成单文件 + 13 条 Skill 集合，社区接力维护——是今日 Trending 第一个累计破 14 万 stars 的 Coding 类项目。
 
-![Karpathy skills 仓库 og 14 万 stars](source-github-openhuman-og-2026-05-22.png)
+![Karpathy skills 仓库 og 14 万 stars](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/daily/source-github-openhuman-og-2026-05-22.png)
 
 ### 🔴 必看 / obra/superpowers · 单日 +1576
 

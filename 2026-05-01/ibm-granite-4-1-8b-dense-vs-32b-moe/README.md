@@ -10,7 +10,7 @@ cover: ibm-granite-4-1.png
 
 # IBM Granite 4.1：8B 反超 32B MoE
 
-![Granite 4.1 主视觉：8B 稠密扛起 32B MoE](ibm-granite-4-1.png)
+![Granite 4.1 主视觉：8B 稠密扛起 32B MoE](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/ibm-granite-4-1-8b-dense-vs-32b-moe/ibm-granite-4-1.png)
 
 > 4 月 29 日，美国公司 IBM 在 [research.ibm.com](https://research.ibm.com/blog/granite-4-1-ai-foundation-models) 与 [HuggingFace](https://huggingface.co/blog/ibm-granite/granite-4-1) 同步上线 **Granite 4.1**：3B / 8B / 30B 三档稠密 decoder-only 模型，**全部 Apache 2.0**。8B 这一档在 ArenaHard、BFCL v3 工具调用、GSM8K、DeepMind-Math、EvalPlus 上整体追平甚至反超前代 **Granite 4.0-H-Small**（32B MoE / 9B 激活）。15 万亿 token、5 阶段预训练、LLM-as-Judge 6 维度过滤、4 阶段 RL，全部在 NVIDIA GB200 NVL72 集群完成。次日（4 月 30 日）登上 HN 头条 248 分、158 评论。
 
@@ -29,7 +29,7 @@ cover: ibm-granite-4-1.png
 - **配套**：[Granite Guardian 4.1-8B](https://huggingface.co/ibm-granite/granite-guardian-4.1-8b) 安全检查模型同步发布
 - **基础设施**：CoreWeave 上的 NVIDIA GB200 NVL72 集群，单机 72 卡 NVLink、跨机 NDR 400 Gb/s InfiniBand
 
-![Granite 4.1 三档 benchmark 表](granite-4-1-benchmark-table.png)
+![Granite 4.1 三档 benchmark 表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/ibm-granite-4-1-8b-dense-vs-32b-moe/granite-4-1-benchmark-table.png)
 
 8B 这档的几个数字尤其值得盯一下：**ArenaHard 68.98**（前代 32B MoE 显著低于这个分数）、**BFCL v3 工具调用 68.27**（前代 64.7）、**GSM8K 92.49**、**DeepMind-Math 80.07**、**EvalPlus 80.2**、**MMLU-Pro 55.99**、**IFEval 87.06**、**HumanEval pass@1 85.37**。IBM 在官方博客里直接写：「the new Granite 4.1 8B instruct model **consistently matches or outperforms** the Granite 4.0 32B Mixture-of-Experts model」。这是一个**8B 稠密超越同家 32B 稀疏**的明确说法。
 
@@ -69,7 +69,7 @@ RL 阶段的算法选型也有意思。`On-policy GRPO + DAPO loss` 这个组合
 
 ## 二、稠密 vs 混合专家：Granite 4.1 把工程账本摊开了
 
-![Dense vs MoE 路线工程取舍](granite-dense-vs-moe-tradeoff.png)
+![Dense vs MoE 路线工程取舍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/ibm-granite-4-1-8b-dense-vs-32b-moe/granite-dense-vs-moe-tradeoff.png)
 
 过去一年，开源大模型的主流叙事是 **MoE 取代 Dense**：DeepSeek V3 / Qwen3-30B-A3B / Mistral Mixtral 系列各家都在堆专家、卷激活效率。MoE 的核心优势很清楚——**总参数量上去了，单 token 只激活一小部分专家**，云端高吞吐场景计算效率高。
 
@@ -209,7 +209,7 @@ python -m vllm.entrypoints.openai.api_server \
 
 不能不讲国产同档。Granite 4.1-8B 拿出 Apache 2.0 标签后，国内开发者需要的同款替代选项其实**已经很丰满**：
 
-![国产 8B 同档对位表](granite-vs-qwen-llama-8b.png)
+![国产 8B 同档对位表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-01/ibm-granite-4-1-8b-dense-vs-32b-moe/granite-vs-qwen-llama-8b.png)
 
 逐项看下来：
 

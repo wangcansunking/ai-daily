@@ -10,7 +10,7 @@ cover: graphify-vs-gitnexus-ux.png
 
 # 装一个 skill 还是开一个浏览器：graphify vs GitNexus 上手对比
 
-![graphify vs GitNexus 主视觉](graphify-vs-gitnexus-ux.png)
+![graphify vs GitNexus 主视觉](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/graphify-vs-gitnexus-ux/graphify-vs-gitnexus-ux.png)
 
 > 把代码库 / 文档 / 论文 / 图片 / 视频喂给 AI agent 这件事，最近一个月 GitHub 上跑出两个不同形态的解法。一个装进 Claude Code 当 skill 用，一个直接打开浏览器 drop 一个 repo。我们都用过两边，把"该装哪个"落到具体场景。
 
@@ -45,7 +45,7 @@ GitNexus 立项早 8 个月、迭代成熟得多。仓库 issue 区已经累计 
 
 ## 二、上手第一步：5 分钟 vs 30 分钟
 
-![graphify 安装到 Claude Code 的 skill 模型](graphify-readme-hero.png)
+![graphify 安装到 Claude Code 的 skill 模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/graphify-vs-gitnexus-ux/graphify-readme-hero.png)
 
 ### graphify：5 分钟装一个 skill
 
@@ -70,7 +70,7 @@ graphify antigravity install          # Google Antigravity
 
 ### GitNexus：浏览器打开就用，但学一套 UI
 
-![GitNexus 浏览器版主界面](gitnexus-readme-hero.png)
+![GitNexus 浏览器版主界面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/graphify-vs-gitnexus-ux/gitnexus-readme-hero.png)
 
 GitNexus 的"零服务器"是真的——浏览器打开 [gitnexus.vercel.app](https://gitnexus.vercel.app)，粘贴一个 GitHub URL 或者拖一个 ZIP 进去，Tree-sitter WASM + LadybugDB WASM 在浏览器里直接跑，没有任何东西上传。
 
@@ -105,7 +105,7 @@ graphify README 里那句对 Karpathy 工作流的引用——「Karpathy 维护
 
 graphify 自报的 token 削减数据：在 Karpathy 仓库 + 5 篇论文 + 4 张图片共 52 个文件的混合语料场景下，每次查询消耗约 1.7k token，对照"直接读原始文件"基线 123k token，**平均削减 71.5 倍**。这个数字来自项目自测，没有第三方独立复现，应该当成方向性指标读，不是规格。
 
-![GitNexus 索引管线：Tree-sitter AST + 跨文件解析 + 调用图](gitnexus-pipeline.png)
+![GitNexus 索引管线：Tree-sitter AST + 跨文件解析 + 调用图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/graphify-vs-gitnexus-ux/gitnexus-pipeline.png)
 *图源：GitNexus 官方 ARCHITECTURE.md，AST 解析 + 跨文件 import / 调用 / 类继承 / `self`/`this` 类型推断的完整索引流程。*
 
 ## 四、国内开发者实操：能不能直接用，看宿主和网络

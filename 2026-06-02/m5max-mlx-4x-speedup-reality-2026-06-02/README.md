@@ -9,7 +9,7 @@ description: "macOS 26.2 配 MLX 0.31 解锁了 M5 的神经加速器，苹果�
 ---
 # M5 Max 跑大模型：苹果说快 4 倍，生成只多两成
 
-![M5 Max 跑本地大模型，神经加速器把预填充提速 4 倍，但生成速度由内存带宽决定](m5max-mlx-4x-speedup-reality-2026-06-02.png)
+![M5 Max 跑本地大模型，神经加速器把预填充提速 4 倍，但生成速度由内存带宽决定](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/m5max-mlx-4x-speedup-reality-2026-06-02/m5max-mlx-4x-speedup-reality-2026-06-02.png)
 
 升级到 macOS 26.2、把 MLX 更新到 0.31，再在 M5 这代芯片上跑一遍本地模型，苹果官方给的数字是：最高快 4 倍。
 
@@ -21,7 +21,7 @@ description: "macOS 26.2 配 MLX 0.31 解锁了 M5 的神经加速器，苹果�
 
 ## 苹果官方的数字：预填充快 4 倍，生成只快两成
 
-![苹果 MLX 官方测试表：TTFT 提速 3.33–4.06 倍，生成提速只有 1.19–1.27 倍](source-apple-m5-speedup-table.png)
+![苹果 MLX 官方测试表：TTFT 提速 3.33–4.06 倍，生成提速只有 1.19–1.27 倍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/m5max-mlx-4x-speedup-reality-2026-06-02/source-apple-m5-speedup-table.png)
 
 *来源：Apple Machine Learning Research《Exploring LLMs with MLX and the Neural Accelerators in the M5 GPU》官方测试表*
 
@@ -34,7 +34,7 @@ description: "macOS 26.2 配 MLX 0.31 解锁了 M5 的神经加速器，苹果�
 
 把它画成柱状图，落差更直观：
 
-![M5 提速分解柱状图：四个模型的预填充都接近 4 倍，生成都只有 1.2 倍上下](m5-prefill-vs-gen-2026-06-02.png)
+![M5 提速分解柱状图：四个模型的预填充都接近 4 倍，生成都只有 1.2 倍上下](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/m5max-mlx-4x-speedup-reality-2026-06-02/m5-prefill-vs-gen-2026-06-02.png)
 
 蓝色（预填充）几乎顶到 4 倍那条线，绿色（生成）紧贴着 1 倍上方。苹果这代新加的神经加速器，专门加速大矩阵乘法这种算力密集的活，而预填充正是这种活——它要把你输入的几千个词元一次性算完，吃的是算力。所以神经加速器一上，预填充立刻飞起来。
 
@@ -54,7 +54,7 @@ description: "macOS 26.2 配 MLX 0.31 解锁了 M5 的神经加速器，苹果�
 
 光看官方数字还不够，得看真人在自己机器上跑出来什么。
 
-![社区实测：M5 Max 约 600 GB/s 带宽，70B 约 20 tok/s、9B 约 100 tok/s](source-m5max-toks-table.png)
+![社区实测：M5 Max 约 600 GB/s 带宽，70B 约 20 tok/s、9B 约 100 tok/s](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/m5max-mlx-4x-speedup-reality-2026-06-02/source-m5max-toks-table.png)
 
 *来源：LLM Check《M5 Max for Local AI: Apple Silicon Benchmark Guide 2026》社区实测整理*
 
@@ -91,7 +91,7 @@ description: "macOS 26.2 配 MLX 0.31 解锁了 M5 的神经加速器，苹果�
 
 苹果这篇官方文章把方法、模型、提示长度都写得很透，想自己复核的人可以照着同样的 4096 词元提示跑一遍，数字基本对得上。
 
-![苹果机器学习研究官方文章，完整给出 M5 神经加速器跑大模型与文生图的测试方法和结果](source-apple-m5-mlx-research.png)
+![苹果机器学习研究官方文章，完整给出 M5 神经加速器跑大模型与文生图的测试方法和结果](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/m5max-mlx-4x-speedup-reality-2026-06-02/source-apple-m5-mlx-research.png)
 
 *来源：Apple Machine Learning Research 官方文章页面*
 

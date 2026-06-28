@@ -10,7 +10,7 @@ tags: [dexter, finance-agent, solo-dev, ai-agent, github-trending, independent-d
 ---
 # dexter 冲到 24.3k 星：一个人的金融研究 agent
 
-![dexter 项目主图](dexter-virattt-hero.png)
+![dexter 项目主图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/dexter-virattt-solo-finance-agent-2026-05/dexter-virattt-hero.png)
 
 5 月 6 日的 GitHub Trending 上有件事很难忽视：一个叫 `virattt/dexter` 的仓库，单日 +666 star，总数顶到 24277。仓库描述只有一句话——「An autonomous agent for deep financial research」。
 
@@ -30,7 +30,7 @@ README 里 virattt 自己写的定位很直白：「Think Claude Code, but built
 
 下面这张图是它在 CLI 里跑起来的样子——左侧是规划好的 task 列表，右侧实时显示 agent 在调用哪个工具、当前 token 计数、运行时长。整个交互节奏和你在 Claude Code 里看 agent 干活几乎一样。
 
-![dexter 在 CLI 里运行](dexter-virattt-cli.png)
+![dexter 在 CLI 里运行](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/dexter-virattt-solo-finance-agent-2026-05/dexter-virattt-cli.png)
 
 技术栈很轻，README 里能查到的关键事实：
 
@@ -49,7 +49,7 @@ README 里 virattt 自己写的定位很直白：「Think Claude Code, but built
 
 dexter 自我描述的「Key Capabilities」有四条，剥掉营销词其实就是一个 agent loop 的四个阶段：
 
-![dexter 工作流](dexter-virattt-workflow.png)
+![dexter 工作流](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/dexter-virattt-solo-finance-agent-2026-05/dexter-virattt-workflow.png)
 
 ### 1）任务分解（Task Planning）
 
@@ -75,7 +75,7 @@ README 明确写了「Built-in loop detection and step limits to prevent runaway
 
 很多人看到 dexter 当天 +666 star 会以为是运气。但翻开 virattt 的 GitHub 主页，故事不是这样的。
 
-![virattt 三个金融 agent 项目](dexter-virattt-three-projects.png)
+![virattt 三个金融 agent 项目](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/dexter-virattt-solo-finance-agent-2026-05/dexter-virattt-three-projects.png)
 
 | 项目 | 首发时间 | 当前 star | 性质 |
 |---|---|---|---|

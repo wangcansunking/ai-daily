@@ -11,7 +11,7 @@ tags: ["Claude", "Excel", "Microsoft Office", "子智能体", "Agent Mode", "Git
 
 # Claude 进 Excel：子智能体互通，账单记你头上
 
-![Claude 进入 Microsoft Office，每个应用一个专属子智能体并跨文件通信](claude-in-excel-office-agent-subagents-2026-06-09.png)
+![Claude 进入 Microsoft Office，每个应用一个专属子智能体并跨文件通信](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/claude-in-excel-office-agent-subagents-2026-06-09/claude-in-excel-office-agent-subagents-2026-06-09.png)
 
 Claude 现在能在 Excel 里帮你写公式、清数据、搭分析了。这件事本身不算意外，真正有意思的是背后的结构：它不是一个统一的助手挂在侧边栏，而是 Word 一个智能体、Excel 一个智能体、PowerPoint 一个智能体，彼此还能对话——你在 Word 里让它把一份财务模型的数据拉进文档，Word 的智能体会主动去找 Excel 的智能体，让对方读表、打包、回传。
 
@@ -21,7 +21,7 @@ Claude 现在能在 Excel 里帮你写公式、清数据、搭分析了。这件
 
 ## 先把能查到的几个事实摆清楚
 
-![The New Stack 对 Claude 进入 Microsoft Office 的报道](claude-office-source-thenewstack.png)
+![The New Stack 对 Claude 进入 Microsoft Office 的报道](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/claude-in-excel-office-agent-subagents-2026-06-09/claude-office-source-thenewstack.png)
 
 时间线分两条，别混在一起：
 
@@ -40,7 +40,7 @@ Claude 现在能在 Excel 里帮你写公式、清数据、搭分析了。这件
 
 ## 每个应用一个子智能体，它们会互相喊话
 
-![Office 各应用子智能体跨文件通信示意](claude-office-chart-subagent-flow.png)
+![Office 各应用子智能体跨文件通信示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/claude-in-excel-office-agent-subagents-2026-06-09/claude-office-chart-subagent-flow.png)
 
 这套结构最值得讲的一点：**不是一个大模型在所有应用里来回切，而是每个应用有自己的智能体，它们之间能直接通信。**
 
@@ -57,7 +57,7 @@ Anthropic 没有把这套多智能体结构当成主打卖点大讲。但对开�
 
 ## 跨文件上下文：那个叫「Work across files」的开关
 
-![MindStudio 对 Claude 进 Office 子智能体跨文件架构的报道页](claude-office-source-subagents.png)
+![MindStudio 对 Claude 进 Office 子智能体跨文件架构的报道页](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/claude-in-excel-office-agent-subagents-2026-06-09/claude-office-source-subagents.png)
 
 让这组智能体真正连起来的，是一个叫「Work across files」（跨文件协作）的开关。
 
@@ -92,7 +92,7 @@ Anthropic 没有把这套多智能体结构当成主打卖点大讲。但对开�
 
 ## 怎么在 Excel 里把 Claude 开起来
 
-![Claude 进入 Microsoft Office 的官方公告页](claude-office-source-announcement.png)
+![Claude 进入 Microsoft Office 的官方公告页](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-09/claude-in-excel-office-agent-subagents-2026-06-09/claude-office-source-announcement.png)
 
 按 Anthropic 帮助文档，个人用户启用 Claude for Excel 的步骤很短：
 

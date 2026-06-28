@@ -17,7 +17,7 @@ track: arbitrage
 
 # Cloudflare Unweight：给模型权重无损省 22%
 
-![封面](cloudflare-unweight-tensor-compression-2026-05-12.png)
+![封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/cloudflare-unweight-tensor-compression-2026-05-12/cloudflare-unweight-tensor-compression-2026-05-12.png)
 
 如果手上正在跑线上推理，每月最熟的数字大概有两组：每天烧掉的显存峰值，和每千 token 单价。前者决定你要堆多少张 H100，后者决定能不能把单 token 价格再往下压一档。过去两年，「降本」基本绑死在量化这条路上 —— FP8、AWQ-INT4、GPTQ-INT4、GGUF —— 每一条都伴随着同一个隐形成本：模型输出会和原版有点不一样。大多数业务能扛，但凡是涉及评测复现、监管口径、内部对账的场景，这点不一样就很难解释。
 
@@ -39,7 +39,7 @@ Unweight 把这个问题翻了个面。它不再追问「能损多少精度换�
 
 Cloudflare 的切入点完全反过来。他们做了一个统计：在训练好的 LLM 每一层权重里，最常见的 16 个指数值覆盖了 99% 的所有权重。技术报告里给的更精确口径是 —— BF16 指数字段实际 Shannon 熵只有大约 2.6 比特，剩下的 5 比特多全是冗余。换句话说，那个 8 比特指数槽位里其实只「装」了 2.6 比特的真信息。
 
-![Unweight 原理：只压指数位](cf-unweight-principle.png)
+![Unweight 原理：只压指数位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/cloudflare-unweight-tensor-compression-2026-05-12/cf-unweight-principle.png)
 
 那就只压指数。具体做法：对每一个权重张量（per-tensor）建立一个 16 值的 Huffman 调色板（palette），高频指数分配 2-3 比特的短码，低频指数分配 4-5 比特的长码，少数极罕见的指数直接 verbatim 落整行作为兜底。符号位和尾数原样保留，因为它们近不可压。
 
@@ -53,7 +53,7 @@ Cloudflare 的切入点完全反过来。他们做了一个统计：在训练好
 
 媒体标题大多写「Cloudflare 把 LLM 压缩了 22%」，这个数字本身没错，但容易让读者误以为「显存省 22%」。实情要分三档看。
 
-![三档压缩口径](cf-unweight-rates.png)
+![三档压缩口径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/cloudflare-unweight-tensor-compression-2026-05-12/cf-unweight-rates.png)
 
 | 压缩口径 | 百分比 | 解释 | 对应场景 |
 | --- | --- | --- | --- |
@@ -66,7 +66,7 @@ Cloudflare 的切入点完全反过来。他们做了一个统计：在训练好
 
 对一张 H100 80GB 跑 Llama-3.1-8B 来说，BF16 常驻约 16 GB，Unweight 之后约 13 GB。多出来的 3 GB 在生产环境里意味着多塞一份 KV cache 分片，或者把并发 batch 再往上撑一档。不是性价比革命，但是「白送」的边际，前提是你愿意承担吞吐的代价（下一节展开）。
 
-![70B 级别拓扑跃迁](cf-unweight-topology.png)
+![70B 级别拓扑跃迁](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/cloudflare-unweight-tensor-compression-2026-05-12/cf-unweight-topology.png)
 
 把数字推到 70B 级别更有意思。Llama-3.1-70B 在 BF16 下需要约 140 GB，需要 2 张 H100 80GB 或 1 张 H200 141GB；Unweight 之后约 122 GB，理论上单张 H200 就能装下。这意味着省下的不只是 13% 显存预算，而是从「双卡部署」回到「单卡部署」的拓扑跃迁 —— 后者意味着 NVLink 通信成本归零、张量并行的 all-reduce 开销归零、推理框架配置复杂度大幅下降。这一档变化在 70B / 110B 这个尺寸段上是有质变意义的。
 
@@ -76,7 +76,7 @@ Qwen3-72B、GLM-4.6-32B、DeepSeek-V3 这些国内主流大尺寸开源模型，
 
 Unweight 是新成员，不是 FP8 / AWQ 的替代品。它们处在完全不同的精度-显存-硬件-场景四维矩阵里。把它们摆桌上一起看才能选对。
 
-![四种路线 trade-off](cf-unweight-tradeoff.png)
+![四种路线 trade-off](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/cloudflare-unweight-tensor-compression-2026-05-12/cf-unweight-tradeoff.png)
 
 | 方案 | 精度损失 | 显存节省 | 吞吐影响 | 硬件门槛 | 适合场景 |
 | --- | --- | --- | --- | --- | --- |
@@ -99,7 +99,7 @@ Unweight 是新成员，不是 FP8 / AWQ 的替代品。它们处在完全不同
 
 任何「无损压缩 + GPU 实时解压」的方案，都逃不开一个朴素问题：解压本身要算力。Cloudflare 在博客里非常坦白 —— 当前优化档位下，吞吐相对 BF16 baseline 下降 30%-40%。这是写在原文里的数字，原句：「we currently see 30–40% throughput overhead at current optimization level, largest at batch size 1 (~41%) and narrows at batch 1024 (~30%)」。
 
-![吞吐 overhead](cf-unweight-throughput.png)
+![吞吐 overhead](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/cloudflare-unweight-tensor-compression-2026-05-12/cf-unweight-throughput.png)
 
 读这张图有两件事要注意。第一，吞吐损失随 batch size 增大而收窄。B=1 时最痛苦（约 41%），因为 reconstructive matmul 的解压固定成本在小批量里占比高；B=1024 时收敛到约 30%，因为大批量摊薄了解压成本，但又被 tensor core 利用率提升弥补回来一些。第二，吞吐损失不等于延迟损失 —— 单条 token 的生成时间在很多设置下并没有等比例放大，因为解压发生在共享内存里、和 matmul 流水线重叠。
 
@@ -115,7 +115,7 @@ Unweight 是新成员，不是 FP8 / AWQ 的替代品。它们处在完全不同
 
 最后一节回到中国大陆的口径。如果你是一线 AI 团队，关心的不是 Cloudflare 这套能不能跑，而是「国内主流推理云目前是什么方案，Unweight 这种思路有没有可能进来」。把火山方舟、阿里百炼、智谱 BigModel、硅基流动、月之暗面五家公开口径摆一起看。
 
-![国内五家对位](cf-unweight-cn-inference.png)
+![国内五家对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/cloudflare-unweight-tensor-compression-2026-05-12/cf-unweight-cn-inference.png)
 
 | 平台 | 主推模型 | 量化方案 | 计费颗粒 | Unweight 能不能跟车 |
 | --- | --- | --- | --- | --- |

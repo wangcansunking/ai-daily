@@ -13,7 +13,7 @@ back_run_reason: "5/31 凌晨 timer 跑时 Claude API 用量超限，6/1 补跑"
 
 # 智元 τ0 开源真机数据刷世界纪录 · Cursor 3.6 与 Claude Code 各自加码 · Anthropic 估值反超 OpenAI | AI 日报 | 2026-05-31
 
-![智元具身世界模型开源 AI Coding 三线撕裂 Anthropic 反超 OpenAI](2026-05-31.png)
+![智元具身世界模型开源 AI Coding 三线撕裂 Anthropic 反超 OpenAI](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/daily/2026-05-31.png)
 
 > 本期补发：5/31 凌晨调度触 API 上限，3 次重试全失败，6/1 补跑。下文事件锚定 5/30-5/31 窗口。
 
@@ -41,7 +41,7 @@ back_run_reason: "5/31 凌晨 timer 跑时 Claude API 用量超限，6/1 补跑"
 
 ### 头条 1 · 智元 τ0-WM 把"真机数据"做成开源主力
 
-![智元 τ0 具身世界模型 GitHub 仓库 og 卡](source-github-tau0wm-og-2026-05-31.png)
+![智元 τ0 具身世界模型 GitHub 仓库 og 卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/daily/source-github-tau0wm-og-2026-05-31.png)
 
 #### 头条 1.1 · 5B 参数 / 3 万小时数据，真机遥操作 1.78 万小时
 
@@ -59,7 +59,7 @@ back_run_reason: "5/31 凌晨 timer 跑时 Claude API 用量超限，6/1 补跑"
 
 ### 头条 2 · AI Coding 一周三件事，全部指向"Agent 自治边界"
 
-![Cursor 3.6 changelog hero](source-cursor-3-6-changelog-2026-05-31.png)
+![Cursor 3.6 changelog hero](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/daily/source-cursor-3-6-changelog-2026-05-31.png)
 
 #### 头条 2.1 · Cursor 3.6 上 Auto-review，三层路由放进默认运行模式
 
@@ -67,7 +67,7 @@ back_run_reason: "5/31 凌晨 timer 跑时 Claude API 用量超限，6/1 补跑"
 
 #### 头条 2.2 · Claude Code Dynamic Workflows 复盘：1000 子 Agent / 16 并发
 
-![Claude Code GitHub 仓库 og 卡](source-github-claude-code-og-2026-05-31.png)
+![Claude Code GitHub 仓库 og 卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/daily/source-github-claude-code-og-2026-05-31.png)
 
 5/28 和 Opus 4.8 同时放出的 Dynamic Workflows 预览版（5/29 日报已写），5/31 在 HN 和 The New Stack 引发集中复盘：Claude 写 JS 编排脚本，由独立 runtime 执行，单次任务最多拉 1000 个子 Agent，16 个并发。Anthropic 拿"配合 Bun 75 万行重写"做案例佐证（5/29 报道）。HN 头版讨论的焦点是两个：(1) 编排（orchestration）从框架（LangGraph、LangChain）挪进模型厂之后，框架方向何去何从；(2) 1000 子 Agent 的 token 成本失控警告——已经有开发者报告单任务跑爆月度额度。Claude Code 主仓 `anthropics/claude-code` 6/1 凌晨 128,961 stars，5/28 以来上涨明显。
 
@@ -128,7 +128,7 @@ Quandri Engineering 5/31 的一篇 "MCP is dead" [5] 当天就上了 HN 头版�
 
 ### 面壁 MiniCPM5-1B + ForgeTrain：AI 写的训练框架昇腾上 10% 加速
 
-![ForgeTrain GitHub 仓库 og 卡](source-github-forgetrain-og-2026-05-31.png)
+![ForgeTrain GitHub 仓库 og 卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/daily/source-github-forgetrain-og-2026-05-31.png)
 
 5/26 面壁智能、清华、OpenBMB 发的 MiniCPM5-1B [6] 是端侧文本基座，1B 参数在 OpenLM-Index 上超越所有 3 个月前 2B 模型。亮点是训练框架 ForgeTrain [16]——**国产 AI 模型自己写的预训练框架，性能超英伟达 Megatron，在华为昇腾上 10% 加速**。仓库 `OpenBMB/ForgeTrain`，6/1 凌晨 199 stars（5/26 上线后一周内）。MiniCPM5-1B + ForgeTrain 一起放出，是国产 AI Coding 闭环（AI 写训 AI 的代码、训国产模型、跑国产 NPU）第一次完整展示。
 
@@ -143,7 +143,7 @@ Quandri Engineering 5/31 的一篇 "MCP is dead" [5] 当天就上了 HN 头版�
 
 ## 📦 GitHub Trending
 
-![harry0703/MoneyPrinterTurbo GitHub og 卡](source-github-harry0703-moneyprinterturbo-og-2026-05-31.png)
+![harry0703/MoneyPrinterTurbo GitHub og 卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/daily/source-github-harry0703-moneyprinterturbo-og-2026-05-31.png)
 
 - 🔴 **`harry0703/MoneyPrinterTurbo`** [17] — 国内开源短视频生成工具，6/1 凌晨 74,522 stars（5/31 当日 +1,937），单日榜首。利用 AI 大模型一键生成高清短视频，国内创作者圈持续推。
 - 🔴 **`microsoft/markitdown`** [18] — Python 工具把文件 / Office 文档转 Markdown，**Agent 上下文准备工具**。6/1 凌晨 135,200 stars，单日 +2,798。AI Coding / RAG 流水线必备。

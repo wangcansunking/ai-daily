@@ -12,7 +12,7 @@ description: 2026 年 6 月 1 日台北 GTC，英伟达发布首个开源人形�
 
 # 宇树本体配英伟达开源软件，一台标准人形机器人成型
 
-![宇树 H2 本体与英伟达 Isaac GR00T 开源参考人形机器人](unitree-nvidia-groot-open-humanoid-2026-06-02.png)
+![宇树 H2 本体与英伟达 Isaac GR00T 开源参考人形机器人](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/unitree-nvidia-groot-open-humanoid-2026-06-02/unitree-nvidia-groot-open-humanoid-2026-06-02.png)
 
 一台身高约 1.8 米的人形机器人，全身约 75 个自由度，板载算力是 2070 FP4 teraflops 的 Jetson Thor，身体来自国内的宇树科技（Unitree）。这是 2026 年 6 月 1 日台北 GTC（英伟达技术大会，今年开在 Computex 期间）上，英伟达（NVIDIA）发布的 Isaac GR00T 参考人形机器人。官方的措辞很直白：这是首个基于 Jetson Thor 和 Isaac GR00T 平台搭建的开源人形机器人参考设计。
 
@@ -41,13 +41,13 @@ description: 2026 年 6 月 1 日台北 GTC，英伟达发布首个开源人形�
 
 人形机器人此前缺的，恰恰是这样一台「谁拿来都能跑起来」的公共身体。每个实验室造的机器人各不相同，A 组调好的动作策略搬到 B 组的机器人上往往直接失效，研究成果很难叠加。Isaac GR00T 参考机想补的就是这块——它先不追求最强，而是追求最标准、最可复现。
 
-![来源：英伟达官方新闻稿，Isaac GR00T 参考人形机器人由宇树 H2 本体、Sharpa 触觉手与 Jetson Thor 算力组成](source-unitree-groot-nvidia-hero-2026-06-02.png)
+![来源：英伟达官方新闻稿，Isaac GR00T 参考人形机器人由宇树 H2 本体、Sharpa 触觉手与 Jetson Thor 算力组成](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/unitree-nvidia-groot-open-humanoid-2026-06-02/source-unitree-groot-nvidia-hero-2026-06-02.png)
 
 ## 软件、算力、本体三层各是什么
 
 这台参考机的构成其实很清楚，从上到下是三层。英伟达提供了其中两层——最上面的软件和中间的算力芯片，最下面那层身体加手，则来自宇树和 Sharpa。
 
-![Isaac GR00T 参考人形机器人三层平台分解：软件层 Isaac GR00T、算力层 Jetson Thor、本体层宇树 H2 加 Sharpa 触觉手](groot-platform-stack-2026-06-02.png)
+![Isaac GR00T 参考人形机器人三层平台分解：软件层 Isaac GR00T、算力层 Jetson Thor、本体层宇树 H2 加 Sharpa 触觉手](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/unitree-nvidia-groot-open-humanoid-2026-06-02/groot-platform-stack-2026-06-02.png)
 
 **最上层是软件——Isaac GR00T 开发平台。** 它管的是机器人「怎么学会做事」这条流程：先采集和生成训练数据，再训练机器人模型，然后评估策略好不好，最后把策略部署到真机上。这一层是开放的，也是这次发布里「开源」二字真正落在的地方。
 
@@ -59,7 +59,7 @@ description: 2026 年 6 月 1 日台北 GTC，英伟达发布首个开源人形�
 
 双 Sharpa Wave 五指手 22 个自由度，加上「触觉」二字，针对的正是这件事——让机器人不只是「有一只手的形状」，而是真能用手做需要手感的活儿。这也是为什么官方把这台参考机定位成能面向真实研究、而不只是个能站着摆姿势的展示品：手的灵巧度，往往决定了一台人形机器人到底能不能干「实际的工作」。
 
-![宇树 H2 全身约 75 自由度的官方拆分（unitree）](unitree-groot-dof-2026-06-02.png)
+![宇树 H2 全身约 75 自由度的官方拆分（unitree）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/unitree-nvidia-groot-open-humanoid-2026-06-02/unitree-groot-dof-2026-06-02.png)
 
 <small>来源：自制图表（数据据正文）</small>
 
@@ -73,13 +73,13 @@ description: 2026 年 6 月 1 日台北 GTC，英伟达发布首个开源人形�
 
 这类发布最容易出岔子的地方，是各家转述时数字会飘。我们逐项对照了英伟达 6 月 1 日的官方新闻稿，把官方确认的参数和个别媒体的额外说法分开列出来。
 
-![Isaac GR00T 参考人形机器人规格速查表，区分官方口径与媒体口径](groot-spec-table-2026-06-02.png)
+![Isaac GR00T 参考人形机器人规格速查表，区分官方口径与媒体口径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/unitree-nvidia-groot-open-humanoid-2026-06-02/groot-spec-table-2026-06-02.png)
 
 需要专门提一句的是命名。官方新闻稿里用的词是「宇树 H2 本体」（Unitree H2 humanoid chassis）。而部分中文媒体在转述时写成了「宇树 H2 Plus」「H2+」。这两种叫法指向的是同一台参考机，但「H2 Plus / H2+」这个带后缀的型号名，在英伟达官方文本里并没有单独出现——属于媒体口径，官方未单独确认。涉及具体型号时，以官方的「宇树 H2 本体」为准更稳妥。
 
 另一处要分清的是「开源去向」。官方说的是：面向机器人开发者，**宇树 G1** 的 Isaac GR00T 参考工作流预计很快在 GitHub 和 HuggingFace 上公布。也就是说，先在 HuggingFace 等平台上以可下载形式落地的，是配套宇树 G1（宇树更小、更普及的那款人形机器人）的参考工作流；而这台以 H2 为本体的完整参考机器人，官方给的节奏是 2026 年底由宇树推出。这两件事时间线不同，别混成一件。
 
-![Isaac GR00T 时间线与去向，区分官方与媒体口径（groot）](unitree-groot-timeline-2026-06-02.png)
+![Isaac GR00T 时间线与去向，区分官方与媒体口径（groot）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/unitree-nvidia-groot-open-humanoid-2026-06-02/unitree-groot-timeline-2026-06-02.png)
 
 <small>来源：自制图表（数据据正文）</small>
 
@@ -101,7 +101,7 @@ description: 2026 年 6 月 1 日台北 GTC，英伟达发布首个开源人形�
 
 一家公司想两头都做到顶尖很难，于是「擅长身体的做身体，擅长大脑的做大脑」就成了自然的分工。这次英伟达 + 宇树 + Sharpa 的组合，正是这种分工的一个清晰样本——而国内团队拿下的，是其中需要硬件硬功夫、也最难被轻易替代的身体那一段。
 
-![来源：南华早报，英伟达、宇树与 Sharpa 三方合作打造可做实际工作的人形机器人参考设计](source-unitree-groot-scmp-2026-06-02.png)
+![来源：南华早报，英伟达、宇树与 Sharpa 三方合作打造可做实际工作的人形机器人参考设计](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/unitree-nvidia-groot-open-humanoid-2026-06-02/source-unitree-groot-scmp-2026-06-02.png)
 
 ## 对想入场具身智能的开发者，门槛降在哪
 

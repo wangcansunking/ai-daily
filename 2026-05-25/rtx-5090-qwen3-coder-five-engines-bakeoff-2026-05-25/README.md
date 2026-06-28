@@ -17,7 +17,7 @@ authors:
 
 # 5090 跑 Qwen3-Coder 30B：五家推理引擎横评的真实账
 
-![5090 跑 Qwen3-Coder 30B 封面](rtx-5090-qwen3-coder-five-engines-bakeoff-2026-05-25.png)
+![5090 跑 Qwen3-Coder 30B 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/rtx-5090-qwen3-coder-five-engines-bakeoff-2026-05-25/rtx-5090-qwen3-coder-five-engines-bakeoff-2026-05-25.png)
 
 ## 30 秒速览
 
@@ -29,7 +29,7 @@ llama.cpp 这家在单用户场景反而比 vLLM 快 4.7%，但 16 并发起 vLL
 
 下面这一篇把这五家推理引擎在国内开发者手里值什么、怎么选、能不能与国产模型 + 国产 IDE 串起来跑一份能照着抄的清单。
 
-![五家推理引擎按任务场景的选型矩阵](five-engines-scenario-matrix.png)
+![五家推理引擎按任务场景的选型矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/rtx-5090-qwen3-coder-five-engines-bakeoff-2026-05-25/five-engines-scenario-matrix.png)
 
 ## 一、RTX 5090 在国内的四档现货分层
 
@@ -55,7 +55,7 @@ llama.cpp 这家在单用户场景反而比 vLLM 快 4.7%，但 16 并发起 vLL
 
 5090 对 4090 最实质的提升不在 FP16 算力（105 vs 82 TFLOPS 只多 28%），而在两件事：**显存从 24GB 涨到 32GB**，让 Qwen3-Coder-30B-A3B 这种 MoE 模型 AWQ 4-bit 量化（约 17GB）跑起来还有 15GB 余量给 KV cache；**显存带宽从 1,008 GB/s 涨到 1,792 GB/s（+78%）**，对自回归 decode 阶段 token 间延迟的影响远比 FP16 算力更直接。Blackwell 架构原生支持 fp4 / fp8 这条线，在 vLLM v0.7+ 走 NVFP4 路径时单卡吞吐再上一档；4090 这一代没有 fp4 硬件加速，跑 NVFP4 量化版本时需要 emulation，反而比 AWQ 4-bit 还慢。
 
-![Qwen3-Coder GitHub repo OG card](qwen3-coder-gh-card.png)
+![Qwen3-Coder GitHub repo OG card](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/rtx-5090-qwen3-coder-five-engines-bakeoff-2026-05-25/qwen3-coder-gh-card.png)
 
 ## 二、Qwen3-Coder-30B-A3B：5090 单卡刚好够跑的国产 coder 旗舰
 
@@ -79,7 +79,7 @@ Qwen3-Coder 是阿里千问团队 2026 年初放出的国产 coding 旗舰系列
 
 注一下：MLX 跑在 Apple M-series 上而不是 5090，把它放进表里是因为很多国内 1.5 万机用户其实在 5090 vs Mac M4 Max 之间做最终选择，MLX 那一行作为 5090 用户的旁支参考。RTX 3090 的存量用户跑同款模型走 vLLM 大约 72 tok/s、Ollama 40 tok/s，5090 在 vLLM 上把这条线拔高到 1,157 tok/s，等于换了一代卡之后整体 16 倍。
 
-![vLLM 项目 GitHub OG card](vllm-project-gh-card.png)
+![vLLM 项目 GitHub OG card](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/rtx-5090-qwen3-coder-five-engines-bakeoff-2026-05-25/vllm-project-gh-card.png)
 
 ## 三、vLLM 在 5090 上压出 1,157 tok/s 的两道关键参数
 
@@ -107,7 +107,7 @@ docker run --gpus all --rm -it -v ~/models:/models \
 
 InsiderLLM 团队在另一份评测里给出过一句被很多人引用的话：「**The common mistake is using Ollama for production APIs — it works, but vLLM will handle 4x the load on the same hardware.**」翻成中文「常见错误是把 Ollama 当生产 API 用——能跑，但同样硬件下 vLLM 能扛 4 倍负载」。这条结论对个人开发者影响不大，但对 5-15 人小团队私有化部署是硬约束。
 
-![SGLang 项目 GitHub OG card](sglang-project-gh-card.png)
+![SGLang 项目 GitHub OG card](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/rtx-5090-qwen3-coder-five-engines-bakeoff-2026-05-25/sglang-project-gh-card.png)
 
 ## 四、SGLang 的 207 vs 898：默认参数与调优后差着 4.3 倍
 
@@ -133,7 +133,7 @@ docker run --gpus all --rm -it -v ~/models:/models \
 
 `enable-radix-cache` 是 SGLang 多 agent 场景的核心开关，不开就退化成普通 batched inference；开了之后跑多 agent 编排 / RAG 流水线能拿到 29% 额外吞吐。SGLang 同样暴露 OpenAI 兼容协议，端口默认 30000，可以直接接进 OpenClaw 的 baseUrl 配置。
 
-![llama.cpp GitHub OG card](llamacpp-gh-card.png)
+![llama.cpp GitHub OG card](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/rtx-5090-qwen3-coder-five-engines-bakeoff-2026-05-25/llamacpp-gh-card.png)
 
 ## 五、llama.cpp 与 Ollama：单用户场景被低估的 4.7%
 
@@ -171,7 +171,7 @@ MLX 是 Apple 2023 年底开源的统一内存推理框架，**只跑在 Apple S
 
 这张表的核心 thesis 是：**没有一家推理引擎全方位领先**——vLLM 在高并发、SGLang 在共享上下文、llama.cpp 在单用户极致延迟、Ollama 在易用、MLX 在 Apple 平台、ik_llama.cpp 在低显存长上下文，各自占一个生态位。把任务摆清楚之后再选引擎，比盲目跟一家更现实。
 
-![五家推理引擎在 5090 上的吞吐对比](five-engines-throughput-comparison.png)
+![五家推理引擎在 5090 上的吞吐对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/rtx-5090-qwen3-coder-five-engines-bakeoff-2026-05-25/five-engines-throughput-comparison.png)
 
 ## 八、5090 自费整机 vs 云端 API 的回本曲线
 

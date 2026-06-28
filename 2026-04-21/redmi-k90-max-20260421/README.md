@@ -2,7 +2,7 @@
 
 > 2026 年 4 月 21 日晚北京 · Redmi 一场发布会甩出 **5 件新品**，价格从 **229 元**（Buds 8）到 **9699 元**（Book Pro 16 顶配）一次铺满。**K90 Max 3499 起 + 真·物理风扇 + 8550mAh 电池**是主角，但 K Pad 2 电竞平板 3599 起、Book Pro 14/16 笔记本 6999/7199 起也都是高关注度产品。这一篇把**全场清单 + K90 Max vs 电竞战队对决 + 各档推荐**讲清楚。
 
-![REDMI K90 Max · 3499 · 真风扇 + 8550 电池](REDMI-K90-Max.jpg)
+![REDMI K90 Max · 3499 · 真风扇 + 8550 电池](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-21/redmi-k90-max-20260421/REDMI-K90-Max.jpg)
 
 ---
 
@@ -29,7 +29,7 @@
 
 ### 狠事一：真·物理风扇
 
-![风冷结构](REDMI-K90-Max-fan.jpg)
+![风冷结构](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-21/redmi-k90-max-20260421/REDMI-K90-Max-fan.jpg)
 
 **不是外挂散热背夹**。机身里真正转起来嗡嗡响的 active cooling fan，**直径 18.1mm**，配涡旋风道，100 秒降 10℃，**保修 6 年**。
 
@@ -58,7 +58,7 @@ D2 图形芯片专攻 GPU 加速——光追、超采样、120FPS 游戏优化�
 
 ## 二、✊ K90 Max vs 电竞旗舰战队对决
 
-![K90 Max vs 电竞旗舰](redmi-k90max-vs-rivals.png)
+![K90 Max vs 电竞旗舰](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-21/redmi-k90-max-20260421/redmi-k90max-vs-rivals.png)
 
 几个不在参数表的关键点：
 
@@ -119,7 +119,7 @@ D2 图形芯片专攻 GPU 加速——光追、超采样、120FPS 游戏优化�
 
 ## 六、💡 你该买哪个？
 
-![REDMI 全系购买建议](redmi-k90max-buyer-guide.png)
+![REDMI 全系购买建议](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-21/redmi-k90-max-20260421/redmi-k90max-buyer-guide.png)
 
 **实操建议（扩展全系）**：
 

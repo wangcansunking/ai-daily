@@ -26,7 +26,7 @@ tags:
 
 > 5 月 12 日，独立开发者 k10s 在自家 devlog 写了一篇《I'm going back to writing code by hand》，承认 7 个月、234 commits、纯 Claude Code 协同跑下来的 GPU 版 k9s 项目最终需要归档。这篇文章在 Hacker News 一天内冲到 1006 pts、607 条评论，正面回应了 5 月 10 日 James Shore 给出的「AI 必须降维护成本」判断。两篇共振没有把 AI Coding 推向「不靠谱」结论，反而把行业推进到下一阶段——**AI 写功能，不写架构**。这是一个对国内每天用 Claude Code、Cursor、Trae、通义灵码、文心快码、MarsCode、CodeBuddy 的开发者反而更友好的拐点。
 
-![AI 写功能不写架构 · Claude Code 7 个月翻车之后](k10s-vibe-coding-collapse-2026-05-14.png)
+![AI 写功能不写架构 · Claude Code 7 个月翻车之后](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/k10s-vibe-coding-collapse-2026-05-14/k10s-vibe-coding-collapse-2026-05-14.png)
 
 打开任何一个跑了半年以上的 AI Coding 项目，第一眼通常看到的不是 bug，而是单文件慢慢长大。**一个 model.go 涨到 800 行你不会注意；涨到 1200 行你开始隐约不安；涨到 1690 行你已经记不清里面有多少状态字段，只能在搜索框里靠关键字找。** k10s 作者写下这篇 devlog 的时候，他的 model.go 正好停在 1690 行。234 commits 跑了 7 个月、大约 30 个周末，每一次都觉得「这次只多加一个视图就好」，直到第 234 次。
 
@@ -36,7 +36,7 @@ tags:
 
 ## 一、7 个月时间轴：从神奇到崩塌只用了 4 个阶段
 
-![k10s 7 个月 234 commits vibe-coding 时间轴](k10s-commit-timeline.png)
+![k10s 7 个月 234 commits vibe-coding 时间轴](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/k10s-vibe-coding-collapse-2026-05-14/k10s-commit-timeline.png)
 
 把 k10s 这 7 个月画在时间轴上，4 个阶段非常清楚。第一个月是「神奇期」，从 0 到 30 commits，k10s 在 3 周内交付了一个完整的 k9s clone——pods 视图、nodes 视图、deployments、services、命令面板，全部在单 session 里完成。技术栈是 Go + Bubble Tea（Elm Architecture TUI 框架，国内开发者熟悉的话可以类比 Vue 的 reactive 模型）。作者后来形容这阶段是 magic，「一晚上把 pod 列表写好，第二个晚上把 describe 写好」。
 
@@ -50,7 +50,7 @@ tags:
 
 ## 二、解剖 god struct：为什么 AI 默认会写成这样
 
-![model.go 1690 行 god struct 拆解](k10s-god-struct.png)
+![model.go 1690 行 god struct 拆解](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/k10s-vibe-coding-collapse-2026-05-14/k10s-god-struct.png)
 
 把 1690 行 model.go 切开看，能数清楚里面装了 9 类完全不同维度的状态：UI widgets（table、paginator、textinput、viewport）、k8s 客户端 + 缓存、per-view 数据（pods、nodes、deployments、services 各自的列表 + 选中行）、导航历史栈、日志 / describe 状态、fleet 视图状态、命令面板状态、鼠标事件状态，以及 9 处散落的 nil 重置语句。**这 9 类状态没有一类是「相关的」——它们只是被同一个 prompt 序列依次拽进了同一个 struct。**
 
@@ -66,7 +66,7 @@ Update() 方法上面更显眼。500 行，110 个 switch / case 分支，里面
 
 ## 三、k10s 反弹方案：先画架构，再让 AI 填实现
 
-![k10s 架构 before / after · 让 AI 写功能而不是写架构](k10s-vs-architecture.png)
+![k10s 架构 before / after · 让 AI 写功能而不是写架构](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/k10s-vibe-coding-collapse-2026-05-14/k10s-vs-architecture.png)
 
 作者归档 Go 版本之后，没有立刻 prompt Claude Code 「帮我用 Rust 重写一遍」。他做的第一件事是关掉编辑器，拿出一张白纸，手画 5 个东西：
 
@@ -88,7 +88,7 @@ Update() 方法上面更显眼。500 行，110 个 switch / case 分支，里面
 
 ## 四、CLAUDE.md 五条硬约束：一份能直接抄走的模板
 
-![CLAUDE.md 5 条硬约束 · 给 Claude Code 划好边界再让它写](k10s-claude-md-template.png)
+![CLAUDE.md 5 条硬约束 · 给 Claude Code 划好边界再让它写](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/k10s-vibe-coding-collapse-2026-05-14/k10s-claude-md-template.png)
 
 作者公开了他这次 Rust 重写用的 CLAUDE.md，五条硬约束逐字翻译过来是这样的：
 
@@ -110,7 +110,7 @@ Update() 方法上面更显眼。500 行，110 个 switch / case 分支，里面
 
 ## 五、6 款工具横评：国内开发者社群早就在踩同样的坑
 
-![k10s 教训对照 · 国内开发者社群里早就有人踩过同样的坑](k10s-cn-tools-resonance.png)
+![k10s 教训对照 · 国内开发者社群里早就有人踩过同样的坑](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/k10s-vibe-coding-collapse-2026-05-14/k10s-cn-tools-resonance.png)
 
 把 k10s 的教训放到国内 AI Coding 社群里看，能找到大量同款故事。知乎「AI 写代码翻车」话题下，6 款主流工具的真实复盘几乎一字不差：
 
@@ -130,7 +130,7 @@ Update() 方法上面更显眼。500 行，110 个 switch / case 分支，里面
 
 ## 六、vibe-coding vs architecture-anchored：6 维度对照
 
-![vibe-coding vs architecture-anchored · 6 维度对照](k10s-vibe-vs-anchored.png)
+![vibe-coding vs architecture-anchored · 6 维度对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/k10s-vibe-coding-collapse-2026-05-14/k10s-vibe-vs-anchored.png)
 
 把 k10s 第一次和这一次的两种工作方式做横向对照，6 个维度上的差距清晰可见。**入口结构**这一边，vibe-coding 默认是「单 god struct，字段越加越多」；architecture-anchored 用 `trait + enum`，接口与实现物理分离。**异步数据流**这一边，vibe-coding 默认让闭包直接 mutate 共享字段，数据竞争 99% 通过；architecture-anchored 强制类型化 Msg + 单写者，race-free 是编译期就保证的。
 

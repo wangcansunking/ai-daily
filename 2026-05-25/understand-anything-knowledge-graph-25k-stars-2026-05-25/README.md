@@ -17,7 +17,7 @@ description: "客户端代码 Graph RAG 的下一阶——25,105 star、MIT、Ty
 cover: understand-anything-knowledge-graph-25k-stars-2026-05-25.png
 ---
 
-![封面](understand-anything-knowledge-graph-25k-stars-2026-05-25.png)
+![封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/understand-anything-knowledge-graph-25k-stars-2026-05-25/understand-anything-knowledge-graph-25k-stars-2026-05-25.png)
 
 # Understand-Anything：14 家 AI 客户端代码图谱
 
@@ -35,7 +35,7 @@ cover: understand-anything-knowledge-graph-25k-stars-2026-05-25.png
 
 本文的核心论点只有一句：**客户端代码 Graph RAG 这条路线，从 4 月 GitNexus 单家适配，到 5 月 Understand-Anything 一次覆盖 14 家客户端，已经从「实验」走到了「平台层」。** 国内同方向也有同生态项目在做，下面一节一节拆。
 
-![README hero — Turn any codebase into an interactive knowledge graph](understand-anything-hero.png)
+![README hero — Turn any codebase into an interactive knowledge graph](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/understand-anything-knowledge-graph-25k-stars-2026-05-25/understand-anything-hero.png)
 
 ## 项目本体：5 个 agent + Tree-sitter 的混合管线
 
@@ -52,7 +52,7 @@ Understand-Anything 不是一个新的代码补全模型，也不是一个新的
 
 输出落盘到 `.understand-anything/knowledge-graph.json`，团队可以把这个 JSON 提交到 Git——队友拉下来跳过整个管线，**直接打开看板就开始干活**。官方给的对照样例是把 Google Cloud 的 microservices-demo（Go / Java / Python / Node 多语言微服务参考实现）整体图谱化后 fork 出来的一个版本，作者放在自己账号下方便外人直接拉取看效果。大图（10MB+）建议走 git-lfs。
 
-![overview — Tree-sitter + LLM 混合管线全景](understand-anything-overview.png)
+![overview — Tree-sitter + LLM 混合管线全景](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/understand-anything-knowledge-graph-25k-stars-2026-05-25/understand-anything-overview.png)
 
 ## 14 家客户端怎么接：真技术 vs MCP 包装
 
@@ -87,7 +87,7 @@ Cursor 和 VS Code Copilot 用的是 IDE 自带的「克隆仓库自动发现」
 
 这也是「**客户端代码 Graph RAG 的下一阶**」的判断依据——4 月的 GitNexus 拿下 MCP 单一协议路线，5 月的 Understand-Anything 直接做平台层适配。两条路线本质不冲突，谁先把客户端覆盖率打到 90%，谁就吃下「客户端代码图谱」的标准位。
 
-![14 家客户端 × 7 个代码图谱项目：兼容性矩阵](understand-anything-harness-matrix.png)
+![14 家客户端 × 7 个代码图谱项目：兼容性矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/understand-anything-knowledge-graph-25k-stars-2026-05-25/understand-anything-harness-matrix.png)
 
 ## 7 家代码图谱横评
 
@@ -111,7 +111,7 @@ Cursor 和 VS Code Copilot 用的是 IDE 自带的「克隆仓库自动发现」
 
 **license 这一格要看仔细。** GitNexus 仓库根没有 LICENSE 文件被 GitHub 识别（NOASSERTION），但 README 里宣称 MIT——商用接入前需要单独确认。其余 6 家都是 MIT 或 Apache-2.0，商业项目可以直接用。
 
-![代码知识图谱 7 家横评：协议、语言、能与多少家 agent 联动](understand-anything-7-way-comparison.png)
+![代码知识图谱 7 家横评：协议、语言、能与多少家 agent 联动](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/understand-anything-knowledge-graph-25k-stars-2026-05-25/understand-anything-7-way-comparison.png)
 
 ## 顶赞 issue 三条真用户的吐槽
 
@@ -181,7 +181,7 @@ Cursor 和 VS Code Copilot 用的是 IDE 自带的「克隆仓库自动发现」
 
 社区视频，由 Better Stack 团队录的一条 walkthrough，作者放在 README 的「Community」一节。点开能直接看到从 `/plugin install` 到 dashboard 打开节点查询的完整流程，对第一次接触的同学是最低门槛的入门材料。
 
-![Better Stack 社区 walkthrough（YouTube 视频缩略图）](understand-anything-better-stack-yt.jpg)
+![Better Stack 社区 walkthrough（YouTube 视频缩略图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/understand-anything-knowledge-graph-25k-stars-2026-05-25/understand-anything-better-stack-yt.jpg)
 
 ---
 

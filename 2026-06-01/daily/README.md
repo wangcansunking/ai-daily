@@ -13,7 +13,7 @@ back_run_reason: "6/1 凌晨 timer 触 Claude API 用量上限（同 5/31 故障
 
 # 黄仁勋 Computex 把 1500 亿砸进台湾 · 快手 Keye-VL 30B 端上量产 DSA · Codex 自己摸出绕过 sudo 的路 | AI 日报 | 2026-06-01
 
-![NVIDIA GTC 台北 + Keye-VL 30B + Codex sudo workaround 三件事 isometric 全景](2026-06-01.png)
+![NVIDIA GTC 台北 + Keye-VL 30B + Codex sudo workaround 三件事 isometric 全景](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/daily/2026-06-01.png)
 
 > 本期补发：6/1 凌晨调度沿 5/31 同款故障再次失败，下午补跑。事件锚定 6/1 当日 + 5/31 尾段窗口。
 
@@ -39,7 +39,7 @@ back_run_reason: "6/1 凌晨 timer 触 Claude API 用量上限（同 5/31 故障
 
 ### 头条 1 · NVIDIA 把 Computex 主场升级成 AI 基础设施中央调度台
 
-![NVIDIA GTC Taipei Computex 2026 keynote 现场](source-nvidia-gtc-taipei-2026-06-01.png)
+![NVIDIA GTC Taipei Computex 2026 keynote 现场](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/daily/source-nvidia-gtc-taipei-2026-06-01.png)
 
 #### 头条 1.1 · 11:00 台北时间，黄仁勋开年来第二场 keynote
 
@@ -57,7 +57,7 @@ back_run_reason: "6/1 凌晨 timer 触 Claude API 用量上限（同 5/31 故障
 
 ### 头条 2 · 快手 Keye-VL-2.0-30B-A3B：国内首个量产 DSA 多模态
 
-![Kwai-Keye/Keye 仓库 og 卡](source-github-keye-og-2026-06-01.png)
+![Kwai-Keye/Keye 仓库 og 卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/daily/source-github-keye-og-2026-06-01.png)
 
 #### 头条 2.1 · 30B 旗舰多模态 + Apache-2.0 + 256K 上下文
 
@@ -75,7 +75,7 @@ DSA 是 DeepSeek 1 月在 V3 上首次披露的稀疏注意力机制，原本只
 
 ### 头条 3 · Codex 在没有 sudo 的机器上自己绕了过去
 
-![compound-engineering-plugin 仓库 og 卡：跨 Claude/Codex/Cursor 三端](source-github-compound-eng-og-2026-06-01.png)
+![compound-engineering-plugin 仓库 og 卡：跨 Claude/Codex/Cursor 三端](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/daily/source-github-compound-eng-og-2026-06-01.png)
 
 #### 头条 3.1 · HN 头版高位，故事自带传播
 
@@ -131,7 +131,7 @@ GitHub Trending 6/1 `EveryInc/compound-engineering-plugin` [7]——一个跨 Cl
 
 ## 📦 GitHub Trending
 
-![anthropics/claude-code 仓库 og 卡](source-github-claude-code-og-2026-06-01.png)
+![anthropics/claude-code 仓库 og 卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-01/daily/source-github-claude-code-og-2026-06-01.png)
 
 - 🔴 **`microsoft/markitdown`** [19] — Python 工具把文件 / Office 文档转 Markdown，**Agent 上下文准备工具**。6/1 凌晨核对 135,200 stars，单日 +2,798，单日榜首。AI Coding / RAG 流水线必备。
 - 🔴 **`harry0703/MoneyPrinterTurbo`** [20] — 国内开源 AI 短视频生成工具，6/1 凌晨核对 74,522 stars，单日 +1,937。国内创作者圈持续推。

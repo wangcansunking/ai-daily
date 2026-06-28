@@ -17,7 +17,7 @@ summary: "5 月 28 日 GitHub Trending 同时挂双榜首日：Leonxlnx/taste-sk
 ---
 # GitHub 双榜 taste-skill + stop-slop：800 行规则把 Claude Code 写的 AI 味前端和 AI 味文字一刀刮掉
 
-![双榜首日封面](taste-skill-stop-slop-anti-ai-tells-frontend-prose-2026-05-29.png)
+![双榜首日封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/taste-skill-stop-slop-anti-ai-tells-frontend-prose-2026-05-29/taste-skill-stop-slop-anti-ai-tells-frontend-prose-2026-05-29.png)
 
 ## 一、GitHub Trending 5 月 28 日双榜首日：反 AI 味的两个 skill 同时爆
 
@@ -31,7 +31,7 @@ summary: "5 月 28 日 GitHub Trending 同时挂双榜首日：Leonxlnx/taste-sk
 | hardikpandya/stop-slop | Hardik Pandya | 2026-01-11 | +755 | 6,286 | 461 | （纯 markdown） | MIT |
 | op7418/Humanizer-zh | op7418 | 2026-01-19 | +612 | 8,494 | 668 | （纯 markdown） | MIT |
 
-![GitHub Trending 5 月 28 日反 AI 味 skill 三连爆](gh-trending-double-charting-2026-05-29.png)
+![GitHub Trending 5 月 28 日反 AI 味 skill 三连爆](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/taste-skill-stop-slop-anti-ai-tells-frontend-prose-2026-05-29/gh-trending-double-charting-2026-05-29.png)
 
 Humanizer-zh 是中文社区对 stop-slop 思路的独立汉化项目，作者 op7418 把 24 种 AI 写作模式按中文场景重新拆，加入了中文场景特有的破折号、AI 词汇表、否定式排比检测。8.5k stars 已经超过了它在英文世界对标的 stop-slop，说明中文开发者对去 AI 味这件事的真实需求其实更强烈——大概率因为中文里的 AI 味比英文更刺眼。
 
@@ -55,7 +55,7 @@ Humanizer-zh 是中文社区对 stop-slop 思路的独立汉化项目，作者 o
 
 **第六个 tell：每个组件都过度装饰。** SKILL.md 里有一节叫 "Less, but better"，要求"每个组件至少删一次再交付"。AI 默认会给一个按钮加阴影、圆角、渐变、hover 放大、悬浮 ripple 一整套，结果是按钮自己抢戏。taste-skill 强制 `max-w-[65ch]` 这种印刷学严格的 reading measure，强制 `tracking-tighter leading-none` 这种 display type 设置。读这份 SKILL.md 像在读一份字体设计师写的设计审计清单，不像在读 AI 编程文档。
 
-![前端 6 维 vs 文字 6 维：AI 味命中度对比](ai-tells-detection-radar-2026-05-29.png)
+![前端 6 维 vs 文字 6 维：AI 味命中度对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/taste-skill-stop-slop-anti-ai-tells-frontend-prose-2026-05-29/ai-tells-detection-radar-2026-05-29.png)
 
 taste-skill 还有一组分类 skill：`minimalist-skill`（Notion、Linear 编辑风）、`brutalist-skill`（瑞士字体硬碰硬）、`soft-skill`（高端消费品、苹果风）、`stitch-skill`（Google Stitch 兼容）。每个都是 SKILL.md 形态，可以单独安装。andrew.ooo 的测评结论是："这个 skill 通过确定性的规则，让输出真的不一样，而不是靠运气。最适合 React + Tailwind + Framer Motion 的营销站和仪表盘场景。"
 

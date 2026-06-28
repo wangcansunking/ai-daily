@@ -11,7 +11,7 @@ cover: specsmaxxing-yaml-spec-driven-vibe-coding-cure.png
 
 # Specsmaxxing：用 YAML 把 vibe coding 拉回工程化
 
-![用 YAML 把 vibe coding 拉回工程化](specsmaxxing-yaml-spec-driven-vibe-coding-cure.png)
+![用 YAML 把 vibe coding 拉回工程化](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/specsmaxxing-yaml-spec-driven-vibe-coding-cure/specsmaxxing-yaml-spec-driven-vibe-coding-cure.png)
 
 > HN 顶帖 280 分 / 289 评论。acai.sh 作者 Brendan McCarthy 自承「我陷进了 AI psychosis、花数小时写最漂亮的 PRD/TRD、像组建一个 mini dark factory 把 spec 转成代码」，写完之后他给出的解药是一份 feature.yaml——介于自然语言与正式需求语法之间的甜蜜点。这篇文章 2026-05-03 凌晨 06:33 出现在 Hacker News，到当天傍晚就把"spec 派"和"vibe 派"两边的开发者拉进了一场公开辩论。
 
@@ -29,7 +29,7 @@ cover: specsmaxxing-yaml-spec-driven-vibe-coding-cure.png
 
 而它出现在 5-3 的时间也很巧。前一天晚上 Apple Support v5.13 误把内部 Claude.md 文件打包进 App，HN 47973378 那条帖子 376 分；两件事在同一周冲上首页，一个是大厂治理事件，一个是个人反思 + 解药。读者把它们放在一起讨论，并不奇怪。
 
-![vibe coding 到 spec coding 的 4 个阶段](specsmaxxing-vibe-to-spec-4stages.png)
+![vibe coding 到 spec coding 的 4 个阶段](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/specsmaxxing-yaml-spec-driven-vibe-coding-cure/specsmaxxing-vibe-to-spec-4stages.png)
 
 ## 二、AI psychosis 是什么：作者亲历的 4 个阶段
 
@@ -57,7 +57,7 @@ cover: specsmaxxing-yaml-spec-driven-vibe-coding-cure.png
 
 acai.sh 的核心产出物就是这份 YAML。它由几个段组成——
 
-![feature.yaml 模板：spec 介于自然语言与正式需求语法之间](specsmaxxing-feature-yaml-template.png)
+![feature.yaml 模板：spec 介于自然语言与正式需求语法之间](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/specsmaxxing-yaml-spec-driven-vibe-coding-cure/specsmaxxing-feature-yaml-template.png)
 
 ```yaml
 # acai.sh feature spec 真实模板
@@ -104,7 +104,7 @@ acceptance:
 
 HN 47994012 那条帖子的评论区比文章本身更值得读。289 条评论里能看到三派——挺 spec 的、嫌 spec 重的、回到历史维度看的。
 
-![HN 47994012 顶帖正反方辩论](specsmaxxing-hn-debate.png)
+![HN 47994012 顶帖正反方辩论](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/specsmaxxing-yaml-spec-driven-vibe-coding-cure/specsmaxxing-hn-debate.png)
 
 最尖锐的一条来自 hansmayer，280 分顶赞——
 

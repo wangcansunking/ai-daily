@@ -23,7 +23,7 @@ description: "5 月 14 日 Anthropic 与盖茨基金会联合宣布四年期 2 �
 
 # 2 亿美元四年怎么花：Anthropic 把 Claude 推向小农户与 K-12 教室
 
-![Anthropic 与盖茨基金会四年期 2 亿美元公益合作封面](gates-anthropic-200m-public-good-2026-05-15.png)
+![Anthropic 与盖茨基金会四年期 2 亿美元公益合作封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/gates-anthropic-200m-public-good-2026-05-15/gates-anthropic-200m-public-good-2026-05-15.png)
 
 5 月 14 日上午，Anthropic 官网挂出公告《Anthropic forms $200 million partnership with the Gates Foundation》。和盖茨基金会签下四年期合作，规模 2 亿美元，构成是「现金赠款 + Claude 调用额度 + 技术支持」三件套。同窗口里，Reuters、Yahoo Finance、Boston Globe、Slashdot、TradingView、X 平台同步推流，Hacker News 顶帖滚到 110 赞 81 评论。盖茨基金会新闻中心也挂出 press release，标题朴素到一句话——「Making AI work for more people」。这是 Anthropic 公开层面最大的一笔公益部署。
 
@@ -47,7 +47,7 @@ Anthropic 政策与公益部署主管 Elizabeth Kelly 给出立场：「这次�
 
 四年 2 亿美元的具体分配 Anthropic 并未给出精确百分比，但按公告章节篇幅、披露重点病种数量以及合作伙伴名单，可以粗略地把它折算成下面这张分配图，方便国内读者建立体感——**这只是基于公开口径的估算权重，不是官方公布数值**。
 
-![Anthropic 与盖茨基金会四年 2 亿美元四大方向分配示意](gates-anthropic-allocation.png)
+![Anthropic 与盖茨基金会四年 2 亿美元四大方向分配示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/gates-anthropic-200m-public-good-2026-05-15/gates-anthropic-allocation.png)
 
 ### 1.1 全球健康 · 占比最大的一块
 
@@ -87,7 +87,7 @@ Anthropic 在公告里把这次合作的理由总结成一句：「areas where m
 
 把这句翻译到工程师听得懂的版本，就是下面这张二维图：横轴是客户付费能力，纵轴是社会回报。商业 AI 公司大部分时间在右半边活动。左上区域是「需求强烈但没钱买」的硬骨头——那些小农户、那些撒哈拉以南非洲的乡村教师、那些研究脊髓灰质炎或子痫前期的公共卫生学者。市场出价能力撑不起 OpenAI GPT-5 或 Anthropic Claude Sonnet 4 的 API 单价，但他们需要的能力一点不比商业客户少。
 
-![为什么是公益 · 客户付费能力对社会回报的二维定位图](gates-anthropic-market-gap.png)
+![为什么是公益 · 客户付费能力对社会回报的二维定位图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/gates-anthropic-200m-public-good-2026-05-15/gates-anthropic-market-gap.png)
 
 读这张图有几个细节值得展开。
 
@@ -113,7 +113,7 @@ Anthropic 在公告里把这次合作的理由总结成一句：「areas where m
 
 把镜头转回国内。海外这两家在抢公益叙事位的同时，国产侧并没有空着——只是路径不同。下面这张表把全球同类玩家放在一起，看不同公司把 AI 投到了哪里。
 
-![全球公益 AI 卡位 · 海外 Anthropic 与 OpenAI 与国产矩阵](gates-anthropic-vs-cn-matrix.png)
+![全球公益 AI 卡位 · 海外 Anthropic 与 OpenAI 与国产矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/gates-anthropic-200m-public-good-2026-05-15/gates-anthropic-vs-cn-matrix.png)
 
 注：海外两单为公开承诺总额；国产侧多为已落地覆盖人次或区域，两类口径无法 1:1 比金额，需要横向看场景与渠道。
 

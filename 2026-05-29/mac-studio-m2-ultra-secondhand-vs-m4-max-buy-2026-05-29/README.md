@@ -11,7 +11,7 @@ cover: mac-studio-m2-ultra-secondhand-vs-m4-max-buy-2026-05-29.png
 
 # Mac Studio 选机：M2 Ultra 还是 M4 Max
 
-![Mac Studio 选机：闲鱼 M2 Ultra 192GB vs 新机 M4 Max 64GB 选型对照](mac-studio-m2-ultra-secondhand-vs-m4-max-buy-2026-05-29.png)
+![Mac Studio 选机：闲鱼 M2 Ultra 192GB vs 新机 M4 Max 64GB 选型对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/mac-studio-m2-ultra-secondhand-vs-m4-max-buy-2026-05-29/mac-studio-m2-ultra-secondhand-vs-m4-max-buy-2026-05-29.png)
 
 ## 30 秒速览：4090 之外，有 2-5 万元预算的另一条路
 
@@ -36,7 +36,7 @@ cover: mac-studio-m2-ultra-secondhand-vs-m4-max-buy-2026-05-29.png
 
 后面五段把这张表挨段展开。
 
-![Mac Studio 关键规格对照：M2 Ultra 192GB vs M4 Max 64GB](mac-studio-spec-2026-05-29.png)
+![Mac Studio 关键规格对照：M2 Ultra 192GB vs M4 Max 64GB](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/mac-studio-m2-ultra-secondhand-vs-m4-max-buy-2026-05-29/mac-studio-spec-2026-05-29.png)
 
 ## 一、闲鱼 M2 Ultra 192GB：旧芯片配巨内存的现实路径
 
@@ -62,7 +62,7 @@ M4 Max 芯片 2024 年 10 月发布，比 M2 Ultra 晚一代半，单核 / 多�
 
 它的代价同样诚实：(1) 64 GB 内存的天花板低，跑不动 200B+ 稠密 / MoE 顶配；(2) 一旦未来出现 「必须 192 GB+ 才能跑」的模型档（社区已经在等 Qwen3-Next-300B-A30B、DeepSeek V5 满血），就只能升级整机；(3) 售价 24,999 元相对一张 5090 GPU（国行 30,000-34,000 元）反而便宜——但要算上「需要一台 PC 主机」这一块。
 
-![8 档本地大模型在两台 Mac Studio 上的可达性](mac-studio-model-fit-2026-05-29.png)
+![8 档本地大模型在两台 Mac Studio 上的可达性](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/mac-studio-m2-ultra-secondhand-vs-m4-max-buy-2026-05-29/mac-studio-model-fit-2026-05-29.png)
 
 ## 三、四档模型在两台机器上的真实可达性
 
@@ -105,7 +105,7 @@ M4 Max 芯片 2024 年 10 月发布，比 M2 Ultra 晚一代半，单核 / 多�
 3. **整机功耗低 + 噪音低**：M4 Max 64GB 满载 70-80W，M2 Ultra 192GB 满载 95-105W；夏天家里没空调时，前者风扇基本听不见，后者偶尔会拉高 RPM。家用 / 卧室办公场景这是真实因素。
 4. **保值率 + 可出手性强**：新机有发票、有保、有原包装；2-3 年后想出手二手价仍可回收 50-60% 原价。闲鱼 M2 Ultra 192GB 跑两年后再出手，价位可能只剩 2-2.5 万元。
 
-![5/29 这周选机决策树：按未来一年最常跑哪档模型来定](mac-studio-price-decision-2026-05-29.png)
+![5/29 这周选机决策树：按未来一年最常跑哪档模型来定](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-29/mac-studio-m2-ultra-secondhand-vs-m4-max-buy-2026-05-29/mac-studio-price-decision-2026-05-29.png)
 
 ## 六、5 月份这道选择题的答案：按未来一年最常跑的模型来定
 

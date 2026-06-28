@@ -10,7 +10,7 @@ cover: zed-1-0-multi-agent.png
 
 # Cursor 的开源对手来了：Zed 1.0
 
-![Zed 1.0 主视觉 · 多 agent 并行驻进编辑器](zed-1-0-multi-agent.png)
+![Zed 1.0 主视觉 · 多 agent 并行驻进编辑器](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/zed-1-0-multi-agent-editor/zed-1-0-multi-agent.png)
 
 > 2026 年 4 月 29 日北京时间 22:31，Atom 创始人 Nathan Sobo 把他的下一个编辑器 [Zed](https://zed.dev/blog/zed-1-0) 拉到了 v1.0.0。从 2021-02-20 仓库第一次 commit 到这一刻，整整 5 年 2 个月。1000+ 版本、超 100 万行代码、Rust 写、自研 GPU 渲染框架。同一天 [HN 47949027](https://news.ycombinator.com/item?id=47949027) 截稿时 1156 pts、372 条评论（仍在攀升），斩获当日热门第一。
 
@@ -113,7 +113,7 @@ Windows 这条 2025-10 才出官方 stable，比 Linux 还晚一年。原因是 
 
 ## 四、AI 集成：ACP 是这次 1.0 的真正核心
 
-![Zed 1.0 多 agent 并行场景](zed-1-0-screenshot-1.webp)
+![Zed 1.0 多 agent 并行场景](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/zed-1-0-multi-agent-editor/zed-1-0-screenshot-1.webp)
 
 Zed 1.0 的 AI 集成层里，**Agent Client Protocol（ACP）才是这次 1.0 真正的核心结构**。其他能力（Zeta 编辑预测、多 agent 面板、MCP 支持）都是搭在 ACP 这块新地基上的。
 
@@ -138,7 +138,7 @@ LSP 在 2016 年由微软提出，让 VSCode 不用为每种语言写 plugin、�
 
 ## 五、Zeta：编辑预测模型，两代基座都是中国开源
 
-![Zed 1.0 inline editing 场景](zed-1-0-screenshot-2.webp)
+![Zed 1.0 inline editing 场景](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/zed-1-0-multi-agent-editor/zed-1-0-screenshot-2.webp)
 
 Zeta 是 Zed 自己训的编辑预测模型，做的是按键级粒度的 inline 建议——你按一下 `tab` 就能接受当前光标位置后面的下一段编辑。
 

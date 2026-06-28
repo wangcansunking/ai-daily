@@ -23,7 +23,7 @@ description: "字节 GRN 论文 2604.13030 + 量子位 5/13 头条把视觉生�
 
 # 字节 GRN 给视觉生成开第三条路：2B 反超 SD3 / Infinity / Wan 2.1 / CogVideoX
 
-![GRN 论文与三路对比示意 · 量子位 2026-05-13 头条原图](bytedance-grn-hero-qbitai.png)
+![GRN 论文与三路对比示意 · 量子位 2026-05-13 头条原图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/bytedance-grn-visual-third-path-2026-05-15/bytedance-grn-hero-qbitai.png)
 
 ## 一句话把数字摆桌上：0.56 / 1.81 / 0.76，2B 全面 SOTA
 
@@ -44,7 +44,7 @@ description: "字节 GRN 论文 2604.13030 + 量子位 5/13 头条把视觉生�
 
 要把 GRN 这件事的意义讲清楚，得先把过去两年视觉生成的两条主流路线在国内开发者熟悉的产品身上对位过来。
 
-![视觉生成的三条路线 · 扩散 vs 自回归 vs GRN](bytedance-grn-three-paths.png)
+![视觉生成的三条路线 · 扩散 vs 自回归 vs GRN](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/bytedance-grn-visual-third-path-2026-05-15/bytedance-grn-three-paths.png)
 
 **扩散模型这条路**国内开发者最熟。Stable Diffusion 1.5 / SDXL / SD3 Medium / Flux.1-dev、快手可灵、阿里通义万相、智谱 CogVideoX，本质都是这条路上的产物。技术内核是连续表示加固定步数去噪：先给一张图加足噪声变成纯随机，再用神经网络一步一步去掉噪声还原成画面。优势在于连续表示信息损失小、画面保真度高。短板量子位文章里用一句很形象的话总结：「**无论是画简单的一颗苹果，还是复杂的巴洛克壁画，都必须老老实实一笔一笔画**」。换句话说，扩散没有内容复杂度感知能力——简单画面也得走完同样多步、消耗同样多算力，这是它的算力账始终下不去的根本原因。
 
@@ -62,7 +62,7 @@ description: "字节 GRN 论文 2604.13030 + 量子位 5/13 头条把视觉生�
 
 很多视觉生成新工作吃过的亏是：单点评测漂亮，换一个就回去了。GRN 这一组实验的份量在于三个评测**一并**领先，而不是某一项擦边。
 
-![GRN 在 rFID / gFID / GenEval 三项评测全部领先](bytedance-grn-benchmark-bars.png)
+![GRN 在 rFID / gFID / GenEval 三项评测全部领先](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/bytedance-grn-visual-third-path-2026-05-15/bytedance-grn-benchmark-bars.png)
 
 | 任务 | 模型 / 参数 | 关键指标 | 对手 |
 | --- | --- | --- | --- |
@@ -83,7 +83,7 @@ GenEval 这条评测是 2024 年下半年起国内文生图圈最看重的一项
 
 如果说图像生成的对比还在「同档比效果」，视频生成这一格的对比更刺激：**GRN 2B 直接反超 CogVideoX 5B 和 Wan 2.1 14B**。
 
-![GRN 2B vs 智谱 CogVideoX 5B vs 阿里 Wan 2.1 14B 文生视频对比](bytedance-grn-video-compare.png)
+![GRN 2B vs 智谱 CogVideoX 5B vs 阿里 Wan 2.1 14B 文生视频对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/bytedance-grn-visual-third-path-2026-05-15/bytedance-grn-video-compare.png)
 
 国内开发者过去一年熟悉的文生视频开源代表是智谱的 CogVideoX 5B（2024 年开源时是国内最强的开源 T2V，480p 输出，长度 2-6 秒）和阿里通义的 Wan 2.1 14B（2025 年发布，720p 输出，长度 5 秒，是当前国内开源里的标杆）。两家都是堆参数堆算力做大模型的路线——CogVideoX 是 5B、Wan 2.1 是 14B，参数量都比 GRN 大上一截。GRN 2B 的参数量是 CogVideoX 5B 的 2/5，是 Wan 2.1 14B 的 1/7，按传统思路效果应该差一档才对。
 
@@ -105,7 +105,7 @@ GenEval 这条评测是 2024 年下半年起国内文生图圈最看重的一项
 
 把 GRN 摆到国内开发者熟悉的视觉生成栈里看会更有质感。
 
-![国内 6 家视觉生成模型可用性对照 · 开源 / 国内访问 / 推理门槛](bytedance-grn-china-availability.png)
+![国内 6 家视觉生成模型可用性对照 · 开源 / 国内访问 / 推理门槛](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/bytedance-grn-visual-third-path-2026-05-15/bytedance-grn-china-availability.png)
 
 | 模型 | 归属 | 开源情况 | 国内可用度 | 推理门槛 |
 | --- | --- | --- | --- | --- |

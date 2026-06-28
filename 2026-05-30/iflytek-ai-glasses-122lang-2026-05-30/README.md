@@ -9,7 +9,7 @@ description: "2026-05-28，科大讯飞在澳门 BEYOND Expo 发布讯飞 AI 眼
 ---
 # 讯飞 AI 眼镜：40 克塞进 122 语言端到端同传
 
-![讯飞 AI 眼镜在澳门 BEYOND Expo 发布，主打端侧语音同传翻译](iflytek-ai-glasses-122lang-2026-05-30.png)
+![讯飞 AI 眼镜在澳门 BEYOND Expo 发布，主打端侧语音同传翻译](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/iflytek-ai-glasses-122lang-2026-05-30/iflytek-ai-glasses-122lang-2026-05-30.png)
 
 5 月 28 日，澳门 BEYOND Expo 2026 的展台上，科大讯飞拿出了讯飞 AI 眼镜。整机 40 克，售价 4299 元，6 月 15 日开启预售。
 
@@ -23,7 +23,7 @@ description: "2026-05-28，科大讯飞在澳门 BEYOND Expo 发布讯飞 AI 眼
 
 四个最该记住的硬参数：
 
-![讯飞 AI 眼镜关键参数卡片：40 克、122 种语言、18 语种离线、4299 元](iflytek-spec-card-2026-05-30.png)
+![讯飞 AI 眼镜关键参数卡片：40 克、122 种语言、18 语种离线、4299 元](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/iflytek-ai-glasses-122lang-2026-05-30/iflytek-spec-card-2026-05-30.png)
 
 - **重量 40 克**：经典眼镜形态，基于万张头模数据打磨佩戴结构，拿到了 SGS 舒适度专业认证；镜片用全贴合树脂材质，意外跌落不易碎裂。
 - **翻译 122 种语言**：含方言和口音，覆盖 200 多个国家和地区；其中 18 个语种支持离线翻译，没网也能用。
@@ -51,13 +51,13 @@ description: "2026-05-28，科大讯飞在澳门 BEYOND Expo 发布讯飞 AI 眼
 
 尤其值得拿出来说的是**通话翻译支持 SIM 卡通话、视频电话和网络会议的全程双向同传**。这意味着你和一个只说西班牙语的客户打电话，两边各说各的母语，眼镜在中间实时转。这是手机翻译 App 一直做得很别扭、而戴在脸上反而顺手的场景。
 
-![讯飞 AI 眼镜的多语种翻译场景演示](source-iflytek-translate.png)
+![讯飞 AI 眼镜的多语种翻译场景演示](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/iflytek-ai-glasses-122lang-2026-05-30/source-iflytek-translate.png)
 
 *来源：新浪科技 2026-05-28 讯飞 AI 眼镜发布报道*
 
 收音这一块讯飞也下了功夫：**骨传导拾音**让人声更纯净，面对面翻译用智能定向收音只听对面那个人，同声传译则是 8 米内全向拾音。三种收音策略对应三种距离和场景，不是一套麦克风走天下。
 
-![讯飞 AI 眼镜适用的跨语言沟通场景](source-iflytek-scene.jpg)
+![讯飞 AI 眼镜适用的跨语言沟通场景](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/iflytek-ai-glasses-122lang-2026-05-30/source-iflytek-scene.jpg)
 
 *来源：网易科技 2026-05-28 讯飞 AI 眼镜发布报道*
 
@@ -73,7 +73,7 @@ description: "2026-05-28，科大讯飞在澳门 BEYOND Expo 发布讯飞 AI 眼
 
 这套流程结构清晰、每段都有成熟方案，但有三个绕不开的毛病：
 
-![端到端语音同传与传统级联三段式翻译的流程对比](iflytek-e2e-vs-cascade-2026-05-30.png)
+![端到端语音同传与传统级联三段式翻译的流程对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/iflytek-ai-glasses-122lang-2026-05-30/iflytek-e2e-vs-cascade-2026-05-30.png)
 
 - **误差逐级累积**：ASR 听错一个词，MT 就在错的基础上翻，TTS 再把错的读出来，三段各自的小错越叠越大。
 - **中间转文字会丢信息**：语音里的语气、停顿、节奏，一旦压成纯文字就丢了，合成出来的译音听起来生硬。
@@ -89,7 +89,7 @@ description: "2026-05-28，科大讯飞在澳门 BEYOND Expo 发布讯飞 AI 眼
 
 2026 年的 AI 眼镜赛道相当热闹。小米、华为、雷鸟、字节都已下场，海外则有 Ray-Ban Meta 这个标杆。讯飞挤进来，靠的不是抢同样的位置，而是错开打。
 
-![六款 AI 眼镜横评表：重量、翻译语言、离线翻译、核心模型、售价](iflytek-glasses-compare-2026-05-30.png)
+![六款 AI 眼镜横评表：重量、翻译语言、离线翻译、核心模型、售价](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/iflytek-ai-glasses-122lang-2026-05-30/iflytek-glasses-compare-2026-05-30.png)
 
 把六款主流产品摆在一起看，分工其实很清楚：
 
@@ -119,7 +119,7 @@ description: "2026-05-28，科大讯飞在澳门 BEYOND Expo 发布讯飞 AI 眼
 
 这些不是减分项，而是任何一副新眼镜上市前，理性买家都该列出来逐条确认的清单。讯飞在语音翻译这条主线上的功底毋庸置疑，剩下的就交给 6 月 15 日预售后的真实体验来回答。
 
-![讯飞 AI 眼镜产品外观，经典眼镜形态、整机 40 克](source-iflytek-product.jpg)
+![讯飞 AI 眼镜产品外观，经典眼镜形态、整机 40 克](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-30/iflytek-ai-glasses-122lang-2026-05-30/source-iflytek-product.jpg)
 
 *来源：网易科技 2026-05-28 讯飞 AI 眼镜发布报道*
 

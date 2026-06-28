@@ -21,7 +21,7 @@ tags:
 
 > 当地时间 2026 年 5 月 8 日下午，苏州金鸡湖国际会议中心，2026 移动云大会 AI-eSIM 分论坛上，中国移动副总经理陈怀达发布全球首款 AI-eSIM 产品和「1+3+9」多生态智能服务体系。一张焊在主板上的硅片，第一次同时承载通信凭证、数字身份和大模型账号——这是 eSIM 走出 IoT 圈、第一次正式成为 AI 终端基础设施的标志性事件。
 
-![中国移动 AI-eSIM 全球首发封面](china-mobile-ai-esim-token-sim-2026-05-09.png)
+![中国移动 AI-eSIM 全球首发封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/china-mobile-ai-esim-token-sim-2026-05-09/china-mobile-ai-esim-token-sim-2026-05-09.png)
 
 虎嗅 5 月 8 日把这条新闻挂上头条第 4 位、新浪科技给了长篇深度、IT 之家 / 网易订阅 / 搜狐 / 财经头条 / ITBear / 腾讯新闻同步跟进，国内主流科技媒体一天之内 6 家以上集中发声。读者关心的从来不是又一张 SIM 卡，而是——**中国移动正在把 AI 时代的「用户身份 + Token 入口」做进 SIM 卡硬件层**，这件事如果跑通，运营商在 AI 终端时代的角色不再是管道工，而是设备出厂时就内置的算力账户。
 
@@ -35,7 +35,7 @@ tags:
 
 「1+3+9」这个命名在公开稿里没有官方注解段，分别落在新浪科技、网易订阅、虎嗅三家报道里互相补完，组合起来是一张相对清晰的地图。
 
-![AI-eSIM 1+3+9 体系架构](aiesim-1-3-9-system.png)
+![AI-eSIM 1+3+9 体系架构](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/china-mobile-ai-esim-token-sim-2026-05-09/aiesim-1-3-9-system.png)
 
 **1 个入口**——AI-eSIM 芯片入口。形态是 eSIM，焊在终端主板上、支持 OTA 远程写入，跨过了上一代 eSIM "必须线下营业厅开卡" 的体验门槛。陈怀达把这句话讲得很直白：「全球首创『运营商码号即大模型账号』，通过内置 AI-eSIM，将 eSIM 一键升级为 AI 入口」。
 
@@ -88,7 +88,7 @@ AI-eSIM 真正的工程挑战在系统集成上：
 
 9 个场景不是同时落地的。把官方公开点名的合作方对照场景做一张落地节奏表，能更冷静地看清近期可见、中期值得期待、远期还需要观察的部分。
 
-![AI-eSIM 9 大重点场景落地节奏](aiesim-scenarios-9.png)
+![AI-eSIM 9 大重点场景落地节奏](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/china-mobile-ai-esim-token-sim-2026-05-09/aiesim-scenarios-9.png)
 
 ### 近期可见（2026 年内首批商用）
 
@@ -112,13 +112,13 @@ AI-eSIM 真正的工程挑战在系统集成上：
 
 **判断标准**：等中国移动公布第二批合作伙伴名单时，再看路径是否清晰。9 大场景这张表，2026 年看落地节奏的关键在第一批商用 SKU 与定价是不是符合大众消费品（AI 玩具）和高端可穿戴（智能眼镜 / 手表）的市场预期；2027 年看产业端（家电 / 办公 / 金融）的规模化能不能跑出来；2028 年再看远期四个场景的实质进展。
 
-![AI-eSIM 落地节奏三档时间表](aiesim-rollout-timeline.png)
+![AI-eSIM 落地节奏三档时间表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/china-mobile-ai-esim-token-sim-2026-05-09/aiesim-rollout-timeline.png)
 
 ## 四、商业模式：Byte+Token 融合，运营商当算力账户
 
 把所有公开数据合并起来看，AI-eSIM 背后是一笔运营商生意结构的算账题。
 
-![Byte+Token 融合运营商业模式](aiesim-business-model.png)
+![Byte+Token 融合运营商业模式](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/china-mobile-ai-esim-token-sim-2026-05-09/aiesim-business-model.png)
 
 中国移动 2025 年财报数据：营运收入 10502 亿元、主营业务收入 8955 亿元、算力服务收入 898 亿元（同比增长 11.1%）、智能服务收入 908 亿元，算力 + 智能合计占主营业务 20.2%。这是中国移动「通算智」（通信、算力、智能）三大主业融合战略的财务底盘。
 
@@ -141,7 +141,7 @@ AI-eSIM 真正的工程挑战在系统集成上：
 
 这一段是公开信息推断，中国移动尚未公布具体的 AI-eSIM 主控芯片厂商。把行业里跑得最稳的几家放进来，给读者一张「最可能参与」的国产链路图。
 
-![AI-eSIM 国产链路](aiesim-chip-supply-chain.png)
+![AI-eSIM 国产链路](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/china-mobile-ai-esim-token-sim-2026-05-09/aiesim-chip-supply-chain.png)
 
 **SIM 卡安全芯片**：紫光同芯（紫光国微）、大唐微电子、华大半导体——国内 SIM 卡芯片市场紫光同芯占有 60-70% 份额，紫光同芯已经和联通华盛签过 eSIM 战略合作。
 
@@ -165,7 +165,7 @@ AI-eSIM 真正的工程挑战在系统集成上：
 
 把 AI-eSIM 和国际对位放一起对照，能看清这件事在全球 eSIM 演进图上的独特位置。
 
-![中国移动 AI-eSIM vs Apple eSIM vs GSMA SGP.32](aiesim-vs-international.png)
+![中国移动 AI-eSIM vs Apple eSIM vs GSMA SGP.32](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/china-mobile-ai-esim-token-sim-2026-05-09/aiesim-vs-international.png)
 
 **Apple eSIM**（2018 年 iPhone XS 起，2022 年 iPhone 14 美版起 eSIM-only）解决的是「拿掉物理 SIM 卡槽」这一件事。Apple eSIM 没做模型调度、没做数字身份硅基化，本质还是通信凭证。Vodafone 公开的目标是两年内三分之一新设备支持 eSIM。
 

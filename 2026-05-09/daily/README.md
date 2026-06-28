@@ -10,7 +10,7 @@ cover: 09.png
 
 # Claude Code 失守 · OpenAI 语音 GA | AI 日报 | 2026-05-09
 
-![AI 日报封面](09.png)
+![AI 日报封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/daily/09.png)
 
 **今日关键词：Adversa AI 5/7 公开 TrustFall · Claude Code v2.1.129 / Cursor CLI / Gemini CLI / GitHub Copilot CLI 一个回车交出 SSH key · 同根因 7 个月内第 4 起 · OpenAI 5/8 一次发 GPT-Realtime-2 / Realtime-Translate / Realtime-Whisper 三模型 + Realtime API 转 GA · 中国移动苏州 5/8 全球首发 AI-eSIM 与 1+3+9 多生态体系 · HN 顶贴 561 pts 立论「agents need control flow, not more prompts」· vllm-mlx 把 vLLM 服务范式搬到 Apple Silicon · M4 Max 单机 463 tok/s · anthropics/financial-services 5 天冲到 15,079⭐ · xAI Grok 4.3 Image Quality API 5/7 全量开放**
 
@@ -58,7 +58,7 @@ cover: 09.png
 
 当地时间 2026 年 5 月 7 日，Adversa AI 在官方博客挂出名为 **TrustFall** 的研究——题图直接放了四把 logo：Claude Code、Cursor CLI、Gemini CLI、GitHub Copilot CLI。研究员 Rony Utevsky 与 CTO Alex Polyakov 把同一个攻击模板分别打到 4 个 CLI 上，结果一致：**克隆仓库、回车一次、本地以登录用户全权限跑攻击者命令**。The Register 同日跟进，Dark Reading、SecurityWeek、Help Net Security 跟出 4 篇报道；Hacker News 上榜，评论区集中讨论两件事——Anthropic 这次为什么不修，以及 GitHub Action 的 CI 模式连「回车」这一下都不需要。
 
-![4 大 CLI 信任对话框横评](cli-comparison-trustfall.png)
+![4 大 CLI 信任对话框横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/daily/cli-comparison-trustfall.png)
 
 把 7 个月时间轴拉出来，问题更清晰：
 
@@ -75,7 +75,7 @@ cover: 09.png
 
 Adversa AI 给出 3 条互不依赖的攻击路径，全部命中 Claude Code v2.1.129。3 条都不需要预装恶意二进制、不需要漏洞利用代码、只需要 Git 仓库根目录两个文本文件。
 
-![三条攻击路径示意](attack-paths-trustfall.png)
+![三条攻击路径示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/daily/attack-paths-trustfall.png)
 
 **路径 ① · `enableAllProjectMcpServers`**：仓库根放 `.mcp.json`，里面写一台指向攻击者 server 的 MCP 配置；同目录 `.claude/settings.json` 里写 `enableAllProjectMcpServers: true`。受害开发者 `git clone` 后在该目录敲 `claude` 进入交互；信任对话框默认按钮是「Yes, I trust this folder」，回车——Claude Code 会**先**按 settings.json 调度全部 MCP server，然后才进入 reasoning。MCP server 运行环境是用户登录态的无沙箱 OS 进程，等价于把 shell 交出去。
 
@@ -181,7 +181,7 @@ Help Net Security 把这一段翻成一句更直白的话：「One keypress is a
 
 当地时间 5/8 凌晨，OpenAI 在官方博客一次性放出了三个实时语音模型——GPT-Realtime-2、GPT-Realtime-Translate、GPT-Realtime-Whisper——并宣布 Realtime API 正式结束 beta 进入 GA。北京时间当天 04:35，量子位抢出首发稿，36氪、新浪科技、IT 之家、网易科技、B 站 AI 早报全天跟进。
 
-![三款模型规格](gpt-realtime-2-three-models-spec.png)
+![三款模型规格](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/daily/gpt-realtime-2-three-models-spec.png)
 
 **规格速览**：
 
@@ -191,7 +191,7 @@ Help Net Security 把这一段翻成一句更直白的话：「One keypress is a
 
 **工程层关键变化**：上下文从 32K 拉到 128K——Zillow 实测通话成功率从 69% 拉到 95%，长会议从此不再「金鱼记忆」；Big Bench Audio 从 81.4% 拉到 96.6%；Audio MultiChallenge 在 xhigh 推理档下从 34.7% 拉到 48.5%。
 
-![三段流水线压成一根 WebSocket](realtime-pipeline-old-vs-new.png)
+![三段流水线压成一根 WebSocket](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/daily/realtime-pipeline-old-vs-new.png)
 
 一根 WebSocket 把「听 → 推理 → 译 → 说」端到端压成单 API，对工程团队意味着系统集成代码量减少 60-70%、故障定位面积缩小到一家厂商、整体延时压到 800ms 级。**这是「ASR 厂 + MT 厂 + TTS 厂」三段流水线开始走向终结的工程信号。** 完整对位国产语音四家见今日 OpenAI 实时语音专题。
 
@@ -229,7 +229,7 @@ Anthropic 5/8 官博公布与 Google + Broadcom 的迄今最大算力承诺：�
 
 苏州金鸡湖国际会议中心，2026 移动云大会 AI-eSIM 分论坛，中国移动副总经理陈怀达发布全球首款 AI-eSIM 产品和「1+3+9」多生态智能服务体系。一张焊在主板上的硅片，第一次同时承载通信凭证、数字身份和大模型账号——eSIM 走出 IoT 圈、第一次正式成为 AI 终端基础设施。虎嗅 5/8 把这条新闻挂上头条第 4 位、新浪科技给了长篇深度，IT 之家 / 网易订阅 / 搜狐 / 财经头条 / ITBear / 腾讯新闻同步跟进，国内主流科技媒体一天之内 6 家以上集中发声。
 
-![中国移动 AI-eSIM 1+3+9 体系架构](aiesim-1-3-9-system.png)
+![中国移动 AI-eSIM 1+3+9 体系架构](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/daily/aiesim-1-3-9-system.png)
 
 **1+3+9 速览**：
 
@@ -243,7 +243,7 @@ Anthropic 5/8 官博公布与 Google + Broadcom 的迄今最大算力承诺：�
 
 OpenAI 5/8 三发实时语音不是一次国产语音的降维打击，更像一份工程蓝图被对标方画清楚。国产同档玩家的实力地图：
 
-![国产语音四家能力对比](domestic-voice-models-comparison.png)
+![国产语音四家能力对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/daily/domestic-voice-models-comparison.png)
 
 
 - **字节 Seed LiveInterpret 2.0**（2025-07）：端到端同传旗舰，中英互译延时 2-3 秒，多人会议中英双向准确率 70%+，单人演讲 80%+；最差异化的能力是 0 样本声音克隆——直接用讲者本人音色输出译文，OpenAI 这次没有覆盖

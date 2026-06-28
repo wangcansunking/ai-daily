@@ -25,13 +25,13 @@ tags:
 
 > 5 月 12 日，商汤科技旗下商汤善惠把三家 24 小时具身智能便利店同时落到了上海街头。15 ㎡ 一间小店，300+ SKU，机器人独立完成接单、拿放、清理、选品、定价、补货。平均 29 秒交付一单，五一峰值时段 15 秒一单，宝山滨江景区门店日均 400 单，运营稳定率 99%，7 天就能在新地点把一家新店开起来。具身智能这一年讲了太多 PPT 和工厂巡检，第一次有人把机器人交给了真客流。
 
-![29 秒一单：商汤把机器人开成便利店](sensetime-embodied-store-shanghai-2026-05-13.png)
+![29 秒一单：商汤把机器人开成便利店](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/sensetime-embodied-store-shanghai-2026-05-13/sensetime-embodied-store-shanghai-2026-05-13.png)
 
 打开任何一家国内具身智能公司过去半年的官网，画面通常是这样：宣传片里机器人摆着展厅里的水瓶，旁边写着「即将进入家庭、酒店、便利店」。然后呢？然后大家继续在工厂的产线、舞台的灯光、春晚的舞蹈队里见到它。把机器人放到一个真正每天有人走进来、付钱、要找货、要退货、要投诉、要赶时间的地方——这件事一直没人敢直接答。
 
 **5 月 12 日，商汤科技旗下商汤善惠在上海给出了一份直接的答案。** 它把 SenseMartGo 烧卖购具身智能便利店同时开到了新洲大厦、宝山新业坊、宝山滨江景区三个不同业态的地方：写字楼下沉广场、产业园社区、滨江景区。一家便利店 15 平方米空间，承载 300+ SKU，从水饮、零食这种标品，到现做咖啡、冰淇淋、热早餐这种非标品都覆盖。机器人独立完成接单、拿放、清理、选品、定价、补货、动态盘点和运营决策。**平均 29 秒一单**，五一假期客流高峰时段**最快 15 秒一单**，**日均 400 单**，**99% 运营稳定率**，**新点位 7 天可开店**——这组数字是据[量子位 5 月 12 日头条报道](https://www.qbitai.com/2026/05/416590.html)，凤凰财经、网易科技、IT 之家、36 氪等六家媒体同期复核的公开口径。
 
-![烧卖购五一节点数据卡：六个关键数字](sensetime-key-metrics.png)
+![烧卖购五一节点数据卡：六个关键数字](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/sensetime-embodied-store-shanghai-2026-05-13/sensetime-key-metrics.png)
 
 **这件事的意义不在「又一款机器人发布」，而在它把具身智能从产线搬到了菜场。** 工厂巡检和春晚表演给的是「机器人能动起来」的证据，烧卖购给的是另外一件完全不一样的证据：**机器人能在真客流压力下当一个工人**。对国内做机器人、做零售、做物流、做工程的同行——包括银河通用、优必选、宇树、智元、京东、美团、蚂蚁这些一线玩家——这是行业第一次把「具身智能商业闭环」的难题摆到台面上谈：不是「能不能做」，而是「29 秒一单的成本结构 / 99% 的可用性怎么撑、7 天新店怎么标准化」。
 
@@ -44,7 +44,7 @@ tags:
 
 ## 一、29 秒一单：把任务流拆开看，机器人到底在忙什么
 
-![29 秒一单：烧卖购机器人到底在这 29 秒里干了什么](sensetime-task-timeline.png)
+![29 秒一单：烧卖购机器人到底在这 29 秒里干了什么](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/sensetime-embodied-store-shanghai-2026-05-13/sensetime-task-timeline.png)
 
 先把 29 秒这个数字拆开。**平均 29 秒交付一单**——这是把所有标品、非标品、单件、多件订单加权平均的结果。**峰值 15 秒一单**——是宝山滨江景区五一节假期客流密集时段的实测值。两个数字一起出现，说明流程不是匀速完成的，而是有「同时段并行处理 + 闲时预热」的工程优化。
 
@@ -65,7 +65,7 @@ tags:
 
 ## 二、五层栈闭环：少一层都跑不到 29 秒
 
-![具身便利店闭环：商汤这次到底端了哪 5 层栈](sensetime-capability-stack.png)
+![具身便利店闭环：商汤这次到底端了哪 5 层栈](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/sensetime-embodied-store-shanghai-2026-05-13/sensetime-capability-stack.png)
 
 把烧卖购的能力栈拆成五层，从下往上看：
 
@@ -83,7 +83,7 @@ tags:
 
 ## 三、国内具身赛道：谁真的把机器人交给了真客流
 
-![国内具身赛道：谁真的把机器人交给真客流了](sensetime-domestic-compare.png)
+![国内具身赛道：谁真的把机器人交给真客流了](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/sensetime-embodied-store-shanghai-2026-05-13/sensetime-domestic-compare.png)
 
 把国内做具身智能的一线玩家放在一起看，会发现一件有意思的事——**大家擅长的"客户类型"很不一样**。表里这一行「面向」拉开了真正的差距：
 
@@ -103,7 +103,7 @@ tags:
 
 ## 四、生命周期账本：人工便利店 vs 烧卖购具身店
 
-![便利店生命周期对比：人工运营 vs 烧卖购具身运营](sensetime-time-compare.png)
+![便利店生命周期对比：人工运营 vs 烧卖购具身运营](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/sensetime-embodied-store-shanghai-2026-05-13/sensetime-time-compare.png)
 
 把单店运营画成账本，是判断这件事是不是真生意的最有效方式。把同一家 15 ㎡ 门店、同 300+ SKU 的两个版本放在一起对照：
 
@@ -124,7 +124,7 @@ tags:
 
 ## 五、2026 年底想象：从 3 家到一张图
 
-![从 3 家到全国：2026 年底铺开节奏想象](sensetime-rollout-map.png)
+![从 3 家到全国：2026 年底铺开节奏想象](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/sensetime-embodied-store-shanghai-2026-05-13/sensetime-rollout-map.png)
 
 商汤善惠在公开口径里给的目标是**「2026 年底加速在各城市的布局」**。具体多少家没有写死。按 7 天开店的工程口径推一下：从 5 月 12 日算起到 2026 年 12 月 31 日大约还有 33 周，理论上一条标准化产线可以做到几十家。但现实里影响节奏的不是开店速度，是**选址、备货链路、监管、消防、电力**这些非工程变量。
 

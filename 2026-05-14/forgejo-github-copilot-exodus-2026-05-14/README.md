@@ -23,7 +23,7 @@ description: "GitHub 2026-04-24 起把 Copilot Free / Pro / Pro+ 默认改成『
 
 # Copilot 默认开训之后，搬去 Forgejo 的全套实操
 
-![Copilot 训练数据默认开启之后的 Forgejo 自托管搬迁路线封面](forgejo-github-copilot-exodus-2026-05-14.png)
+![Copilot 训练数据默认开启之后的 Forgejo 自托管搬迁路线封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/forgejo-github-copilot-exodus-2026-05-14/forgejo-github-copilot-exodus-2026-05-14.png)
 
 5 月 13 日 Hacker News 首页挂着一篇标题朴素得出奇的长文「离开 GitHub 投奔 Forgejo」（Leaving GitHub for Forgejo）。一位欧洲独立开发者 Jorijn 把自己怎么把全部仓库从 GitHub 搬到自托管 Forgejo 的细节写了一万多字，发出来后 456 赞 244 评论，连着两天没掉出前 20。评论区一半人在追问硬件账单，另一半人在补刀——「这事我去年就该做了」。
 
@@ -35,7 +35,7 @@ description: "GitHub 2026-04-24 起把 Copilot Free / Pro / Pro+ 默认改成『
 
 先把时间轴拉清楚。GitHub 是 3 月 25 日发的公告，留了整 30 天的通知期，4 月 24 日正式生效。同一周里 Forgejo 项目正好放出 v15.0 LTS——长期支持版本，承诺维护到 2027 年 7 月 15 日。两件事撞在同一个月份不是巧合，是欧洲开源社区已经在心理上准备很久的对应。
 
-![GitHub Copilot 训练数据默认开启政策时间线 timeline 2026-03 至 2026-05](forgejo-policy-timeline-2026.png)
+![GitHub Copilot 训练数据默认开启政策时间线 timeline 2026-03 至 2026-05](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/forgejo-github-copilot-exodus-2026-05-14/forgejo-policy-timeline-2026.png)
 
 被影响的范围比很多人以为的更广：
 
@@ -57,7 +57,7 @@ description: "GitHub 2026-04-24 起把 Copilot Free / Pro / Pro+ 默认改成『
 
 Jorijn 的答案没有挑昂贵的方案。他没买专门服务器、没租云、没自己搭机柜，就一台家用 Intel NUC，64 GB 内存，跑一套 Docker 编排。Forgejo v15 LTS 当 forge、PostgreSQL 17 当数据库、Traefik 当反向代理、一个独立 Container Registry 当镜像仓库。CI runner 单独放在 Incus 管理的 KVM 虚拟机里，和 forge 主机做物理意义上的分层。
 
-![Forgejo 自托管 stack 拓扑：单台 NUC 跑完完整代码主权 host](forgejo-self-host-stack.png)
+![Forgejo 自托管 stack 拓扑：单台 NUC 跑完完整代码主权 host](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/forgejo-github-copilot-exodus-2026-05-14/forgejo-self-host-stack.png)
 
 这套组合的好处是每一块都成熟、可替换、不锁死任何商业 SaaS：
 
@@ -78,7 +78,7 @@ Jorijn 的答案没有挑昂贵的方案。他没买专门服务器、没租云�
 
 他的设计哲学只有一句：**假设每一层都会被攻破**。所以叠了五层，每一层都不依赖上一层。
 
-![Forgejo Runner KVM isolation layers 五层隔离从网络层到 token 作用域](forgejo-kvm-isolation-layers.png)
+![Forgejo Runner KVM isolation layers 五层隔离从网络层到 token 作用域](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/forgejo-github-copilot-exodus-2026-05-14/forgejo-kvm-isolation-layers.png)
 
 从外到内拆开看：
 
@@ -96,7 +96,7 @@ Jorijn 的答案没有挑昂贵的方案。他没买专门服务器、没租云�
 
 只有「政策不舒服」一条理由当然撑不起整套搬迁——成本太高、惯性太强。Jorijn 在文章里把另一条推力也摆出来：GitHub 近一年的稳定性，给基础设施依赖者敲了警钟。
 
-![GitHub 近 12 个月稳定性 incidents chart 总事件 257 起重大 48 起](forgejo-github-incidents-chart.png)
+![GitHub 近 12 个月稳定性 incidents chart 总事件 257 起重大 48 起](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/forgejo-github-copilot-exodus-2026-05-14/forgejo-github-incidents-chart.png)
 
 2025 年 5 月到 2026 年 4 月这滚动 12 个月里，GitHub Status Page 上累计登记 257 起事件、48 起标记为重大（majorish），合计宕机时长大约 112 小时——折算约一周整工作时长。GitHub CTO 在公开场合承认平台需要做 30 倍扩容才能跟上当前 Actions / Codespaces / Copilot 的负载增长。
 
@@ -110,7 +110,7 @@ Jorijn 的答案没有挑昂贵的方案。他没买专门服务器、没租云�
 
 搬迁不是无成本的平移，是一次精确的功能换取。Jorijn 在文章里很坦诚地列了所有让步——这恰恰是这篇文章值得看的地方，作者没把自托管讲成银弹。
 
-![Forgejo vs GitHub feature matrix 能力对比 8 项核心维度](forgejo-vs-github-feature-matrix.png)
+![Forgejo vs GitHub feature matrix 能力对比 8 项核心维度](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/forgejo-github-copilot-exodus-2026-05-14/forgejo-vs-github-feature-matrix.png)
 
 具体损失盘点：
 
@@ -134,7 +134,7 @@ Jorijn 的答案没有挑昂贵的方案。他没买专门服务器、没租云�
 
 把欧洲开发者的故事讲完，落点必须回到国内同行身上。代码主权这件事——把代码物理位置、训练数据政策、长期可访问性都放回自己掌控里——对国内开发者其实有更天然的吸引力，因为我们这边的基础设施和合规框架本来就鼓励本地化部署。
 
-![国内 china alternatives 四条路 Gitee 极狐 GitLab 自建 Forgejo 自建 Gitea 选项表](forgejo-china-alternatives-table.png)
+![国内 china alternatives 四条路 Gitee 极狐 GitLab 自建 Forgejo 自建 Gitea 选项表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/forgejo-github-copilot-exodus-2026-05-14/forgejo-china-alternatives-table.png)
 
 四条具体路径，按起步成本由低到高：
 

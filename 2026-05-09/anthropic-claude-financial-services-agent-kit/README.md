@@ -17,7 +17,7 @@ tags:
 
 > Anthropic 把 Claude Cowork 第一次做成了一个完整的「行业范本仓库」——10 个具名金融 Agent + 9 个垂类 Skill Bundle + 11 条数据连接器，工程结构清晰到可以直接照着抄；而国产金融 AI 的工程基础同样完整，照着这套范本做加速度只会更快。
 
-![Anthropic 金融 Agent 套件封面](anthropic-claude-financial-services-agent-kit.png)
+![Anthropic 金融 Agent 套件封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/anthropic-claude-financial-services-agent-kit/anthropic-claude-financial-services-agent-kit.png)
 
 当地时间 5 月 5 日，Anthropic 在官方博客发布「The agents we built for finance teams」并把配套仓库 `anthropics/financial-services` 同时开源。仓库当天暴涨 3,662 个星标，登上 GitHub Trending 全站第一；到 5 月 9 日实测，总星标 14,672、Fork 1,821，授权 Apache-2.0；同期还有 Code w/ Claude 2026 大会主旨演讲、Simon Willison 实时博客重点提及，是这一周海外 AI 圈讨论密度最高的工程开源之一。
 
@@ -25,7 +25,7 @@ tags:
 
 ## 一、仓库实测数据：5/5 当日全站第一，迭代速度极快
 
-![仓库实测数据](anthropic-fin-repo-stats.png)
+![仓库实测数据](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/anthropic-claude-financial-services-agent-kit/anthropic-fin-repo-stats.png)
 
 先看实测数字（截至北京时间 2026-05-09 中午 · 来源：`gh api repos/anthropics/financial-services`）：
 
@@ -38,7 +38,7 @@ tags:
 
 ## 二、10 个具名 Agent：从投行到 KYC，一岗一 Agent
 
-![10 个具名 Agent · 4 大场景分组](anthropic-fin-10-agents-org.png)
+![10 个具名 Agent · 4 大场景分组](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/anthropic-claude-financial-services-agent-kit/anthropic-fin-10-agents-org.png)
 
 仓库 README 把 Agent 按 4 类金融业务场景分组（注意：当前 README 列出的是 10 个具名 Agent，过往社区讨论里偶尔出现的「12 个」表述更可能是把 LSEG / S&P 两个合作伙伴 plugin 也算进 Agent 范畴，本文按 README 现状以 10 个为准）。
 
@@ -70,7 +70,7 @@ tags:
 
 ## 三、9 个 Skill Bundle：垂类知识当作"安装包"分发
 
-![9 个 Vertical Skill Bundle](anthropic-fin-9-skill-bundles.png)
+![9 个 Vertical Skill Bundle](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/anthropic-claude-financial-services-agent-kit/anthropic-fin-9-skill-bundles.png)
 
 如果说 Agent 是"端到端流水线"，Skill Bundle 就是底下的"领域词典 + 操作手册 + 模板库"。仓库总共 9 个 Bundle，分为 7 个 Anthropic 自研 + 2 个数据合作伙伴贡献：
 
@@ -92,7 +92,7 @@ tags:
 
 ## 四、双部署形态：Cowork 给前台，Managed Agents API 给后台
 
-![Cowork vs Managed Agents 部署对比](cowork-vs-managed-agents-deployment.png)
+![Cowork vs Managed Agents 部署对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/anthropic-claude-financial-services-agent-kit/cowork-vs-managed-agents-deployment.png)
 
 这套套件最值得抄的工程设计是它的"双部署形态"：同一份 system prompt + 同一组 skills，既可以装到 Claude Cowork 客户端做"人机共写"，也可以走 Claude Managed Agents API 做"无人值守服务端 Agent"。Anthropic 自己的话是：「Same system prompt, same skills — you choose where it runs.」
 
@@ -135,7 +135,7 @@ tags:
 
 ## 六、国产金融 AI 同行格局：路已经趟出来了
 
-![国产金融 AI 同行格局](domestic-finance-llm-landscape.png)
+![国产金融 AI 同行格局](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-09/anthropic-claude-financial-services-agent-kit/domestic-finance-llm-landscape.png)
 
 把这套海外范本对回国内，先把当前国产金融 AI 同行的公开落地铺一遍。下面这张表是按公开博客 / 招标公告 / 媒体报道 / 国家网信办大模型备案清单梳理的（截至 2026-05），分四类：
 

@@ -11,13 +11,13 @@ track: arbitrage
 ---
 # 给 Claude Code 装个语义检索：别再让它 grep 完读整篇
 
-![一个语义检索层站在编码 Agent 和代码仓库之间，只把最相关的几段代码递回去，低多边形风格示意](semble-code-search-agents-2026-06-03.png)
+![一个语义检索层站在编码 Agent 和代码仓库之间，只把最相关的几段代码递回去，低多边形风格示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/semble-code-search-agents-2026-06-03/semble-code-search-agents-2026-06-03.png)
 
 用 Claude Code 或者 Cursor 在一个陌生的大仓库里干活，多半都见过这一幕：你让它改一处认证逻辑，它先 grep 一个关键词，搜出二十几个命中，然后挨个把这些文件整篇读进上下文。等它真正动手时，窗口里已经塞了几万令牌的代码，其中大部分跟你要改的那一处毫无关系。**问题不在模型不会找，而在它手上只有 grep 这把锤子——只能按字面命中，命中之后又只能把整个文件搬进来看。**
 
 仓库 MinishLab/semble 想正面解决的就是这一块。它给自己的定位很直白：**做一个专门给 Agent 用的代码检索库，用自然语言或者一个符号名去问，直接返回那几段最相关的代码，不用 grep，也不用把整文件读进来。** 6 月 3 日核对仓库，总 star 约 4,735、196 个 fork、MIT 许可、Python 写成，今年 4 月初建库；对应那条 Show HN 帖约 445 分、151 条讨论。它对外打出的卖点是一句话：**比 grep 完再读整文件省约 98% 的令牌。**
 
-![semble 仓库社交卡片：给 Agent 用的快速且准确的代码检索，比 grep 加读文件省约 98% 令牌](source-semble-github-card-2026-06-03.png)
+![semble 仓库社交卡片：给 Agent 用的快速且准确的代码检索，比 grep 加读文件省约 98% 令牌](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/semble-code-search-agents-2026-06-03/source-semble-github-card-2026-06-03.png)
 <small>来源：MinishLab/semble 仓库社交卡片</small>
 
 这篇文章想把几件事讲清楚：**grep 加读文件这套默认做法到底差在哪、那个省 98% 令牌的数字是怎么算出来的、它跟向量检索式 RAG 又有什么不同、给 Claude Code 和 Cursor 怎么把它接进来、以及国内开发者本地用它配自己的模型端点要留意什么。** 结论先放这儿——如果你的痛点是 Agent 在大仓库里找代码又慢又费令牌，给它换上一个语义检索层是相当对症的思路；但真正值得讲的不是"省了多少令牌"，而是**它在更小的令牌预算下拿到了更高的召回**，省令牌只是这件事的副产品。怎么看待这个区别，本文会摊开说。
@@ -34,7 +34,7 @@ grep（以及它更快的兄弟 ripgrep）做的是字面匹配——你给一�
 
 semble 的作者把这套换了个思路：**别让 Agent 拿字符串去字面碰，而是把整个仓库先切成一块块带语义的代码片段、建好索引，让它用自然语言去问，只把最相关的那几块递回去。** 比如它直接问"认证是怎么处理的"，semble 返回的就是那几段真正实现认证的代码，连文件路径和行号一起给，而不是一堆需要 Agent 自己再去筛的命中行。
 
-![grep 加读整文件，与 semble 只返回相关片段，两种方式装进上下文的东西完全不同](source-semble-speed-vs-ndcg-2026-06-03.png)
+![grep 加读整文件，与 semble 只返回相关片段，两种方式装进上下文的东西完全不同](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/semble-code-search-agents-2026-06-03/source-semble-speed-vs-ndcg-2026-06-03.png)
 <small>来源：MinishLab/semble 仓库基准图（检索质量对总耗时）</small>
 
 这就是它和 grep 最根本的不同：grep 给你字面命中、把读懂的活全留给 Agent，semble 直接给你读懂所需的那几段。对在大仓库里干活的 Agent 来说，这笔账很划算——它要的从来不是"哪些行出现过这个词"，而是"我现在该看哪几段代码"。
@@ -50,11 +50,11 @@ semble 的作者把这套换了个思路：**别让 Agent 拿字符串去字面�
 - **基线选的是"读整文件"，而不是 grep 本身。** grep 命中行几乎不花令牌，真正花令牌的是命中之后读整文件这一步。所以这个 98% 比的是"完整读文件"对"只读相关片段"，不是"grep 命中行"对"semble 片段"。换句话说，它省的是你本来要为读懂而付的那部分令牌。
 - **这是一个保守估计，但口径是作者自定的。** 作者自己注明这是个偏保守的估法。但"省多少"终究取决于你的仓库结构、文件平均多大、Agent 平时探索得多凶——同样的 semble，在一个文件普遍很大的仓库里省得多，在一个文件本来就很碎的仓库里省得少。
 
-![semble 召回率随检索令牌预算变化：语义检索在 2k 令牌处达 94%，grep 加读文件要 100k 上下文才到 85%](chart-semble-token-recall-2026-06-03.png)
+![semble 召回率随检索令牌预算变化：语义检索在 2k 令牌处达 94%，grep 加读文件要 100k 上下文才到 85%](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/semble-code-search-agents-2026-06-03/chart-semble-token-recall-2026-06-03.png)
 
 所以更稳妥的读法是：**别盯着"省 98%"这个标题，去看它附带的那条召回曲线。** 按作者基准，semble 用大约 2,000 令牌就能拿到 94% 的召回，而 grep 加读文件要灌满整整 10 万令牌的上下文才到 85%。这条对照才是关键——它说的不是"我更省"，而是"我用更少的预算，找得更准、更全"。省令牌只是"找得更准"自然带出来的结果。
 
-![semble 仓库的令牌效率基准图：在相同召回水平下，semble 所需的检索令牌远低于 grep 加读文件](source-semble-token-efficiency-2026-06-03.png)
+![semble 仓库的令牌效率基准图：在相同召回水平下，semble 所需的检索令牌远低于 grep 加读文件](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/semble-code-search-agents-2026-06-03/source-semble-token-efficiency-2026-06-03.png)
 <small>来源：MinishLab/semble 仓库基准图（召回率对检索令牌数）</small>
 
 这套基准本身也值得交代一句口径：它在约 1,250 条查询、覆盖 63 个仓库、19 种语言的范围里跑出来。样本不算小，但仍是作者自家的一套评测集，不是某个第三方公认的代码检索榜单。所以这条曲线该当成"作者口径下的强信号"来看——趋势可信，绝对数字别当成放之四海皆准的成绩。
@@ -71,7 +71,7 @@ semble 的作者把这套换了个思路：**别让 Agent 拿字符串去字面�
 
 关键在第二步那个"静态向量"：**它在查询时没有神经网络的前向计算，所以整套流程能在 CPU 上以毫秒级跑完。** 按作者基准，索引一个普通仓库约 250 毫秒、单次查询约 1.5 毫秒，索引速度约是代码专用 Transformer 的 218 倍，而检索质量（NDCG@10 为 0.854）达到那个重得多的模型的约 99%。
 
-![一颗 CPU 就能跑：semble 在索引速度、查询延迟、检索质量三项上的对照](chart-semble-speed-quality-2026-06-03.png)
+![一颗 CPU 就能跑：semble 在索引速度、查询延迟、检索质量三项上的对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/semble-code-search-agents-2026-06-03/chart-semble-speed-quality-2026-06-03.png)
 
 一句话收住这节：**semble 的快不是靠堆硬件，而是靠把"算语义"这件最贵的事提前用静态向量做掉了，剩下查询时只做轻量的打分和重排。** 这也是它敢说"不要 GPU、不要密钥、纯 CPU"的底气所在。
 
@@ -125,7 +125,7 @@ semble 的作者把这套换了个思路：**别让 Agent 拿字符串去字面�
 
 换句话说，**semble 不是来取代 grep 的，是来接管那件 grep 一直做不好的事——按意思找代码。** 两个工具各管一段，配合着用最顺。
 
-![semble 与 grep 选用决策卡片：按意思找用 semble，按字面穷举用 grep，两件事各管一段](chart-semble-when-to-use-2026-06-03.png)
+![semble 与 grep 选用决策卡片：按意思找用 semble，按字面穷举用 grep，两件事各管一段](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/semble-code-search-agents-2026-06-03/chart-semble-when-to-use-2026-06-03.png)
 
 具体到日常，可以把这条分界线记成一句话：**只要你心里那句话是"我想找做某件事的那段代码"，就交给 semble；只要是"我要确认某个精确写法在哪几处出现"，就交给 grep。** 写进 AGENTS.md 时不妨把这条规则也一并交代给 Agent，让它自己学会在两者之间切换——先用 semble 把范围收窄到几段，再在必要时用 grep 做精确确认，这套组合往往比单用任何一个都利落。
 

@@ -28,7 +28,7 @@ description: "Anthropic 5 月 12 日把 Claude for Legal 套件以 Apache 2.0 �
 
 # 再也不用请法务了：Claude Legal 来了
 
-![Claude for Legal 主视觉：12 块律所练习领域光板在传统橡木书架前悬浮](anthropic-legal-12-plugins-oss-2026-05-16.png)
+![Claude for Legal 主视觉：12 块律所练习领域光板在传统橡木书架前悬浮](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/anthropic-legal-12-plugins-oss-2026-05-16/anthropic-legal-12-plugins-oss-2026-05-16.png)
 
 ## Claude Legal 仓里装了什么：12 个 plugin + 92 个 agent + 19 个连接器
 
@@ -36,7 +36,7 @@ Anthropic 5 月 12 日发了一篇官博，标题叫 *Claude for the Legal Indus
 
 也就是：**12 个 practice-area plugin**、**92 个具名 agent**（包括 cocounsel-legal 这个 Thomson Reuters 维护的外部 plugin）、**19 个目前默认接进 `.mcp.json` 的 MCP 连接器**，还有另外十几个 Anthropic 在 README 里列出来 "wanted connectors"——希望合作伙伴接进来的位置。
 
-![Claude for Legal GitHub README hero · 真实来源截图](anthropic-legal-github-readme.png)
+![Claude for Legal GitHub README hero · 真实来源截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/anthropic-legal-12-plugins-oss-2026-05-16/anthropic-legal-github-readme.png)
 
 这件事值得国内做 vertical SaaS 的产品和工程团队仔细看一遍——不是因为 "海外又出了一个法律 AI"，过去两年 Harvey、Legora、CoCounsel、Eve、Solve Intelligence 这批闭源 SaaS 已经把市场切得差不多。值得看的是这一次的形态：**全栈 plugin pack + Apache 2.0**。也就是说，去年还要花数百万美金从大厂手里买 vertical AI 的内法务团队和小所，今天可以把这套架子整个拉下来，按自己的诉讼实务、自己的合规要求、自己的国密根基，重新拼一份本地版本。国内的智谱、千问、DeepSeek、月之暗面这一档根基完全能接得住 verbalizer + reconstructor 这类两段式调用——这是这一篇要往下拆的关键。
 
@@ -44,7 +44,7 @@ Anthropic 5 月 12 日发了一篇官博，标题叫 *Claude for the Legal Indus
 
 先把 plugin 列单贴一遍，按 README 原顺序：
 
-![12 plugin x 92 named agent x 19 MCP 结构图](anthropic-legal-plugin-map.png)
+![12 plugin x 92 named agent x 19 MCP 结构图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/anthropic-legal-12-plugins-oss-2026-05-16/anthropic-legal-plugin-map.png)
 
 | 编号 | Plugin | 覆盖场景 | 默认 MCP 连接器 |
 | --- | --- | --- | --- |
@@ -83,7 +83,7 @@ Anthropic 5 月 12 日发了一篇官博，标题叫 *Claude for the Legal Indus
 
 92 个具名 agent 这件事的工程意义比数字大。它给国内 vertical SaaS 团队的启发是：**"具名 agent + slash command" 这种产品形态比 "All-in-one 法律助手" 更有市场认知**。读者不需要先学 "怎么 prompt"，看到 `Vendor Agreement Reviewer` 就懂这是给买供方合同评审用的。国内法务 SaaS 这一年还是大量 "通用法律问答 chatbot" 的形态——这种结构化分工的产品语义就是空白。
 
-![92 个具名 agent 按工作流类型拆解](anthropic-legal-agent-types.png)
+![92 个具名 agent 按工作流类型拆解](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/anthropic-legal-12-plugins-oss-2026-05-16/anthropic-legal-agent-types.png)
 
 ## 第三段：19 个 MCP 连接器，外加 11 个想要的连接器
 
@@ -161,7 +161,7 @@ PR #5 的合并备注里写着 "at partner request"（按合作方要求移除�
 
 把这五条 HN 留言放到桌上，再看国内的现状坐标。
 
-![国内法律 AI vertical SaaS 对照](anthropic-legal-vs-cn-vendors.png)
+![国内法律 AI vertical SaaS 对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/anthropic-legal-12-plugins-oss-2026-05-16/anthropic-legal-vs-cn-vendors.png)
 
 国内做法律 AI 的主流路径，过去两年大致是四档：
 
@@ -193,7 +193,7 @@ PR #5 的合并备注里写着 "at partner request"（按合作方要求移除�
 
 具体怎么 fork？这一节是写给真的想把这套架子拉下来用的国内同行——内法务工程组、法律 SaaS 产品团队、法学院实验诊所、律所 CTO 办公室。
 
-![国内 fork 改造四档路径](anthropic-legal-fork-path.png)
+![国内 fork 改造四档路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/anthropic-legal-12-plugins-oss-2026-05-16/anthropic-legal-fork-path.png)
 
 **一档：本地装 commercial-legal 试一手**。装 Claude Desktop（或 Claude Code）、执行 `/plugin marketplace add` 添加这个仓的本地路径或公网仓地址、`/plugin install commercial-legal@claude-for-legal`。然后跑 `/commercial-legal:cold-start-interview` 把英文版默认 playbook 跑通——这一道访谈会问你本所的供方 / 售方策略、escalation 链、合同分级。再把一份本所自有的 MSA（去掉客户名）传进去试 `/commercial-legal:review`，看 redline memo 输出长什么样、和本所现有评审范本差多少。门槛低，工程师一周末就能跑通，不动数据合规。产出：一篇技术对比博客或本所内部 demo 报告。
 
@@ -233,7 +233,7 @@ PR #5 的合并备注里写着 "at partner request"（按合作方要求移除�
 
 `commercial-legal/` 这一个目录里包含 `.claude-plugin/plugin.json`、`CLAUDE.md`（practice profile 模板）、`.mcp.json`（默认 MCP 服务器配置）、`README.md`、`skills/`（一组 .md 文件，每个对应一道 slash command）、`agents/`（scheduled agent 配置）、`hooks/`（pre/post-tool hook 脚本）。整个目录大约 30-40 个文件，全文本、无二进制。
 
-![commercial-legal 单 plugin 解剖：7 个 agent + 共用 practice profile](anthropic-legal-commercial-anatomy.png)
+![commercial-legal 单 plugin 解剖：7 个 agent + 共用 practice profile](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-16/anthropic-legal-12-plugins-oss-2026-05-16/anthropic-legal-commercial-anatomy.png)
 
 它的 7 个具名 agent 拆开：
 

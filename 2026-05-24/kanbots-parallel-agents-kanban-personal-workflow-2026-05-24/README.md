@@ -26,7 +26,7 @@ description: "Kanbots 是上周登顶 HN 243 分的开源桌面看板：每张�
 
 # Kanbots 看板 AI：Cursor / Coze 之外的第三种调度形态
 
-![Kanbots 看板 AI 把卡片调度变成桌面 app 的封面](kanbots-parallel-agents-kanban-personal-workflow-2026-05-24.png)
+![Kanbots 看板 AI 把卡片调度变成桌面 app 的封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/kanbots-parallel-agents-kanban-personal-workflow-2026-05-24/kanbots-parallel-agents-kanban-personal-workflow-2026-05-24.png)
 
 5 月 22 日深夜上 HN 的 Kanbots，36 小时内攒到 243 分、148 条评论。第二天去 GitHub 翻仓库，定格在 211 Star、MIT 协议、TypeScript 写、Electron 打包，作者 leodavinci1，本月 4 月 25 号才建仓。同一天 36 氪、量子位、机器之心、虎嗅四家 site 检索全部空仓。一个一周前还不存在的开源桌面 app，在国内中文圈几乎没人提，但已经在 HN 顶部待了一天半。
 
@@ -42,7 +42,7 @@ Kanbots 是一个 Electron + TypeScript + React 写的本地桌面 app，跑在 
 
 界面是经典的看板五列：Backlog → In Progress → Awaiting Decision → Review → Done，外加一个 Inbox 收没贴标签的卡片。每张卡片可以选三件事——派给 Claude Code 还是 Codex、跑哪个 persona、并行槽位开几个（最多 4 个）。点了之后，**看板会拉起一个新的 git worktree、建一个 `kanbots/issue-N` 分支、把选好的 agent CLI 在这个 worktree 里跑起来**。屏幕上同一列里同时摆着的四张卡片，对应的就是四个 agent 在四个隔离的 worktree 里干四件互不冲突的事。
 
-![Kanbots 看板主界面截图，五列卡片在跑](kanbots-board-overview.png)
+![Kanbots 看板主界面截图，五列卡片在跑](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/kanbots-parallel-agents-kanban-personal-workflow-2026-05-24/kanbots-board-overview.png)
 
 最值得拎出来讲的是「autopilot」——看板自己当 PM，挑 persona、定并行度、定单卡预算、自动拆子任务往下派。autopilot 有两个口味：**feature-dev** 走多 persona 轮转（产品 / 工程师 / 设计 / QA 各跑一遍），**QA** 跑类型检查、单元测试、lint、e2e，失败了自己改自己重跑。autopilot 跑的时候，看板会把当前花了多少钱、单卡当前耗时、整体进度全部贴到卡片上方。
 
@@ -96,7 +96,7 @@ Kanbots 是一个 Electron + TypeScript + React 写的本地桌面 app，跑在 
 
 把 Kanbots 和国内开发者更熟悉的四家工具——Cline Kanban、Cursor 多 tab、扣子 Coze 2.5、Trae Agent——按九个维度拉齐看一遍。
 
-![五家多任务调度工具横评矩阵](kanbots-5way-orchestrator-matrix.png)
+![五家多任务调度工具横评矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/kanbots-parallel-agents-kanban-personal-workflow-2026-05-24/kanbots-5way-orchestrator-matrix.png)
 
 数字口径先讲清楚。**Kanbots** 取自 5 月 23 日仓库公开页面：211 Star、MIT、TypeScript、本月新建仓。**Cline Kanban** 同一天定格在 915 Star、研究预览阶段、未公开许可证、TypeScript 96.7%、64 个 release。**Cursor** 取自 Anysphere 官网公开资料，闭源、月费 $20、本月版本 1.5。**扣子 Coze 2.5** 取自 53AI / 苏米客 4 月 7 日发布会公开报道：字节出品，多 agent 协同 + 工作流编排 + 200+ 插件市场，云端 SaaS。**Trae Agent** 取自字节火山引擎开发者社区 + Trae 官网：核心 agent 走 MIT 开源，IDE 部分闭源，字节内部 92% 工程师在用。
 
@@ -112,7 +112,7 @@ Kanbots 是一个 Electron + TypeScript + React 写的本地桌面 app，跑在 
 
 把 Kanbots 拆开看「一张卡片从立到落完整跑一遍」的流程，比看任何宣传演示都更能体会看板形态的设计意图。
 
-![Kanbots 单卡 agent 六步生命周期](kanbots-card-lifecycle.png)
+![Kanbots 单卡 agent 六步生命周期](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/kanbots-parallel-agents-kanban-personal-workflow-2026-05-24/kanbots-card-lifecycle.png)
 
 第一步**立卡**。用户在 Inbox 或 Backlog 里写一句目标，比如「把 `src/payment/` 里的 v1 callback 路径迁到 v2」。可以附 spec 文档、UI 截图、参考链接，可以打 persona 标签（PM / Eng / Designer / QA）告诉调度器这张卡更适合哪一类 agent 跑。这个动作就像写一句 issue title。
 
@@ -126,7 +126,7 @@ Kanbots 是一个 Electron + TypeScript + React 写的本地桌面 app，跑在 
 
 第六步**落库**。复核没问题，点 promote，看板自动把 worktree 的所有 commit 整理成一个 draft PR，推到主仓库 GitHub。看完不满意，点 discard，整个 worktree 连同 `kanbots/issue-N` 分支一起清掉，主仓库一根毛都不掉。**pre-push hook 在 worktree 里挡死了 agent 自己把代码推出去的可能**——人不点 promote，commit 出不了本机。
 
-![Run detail 决策弹窗截图：agent 撞到岔路停下来等人](kanbots-run-detail-awaiting-decision.png)
+![Run detail 决策弹窗截图：agent 撞到岔路停下来等人](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/kanbots-parallel-agents-kanban-personal-workflow-2026-05-24/kanbots-run-detail-awaiting-decision.png)
 
 这六步循环里值得借鉴的工程细节有三处：
 

@@ -10,7 +10,7 @@ category: "语音合成 / 声音克隆 / 开源模型"
 ---
 # VoxCPM2：不切音频 token 的开源语音模型
 
-![VoxCPM2：面壁智能开源的语音生成模型，登上 GitHub Trending](voxcpm-tokenizer-free-tts-clone-2026-05-31.png)
+![VoxCPM2：面壁智能开源的语音生成模型，登上 GitHub Trending](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/voxcpm-tokenizer-free-tts-clone-2026-05-31/voxcpm-tokenizer-free-tts-clone-2026-05-31.png)
 
 一段几秒钟的录音，喂给模型，它就能用你的声音念出任何一段文字——不光是音色像，连你的口音、语速、那点情绪起伏都跟着学过来。这件事现在不需要云端 API，也不需要一块专业显卡，一个 2B 大小的开源模型就能做到，权重和代码都是 Apache 2.0，商用免费。
 
@@ -30,7 +30,7 @@ category: "语音合成 / 声音克隆 / 开源模型"
 - **仓库** 2025 年 9 月建立，6 月 1 日凌晨核对约 23,700 stars、3,000 forks，5 月底登上 GitHub Trending
 - **配套论文**已上 arXiv（编号 2509.24650），把整套技术路线写得很完整
 
-![OpenBMB/VoxCPM 仓库页：Tokenizer-Free TTS，登上 GitHub Trending](source-voxcpm-github-og-2026-05-31.png)
+![OpenBMB/VoxCPM 仓库页：Tokenizer-Free TTS，登上 GitHub Trending](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/voxcpm-tokenizer-free-tts-clone-2026-05-31/source-voxcpm-github-og-2026-05-31.png)
 <small>来源：OpenBMB/VoxCPM 仓库社交卡片</small>
 
 它能干的事，官方归成几类，值得逐个点一下：
@@ -42,7 +42,7 @@ category: "语音合成 / 声音克隆 / 开源模型"
 - **高保真克隆**：若同时给参考音频和对应文字，模型能更自然地承接参考语音，在音色、节奏、情绪上保留更多细节
 - **理解语境**：能根据文字内容自动推断合适的韵律，不用你手动标注语气
 
-![VoxCPM2 能力全景：2B 参数、30 种语言、9 种方言、48kHz，克隆与声音设计收在一起](voxcpm-capability-overview-2026-05-31.png)
+![VoxCPM2 能力全景：2B 参数、30 种语言、9 种方言、48kHz，克隆与声音设计收在一起](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/voxcpm-tokenizer-free-tts-clone-2026-05-31/voxcpm-capability-overview-2026-05-31.png)
 
 从 0.5B 到 2B，从中英双语到 30 种语言，从 16kHz 到 48kHz——这一代基本把开源语音模型常见的能力凑齐了，而且收在一个模型里，不用为不同功能各配一个。
 
@@ -55,7 +55,7 @@ category: "语音合成 / 声音克隆 / 开源模型"
 - 走**离散 token**这条路（像早期 VALL-E、以及 CosyVoice 用的监督式语义 token），好处是自回归生成稳定、不容易跑飞，但语音被量化成有限的 token 之后，那些精细的声学细节就被不可逆地丢掉了
 - 走**连续信号**这条路，能保住完整的声音保真度，但一长就容易"误差累积"，越念越飘，严重时整句话糊成一团听不清
 
-![两条 TTS 技术路线对比：VoxCPM2 的连续建模 vs 传统离散 token](voxcpm-tts-route-compare-2026-05-31.png)
+![两条 TTS 技术路线对比：VoxCPM2 的连续建模 vs 传统离散 token](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/voxcpm-tokenizer-free-tts-clone-2026-05-31/voxcpm-tts-route-compare-2026-05-31.png)
 
 VoxCPM2 的解法很巧：它不是在"稳定"和"保真"里二选一，而是用一个叫**有限标量量化（FSQ，Finite Scalar Quantization）**的瓶颈结构，把信息拆成两部分管。一部分像"骨架"，负责语义和韵律的稳定规划；另一部分是"残差"，负责补回精细的声学细节。整套模型端到端一起训练，中间不再依赖一个预先训练好的音频分词器。
 
@@ -119,7 +119,7 @@ VoxCPM2 的答案是**零样本克隆**——官方口径是"只需一段简短�
 - 配上专门的 **NanoVLLM-VoxCPM** 推理后端，RTF 能压到约 0.13，适合高并发服务
 - 显存需求约 8GB——这意味着一块 4090、甚至显存够的中端卡就能带得动
 
-![VoxCPM2 端侧部署矩阵：GGUF CPU、苹果芯片、MLX、vLLM、ComfyUI 六条官方路径](voxcpm-deploy-matrix-2026-05-31.png)
+![VoxCPM2 端侧部署矩阵：GGUF CPU、苹果芯片、MLX、vLLM、ComfyUI 六条官方路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-31/voxcpm-tokenizer-free-tts-clone-2026-05-31/voxcpm-deploy-matrix-2026-05-31.png)
 
 更值得说的是它的部署矩阵，已经不是"只能在 N 卡上跑"的状态：
 

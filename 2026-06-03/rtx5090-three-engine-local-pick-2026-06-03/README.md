@@ -9,7 +9,7 @@ description: "一张 RTX 5090，同一个模型，换 vLLM、Ollama、llama.cpp 
 ---
 # 5090 跑大模型：换个引擎，并发吞吐差几倍
 
-![RTX 5090 显卡跑本地大模型，三个推理引擎吞吐速度不同的示意](rtx5090-three-engine-local-pick-2026-06-03.png)
+![RTX 5090 显卡跑本地大模型，三个推理引擎吞吐速度不同的示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/rtx5090-three-engine-local-pick-2026-06-03/rtx5090-three-engine-local-pick-2026-06-03.png)
 
 一张 RTX 5090，跑同一个 Llama-3-8B，把 vLLM、Ollama、llama.cpp 三个推理引擎分别测一遍，单人单流的速度差距不到 15%——最慢的每秒 42 个词元，最快的 48.2 个，肉眼几乎分不出来。
 
@@ -19,7 +19,7 @@ description: "一张 RTX 5090，同一个模型，换 vLLM、Ollama、llama.cpp 
 
 先看第三方在 RTX 5090 上的实测，把测试条件和命令都摆了出来。
 
-![markaicode 在 RTX 5090 上对 Ollama、vLLM、llama.cpp 的实测页面，列出测试环境、方法和运行参数](source-rtx5090-engine-bench-2026-06-03.png)
+![markaicode 在 RTX 5090 上对 Ollama、vLLM、llama.cpp 的实测页面，列出测试环境、方法和运行参数](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/rtx5090-three-engine-local-pick-2026-06-03/source-rtx5090-engine-bench-2026-06-03.png)
 
 *来源：markaicode《RTX 5090 Inference Benchmark: Ollama vs vLLM vs llama.cpp Tokens per Second》第三方实测，测试条件为上下文 512、输出 128 词元、批大小 1、温度 0、取三次运行中位数*
 
@@ -31,7 +31,7 @@ Ollama 在 5 月 13 日发布了 0.30 正式版，几周后又推出 0.30.1 预�
 
 这类更新的方向很一致——把"在本地跑一个大模型"这件事的门槛一点点削平。门槛低了，越来越多人开始在自己那张显卡上认真跑模型，而不只是浅尝。问题也就跟着浮出来：同样一张卡，到底该用哪个引擎？
 
-![Ollama 在 GitHub 上的版本发布页，显示 0.30.1 预览版和 0.30.0 正式版的更新说明](source-ollama-030-release-2026-06-03.png)
+![Ollama 在 GitHub 上的版本发布页，显示 0.30.1 预览版和 0.30.0 正式版的更新说明](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/rtx5090-three-engine-local-pick-2026-06-03/source-ollama-030-release-2026-06-03.png)
 
 *来源：Ollama 官方版本发布说明，0.30.0 正式版说明其"在苹果芯片上用 llama.cpp 补强 MLX 引擎，并在 NVIDIA 硬件上带来更快性能"*
 
@@ -43,7 +43,7 @@ Ollama 在 5 月 13 日发布了 0.30 正式版，几周后又推出 0.30.1 预�
 
 道理不难理解。单人单流的时候，显卡一次只伺候一个请求，瓶颈在于一张卡的算力和它读权重的速度，三个引擎的底层都得老老实实把同一批计算做完，谁也快不到哪去。换句话说，如果你就是自己一个人对着一个对话框聊，那么这三个引擎你随便挑，体感几乎一样。
 
-![三引擎单人单流速度与并发吞吐对比柱状图，左侧三家差距不到 15%，右侧 vLLM 约为 Ollama 的 2.3 倍](chart-engine-single-vs-concurrent-2026-06-03.png)
+![三引擎单人单流速度与并发吞吐对比柱状图，左侧三家差距不到 15%，右侧 vLLM 约为 Ollama 的 2.3 倍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/rtx5090-three-engine-local-pick-2026-06-03/chart-engine-single-vs-concurrent-2026-06-03.png)
 
 真正的分水岭，在多人同时用的时候。
 
@@ -81,7 +81,7 @@ Ollama 在 5 月 13 日发布了 0.30 正式版，几周后又推出 0.30.1 预�
 - 另一位放弃了 Mac Studio，选了 AMD Strix Halo 的 Framework 台式机，靠 llama.cpp 加 Vulkan 后端干专业活；
 - 还有人直接上四张 V100（32 GB 显存）的二手服务器，整套下来大约一万到一万两千美元。
 
-![Hacker News 上"2026 年谁在跑本地 AI 工作站"的真实讨论，用户晒出 3090、Strix Halo、四张 V100 等配置](source-hn-local-workstation-2026-06-03.png)
+![Hacker News 上"2026 年谁在跑本地 AI 工作站"的真实讨论，用户晒出 3090、Strix Halo、四张 V100 等配置](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/rtx5090-three-engine-local-pick-2026-06-03/source-hn-local-workstation-2026-06-03.png)
 
 *来源：Hacker News《Ask HN: Who's running local AI workstations in 2026?》真实讨论串*
 

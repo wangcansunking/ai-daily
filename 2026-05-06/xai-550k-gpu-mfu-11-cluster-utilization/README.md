@@ -12,7 +12,7 @@ description: "The Information 5 月初拿到 xAI 内部备忘录，55 万张英�
 ---
 # xAI 55 万 GPU 利用率 11% 算力大坑首拆
 
-![xAI 55 万 GPU 利用率 11% 算力大坑首拆](xai-550k-gpu-mfu-11-cluster-utilization.png)
+![xAI 55 万 GPU 利用率 11% 算力大坑首拆](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/xai-550k-gpu-mfu-11-cluster-utilization/xai-550k-gpu-mfu-11-cluster-utilization.png)
 
 ## 55 万张卡，只有 6 万张在干活
 
@@ -26,13 +26,13 @@ xAI 在田纳西州孟菲斯（Memphis）的 Colossus 数据中心，目前部�
 
 横向对比一下同口径的公开数字，差距更直观：
 
-![万卡级集群 MFU 横向对比](xai-gpu-mfu-comparison-table.png)
+![万卡级集群 MFU 横向对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/xai-550k-gpu-mfu-11-cluster-utilization/xai-gpu-mfu-comparison-table.png)
 
 Meta 工程团队在 Llama 3 训练报告里给出的数字是 38-43%（BF16 精度，单卡 380-430 TFLOPS）；谷歌 PaLM 论文里写得很清楚——46.2% MFU、57.8% 硬件 FLOPs 利用率；字节 MegaScale 系统在 1.2288 万张 H100 上把 MFU 推到 55.2%，比 NVIDIA Megatron-LM 的同规模基线高出 1.34 倍；华为昇腾 910C 在 CloudMatrix384 超节点架构下，公开宣称万卡线性度大于 95%、MFU 达到 55%（实验室口径），常规部署口径是 45%。
 
 这一组数字摆在一起，11% 这个数字就显得格外刺眼。36 氪 5 月 5 日的头条把这件事直接定性为「大型挂机现场」，机器之心同日跟进做了一篇技术拆解，量子位补了一篇国产对比稿，知乎上一夜冒出十几个高赞回答，调子从"硅谷大厂浪费算力"到"这是软件栈的全行业难题"都有。
 
-![xAI Colossus 数据中心机房实拍](xai-colossus-compute-hall.jpg)
+![xAI Colossus 数据中心机房实拍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/xai-550k-gpu-mfu-11-cluster-utilization/xai-colossus-compute-hall.jpg)
 
 把镜头拉远一点看，Colossus 这个园区本身就是一个「为什么 MFU 这么难做高」的物理证据。Supermicro 给 xAI 部署的基础积木是液冷机柜——每柜 8 台 HGX 服务器、每台 8 张 GPU、共 64 张 GPU 一柜，1U 机架歧管负责把冷却液送进每台 4U Universal GPU System 再把热液带出。整个 100,000 张 GPU 的初始集群用了 1500 个这样的机柜，按 8 柜一组（512 张 GPU 一个 mini cluster）外加上层网络组合而成。再叠到 55 万卡尺度——这意味着光是机柜数量已经接近 9000 个、跨三栋厂房分布、加上独立的发电与液冷系统。这种规模下，「让所有 GPU 在同一个时钟周期里都干同一件事」本身就是一道极限工程题。Colossus 从一片苹果工厂废弃壳子改造起来只用了 122 天、把节点翻倍到 200,000 张 H100 又用了 92 天——硬件铺设速度是行业纪录，也正因为太快，软件栈跟不上是必然结果。
 
@@ -70,7 +70,7 @@ MFU 之所以成为行业标尺，原因有三条：
 
 The Information 那份备忘录里，xAI 把低 MFU 的原因拆成了四个层级。这四条不光是 xAI 一家的问题，几乎是所有万卡级集群都要直面的工程难题，只是 xAI 在 55 万卡的尺度上同时被四把刀砍。
 
-![xAI 11% MFU 四大根因](xai-gpu-mfu-rootcause.png)
+![xAI 11% MFU 四大根因](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/xai-550k-gpu-mfu-11-cluster-utilization/xai-gpu-mfu-rootcause.png)
 
 第一刀，硬件协调延迟。
 
@@ -114,7 +114,7 @@ The Information 那篇报道里还披露了一个细节，国内媒体大多没�
 
 把目前公开可查的国产数字摆出来：
 
-![国内国产万卡集群 MFU 现状速览](xai-gpu-mfu-domestic.png)
+![国内国产万卡集群 MFU 现状速览](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/xai-550k-gpu-mfu-11-cluster-utilization/xai-gpu-mfu-domestic.png)
 
 字节跳动 MegaScale 是目前公开数字最硬的国内项目。2024 年发的论文里，团队把 1.2288 万张 H100 训练 175B 模型时的 MFU 推到 55.2%——比 NVIDIA 自家 Megatron-LM 的同规模基线高 1.34 倍。这个数字今天看依然是国内公开口径里最高的，火山引擎对外的大模型训练服务底层就是这套系统，B 端日处理 token 量从 2024 年 5 月的 1200 亿涨到现在每天 63 万亿，500 多倍的增长背后，吞吐能力的「真正利用率」是命门。
 

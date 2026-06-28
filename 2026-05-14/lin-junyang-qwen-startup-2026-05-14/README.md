@@ -23,13 +23,13 @@ description: "5 月 13 日，量子位 / 36 氪 / 投资界 / 凤凰科技八家
 
 # Qwen 一把手 20 亿美元独立创业，国产开源迈入去中心化时代
 
-![林俊旸创业 20 亿美元估值 国产开源大模型独立 Lab 时代 dramatic 编辑摄影封面](lin-junyang-qwen-startup-2026-05-14.png)
+![林俊旸创业 20 亿美元估值 国产开源大模型独立 Lab 时代 dramatic 编辑摄影封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/lin-junyang-qwen-startup-2026-05-14/lin-junyang-qwen-startup-2026-05-14.png)
 
 5 月 13 日早上九点开始，量子位、36 氪、投资界、凤凰科技、新浪财经、网易、经济观察网、品玩八家国内头部科技媒体陆续推出同一条头条消息：**前阿里千问 Qwen 技术负责人林俊旸正在为新创立的 AI Lab 洽谈首轮融资，估值 20 亿美元（约 135-136 亿元人民币），高榕资本与红杉中国领投。** 这是国产开源大模型一线骨干个人估值层面，第一次被独立摆到 20 亿美元这一档。
 
 > **本文要回答的事**：把林俊旸这件事放在国产开源大模型一线骨干独立化的更长曲线里看。20 亿美元这把价签为什么会落到他身上、他的新 Lab 大概率走什么技术路线、和海外 Ilya SSI / Mira Murati Thinking Machines / Noam Shazeer 等同档 founder 比定位差在哪、对国内同行意味着什么。同阵营国内开发者读完，应该能拿到一份够硬的判断坐标。
 
-![千问 Qwen 三年开源时间线 林俊旸主导下的国产基座 2023-04 至 2026-05](lin-junyang-qwen-timeline.png)
+![千问 Qwen 三年开源时间线 林俊旸主导下的国产基座 2023-04 至 2026-05](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/lin-junyang-qwen-startup-2026-05-14/lin-junyang-qwen-timeline.png)
 
 ## 一、20 亿美元为什么会落到一个 32 岁的工程师身上
 
@@ -43,7 +43,7 @@ description: "5 月 13 日，量子位 / 36 氪 / 投资界 / 凤凰科技八家
 
 20 亿美元这个数字本身需要一个对位坐标，否则容易被误读。
 
-![20 亿美元 135 亿人民币 林俊旸种子轮在国产六小虎与海外明星 Lab 之间的卡位横向条形图](lin-junyang-valuation-compare.png)
+![20 亿美元 135 亿人民币 林俊旸种子轮在国产六小虎与海外明星 Lab 之间的卡位横向条形图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/lin-junyang-qwen-startup-2026-05-14/lin-junyang-valuation-compare.png)
 
 | 公司 | 估值 | 状态 | 国别 |
 |---|---:|---|---|
@@ -69,7 +69,7 @@ description: "5 月 13 日，量子位 / 36 氪 / 投资界 / 凤凰科技八家
 
 要理解 20 亿美元为什么会落到林俊旸身上，得回到一个问题：在他主导千问的三年里，Qwen 到底长成了什么样。
 
-![千问开源生态全球网络效应 下载量衍生千问 App 月活斯坦福 AI Index 入选数](lin-junyang-qwen-global-impact.png)
+![千问开源生态全球网络效应 下载量衍生千问 App 月活斯坦福 AI Index 入选数](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/lin-junyang-qwen-startup-2026-05-14/lin-junyang-qwen-global-impact.png)
 
 三组硬数字摆这里：
 
@@ -87,7 +87,7 @@ description: "5 月 13 日，量子位 / 36 氪 / 投资界 / 凤凰科技八家
 
 离任后第一篇技术长文，往往是 founder 在融资期最重要的对外发言——它替投资人回答"这个人下一步想做什么"。
 
-![Reasoning Thinking 到 Agentic Thinking 林俊旸技术长文双栏对比结构图](lin-junyang-agentic-thinking.png)
+![Reasoning Thinking 到 Agentic Thinking 林俊旸技术长文双栏对比结构图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/lin-junyang-qwen-startup-2026-05-14/lin-junyang-agentic-thinking.png)
 
 林俊旸这篇长文的核心判断可以摘成六层。
 
@@ -110,7 +110,7 @@ description: "5 月 13 日，量子位 / 36 氪 / 投资界 / 凤凰科技八家
 
 把林俊旸放回更大的全球同辈池里看，会比纯国产比较更清楚。同时代基础模型一线骨干自起 Lab 的故事，过去 18 个月密集发生在两个国家。
 
-![林俊旸 vs Ilya Sutskever vs Mira Murati vs Noam Shazeer 同档 founder 创业路径八维度对比表](lin-junyang-founder-compare.png)
+![林俊旸 vs Ilya Sutskever vs Mira Murati vs Noam Shazeer 同档 founder 创业路径八维度对比表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/lin-junyang-qwen-startup-2026-05-14/lin-junyang-founder-compare.png)
 
 四条路径横向看，差异化非常清楚。
 
@@ -130,7 +130,7 @@ description: "5 月 13 日，量子位 / 36 氪 / 投资界 / 凤凰科技八家
 
 把视角再拉远一格：林俊旸这件事不是孤立事件，而是国产开源大模型一线骨干"独立化"曲线上最新的一个点。
 
-![国产开源大模型一线骨干独立化潮 阿里千问字节百度 OpenAI 海外对位人才网络表格](lin-junyang-independent-wave.png)
+![国产开源大模型一线骨干独立化潮 阿里千问字节百度 OpenAI 海外对位人才网络表格](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/lin-junyang-qwen-startup-2026-05-14/lin-junyang-independent-wave.png)
 
 过去 18 个月里发生的事，连起来看是这样的：
 
@@ -166,7 +166,7 @@ description: "5 月 13 日，量子位 / 36 氪 / 投资界 / 凤凰科技八家
 
 最后把当前已经公开的事实重新整理一次，作为这件事的快照：
 
-![林俊旸履历卡 93 年生 北大语言学硕士 阿里最年轻 P10 千问技术负责人简介](lin-junyang-profile.png)
+![林俊旸履历卡 93 年生 北大语言学硕士 阿里最年轻 P10 千问技术负责人简介](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-14/lin-junyang-qwen-startup-2026-05-14/lin-junyang-profile.png)
 
 **人物基本面**：林俊旸，1993 年生，北京大学外国语学院语言学研究所硕士毕业，2019 年加入阿里达摩院，2023 年 4 月出任千问技术负责人，2025 年 5 月晋升 P10——阿里史上最年轻的 P10 工程师。2026 年 3 月 3 日离任。
 

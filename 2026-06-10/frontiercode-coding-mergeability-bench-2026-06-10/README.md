@@ -17,7 +17,7 @@ tags: [AI编码, 编程基准, Cognition, SWE-bench, Claude, Kimi, code-review]
 
 2026 年 6 月，Devin 的母公司 Cognition 发布了一个叫 **FrontierCode** 的编码基准，第一次把"可合并性（mergeability）"这件一直说不清的事，量化成了分数。结果相当扎眼：当今最强的模型，在最难一档上只拿到 **13.4 分（满分 100）**。其余顶级模型连两位数都没摸到。
 
-![一名维护者在审查一段 AI 生成的补丁，屏幕上绿色的测试全过，但补丁本身被红笔圈出多处问题](frontiercode-chart1-mergeability-concept.png)
+![一名维护者在审查一段 AI 生成的补丁，屏幕上绿色的测试全过，但补丁本身被红笔圈出多处问题](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/frontiercode-coding-mergeability-bench-2026-06-10/frontiercode-chart1-mergeability-concept.png)
 
 这篇文章想讲清楚三件事：FrontierCode 到底测了什么、为什么它和你熟悉的 SWE-bench 不一样、以及对每天用 AI 写代码的国内开发者——你和我——这个 13.4 分意味着什么。
 
@@ -44,7 +44,7 @@ FrontierCode 把题目分成三档，由易到难层层嵌套：**Extended 全�
 
 第三，**第二名到第四名集体卡在个位数**：GPT-5.5 拿 6.3、Gemini 3.1 Pro 拿 4.7、开源权重最强的 Kimi K2.6 拿 3.8。在 Diamond 这一档，没有一个模型"及格"，差距更像是"都没怎么及格，只是有人错得少一点"。
 
-![FrontierCode 三档（Extended/Main/Diamond）四个模型得分对比柱状图，Diamond 档全员个位数到十几分](frontiercode-chart2-three-tier-scores.png)
+![FrontierCode 三档（Extended/Main/Diamond）四个模型得分对比柱状图，Diamond 档全员个位数到十几分](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/frontiercode-coding-mergeability-bench-2026-06-10/frontiercode-chart2-three-tier-scores.png)
 
 为什么分数这么低？因为它测的根本不是"能不能跑通"。
 
@@ -61,7 +61,7 @@ FrontierCode 的核心问题只有一句话：**这段补丁，一个真实的�
 - **改动范围（scope）**——只动了该动的地方，还是顺手重构了一大片没人要它碰的代码？维护者最警惕的就是越界改动。
 - **代码质量（code quality）**——风格合不合项目惯例、命名清不清楚、半年后接手的人看不看得懂。
 
-![FrontierCode 六个评判维度雷达图：行为正确、回归安全、整洁度、测试正确、改动范围、代码质量](frontiercode-chart3-six-dimensions.png)
+![FrontierCode 六个评判维度雷达图：行为正确、回归安全、整洁度、测试正确、改动范围、代码质量](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/frontiercode-coding-mergeability-bench-2026-06-10/frontiercode-chart3-six-dimensions.png)
 
 这六项连起来，正是一个老练的同事在 code review 里逐条盯你的那几件事。单测通过只对应其中第一项，剩下五项——回归、整洁、测试质量、改动克制、可维护——全是 AI 现在最容易翻车、而 benchmark 又一直没认真测的地方。
 
@@ -83,7 +83,7 @@ FrontierCode 的价值，就是把这五项一起搬上了秤。
 
 这套做法直接决定了 FrontierCode 的难度天花板和可信度：题目本身就是从"会被真人 reviewer 反复打回"的真实场景里长出来的，模型再想靠"猜测试用例"取巧就行不通了。
 
-![FrontierCode 题目构建流程示意：20+ 维护者从 36 个真实仓库出题，每题超 40 小时打磨](frontiercode-chart4-construction-pipeline.png)
+![FrontierCode 题目构建流程示意：20+ 维护者从 36 个真实仓库出题，每题超 40 小时打磨](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/frontiercode-coding-mergeability-bench-2026-06-10/frontiercode-chart4-construction-pipeline.png)
 
 ## 和 SWE-bench 比："过测试"不等于维护者会接受
 
@@ -115,7 +115,7 @@ FrontierCode 把"改动范围克制"单列成一个维度来扣分，等于是�
 
 **另一面是要清醒的：** Diamond 这一档全员个位数到十几分，谁也没真正过关。所以正确的读法不是"国产落后多少",而是"**这是一道全人类的模型都没解出来的难题，国内团队站在了开源那一侧的最前排**"。可合并性这个山头，闭源开源一起在爬，没有谁已经登顶。
 
-![Kimi K2.6 与多家前沿模型在编码任务上的能力对比图，开放权重模型领跑开源阵营](frontiercode-source-kimi-k26-comparison.png)
+![Kimi K2.6 与多家前沿模型在编码任务上的能力对比图，开放权重模型领跑开源阵营](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/frontiercode-coding-mergeability-bench-2026-06-10/frontiercode-source-kimi-k26-comparison.png)
 *图：第三方机构 Artificial Analysis 对 Kimi K2.6 等前沿模型的编码能力对比（2026 年发布版本口径）*
 
 对天天用通义灵码、用 DeepSeek、用 Kimi 的国内开发者，这一栏给的信号很实在：你手里这些工具，在"功能写对"上已经和海外第一梯队同台；真正的共同短板是"写得够不够干净、能不能直接合并"——而这个短板，全世界一起补。
@@ -140,7 +140,7 @@ FrontierCode 等于提前把这个转变的难点标了出来：当 AI 能批量
 
 **第三，看 AI 生成的补丁，眼睛要从"测试过了吗"挪到"改动克制吗"。** 真实事故里，AI 补丁翻车最多的不是功能不对，而是顺手越界：动了不该动的代码、删了有意保留的判断、塞进死分支。下次合并 AI 改的代码，除了看绿灯，多花十秒看一眼 diff 的范围——它是不是只动了该动的地方。这一眼，往往就是事故和平安的分界。
 
-![一名开发者在审查 AI 生成补丁时，重点不再是看测试是否通过，而是看改动范围是否克制](frontiercode-chart5-review-shift.png)
+![一名开发者在审查 AI 生成补丁时，重点不再是看测试是否通过，而是看改动范围是否克制](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/frontiercode-coding-mergeability-bench-2026-06-10/frontiercode-chart5-review-shift.png)
 
 FrontierCode 真正的好消息，藏在那个看起来很丧的 13.4 分里：它不是在说"AI 不行"，而是在说"AI 已经强到，我们需要一把更严的尺子来衡量它了"。当一个基准的最难档能把所有顶级模型同时摁到不及格，说明这个领域终于开始诚实地面对真实工程的复杂度——而不再满足于"测试亮绿"的安慰剂。
 

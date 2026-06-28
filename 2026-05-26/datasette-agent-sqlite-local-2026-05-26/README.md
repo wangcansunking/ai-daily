@@ -17,7 +17,7 @@ authors:
 
 # Datasette Agent 把对话式 SQL 接进本地 SQLite：和 Claude Code 一样问数据，但全程不出你的硬盘
 
-![Datasette Agent 封面](datasette-agent-sqlite-local-2026-05-26.png)
+![Datasette Agent 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/datasette-agent-sqlite-local-2026-05-26/datasette-agent-sqlite-local-2026-05-26.png)
 
 ## 30 秒速览
 
@@ -34,7 +34,7 @@ authors:
 
 下面这一篇把 datasette-agent 当前 0.1a4 的能力、配套 datasette-agent-charts 自动画图、`makeJumpSections` 插件钩子的意义、和三个主流云端竞品的真实差异、国内同行三条接入方案，拆开讲清楚。
 
-![Simon Willison 的 datasette-agent 演示截图](datasette-agent-hero-demo.jpg)
+![Simon Willison 的 datasette-agent 演示截图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/datasette-agent-sqlite-local-2026-05-26/datasette-agent-hero-demo.jpg)
 
 ## 一、Datasette 9 年项目史 + Simon Willison 三年 LLM 库准备
 
@@ -53,7 +53,7 @@ LLM 这条线 Simon 是 2022 年 ChatGPT 出来之后开始铺的：
 
 这条铺垫线读出来的第一个观点是——**datasette-agent 不是把现成的 LLM 接口缝进来这么简单**，是 Simon 把过去三年自己用 LLM 写代码、查日志、查邮件、查个人记账数据的所有实战经验，沉到一个共用的 `datasette-llm` 底层，再上面长出来的产品形态。第二个观点是：**「LLM provider 切换」从一开始就是设计契约**——配置文件里改一行 `default_model: gpt-5.4-mini` 就能换到 Anthropic Claude 4.7 或者 LM Studio 里的本地模型，**没有任何一家 vendor 锁定**。
 
-![Datasette 主项目 GitHub 卡片](datasette-main-github-card.png)
+![Datasette 主项目 GitHub 卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/datasette-agent-sqlite-local-2026-05-26/datasette-main-github-card.png)
 
 ## 二、datasette-agent 0.1a4 当前到底能干什么
 
@@ -119,13 +119,13 @@ datasette agent chat mydata.db -m gpt-5.4-mini -p "List all tables"
 
 `-m` 选模型，`-p` 走单次 prompt 退出非交互。配合 shell pipeline 直接把 agent 输出写到文件，本地数据脚本写得起来。
 
-![datasette-agent 仓库 OG 卡片](datasette-agent-github-card.png)
+![datasette-agent 仓库 OG 卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/datasette-agent-sqlite-local-2026-05-26/datasette-agent-github-card.png)
 
 ## 三、5 天迭代时间线：从 0.1a0 到 0.1a4
 
 13 天 5 个 alpha 这个节奏值得单独看一眼。
 
-![datasette-agent 13 天 5 个 alpha 时间线](datasette-agent-5days-timeline.png)
+![datasette-agent 13 天 5 个 alpha 时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/datasette-agent-sqlite-local-2026-05-26/datasette-agent-5days-timeline.png)
 
 | 版本 | 时间 | 主要变化（综合 changelog + repo commits） |
 |---|---|---|
@@ -172,7 +172,7 @@ datasette agent chat metrics.db -m gpt-5.4-mini \
 
 权限拆三档这件事在这个场景里特别有用：分析师组开 `chat + explore`，运营组只开 `chat`，CTO 开三档全部。
 
-![datasette-agent vs 三家主流云端竞品对比](datasette-agent-vs-3-products.png)
+![datasette-agent vs 三家主流云端竞品对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/datasette-agent-sqlite-local-2026-05-26/datasette-agent-vs-3-products.png)
 
 ## 五、和 Claude Code / DeepSeek Chat / 千问 Code Interpreter 真实对比
 
@@ -213,7 +213,7 @@ datasette agent chat metrics.db -m gpt-5.4-mini \
 
 底层用的是 Observable Plot（Mike Bostock 团队继 D3 之后维护的高层图表库），渲染在浏览器里，**SVG 图直接嵌进聊天对话**。试一下「Draw a bar chart of downloads over time」这种自然语言提问，agent 自己写 SQL group by 日期，把结果交给 `render_chart`，浏览器立刻出柱状图。
 
-![datasette-agent-charts 自动画图演示](datasette-agent-charts-plugin-demo.png)
+![datasette-agent-charts 自动画图演示](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/datasette-agent-sqlite-local-2026-05-26/datasette-agent-charts-plugin-demo.png)
 
 这个插件最有工程意义的设计点是 `_html` 返回约定——0.1a4 里加的：
 
@@ -226,7 +226,7 @@ return json.dumps({
 
 带下划线前缀的 key（如 `_html`）**只渲染给用户、不送给 LLM**。意思是图表的 HTML 不会浪费 LLM 的上下文 token，但用户在聊天界面里看到的是完整 SVG 图。**这种「用户看到 / 模型看到」分离的设计**对长对话特别重要——agent 跑十轮查询，上下文里只有十段简洁文字 summary，token 成本可控，但用户屏幕上是十张高清 SVG 图。
 
-![datasette-agent-charts 仓库 OG 卡片](datasette-agent-charts-github-card.png)
+![datasette-agent-charts 仓库 OG 卡片](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/datasette-agent-sqlite-local-2026-05-26/datasette-agent-charts-github-card.png)
 
 ## 七、Datasette 1.0a30 的 makeJumpSections 给 agent 留的位置
 
@@ -234,7 +234,7 @@ return json.dumps({
 
 `makeJumpSections` 是给前端用户的快速跳转菜单（顶栏右上的 Jump to 下拉）。在 1.0a30 之前，Jump to 里的内容是 Datasette 主程序写死的：跳到数据库、表、SQL 编辑器。1.0a30 之后，**插件可以往这个菜单注入自己的 section**——`datasette-agent` 立刻用上了这个钩子，把「Chat with agent」「Explore with agent」「Background agents」三档统一塞进 Jump to。
 
-![Datasette 1.0a30 makeJumpSections 钩子示意](datasette-agent-makejumpsections.png)
+![Datasette 1.0a30 makeJumpSections 钩子示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/datasette-agent-sqlite-local-2026-05-26/datasette-agent-makejumpsections.png)
 
 这一步看起来微小，意义却很明确：**主项目的 UI 扩展点和 agent 插件的交付节奏对齐**。两个项目同一天（5 月 24 日）发版本——主项目把 UI 扩展位开出来，agent 插件立刻用上。这种「主项目 + 插件**同步迭代**」的工程节奏，是 Datasette 9 年项目群能持续增长的核心原因，**也是 datasette-agent 不会变成又一个半成品 agent 项目的工程保证**。
 
@@ -289,7 +289,7 @@ docker run -d --name datasette \
 
 加 `datasette-auth-passwords` 或自家 SSO 插件做用户认证，**三档 agent 权限按组独立授予**。整个团队的数据查询能力上一个台阶，但敏感数据库的写入权限依然安全。
 
-![datasette-agent 国内三条接入路径](datasette-agent-china-3-routes.png)
+![datasette-agent 国内三条接入路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-26/datasette-agent-sqlite-local-2026-05-26/datasette-agent-china-3-routes.png)
 
 ## 九、编辑说
 

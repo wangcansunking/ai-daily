@@ -36,7 +36,7 @@ cover: https://raw.githubusercontent.com/wangcansunking/daily-report-images/mast
 2. **TTS 命名"1.5B"指的只是基座 LLM 部分**。模型卡上写的总参数是 3B（1.5B Qwen2.5 + σ-VAE 声学 tokenizer + 4 层 ~123M diffusion head + 各种适配层）。这是个标注容易让人误判的地方
 3. **737k 月下载量** 是 ASR 9B 的，远大于 TTS 1.5B 的 215k——意味着用户更认 ASR
 
-![VibeVoice 主架构（来自仓库 Figures/VibeVoice.jpg）](vibevoice-VibeVoice.jpg)
+![VibeVoice 主架构（来自仓库 Figures/VibeVoice.jpg）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-29/vibevoice-microsoft-foundation-tts-asr/vibevoice-VibeVoice.jpg)
 
 ## 二、技术核心：7.5 Hz 帧率 + 80 倍压缩 + Qwen2.5 基座
 
@@ -69,7 +69,7 @@ ASR 9B 的真正卖点是**自带说话人分离**——HN 用户 mberg 在帖�
 
 一般 ASR pipeline 是 Whisper 转写 + pyannote 做 speaker diarization，两个模型分开调，错误叠加。VibeVoice-ASR 把这两件事合到一个模型里，端到端少一层。mberg 这条原文里还提到了 NVIDIA Parakeet（NeMo 系 ASR），意思是他自己实测对比过几个开源 ASR，VibeVoice 综合最稳。
 
-![VibeVoice 在跨语言 TTS 上的 MOS 偏好对比（来自仓库 Figures/MOS-preference.png）](vibevoice-MOS-preference.png)
+![VibeVoice 在跨语言 TTS 上的 MOS 偏好对比（来自仓库 Figures/MOS-preference.png）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-29/vibevoice-microsoft-foundation-tts-asr/vibevoice-MOS-preference.png)
 
 ## 三、2025-09-05 的撤下事件，README 上声明还在
 
@@ -137,7 +137,7 @@ VibeVoice 真正公开的只有第 3 条 + 部分推理代码。**训练数据�
 
 整理下来 HN 主流声音是：**ASR 比 TTS 好用、TTS 比想象中差、Realtime 0.5B 不要试，被撤下的 7B 旧版才是真正口碑王**。
 
-![VibeVoice 支持的语言分布（来自仓库 Figures/language_distribution_horizontal.png）](vibevoice-language_distribution_horizontal.png)
+![VibeVoice 支持的语言分布（来自仓库 Figures/language_distribution_horizontal.png）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-29/vibevoice-microsoft-foundation-tts-asr/vibevoice-language_distribution_horizontal.png)
 
 ## 五、与国内开源语音 AI 横向对比
 

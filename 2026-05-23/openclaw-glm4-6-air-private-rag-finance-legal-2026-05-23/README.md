@@ -25,7 +25,7 @@ description: "5 月 23 日 OpenClaw 主仓库定格在 373,989 Star、MIT、Type
 
 # OpenClaw 接本地 GLM-4.5-Air 三场景实战
 
-![三场景一起跑OpenClaw + GLM-4.5-Air + 私有 RAG](openclaw-glm4-6-air-private-rag-finance-legal-2026-05-23.png)
+![三场景一起跑OpenClaw + GLM-4.5-Air + 私有 RAG](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/openclaw-glm4-6-air-private-rag-finance-legal-2026-05-23/openclaw-glm4-6-air-private-rag-finance-legal-2026-05-23.png)
 
 截至 5 月 23 日，OpenClaw 主仓库定格在 373,989 Star、MIT 协议、TypeScript 写，是个人 AI 助手类项目里 Star 数排第一的位置。同一周 HuggingFace 上 GLM-4.5-Air 月下载停在 386,593 次，总参 106B、激活 12B、MoE 架构，纯 MIT，可以商用。两条数字摆在一起，能讲清楚一个事：**把家庭流水、公司合同、写论文这三件事同时搬回本机，已经从「值不值」的问题变成了「怎么搭」的问题。**
 
@@ -49,7 +49,7 @@ description: "5 月 23 日 OpenClaw 主仓库定格在 373,989 Star、MIT、Type
 
 这意味着「同一台机器一次配齐」不是营销话术——它是这套架构本来的样子。
 
-![OpenClaw + GLM-4.5-Air + Qdrant 三场景共用本地推理栈架构图](openclaw-glm4-air-rag-architecture.png)
+![OpenClaw + GLM-4.5-Air + Qdrant 三场景共用本地推理栈架构图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/openclaw-glm4-6-air-private-rag-finance-legal-2026-05-23/openclaw-glm4-air-rag-architecture.png)
 
 ## 二、三场景速览表：模型、集合、token、月成本一眼看完
 
@@ -72,7 +72,7 @@ description: "5 月 23 日 OpenClaw 主仓库定格在 373,989 Star、MIT、Type
 
 财务 agent 的故事是这样的：每个月 1 号晚上，我打开 OpenClaw 桌面端，敲一句「跑 monthly-finance」，剩下的事情交给本地这套栈。
 
-![OpenClaw 主仓库 GitHub 仓库 og 图：MIT TypeScript 23+ 通道](openclaw-glm4-air-rag-openclaw-og.png)
+![OpenClaw 主仓库 GitHub 仓库 og 图：MIT TypeScript 23+ 通道](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/openclaw-glm4-6-air-private-rag-finance-legal-2026-05-23/openclaw-glm4-air-rag-openclaw-og.png)
 
 第一步是**导入**。家庭那一侧，我已经在手机端配好微信支付和支付宝的「账单导出到邮箱」自动化（每月 1 号 0 点触发），导出的 CSV 落到 `~/finance/inbox/` 文件夹；公司报销那一侧，OpenClaw 的 macOS 菜单栏插件有个「拖入发票自动 OCR」入口，过去一个月所有报销发票拖进来，PaddleOCR-PP-StructureV3 把每张发票转成结构化 JSON（金额、税额、开票方、消费项目、日期）。
 
@@ -180,7 +180,7 @@ mlx_lm.server --model mlx-community/GLM-4.5-Air-4bit \
 
 **双库分离**。`legal_contracts` 集合放公司自家合同，`legal_regulations` 集合放法规和判例。检索时根据用户问题先判类型——问「我们和供应商 X 的付款条款是什么」走前者，问「劳动合同法第 39 条是怎么规定的」走后者，问「我们和 X 的合同条款 vs 劳动法第 39 条是否冲突」两个集合并行检索后合并。这条分流由 GLM-4.5-Air 的第一轮判断决定，prompt 里给了三个 few-shot 例子和一个 fallback 规则。
 
-![Qdrant 官网首页 hero：Rust 向量库 RAG 检索](openclaw-glm4-air-rag-qdrant-hero.png)
+![Qdrant 官网首页 hero：Rust 向量库 RAG 检索](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/openclaw-glm4-6-air-private-rag-finance-legal-2026-05-23/openclaw-glm4-air-rag-qdrant-hero.png)
 
 **Embedding 选择**。这个场景 Qwen3-Embedding-8B 不一定最优——合同里中英混杂常见（NDA 和跨境合同尤甚），BGE-M3 的中英混合检索表现在公开榜单上更稳。我的做法是 `legal_contracts` 走 BGE-M3（中英混合）、`legal_regulations` 走 Qwen3-Embedding-8B（纯中文且术语密度高）。这种「按集合选 embedding」的路子在 5 月 18 日「Qwen3-Embedding-8B + RAG 三件套」那篇里就建议过，这次是真在生产场景里验。
 
@@ -217,7 +217,7 @@ tools:
 
 法务这件事跟其他两个场景最不一样的地方在于：**它不能用云端**。这不是用户偏好问题，是合规问题——客户合同里的金额、报价、付款方式、独家条款，绝大多数 NDA 第一条就写了「不得交给任何第三方处理」。一旦用 Claude / GPT / DeepSeek 云端跑过一遍，理论上你已经违约。本地这条路把「能不能跑」的问题变成「值不值得部署一台 4090」——14000 元的二手 4090 折旧 36 个月、每月 389 元，加上电费 42 元和 Qdrant 内存折算约 80 元，每月 511 元的固定成本买回来一份合规边界，这笔账在国内合规收紧的当下越来越好算。
 
-![三场景质量与延迟柱状图](openclaw-glm4-air-rag-quality-latency.png)
+![三场景质量与延迟柱状图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/openclaw-glm4-6-air-private-rag-finance-legal-2026-05-23/openclaw-glm4-air-rag-quality-latency.png)
 
 ## 五、场景三 · 中文论文阅读 agent：从 arxiv 到月度综述
 
@@ -227,7 +227,7 @@ tools:
 
 **摘**。每篇 PDF 被 unstructured 切成段落 + 图注 + 公式块，嵌入 Qwen3-Embedding-8B 写入 `papers_2026` 集合。然后 OpenClaw 跑 `paper-digest` skill：给 GLM-4.5-Air 喂一篇论文的摘要 + 引言 + 结论 + 实验表，让它输出三段中文——「这篇做了什么（≤ 100 字）」「主要数字和结论（≤ 200 字，必须给具体数字）」「值不值得读全文（一句话）」。GLM-4.5-Air 在中文摘要任务上的表现比 5 月 19 日测过的 Qwen3-Coder-30B-A3B 在「术语准确度」这条上稍弱（毕竟 4.5-Air 不是 Coder 专精模型），但在「整篇逻辑流畅度」这条上明显更好——一段中文读下来不会觉得是机翻腔。
 
-![GLM-4.5-Air HuggingFace 模型卡 og：106B 总参 12B 激活 MoE MIT](openclaw-glm4-air-rag-glm45air-og.png)
+![GLM-4.5-Air HuggingFace 模型卡 og：106B 总参 12B 激活 MoE MIT](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/openclaw-glm4-6-air-private-rag-finance-legal-2026-05-23/openclaw-glm4-air-rag-glm45air-og.png)
 
 **存**。每篇论文的中文摘要写到 `~/papers/digests/2026-05/<paper-id>.md`，附原 PDF 软链。Obsidian 自动 index 这个文件夹，第二天早上我在 iPad 上就能看。
 
@@ -300,7 +300,7 @@ OpenClaw 在这三条路径上是同一份配置——它对推理后端是 Open
 - DeepSeek V4 Flash 走 2026 年 5 月公开价：缓存命中 1 元 / 百万输入 token，缓存未命中 2 元 / 百万，输出 4 元 / 百万（[DeepSeek 平台价格表](https://platform.deepseek.com/api-docs/zh-cn/pricing/)），按 60％ 命中率折算
 - Claude Sonnet 4.6 走 Anthropic 官方价 $3 / 百万输入 + $15 / 百万输出，按 7.2 汇率折人民币
 
-![三场景月度成本对比柱状图](openclaw-glm4-air-rag-cost-chart.png)
+![三场景月度成本对比柱状图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-23/openclaw-glm4-6-air-private-rag-finance-legal-2026-05-23/openclaw-glm4-air-rag-cost-chart.png)
 
 几个观察：
 

@@ -25,7 +25,7 @@ tags:
 
 > 5 月 10 日，XP 老兵 James Shore 发布长文《You Need AI That Reduces Maintenance Costs》，给行业递上一个判断维度：写代码速度乘以 N，维护成本必须除以 N，否则就是反向投资。一天之内冲上 Hacker News 331 pts、99 条评论。同一周，k10s 作者把 234 commits 跑了 7 个月的 vibe-coded 项目主动归档重写，867 pts、534 条评论。两篇共振，行业第一次把「AI Coding 维护账本」摆到台面上谈。这不是「AI 写代码不行了」，而是 AI Coding 工具链开始进入「知道怎么用 + 知道边界在哪」的成熟期——一个对国内开发者反而是好消息的拐点。
 
-![AI 写代码越快越亏？老兵给出维护成本评估框架](jamesshore-ai-reduce-maintenance-2026-05-12.png)
+![AI 写代码越快越亏？老兵给出维护成本评估框架](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/jamesshore-ai-reduce-maintenance-2026-05-12/jamesshore-ai-reduce-maintenance-2026-05-12.png)
 
 打开手头任意一个跑了半年的 AI Coding 项目仓库，画面通常是这样：commit 比去年多了三倍，PR 平均尺寸翻倍，CI 时长从 6 分钟拉到 22 分钟，依赖更新 issue 排了一长串，每周 standup 一半时间花在「这段是谁写的、为什么这么写」。所有人都说写代码变快了，但月底盘下来，能上线交付的功能并没有同步翻倍。**钱花在哪了？答案不在写代码这一边，在维护代码这一边。**
 
@@ -43,7 +43,7 @@ tags:
 
 ## 一、James Shore：27 年方法学连续性，不是临时来评论 AI 的
 
-![James Shore 方法学连续性 · 1999 → 2026](jshore-timeline.png)
+![James Shore 方法学连续性 · 1999 → 2026](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/jamesshore-ai-reduce-maintenance-2026-05-12/jshore-timeline.png)
 
 读 Shore 的文章之前先看看他是谁。这一点重要——因为关于 AI Coding 的评论太多了，每天都有人说「AI 不行」或者「AI 是未来」，但能把一句话说清楚的人不多。Shore 的可信度不来自他对 AI 有什么独到见解，而来自他用同一种方法学连续观察软件工程 27 年这件事本身。
 
@@ -63,7 +63,7 @@ tags:
 
 ## 二、maintenance reduction ratio：一个数字讲清楚 AI 是省钱还是烧钱
 
-![maintenance reduction ratio · 维护成本反比定律](jshore-maintenance-ratio.png)
+![maintenance reduction ratio · 维护成本反比定律](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/jamesshore-ai-reduce-maintenance-2026-05-12/jshore-maintenance-ratio.png)
 
 Shore 的核心判断只有一句话：**如果你用 AI 把写代码的速度乘以 N，你必须同时把维护单位代码的成本除以 N**。N 是 2 也好，3 也好，等式两边必须匹配。否则你不是在节省工程预算，而是在借未来的工程预算来换今天的开发速度。
 
@@ -83,7 +83,7 @@ HN 上 99 条评论里，有一条顶赞总结得特别准：「AI doesn't reduc
 
 ## 三、AI 加速写 vs 维护成本 ×3 的真实账本
 
-![生命周期总成本：写代码 vs 维护代码 · 一个月开发的代码维护 120 个月](jshore-lifecycle-cost.png)
+![生命周期总成本：写代码 vs 维护代码 · 一个月开发的代码维护 120 个月](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/jamesshore-ai-reduce-maintenance-2026-05-12/jshore-lifecycle-cost.png)
 
 把 Shore 模型里三个场景的总账画成柱状，对照感会更直接。**纵轴是「1 个月开发工作」对应的整个生命周期总成本，单位是人·天，跑满 10 年。**
 
@@ -102,7 +102,7 @@ HN 上 99 条评论里，有一条顶赞总结得特别准：「AI doesn't reduc
 
 ## 四、5 条反模式 · 国内外案例横向对比
 
-![AI Coding 的 5 条维护反模式 · James Shore + HN 实战补充](jshore-anti-patterns.png)
+![AI Coding 的 5 条维护反模式 · James Shore + HN 实战补充](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/jamesshore-ai-reduce-maintenance-2026-05-12/jshore-anti-patterns.png)
 
 Shore 在原文里列了三条核心反模式，HN 讨论补充了两条。这五条加起来构成了一份「不要这么用 AI」的清单，每一条都能在国内团队找到对照案例。
 
@@ -120,7 +120,7 @@ Shore 在原文里列了三条核心反模式，HN 讨论补充了两条。这�
 
 ## 五、国内外 8 款工具 · 6 维度横向对比
 
-![8 款国内外 AI Coding 工具 · 6 个维护维度画像（中性观察）](jshore-tools-matrix.png)
+![8 款国内外 AI Coding 工具 · 6 个维护维度画像（中性观察）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/jamesshore-ai-reduce-maintenance-2026-05-12/jshore-tools-matrix.png)
 
 把 maintenance reduction ratio 这把尺子套到目前国内开发者最常用的 8 款工具上，得到的不是排名，而是画像。需要先把话说在前头——**这张表的目的不是评谁更强，而是帮国内团队看清「在我自己的项目里，应该重点关注哪个维度」**。
 
@@ -145,7 +145,7 @@ Shore 在原文里列了三条核心反模式，HN 讨论补充了两条。这�
 
 ## 六、4 阶段评估框架：把维护反比塞进决策链
 
-![成熟团队的 AI Coding 评估框架 · 4 个阶段](jshore-evaluation-framework.png)
+![成熟团队的 AI Coding 评估框架 · 4 个阶段](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-12/jamesshore-ai-reduce-maintenance-2026-05-12/jshore-evaluation-framework.png)
 
 最后给国内工程团队一份可以直接落地的评估框架。这不是 Shore 原文里的，而是结合他的判断维度 + 国内一线团队实践综合得来的。4 个阶段，每阶段一周到一个月，整套跑下来 2-3 个月。
 

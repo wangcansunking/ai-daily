@@ -8,7 +8,7 @@ tags: [AI Coding, Benchmark, SWE-bench, Evaluation]
 cover: 2026-04-27-swe-bench-retire.png
 ---
 
-![cover](2026-04-27-swe-bench-retire.png)
+![cover](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-27/swe-bench-pro-retire/2026-04-27-swe-bench-retire.png)
 
 # 59.4% 的题是错的：OpenAI 把全行业卷了 20 个月的 SWE-bench Verified 摘下王冠
 

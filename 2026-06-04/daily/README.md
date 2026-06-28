@@ -11,7 +11,7 @@ description: "今天三条主线指向同一件事：编程模型的供应正在
 
 # OpenAI 把 Codex 搬上 AWS · 微软用自研模型接管 Copilot · 国产个人助手开始能替你干活 | AI 日报 | 2026-06-04
 
-![OpenAI Codex 上 AWS、微软自研模型进 Copilot、国产个人助手三线并进](04.png)
+![OpenAI Codex 上 AWS、微软自研模型进 Copilot、国产个人助手三线并进](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/daily/04.png)
 
 ## 📋 头版目录
 
@@ -39,7 +39,7 @@ description: "今天三条主线指向同一件事：编程模型的供应正在
 
 ### 头条 1 · OpenAI 把 Codex 和前沿模型搬上 AWS，第一次走出微软的云
 
-![OpenAI 的 GPT-5.5、GPT-5.4 与 Codex 正式上线 AWS Bedrock 的官方公告](source-aws-openai-announcement-hero-2026-06-04.png)
+![OpenAI 的 GPT-5.5、GPT-5.4 与 Codex 正式上线 AWS Bedrock 的官方公告](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/daily/source-aws-openai-announcement-hero-2026-06-04.png)
 
 > 来源：OpenAI 官网公告页 openai.com [1]，AWS Bedrock OpenAI 产品页 [3]
 
@@ -57,7 +57,7 @@ description: "今天三条主线指向同一件事：编程模型的供应正在
 
 定价是这次最容易被低估的一条。GPT-5.5 在 Bedrock 上是每百万词元输入 5 美元、输出 30 美元；GPT-5.4 是输入 2.5 美元、输出 15 美元 [2][15]。关键不在绝对数字，而在它和 OpenAI 自营 API 完全同价——亚马逊没有借托管之名加价。
 
-![GPT-5.5 与 GPT-5.4 在 AWS Bedrock 上按词元计费的价格对照](chart-codex-aws-price-2026-06-04.png)
+![GPT-5.5 与 GPT-5.4 在 AWS Bedrock 上按词元计费的价格对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/daily/chart-codex-aws-price-2026-06-04.png)
 
 计费模式也对企业友好：按词元计费，没有席位、没有按人头的授权费，花的钱直接算进已有的 AWS 承诺额度里 [2]。对一个已经把账跑在亚马逊云上的团队，这意味着接入 OpenAI 几乎是"加一行配置"的事，不用再单独走一遍采购和对账。值得一提的是，Bedrock 上今年已经排着 DeepSeek V3.2、Qwen3 Coder、GLM 4.7、Kimi K2.5、MiniMax M2.1 这批国产开源模型——OpenAI 这次是挤进了一份国产模型已经在场的可选清单。
 
@@ -69,7 +69,7 @@ description: "今天三条主线指向同一件事：编程模型的供应正在
 
 ### 头条 2 · 国产个人 AI 助手开始能替你干活了：对标 OpenClaw 的一次能力横评
 
-![开源个人 AI 助手 OpenClaw 的 GitHub 仓库，星标已超过 37 万](source-openclaw-github-2026-06-04.png)
+![开源个人 AI 助手 OpenClaw 的 GitHub 仓库，星标已超过 37 万](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/daily/source-openclaw-github-2026-06-04.png)
 
 > 来源：OpenClaw GitHub 仓库 github.com/openclaw/openclaw [4]
 
@@ -77,7 +77,7 @@ description: "今天三条主线指向同一件事：编程模型的供应正在
 
 #### 头条 2.1 · 装机即用、定时任务、本地隐私，国产这三块补齐了
 
-![国产四款个人 AI 助手对照 OpenClaw 的能力横评矩阵](chart-cn-agent-matrix-2026-06-04.png)
+![国产四款个人 AI 助手对照 OpenClaw 的能力横评矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/daily/chart-cn-agent-matrix-2026-06-04.png)
 
 今日一篇专题把四款国产个人 AI 助手放在一起，逐项对照 OpenClaw 的能力。结论比预期乐观：在"开箱即用"上，国产几款的安装门槛已经降到普通用户能自己搞定；在"定时与常驻任务"上，能挂着后台帮你盯邮件、抓信息、按点执行；在"本地隐私"上，数据不必出本机、敏感信息留在自己电脑里这条，国产做得不比海外差，甚至更贴合国内对数据落地的偏好。
 
@@ -91,7 +91,7 @@ description: "今天三条主线指向同一件事：编程模型的供应正在
 
 ### 头条 3 · 微软把自研 MAI-Code 推进所有 Copilot 计划，给"减少依赖 OpenAI"落了地［跟进］
 
-![微软自研 MAI-Code-1-Flash 进入 GitHub Copilot 模型选择器](source-mai-code-hero-2026-06-04.jpg)
+![微软自研 MAI-Code-1-Flash 进入 GitHub Copilot 模型选择器](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/daily/source-mai-code-hero-2026-06-04.jpg)
 
 > 来源：微软 AI 官网 MAI-Code-1-Flash 介绍页 [5]，Build 2026 主题演讲实录 [7]
 
@@ -99,7 +99,7 @@ description: "今天三条主线指向同一件事：编程模型的供应正在
 
 #### 头条 3.1 · MAI-Code-1-Flash：5B 激活的小模型，SWE-Bench Pro 51.2% 压过 Haiku
 
-![MAI-Code-1-Flash 与 MAI-Thinking-1 的参数规模与编码基准对照](chart-mai-two-models-compare-2026-06-04.png)
+![MAI-Code-1-Flash 与 MAI-Thinking-1 的参数规模与编码基准对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/daily/chart-mai-two-models-compare-2026-06-04.png)
 
 MAI-Code-1-Flash 是一款稀疏混合专家模型，137B 总参数、只激活 5B [5]。它直接在 GitHub Copilot 的真实生产环境上训过，现在向所有 Copilot 计划的个人用户推送，既进了模型选择器，也进了默认的自动选择器——也就是说很多人不主动选，也可能已经在用它。
 
@@ -133,7 +133,7 @@ LLM 工具开发者 Simon Willison 在 6 月 2 日点评了微软两款新模型
 
 - 🔴 **Snowflake 与 Anthropic 宣布 2 亿美元扩展合作，把 Claude 接入企业数据体系**：在 Snowflake Summit 2026 上，两家把战略合作扩展到 2 亿美元级别，核心是让企业在受治理的环境里直接调用 Claude，回应越来越强的"可治理、可上生产"的 AI 需求 [10][11]。配套的 Cortex Training 提供托管 GPU，让企业用自有数据在仓内微调 Qwen、Mistral 等开源模型，不必自管大型 GPU 集群。这条对企业 AI 的意义在于：模型、数据和治理被收拢到同一个平面，少了把数据搬来搬去的合规风险。
 
-![Snowflake 与 Anthropic 在 Summit 2026 宣布 2 亿美元扩展合作](source-anthropic-snowflake-partnership-2026-06-04.png)
+![Snowflake 与 Anthropic 在 Summit 2026 宣布 2 亿美元扩展合作](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/daily/source-anthropic-snowflake-partnership-2026-06-04.png)
 
 - 🔴 **HTTP/2 内存炸弹 CVE-2026-49975 公开，一根家用宽带几秒打满服务器**：这枚 CVSS 9.8 的拒绝服务漏洞（6 月 2 日公开）波及 nginx、Apache httpd、微软 IIS、Envoy 与 Cloudflare Pingora，全球约 88 万台公网服务器受影响 [12][13]。攻击手法是先往 HTTP/2 的头部压缩表里塞一条大条目，再用成千上万个单字节引用反复指回去，逼服务器分配巨量内存还原头部——在脆弱的 Envoy 部署上约 10 秒就能吃掉 32GB 内存，且只需一根住宅宽带。nginx 在收到通报后 24 小时内出 1.29.8 修复、Apache 5 月 27 日当天就发了补丁，运维今天该做的第一件事是确认自家版本已经更新。
 
@@ -151,7 +151,7 @@ LLM 工具开发者 Simon Willison 在 6 月 2 日点评了微软两款新模型
 
 - 🔴 **chopratejas/headroom**：给智能体省词元的压缩工具，实查约 9634 星、Apache-2.0、Python 编写 [14]。它在内容进大模型前先压缩工具输出、日志和检索片段，真实负载上能把代码搜索结果、事故日志压掉约九成，且全程本地跑、原文可还原。智能体记忆与上下文省钱这个题材最近一周持续上榜。
 
-![headroom 在真实负载上把工具输出词元压掉约九成的对照](chart-headroom-token-savings-2026-06-04.png)
+![headroom 在真实负载上把工具输出词元压掉约九成的对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-04/daily/chart-headroom-token-savings-2026-06-04.png)
 
 - 🟡 **comfyanonymous/ComfyUI**：节点式的图像 / 视频生成工作流仍越过 11.5 万星，是开源生成式工具里最稳的一档。它给用户对生成流程每一步的精细控制，今天仍在趋势榜前列。
 

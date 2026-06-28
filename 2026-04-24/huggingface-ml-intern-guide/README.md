@@ -1,6 +1,6 @@
 # HuggingFace 开源了一个"AI ML 实习生"，底座是 Claude Opus 4.6
 
-![ml-intern 封面](ml-intern-github-og.png)
+![ml-intern 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/huggingface-ml-intern-guide/ml-intern-github-og.png)
 
 > **4,155 stars、十几个工具、300 iterations 上限、默认 context 跑到 ~90% 自动压缩——ml-intern 是一个能读 paper、跑训练、push 到 HF Hub 的开源 AI ML 工程师。** 但打开代码你会发现两件事：它的默认大脑是 **Claude Opus 4.6**（走 AWS Bedrock），不是 HF 自家的 Llama 或 Qwen；而且——**没有 LICENSE 文件、没有 demo video、没有公开 benchmark**。HN 上发了两次都是 3 赞 0 评论。这篇把这个项目值得用的地方和不值得被骗的地方，全部讲一遍。
 
@@ -26,7 +26,7 @@ bedrock/us.anthropic.claude-opus-4-6-v1
 
 翻 `frontend/public/` 目录会看到 `smolagents.webp`——HF 自家 smolagents 的 logo。但翻 `agent_loop.py` 源码，实际底层用的是 **LiteLLM** 直连模型，**完全没 import smolagents**。工具路由器（`ToolRouter`）、research 子 agent、doom-loop 检测等现代 agent 框架该有的件数都齐了，但每一件都是自己手写的——这是一个**披着 smolagents 品牌、内部按 2026 年主流 agent 架构自己造一遍的项目**。
 
-![ml-intern smolagents 品牌](ml-intern-smolagents-logo.webp)
+![ml-intern smolagents 品牌](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/huggingface-ml-intern-guide/ml-intern-smolagents-logo.webp)
 
 官方 blog 的原话更克制：**"This code was co-authored with Claude (Anthropic)"**——这段代码是和 Claude 合写的。意思是作者自己也承认 Claude 在主力参与 ml-intern 的开发过程，而不只是 runtime 的 backbone。
 
@@ -49,7 +49,7 @@ bedrock/us.anthropic.claude-opus-4-6-v1
 
 用的是 `Qwen/Qwen2.5-1.5B-Instruct` 当生成器、`Skywork/Skywork-o1-Open-PRM-Qwen-2.5-1.5B` 当 process reward model，跑在 T4 GPU 上。Weighted Best-of-N 比 greedy baseline 多做对 4 道题，零损失（没有比 greedy 更差的情况）。
 
-![ml-intern 准确率对比](ml-intern-accuracy-comparison.png)
+![ml-intern 准确率对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/huggingface-ml-intern-guide/ml-intern-accuracy-comparison.png)
 
 方法上引用了 DeepMind paper 2408.03314 和 Math-Shepherd 2312.08935——这两篇是这两年 inference-time compute 方向最经典的两篇。ml-intern 能自己把它们找出来、读懂、实现 PRM 加权投票逻辑、跑 16 次 rollout、生成分析图表、写 blog post。
 
@@ -67,7 +67,7 @@ Claude 协助的部分：pipeline 结构、Skywork PRM 加载、加权投票实�
 
 `agent/tools/` 目录下有 18 个 Python 文件，一个文件一个工具。按"设计值得偷"的顺序挑 3 条讲。
 
-![ml-intern 准确率 vs N](ml-intern-accuracy-vs-n.png)
+![ml-intern 准确率 vs N](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/huggingface-ml-intern-guide/ml-intern-accuracy-vs-n.png)
 
 ### 设计一：Literature-first——先爬引文图再写代码
 
@@ -105,7 +105,7 @@ Sandbox + Job 分离的做法：
 
 `agent/core/doom_loop.py` 是一个 meta 工具，专门检测 agent 自己是不是卡在循环里。源码顶部自己写的定位是：**"Doom-loop detection for repeated tool call patterns. Detects when the agent is stuck calling the same tools repeatedly"** —— 监控最近 N 步的 tool call pattern，如果重复率超阈值（比如连续 3 次调同一个工具读同一个文件），就主动注入一段纠正 prompt，强制 agent 换策略。
 
-![ml-intern 单题分析](ml-intern-per-problem-analysis.png)
+![ml-intern 单题分析](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/huggingface-ml-intern-guide/ml-intern-per-problem-analysis.png)
 
 在 300 iterations 上限、context 压缩和 sub-agent 隔离并行工作的长任务场景下，**防止 agent 陷入无限循环比想象中重要**。Aider、Cursor 目前在这方面的防御比较薄；ml-intern 把它做成一等公民，值得学。
 
@@ -193,7 +193,7 @@ ml-intern --no-stream "your prompt"
 
 ### 坑一：仓库发布 6 个月仍然没有 LICENSE 文件
 
-![ml-intern PRM 评分分布](ml-intern-prm-score-distribution.png)
+![ml-intern PRM 评分分布](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-24/huggingface-ml-intern-guide/ml-intern-prm-score-distribution.png)
 
 这是个 HuggingFace 官方项目，发布 6 个月了，**仓库根目录没有 LICENSE 文件**。Issue #41 一直 open 在请求官方加 license。
 

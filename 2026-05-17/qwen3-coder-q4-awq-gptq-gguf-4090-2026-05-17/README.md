@@ -21,7 +21,7 @@ description: "Qwen3-Coder-30B-A3B-Instruct 在 RTX 4090 24GB 单卡上，AWQ / G
 
 # 4090 跑 Qwen3-Coder：Q4 三家格式怎么选
 
-![qwen3 q4 awq gptq gguf 4090 三家格式对位封面](qwen3-coder-q4-awq-gptq-gguf-4090-2026-05-17.png)
+![qwen3 q4 awq gptq gguf 4090 三家格式对位封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/qwen3-coder-q4-awq-gptq-gguf-4090-2026-05-17/qwen3-coder-q4-awq-gptq-gguf-4090-2026-05-17.png)
 
 ## 关键数字一览
 
@@ -63,7 +63,7 @@ description: "Qwen3-Coder-30B-A3B-Instruct 在 RTX 4090 24GB 单卡上，AWQ / G
 
 另一个让这一篇有意义的原因是：**Qwen 团队对 Qwen3-Coder-30B-A3B-Instruct 没有出官方 AWQ / GPTQ 版本**。主仓 [Qwen/Qwen3-Coder-30B-A3B-Instruct](https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct) 只挂了 BF16 与 FP8 两版；AWQ / GPTQ 全是社区维护——cpatonn、QuantTrio、btbtyler09、palmfuture 等几个量化社区贡献者各自跑校准、上传仓库、维护工具链。这跟昨天那篇主要靠 Unsloth 一家维护 GGUF 的格局不一样——AWQ / GPTQ 这边是分散式社区贡献，质量参差不齐，对用户来说「选哪个仓库」也是个隐性门槛。社区现状决定了：用户事实上需要一份「三家 Q4 + 主流仓库 + 引擎兼容」的横评清单，才能少踩半天坑。
 
-![qwen3 q4 vram three formats · 三家 Q4 在 4090 24GB 上的显存占用对比](qwen3-q4-three-formats-vram-2026-05-17.png)
+![qwen3 q4 vram three formats · 三家 Q4 在 4090 24GB 上的显存占用对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/qwen3-coder-q4-awq-gptq-gguf-4090-2026-05-17/qwen3-q4-three-formats-vram-2026-05-17.png)
 
 ## 二、显存与吞吐对账：三家文件大小都在 18 GB 出头，4090 都装得下
 
@@ -81,7 +81,7 @@ description: "Qwen3-Coder-30B-A3B-Instruct 在 RTX 4090 24GB 单卡上，AWQ / G
 
 显存这条线得出的第一个结论是：**三家 Q4 在 4090 上都「装得下」，显存预算不是分胜负的维度**。真正分胜负的是吞吐——同样装得下，三家跑出来的 tokens/s 不一样。
 
-![qwen3 q4 throughput three formats · 三家 Q4 在 4090 上的吞吐与首字延迟对比](qwen3-q4-three-formats-throughput-2026-05-17.png)
+![qwen3 q4 throughput three formats · 三家 Q4 在 4090 上的吞吐与首字延迟对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/qwen3-coder-q4-awq-gptq-gguf-4090-2026-05-17/qwen3-q4-three-formats-throughput-2026-05-17.png)
 
 吞吐这一档先把声明摆前面：**本文未独立复测，数字全部来自社区报告综合**（[jarvislabs Qwen2.5-32B + Marlin 评测](https://jarvislabs.ai/blog/vllm-quantization-complete-guide-benchmarks)、[Zenn AITuber Qwen3 + RTX 5090 实测](https://zenn.dev/toki_mwc/articles/ed9ad65bca8691)、r/LocalLLaMA 帖、阿里云开发者社区帖、[CloudRift 5090 vs PRO 6000 评测](https://www.cloudrift.ai/blog/benchmarking-rtx-gpus-for-llm-inference)）。把这些数字按 4090 1008 GB/s 显存带宽对 H200 4.8 TB/s 的比例下折估算到 4090 + Qwen3-Coder-30B-A3B 上，中位数大致如下：
 
@@ -105,7 +105,7 @@ GGUF Q4_K_M 走 llama.cpp 路径，没有 Marlin 这种专门 INT4 GEMM kernel�
 
 精度这一档社区不少帖子吵翻天，但实际数据出来其实没那么戏剧。把 Unsloth 的 Aider Polyglot 实测、jarvislabs 的 HumanEval Pass@1 评测、LiveCodeBench v6 社区帖三组数据合起来看：
 
-![qwen3 q4 accuracy three formats · 三家 Q4 与 BF16 在三大 coding benchmark 上的精度对比](qwen3-q4-three-formats-accuracy-2026-05-17.png)
+![qwen3 q4 accuracy three formats · 三家 Q4 与 BF16 在三大 coding benchmark 上的精度对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/qwen3-coder-q4-awq-gptq-gguf-4090-2026-05-17/qwen3-q4-three-formats-accuracy-2026-05-17.png)
 
 | 格式 | Aider Polyglot | HumanEval Pass@1 | LiveCodeBench v6 |
 |---|---|---|---|
@@ -136,7 +136,7 @@ GGUF Q4_K_M 走 llama.cpp 路径，没有 Marlin 这种专门 INT4 GEMM kernel�
 
 显存与精度都拉平之后，三家 Q4 真正的胜负手是引擎兼容性。把当前主流推理引擎和三家 Q4 的兼容关系排到一张矩阵上：
 
-![qwen3 q4 engine matrix · 推理引擎 × Q4 格式 兼容矩阵](qwen3-q4-three-formats-engine-matrix-2026-05-17.png)
+![qwen3 q4 engine matrix · 推理引擎 × Q4 格式 兼容矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/qwen3-coder-q4-awq-gptq-gguf-4090-2026-05-17/qwen3-q4-three-formats-engine-matrix-2026-05-17.png)
 
 | 引擎 | AWQ Q4 | GPTQ Int4 | GGUF Q4_K_M |
 |---|---|---|---|
@@ -265,7 +265,7 @@ ollama serve  # 默认端口 11434，OpenAI 兼容路径 /v1
 
 把上面五节的预算 / 精度 / 吞吐 / 引擎 / 实操合到一起，得到一张可以直接抄的决策矩阵——按使用场景反推选哪家 Q4：
 
-![qwen3 q4 decision matrix · RTX 4090 × Qwen3-Coder Q4 决策矩阵](qwen3-q4-three-formats-decision-2026-05-17.png)
+![qwen3 q4 decision matrix · RTX 4090 × Qwen3-Coder Q4 决策矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/qwen3-coder-q4-awq-gptq-gguf-4090-2026-05-17/qwen3-q4-three-formats-decision-2026-05-17.png)
 
 | 使用场景 | 推荐格式 | 理由 |
 |---|---|---|
@@ -347,7 +347,7 @@ GPTQ Int4 这一档在 4090 + Qwen3-Coder-30B-A3B 上的位置比较尴尬：精
 - **字节 Trae + AWQ + vLLM**：多模型路由让本地 AWQ 后端专心吃日常 80% 的活、难任务再切到云端兜底
 - **千问 Code（VS Code 插件）+ GGUF + LM Studio**：最适合 macOS + 外接 Linux 工作站双端工作流——LM Studio 图形化体验配 GGUF 跨平台属性，笔记本和工作站能跑同一套配置
 
-![qwen3 q4 awq gptq gguf 国内 IDE 接入决策流程图](qwen3-q4-three-formats-decision-2026-05-17.png)
+![qwen3 q4 awq gptq gguf 国内 IDE 接入决策流程图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-17/qwen3-coder-q4-awq-gptq-gguf-4090-2026-05-17/qwen3-q4-three-formats-decision-2026-05-17.png)
 
 **1M 上下文这一档**
 

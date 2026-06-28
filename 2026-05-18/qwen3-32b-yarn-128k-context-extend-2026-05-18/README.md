@@ -23,7 +23,7 @@ tags:
 
 # Qwen3-32B 本地跑 128K：4090 与 M3 Max 实操
 
-![Qwen3-32B YaRN 128K 长上下文工程实战封面](qwen3-32b-yarn-128k-context-extend-2026-05-18.png)
+![Qwen3-32B YaRN 128K 长上下文工程实战封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/qwen3-32b-yarn-128k-context-extend-2026-05-18/qwen3-32b-yarn-128k-context-extend-2026-05-18.png)
 
 阿里千问 Qwen3-32B 在 HuggingFace 模型卡里给了一行让人很心动的 YaRN 配置：把 `rope_scaling` 写成 `{"rope_type":"yarn","factor":4.0,"original_max_position_embeddings":32768}`，原生 32K 的上下文就能扩到 131,072。然后官方紧跟着一句让人冷静的提醒——「All the notable open-source frameworks implement static YaRN, which means the scaling factor remains constant regardless of input length, potentially impacting performance on shorter texts.」**翻译过来：你打开这个开关，短上下文的精度会塌一截**。
 
@@ -53,7 +53,7 @@ tags:
 
 数据来源：HuggingFace [Qwen/Qwen3-32B 模型卡](https://huggingface.co/Qwen/Qwen3-32B) verbatim · [Qwen 官方 speed benchmark](https://qwen.readthedocs.io/en/latest/getting_started/speed_benchmark.html) SGLang H20 96GB AWQ-INT4 实测 · vLLM 文档 [context extension example](https://docs.vllm.ai/en/v0.10.2/examples/offline_inference/context_extension.html) · llama.cpp YaRN 实现 [PR #2268](https://github.com/ggml-org/llama.cpp/pull/2268) · GitHub `gh api repos/QwenLM/Qwen3` 实查于 2026-05-18。
 
-![Qwen3-32B 三种位置外推方法在 4K 到 128K 的检索准确率曲线](qwen3-32b-yarn-128k-curves-2026-05-18.png)
+![Qwen3-32B 三种位置外推方法在 4K 到 128K 的检索准确率曲线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/qwen3-32b-yarn-128k-context-extend-2026-05-18/qwen3-32b-yarn-128k-curves-2026-05-18.png)
 
 ## 一、先把 YaRN 这件事讲清楚：它到底做了什么
 
@@ -75,7 +75,7 @@ Qwen 团队官方选 YaRN 而不是 PI/NTK 的理由也写在模型卡里：**RU
 
 这件事 sglang 团队 2026 年 4 月在 [issue #6030](https://github.com/sgl-project/sglang/issues/6030) 提了 dynamic YaRN 的特性请求——希望能根据请求长度动态调 factor，让 1K-32K 段走 1.0、超过 32K 段切到 4.0。目前还没合并，所有主流框架都还是 static YaRN。
 
-![Qwen3-32B 五种配置在 4090 / M3 Max 上的显存预算分解](qwen3-32b-yarn-128k-vram-budget-2026-05-18.png)
+![Qwen3-32B 五种配置在 4090 / M3 Max 上的显存预算分解](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/qwen3-32b-yarn-128k-context-extend-2026-05-18/qwen3-32b-yarn-128k-vram-budget-2026-05-18.png)
 
 ## 二、显存账：4090 单卡 24GB 在 Qwen3-32B + 128K 上的诚实账
 
@@ -109,7 +109,7 @@ Qwen 团队官方选 YaRN 而不是 PI/NTK 的理由也写在模型卡里：**RU
 
 把这件事看作一个整体：**4090 单卡的诚实上限就是 32-48K，128K 是物理不可达**。这跟 Qwen3-32B 配 YaRN 没关系，是 32B 模型 + 128K KV cache 的字节量本身就大。读者从这里得出的工程结论应该是：**先按预算选硬件，再选 YaRN factor，最后选 KV cache 量化** —— 顺序倒过来不行。
 
-![Qwen3-32B 长上下文 4 平台 5 维度可行性矩阵](qwen3-32b-yarn-128k-config-matrix-2026-05-18.png)
+![Qwen3-32B 长上下文 4 平台 5 维度可行性矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/qwen3-32b-yarn-128k-context-extend-2026-05-18/qwen3-32b-yarn-128k-config-matrix-2026-05-18.png)
 
 ## 三、四道工程取舍逐一拆开
 
@@ -161,7 +161,7 @@ vLLM V1 引擎默认开启分块预填（[issue #18547](https://github.com/vllm-
 
 **结论：vLLM 用户什么都不用动，默认就是对的**；SGLang 用户记得加 `enable_mixed_chunk=True`；llama.cpp 用户不需要操心。
 
-![Qwen3-32B 三平台在 4K 到 128K 的解码吞吐衰减](qwen3-32b-yarn-128k-throughput-2026-05-18.png)
+![Qwen3-32B 三平台在 4K 到 128K 的解码吞吐衰减](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/qwen3-32b-yarn-128k-context-extend-2026-05-18/qwen3-32b-yarn-128k-throughput-2026-05-18.png)
 
 ## 四、四套可跑配置：从启动行到 IDE 接入
 
@@ -269,7 +269,7 @@ vLLM / llama.cpp 启动后都暴露 OpenAI 兼容 API，国内外主流 IDE / Ag
 
 base URL 改完后，整个 128K 长上下文 pipeline 就跑起来了。阿里通义灵码读 50K 的代码仓 + Continue 做 80K 文档检索，都不用上传任何片段到云端。
 
-![国产长上下文模型路径四象限](qwen3-32b-yarn-128k-landscape-2026-05-18.png)
+![国产长上下文模型路径四象限](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-18/qwen3-32b-yarn-128k-context-extend-2026-05-18/qwen3-32b-yarn-128k-landscape-2026-05-18.png)
 
 ## 五、Qwen3-32B 在长上下文模型阵营中的位置
 

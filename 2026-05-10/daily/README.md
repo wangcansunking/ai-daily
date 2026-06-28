@@ -10,7 +10,7 @@ cover: 10.png
 
 # Ring-2.6-1T · 文心 5.1 同日双万亿 | AI 日报 | 2026-05-10
 
-![AI 日报封面](10.png)
+![AI 日报封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/daily/10.png)
 
 **今日关键词：蚂蚁百灵 Ring-2.6-1T · 1T 总参 63B 激活 · high / xhigh 双档推理强度 · 业内首发可见档位 · PinchBench 87.60 · 百度文心 5.1 · LMArena 搜索榜 1223 全球第四国内第一 · 文本榜 Preview 1476 前 15 唯一国产 · 总参压到 1/3 预训练成本压到 6% · 国产万亿同日双发 · Anthropic 5/6 Claude Code 五小时额度翻倍取消高峰时段 · API Tier 1 输入 +1500% 输出 +900% · 菲尔兹奖得主 Gowers 实测 GPT-5.5 Pro 17 分 5 秒解开 Nathanson 加性数论开放问题 · HN 顶贴 543 分 · Cursor 3.3 Build in Parallel 并行子智能体 + Composer 2 · Mojo 1.0 Beta 落地 feature complete 编译器秋季开源 · Datawhale hello-agents 45,663⭐ Python Trending 全球第二**
 
@@ -60,7 +60,7 @@ cover: 10.png
 
 这两件事单独看都不算最响——蚂蚁拼的是工程范式，百度拼的是成本曲线——但放在同一天就跑出一条清晰主线：**国产基础模型在 2026 年 5 月第一次把"参数小一截、成本低一档、分数还在涨"这套组合拳同时打了出来**。这个组合在 2025 年是分头出现的：DeepSeek 走低成本、Qwen 走开源、智谱走多模态、字节走规模化。文心 5.1 + Ring-2.6-1T 这一对在 5/9 这一天把这条收敛路径正式跑通。
 
-![国产万亿模型同日双发对照](ring-2-6-1t-benchmarks.png)
+![国产万亿模型同日双发对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/daily/ring-2-6-1t-benchmarks.png)
 
 ### 蚂蚁 Ring-2.6-1T：把"推理预算"的权力交给开发者
 
@@ -89,7 +89,7 @@ cover: 10.png
 
 榜单口径上，蚂蚁官方给出的对位数据：PinchBench `high` 档 87.60 分，蚂蚁声称高于 GPT-5.4 xHigh、Gemini-3.1-Pro high、Claude-Opus-4.7 xhigh；AIME26 `xhigh` 档 95.83 分；GPQA Diamond 88.27 分。这些都是蚂蚁自己披露口径，没有公开对手对位分。引用时建议保留来源标注。
 
-![Ring-2.6-1T high 与 xhigh 档位对比](ant-ring-2-6-1t-high-vs-xhigh.png)
+![Ring-2.6-1T high 与 xhigh 档位对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/daily/ant-ring-2-6-1t-high-vs-xhigh.png)
 
 把时间轴往前推 3 个月看血统更清楚：上一代 Ring-2.5-1T 是 2026 年 2 月发布的"全球首个混合线性架构万亿思考模型"，Ring-2.6-1T 在其基础上做的是"把推理预算翻成开关"这件事的工程化——并不是一次架构换血。可用性上，OpenRouter 限时一周免费、官方公告"近期正式开源"；国内开发者可以直接挂 OpenRouter API 接进 Claude Code、千问 Code、扣子等 Agent 框架试用，不用等开源放出。
 
@@ -106,7 +106,7 @@ cover: 10.png
 
 百度官博给出的工程口径叫"Once-for-All 弹性训练框架"，核心是三个维度同时压缩：
 
-![文心 5.1 多维弹性预训练](ernie-5-1-elastic-pretrain.png)
+![文心 5.1 多维弹性预训练](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/daily/ernie-5-1-elastic-pretrain.png)
 
 - **弹性深度**：训练时按概率跳过部分 Transformer 层（Stochastic Depth），让模型在前向传播时见到不同深度的网络。推理时按需选择层数——长文本任务跑全 96 层，短问答任务跑 48 层，硬件占用直接砍半。
 - **弹性宽度**：随机屏蔽一部分 MoE 专家容量，让剩下的专家承担更多负载，模型学会在不同专家容量下都能给出可用输出。推理时按硬件配置激活专家数，4 卡部署用全量专家，单卡部署只激活 1/3 专家，模型自动降维。
@@ -116,7 +116,7 @@ cover: 10.png
 
 把分数和成本一起看，国产基础模型当下的"性价比锚点"就出来了。文心 5.1 在搜索榜单和 Claude / GPT 同场过招，输入价 4 元 / 百万 tokens、输出价 18 元 / 百万 tokens，比国际旗舰一个数量级以下；千问 3.6 Max 与 GLM-5.1 在开源 + 长上下文上更激进；DeepSeek V4 Pro 守 1M 长上下文 + MIT 协议；Mistral Medium 3.5 守欧洲合规市场。每家都在往自己最强的指标上跑，不再是看肩膀互相抄作业。
 
-![国产基础模型横评 · 2026 年 5 月在榜分数](ernie-5-1-vendor-comparison.png)
+![国产基础模型横评 · 2026 年 5 月在榜分数](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/daily/ernie-5-1-vendor-comparison.png)
 
 ### 为什么这一对值得一起看：范式收敛
 
@@ -200,7 +200,7 @@ Cursor 5/7 推 3.3，五个值得记住的特性：
 
 Modular 5/7 发 26.3 把 Mojo 推到 1.0 Beta，并附带 MAX 26.3 的多卡感知 Tensor、Wan 2.2 视频生成支持、独立域名 mojolang.org 上线。核心结论一句话：**Chris Lattner 三年前许下的"写起来像 Python、跑起来像 C++"承诺，第一次有了 1.0 字样的工程交付物——feature complete + 编译器秋季开源时间表**。值得拎出来的工程点：TileTensor 接替 LayoutTensor，把"内存布局当作编译期 tensor 属性"；safe closures + trait 条件实现，意味着 Mojo 终于能写"成体系的库代码"；MO Graph Interpreter 让 eager 执行快 10-20 倍。HN id=48057901 5/8 凌晨冲到 362 分 / 228 评论 / 24h 前 5 名，国内主流科技媒体 0 篇跟进。
 
-![Mojo 26.3 核心特性](mojo-263-features.png)
+![Mojo 26.3 核心特性](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/daily/mojo-263-features.png)
 
 - 仓库：[github.com/modular/modular](https://github.com/modular/modular)（26,066⭐）
 - HN 讨论：[hn.algolia.com search Mojo 1.0 Beta](https://hn.algolia.com/?q=Mojo+1.0+Beta)
@@ -278,7 +278,7 @@ Qwen 团队的 Qwen3-Coder-30B-A3B-Instruct 在 HuggingFace 月下载量 2,705,0
 
 `datawhalechina/hello-agents` 5/10 实测 45,663⭐ / 5,523 fork / 773 commits / 至少 20 公开贡献者，登 GitHub Python Trending 全球第二，紧贴在 Anthropic `financial-services` 之后。这是中文 AI 教育社区第一次把 Agent 教程书做成单仓 4 万星量级出海产品。Datawhale 过去 8 年跑出过《南瓜书》（25,800⭐）、《李宏毅深度学习》（16,537⭐）、《强化学习蘑菇书》（14,123⭐）、《面向开发者的吴恩达 LLM 中文课》（23,979⭐）、《self-llm 国内开源大模型部署微调指南》（30,341⭐）等代表作，这一本 Hello-Agents 8 个月把数字推到 45,621——是过去整个组织内增速最快、终点最高的单仓。
 
-![Datawhale 旗舰开源项目 Star 排行](datawhale-flagship-projects.png)
+![Datawhale 旗舰开源项目 Star 排行](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/daily/datawhale-flagship-projects.png)
 
 它正面映出一件事——**Agent 这个学习方向 2026 年的真实需求量级，比当年机器学习入门书还要更密**。
 
@@ -286,7 +286,7 @@ Qwen 团队的 Qwen3-Coder-30B-A3B-Instruct 在 HuggingFace 月下载量 2,705,0
 
 `rohitg00/agentmemory` 5/9 推到 v0.9.5，3,414⭐ / 336 fork / Apache-2.0 / TypeScript / 上线 73 天 27 个 release（平均不到三天一个）。README 顶端自报家门「#1 Persistent memory for AI coding agents based on real-world benchmarks」。在 ICLR 2025 LongMemEval-S（500 道长程对话记忆题）上拿到 R@5 95.2% / R@10 98.6% / MRR 88.2%——同节横评里 mem0 是 R@5 68.5%、Letta 是 R@5 83.2%。**这是这一年里第一次有人把 AI Coding 持久记忆栈的检索精度做到 95% 以上、且代码完全开源**。
 
-![agentmemory · mem0 · Letta · claude-mem 横评](agentmemory-vs-competitors.png)
+![agentmemory · mem0 · Letta · claude-mem 横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/daily/agentmemory-vs-competitors.png)
 
 工程取舍上 agentmemory 把整个栈砍到了零外部数据库（SQLite + iii-engine），README 第二位就把 OpenClaw 列为头部一等公民集成。对国内开发者最重要的是它把"持久记忆栈"从云端 SaaS 拉回到本地、从单一 Agent 锁死扩展到任何支持 MCP 的客户端、从 Postgres + Qdrant 复杂运维降到 npx 一行命令——三件事一起发生时，记忆栈这件事才真正变成"今晚就能开始用"的工具。
 

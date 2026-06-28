@@ -12,7 +12,7 @@ cover: gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06.png
 
 # GPT-5.5 当前最强编程旗舰，国产同档差几个百分点
 
-![GPT-5.5 agentic coding benchmark 编程旗舰对照封面](gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06.png)
+![GPT-5.5 agentic coding benchmark 编程旗舰对照封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06/gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06.png)
 
 > 当地时间 2026 年 4 月 23 日，OpenAI 放出代号 Spud 的 GPT-5.5——自 GPT-4.5 以来第一个从头重训的基座模型，主打一件事：长时间无人值守的 agentic 编程。它在终端长跑这一环把第二名甩开 13 个百分点；可一旦换到更贴近日常的"改真实仓库 bug"基准，国产同档已经追到它身边，只差几个百分点。这篇把两条基准拆开，把差距量到小数点后一位。
 
@@ -24,7 +24,7 @@ cover: gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06.png
 
 GPT-5.5 于 2026 年 4 月 23 日发布，4 月 24 日开放 API。它最大的不同写在 OpenAI 的发布说明里：这是自 GPT-4.5 以来第一个**完全从头重训**的基座，中间所有版本都是同一套架构上的增量更新，而 GPT-5.5 是地基级别的重建，内部代号 Spud。
 
-![GPT-5.5 基准解读页](gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06-source-vellum.jpg)
+![GPT-5.5 基准解读页](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06/gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06-source-vellum.jpg)
 （来源：Vellum AI《Everything You Need to Know About GPT-5.5》基准解读文 hero 图，2026-04）
 
 它主打的不是"对话答得更准"，而是**一个能连续行动的编程代理**——接到一个任务后，自己规划、调用工具、浏览网页、写代码、再回头检查自己写的对不对，整个过程中间不需要人接手。OpenAI 给的三个关键能力点很集中：
@@ -43,7 +43,7 @@ API 价格方面，GPT-5.5 是每百万输入 token 5 美元、每百万输出 t
 
 要看懂 GPT-5.5 强在哪、国产差在哪，先得分清它拿出来的两条公开基准测的是完全不同的两件事。
 
-![GPT-5.5 模型基准卡](gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06-source-llmstats.png)
+![GPT-5.5 模型基准卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06/gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06-source-llmstats.png)
 （来源：llm-stats.com GPT-5.5 模型页 og 卡片，2026-06 核对）
 
 两条基准的侧重点：
@@ -66,7 +66,7 @@ API 价格方面，GPT-5.5 是每百万输入 token 5 美元、每百万输出 t
 
 先看 GPT-5.5 最硬的那一环。在 Terminal-Bench 2.0 上，它拿到 **82.7%**，是当前公开榜单的最好成绩，把同档对手甩开了约 13 个百分点。
 
-![GPT-5.5 两条 benchmark 对照 Terminal-Bench 与 SWE-Bench Pro](gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06-chart-two-bench.png)
+![GPT-5.5 两条 benchmark 对照 Terminal-Bench 与 SWE-Bench Pro](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06/gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06-chart-two-bench.png)
 
 这 13 个百分点的身位是这么来的：
 
@@ -96,7 +96,7 @@ API 价格方面，GPT-5.5 是每百万输入 token 5 美元、每百万输出 t
 
 答案在 SWE-Bench Pro 这条更贴近日常工作的线上特别清楚——**差的是几个百分点，而且国产开源这一档已经追到 GPT-5.5 身边。**
 
-![GPT-5.5 与国产 swebench pro benchmark 横向对照](gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06-chart-swebench-pro.png)
+![GPT-5.5 与国产 swebench pro benchmark 横向对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06/gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06-chart-swebench-pro.png)
 
 把 GPT-5.5 放进国产同档里逐个比 SWE-Bench Pro：
 
@@ -110,7 +110,7 @@ API 价格方面，GPT-5.5 是每百万输入 token 5 美元、每百万输出 t
 
 一张定位表把整档看清楚：
 
-![一线 agentic coding 编程模型 positioning 对位表](gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06-chart-positioning.png)
+![一线 agentic coding 编程模型 positioning 对位表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06/gpt-5-5-agentic-coding-benchmark-cn-gap-2026-06-06-chart-positioning.png)
 
 需要诚实交代的口径问题，避免把厂商自测当成铁板钉钉：
 

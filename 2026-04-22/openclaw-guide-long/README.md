@@ -3,7 +3,7 @@
 >
 > OpenClaw（🦞 龙虾）是 2025 年 11 月一个奥地利独立开发者 Peter Steinberger 开源的个人 AI 助手，到 2026 年 4 月 GitHub 突破 **35 万 star**，GitHub 历史上增长最快的项目。2026 年 1 月底阿里云 / 腾讯云 / 火山引擎**同步推出官方一键部署**，国内用户的门槛降到了一行命令。本文完整讲清楚：国内怎么装、喂哪家模型、花多少钱、哪种人该选哪种方案。
 
-![OpenClaw 国内完全指南 · 99 元养一只龙虾](openclaw-long-cover.png)
+![OpenClaw 国内完全指南 · 99 元养一只龙虾](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-22/openclaw-guide-long/openclaw-long-cover.png)
 
 ---
 
@@ -56,9 +56,9 @@
 ## 三、💰 国内云托管 · 99-200 元/年
 
 
-![国内云一键部署 OpenClaw](openclaw-cloud-pricing.png)
+![国内云一键部署 OpenClaw](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-22/openclaw-guide-long/openclaw-cloud-pricing.png)
 
-![三家云官方部署示意图](openclaw-cloud-deploy.png)
+![三家云官方部署示意图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-22/openclaw-guide-long/openclaw-cloud-deploy.png)
 
 ### 腾讯云 · 99 元/年（性价比首选）
 
@@ -88,9 +88,9 @@
 ## 四、🍤 喂龙虾的粮食 · 国内 AI API 价格
 
 
-![国内 AI API 价格](openclaw-api-pricing.png)
+![国内 AI API 价格](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-22/openclaw-guide-long/openclaw-api-pricing.png)
 
-![国内主流模型 logo 矩阵](openclaw-domestic-models.png)
+![国内主流模型 logo 矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-22/openclaw-guide-long/openclaw-domestic-models.png)
 
 ### ✅ 国内直连 · 无需科学上网
 
@@ -188,7 +188,7 @@
 ## 八、💡 6 种人对号入座
 
 
-![6 种人推荐方案](openclaw-buyer-guide-cn.png)
+![6 种人推荐方案](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-22/openclaw-guide-long/openclaw-buyer-guide-cn.png)
 
 - 💡 **学生党 / 零预算**：本地 Mac/Win + **智谱 GLM-4-Flash 永久免费**，**月花 0 元**先玩 2 周
 - 💡 **白领轻度**：**腾讯云 99 元/年** + **DeepSeek V3.2**（~15 元/月 token 费）——最划算组合

@@ -15,7 +15,7 @@ category: 海外推理系统工程深度
 
 他们让一个 1 万亿参数的 MoE 模型，在一台**标准的 8 卡商用 GPU 服务器**上，持续解码速度稳定跑过 1000 tokens/秒，峰值演示触到约 1200 tokens/秒。没有定制硅片，没有专用 ASIC，用的就是市面上能买到的商用卡。这件事当天冲上了 Hacker News 头页，海外做推理系统的人讨论得最多的一句话是：原来瓶颈一直不在硬件够不够快，而在软件有没有把硬件喂饱。
 
-![MiMo 官方公布的 1000 tps 解码速度对比，万亿参数 MoE 在 8 卡商用节点上持续过千、峰值约 1200（来源：MiMo 官方博客 mimo.xiaomi.com，2026-06-08）](mimo-ultraspeed-source-speed-comparison.png)
+![MiMo 官方公布的 1000 tps 解码速度对比，万亿参数 MoE 在 8 卡商用节点上持续过千、峰值约 1200（来源：MiMo 官方博客 mimo.xiaomi.com，2026-06-08）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/mimo-ultraspeed-1t-1000tps-2026-06-10/mimo-ultraspeed-source-speed-comparison.png)
 
 这篇要讲清楚的核心论点只有一个：**万亿模型的推理速度，正在从"换硬件"问题，变回"软件工程"问题。** MiMo-V2.5-Pro-UltraSpeed 不是靠某一招黑科技，而是模型团队和系统团队坐在一张桌子上，把量化、投机解码、GPU 运行时三层一起重新设计的结果。三层各自省在哪、又各自让出了什么，是这篇文章接下来逐层要交代的事。这套思路对海外的 vLLM、SGLang、TensorRT-LLM 是一次正面对话，对国内做自部署、想把推理成本压下来的开发者，则是一份相当具体的参照。
 
@@ -33,7 +33,7 @@ category: 海外推理系统工程深度
 | 价格 | 约为标准版 MiMo-V2.5-Pro 的 3 倍 | 官方公布 |
 | API 试用窗口 | 2026-06-09 至 2026-06-23 | 官方，仅 API、需申请、不支持按量套餐 |
 
-![UltraSpeed 极速版关键数据一览：万亿参数 MoE、持续过千 tps、约为标准版 10 倍速度 3 倍价格（来源：MiMo 官方博客，2026-06-08）](mimo-ultraspeed-chart1-keynumbers-table.png)
+![UltraSpeed 极速版关键数据一览：万亿参数 MoE、持续过千 tps、约为标准版 10 倍速度 3 倍价格（来源：MiMo 官方博客，2026-06-08）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/mimo-ultraspeed-1t-1000tps-2026-06-10/mimo-ultraspeed-chart1-keynumbers-table.png)
 
 这里有个数字要专门澄清，因为海外几家聚合媒体转载时口径乱了。官方给出的"10 倍"是**和自家标准版 MiMo-V2.5-Pro 比**，不是和 ChatGPT 或 Claude 比。市面上流传的"快过 ChatGPT/Claude 15 倍"这类说法，在 MiMo 官方博客、TileRT 官方博客以及 gizmochina 等一手报道里都查不到原话，属于二手传播中产生的口径漂移，这里不采用。把基准说清楚很重要：UltraSpeed 是同一个模型的两种服务档位之间的速度差，谈的是工程能榨出多少，而不是模型谁强谁弱。
 
@@ -56,7 +56,7 @@ category: 海外推理系统工程深度
 
 这一层的本质是访存优化：把最占带宽的那部分权重压到最小，让解码阶段少搬数据。它解决的是"模型太大、数据搬不动"的问题，但它管不到下一个瓶颈——一次只生成一个 token 这件事本身的串行性。
 
-![模型团队与系统团队协同设计示意：量化、投机解码、运行时三层一起重做，而非各自为战（来源：TileRT 官方博客 tilert.ai，2026-06-08）](mimo-ultraspeed-source-codesign-diagram.png)
+![模型团队与系统团队协同设计示意：量化、投机解码、运行时三层一起重做，而非各自为战（来源：TileRT 官方博客 tilert.ai，2026-06-08）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/mimo-ultraspeed-1t-1000tps-2026-06-10/mimo-ultraspeed-source-codesign-diagram.png)
 
 ## 第二层：DFlash 投机解码，一次蒙对好几个 token
 
@@ -72,7 +72,7 @@ MiMo 用的投机解码方法叫 DFlash，走的是块级并行预测的路子�
 | 数学 / 推理 | 5.56 |
 | 智能体 | 4.29 |
 
-![DFlash 投机解码在三类任务上的平均接受长度：编码 6.30、数学推理 5.56、智能体 4.29（来源：MiMo 官方模型卡，2026-06-08）](mimo-ultraspeed-chart2-accept-length.png)
+![DFlash 投机解码在三类任务上的平均接受长度：编码 6.30、数学推理 5.56、智能体 4.29（来源：MiMo 官方模型卡，2026-06-08）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/mimo-ultraspeed-1t-1000tps-2026-06-10/mimo-ultraspeed-chart2-accept-length.png)
 
 接受长度 6.30 的直观含义是：在代码任务上，大模型平均每验证一轮就能往前推进约 6 个字，相当于把昂贵的大模型调用频率压到原来的约六分之一。代码这类格式高度规律、续写可预测性强的场景收益最大；智能体那种多分支、上下文跳跃大的任务，可预测性低，接受长度自然回落到 4.29。这条规律本身对所有上投机解码的人都成立。
 
@@ -101,7 +101,7 @@ TileRT 的解法是把整条计算流水线收进**一个常驻在 GPU 上的持
 | 执行方式 | 算子化执行 + CUDA Graph 减少启动开销 | 持久核常驻 + Warp 分工，从根上消解算子边界 |
 | 设计起点 | 框架通用，适配各种模型 | 模型与系统针对同一个模型联合设计 |
 
-![三层做法与 vLLM、SGLang、TensorRT-LLM 等主流推理框架的逐项对照（来源：综合 MiMo、TileRT 官方博客整理，2026-06-08）](mimo-ultraspeed-chart3-vs-frameworks.png)
+![三层做法与 vLLM、SGLang、TensorRT-LLM 等主流推理框架的逐项对照（来源：综合 MiMo、TileRT 官方博客整理，2026-06-08）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-10/mimo-ultraspeed-1t-1000tps-2026-06-10/mimo-ultraspeed-chart3-vs-frameworks.png)
 
 前三行 MiMo 都不是凭空发明，而是在各框架已有方向上做到了更激进的工程实现：量化更精细地挑了部位，投机解码换了块级范式，执行方式从"减少启动次数"推进到"干脆不再反复启动"。CUDA Graph 是把一串算子录制成图来减少启动开销，持久核则更进一步，索性让核一直不退出。
 

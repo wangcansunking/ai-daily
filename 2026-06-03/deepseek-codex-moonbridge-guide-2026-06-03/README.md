@@ -9,7 +9,7 @@ description: "Codex 好用但要 OpenAI 账号、额度紧；DeepSeek API 国内
 ---
 # DeepSeek 接进 Codex 保姆级教程：国内直连不看额度脸色
 
-![用一层本地转发把 DeepSeek 接进 OpenAI Codex CLI，国内直连、按量付费](deepseek-codex-moonbridge-guide-2026-06-03.png)
+![用一层本地转发把 DeepSeek 接进 OpenAI Codex CLI，国内直连、按量付费](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/deepseek-codex-moonbridge-guide-2026-06-03/deepseek-codex-moonbridge-guide-2026-06-03.png)
 
 Codex 是 OpenAI 的编程智能体，好用，但有两道坎：要 OpenAI 账号、额度还总是不够花。而 DeepSeek 的 API 在国内可以直连、按量付费、单价便宜得多。把后者接到前者上，是很多国内开发者想干的事。
 
@@ -21,7 +21,7 @@ Codex 是 OpenAI 的编程智能体，好用，但有两道坎：要 OpenAI 账�
 
 ## 为什么不能直接填地址：协议对不上
 
-![Codex 走 Responses API，DeepSeek 走 Chat / Anthropic 兼容接口，中间需要一层转发](source-deepseek-codex-doc.png)
+![Codex 走 Responses API，DeepSeek 走 Chat / Anthropic 兼容接口，中间需要一层转发](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/deepseek-codex-moonbridge-guide-2026-06-03/source-deepseek-codex-doc.png)
 
 *来源：DeepSeek 官方 awesome-deepseek-agent 仓库 接入 Codex 文档*
 
@@ -62,7 +62,7 @@ go version
 
 ## 第三步：配置 Moon Bridge（本地转发层）
 
-![Moon Bridge（moonbridge）本地转发层仓库，把 Codex 的 Responses 请求翻译给 DeepSeek](source-moonbridge-repo.png)
+![Moon Bridge（moonbridge）本地转发层仓库，把 Codex 的 Responses 请求翻译给 DeepSeek](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/deepseek-codex-moonbridge-guide-2026-06-03/source-moonbridge-repo.png)
 
 *来源：Moon Bridge 开源仓库 github.com/ZhiYi-R/moon-bridge*
 
@@ -167,7 +167,7 @@ go run ./cmd/moonbridge `
 
 ## 第六步：启动 Codex，干活
 
-![Codex 是 OpenAI 的编程智能体，配好转发层后即可由 DeepSeek 驱动](source-codex-repo.png)
+![Codex 是 OpenAI 的编程智能体，配好转发层后即可由 DeepSeek 驱动](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/deepseek-codex-moonbridge-guide-2026-06-03/source-codex-repo.png)
 
 *来源：OpenAI Codex 官方仓库 github.com/openai/codex*
 

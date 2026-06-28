@@ -3,7 +3,7 @@
 > **适用读者**：用 MacBook 或普通 Windows PC，想在本地跑起来 Qwen3.6 开源版的人。不涉及服务器、H100、多卡推理。
 > 数据截至 2026-04-22。tok/s 数字为社区实测 + 公开 benchmark 汇总，因系统配置、上下文长度、散热策略差异可能 ±20%。
 
-![Qwen3.6 本地部署指南 · Mac + Windows 实战版](qwen3.6-local-cover.png)
+![Qwen3.6 本地部署指南 · Mac + Windows 实战版](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-22/qwen3.6-local-guide/qwen3.6-local-cover.png)
 
 ## 一、Qwen3.6 是什么（30 秒版）
 
@@ -21,7 +21,7 @@ Mac 的统一内存天然适合这种模型；Windows 因为要拆 CPU/GPU 内�
 
 其他闭源版本（Qwen3.6-Plus / Qwen3.6-Max-Preview）只能走 API，本地跑不了，本文不讨论。
 
-![Qwen3.6-35B-A3B 评测表现](Qwen3.6-35B-A3B-benchmark.png)
+![Qwen3.6-35B-A3B 评测表现](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-22/qwen3.6-local-guide/Qwen3.6-35B-A3B-benchmark.png)
 
 *图：Qwen3.6-35B-A3B 综合评测得分（官方）*
 
@@ -64,7 +64,7 @@ Mac 的统一内存天然适合这种模型；Windows 因为要拆 CPU/GPU 内�
 
 Qwen3.6 是 MoE（混合专家），这个架构和 Apple Silicon 的统一内存是天作之合。
 
-![Apple MacBook Pro M5 Pro / M5 Max](Apple-M5-MacBook-Pro.jpg)
+![Apple MacBook Pro M5 Pro / M5 Max](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-22/qwen3.6-local-guide/Apple-M5-MacBook-Pro.jpg)
 
 *图：Apple 2026 年 3 月发布的 MacBook Pro M5 Pro/Max，内存带宽最高 614 GB/s*
 
@@ -97,7 +97,7 @@ Qwen3.6 是 MoE（混合专家），这个架构和 Apple Silicon 的统一内�
 
 ## 四、Mac 档位详表
 
-![Qwen3.6-Plus 能力概览](Qwen3.6-Plus-hero.png)
+![Qwen3.6-Plus 能力概览](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-22/qwen3.6-local-guide/Qwen3.6-Plus-hero.png)
 
 *图：Qwen3.6-Plus 定位 · 35B-A3B 是开源版本，本节主题*
 
@@ -137,7 +137,7 @@ Qwen3.6 是 MoE（混合专家），这个架构和 Apple Silicon 的统一内�
 
 ### MLX 彩蛋：Mac 性能翻倍
 
-![MLX · Apple 官方 ML 框架](MLX-og.png)
+![MLX · Apple 官方 ML 框架](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-22/qwen3.6-local-guide/MLX-og.png)
 
 *图：Apple 开源的 [MLX 框架](https://github.com/ml-explore/mlx)*
 
@@ -152,7 +152,7 @@ Qwen3.6 是 MoE（混合专家），这个架构和 Apple Silicon 的统一内�
 
 ## 五、Windows 档位详表
 
-![NVIDIA GeForce RTX 5090](NVIDIA-RTX-5090.jpg)
+![NVIDIA GeForce RTX 5090](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-22/qwen3.6-local-guide/NVIDIA-RTX-5090.jpg)
 
 *图：NVIDIA RTX 5090（Blackwell · GDDR7 · 32GB VRAM），Windows 平台跑 Qwen3.6-35B-A3B 的顶配*
 
@@ -202,7 +202,7 @@ Windows 的硬伤：**没有统一内存，MoE 必须手动权衡 GPU VRAM + 系
 
 ## 六、工具选择：Ollama vs LMStudio vs llama.cpp
 
-![LMStudio · GUI 派首选](LMStudio-og.png)
+![LMStudio · GUI 派首选](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-22/qwen3.6-local-guide/LMStudio-og.png)
 
 *图：LMStudio 界面 · 点按钮就能下模型、开 Chat，完全不用命令行*
 
@@ -221,7 +221,7 @@ Windows 的硬伤：**没有统一内存，MoE 必须手动权衡 GPU VRAM + 系
 
 ## 七、Mac 完整安装步骤
 
-![Ollama · 一行命令的 LLM 管家](Ollama-og.png)
+![Ollama · 一行命令的 LLM 管家](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-22/qwen3.6-local-guide/Ollama-og.png)
 
 *图：Ollama · Mac 用户最简首选*
 
@@ -294,7 +294,7 @@ wsl
 
 ### 方案 C · 纯 Windows 版 llama.cpp（最灵活）
 
-![llama.cpp · 最底层的 LLM 推理引擎](llamacpp-og.png)
+![llama.cpp · 最底层的 LLM 推理引擎](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-22/qwen3.6-local-guide/llamacpp-og.png)
 
 *图：llama.cpp · 所有 GGUF 量化的源头*
 

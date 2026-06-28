@@ -18,7 +18,7 @@ tags:
 
 # Firefox 一个月修 423 个漏洞：Claude 当上了 Mozilla 的安全审计员
 
-![Firefox 一个月修 423 个漏洞封面](firefox-claude-mythos-423-vulnerabilities.png)
+![Firefox 一个月修 423 个漏洞封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/firefox-claude-mythos-423-vulnerabilities/firefox-claude-mythos-423-vulnerabilities.png)
 
 5 月 7 日，美国 Mozilla 在 Mozilla Hacks 博客上把一张图甩了出来：2025 年全年，Firefox 每个月修 20 到 30 个安全漏洞；2026 年 4 月，单月修了 **423 个**。这中间隔了一个新的工程参与者——Anthropic 的 Claude Mythos Preview。这不是又一篇"AI 改变安全"的概念稿，而是一个 30 M 行 C++ 代码库、超过 100 个工程师、3 个月工程化跑下来的一手数字。AI Coding 的下一阶段已经不是"帮你写函数"，是"翻出 20 年前没人看见的 use-after-free"。
 
@@ -30,7 +30,7 @@ Simon Willison 在自己博客上转发了 Mozilla Hacks 那篇《Behind the Sce
 - **峰值**：2026 年 4 月，单月修 **423 个**
 - **来源拆解**（Mozilla 原文）：271 个由 Claude Mythos Preview 在 Firefox 150 评估中发现，41 个外部研究者上报，**111 个内部发现**（其中包括 Mythos 在非 150 版本修的、其他模型发现的、传统 fuzzing 发现的三类）
 
-![Firefox 月度安全 bug 修复数走势：2025 全年 20-30，2026 年 4 月跳到 423](mfsa-monthly-vulnerability-count.png)
+![Firefox 月度安全 bug 修复数走势：2025 全年 20-30，2026 年 4 月跳到 423](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/firefox-claude-mythos-423-vulnerabilities/mfsa-monthly-vulnerability-count.png)
 
 Simon 给这件事定了个标题——"Suddenly, the bugs are very good"，这是 Mozilla 工程师在原文里的一节副标题。意思直白：以前 AI 找出来的"漏洞"大多是噪音，从这一代开始不是了。
 
@@ -45,7 +45,7 @@ Mozilla 拿到访问权限有两段：
 1. **2 月**：Anthropic 内部红队先用 **Claude Opus 4.6** 对 Firefox 跑了一轮，把发现的问题打包给 Mozilla。Mozilla 在 Firefox 148 修了其中 22 个安全敏感 bug，对应官方 advisory 里点名 Claude 的三个 CVE：CVE-2026-6746、CVE-2026-6757、CVE-2026-6758
 2. **3—4 月**：Mozilla 拿到 Mythos Preview 的完整访问权限后，自己**在已有 fuzzing 基础设施之上搭了一套 harness**，跑出 271 个漏洞，4 月 21 日随 Firefox 150 一次性发布
 
-![Mythos 工作流：Mozilla 自建 harness 接入 Mythos Preview](mythos-workflow-diagram.png)
+![Mythos 工作流：Mozilla 自建 harness 接入 Mythos Preview](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/firefox-claude-mythos-423-vulnerabilities/mythos-workflow-diagram.png)
 
 Mozilla 工程师在原文里强调这套 harness 的几个工程属性：
 
@@ -91,7 +91,7 @@ Mozilla 在博客里给了一张样本表，泄露了漏洞分类的轮廓。注
 
 为什么大量漏洞拿不到独立 CVE？**SecurityWeek** 解释得很到位——大量是 defense-in-depth、加固、不可达代码路径的潜在问题，单独看不够 CVE 门槛，但合在一起就是一次系统性硬化。
 
-![Firefox 漏洞类型分布饼图：UAF / 沙箱逃逸 / OOB / JIT / 竞态 / 加固类](firefox-cve-types-pie.png)
+![Firefox 漏洞类型分布饼图：UAF / 沙箱逃逸 / OOB / JIT / 竞态 / 加固类](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/firefox-claude-mythos-423-vulnerabilities/firefox-cve-types-pie.png)
 
 从 Mozilla 给的样本看，**类型分布**集中在浏览器最危险的几类：
 
@@ -124,7 +124,7 @@ Mozilla 在博客里给了一张样本表，泄露了漏洞分类的轮廓。注
 
 **第二，模型的边界是"规模 + 覆盖"，不是"超越人类"**。它能在十几年没人摸的代码角落里翻东西，是因为它**不嫌烦、不收疲劳税**，不是因为它比 Project Zero 的人更聪明。这意味着——
 
-![Claude Code 与 Claude Mythos 工作流对照](claude-code-vs-claude-mythos.png)
+![Claude Code 与 Claude Mythos 工作流对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/firefox-claude-mythos-423-vulnerabilities/claude-code-vs-claude-mythos.png)
 
 **人在 loop 仍然必要**：
 
@@ -146,7 +146,7 @@ Mozilla 的工程师在原文写了一句很冷静的话：**"Every bug requires
 
 **Google 那边**节奏不同。Google 的路径不是"接外面的封闭模型"，而是把 LLM 整合进自家 **OSS-Fuzz** 流水线（2023 年 8 月开始用 LLM 自动生成 fuzz target，2024 年 11 月开源 oss-fuzz-gen，提了 26 个新漏洞，覆盖 272 个 C/C++ 项目，新增 37 万行代码覆盖）。Google 的论调更克制——"AI 帮 fuzzer 写 harness"，而 Mozilla 的论调激进——"AI 直接当 reviewer"。**两条路线对应了两种 AI 角色定位**。
 
-![Chromium / WebKit / Firefox 安全投入对照](chromium-vs-firefox-security-investment.png)
+![Chromium / WebKit / Firefox 安全投入对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/firefox-claude-mythos-423-vulnerabilities/chromium-vs-firefox-security-investment.png)
 
 **Apple WebKit** 这边目前没有公开的 LLM 安全审计披露。Apple 的安全节奏一向是"产品发布日 = 漏洞披露日"，工程过程不对外。
 

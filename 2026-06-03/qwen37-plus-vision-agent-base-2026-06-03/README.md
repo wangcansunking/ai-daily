@@ -13,7 +13,7 @@ description: "阿里千问 2026 年 6 月 2 日发布 Qwen3.7-Plus，定位视�
 
 # Qwen3.7-Plus 喂一张截图就把前端写出来
 
-![Qwen3.7-Plus 发布：把屏幕理解到可执行代码做成一条即开即用的智能体路径](qwen37-plus-vision-agent-base-2026-06-03.png)
+![Qwen3.7-Plus 发布：把屏幕理解到可执行代码做成一条即开即用的智能体路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/qwen37-plus-vision-agent-base-2026-06-03/qwen37-plus-vision-agent-base-2026-06-03.png)
 
 先把这篇要讲的一句话放在最前面：Qwen3.7-Plus 真正的看点，不是「视觉能力又升级了」这句套话，而是它把「看一张真实软件截图 → 推理 → 自己写代码 → 调工具执行 → 跑测试验证」这一整条路，做成了阿里云百炼上即开即用的 API。
 
@@ -25,7 +25,7 @@ description: "阿里千问 2026 年 6 月 2 日发布 Qwen3.7-Plus，定位视�
 
 ## 先讲清新在哪：从「看懂」到「干完」
 
-![Qwen3.7-Plus 官方发布主视觉：多模态交互混合智能体 / 编程与生产力助手 / 视觉智能体 / 跨框架泛化能力](source-qwen37plus-official-banner-2026-06-03.png)
+![Qwen3.7-Plus 官方发布主视觉：多模态交互混合智能体 / 编程与生产力助手 / 视觉智能体 / 跨框架泛化能力](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/qwen37-plus-vision-agent-base-2026-06-03/source-qwen37plus-official-banner-2026-06-03.png)
 
 <small>来源：阿里千问 Qwen3.7-Plus 官方发布配图 · 2026-06-02</small>
 
@@ -41,7 +41,7 @@ description: "阿里千问 2026 年 6 月 2 日发布 Qwen3.7-Plus，定位视�
 
 这五步连起来，最关键的是最后那个「验」。它意味着模型不是写完代码就交差，而是会自己跑一遍、看对不对、不对就改——这才是它敢长时间无人干预连续工作的前提。
 
-![Qwen3.7-Plus 的「看-想-写-做-验」闭环：看屏幕到推理、写代码、调工具、跑测试自我修正](chart-qwen37plus-loop-2026-06-03.png)
+![Qwen3.7-Plus 的「看-想-写-做-验」闭环：看屏幕到推理、写代码、调工具、跑测试自我修正](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/qwen37-plus-vision-agent-base-2026-06-03/chart-qwen37plus-loop-2026-06-03.png)
 
 需要先把口径说清楚，免得后面读混：Qwen3.7-Plus 的**参数量、模型架构、激活参数，官方均未披露**。本文不会出现任何「多少亿参数」「多少个专家」的数字——凡是官方没说的，一律不编造。能确认的是定位、输入模态、能力清单、上线渠道，以及官方援引的榜单口径，下面逐项交代来源。
 
@@ -49,7 +49,7 @@ description: "阿里千问 2026 年 6 月 2 日发布 Qwen3.7-Plus，定位视�
 
 ## 输入五种，输出四类：原生多模态到底指什么
 
-![Qwen3.7-Plus 输入模态矩阵：图像/视频/屏幕/网页/文本 五种输入，在一个智能体里完成推理、视觉编程、GUI 操作、真实世界感知](chart-qwen37plus-modality-matrix-2026-06-03.png)
+![Qwen3.7-Plus 输入模态矩阵：图像/视频/屏幕/网页/文本 五种输入，在一个智能体里完成推理、视觉编程、GUI 操作、真实世界感知](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/qwen37-plus-vision-agent-base-2026-06-03/chart-qwen37plus-modality-matrix-2026-06-03.png)
 
 这一节先看它「吃什么、产出什么」。官方称 Qwen3.7-Plus 统一处理五种输入：图像、视频、屏幕、网页、文本。
 
@@ -70,7 +70,7 @@ description: "阿里千问 2026 年 6 月 2 日发布 Qwen3.7-Plus，定位视�
 
 ## 视觉编程：看一张截图，把可运行前端写出来
 
-![Qwen3.7-Plus 看截图复刻手机 App 的能力演示示意](source-qwen37plus-sina-replicate-app-2026-06-03.png)
+![Qwen3.7-Plus 看截图复刻手机 App 的能力演示示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/qwen37-plus-vision-agent-base-2026-06-03/source-qwen37plus-sina-replicate-app-2026-06-03.png)
 
 <small>来源：新浪科技 Qwen3.7-Plus 报道配图 · 2026-06-02</small>
 
@@ -102,7 +102,7 @@ description: "阿里千问 2026 年 6 月 2 日发布 Qwen3.7-Plus，定位视�
 
 ## 为什么「看完直接干」比「看得更准」难一个量级
 
-![Qwen3.7-Plus 上线：多模态智能体新基座，一键复刻桌面端专业软件](source-qwen37plus-qbitai-hero-2026-06-03.png)
+![Qwen3.7-Plus 上线：多模态智能体新基座，一键复刻桌面端专业软件](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/qwen37-plus-vision-agent-base-2026-06-03/source-qwen37plus-qbitai-hero-2026-06-03.png)
 
 <small>来源：量子位 Qwen3.7-Plus 报道主图 · 2026-06-02</small>
 
@@ -124,7 +124,7 @@ description: "阿里千问 2026 年 6 月 2 日发布 Qwen3.7-Plus，定位视�
 
 把视角拉回到日常。读者更熟悉的「让模型操作屏幕」的方案，其实是海外的两条：一条是 Anthropic 的 Computer Use（让 Claude 看截图、移动鼠标、点按键操作电脑），另一条是开源社区的 OpenClaw 这类屏幕操作智能体。Qwen3.7-Plus 的差异化，正好可以放进这个坐标系里看。
 
-![屏幕理解到可执行代码：Qwen3.7-Plus 与海外 Computer Use、OpenClaw 屏幕操作能力对位](chart-qwen37plus-gui-agent-vs-2026-06-03.png)
+![屏幕理解到可执行代码：Qwen3.7-Plus 与海外 Computer Use、OpenClaw 屏幕操作能力对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/qwen37-plus-vision-agent-base-2026-06-03/chart-qwen37plus-gui-agent-vs-2026-06-03.png)
 
 先把厂商和国籍标清楚，避免混淆：
 
@@ -148,7 +148,7 @@ description: "阿里千问 2026 年 6 月 2 日发布 Qwen3.7-Plus，定位视�
 
 ## Vision Arena 全球前五：这个排名怎么看
 
-![Qwen3.7-Plus 多模态评测网格与 Vision Arena 视觉榜：阿里位列前五（榜单截图，原文标注为官方援引第三方榜）](source-qwen37plus-chinaz-demo-2026-06-03.png)
+![Qwen3.7-Plus 多模态评测网格与 Vision Arena 视觉榜：阿里位列前五（榜单截图，原文标注为官方援引第三方榜）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/qwen37-plus-vision-agent-base-2026-06-03/source-qwen37plus-chinaz-demo-2026-06-03.png)
 
 <small>来源：站长之家报道所引用的 Qwen3.7-Plus 评测网格与 Vision Arena 视觉榜截图 · 2026-06-02</small>
 

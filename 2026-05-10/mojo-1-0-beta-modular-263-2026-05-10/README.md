@@ -10,7 +10,7 @@ description: 5 月 7 日 Modular 发布 26.3，把 Mojo 推进 1.0 Beta——LLV
 ---
 # LLVM 之父 Mojo 1.0 Beta：Python 写法跑 GPU
 
-![封面](mojo-1-0-beta-modular-263-2026-05-10.png)
+![封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/mojo-1-0-beta-modular-263-2026-05-10/mojo-1-0-beta-modular-263-2026-05-10.png)
 
 5 月 7 日 Modular 公司发布 26.3 版本，把自家新语言 **Mojo** 推到 **1.0 Beta**。北京时间 5 月 8 日凌晨，这条消息在 Hacker News 首页冲上 362 票 / 228 评论。
 
@@ -32,13 +32,13 @@ Lattner 这个名字在编译器圈分量很重，履历摆在这儿：
 
 Mojo 1.0 Beta 不是一个新版本号那么简单。Modular 内部把它定义为 **"功能完备"（feature complete）**——意思是 1.0 后不会再大改 API，剩下的工作是抛光打磨。这是 Lattner 在 LinkedIn 帖里反复强调的一条工程承诺。
 
-![Mojo 三年时间线](mojo-timeline.png)
+![Mojo 三年时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/mojo-1-0-beta-modular-263-2026-05-10/mojo-timeline.png)
 
 26.3 同时把 2022 年立项时的"Python 超集"愿景做了一次终极切线——**Mojo 已经不再追求 Python 源码兼容**，而是定位成"和 Python 并肩、可以互相 import"的独立系统级语言。
 
 26.3 同步交付的核心特性如下图：
 
-![26.3 核心特性](mojo-263-features.png)
+![26.3 核心特性](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/mojo-1-0-beta-modular-263-2026-05-10/mojo-263-features.png)
 
 四个值得拎出来讲的工程点：
 
@@ -59,7 +59,7 @@ Lattner 自己在多次访谈里给过同一个答案：**AI infrastructure 工�
 
 Mojo 的工程目标就一句话：**让一份代码同时具备 Python 的写法和 CUDA C++ 的性能上限。**
 
-![Mojo vs Python vs CUDA C++](mojo-vs-python-cuda.png)
+![Mojo vs Python vs CUDA C++](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/mojo-1-0-beta-modular-263-2026-05-10/mojo-vs-python-cuda.png)
 
 具体到语言能力：
 
@@ -156,7 +156,7 @@ cd my-mojo && pixi add mojo
 - **知乎 / 公众号**：技术人写的早期分析文章质量参差，深度长文还在等
 - **国内云厂商支持**：阿里云函数计算、腾讯云 SCF、华为云 ModelArts 都还没有 Mojo runtime 的预置环境，需要自己装
 
-![国内开发者上手路径](mojo-china-dev-paths.png)
+![国内开发者上手路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/mojo-1-0-beta-modular-263-2026-05-10/mojo-china-dev-paths.png)
 
 **6 类国内开发者画像 + 推荐路径**（基于上图）：
 

@@ -11,7 +11,7 @@ cover: "ai-coding-plan-12-tier-cover.png"
 
 # 海外 5 家 vs 国产 5 家：AI Coding 选档与组合实操
 
-![海外 vs 国产 AI Coding 订阅对照](ai-coding-plan-12-tier-cover.png)
+![海外 vs 国产 AI Coding 订阅对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/ai-coding-plan-12-tier-pricing-comparison/ai-coding-plan-12-tier-cover.png)
 
 > **60 秒看完决定**：日常 coding 选 Cursor Pro $20 / Qoder 半价 $10；重度专业用户上 Claude Max 20× $200；预算紧 + 自己愿搭工具栈走 DeepSeek API + Aider。文末有 4 个能直接复制的组合方案。
 
@@ -143,7 +143,7 @@ AI Coding 订阅市场 2026-05 进入价格洗牌期——Cursor 把 Ultra 档�
 
 ## 四、过去 · 现在 · 未来时间轴
 
-![AI Coding 订阅定价 · 过去-现在-未来时间轴](ai-coding-plan-pricing-timeline.png)
+![AI Coding 订阅定价 · 过去-现在-未来时间轴](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-04/ai-coding-plan-12-tier-pricing-comparison/ai-coding-plan-pricing-timeline.png)
 
 12 档定价格局不是一夜形成的，下一步也不是空气来的。
 

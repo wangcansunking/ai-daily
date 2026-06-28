@@ -28,7 +28,7 @@ description: "五月二十日 Mike Veerman 在 mikeveerman.github.io/tokenspeed 
 
 # Tokenspeed 让你肉眼校准本地千问的速度
 
-![Tokenspeed 像素风格封面 文字以不同速度滚动的速度感对照](tokenspeed-tokens-per-second-perceived-speed-ui-2026-05-21.png)
+![Tokenspeed 像素风格封面 文字以不同速度滚动的速度感对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/tokenspeed-tokens-per-second-perceived-speed-ui-2026-05-21/tokenspeed-tokens-per-second-perceived-speed-ui-2026-05-21.png)
 
 ## 这一次的核心判断
 
@@ -66,7 +66,7 @@ description: "五月二十日 Mike Veerman 在 mikeveerman.github.io/tokenspeed 
 
 打开 Tokenspeed 页面，让人意外的不是文字滚动本身——按 c / t / h / a 四个字母键，渲染内容会切到完全不同的视觉。
 
-![Tokenspeed 四种渲染模式 code text think agent 视觉对比](tokenspeed-ui-mock.png)
+![Tokenspeed 四种渲染模式 code text think agent 视觉对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/tokenspeed-tokens-per-second-perceived-speed-ui-2026-05-21/tokenspeed-ui-mock.png)
 
 **code 模式 · 语法高亮伪代码。**Veerman 在页面文案里写得直白：「syntax-highlighted pseudo-code, the most common thing you watch stream out of an LLM」。这条是当前 AI Coding 用户最熟悉的场景——你用 Claude Code、Cursor、千问 Coder 让模型写一段函数，眼睛跟着流式输出走。code 模式滚动的就是这种带颜色高亮的代码片段，让你直接感受「30 tok/s 写 Python 是什么节奏」。
 
@@ -82,7 +82,7 @@ description: "五月二十日 Mike Veerman 在 mikeveerman.github.io/tokenspeed 
 
 Veerman 工具的核心创新在数字键 1-9 的九档预设。每一档都锚到了一个真实硬件量级，国内开发者一看就能对号入座。
 
-![九档速度预设 从树莓派到 Cerebras 真实硬件锚点](speed-presets-ladder.png)
+![九档速度预设 从树莓派到 Cerebras 真实硬件锚点](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/tokenspeed-tokens-per-second-perceived-speed-ui-2026-05-21/speed-presets-ladder.png)
 
 **第一档 · 5 tok/s · 树莓派量级。**Veerman 把它定义为「树莓派量级本地模型」（Raspberry-Pi-class local model）。这一档你眼睛能看清单个字蹦出来，但需要忍受逐字蹦的延迟。国内对照——树莓派 5 + Ollama 跑 Qwen3-1.7B Q4，实测大致就这个数。
 
@@ -100,7 +100,7 @@ Veerman 工具的核心创新在数字键 1-9 的九档预设。每一档都锚�
 
 下面这张矩阵图是本文最实用的一节——国内开发者 r/LocalLLaMA / Bilibili / 知乎 上的实测帖中位口径，搭配千问 3 / DeepSeek V4 / GLM-4.5-Air 主流配置，在 Tokenspeed 的四种场景下大致跑出来什么速度。
 
-![硬件 × 模型 × 四场景实测 tok/s 矩阵](hardware-model-matrix.png)
+![硬件 × 模型 × 四场景实测 tok/s 矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/tokenspeed-tokens-per-second-perceived-speed-ui-2026-05-21/hardware-model-matrix.png)
 
 **4090 24G + vLLM + Qwen3-7B FP16 · 是国内本地用户的甜点配置。**code 场景 80 tok/s 流畅，text 95 tok/s 流畅，think 42 tok/s 可读，agent 38 tok/s 可读。结论是——**写代码 / 聊天 / 思考全部能用，跑多轮 agent 略卡但能忍**。
 
@@ -120,7 +120,7 @@ Veerman 工具的核心创新在数字键 1-9 的九档预设。每一档都锚�
 
 Hacker News item 48174920 当天五十一条评论分布很有代表性——五派意见全部出来了。
 
-![HN item 48174920 五派代表评论 antirez aurareturn ricardobeat unglaublich SXX](hn-comments-snapshot.png)
+![HN item 48174920 五派代表评论 antirez aurareturn ricardobeat unglaublich SXX](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/tokenspeed-tokens-per-second-perceived-speed-ui-2026-05-21/hn-comments-snapshot.png)
 
 **第一派 · 单一 tok/s 数字不够派。**用户 antirez（Redis 作者 Salvatore Sanfilippo）在评论里给了一个最有重量的批评：
 
@@ -166,7 +166,7 @@ Hacker News item 48174920 当天五十一条评论分布很有代表性——五
 
 Veerman 工具最有教育价值的一节是它的换算文案——「English prose averages ~1.3 tokens per word, so 30 tok/s ≈ 23 words/s」。一句话把抽象的 tok/s 锚到了人类朗读速度。把这条原理扩展到中文场景，就是下面这张图。
 
-![人类可感速度带 阅读 字幕 打字 智能体四条参照线](perceived-speed-band.png)
+![人类可感速度带 阅读 字幕 打字 智能体四条参照线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/tokenspeed-tokens-per-second-perceived-speed-ui-2026-05-21/perceived-speed-band.png)
 
 **汉字换算口径。**Qwen3 / GPT-4 tokenizer 在中文上的中位口径是 1 token ≈ 1.4 汉字。所以 30 tok/s 对中文是每秒约 42 汉字——比普通人打字（每分钟 40 字 ≈ 每秒 0.67 字）快约 60 倍，但比快速阅读（每分钟 600 字 ≈ 每秒 10 字）只快 4 倍。
 
@@ -182,7 +182,7 @@ Veerman 工具最有教育价值的一节是它的换算文案——「English p
 
 ## 用 Tokenspeed 校验本地千问 / DeepSeek 的具体流程
 
-![Tokenspeed 校验本地千问的六步 validation workflow 工作流](validation-workflow.png)
+![Tokenspeed 校验本地千问的六步 validation workflow 工作流](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/tokenspeed-tokens-per-second-perceived-speed-ui-2026-05-21/validation-workflow.png)
 
 抓住一个最实用的角度——你今天就有一块 4090 / 5090 / M4 Max，你跑了 vLLM / SGLang / Ollama / LM Studio 部署千问 3 / DeepSeek V4，怎么用 Tokenspeed 校验速度对不对？步骤如下，按性价比排列。
 

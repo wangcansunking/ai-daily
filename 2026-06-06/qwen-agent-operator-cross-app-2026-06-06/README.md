@@ -16,7 +16,7 @@ description: 2026 年阿里把通义千问推到「会办事」这一步：千�
 ---
 # 通义千问开始替你办事：从会聊天到会订票
 
-![通义千问 Agent 办事封面：一句话指令，AI 助手跨应用代办订票订酒店付款](qwen-agent-operator-cross-app-2026-06-06.png)
+![通义千问 Agent 办事封面：一句话指令，AI 助手跨应用代办订票订酒店付款](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/qwen-agent-operator-cross-app-2026-06-06/qwen-agent-operator-cross-app-2026-06-06.png)
 
 2026 年春节，全国差不多每十个人里就有一个人，在千问 App 上下过一单。这个数字背后藏着一件比"又一个对话模型"更值得看的事：通义千问从一个回答问题的助手，变成了一个能真的把事办完的助手。你说一句"订明天去上海的高铁，到了订家近的酒店"，它会自己去查车次、比酒店、走到付款那一步停下来等你点头。
 
@@ -41,7 +41,7 @@ description: 2026 年阿里把通义千问推到「会办事」这一步：千�
 
 很多人第一反应是，这是不是又一个把按钮包一层的语音助手？不是。千问把"办一件事"拆成了一套有分工的智能体协作，这也是它和"看屏幕点点点"那条路线最大的不同。
 
-![千问 App 一句话办事的主 Agent 拆解、子 Agent 经 MCP/A2A 接口跨应用执行、付款前回到用户确认的流程示意](qwen-agent-operator-cross-app-2026-06-06-architecture.png)
+![千问 App 一句话办事的主 Agent 拆解、子 Agent 经 MCP/A2A 接口跨应用执行、付款前回到用户确认的流程示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/qwen-agent-operator-cross-app-2026-06-06/qwen-agent-operator-cross-app-2026-06-06-architecture.png)
 
 它的做法可以拆成三层：
 
@@ -71,19 +71,19 @@ description: 2026 年阿里把通义千问推到「会办事」这一步：千�
 
 普通用户感受到的是"会办事"，开发者拿到的则是另一件东西——一个默认就带超长上下文、代码智能体能力大幅提升的模型 Qwen3.6-Plus。它在 2026 年 4 月 2 日正式上线，更早在 3 月底就在 OpenRouter 放出了免费预览版。
 
-![通义千问官方博客 Qwen3.6-Plus 发布页，标题为「Towards Real World Agents」，强调代码智能体、仓库级前端、可靠的开发者体验](qwen-agent-operator-cross-app-2026-06-06-qwen-blog-hero.png)
+![通义千问官方博客 Qwen3.6-Plus 发布页，标题为「Towards Real World Agents」，强调代码智能体、仓库级前端、可靠的开发者体验](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/qwen-agent-operator-cross-app-2026-06-06/qwen-agent-operator-cross-app-2026-06-06-qwen-blog-hero.png)
 
 <small>来源：通义千问官方博客 Qwen3.6-Plus 发布页 qwen.ai/blog（标题「Towards Real World Agents」，2026-06 截取）</small>
 
 官方给这次发布定的主题是「Towards Real World Agents」——走向真实世界里能干活的智能体，这和 App 那一头"会办事"的方向是同一句话的两种说法。
 
-![OpenRouter 上 Qwen3.6 Plus 的产品页面，标注 100 万上下文、输入输出价格与 2026 年 4 月 2 日发布日期](qwen-agent-operator-cross-app-2026-06-06-openrouter-page.png)
+![OpenRouter 上 Qwen3.6 Plus 的产品页面，标注 100 万上下文、输入输出价格与 2026 年 4 月 2 日发布日期](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/qwen-agent-operator-cross-app-2026-06-06/qwen-agent-operator-cross-app-2026-06-06-openrouter-page.png)
 
 <small>来源：OpenRouter Qwen3.6 Plus 产品页 openrouter.ai/qwen/qwen3.6-plus（2026-06 截取）</small>
 
 几组已经能核实的数字，先摆清楚：
 
-![Qwen3.6-Plus 的 SWE-bench Verified 78.8 分对照 Claude Opus 4.5 的 80.9 分，以及上下文、价格、发布时间三组关键数](qwen-agent-operator-cross-app-2026-06-06-bench.png)
+![Qwen3.6-Plus 的 SWE-bench Verified 78.8 分对照 Claude Opus 4.5 的 80.9 分，以及上下文、价格、发布时间三组关键数](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/qwen-agent-operator-cross-app-2026-06-06/qwen-agent-operator-cross-app-2026-06-06-bench.png)
 
 - **默认 100 万 token 上下文**：一次能吞下约八本小说体量、或者约两千页文档的内容，整个代码仓库连着依赖关系一起读进去不用反复切片；
 - **代码智能体能力贴近顶配**：在 SWE-bench Verified 这个仓库级真实修 bug 的榜单上拿到 78.8 分，对照 Claude Opus 4.5 的 80.9 分，差距收到约两分以内；
@@ -100,11 +100,11 @@ description: 2026 年阿里把通义千问推到「会办事」这一步：千�
 
 把视野放大，会发现"让 AI 会办事"是 2026 年国内大厂共同的方向，但阿里、百度、字节走的是三条很不一样的路。
 
-![IT之家关于 Qwen3.6-Plus 模型发布、编码智能体能力全面跃升的报道页面，配阿里官方 Qwen3.6-Plus 发布主视觉](qwen-agent-operator-cross-app-2026-06-06-ithome-report.png)
+![IT之家关于 Qwen3.6-Plus 模型发布、编码智能体能力全面跃升的报道页面，配阿里官方 Qwen3.6-Plus 发布主视觉](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/qwen-agent-operator-cross-app-2026-06-06/qwen-agent-operator-cross-app-2026-06-06-ithome-report.png)
 
 <small>来源：IT之家《阿里 Qwen3.6-Plus 模型发布，编码智能体能力全面跃升》ithome.com（2026-06 截取）</small>
 
-![阿里通义、百度文心、字节豆包三家在主力形态、代办方式、最先打通场景、开发者抓手四个维度上的 Agent 办事路线对位表](qwen-agent-operator-cross-app-2026-06-06-routes.png)
+![阿里通义、百度文心、字节豆包三家在主力形态、代办方式、最先打通场景、开发者抓手四个维度上的 Agent 办事路线对位表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/qwen-agent-operator-cross-app-2026-06-06/qwen-agent-operator-cross-app-2026-06-06-routes.png)
 
 | 对位维度 | 阿里 · 通义千问 | 百度 · 文心 | 字节 · 豆包 |
 |---|---|---|---|

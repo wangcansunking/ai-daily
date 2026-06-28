@@ -11,7 +11,7 @@ cover: "apple-mac-mini-256gb-cut-rammageddon-dram-cycle.png"
 
 # 「苹果砍 256GB Mac mini 内存涨 100%」
 
-![苹果砍 256GB Mac mini · RAMageddon 封面](apple-mac-mini-256gb-cut-rammageddon-dram-cycle.png)
+![苹果砍 256GB Mac mini · RAMageddon 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/apple-mac-mini-256gb-cut-rammageddon-dram-cycle/apple-mac-mini-256gb-cut-rammageddon-dram-cycle.png)
 
 > 三个数字串起来读：**256GB Mac mini 没了**、新入门款国行 **5,999 元**起（涨了 1,500 元）、TrendForce 测出的服务器 DRAM **Q1 单季涨价 60-70%**。第三个数字接管了前两个——苹果不是想砍丐版，是上游把内存价格抬上去了，再不砍 256GB，整线毛利兜不住。
 
@@ -25,7 +25,7 @@ cover: "apple-mac-mini-256gb-cut-rammageddon-dram-cycle.png"
 
 ## 一、苹果砍 256GB Mac mini · 事实层
 
-![Mac mini M4 当前 SKU 价格表](apple-mac-mini-sku-pricing.png)
+![Mac mini M4 当前 SKU 价格表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/apple-mac-mini-256gb-cut-rammageddon-dram-cycle/apple-mac-mini-sku-pricing.png)
 
 5 月 1 日苹果中国官网 Mac mini 产品页悄悄改了——256GB 那一行直接被删，新入门款变成 **M4 + 16GB + 512GB，国行 5,999 元**起（美国官网 799 美元、9to5Mac 5-1 头条确认）。原 4,499 元起步的 256GB 版彻底退场。按苹果一贯「升一档存储加 1,500 元」的定价规则，5,999 等于在原 4,499 的基础上把存储升了一档。
 
@@ -69,7 +69,7 @@ Apple Silicon 把 CPU、GPU、神经引擎全部接到同一组 LPDDR5X 上，�
 
 社区独立测试口径下的 token/s 数据（Medium / 53AI / vminstall.com 等多源交叉，注明每条都是「社区独立观察」、不构成官方背书）：
 
-![Apple Silicon vs 装机方案 跑 Qwen3-32B 实测 token/s](apple-mac-mini-silicon-vs-build-tokens.png)
+![Apple Silicon vs 装机方案 跑 Qwen3-32B 实测 token/s](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/apple-mac-mini-256gb-cut-rammageddon-dram-cycle/apple-mac-mini-silicon-vs-build-tokens.png)
 
 读这张表前先标 caveat：**所有 token/s 数字都是社区独立测试的口径**，量化精度（Q4_K_M、Q5、Q8）、batch size、context 长度、prompt 复杂度都会影响结果，**不同测试者跑出来差 30%–50% 是常态**。这里给的区间已经把高低值都收进来了。
 
@@ -84,7 +84,7 @@ Apple Silicon 把 CPU、GPU、神经引擎全部接到同一组 LPDDR5X 上，�
 
 ## 三、RAMageddon 全图 · TrendForce / TechRadar 测出的涨价链路
 
-![RAMageddon 全行业涨价图（2026 Q1-Q2）](apple-mac-mini-rammageddon-table.png)
+![RAMageddon 全行业涨价图（2026 Q1-Q2）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-06/apple-mac-mini-256gb-cut-rammageddon-dram-cycle/apple-mac-mini-rammageddon-table.png)
 
 苹果砍丐版只是冰山一角。把视角拉到整个存储周期，TrendForce / Tom's Hardware / TechRadar / The Register 几家在 1-2 月发的周期报告把数据拼起来，是这样一张图。
 

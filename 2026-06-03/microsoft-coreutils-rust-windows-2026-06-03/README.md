@@ -11,13 +11,13 @@ track: overseas_hot
 ---
 # 微软把 ls/grep 原生搬进 Windows，WSL 外一条轻路
 
-![微软用 Rust 把 Unix 命令行工具打包带进 Windows，封面示意](microsoft-coreutils-rust-windows-2026-06-03.png)
+![微软用 Rust 把 Unix 命令行工具打包带进 Windows，封面示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/microsoft-coreutils-rust-windows-2026-06-03/microsoft-coreutils-rust-windows-2026-06-03.png)
 
 长期在 Windows 上写代码的人，多半都干过同一件事：为了用上 `ls`、`grep`、`cat` 这几个最顺手的命令，先装一个 Git Bash，或者开一个 WSL，再或者搬来 msys2、Cygwin 那套类 Unix 环境。命令本身不复杂，麻烦的是为了几个命令，要么多挂一个 Linux 子系统，要么多装一整套环境。**真正的痛点不是 Windows 没有这些命令，而是想原生、轻量地用上它们，过去一直缺一条官方的现成路。**
 
 6 月初，微软把这条路补上了。它在 GitHub 上线了一个新仓库 microsoft/coreutils，定位写得很克制——`Coreutils for Windows: Installer & Packaging`。**注意这几个词：安装器、打包。它不是微软又从头写了一套命令行工具，而是把社区已经做好的 Rust 版命令行工具打包成一个 Windows 原生程序，用一条命令就能装上，由微软自己维护。**
 
-![microsoft/coreutils 的 GitHub 仓库社交卡片：Coreutils for Windows，安装器与打包](source-mscoreutils-github-card-2026-06-03.png)
+![microsoft/coreutils 的 GitHub 仓库社交卡片：Coreutils for Windows，安装器与打包](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/microsoft-coreutils-rust-windows-2026-06-03/source-mscoreutils-github-card-2026-06-03.png)
 <small>来源：microsoft/coreutils 仓库社交卡片</small>
 
 先把几个核对过的数字摆清楚。6 月 2 日核对仓库：约 290 颗 star、4 个 fork、MIT 许可、Rust 写成，5 月 15 日建库，当天还在持续提交；已发出的版本标记是 `v2026.5.29`，README 明确写着「本项目处于预览阶段」。对应的那条 Hacker News 讨论帖约 165 分、约 150 条评论，是当天的热门话题之一。
@@ -28,7 +28,7 @@ track: overseas_hot
 
 第一件要说清楚的，也是最容易被标题带偏的一点：**microsoft/coreutils 不是一个 fork，也不是微软重写的实现，它是一个安装与打包项目。**
 
-![microsoft coreutils 的 license 路线：从 GPL 原版到 MIT 重写，再到微软官方打包](chart-mscoreutils-license-2026-06-03.png)
+![microsoft coreutils 的 license 路线：从 GPL 原版到 MIT 重写，再到微软官方打包](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/microsoft-coreutils-rust-windows-2026-06-03/chart-mscoreutils-license-2026-06-03.png)
 
 读 README 第一段就很明白。它写的是：这是「一个由微软维护的构建版本」，把三样东西打包成一个 Windows 用的多调用单一程序——社区的 uutils/coreutils、uutils/findutils，外加一个兼容 GNU 的 `grep`。目标也写得直接：让你在 Linux、macOS、WSL、容器和 Windows 之间来回切换时不再别扭，同样的命令、同样的参数、同样的管道，行为保持一致，已有脚本搬过去不用改写。
 
@@ -52,7 +52,7 @@ Hacker News 上一条很尖锐的追问，恰好点破了这个分工。有人�
 
 它是一个跨平台的 GNU coreutils 的 Rust 重写项目，2013 年建库，到 6 月 2 日核对约 2.3 万颗 star、近 1900 个 fork，MIT 许可。它给自己定的目标很硬核：**做 GNU 工具的「drop-in 替代」，也就是不光命令名一样，连标准输出和错误码都要跟 GNU 原版逐字对得上。** 谁用谁的命令，行为应当看不出差别。
 
-![uutils/coreutils 仓库社交卡片：用 Rust 跨平台重写 GNU coreutils](source-mscoreutils-uutils-card-2026-06-03.png)
+![uutils/coreutils 仓库社交卡片：用 Rust 跨平台重写 GNU coreutils](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/microsoft-coreutils-rust-windows-2026-06-03/source-mscoreutils-uutils-card-2026-06-03.png)
 <small>来源：uutils/coreutils 仓库社交卡片</small>
 
 为什么是 Rust？两点很现实。一是内存安全——这些命令是几乎每个脚本、每条管道都要碰的底层零件，用 Rust 写能从语言层面挡掉一大批内存漏洞。二是跨平台——同一份 Rust 代码能编到 Linux、macOS、Windows，甚至 WASM，不像 C 版那样要为不同平台缝缝补补。这正是它能被微软直接拿来打包进 Windows 的前提。
@@ -61,7 +61,7 @@ Hacker News 上一条很尖锐的追问，恰好点破了这个分工。有人�
 
 它「重写得像不像」不是嘴上说说，而是有一条公开的成绩单。uutils 维护着一个 GNU 测试套件的通过率追踪，把自己跑过多少条 GNU 官方测试随时间画成曲线，谁都能去看进度。
 
-![uutils 通过 GNU 官方测试套件的数量随时间演进](source-mscoreutils-uutils-gnu-tests-2026-06-03.png)
+![uutils 通过 GNU 官方测试套件的数量随时间演进](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/microsoft-coreutils-rust-windows-2026-06-03/source-mscoreutils-uutils-gnu-tests-2026-06-03.png)
 <small>来源：uutils/coreutils-tracking GNU 测试通过率追踪图</small>
 
 这张图是 uutils 敢说自己「力求逐字一致」的底气：它不是凭感觉宣称兼容，而是拿 GNU 自己的测试来量。**这也解释了微软为什么愿意直接拿它打包——一个有公开兼容性成绩单、又是内存安全语言写的项目，对要把它塞进 Windows、面向海量普通用户的微软来说，是个相当稳妥的底子。**
@@ -84,7 +84,7 @@ GNU coreutils 原版用的是 GPL 3.0 或更新版本，uutils 的 Rust 重写�
 
 对一个具体的开发者来说，更实在的问题是：我在 Windows 上想用 `ls`、`grep`，现在到底有几条路，该走哪条？把常见的几条摆在一起看，位置就清楚了。
 
-![microsoft coreutils paths 对照：在 Windows 上拿到 ls / grep / cat 的几条路](chart-mscoreutils-paths-2026-06-03.png)
+![microsoft coreutils paths 对照：在 Windows 上拿到 ls / grep / cat 的几条路](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/microsoft-coreutils-rust-windows-2026-06-03/chart-mscoreutils-paths-2026-06-03.png)
 
 | 路径 | 怎么拿到 | 原生度 | 体量 | 适合谁 |
 |---|---|---|---|---|
@@ -104,7 +104,7 @@ GNU coreutils 原版用的是 GPL 3.0 或更新版本，uutils 的 Rust 重写�
 
 把这几条路放进一天的真实使用里，差别会更具体。如果你只是在 PowerShell 里偶尔想 `ls -la` 看一眼、`grep` 翻一下日志，那么开一个 WSL 显然过重——光启动子系统、再把路径换算回来就够烦的；这时候一条命令装上的原生工具集明显更顺。反过来，如果你要跑的是一整套依赖 bash 语法、依赖完整 GNU 行为的复杂脚本，或者要用包管理装一堆 Linux 软件，那 WSL 提供的「一个真 Linux」是这套轻量工具给不了的。下面这张对照把开发者最在意的四个维度摆在一起，看得更直观。
 
-![microsoft coreutils tradeoff 对照：更轻的一条原生路 vs 更全的子系统，四维取舍](chart-mscoreutils-tradeoff-2026-06-03.png)
+![microsoft coreutils tradeoff 对照：更轻的一条原生路 vs 更全的子系统，四维取舍](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/microsoft-coreutils-rust-windows-2026-06-03/chart-mscoreutils-tradeoff-2026-06-03.png)
 
 这张图想说的就一句：**Coreutils for Windows 赢在启动开销、占用体积和原生度，WSL 赢在与 Linux 脚本逐字对齐的程度。** 选哪条，取决于你这次要的是「轻、原生、够用」还是「全、一致、是个真 Linux」。多数人其实两条都会留——平时敲命令走轻的这条，跑重活时再开 WSL。
 

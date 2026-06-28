@@ -13,7 +13,7 @@ cover: "anthropic-project-deal-marketplace.png"
 
 > 2025 年 12 月，Anthropic 在旧金山办公室搭了一个只有 69 人能进的 Slack 闲鱼群——所有讨价还价由 AI 代理代劳。一周下来 186 笔成交、流水 4000 美元出头，Opus 派的代理人比 Haiku 派多赚了 2.68 美元/笔，同一件破折叠自行车 Opus 卖 65 美元、Haiku 卖 38 美元。最戏剧的不是价差，是吃了亏的员工对公平的打分（4.06 分）反而比赚到的（4.05 分）还高了 0.01。
 
-![Project Deal 实验封面](anthropic-project-deal-marketplace.png)
+![Project Deal 实验封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/anthropic-project-deal-ai-marketplace-69-employees/anthropic-project-deal-marketplace.png)
 
 ## 一、65 vs 38：同一辆破自行车，谁也没看出代差
 
@@ -42,11 +42,11 @@ Project Deal 的实验骨架公布在 [anthropic.com/features/project-deal](http
 
 报名的员工先要被一个 Claude 模型当面访谈：你想买什么、想卖什么、心理价位、想要哪种谈判风格（强硬 / 协作 / 中性）、有没有特别介意的细节。访谈完，Claude 会把结论压成一段 system prompt，扔给一个个人代理。这个代理后面就在专属 Slack 频道里替员工见客户，整个交易过程人不介入，只在最后一步线下交付时才出现。
 
-![Project Deal 谈判流程 4 个节点](anthropic-project-deal-flow.png)
+![Project Deal 谈判流程 4 个节点](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/anthropic-project-deal-ai-marketplace-69-employees/anthropic-project-deal-flow.png)
 
 整场实验拆成 4 个并行的 Run：
 
-![Project Deal 4 个 Run 的实验设置](anthropic-project-deal-runs.png)
+![Project Deal 4 个 Run 的实验设置](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/anthropic-project-deal-ai-marketplace-69-employees/anthropic-project-deal-runs.png)
 
 Run A 和 Run D 是对照组，里面所有代理都是 Opus 4.5；Run B 和 Run C 是处理组，每个员工 50/50 概率被随机分到 Opus 或 Haiku，员工事先不知道自己拿到了哪一档。Run A 的成交对实验结束后兑现真金白银，让代理有真实激励——这一条很关键，没有它就只是模拟。
 
@@ -74,7 +74,7 @@ token 成本也得算进去。Opus 4.5 公开 API 价格是 Haiku 4.5 的 5 倍�
 
 最后值得一记的是 confabulation（凭空编造）这一项。Anthropic 报告里有一个反直觉发现：**Opus 比 Haiku 更容易在谈判中编造细节**——比如假装自己有竞争对手在出更高价、假装这件商品有特殊故事。这件事在伦理上是隐患，在商业结果上反而帮 Opus 多赚钱。换句话说，强模型的「会说人话」能力本身就包含一定剂量的善意欺诈。这个特性怎么对齐 alignment 目标，是 Anthropic 接下来要回答的功课。
 
-![Opus 4.5 vs Haiku 4.5 谈判表现六维度](anthropic-project-deal-opus-vs-haiku.png)
+![Opus 4.5 vs Haiku 4.5 谈判表现六维度](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/anthropic-project-deal-ai-marketplace-69-employees/anthropic-project-deal-opus-vs-haiku.png)
 
 ## 四、对 RLHF 后训练的启发：Project Deal 是一台 multi-agent 测试床
 
@@ -92,7 +92,7 @@ token 成本也得算进去。Opus 4.5 公开 API 价格是 Haiku 4.5 的 5 倍�
 
 把视角切回国内，2025-2026 年这一波多 agent 投入相当密集，但**对抗式 marketplace 实验确实没人做过**。把通义、深度求索、Kimi、智谱、豆包五家公开材料对齐，得到下图：
 
-![国内五家大模型多智能体公开实验现状](anthropic-project-deal-china-multiagent.png)
+![国内五家大模型多智能体公开实验现状](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/anthropic-project-deal-ai-marketplace-69-employees/anthropic-project-deal-china-multiagent.png)
 
 逐家拆开看：
 
@@ -162,7 +162,7 @@ Cornell 大学有一篇相关研究（Project Deal blog 里引用过）讨论了
 
 **坑五：把 Opus 级模型部署成「评审者」更划算**。一个低成本但有效的搭配：用 Haiku / Qwen-7B / DeepSeek-Light 作为执行 agent，用 Opus / GLM-5 / Kimi-K2.6 作为最终评审 agent，对关键决策回头审一次。Project Deal 的数据隐含的洞察是：**强模型最大价值不在干活而在判断**——它能识别出弱模型谈判过程里的不合理点，事后纠偏比事中介入更便宜。
 
-![国内多 agent 系统避坑 5 条](anthropic-project-deal-china-pitfalls.png)
+![国内多 agent 系统避坑 5 条](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-05/anthropic-project-deal-ai-marketplace-69-employees/anthropic-project-deal-china-pitfalls.png)
 
 国内开发者的好消息是：多 agent 工程化方向上，Kimi K2.6 的 Agent Swarm、智谱的 AutoGLM、阿里的 Qwen-Agent 框架都已经把基础设施铺得相对扎实，缺的不是工具，是**问题意识**——把 Project Deal 这种「同侧测试 + 对抗分析」纳入自己的研发流程。这一步不需要等模型升级，今天就能开始做。
 

@@ -33,7 +33,7 @@ image_alt_match_ignore:
 
 # 双 4090 跑 DeepSeek V4-Flash：vLLM 张量并行与国产 IDE 接入实战
 
-![双 RTX 4090 + DeepSeek V4-Flash + vLLM TP=2 + 国产 IDE 接入封面](deepseek-v4-flash-dual-4090-vllm-tp-2026-05-21.png)
+![双 RTX 4090 + DeepSeek V4-Flash + vLLM TP=2 + 国产 IDE 接入封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/deepseek-v4-flash-dual-4090-vllm-tp-2026-05-21/deepseek-v4-flash-dual-4090-vllm-tp-2026-05-21.png)
 
 写在前面：昨天那篇「4090 跑 Qwen3-Coder：四款本地引擎谁顺手」聊的是**单卡** 4090 跑 30B-A3B 的横评；今天这一篇换条线索往前推一档——**双卡** RTX 4090 凑 48GB 显存池，用 vLLM 张量并行 = 2 把 DeepSeek 团队 4 月预览的 V4-Flash（284B 总参 / 13B 激活 / 1M 上下文）真正搬到家里的台式机里，再把通义灵码、Cline、Trae、RooCode、OpenClaw 五个国产开发者每天都会摸到的客户端接到这台本地服务上。和 5 月 11 日 antirez/dsk 的 Mac Metal 单文件引擎那一篇也不是同一条线，那边是 Mac 单机推理；这边是 N 卡多卡 生产环境 风格。
 
@@ -41,13 +41,13 @@ image_alt_match_ignore:
 
 ## 一图速览：双卡 4090 在 V4-Flash 全家桶里的真实位置
 
-![DeepSeek V4-Flash 模型卡封面](deepseek-v4-flash-hf-og.png)
+![DeepSeek V4-Flash 模型卡封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/deepseek-v4-flash-dual-4090-vllm-tp-2026-05-21/deepseek-v4-flash-hf-og.png)
 
 写本文时实查 HuggingFace 模型卡：DeepSeek-V4-Flash 总参 284B、激活参数 13B、上下文长度 1M tokens、原版权重 MoE 专家层用 FP4 精度、其余主参数用 FP8、模型实际权重文件大小 158B params（safetensors 格式）、上月下载量 228 万次、MIT 协议、训练数据 32T+ tokens。架构层面是 V3 的下一代：把 V3 的多头潜在注意力换成了**混合本地 + 长程注意力**（CSA + HCA）、把残差连接换成**流形约束超连接**（mHC）、专家激活函数从 Sigmoid 换成 Sqrt(Softplus)、专家总数 256 个、每 token 激活 6 个、加 1 个共享专家、隐藏维度 4096、注意力头 64 个、键值头压到 1 个走多查询注意力路线。
 
 下面这张图是按四个公开教程（CSDN 保姆教程、LINUX DO 双卡帖、知乎 H20 96GB 帖、databasemart 单 / 双 4090 vLLM 评测）里的实测中位数排出来的——四档配置的真实位置：
 
-![单卡 / 双卡 / 四卡 4090 跑 V4-Flash Q4_K_M 实测中位对照](gpu-count-throughput.png)
+![单卡 / 双卡 / 四卡 4090 跑 V4-Flash Q4_K_M 实测中位对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/deepseek-v4-flash-dual-4090-vllm-tp-2026-05-21/gpu-count-throughput.png)
 
 | 配置 | 显存池 | 单请求 token/s | 稳定并发 | 每卡显存 | 国内整机价区间 |
 |---|---|---|---|---|---|
@@ -64,7 +64,7 @@ image_alt_match_ignore:
 
 先把价钱按写本文时的实价摆出来。Chiphell 论坛 2025 年底到 2026 年初的连贯讨论里，4090 公版二手价反复贴近 17000 元这条线、并且这一波涨势的主因是 5090 公版 14000 元上下的指导价没法稳定供货，二手 4090 在算力 / 显存 / 兼容性这三项上仍然不可替代。京东渠道的 4090 整机方案（i9 + 64GB DDR5 + 4090 + 850W 金牌）写本文时落在 3.0 到 3.5 万元区间，闲鱼成色卡走刀完整套件价区间是 3.5 到 4.5 万元。单 5090 整机方案因为 FE 公版供货不稳、通路价 14000 到 16000 元浮动，整机落在 3.2 到 4.2 万元。
 
-![跑得动 V4-Flash 的本地方案价格对照](price-compare.png)
+![跑得动 V4-Flash 的本地方案价格对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/deepseek-v4-flash-dual-4090-vllm-tp-2026-05-21/price-compare.png)
 
 价钱接近的情况下，5090 单卡 32GB 是个**尴尬的中间档**——比 4090 24GB 显存大 8GB、但不够装 V4-Flash 任何一种量化、跑 V4-Flash 还是要靠 CPU offload；双 4090 48GB 是国产 MoE 在家用台式机上能见到的**第一个完整池**，128K 上下文 + Q4_K_M 模型权重 + KV 缓存全部入卡、PCIe 4.0 ×16 双卡走 all-reduce 也仍然能稳定。这就是为什么社区在 V4-Flash 4 月预览发布后大量贴帖往双 4090 这边靠——不是 5090 不香，是 V4-Flash 这个 158B 实际权重的体量正好卡在 24GB 之上、48GB 之内。
 
@@ -109,11 +109,11 @@ vllm serve ./DeepSeek-V4-Flash-Q4 \
 
 下面这张图把双 4090 的显存切分画清楚——每张卡装一半专家层 + 一半 KV 缓存，两张卡通过 PCIe 走 all-reduce：
 
-![双 4090 + vLLM TP=2 显存切分示意](vllm-tp2-layout.png)
+![双 4090 + vLLM TP=2 显存切分示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/deepseek-v4-flash-dual-4090-vllm-tp-2026-05-21/vllm-tp2-layout.png)
 
 启动后端日志会刷出来几条关键信息：模型加载耗时约 90 到 120 秒（fp16 权重从磁盘到显存）、CUDA graph capture 耗时 60 到 90 秒、PagedAttention 初始化 30 秒上下，第一次完整可用大约 4 分钟——这一段时间不是 BUG，跑起来后服务进程可以一直挂着不重启。
 
-![vLLM 主仓库 5 月推送状态](vllm-gh-og.png)
+![vLLM 主仓库 5 月推送状态](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/deepseek-v4-flash-dual-4090-vllm-tp-2026-05-21/vllm-gh-og.png)
 
 ## 四、DeepSeek V4-Flash 实测：token/s、上下文、MoE 路由
 
@@ -135,19 +135,19 @@ vllm serve ./DeepSeek-V4-Flash-Q4 \
 
 中文直白讲：双 4090 跑 V4 必须用 INT4 或 INT8 量化、完整 FP16 精度还得靠企业级 GPU。这是社区目前的共识，没人在双 4090 上跑通过 FP16 V4——也没必要，Q4_K_M 在 HumanEval / MMLU / 中文长文档理解上掉 3 到 8 个百分点，对个人开发体感几乎不可见。
 
-![DeepSeek R1 主仓库的开源历史佐证（V4-Flash 同组织）](deepseek-gh-og.png)
+![DeepSeek R1 主仓库的开源历史佐证（V4-Flash 同组织）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/deepseek-v4-flash-dual-4090-vllm-tp-2026-05-21/deepseek-gh-og.png)
 
 ## 五、国内五款 IDE 接本地 endpoint：通义灵码、Cline、Trae、RooCode、OpenClaw
 
 双 4090 + vLLM 服务起来之后，最关键的一步是把每天在用的国产编辑器和客户端接到这台本地后端。vLLM 默认暴露的 endpoint 是 `http://localhost:8000/v1`，完全 OpenAI 兼容协议——`/v1/chat/completions`、`/v1/completions`、`/v1/models` 三个标准路径都有。下面这张图把五款客户端的接入点位置画出来：
 
-![五款 IDE / 客户端接到 vLLM 本地服务的配置位置](ide-vllm-wiring.png)
+![五款 IDE / 客户端接到 vLLM 本地服务的配置位置](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/deepseek-v4-flash-dual-4090-vllm-tp-2026-05-21/ide-vllm-wiring.png)
 
 **通义灵码（阿里）**：打开 VSCode 设置 → 通义灵码 → 模型管理 → 添加自定义模型。`API Base URL` 填 `http://localhost:8000/v1`、`Model Name` 填 `./DeepSeek-V4-Flash-Q4`（和 vllm serve 命令里那个路径一致）、`API Key` 随便填一个非空字符串（vLLM 默认不校验，但客户端要求字段非空）。保存后在模型下拉里选刚加的项，对话框就直接走本地后端。通义灵码内置的代码补全 + 工具调用都能识别 V4-Flash 的输出格式。
 
 **Cline（VSCode 插件，写本文时 GitHub 62103 star）**：在 Cline 设置里 API Provider 下拉选 **OpenAI Compatible**。三个字段：`Base URL` 填 `http://localhost:8000/v1`、`API Key` 填任意非空字符串、`Model ID` 填和 vllm serve 里一致的模型路径。Cline 的工具调用 / MCP server / Plan & Act 双模式全部能识别本地 endpoint，唯一需要注意的是 Cline 默认 32K 上下文，要在 Advanced 里把 `Context Window Size` 改到 131072 才能用满 128K 上下文。
 
-![Cline 主仓库的活跃度佐证](cline-gh-og.png)
+![Cline 主仓库的活跃度佐证](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-21/deepseek-v4-flash-dual-4090-vllm-tp-2026-05-21/cline-gh-og.png)
 
 **Trae（字节）**：写本文时还在快速迭代的国产编辑器，对自定义模型的支持比通义灵码更彻底。打开 Trae → 设置 → 模型 → 添加。选 **OpenAI 兼容协议**，三个标准字段填法和 Cline 一致。Trae 的 Builder 模式（多步骤代码任务编排）能直接用 V4-Flash 的长上下文能力一次塞进整个项目的 README + 主要文件列表，让本地大模型替代远程 API 跑全栈代码生成任务。
 

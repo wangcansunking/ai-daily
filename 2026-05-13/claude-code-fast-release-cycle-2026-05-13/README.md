@@ -21,7 +21,7 @@ description: "把 npm registry 的时间戳一行行翻出来，过去 30 天 @a
 
 # Claude Code 凭什么 25 小时一版：把 npm 时间戳和工程文化摆到一起看
 
-![Claude Code 高频发版封面](claude-code-fast-release-cycle-2026-05-13.png)
+![Claude Code 高频发版封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-fast-release-cycle-2026-05-13/claude-code-fast-release-cycle-2026-05-13.png)
 
 5 月 12 日晚上 19:50，`@anthropic-ai/claude-code` 在 npm 上推了 `2.1.140`；前一晚 18:09 是 `2.1.139`；再往前两天连发 `2.1.136 / 2.1.137 / 2.1.138`。打开 `npm view @anthropic-ai/claude-code time --json` 把时间戳按序排一遍，过去 7 天 9 个版本、过去 30 天 30 个版本、过去 90 天 83 个版本——平均每 25.4 小时一个新版本号被推上 npm registry，最短两次发版只隔 4 小时 6 分钟。
 
@@ -29,13 +29,13 @@ description: "把 npm registry 的时间戳一行行翻出来，过去 30 天 @a
 
 > **核心论断**：Claude Code 的发版密度在主流 AI Coding 工具里处于明显第一档，这不是单纯的「快」，而是「模型 × Dogfooding × npm 单包分发」三件套叠加出来的飞轮——四个层面拆开看都很清晰，组合在一起就是别人短时间内学不来的工程纪律。
 
-![anthropics/claude-code GitHub repo 社交预览卡 — 53 Contributors · 123k Stars · 20k Forks（gh api 2026-05-13 实查）](anthropics-claude-code-og.png)
+![anthropics/claude-code GitHub repo 社交预览卡 — 53 Contributors · 123k Stars · 20k Forks（gh api 2026-05-13 实查）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-fast-release-cycle-2026-05-13/anthropics-claude-code-og.png)
 
 ## 一、把数据先摆齐：npm 时间戳不会撒谎
 
 把 `npm view @anthropic-ai/claude-code time --json` 输出的最近 30 个版本号 + 时间戳列成表，节奏一目了然——`2.1.140`（5/12 19:50）→ `2.1.139`（5/11 18:09）→ `2.1.138`（5/9 05:57）→ `2.1.137`（5/9 00:04）→ `2.1.136`（5/8 16:30）……同一天连发两版（5/9 / 5/6 / 4/30 / 4/17 / 4/15 / 4/14 各出现一次）是常态。
 
-![Claude Code 近 30 天 npm 发版时间线](claude-code-version-timeline.png)
+![Claude Code 近 30 天 npm 发版时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-fast-release-cycle-2026-05-13/claude-code-version-timeline.png)
 
 把节奏统计成一张总表，方便和后面对手做横向对照：
 
@@ -53,7 +53,7 @@ description: "把 npm registry 的时间戳一行行翻出来，过去 30 天 @a
 
 把 Claude Code 的发版节奏放进一张柱状图里，和读者每天接触的 Cursor、Copilot CLI、Aider 放到同一截止日（2026-05-13）做对照：
 
-![六款主流 AI Coding 工具近 30 天发版数对比](claude-code-release-cadence-chart.png)
+![六款主流 AI Coding 工具近 30 天发版数对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-fast-release-cycle-2026-05-13/claude-code-release-cadence-chart.png)
 
 | 工具 | 近 30 天发版 | 近 90 天发版 | 口径说明 |
 |---|---|---|---|
@@ -70,13 +70,13 @@ description: "把 npm registry 的时间戳一行行翻出来，过去 30 天 @a
 
 ## 二、团队为什么不止「快」，还能「稳」
 
-![Pragmatic Engineer《How Claude Code is built》文章 hero — Building Claude Code · real-world engineering challenges](pragmaticengineer-claude-code-hero.png)
+![Pragmatic Engineer《How Claude Code is built》文章 hero — Building Claude Code · real-world engineering challenges](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-fast-release-cycle-2026-05-13/pragmaticengineer-claude-code-hero.png)
 
 Pragmatic Engineer 的 Gergely Orosz 4 月在 *How Claude Code is built* 里给出一组数字：Claude Code 2024 年 11 月起步时只有 2 个工程师——Boris Cherny 和 Sid Bidasaria，到 2025 年 7 月扩到约 10 人，现在已经是「engineers + PM + Design + Data Science」完整产品团队。
 
 这组数字真正让人意外的不是 headcount 翻倍，而是 PR 吞吐**+67%**。一般规律是团队从 10 人扩到 40 人，人均产能因为协调成本下降、PR review 排队、新人 ramp-up 等因素普遍下滑；Anthropic 这组数字反过来。
 
-![Anthropic Claude Code 团队成长曲线](claude-code-team-growth.png)
+![Anthropic Claude Code 团队成长曲线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-fast-release-cycle-2026-05-13/claude-code-team-growth.png)
 
 把这组反规模递减的数据拆开看，三条原因可以从公开资料里抠出来：
 
@@ -92,7 +92,7 @@ Claude Code 这个项目的工程能效里，最容易低估的一项是它「�
 
 把这件事和「80%+ 写代码的 Anthropic 工程师每天都用 public 版本的 Claude Code」叠在一起，飞轮就成型了：
 
-![Claude Code 的 Model × Dogfooding × 单包分发飞轮](claude-code-dogfooding-flywheel.png)
+![Claude Code 的 Model × Dogfooding × 单包分发飞轮](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-fast-release-cycle-2026-05-13/claude-code-dogfooding-flywheel.png)
 
 读这张图的方式是：
 
@@ -132,7 +132,7 @@ Claude Code 的核心代码是 TypeScript，渲染层用 Ink（React for CLI）+
 
 5 月 6 日 Anthropic 在旧金山办的 *Code w/ Claude 2026* 大会上，一次性发了 5 个 Agent 新特性（Simon Willison 当天的实况博文记录在 simonwillison.net/2026/May/6）。把这条线和 npm 时间戳对齐，能看到一次大会的发布并不是「攒一波再放」，而是「日常发版节奏 + 大会节点重点曝光」的并行。
 
-![Claude Code 近 30 天功能上线节奏](claude-code-may-2026-features.png)
+![Claude Code 近 30 天功能上线节奏](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/claude-code-fast-release-cycle-2026-05-13/claude-code-may-2026-features.png)
 
 ## 五、外部观察者的判断
 

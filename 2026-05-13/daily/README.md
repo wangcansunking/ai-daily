@@ -23,7 +23,7 @@ cover: 13.png
 
 # Anthropic 估值翻倍 9000 亿 · Claude Code 推 /goal | AI 日报 | 2026-05-13
 
-![Anthropic 估值 9000 亿 · Claude Code 推 /goal & agent 视图 · Google Magic Pointer](13.png)
+![Anthropic 估值 9000 亿 · Claude Code 推 /goal & agent 视图 · Google Magic Pointer](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/daily/13.png)
 
 ## 📋 头版目录（一屏扫完今日）
 
@@ -58,7 +58,7 @@ cover: 13.png
 
 ## 🔥 头条：Anthropic 资本与 Claude Code 同周加速——9000 亿估值在谈、Agent 视图与 /goal 一起上车
 
-![Anthropic 三个月内估值翻倍 + Claude Code Agent 视图 + Google Magic Pointer 时间线](daily-2026-05-13-hero-3-axes.png)
+![Anthropic 三个月内估值翻倍 + Claude Code Agent 视图 + Google Magic Pointer 时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/daily/daily-2026-05-13-hero-3-axes.png)
 
 5/12 这一天，海外 AI 在三个层面同时进了一步：
 
@@ -92,7 +92,7 @@ Bloomberg 报道把这次估值跳跃的根本理由摆得很直白——**收�
 
 ### 二、产品端：Claude Code v2.1.139-140 把多 Agent / 多会话写进 CLI
 
-![Claude Code 5/8-5/13 七天九版本路线，Agent 视图与 /goal 落点](claude-code-version-timeline.png)
+![Claude Code 5/8-5/13 七天九版本路线，Agent 视图与 /goal 落点](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/daily/claude-code-version-timeline.png)
 
 Claude Code 仓库 5/8-5/12 这五天合计推了 v2.1.136-140 五个版本（5/12 21:09 最新一版），其中最值得开发者关注的是 5/11-5/12 这两版引入的两条命令：
 
@@ -118,7 +118,7 @@ $ claude /goal "Refactor auth module to use OIDC + add unit tests + pass CI"
 
 ### 三、入口端：Google Magic Pointer + Googlebook 秋季落地
 
-![Google Magic Pointer 入口形态对照：聊天框 → 光标即 Agent](daily-2026-05-13-magic-pointer-positions.png)
+![Google Magic Pointer 入口形态对照：聊天框 → 光标即 Agent](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/daily/daily-2026-05-13-magic-pointer-positions.png)
 
 Google DeepMind 5/12 在 [deepmind.google/blog/ai-pointer](https://deepmind.google/blog/ai-pointer/) 发表的研究文章给出的核心思路是：
 
@@ -239,7 +239,7 @@ TypeScript 教育者 Matt Pocock 的个人 `~/.claude/skills/` 文件夹公开�
 
 ### 商汤善惠 SenseMartGo 上海三店落地：15 秒一单的具身便利店
 
-![商汤 SenseMartGo 三店落地·30 秒任务流·能力栈与生命周期账本](sensetime-key-metrics.png)
+![商汤 SenseMartGo 三店落地·30 秒任务流·能力栈与生命周期账本](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/daily/sensetime-key-metrics.png)
 
 5/12 商汤旗下商汤善惠正式落地 **SenseMartGo（烧卖购）**——上海新洲大厦、宝山新业坊、宝山滨江景区**三家自营具身智能便利店**同步开业。15 ㎡ 空间承载 300+ SKU，机器人独立完成接单、拿放、清理、选品、定价、补货、动态盘点、运营决策的完整闭环。
 
@@ -268,7 +268,7 @@ TypeScript 教育者 Matt Pocock 的个人 `~/.claude/skills/` 文件夹公开�
 
 ## 📦 GitHub Trending（截至 2026-05-13 实查）
 
-![5/13 GitHub Trending 前 9 名分布与同日 +★ 速率](daily-2026-05-13-github-trending-top9.png)
+![5/13 GitHub Trending 前 9 名分布与同日 +★ 速率](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/daily/daily-2026-05-13-github-trending-top9.png)
 
 
 | 排名 | 仓库 | 语言 | 总⭐ | 当日 +⭐ | 描述 |
@@ -313,7 +313,7 @@ TypeScript 教育者 Matt Pocock 的个人 `~/.claude/skills/` 文件夹公开�
 
 ### GitLab Act 2：第一家公开为 Agent 重构组织的硅谷公司
 
-![GitLab Act 2 组织重构关键数字：60 自治小组 + 42 国家组 + 3 层管理压扁](gitlab-act-2-org-topology-v2.png)
+![GitLab Act 2 组织重构关键数字：60 自治小组 + 42 国家组 + 3 层管理压扁](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-13/daily/gitlab-act-2-org-topology-v2.png)
 
 5/11 GitLab CEO Bill Staples 公开《Act 2》备忘录，**研发拆成约 60 个自治小组（数量翻倍）、国家组从 60 收敛到 42、砍掉 30% 小尾巴、压扁 3 层管理**。论点不是降本而是把"人 + Agent 混合产能"容器化——开发者平台单价从 $10 涨到 $1000+ 的市场扩张需要新的组织形态承接。
 

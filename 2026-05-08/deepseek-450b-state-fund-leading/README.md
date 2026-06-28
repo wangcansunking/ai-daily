@@ -17,7 +17,7 @@ tags:
 
 # 等梁文锋点头：450 亿美元，国资定锚国产 AI
 
-![国资领投 DeepSeek 450 亿美元](deepseek-450b-state-fund-leading.png)
+![国资领投 DeepSeek 450 亿美元](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/deepseek-450b-state-fund-leading/deepseek-450b-state-fund-leading.png)
 
 5 月 6 日下午到 5 月 7 日傍晚的两天里，36 氪、观察者网、IT 之家、新浪财经先后给出同一个口径——**国家集成电路产业投资基金三期（以下简称"大基金三期"）正与 DeepSeek 洽谈领投其首轮外部融资，估值锚在 3000 亿元人民币、约合 450 亿美元，创始人梁文锋以个人名义跟投**。这是 2024 年 5 月注册资本 3440 亿元的大基金三期成立两年来，**第一次公开把钱放到国产大模型公司**——也是 DeepSeek 自 2023 年由幻方量化孵化以来，**第一次接受外部资本**。两个"第一次"撞在一起，国产 AI 一线的估值锚和股东结构同时被改写。
 
@@ -25,7 +25,7 @@ tags:
 
 事件起点要追到一周前。4 月 19 日，外媒援引知情人士称 DeepSeek 正以"超 100 亿美元"估值募集首轮资金；4 月 22 日，估值口径升到 200 亿美元；到了 5 月 6 日，36 氪、观察者网率先抛出"大基金三期拟领投、估值近 450 亿美元"的更高数字，36 氪在当天 18 点发出头版深度《3000 亿估值，国资和投资人都在等梁文锋点头》（估值锚约 3000 亿元人民币 / 450 亿美元，洽谈中、未最终披露）。两周时间，DeepSeek 的私募估值跑出 4.5 倍。
 
-![DeepSeek 估值演进时间线](deepseek-valuation-timeline.png)
+![DeepSeek 估值演进时间线](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/deepseek-450b-state-fund-leading/deepseek-valuation-timeline.png)
 
 时间线翻成一句话：**估值不是市场喊出来的，是大基金三期愿意领投的那一刻喊出来的**。
 
@@ -45,7 +45,7 @@ tags:
 | 月之暗面（Moonshot） | 中国 | 突破 100 亿美元（新一轮谈判中） | 2026-04 |
 | 百川智能 | 中国 | B 轮 200 亿元人民币（约 28 亿美元） | 2024-07 |
 
-![DeepSeek vs Anthropic vs OpenAI 估值对照](deepseek-vs-anthropic-vs-openai-valuation.png)
+![DeepSeek vs Anthropic vs OpenAI 估值对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/deepseek-450b-state-fund-leading/deepseek-vs-anthropic-vs-openai-valuation.png)
 
 把这一行行数字摞起来读：**DeepSeek 一旦完成本轮，就把"非上市国产大模型公司估值天花板"从月之暗面 100 亿美元一脚抬到 450 亿美元——抬高 4.5 倍**。和美国头部对比，DeepSeek 此时大约是 OpenAI 的 1/11、Anthropic 的 1/4。考虑到 DeepSeek-V4 系列开源、API 价格不到 OpenAI 同级模型的 1/10，单位估值对应的"开源参数 + 推理调用量"性价比，明显高于美国同行。
 
@@ -53,7 +53,7 @@ tags:
 
 要理解为什么是"大基金"出手、而不是任何一只市场化美元基金或人民币基金，得回到这只基金本身。
 
-![大基金三期投资版图](big-fund-portfolio-map.png)
+![大基金三期投资版图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/deepseek-450b-state-fund-leading/big-fund-portfolio-map.png)
 
 大基金成立以来共三期：一期（2014 年）注册资本 987 亿元，重点投晶圆制造，撑起了中芯国际、长江存储、华虹半导体这条主线；二期（2019 年）注册资本 2042 亿元，往设备和材料延伸，长电科技、华大九天、燧原科技、英韧科技都是它一二期投出的"卡脖子"项目。三期 2024 年 5 月正式注册，**注册资本 3440 亿元，超过前两期之和**，股东包括财政部、国开金融、上海国盛、工商银行、建设银行、农业银行、中国银行、交通银行等 19 家机构，由依法设立的产业投资体系统一管理。
 
@@ -65,7 +65,7 @@ tags:
 
 把 DeepSeek 一年来的产品线摞起来看，估值的飙升不只是叙事红利。
 
-![DeepSeek 模型发布路线图](deepseek-models-roadmap.png)
+![DeepSeek 模型发布路线图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/deepseek-450b-state-fund-leading/deepseek-models-roadmap.png)
 
 - **2024-12 DeepSeek-V3**：6710 亿参数 MoE，开源权重，预训练成本仅 557 万美元
 - **2025-01 DeepSeek-R1**：第一代专用推理模型，公开 GRPO 训练方法，引爆全球开源社区
@@ -79,7 +79,7 @@ V4 发布之后，OpenRouter 排行榜上 DeepSeek 系列的活跃度持续走�
 
 DeepSeek 的估值锚一旦定在 450 亿美元，国内一级市场的整个估值梯队会被同步抬升。
 
-![国内大模型公司估值榜](china-ai-valuation-leaderboard.png)
+![国内大模型公司估值榜](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-08/deepseek-450b-state-fund-leading/china-ai-valuation-leaderboard.png)
 
 第一梯队的连锁会非常直接。**智谱 AI 在港股已经上市，2026 年 1 月 8 日挂牌至今股价涨超六倍，4 月 1 日单日涨 32%，市值约 510 亿美元**。月之暗面新一轮谈判估值刚突破 100 亿美元；MiniMax、阶跃星辰、零一万物的新一轮谈判都在等一个"对标 DeepSeek"的合理倍数——大基金三期一旦把锚定在 450 亿美元，**月之暗面、MiniMax 接下来的融资估值大概率都会再往上修一档，二级市场对智谱的估值容忍度也会同步打开**。
 

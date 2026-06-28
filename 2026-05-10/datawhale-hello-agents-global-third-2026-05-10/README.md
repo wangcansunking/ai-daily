@@ -20,7 +20,7 @@ tags:
 
 > Anthropic 上周开源的金融 Agent 套件排第一，第二位是一本中文书：Datawhale 的 `hello-agents`，45,621 颗星，2025 年 9 月开仓到现在 8 个月。比 Hugging Face 官方 Agents Course 多 1.6 万颗星。第 3 到 15 名一水的英文项目，唯一的中文项目就是它。
 
-![Datawhale 的 Hello-Agents 冲到 GitHub 全球第二](datawhale-hello-agents-global-third-2026-05-10.png)
+![Datawhale 的 Hello-Agents 冲到 GitHub 全球第二](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/datawhale-hello-agents-global-third-2026-05-10/datawhale-hello-agents-global-third-2026-05-10.png)
 
 打开 GitHub 趋势榜 Python 类目，2026 年 5 月 10 日全球第一是 Anthropic 上周才开源的 `anthropics/financial-services` 金融 Agent 套件，第二位就是 `datawhalechina/hello-agents`——一本由国内开源社区 Datawhale 发起、纯中文、从零讲到 16 章的智能体入门书。当天前 15 名里只有这一个中国教育类项目，紧贴在 Anthropic 之后。
 
@@ -35,7 +35,7 @@ Datawhale 这个名字很多国内 AI 开发者都熟，过去 8 年它出过《
 
 ## 一、Datawhale 是谁：一家长出 200 多个开源项目的中文 AI 学习社区
 
-![Datawhale 社区组织画像](datawhale-community-profile.png)
+![Datawhale 社区组织画像](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/datawhale-hello-agents-global-third-2026-05-10/datawhale-community-profile.png)
 
 Datawhale 的底子是这样的：2018 年 12 月在国内成立的开源 AI 学习社区，GitHub 组织名 `datawhalechina`，到 2026 年 5 月公开仓库 201 个、组织级 followers 26,114、长期跟着做学习者贡献的核心成员上百人。它的运行模式是「读书会 + 教程书 + 学习路径」三件套：每个学习方向选一本经典教材或一个工程主题，组一支社区作者团，把内容拆到章节、配上代码和习题，再用读书会形式带学员一起跑完。
 
@@ -54,7 +54,7 @@ Datawhale 的底子是这样的：2018 年 12 月在国内成立的开源 AI 学
 
 这张表的关键不是绝对数字，而是**节奏**：南瓜书做了 7 年到 25,800 星，hello-agents 做了 8 个月到 45,621 星，是过去整个组织内增速最快、终点最高的单仓。它正面映出一件事——Agent 这个学习方向今年的真实需求量级，比当年机器学习入门书还要更密。
 
-![Datawhale 旗舰开源项目 Star 排行](datawhale-flagship-projects.png)
+![Datawhale 旗舰开源项目 Star 排行](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/datawhale-hello-agents-global-third-2026-05-10/datawhale-flagship-projects.png)
 
 为什么是 Datawhale 而不是其他社区先做出来？看一下 Hello-Agents 仓库 README 里的「核心贡献者」名单，能感受到这家社区的人才结构：
 
@@ -68,7 +68,7 @@ Extra-Chapter 名单还能看到帝国理工、西安交通、深圳大学、南
 
 ## 二、Hello-Agents 16 章拆讲：从智能体定义讲到赛博小镇
 
-![Hello-Agents 16 章 5 部分内容地图](hello-agents-16-chapters.png)
+![Hello-Agents 16 章 5 部分内容地图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/datawhale-hello-agents-global-third-2026-05-10/hello-agents-16-chapters.png)
 
 仓库 README 把全书拆成 5 大部分 16 章：
 
@@ -117,7 +117,7 @@ Extra-Chapter 名单还能看到帝国理工、西安交通、深圳大学、南
 
 ## 三、跟 Hugging Face / 微软 / OpenAI 横评：差距和优势分别在哪
 
-![全球 Agent 教程类开源项目 Star 横评](global-agent-tutorials.png)
+![全球 Agent 教程类开源项目 Star 横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/datawhale-hello-agents-global-third-2026-05-10/global-agent-tutorials.png)
 
 把 Hello-Agents 放在全球 Agent 教程类项目里横评，最直接对比的有这么几个（截至 2026-05-09 公开 Star 数）：
 
@@ -142,7 +142,7 @@ Extra-Chapter 名单还能看到帝国理工、西安交通、深圳大学、南
 
 ## 四、参与路径横评：从读 Issue 到写 Extra-Chapter 都开放
 
-![Hello-Agents 国内开发者参与路径](contribute-paths.png)
+![Hello-Agents 国内开发者参与路径](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-10/datawhale-hello-agents-global-third-2026-05-10/contribute-paths.png)
 
 冲到全球第二是结果。比结果更值得看的是**这本书还在收贡献**。仓库 README 直接把贡献路径写在文末，门槛梯度做得非常细：
 

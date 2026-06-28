@@ -7,7 +7,7 @@ description: "Qwen3.6 一周内连发两个旗舰：35B-A3B MoE（4-15）+ 27B D
 ---
 # Qwen3.6 双旗舰本地部署 · 27B Dense + 35B-A3B MoE 全攻略
 
-![Qwen3.6 双旗舰本地部署：27B Dense vs 35B-A3B MoE](2026-04-27-qwen3.6-dual-flagship-local.png)
+![Qwen3.6 双旗舰本地部署：27B Dense vs 35B-A3B MoE](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-27/qwen3.6-dual-flagship-local/2026-04-27-qwen3.6-dual-flagship-local.png)
 
 > **2026-04-15 阿里开源 Qwen3.6-35B-A3B（MoE，3B 激活）；6 天后 4-21 又开源 Qwen3.6-27B（Dense，全激活 + 多模态）**。同期 Apache-2.0、262K 原生上下文、vision encoder 都齐。社区用脚投票——HF 月下载 35B-A3B **135 万** vs 27B Dense **40 万**，3.4 倍差距。
 >
@@ -17,7 +17,7 @@ description: "Qwen3.6 一周内连发两个旗舰：35B-A3B MoE（4-15）+ 27B D
 
 ## 双旗舰怎么选：10 秒看懂
 
-![Qwen3.6 双旗舰参数对比](qwen3.6-dual-flagship-spec.png)
+![Qwen3.6 双旗舰参数对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-27/qwen3.6-dual-flagship-local/qwen3.6-dual-flagship-spec.png)
 
 两个模型同期发布、协议相同、原生上下文一样、都支持视觉，差别在**激活参数和定位**：
 
@@ -32,7 +32,7 @@ description: "Qwen3.6 一周内连发两个旗舰：35B-A3B MoE（4-15）+ 27B D
 
 ## 装哪个：8 档硬件实测对照
 
-![硬件分档](qwen3.6-dual-device-tiers.png)
+![硬件分档](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-27/qwen3.6-dual-flagship-local/qwen3.6-dual-device-tiers.png)
 
 *量化档位依据 Unsloth 官方 GGUF 文件大小 + 真人实测反馈整理*
 
@@ -207,7 +207,7 @@ CSDN 上 fzuim 用双 4090 + nightly 镜像也翻车："两块 4090 折腾一天
 
 先一张图把 6 条最有代表性的成功体验摆出来：
 
-![Qwen3.6 双旗舰真人成功体验 6 条](qwen3.6-dual-success-quotes.png)
+![Qwen3.6 双旗舰真人成功体验 6 条](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-27/qwen3.6-dual-flagship-local/qwen3.6-dual-success-quotes.png)
 
 下面按设备深入讲。
 
@@ -223,11 +223,11 @@ CSDN 上 fzuim 用双 4090 + nightly 镜像也翻车："两块 4090 折腾一天
 
 Simon 让两个旗舰都画了"骑自行车的鹈鹕"——这是他每发新模型必做的 SVG 绘图测试。两张实测原图：
 
-![Qwen3.6-27B Q4_K_M 输出的 pelican on bicycle SVG](qwen3.6-27b-simon-pelican.png)
+![Qwen3.6-27B Q4_K_M 输出的 pelican on bicycle SVG](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-27/qwen3.6-dual-flagship-local/qwen3.6-27b-simon-pelican.png)
 
 *图片来源：Simon Willison 个人博客 `simonwillison.net/2026/Apr/22/qwen36-27b/`，27B Dense Q4_K_M GGUF 实测，CC-BY 授权*
 
-![Qwen3.6-35B-A3B 输出的 opossum on e-scooter（霓虹赛博朋克）](qwen3.6-35b-a3b-simon-opossum.jpg)
+![Qwen3.6-35B-A3B 输出的 opossum on e-scooter（霓虹赛博朋克）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-27/qwen3.6-dual-flagship-local/qwen3.6-35b-a3b-simon-opossum.jpg)
 
 *图片来源：同博客，35B-A3B 实测，CC-BY 授权*
 
@@ -375,7 +375,7 @@ Simon 让两个旗舰都画了"骑自行车的鹈鹕"——这是他每发新模
 
 先把 5 条翻车实录摆出来——**占总反馈约 30%，比成功故事更有警示价值**：
 
-![Qwen3.6 双旗舰真人翻车实录 5 条](qwen3.6-dual-failure-quotes.png)
+![Qwen3.6 双旗舰真人翻车实录 5 条](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-27/qwen3.6-dual-flagship-local/qwen3.6-dual-failure-quotes.png)
 
 下面逐条展开。
 

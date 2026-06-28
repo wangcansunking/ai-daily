@@ -13,7 +13,7 @@ cover: "xai-grok-4-3.png"
 
 > xAI 4 月 30 日把 Grok 4.3 推上 API：1M 上下文、速度榜 #1、输入价砍到 1.25 美元 / 百万 token。HN 顶贴一晚 350 多 pts。对国内 AI 工程师而言，更值得关注的不是 Grok 4.3 本身，而是它把同档位的价格基线往哪儿拉、千问 / DeepSeek / GLM / Kimi 这一档怎么对位。
 
-![封面](xai-grok-4-3.png)
+![封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/xai-grok-4-3-1m-context-domestic-comparison/xai-grok-4-3.png)
 
 ## 一、Grok 4.3 这一代到底变了什么
 
@@ -58,7 +58,7 @@ xAI 这次发布走的是「悄悄上 API、文档连夜更新、官方推文一
 
 把视线拉回国内。Grok 4.3 卡在「1M 上下文 + 1.25/2.50 美元 + reasoning」这一档时，国产同期已经齐了。
 
-![5 家旗舰：1M 上下文同档对位](grok-4-3-vs-domestic-table.png)
+![5 家旗舰：1M 上下文同档对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/xai-grok-4-3-1m-context-domestic-comparison/grok-4-3-vs-domestic-table.png)
 
 **通义千问 Qwen3.6 Plus**——4 月 2 日发布，原生 1M 上下文、最高 65K 输出 token、reasoning 默认常开。SWE-Bench Verified 78.8、Terminal-Bench 2.0 拿到 61.6，agentic coding 这一项压过 Claude 4.5 Opus。阿里官方价格 0.50 / 3.00 美元；OpenRouter 跨境 0.325 / 1.95 美元；TokenMix 给到的 1M 长上下文档位是 0.28 / 1.66 美元——输入价是 Grok 4.3 的四分之一到一半。
 
@@ -70,7 +70,7 @@ xAI 这次发布走的是「悄悄上 API、文档连夜更新、官方推文一
 
 把跨家 benchmark 拢一拢看：
 
-![5 家旗舰：核心 benchmark 对位](grok-4-3-benchmark-cross.png)
+![5 家旗舰：核心 benchmark 对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-02/xai-grok-4-3-1m-context-domestic-comparison/grok-4-3-benchmark-cross.png)
 
 不同评测口径不能直接画等号，但可以看出几条线：**SWE-Bench / Terminal-Bench 这条 coding 线，Qwen3.6 Plus 反而是国内里最猛的一只**；reasoning（AIME / GPQA）这条线 GLM-5.1 强；超长上下文实战（MRCR）DeepSeek V4-Pro 强；agentic 工具使用 Kimi K2.6 强。Grok 4.3 在 AA-Omniscience 这种「世界知识广度」上有相对优势，但在 SWE-Bench / AIME 这些更被国内重视的硬指标上，目前没有公开数据能压过国产前四。
 

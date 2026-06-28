@@ -23,7 +23,7 @@ description: "Anthropic 5 月 15 日发《How Claude Code works in large codebas
 
 # Claude Code 大型代码库实践今日交卷，国内同档钉钉 CLI 已开源
 
-![Claude Code 大型代码库实践对位国产 AI Coding 生态封面](claude-code-large-codebase-vs-dingtalk-cli-2026-05-15.png)
+![Claude Code 大型代码库实践对位国产 AI Coding 生态封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/claude-code-large-codebase-vs-dingtalk-cli-2026-05-15/claude-code-large-codebase-vs-dingtalk-cli-2026-05-15.png)
 
 5 月 15 日早上，Anthropic 官方博客挂出一篇标题平淡到不像头条的文章——《How Claude Code works in large codebases: best practices and where to start》（Claude Code 在大型代码库里怎么工作：最佳实践与起步指南）。今天这篇文章登 Hacker News 158 分稳居首页前列，留言区一片「这是我等了半年的那份手册」。
 
@@ -71,7 +71,7 @@ Anthropic 这篇文章不是给个人开发者写的，是给大公司里负责�
 
 钉钉 CLI 今年早些时候宣布 Apache 2.0 开源时，量子位用了一个相当重的判断——**「中国第一个国家级应用开放全部产品能力」**。这句话里「国家级应用」指的是钉钉作为 6 亿用户级别的协作平台、官方第一次把全部产品能力（不是部分 API）以命令行 + 开源协议的方式开放给所有开发者。
 
-![钉钉 CLI 十项核心能力分类卡](dingtalk-cli-ten-capabilities.png)
+![钉钉 CLI 十项核心能力分类卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/claude-code-large-codebase-vs-dingtalk-cli-2026-05-15/dingtalk-cli-ten-capabilities.png)
 
 钉钉 CLI 开放的十项核心能力按场景分三类：
 
@@ -96,7 +96,7 @@ Anthropic 这篇文章不是给个人开发者写的，是给大公司里负责�
 
 通义灵码跟 Claude Code 走的是两条不同的路线。Claude Code 是命令行编排框架，主要面向「让 AI 自己完成多步任务」的 agentic 场景；通义灵码主战场仍然是 IDE 内的行内补全和单文件改写，更接近 GitHub Copilot 的形态。但它跟 Copilot 的区别在商业模型上：通义灵码个人版**免费且无限量**，这是 Copilot、Cursor、Claude Code 都没做到的事。
 
-![通义灵码 30 亿行代码 + 1 万家企业数据卡](tongyi-lingma-3b-lines-data.png)
+![通义灵码 30 亿行代码 + 1 万家企业数据卡](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/claude-code-large-codebase-vs-dingtalk-cli-2026-05-15/tongyi-lingma-3b-lines-data.png)
 
 阿里能撑住「免费无限量」的底气，本质上是 Qwen3-Coder 在自家通义灵码上做了量极大的真实场景训练数据回流——30 亿行代码生成意味着每天平均亿行级的推理量，这套数据反过来又喂回 Qwen3-Coder 的下一代，形成飞轮。再叠加千问 Qwen3.6-Plus 在多个评测上几乎直逼 Claude Opus 4.5、上下文 1M，模型能力上已经具备承接企业级编程任务的条件。
 
@@ -106,7 +106,7 @@ Anthropic 这篇文章不是给个人开发者写的，是给大公司里负责�
 
 回到最实操的部分。Anthropic 今天给的 5 条 best practice 不只是给境外开发者用的——国内开发者完全可以拿过来直接套在「Claude Code 框架 + 千问 / DeepSeek + 通义灵码 + 钉钉 CLI」这条链路上。逐条翻译：
 
-![Anthropic 5 条 insight 国产链路对位表](anthropic-5-insights-cn-mapping.png)
+![Anthropic 5 条 insight 国产链路对位表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/claude-code-large-codebase-vs-dingtalk-cli-2026-05-15/anthropic-5-insights-cn-mapping.png)
 
 **1. 「Claude 像工程师一样翻代码库」→ 国内同样有效**
 
@@ -132,7 +132,7 @@ Claude Code 这套按需检索逻辑跟模型品牌无关，纯靠 harness 提�
 
 回到今天这条新闻的时间点。Anthropic 5 月 15 日发《How Claude Code works in large codebases》今天登 HN 158 分，国内这边钉钉 CLI Apache 2.0 开源 + 通义灵码 30 亿行代码 + 千问 Qwen3.6-Plus 几乎直逼 Claude Opus 4.5——海外讲方法论，国内铺基础设施，**两条线同周交卷**，国产 AI Coding 生态在 2026 年 5 月这个时间点已经形成了完整的端到端链路：
 
-![国产 AI Coding 生态完整链路四层架构图](cn-ai-coding-full-stack-2026-05.png)
+![国产 AI Coding 生态完整链路四层架构图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-15/claude-code-large-codebase-vs-dingtalk-cli-2026-05-15/cn-ai-coding-full-stack-2026-05.png)
 
 
 - **编排框架层**：Claude Code 开源、可本地跑、可接国产模型

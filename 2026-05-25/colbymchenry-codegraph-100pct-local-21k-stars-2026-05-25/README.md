@@ -17,7 +17,7 @@ description: "客户端代码 Graph RAG 本地优先流派的代表作：21,681 
 cover: colbymchenry-codegraph-100pct-local-21k-stars-2026-05-25.png
 ---
 
-![封面](colbymchenry-codegraph-100pct-local-21k-stars-2026-05-25.png)
+![封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/colbymchenry-codegraph-100pct-local-21k-stars-2026-05-25/colbymchenry-codegraph-100pct-local-21k-stars-2026-05-25.png)
 
 # codegraph 21k star 本地代码图谱
 
@@ -36,7 +36,7 @@ cover: colbymchenry-codegraph-100pct-local-21k-stars-2026-05-25.png
 
 本文的核心论点只有一句：**客户端代码 Graph RAG 这条赛道，本周分裂出『在线可视化』与『100% 本地』两条互补主干；codegraph 代表本地优先流派，把它跟 Understand-Anything 放在一起看，国内开发者才能避免选错路。** 国内私有化部署、合规审计、断网开发场景下，本地优先路线的价值会比在线流派高一档。
 
-![codegraph 安装演示——五选一 agent harness 一行装完](codegraph-install-demo.png)
+![codegraph 安装演示——五选一 agent harness 一行装完](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/colbymchenry-codegraph-100pct-local-21k-stars-2026-05-25/codegraph-install-demo.png)
 
 ## 与「Understand-Anything」差异化：在线可视化 vs 离线深度
 
@@ -96,7 +96,7 @@ codegraph 自己 README 把管线讲得很清楚，落到一张图：
 
 codegraph 在 v0.9.4 README 给了一个挺克制的基准：拿七个真实开源仓库、各跑一道「架构理解」类问题、每边各跑 4 轮取中位数。Claude Opus 4.7 headless（`claude -p` + `--strict-mcp-config`）跑，开启 vs 关闭 codegraph MCP 两组对比。
 
-![codegraph v0.9.4 七仓库基准](codegraph-benchmark-7repos.png)
+![codegraph v0.9.4 七仓库基准](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/colbymchenry-codegraph-100pct-local-21k-stars-2026-05-25/codegraph-benchmark-7repos.png)
 
 平均结果：**美元成本省 35%、token 省 57%、墙钟时间省 46%、工具调用省 71%**。但读这张图最有价值的不是平均数，而是**节省幅度跟代码库规模的相关性**：
 
@@ -118,7 +118,7 @@ codegraph 跟 Understand-Anything 在 agent 兼容上是反向选择：Understan
 3. 权限白名单（仅 Claude Code 独占——把 `mcp__codegraph__codegraph_search` 等 10 个工具加到 auto-allow 列表）
 4. 卸载脚本（v0.9.3 新加的 `codegraph uninstall`，把上面三样都倒回去）
 
-![5 家 agent harness 集成深度](codegraph-5-harness-radar.png)
+![5 家 agent harness 集成深度](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/colbymchenry-codegraph-100pct-local-21k-stars-2026-05-25/codegraph-5-harness-radar.png)
 
 5 家的集成深度差不多，只有 Claude Code 多了一项「权限白名单」自动配置——因为 Claude Code 的权限系统最严，每次新工具调用要弹确认框，自动加白名单后才能流畅跑。Cursor 没有等价的权限弹窗，剩下 Codex CLI / opencode / Hermes 也都没有，所以那一格对它们 N/A。
 
@@ -154,7 +154,7 @@ issue 区有个挺有代表性的对话能说明这件事的演化：5-01 那天
 
 把同生态项目摆桌上对比，每家 stars 和许可证实查 GitHub 接口：
 
-![codegraph 与五家同类代码图谱 6 way comparison 矩阵](codegraph-6way-comparison.png)
+![codegraph 与五家同类代码图谱 6 way comparison 矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-25/colbymchenry-codegraph-100pct-local-21k-stars-2026-05-25/codegraph-6way-comparison.png)
 
 逐行说明：
 

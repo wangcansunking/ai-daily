@@ -34,7 +34,7 @@ cover: 27.png
 
 # 面壁让 AI 写训练框架 · Claude Code 19.4 万星操作系统 | AI 日报 | 2026-05-27
 
-![国产端侧训练框架与 Claude Code 操作系统层 · 周三三件事互相咬合的本日全景](27.png)
+![国产端侧训练框架与 Claude Code 操作系统层 · 周三三件事互相咬合的本日全景](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/daily/27.png)
 
 ## 📋 头版目录
 
@@ -62,7 +62,7 @@ cover: 27.png
 
 ### 头条 1 · 面壁 ForgeTrain + MiniCPM5-1B 同日开源：国产端侧路线把训练框架也推到台前
 
-![面壁 ForgeTrain 让 AI 自己写训练框架的国内端侧模型新范式](mianbi-forgetrain-ai-writes-training-framework-megatron-10pct-2026-05-27.png)
+![面壁 ForgeTrain 让 AI 自己写训练框架的国内端侧模型新范式](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/daily/mianbi-forgetrain-ai-writes-training-framework-megatron-10pct-2026-05-27.png)
 
 5 月 26 日下午四点多，量子位放出一条让国内做端侧大模型的同行都点开看了的稿子：面壁智能 [1] 不只是发了一个新版小模型 MiniCPM5-1B，还顺手把训出它的那套预训练框架 ForgeTrain 一起开源了。关键不是模型本身有多惊艳，是这套框架的代码——按面壁说法——完全由 AI 自己写出来。
 
@@ -81,7 +81,7 @@ MiniCPM 主仓库当前 stars 是 9,086 / forks 598，仓库描述被改成「Mi
 
 #### 1.2 「考场系统」三阶段：为什么这不是营销话术
 
-![面壁 ForgeTrain 与英伟达 Megatron / 昇腾自家框架 10% 加速对比](forgetrain-vs-frameworks.png)
+![面壁 ForgeTrain 与英伟达 Megatron / 昇腾自家框架 10% 加速对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/daily/forgetrain-vs-frameworks.png)
 
 按面壁智能官方披露，ForgeTrain 的构建分三个阶段：
 
@@ -99,7 +99,7 @@ MiniCPM 主仓库当前 stars 是 9,086 / forks 598，仓库描述被改成「Mi
 
 ### 头条 2 · 昆仑万维 SkyClaw v1.0 限免登场：把 OpenClaw / Claude Code 兼容写进训练目标
 
-![昆仑万维 SkyClaw v1.0 限免登场 · 国产 Agent 模型 mid-training 注入 harness 兼容](kunlun-skyclaw-v1-agent-opus-46-free-2026-05-27.png)
+![昆仑万维 SkyClaw v1.0 限免登场 · 国产 Agent 模型 mid-training 注入 harness 兼容](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/daily/kunlun-skyclaw-v1-agent-opus-46-free-2026-05-27.png)
 
 5 月 26 日下午量子位、IT 之家、新浪科技、CSDN、网易科技几乎同时挂出昆仑万维 [2] 天工 AI 的发布稿。主角叫 SkyClaw v1.0。
 
@@ -124,7 +124,7 @@ MiniCPM 主仓库当前 stars 是 9,086 / forks 598，仓库描述被改成「Mi
 
 #### 2.3 五套 harness 兼容声明：第一次写进训练目标
 
-![SkyClaw harness 兼容矩阵：OpenClaw / Claude Code / Hermes / Nanobot / Codex](skyclaw-harness-matrix.png)
+![SkyClaw harness 兼容矩阵：OpenClaw / Claude Code / Hermes / Nanobot / Codex](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/daily/skyclaw-harness-matrix.png)
 
 昆仑万维通稿明确写：SkyClaw 在 OpenClaw、Claude Code、Hermes、Nanobot、Codex 五套主流 agentic harness 中均可运行。这是国产模型公开材料里第一次把「harness 兼容」当成训练目标写进通稿，不是发完模型再去靠 OpenAI 接口糊一层兼容皮。
 
@@ -132,7 +132,7 @@ MiniCPM 主仓库当前 stars 是 9,086 / forks 598，仓库描述被改成「Mi
 
 ### 头条 3 · ECC 19.4 万星给 Claude Code 装操作系统：61 个子 agent + 246 个 skill + 28 个 hook
 
-![ECC 给 Claude Code 装了个 19.4 万星操作系统：61 个子 agent · 246 个 skill · 28 个 hook 实测](ecc-claude-code-194k-61-subagents-operator-os-2026-05-27.png)
+![ECC 给 Claude Code 装了个 19.4 万星操作系统：61 个子 agent · 246 个 skill · 28 个 hook 实测](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/daily/ecc-claude-code-194k-61-subagents-operator-os-2026-05-27.png)
 
 affaan-m/ECC [6] 全称 Enterprise Claude Code，作者是 Anthropic 黑客松冠军。截至今日仓库 stars **194,320** / forks **29,962** / 贡献者 189 人，MIT 协议。仓库 `created_at` 是 2026-01-18，公开 128 天；README 写这套配置「evolved over 10+ months of intensive daily use」——作者把自己 10 个月日用 Claude Code 攒下的子 agent、skill、hook、rule 一次性开源。
 
@@ -200,7 +200,7 @@ ECC 这个项目能 4 个月攒到 19.4 万星，背后的判断是：**Claude C
 - 🟡 **OpenBMB/MiniCPM**[13]：9,086 stars / 598 forks / Apache-2.0。仓库描述刚改成「MiniCPM5-1B: A SOTA 1B on-device LLM, small yet powerful」。
 - 🟡 **OpenBMB/ForgeTrain**[14]：41 stars / 5 forks / Apache-2.0 / Python。5/14 建仓，5/26 跟随 MiniCPM5-1B 公开发布。
 
-![Anthropic Glasswing 一月扫出 10000+ 高危漏洞与 Copilot Cowork 漏洞同周出现](anthropic-glasswing-update-hero.jpg)
+![Anthropic Glasswing 一月扫出 10000+ 高危漏洞与 Copilot Cowork 漏洞同周出现](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/daily/anthropic-glasswing-update-hero.jpg)
 
 ## 🛠 AI Coding 工具动态
 

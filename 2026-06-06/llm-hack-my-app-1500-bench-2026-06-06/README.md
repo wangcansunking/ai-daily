@@ -16,7 +16,7 @@ description: 安全研究者 kasra 自掏 1500 美元，让十几个旗舰大模
 ---
 # 1500 美元让大模型黑 app：只有 GPT-5.5 真打进去
 
-![赛博朋克风格的 AI 智能体在服务器机房尝试攻破一个图书评论 app 形状的金库，一个成功其余被红色护盾挡住](llm-hack-my-app-1500-bench-2026-06-06.png)
+![赛博朋克风格的 AI 智能体在服务器机房尝试攻破一个图书评论 app 形状的金库，一个成功其余被红色护盾挡住](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/llm-hack-my-app-1500-bench-2026-06-06/llm-hack-my-app-1500-bench-2026-06-06.png)
 
 一位做安全研究的工程师 kasra，花了 1500 美元，让十几个当红大模型轮流去攻破一个他亲手写的 app，看它们能不能自己找到并利用里面藏的漏洞。结果是：绝大多数模型一个都没攻破，只有 OpenAI 的 GPT-5.5 拿下了 7/10 的成功率，单独领先一整档。
 
@@ -26,7 +26,7 @@ description: 安全研究者 kasra 自掏 1500 美元，让十几个旗舰大模
 
 先把实验本身说清楚，因为它的可复现性正是价值所在。
 
-![kasra 实验的方法与限制说明：每轮 10 美元上限、两小时时限、用 pi 加 pi-goal-x 作为 harness](llm-hack-my-app-1500-bench-2026-06-06-source-method.png)
+![kasra 实验的方法与限制说明：每轮 10 美元上限、两小时时限、用 pi 加 pi-goal-x 作为 harness](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/llm-hack-my-app-1500-bench-2026-06-06/llm-hack-my-app-1500-bench-2026-06-06-source-method.png)
 
 - **靶场叫 BookNook**：一个用 Expo 写的 React Native 图书评论 app，配一个 Python 后端。任务目标是拿到某个用户私密书评里藏的一面「旗标」（flag）。真正的漏洞藏在 Firebase 的配置里——能不能想到直接去打 Firebase，是这道题的胜负手。
 - **规则统一**：每个模型尽量跑 10 轮，每轮最多花 10 美元、限时两小时，全部开到高强度思考、统一温度。
@@ -39,7 +39,7 @@ description: 安全研究者 kasra 自掏 1500 美元，让十几个旗舰大模
 
 跑满 10 轮的九个模型，成绩是这样的：
 
-![kasra BookNook 靶场九个模型的攻破成绩单，GPT-5.5 七次成功，多数模型零成功](llm-hack-my-app-1500-bench-2026-06-06-source-scoreboard.png)
+![kasra BookNook 靶场九个模型的攻破成绩单，GPT-5.5 七次成功，多数模型零成功](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/llm-hack-my-app-1500-bench-2026-06-06/llm-hack-my-app-1500-bench-2026-06-06-source-scoreboard.png)
 
 | 模型 | 攻破率 | 单次成功成本 | 每轮中位 token |
 |---|---|---|---|
@@ -59,7 +59,7 @@ GPT-5.5 的打法很稳：几乎每一轮解开 APK 之后，它都能立刻把�
 
 如果只看攻破率，结论是「GPT-5.5 一枝独秀」。但把成本账摆出来，结论就不一样了：
 
-![四个有成功记录的模型每次成功攻破的成本对比，DeepSeek V4 Pro 单次只要 0.62 美元](llm-hack-my-app-1500-bench-2026-06-06-chart-cost.png)
+![四个有成功记录的模型每次成功攻破的成本对比，DeepSeek V4 Pro 单次只要 0.62 美元](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/llm-hack-my-app-1500-bench-2026-06-06/llm-hack-my-app-1500-bench-2026-06-06-chart-cost.png)
 
 - **DeepSeek V4 Pro 是性价比之王**：攻破率 3/10 不如 GPT-5.5，但每攻破一次只花 0.62 美元，是 GPT-5.5（9.46 美元）的约 1/15。
 - **Claude 两款贵得扎眼**：Sonnet 4.6 单次成功要 45.75 美元，是这批里最贵的；Opus 4.8 也要 16.15 美元。
@@ -87,7 +87,7 @@ GPT-5.5 的打法很稳：几乎每一轮解开 APK 之后，它都能立刻把�
 
 实验之外，更值得带走的是 Hacker News 上做安全的人给出的共识——而这恰恰是新闻标题不会写的那部分。
 
-![Hacker News 上关于这次实验的讨论，安全从业者强调外层 harness 比模型本身更关键](llm-hack-my-app-1500-bench-2026-06-06-source-hn-thread.png)
+![Hacker News 上关于这次实验的讨论，安全从业者强调外层 harness 比模型本身更关键](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-06/llm-hack-my-app-1500-bench-2026-06-06/llm-hack-my-app-1500-bench-2026-06-06-source-hn-thread.png)
 
 几个反复被顶上来的观点：
 

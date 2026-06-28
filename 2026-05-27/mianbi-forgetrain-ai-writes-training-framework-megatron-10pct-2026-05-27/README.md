@@ -8,7 +8,7 @@ cover: mianbi-forgetrain-ai-writes-training-framework-megatron-10pct-2026-05-27.
 ---
 # 面壁 ForgeTrain：让 AI 自己写训练框架的国内端侧模型新范式，比 Megatron 快 10%
 
-![面壁 ForgeTrain 封面](mianbi-forgetrain-ai-writes-training-framework-megatron-10pct-2026-05-27.png)
+![面壁 ForgeTrain 封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/mianbi-forgetrain-ai-writes-training-framework-megatron-10pct-2026-05-27/mianbi-forgetrain-ai-writes-training-framework-megatron-10pct-2026-05-27.png)
 
 > 这周二（2026-05-26）下午四点多，量子位放出一条让国内做端侧模型的同行都点开看了的稿子：面壁智能不只是发了一个新版小模型 MiniCPM5-1B，还顺手把训出它的那套预训练框架 ForgeTrain 一起开源了。关键不是模型本身有多惊艳，而是这套框架的代码——按面壁说法——完全是由 AI 自己写出来的。
 
@@ -22,7 +22,7 @@ cover: mianbi-forgetrain-ai-writes-training-framework-megatron-10pct-2026-05-27.
 - **开源情况**：MiniCPM5-1B 在 Hugging Face / GitHub OpenBMB/MiniCPM / ModelScope / AtomGit 四个平台同步开放；ForgeTrain 仓库 OpenBMB/ForgeTrain 在 5 月 14 日建立，发布当天（5-26）已经累计 36 stars，Python 语言，Apache-2.0
 - **MiniCPM 主仓库**：截至 5-26 下午，stars 9,077 / forks 596，描述被改成「MiniCPM5-1B: A SOTA 1B on-device LLM, small yet powerful」
 
-![ForgeTrain 与 MiniCPM5-1B 概念图（量子位首图）](qbitai-forgetrain-hero.webp)
+![ForgeTrain 与 MiniCPM5-1B 概念图（量子位首图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/mianbi-forgetrain-ai-writes-training-framework-megatron-10pct-2026-05-27/qbitai-forgetrain-hero.webp)
 
 数字摆完了。但这篇文章不打算跟着「全球首例 AI 写的预训练框架」这个营销话术一路喊上去——这件事真正值得国内端侧大模型开发者认真看的，是 ForgeTrain 把「考场系统」做成了大模型工具链可以自动迭代的标准件，而不是单点一次性的炫技。
 
@@ -62,7 +62,7 @@ cover: mianbi-forgetrain-ai-writes-training-framework-megatron-10pct-2026-05-27.
 
 每一段的关键判断其实都不在模型本身，而在「数据 + 训练框架」这两条暗线。MiniCPM 4 引入了 UltraData 数据管线，MiniCPM5 这一代则把训练框架也彻底重做成 ForgeTrain。**面壁的核心工程信念是「同样参数量下，模型智力的上限取决于数据 × 训练效率」**，不是更大的模型规模。
 
-![MiniCPM 主仓库 GitHub 页面](minicpm-github-og.png)
+![MiniCPM 主仓库 GitHub 页面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/mianbi-forgetrain-ai-writes-training-framework-megatron-10pct-2026-05-27/minicpm-github-og.png)
 
 ## 二·ForgeTrain 是什么：「考场系统」三阶段拆解
 
@@ -70,7 +70,7 @@ cover: mianbi-forgetrain-ai-writes-training-framework-megatron-10pct-2026-05-27.
 
 按面壁智能官方披露，ForgeTrain 的构建分三个阶段——
 
-![ForgeTrain 三阶段构建流程（自制图）](forgetrain-3-stages.png)
+![ForgeTrain 三阶段构建流程（自制图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/mianbi-forgetrain-ai-writes-training-framework-megatron-10pct-2026-05-27/forgetrain-3-stages.png)
 
 ### 阶段一·采集与考场搭建
 
@@ -114,7 +114,7 @@ ForgeTrain 真正贡献的，是把这套工程纪律标准件化、开源化。
 
 ForgeTrain 训出来的模型 MiniCPM5-1B，在公开测评榜上的位置非常清楚。先看端侧 1B 同档对位——
 
-![端侧 1B 同档 AA-Index 横评（自制图）](minicpm5-vs-1b-peers.png)
+![端侧 1B 同档 AA-Index 横评（自制图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/mianbi-forgetrain-ai-writes-training-framework-megatron-10pct-2026-05-27/minicpm5-vs-1b-peers.png)
 
 这张图里有两组数字需要拆清楚：
 
@@ -141,7 +141,7 @@ Artificial Analysis 站点同时给出了 MiniCPM5-1B 的 non-reasoning 版本�
 
 横向看，MiniCPM5-1B 的位置很清楚：**端侧 1B 量级目前的开源单点冠军**，think 模式下相对 Qwen3.5-2B 用一半参数拿到更高分，相对 Llama-3.2-1B / Gemma-3-1B 这些海外同档则是断层式领先。
 
-![MiniCPM5-1B 评测榜单截图（量子位）](qbitai-benchmark.webp)
+![MiniCPM5-1B 评测榜单截图（量子位）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/mianbi-forgetrain-ai-writes-training-framework-megatron-10pct-2026-05-27/qbitai-benchmark.webp)
 
 ## 四·「比 Megatron 快 10%」的真实含义
 
@@ -153,7 +153,7 @@ Artificial Analysis 站点同时给出了 MiniCPM5-1B 的 non-reasoning 版本�
 
 **昇腾平台上的 10% 加速**：另一条同等重要的数据线是——同一份 ForgeTrain 在华为昇腾平台上跑 MiniCPM5-1B 预训练，相对昇腾自家的训练框架（昇腾 MindSpeed / MindSpeed-LLM 系列）同样取得了约 10% 加速。这个数据点比「比 Megatron 快 10%」更有工程意义：它说明 ForgeTrain 不是针对 NVIDIA CUDA 做的定向优化，而是在不同算子库 / 不同通信库的硬件平台上都能拿到相似的加速比。这是真正的跨平台框架级优化的标志。
 
-![训练框架对位图（自制）](forgetrain-vs-frameworks.png)
+![训练框架对位图（自制）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/mianbi-forgetrain-ai-writes-training-framework-megatron-10pct-2026-05-27/forgetrain-vs-frameworks.png)
 
 | 训练框架 | 厂家 | 在 MiniCPM5-1B 任务上相对速度 | 备注 |
 |---|---|---|---|
@@ -230,9 +230,9 @@ MiniCPM5-1B 用的是标准 `LlamaForCausalLM` 架构——这点非常重要。
 
 面壁智能这次和 MiniCPM5-1B 一起发布的还有一个叫「MiniCPM Desk Pet」的桌面应用——把 1B 模型常驻电脑后台，加一个可定制人格的桌宠交互层。这是一个很有意思的产品落地：1B 模型常驻内存占用约 2GB（FP16）或 0.5GB（INT4），对当代 16GB 起步的笔记本来说几乎无感，但能提供 24/7 的本地对话能力，不依赖云端不依赖网络。
 
-![MiniCPM 桌宠演示](qbitai-desk-pet-demo.png)
+![MiniCPM 桌宠演示](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/mianbi-forgetrain-ai-writes-training-framework-megatron-10pct-2026-05-27/qbitai-desk-pet-demo.png)
 
-![自定义人格设置](qbitai-custom-persona.png)
+![自定义人格设置](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-27/mianbi-forgetrain-ai-writes-training-framework-megatron-10pct-2026-05-27/qbitai-custom-persona.png)
 
 国内做桌面 AI 应用的同行可以认真看一下这个方向：从 Cherry Studio / Chatbox 这类「连云端 API 的本地客户端」，到 OpenClaw / Clawhub 这类「带 router 的本地中枢」，再到 MiniCPM Desk Pet 这种「完全本地 1B 模型常驻」，这是国内桌面 AI 应用形态的三档演化。MiniCPM5-1B 把第三档的门槛拉到了 0.5GB 体积、不依赖任何 GPU、任何 ARM 笔记本都能跑的水平。
 

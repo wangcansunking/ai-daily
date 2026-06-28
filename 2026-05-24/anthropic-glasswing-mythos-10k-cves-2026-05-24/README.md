@@ -14,7 +14,7 @@ authors:
 
 # Anthropic 一月挖一万洞：国产安全模型还差两个量级
 
-![Anthropic Project Glasswing 第一阶段更新封面](anthropic-glasswing-mythos-10k-cves-2026-05-24.png)
+![Anthropic Project Glasswing 第一阶段更新封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/anthropic-glasswing-mythos-10k-cves-2026-05-24/anthropic-glasswing-mythos-10k-cves-2026-05-24.png)
 
 > 5 月 22 日，Anthropic 发布 Project Glasswing（玻璃翼计划）第一阶段更新：Claude Mythos Preview（一款未公开发布的前沿安全模型）与约 50 家合作伙伴一起，**在一个月内扫出超过 10000 个高危 / 严重漏洞**。Cloudflare 在自家代码库里挖出约 2000 个 bug（其中 400 个高危 / 严重），误报率比人类测试者更低；Mozilla 在 Firefox 150 里挖出 271 个漏洞——上一代 Firefox 148 用 Claude Opus 4.6 只挖到 27 个，整整翻了 10 倍。wolfSSL 报出 CVE-2026-5194（高危 9.3 分），可以伪造证书钓鱼银行 / 邮箱域名。OpenBSD 里一个潜伏了 27 年的 TCP 协议 bug 被揪出。首批 11 家合作伙伴是 AWS / Apple / Broadcom / Cisco / CrowdStrike / Google / JPMorgan Chase / Linux Foundation / Microsoft / NVIDIA / Palo Alto Networks，另有约 40 家系统重要软件维护方加入扩展计划。
 
@@ -27,7 +27,7 @@ Anthropic 联合创始人 Dario Amodei 在更新里写了一句话最值得拎�
 
 国内同行第一反应大多是：**我们的安全大模型在哪？** 这次专题把奇安信「QAX-GPT」、360「安全大模型」、阿里云安全 AI、腾讯混元安全（自动化漏洞挖掘工具）、启明星辰「泰合云安全大模型 + MAF / MASB」五家国产安全大模型的真实进度摆开横评——结论是：在「单月扫出 10000 高危漏洞」这条自动化挖洞的硬指标上，国内厂商至少差两个量级，但国内厂商手里有自己的赛道（防御侧、合规侧、上下文长链推理），不是完全的落后，而是路线不同。本文给国内安全工程师一份不焦虑、可对位的全景图。
 
-![Anthropic Glasswing 官方头图](anthropic-glasswing-hero.jpg)
+![Anthropic Glasswing 官方头图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/anthropic-glasswing-mythos-10k-cves-2026-05-24/anthropic-glasswing-hero.jpg)
 
 ## 一、Mythos Preview 一个月扫出 1 万洞到底有多硬
 
@@ -57,7 +57,7 @@ Anthropic 联合创始人 Dario Amodei 在更新里写了一句话最值得拎�
 
 ### Cloudflare：2000 个 bug，400 个高危，误报率低于人类
 
-![Cloudflare Cyber Frontier Models 报告头图](cloudflare-cyber-frontier-hero.png)
+![Cloudflare Cyber Frontier Models 报告头图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/anthropic-glasswing-mythos-10k-cves-2026-05-24/cloudflare-cyber-frontier-hero.png)
 
 Cloudflare 在 5 月 18 日发的官方博客《Project Glasswing: what Mythos showed us》里给了详细数字。他们用 Mythos Preview 扫了自家 50 多个仓库，发现：
 
@@ -74,7 +74,7 @@ Cloudflare 安全团队在博客里说了一段很有画面感的话，verbatim 
 
 ### Mozilla：Firefox 148 → 150，漏洞挖掘量 10 倍跃升
 
-![Firefox 148 vs 150 漏洞挖掘 10 倍提升对比](firefox-148-vs-150-10x-chart.png)
+![Firefox 148 vs 150 漏洞挖掘 10 倍提升对比](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/anthropic-glasswing-mythos-10k-cves-2026-05-24/firefox-148-vs-150-10x-chart.png)
 
 Mozilla 的对比数据是这次更新里最直观的一条曲线：
 
@@ -87,7 +87,7 @@ Mozilla 的对比数据是这次更新里最直观的一条曲线：
 
 ### wolfSSL：CVE-2026-5194 银行证书伪造
 
-![Cybersecurity News 关于 Mythos 零日漏洞的报道封面](cybersec-news-mythos-zero-days.webp)
+![Cybersecurity News 关于 Mythos 零日漏洞的报道封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/anthropic-glasswing-mythos-10k-cves-2026-05-24/cybersec-news-mythos-zero-days.webp)
 
 wolfSSL 是嵌入式设备 + IoT 设备里被用得最广的 TLS / SSL 库之一，从智能门锁到工业控制器都跑这个库。Mythos Preview 在 wolfSSL 里发现了 **CVE-2026-5194**（CVSS 9.3 分，高危），漏洞的影响是：
 
@@ -105,7 +105,7 @@ OpenBSD 是公认安全代码质量最高的开源操作系统之一，每个 co
 
 ## 三、50 家伙伴同盟：从单点工具到协调披露的产业组织
 
-![Glasswing 首批 11 家合作伙伴覆盖图](glasswing-11-partners-chart.png)
+![Glasswing 首批 11 家合作伙伴覆盖图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/anthropic-glasswing-mythos-10k-cves-2026-05-24/glasswing-11-partners-chart.png)
 
 Glasswing 计划的产业意义不只是模型本身，是 **Anthropic 把约 50 家系统重要软件维护方组织进同一个协调披露框架**。首批 11 家的名单很说明问题：
 
@@ -206,7 +206,7 @@ Glasswing 计划的产业意义不只是模型本身，是 **Anthropic 把约 50
 
 ## 五、安全工程师的角色被重构：从「找洞」到「验证 + 协调 + 修」
 
-![安全瓶颈位移图：挖洞自动化后，新瓶颈出现在打补丁](bottleneck-shift-find-to-patch.png)
+![安全瓶颈位移图：挖洞自动化后，新瓶颈出现在打补丁](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-24/anthropic-glasswing-mythos-10k-cves-2026-05-24/bottleneck-shift-find-to-patch.png)
 
 回到 Dario 那句话——**瓶颈从「找漏洞」转移到「验证、协调披露、打补丁」**。这条变化对安全工程师的工作内容意味着什么？
 

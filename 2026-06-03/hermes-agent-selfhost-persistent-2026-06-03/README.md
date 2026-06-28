@@ -13,13 +13,13 @@ image_alt_match_ignore: [source-hermes-agent-banner-2026-06-03.png, source-herme
 
 # Hermes 自托管常驻 agent：关掉电脑它还在后台干活
 
-![Hermes Agent 自托管常驻智能体封面](hermes-agent-selfhost-persistent-2026-06-03.png)
+![Hermes Agent 自托管常驻智能体封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/hermes-agent-selfhost-persistent-2026-06-03/hermes-agent-selfhost-persistent-2026-06-03.png)
 
 昨天我们还在聊 Odysseus 这台本地优先的 AI 工作台、聊 supermemory 这个记忆库。今天要说的 Hermes Agent，乍看又是「自托管 AI agent」，但它其实是另一种物种——一个不待在编辑器里、也不只管记忆，而是常驻在你服务器后台、随时能从 Telegram 喊起来干活的智能体。这篇不打算再写一遍「又一个自托管 agent」。
 
 真正值得讲的是一个问题：为什么是 Hermes 这一个，几乎把整个自托管常驻 agent 的人气都聚到了自己身上。Nous Research 这个仓库 2025-07-22 才创建，到 2026-06-02 约 177,118 星标，三个月不到冲进 GitHub 最热的那一小撮项目。答案藏在它的三件套里——用 markdown 文件做持久记忆、让 agent 自己写技能、在多个消息端常驻后台。
 
-![Hermes Agent 仓库展示卡 GitHub card](source-hermes-agent-github-card-2026-06-03.png)
+![Hermes Agent 仓库展示卡 GitHub card](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/hermes-agent-selfhost-persistent-2026-06-03/source-hermes-agent-github-card-2026-06-03.png)
 
 <small>来源：GitHub 仓库展示卡</small>
 
@@ -42,7 +42,7 @@ image_alt_match_ignore: [source-hermes-agent-banner-2026-06-03.png, source-herme
 
 理解了这三种心态，就明白为什么不能拿同一把尺子量它们。Hermes 在意的从来不是「界面里塞了多少模块」，而是「我离开电脑之后，那个 AI 还在不在、还记不记得我」。它的全部设计，都是围着这一个问题转的。
 
-![Hermes Agent 项目横幅 banner](source-hermes-agent-banner-2026-06-03.png)
+![Hermes Agent 项目横幅 banner](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/hermes-agent-selfhost-persistent-2026-06-03/source-hermes-agent-banner-2026-06-03.png)
 
 <small>来源：项目仓库 assets/banner.png</small>
 
@@ -64,7 +64,7 @@ Hermes 的持久记忆，做法朴素到让人意外——它不塞向量数据�
 
 把记忆做成 markdown，看着土，其实抓住了个人 AI 最该让人安心的一点：你的 AI 记住了你什么，应该由你看得见、改得动。这一点，恰恰是一堆把记忆锁进云端向量库的产品给不了的。
 
-![Hermes Agent 三件套能力对照矩阵 capability matrix](chart-hermes-capability-matrix-2026-06-03.png)
+![Hermes Agent 三件套能力对照矩阵 capability matrix](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/hermes-agent-selfhost-persistent-2026-06-03/chart-hermes-capability-matrix-2026-06-03.png)
 
 <small>来源：依据各项目公开文档自制（截至 2026-06-02）</small>
 
@@ -104,7 +104,7 @@ Hermes 跑的是一个常驻后台进程，通过一个统一的消息网关，�
 
 也正是这第三件套，把它和相邻产品的距离拉到最开。记忆和技能，别的产品多少都在做；但「一个后台进程、常驻多个消息端、跨设备接力」这件事，目前很少有开源项目做得这么完整。这也是它最打动人的地方——它把 AI 从「你打开它才存在」变成了「它一直都在，等你来」。
 
-![Hermes 可接模型 endpoint 与常驻消息端口对照](chart-hermes-endpoints-2026-06-03.png)
+![Hermes 可接模型 endpoint 与常驻消息端口对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/hermes-agent-selfhost-persistent-2026-06-03/chart-hermes-endpoints-2026-06-03.png)
 
 <small>来源：依据 Hermes Agent 官方文档自制</small>
 
@@ -137,7 +137,7 @@ Hermes 火，还有一个常被提起的数字：它在 OpenRouter 上的 token 
 
 对不爱敲命令行的人，这等于给常驻在后台的 Hermes 配了一个随时能从浏览器或手机打开的面板。它和命令行共享同一份记忆和技能，所以你在手机网页里和它聊的内容、它记住的偏好，回到命令行也都接得上。一个常驻 agent 加一个轻网页端，自托管个人 AI 的体验一下子完整了不少。这也解释了为什么配套的 WebUI 项目能在当天就冲上 Trending——主项目带起了一整个配套需求。
 
-![Hermes WebUI 网页界面截图 screenshot](source-hermes-webui-screenshot-2026-06-03.png)
+![Hermes WebUI 网页界面截图 screenshot](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/hermes-agent-selfhost-persistent-2026-06-03/source-hermes-webui-screenshot-2026-06-03.png)
 
 <small>来源：hermes-webui 仓库截图</small>
 
@@ -147,7 +147,7 @@ Hermes 火，还有一个常被提起的数字：它在 OpenRouter 上的 token 
 
 仓库 2025-07-22 创建，到 2026-06-02 约 177,118 星标，三个月不到，进入 GitHub 最热的那一档。同期它还聚起了将近上千名贡献者——对一个两个多月的项目，这个参与规模并不常见。
 
-![Hermes Agent 三个月 GitHub 星标增长曲线 star growth](chart-hermes-star-growth-2026-06-03.png)
+![Hermes Agent 三个月 GitHub 星标增长曲线 star growth](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/hermes-agent-selfhost-persistent-2026-06-03/chart-hermes-star-growth-2026-06-03.png)
 
 <small>来源：仓库 NousResearch/hermes-agent，2026-06-02 约 177,118 星标</small>
 
@@ -189,7 +189,7 @@ Hermes 火，还有一个常被提起的数字：它在 OpenRouter 上的 token 
 - 常驻进程暴露在公网时，记得给 WebUI 配上密码或通行密钥，别让它裸奔——官方对这点有明确提醒。
 - 记忆既然是纯文本，建议定期把那几个 markdown 文件备份进 git，换机或重装时直接拷回来，agent 对你的了解一点不丢。
 
-![Hermes WebUI 工作区界面 workspace](source-hermes-webui-workspace-2026-06-03.png)
+![Hermes WebUI 工作区界面 workspace](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-03/hermes-agent-selfhost-persistent-2026-06-03/source-hermes-webui-workspace-2026-06-03.png)
 
 <small>来源：hermes-webui 仓库 docs/images</small>
 

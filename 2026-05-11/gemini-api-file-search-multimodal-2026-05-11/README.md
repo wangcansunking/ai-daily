@@ -24,7 +24,7 @@ description: "Google 5/5 官方博客把 Gemini API File Search 升级成多模�
 
 # Gemini File Search 多模态升级实战
 
-![Gemini API File Search 多模态封面](gemini-api-file-search-multimodal-2026-05-11.png)
+![Gemini API File Search 多模态封面](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/gemini-api-file-search-multimodal-2026-05-11/gemini-api-file-search-multimodal-2026-05-11.png)
 
 ## 一、一句话先把账算清
 
@@ -40,7 +40,7 @@ Google 5 月 5 日把 Gemini API 的 File Search 工具一口气升级了三件�
 
 下面这张图把三家海外托管 RAG 的功能矩阵一次摆开。
 
-![海外托管 RAG 三家功能矩阵](gemini-file-search-vs-anthropic-vs-openai.png)
+![海外托管 RAG 三家功能矩阵](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/gemini-api-file-search-multimodal-2026-05-11/gemini-file-search-vs-anthropic-vs-openai.png)
 
 ## 二、第一件事：图文同向量到底意味着什么
 
@@ -78,7 +78,7 @@ Google 5 月 5 日把 Gemini API 的 File Search 工具一口气升级了三件�
 
 下面这张表把 Gemini Embedding 2 和当前主流嵌入模型横着摆，方便你看自己的场景该选哪一个。
 
-![Gemini Embedding 2 vs 主流嵌入模型](embedding-models-matrix.png)
+![Gemini Embedding 2 vs 主流嵌入模型](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/gemini-api-file-search-multimodal-2026-05-11/embedding-models-matrix.png)
 
 聊一聊 Matryoshka 这件事的工程含义，国内同行常常一带而过，但它对成本的影响是数量级的。
 
@@ -104,7 +104,7 @@ Cohere Embed v4 默认 1536 维、Voyage Multimodal-3.5 据称 256 维只丢不�
 
 更细的工程动作连成一张步骤图，下面这张是字段级实操：
 
-![File Search 三件事的字段级实操](file-search-fields-flow.png)
+![File Search 三件事的字段级实操](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/gemini-api-file-search-multimodal-2026-05-11/file-search-fields-flow.png)
 
 来一段最小可行 Python，别照搬到生产，先在沙盒跑通：
 
@@ -227,7 +227,7 @@ for chunk in resp.candidates[0].grounding_metadata.grounding_chunks:
 
 很多文章写到这一步会写"国内开发者怎么办"，我们换一个写法——**直接把国内能用的同档位生态摆齐**。我自己最近在调几条线，把每家的位置画清楚，下次决策的时候就不会乱。
 
-![国内 RAG 同档对位](cn-rag-peer-matrix.png)
+![国内 RAG 同档对位](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/gemini-api-file-search-multimodal-2026-05-11/cn-rag-peer-matrix.png)
 
 逐项展开。
 
@@ -253,7 +253,7 @@ for chunk in resp.candidates[0].grounding_metadata.grounding_chunks:
 
 把这八家路径转成"国内 RAG 工程师能做的事"清单：
 
-![国内 RAG 工程师能做的事](cn-rag-action-paths.png)
+![国内 RAG 工程师能做的事](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/gemini-api-file-search-multimodal-2026-05-11/cn-rag-action-paths.png)
 
 ## 七、Google Cloud 在国内的合规对比
 
@@ -294,7 +294,7 @@ for chunk in resp.candidates[0].grounding_metadata.grounding_chunks:
 - **2025 年的 RAG**：多向量库 + 多嵌入 + 检索编排器（Dify / RAGFlow）爆发。
 - **2026 年开局**：托管 RAG（File Search 这一档）从可玩具变可生产，多模态 + 结构化过滤 + 页码引用三件套是基线。
 
-![RAG 工程演进时间轴](rag-evolution-timeline.png)
+![RAG 工程演进时间轴](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-11/gemini-api-file-search-multimodal-2026-05-11/rag-evolution-timeline.png)
 
 5 月 5 日 File Search 这次升级是这条曲线的一个清晰节点——不是"哪家最强"的话题，而是"工程契约定型"的话题。我们国内做 RAG / Agent / 知识库的，今晚把阿里百炼"视觉理解"打开试一遍、明天把 RAGFlow 的 citation tracking 点开看一眼、后天把 WeKnora 的 Wiki 级回引接到内部知识库——三步走完，你的工程语言会更新一轮：你说"请把元数据过滤打开"、"请用图文同向量"、"请保留页码 metadata"，团队内部对话的颗粒度直接到了 2026 这一档。
 

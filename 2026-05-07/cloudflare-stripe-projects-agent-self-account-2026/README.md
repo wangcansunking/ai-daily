@@ -11,7 +11,7 @@ tags: [agent, cloudflare, stripe, agents-week, payment, infrastructure]
 
 # Cloudflare 给 AI agent 开了一张信用卡
 
-![Cloudflare Agents Week 现场图](cloudflare-agent-account-og.png)
+![Cloudflare Agents Week 现场图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/cloudflare-stripe-projects-agent-self-account-2026/cloudflare-agent-account-og.png)
 
 ## 一句话事实
 
@@ -65,7 +65,7 @@ Stripe 给每个 agent 在**每家服务商**上的默认上限是 USD 100 / 月
 
 在 agent 跑飞、prompt 注入、循环调 API 这些已经发生过的事件里，这条默认上限就是最后的安全带。
 
-![Stripe Projects × Cloudflare 三段协议流程](cloudflare-agent-account-oauth-flow.png)
+![Stripe Projects × Cloudflare 三段协议流程](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/cloudflare-stripe-projects-agent-self-account-2026/cloudflare-agent-account-oauth-flow.png)
 
 ---
 
@@ -130,7 +130,7 @@ Agents Week 期间 Cloudflare 同步发了 Registrar API beta。把 Registrar AP
 
 把这条最小闭环抽象出来看，它对应的是**一个软件产品从 0 到 1 的工程瓶颈集合**：买域名是品牌、买服务器是运行时、拿 API key 是凭据。Cloudflare 用一周时间把这三件事都协议化，等于给"agent 创业"这件事配齐了基础设施。今后写一个会自己上线产品的 agent，不再需要套一层人工流程作为最后一公里——它自己能走完。
 
-![Cloudflare 官博披露的 agent 自助流程图](cloudflare-agent-account-flow.png)
+![Cloudflare 官博披露的 agent 自助流程图](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/cloudflare-stripe-projects-agent-self-account-2026/cloudflare-agent-account-flow.png)
 
 ---
 
@@ -154,7 +154,7 @@ Agents Week 期间 Cloudflare 同步发了 Registrar API beta。把 Registrar AP
 2. **实名制让"agent 自己开账户"难度高**——国内云账户绑定身份证 / 企业营业执照，agent 不可能自己完成。但**用户给 agent 一个已实名的子账号**这条路是通的。
 3. **预算上限默认值缺位**——国内云的 Budget Alerts 通常默认关闭或阈值自定义，没有"协议默认 100 美元 / 月"这种保护值。
 
-![AI agent 自助账户能力对照](cloudflare-agent-account-vs-domestic-2026-05.png)
+![AI agent 自助账户能力对照](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-07/cloudflare-stripe-projects-agent-self-account-2026/cloudflare-agent-account-vs-domestic-2026-05.png)
 
 ### 4.3 国内可能的路径
 

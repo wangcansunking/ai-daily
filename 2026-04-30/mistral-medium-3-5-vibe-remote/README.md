@@ -10,7 +10,7 @@ cover: mistral-medium-3-5-vibe-remote.png
 
 # Claude Code 的开源对手来了：Mistral
 
-![Mistral Medium 3.5 + Vibe Remote Agents 主视觉](mistral-medium-3-5-vibe-remote.png)
+![Mistral Medium 3.5 + Vibe Remote Agents 主视觉](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/mistral-medium-3-5-vibe-remote/mistral-medium-3-5-vibe-remote.png)
 
 > 4 月 29 日，法国公司 Mistral AI 一口气发了三件事：旗舰融合模型 **Medium 3.5**（128B Dense、256K 上下文、Modified MIT 开源权重），云端异步编程代理 **Vibe Remote Agents**，以及 Le Chat 里专攻多工具复杂任务的 **Work mode**。SWE-Bench Verified 77.6%、τ³-Telecom 91.4——这是 Mistral 这次唯一公布的两个 agentic benchmark 数字。API 计费 $1.5/$7.5 per million tokens，自托管最少 4 GPU。
 
@@ -104,7 +104,7 @@ $1.5 / $7.5 这一档放进 2026-04 的开源旗舰价格带：
 
 ## 四、Vibe Remote Agents：把 coding agent 真正搬上云
 
-![Vibe Remote Agents 工作流（来自 Mistral 官方公告）](mistral-medium-3-5-vibe-cli.png)
+![Vibe Remote Agents 工作流（来自 Mistral 官方公告）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/mistral-medium-3-5-vibe-remote/mistral-medium-3-5-vibe-cli.png)
 
 Vibe 这条产品线的时间线：
 
@@ -187,7 +187,7 @@ When invoked, scan the diff in the current branch...
 
 ## 六、Le Chat Work mode：把多工具串成一次请求
 
-![Le Chat Work mode 跨工具示意](mistral-medium-3-5-le-chat-work.png)
+![Le Chat Work mode 跨工具示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-04-30/mistral-medium-3-5-vibe-remote/mistral-medium-3-5-le-chat-work.png)
 
 Le Chat 的 Work mode 是这次发布的第三件事。Mistral 官方原文：
 

@@ -11,13 +11,13 @@ track: arbitrage
 ---
 # mcp2cli：把 MCP 工具变成命令行，给 Agent 上下文减负
 
-![mcp2cli 把臃肿的 MCP 工具结构换成一个干净的命令行，手绘涂鸦风格示意](mcp2cli-mcp-token-diet-runtime-2026-06-02.png)
+![mcp2cli 把臃肿的 MCP 工具结构换成一个干净的命令行，手绘涂鸦风格示意](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/mcp2cli-mcp-token-diet-runtime-2026-06-02/mcp2cli-mcp-token-diet-runtime-2026-06-02.png)
 
 接过 MCP 的人多半都遇过同一件烦心事：给 Claude Code 或者 Cursor 挂上几个 MCP 服务，本来想让它能查数据库、调接口、读文件，结果还没开始干活，上下文窗口先被一堆工具的参数结构占去一大块。工具越接越多，每一轮对话都要把这些结构原样重新塞一遍，账单和延迟一起往上走。**问题不在模型笨，而在原生 MCP 的接入方式天生就把每个工具的完整结构当成常驻开销，哪怕这一轮根本用不到。**
 
 mcp2cli（仓库 knowsuchagency/mcp2cli）想正面解决的就是这一块。它给自己的定位很直白：**在运行时把任意一个 MCP 服务、OpenAPI 规范或者 GraphQL 接口变成一个命令行工具，不写一行生成代码。** 6 月 2 日凌晨核对仓库，总 star 约 2,192、150 个 fork、MIT 许可、Python 写成，今年 3 月初建库；对应那条 Show HN 帖约 146 分、31 条讨论。它对外打出的卖点是一句话：**比原生 MCP 的工具调用省下 96% 到 99% 的令牌。**
 
-![mcp2cli 仓库社交卡片：一个命令行接管所有接口，运行时转换，零代码生成](source-mcp2cli-github-card-2026-06-02.png)
+![mcp2cli 仓库社交卡片：一个命令行接管所有接口，运行时转换，零代码生成](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/mcp2cli-mcp-token-diet-runtime-2026-06-02/source-mcp2cli-github-card-2026-06-02.png)
 <small>来源：knowsuchagency/mcp2cli 仓库社交卡片</small>
 
 这篇文章想把几件事讲清楚：**原生 MCP 到底为什么会把上下文撑爆、那个省 96% 到 99% 的数字是怎么算出来的、它和原生 MCP、OpenAPI 直连、函数调用差在哪、给 Claude Code 和 Cursor 接它怎么落地、以及它用命令行换掉结构化调用之后到底丢了什么。** 结论先放这儿——如果你的痛点是工具一多、上下文就被结构挤爆，把工具变成命令行让 Agent 自己去敲，是个相当对症的思路；但那个亮眼的省令牌数字是作者自己用一套成本模型算的，不是真机跑出来的准确率对照，怎么看待这个数字，本文会摊开说。
@@ -36,7 +36,7 @@ MCP 这个协议的好处是把一个服务的能力描述成一组工具，每�
 
 mcp2cli 的作者把这套换了个思路：**别把全部结构常驻在上下文里，而是把服务变成一个命令行工具，让 Agent 像敲普通命令一样去用它。** 具体说，系统提示里只留一句话——用 mcp2cli 这个命令调接口，先跑 `--list` 看有哪些命令，要调哪个再跑它的 `--help` 看参数。这样一来，常驻开销从"全部工具的完整结构"缩成"一句话提示"，剩下的清单和参数说明都改成用到时才查、查一次。
 
-![原生 MCP 与 mcp2cli 两种接入方式，上下文里装的东西完全不同](chart-mcp2cli-callflow-2026-06-02.png)
+![原生 MCP 与 mcp2cli 两种接入方式，上下文里装的东西完全不同](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/mcp2cli-mcp-token-diet-runtime-2026-06-02/chart-mcp2cli-callflow-2026-06-02.png)
 
 这就是它和 MCP 客户端最根本的不同：原生 MCP 把"模型该知道什么"全部前置塞进上下文，mcp2cli 把它后置成一次次主动的查询动作。对会写命令行的模型来说，这笔账很划算——它们敲命令、读帮助本来就熟，让它先 `--list` 再 `--help`，跟人用一个陌生命令行工具时的习惯几乎一样。
 
@@ -69,11 +69,11 @@ mcp2cli 的作者把这套换了个思路：**别把全部结构常驻在上下�
 - **大型接口**（50 个端点、20 轮）约省 94%。
 - **企业级**那种 200 个端点、25 轮的长对话，原生方式累计要吃掉二十多万令牌，mcp2cli 这边只要几千，差额逼近 98% 到 99%。
 
-![mcp2cli 令牌开销随接口规模膨胀的对比，按作者成本模型复算](mcp2cli-token-growth-2026-06-02.png)
+![mcp2cli 令牌开销随接口规模膨胀的对比，按作者成本模型复算](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/mcp2cli-mcp-token-diet-runtime-2026-06-02/mcp2cli-token-growth-2026-06-02.png)
 
 <small>来源：自制图表（数据据正文）</small>
 
-![原生 MCP 与 mcp2cli 的上下文消耗对照，按作者成本模型复算](chart-mcp2cli-token-cost-2026-06-02.png)
+![原生 MCP 与 mcp2cli 的上下文消耗对照，按作者成本模型复算](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/mcp2cli-mcp-token-diet-runtime-2026-06-02/chart-mcp2cli-token-cost-2026-06-02.png)
 
 看懂这张图，关键是抓住它高在哪、虚在哪：
 
@@ -108,7 +108,7 @@ Show HN 里还有一条追问很尖锐：既然工具结构不再常驻上下文
 
 把工具交给 Agent，眼下常见的有四条路，各有各的甜区。摆在一起看，mcp2cli 的位置就清楚了。
 
-![mcp2cli 与三种方式横评：上下文开销、调用校验、支持协议、适合谁](chart-mcp2cli-compare-2026-06-02.png)
+![mcp2cli 与三种方式横评：上下文开销、调用校验、支持协议、适合谁](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/mcp2cli-mcp-token-diet-runtime-2026-06-02/chart-mcp2cli-compare-2026-06-02.png)
 
 几点值得展开：
 
@@ -146,7 +146,7 @@ mcp2cli --mcp https://mcp.example.com/sse search --help
 
 它对三种来源是一视同仁的，换个参数就行：OpenAPI 用 `--spec` 指向规范文件或地址，GraphQL 用 `--graphql` 指向端点，本地起的 MCP 进程用 `--mcp-stdio` 接命令。GraphQL 这边它会自己探查端点、把查询和变更都列出来、还自动拼好要取的字段，不用你手写。
 
-![mcp2cli 的核心主张：一个命令行接管所有接口，运行时转换，给上下文减负](source-mcp2cli-hero-2026-06-02.png)
+![mcp2cli 的核心主张：一个命令行接管所有接口，运行时转换，给上下文减负](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-02/mcp2cli-mcp-token-diet-runtime-2026-06-02/source-mcp2cli-hero-2026-06-02.png)
 <small>来源：knowsuchagency/mcp2cli 项目主页插图</small>
 
 要让 Agent 自己会用它，关键是把"先 `--list` 再 `--help`"这套习惯教给它。mcp2cli 为此专门做了一个能装的技能包，给 Claude Code、Cursor、Codex 这类编程 Agent 用：

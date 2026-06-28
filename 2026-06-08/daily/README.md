@@ -12,7 +12,7 @@ description: "周一这天没有新的旗舰模型发布，三条线索却都在
 
 # 苹果 WWDC 今天揭新 Siri 接谷歌 Gemini · 智源大会本周登场 · 开发者忙着给 Agent 配技能和沙箱 | AI 日报 | 2026-06-08
 
-![苹果今天开 WWDC 揭新 Siri、智源大会本周登场、开发者忙着给 Agent 配技能和沙箱三线并进](08.png)
+![苹果今天开 WWDC 揭新 Siri、智源大会本周登场、开发者忙着给 Agent 配技能和沙箱三线并进](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/daily/08.png)
 
 ## 📋 头版目录
 
@@ -41,7 +41,7 @@ description: "周一这天没有新的旗舰模型发布，三条线索却都在
 
 ### 头条 1 · 苹果今天开 WWDC，新 Siri 据报道要走独立 App、还能转给 Claude
 
-![苹果 WWDC 2026 主题演讲今天在太平洋时间上午 10 点开幕](source-wwdc-2026-keynote-day-2026-06-08.png)
+![苹果 WWDC 2026 主题演讲今天在太平洋时间上午 10 点开幕](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/daily/source-wwdc-2026-keynote-day-2026-06-08.png)
 
 > 来源：MacRumors [1]，TechTimes [2]
 
@@ -49,7 +49,7 @@ description: "周一这天没有新的旗舰模型发布，三条线索却都在
 
 #### 头条 1.1 · 新 Siri 据报道会变成一个能聊天、能读你东西的独立应用
 
-![据会前报道，新 Siri 主要是独立 App、第三方模型路由、扩展能力三件事](daily-2026-06-08-wwdc-new-siri-three-things.png)
+![据会前报道，新 Siri 主要是独立 App、第三方模型路由、扩展能力三件事](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/daily/daily-2026-06-08-wwdc-new-siri-three-things.png)
 
 据 MacRumors 汇总的会前报道，新 Siri 的变化集中在三块 [1]：
 
@@ -69,7 +69,7 @@ description: "周一这天没有新的旗舰模型发布，三条线索却都在
 
 ### 头条 2 · 智源大会本周在北京开幕，两位图灵奖得主和 40 多家国产 AI 掌舵人同场
 
-![第八届智源大会本周 6 月 12-13 日在北京开幕的议程概览](daily-2026-06-08-baai-conference-agenda.png)
+![第八届智源大会本周 6 月 12-13 日在北京开幕的议程概览](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/daily/daily-2026-06-08-baai-conference-agenda.png)
 
 > 来源：智源大会官网 [3]，量子位 [4]，智源社区 [5]
 
@@ -94,7 +94,7 @@ description: "周一这天没有新的旗舰模型发布，三条线索却都在
 
 ### 头条 3 · 模型趋同之后，开发者忙的是给 Agent 配「技能」和圈一个安全沙箱
 
-![GitHub Trending 当日 AI 相关项目星标，taste-skill 与 last30days-skill 等 Agent 技能仓库居前](daily-2026-06-08-github-trending-board.png)
+![GitHub Trending 当日 AI 相关项目星标，taste-skill 与 last30days-skill 等 Agent 技能仓库居前](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/daily/daily-2026-06-08-github-trending-board.png)
 
 > 来源：Simon Willison 博客 [6]，GitHub [7][8][9]
 
@@ -147,13 +147,13 @@ Meta 首席 AI 科学家 Yann LeCun 长期看空纯大语言模型这条路，�
 
 🔴 **taste-skill / last30days-skill — 「Agent 技能」一类持续霸榜**
 
-![taste-skill 仓库页：给 Agent 配「品味」类技能，约 3.66 万星](source-github-taste-skill-og-2026-06-08.png)
+![taste-skill 仓库页：给 Agent 配「品味」类技能，约 3.66 万星](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/daily/source-github-taste-skill-og-2026-06-08.png)
 
 taste-skill（约 3.66 万星 [7]）和 last30days-skill（约 3.09 万星 [8]）是这两天榜单前排的常客。前者给模型补「品味」、压住套路化输出，后者是一套全网近 30 天话题调研技能。两个都不是模型，是给 Claude Code 这类 Agent 即插即用的能力包——开发者用脚投票，投给了「技能层」。
 
 🔴 **turbovec — Rust 向量索引，本地 RAG 省内存**
 
-![turbovec 仓库页：Rust 向量索引，号称约 8 倍压缩，约 7100 星](source-github-turbovec-og-2026-06-08.png)
+![turbovec 仓库页：Rust 向量索引，号称约 8 倍压缩，约 7100 星](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/daily/source-github-turbovec-og-2026-06-08.png)
 
 turbovec（约 7100 星 [9]）是一个 Rust 写的向量索引，带 Python 绑定，基于谷歌研究院在 ICLR 2026 提出的免训练量化方法 TurboQuant。它号称约 8 倍压缩——一个千万级文档的库，内存占用从 31GB 压到约 4GB，并接了 LangChain、LlamaIndex 等常用框架。对想在本地把 RAG 跑起来又被内存卡住的人，是个可以直接 fork 上手的选择。
 
@@ -163,7 +163,7 @@ open-notebook（约 2.72 万星 [10]）是一个可自建的开源 NotebookLM �
 
 ## 🛠 AI Coding 工具动态
 
-![Claude Code 仓库页：6 月 6 日连发 v2.1.166-168 三个版本](source-github-claude-code-release-og-2026-06-08.png)
+![Claude Code 仓库页：6 月 6 日连发 v2.1.166-168 三个版本](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-06-08/daily/source-github-claude-code-release-og-2026-06-08.png)
 
 - **Claude Code v2.1.166-168（6 月 6 日）**：主更新在 166，三件事对多会话协作的人有用 [12]。一是权限隔离——从别的 Claude 会话通过消息转发过来的请求，不再携带你本人的权限，接收方会拒绝转发来的授权请求，自动模式下直接拦截，等于堵住了「一个会话替另一个会话越权」的口子。二是 deny 规则现在支持通配符，写一个 `"*"` 可以一次性禁掉所有工具。三是调用模型遇到非预期错误时，会在备用模型上自动重试一次再放弃。另外修了 JetBrains 2026.1+ 终端闪烁、macOS 上后台进程偶发占满 CPU 等问题。
 

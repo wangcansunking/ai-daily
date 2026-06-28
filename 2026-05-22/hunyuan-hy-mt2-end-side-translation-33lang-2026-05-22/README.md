@@ -25,13 +25,13 @@ description: "五月二十一日，腾讯混元一次性把 Hy-MT2 翻译模型�
 
 # 腾讯混元 Hy-MT2：440MB 跑 33 语种，手机离线翻译时代真到了
 
-![Hy-MT2 封面 霓虹赛博风 一位亚洲开发者手中的手机环绕 33 语种翻译彩带](hunyuan-hy-mt2-end-side-translation-33lang-2026-05-22.png)
+![Hy-MT2 封面 霓虹赛博风 一位亚洲开发者手中的手机环绕 33 语种翻译彩带](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/hunyuan-hy-mt2-end-side-translation-33lang-2026-05-22/hunyuan-hy-mt2-end-side-translation-33lang-2026-05-22.png)
 
 ## 这件事的位置
 
 五月二十一日下午，腾讯混元在自家官方公众号、量子位、新浪科技同时发出一条消息：Hy-MT2 翻译模型三档同时开源，1.8B、7B、30B-A3B 三个尺寸覆盖从手机到服务器的完整谱系。同步上线了一款叫「腾讯 Hy 翻译」的微信小程序，把这套能力交到了普通用户手里。
 
-![Tencent-Hunyuan Hy-MT2 官方 logo（来自 GitHub 仓库 imgs/logo-en.png）](hy-mt2-logo-official.png)
+![Tencent-Hunyuan Hy-MT2 官方 logo（来自 GitHub 仓库 imgs/logo-en.png）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/hunyuan-hy-mt2-end-side-translation-33lang-2026-05-22/hy-mt2-logo-official.png)
 
 如果只读到这里，很容易把它当成「又一篇国产开源翻译模型发布」的常规公关。但这次有三件事不太一样。
 
@@ -75,7 +75,7 @@ description: "五月二十一日，腾讯混元一次性把 Hy-MT2 翻译模型�
 
 ## 三档模型：从口袋到机房一次铺到位
 
-![Hy-MT2 三档模型参数 量化方案 体积 部署目标对比表](hunyuan-hy-mt2-three-tier.png)
+![Hy-MT2 三档模型参数 量化方案 体积 部署目标对比表](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/hunyuan-hy-mt2-end-side-translation-33lang-2026-05-22/hunyuan-hy-mt2-three-tier.png)
 
 三档同发是这次发布最值得仔细看的部分。把它和过去半年国产翻译类发布对照：阿里通义在春节后只放出 Qwen-MT 一档，字节豆包翻译 API 始终维持云端单一形态，网易有道 Pro 只把端侧能力捆绑在词典笔硬件里。腾讯这次直接给了一份完整谱系。
 
@@ -89,7 +89,7 @@ description: "五月二十一日，腾讯混元一次性把 Hy-MT2 翻译模型�
 
 ## AngelSlim 1.25-bit：把权重「折叠」进 440 MB
 
-![AngelSlim 1.25-bit 量化阶梯压缩示意图 BF16 至 1.25-bit](hunyuan-hy-mt2-angelslim.png)
+![AngelSlim 1.25-bit 量化阶梯压缩示意图 BF16 至 1.25-bit](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/hunyuan-hy-mt2-end-side-translation-33lang-2026-05-22/hunyuan-hy-mt2-angelslim.png)
 
 整套发布里最有工程感的一点，是 1.25-bit 这个数字本身。它不是「1-bit」也不是「2-bit」，平均下来每个参数只占大约 1.25 个比特——比 INT4 节省约 3.2 倍空间，比开源社区主流的 2-bit GGUF 再省 1.6 倍。
 
@@ -101,7 +101,7 @@ ModelScope 模型卡披露这个技术内部代号叫「Sherry」，归属于腾
 
 ## 33 主流 + 5 民族：1056 条翻译方向
 
-![Hy-MT2 完整覆盖矩阵 33 主流语种与 5 民族方言](hunyuan-hy-mt2-languages.png)
+![Hy-MT2 完整覆盖矩阵 33 主流语种与 5 民族方言](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/hunyuan-hy-mt2-end-side-translation-33lang-2026-05-22/hunyuan-hy-mt2-languages.png)
 
 语种覆盖是这次发布的另一个核心维度。HF 模型卡 README 列出的完整清单包括中、英、法、葡、西、日、土、俄、阿、韩、泰、意、德、越、马来、印尼、菲律宾、印地、繁体中文、波兰、捷克、荷兰、高棉、缅甸、波斯、古吉拉特、乌尔都、泰卢固、马拉地、希伯来、孟加拉、泰米尔、乌克兰 33 种主流语种，再加粤语、藏语、哈萨克语、蒙古语、维吾尔语 5 种民族语言或方言。
 
@@ -113,7 +113,7 @@ ModelScope 模型卡把这个组合表述为「33 种语言，5 种方言/少数
 
 ## 横评：八家同代模型摆到一起看
 
-![Hy-MT2 与字节 阿里 百度 网易 Meta Apple Google 八家同代翻译模型横评](hunyuan-hy-mt2-peer-compare.png)
+![Hy-MT2 与字节 阿里 百度 网易 Meta Apple Google 八家同代翻译模型横评](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/hunyuan-hy-mt2-end-side-translation-33lang-2026-05-22/hunyuan-hy-mt2-peer-compare.png)
 
 把腾讯之外的七家邻居摆到桌面上：
 
@@ -145,13 +145,13 @@ Hy-MT2 在这一基础上做了三件事的提升：
 
 **第三是评测路线变化**。Hy-MT1.5 主要对标 NLLB-200 和上一代 Google Translate，腾讯报告中 Hy-MT2 把对位目标抬到 Gemini 3.1 Pro 与 DeepSeek-V4-Pro，并把翻译方向数明确报为 1056。
 
-![Hy-MT2 官方主结果图（来自 GitHub 仓库 imgs/main_result.png，腾讯混元技术报告原图）](hy-mt2-main-result-official.png)
+![Hy-MT2 官方主结果图（来自 GitHub 仓库 imgs/main_result.png，腾讯混元技术报告原图）](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/hunyuan-hy-mt2-end-side-translation-33lang-2026-05-22/hy-mt2-main-result-official.png)
 
 腾讯官方在仓库 `imgs/main_result.png` 里给出了一张主结果图（上图），里面包含 IFMTBench 与 FLORES-200 上 Hy-MT2 各档与若干对标系统的相对位置。需要提醒一句：图中数字是腾讯自评，第三方复现要等社区用 IFMTBench 数据集（已开放在 HF datasets/tencent/IFMTBench）跑一遍才能定。
 
 ## 评测口径透明这件事
 
-![Hy-MT2 评测对位与口径说明 自评结论与第三方复现注意事项](hunyuan-hy-mt2-benchmark.png)
+![Hy-MT2 评测对位与口径说明 自评结论与第三方复现注意事项](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/hunyuan-hy-mt2-end-side-translation-33lang-2026-05-22/hunyuan-hy-mt2-benchmark.png)
 
 横评的可信度，最终落在评测口径是否透明。这次腾讯混元有一件做得对的事：**把评测数据集 IFMTBench 同步开源到 HuggingFace**（datasets/tencent/IFMTBench），让第三方可以拿到同样的数据自跑。
 
@@ -167,7 +167,7 @@ Hy-MT2 在这一基础上做了三件事的提升：
 
 ## 国内开发者：五条端侧 / 服务端落地路径
 
-![Hy-MT2 国内开发者五类典型落地路径 RN App 群机器人 NPU 教育硬件 跨境电商](hunyuan-hy-mt2-dev-paths.png)
+![Hy-MT2 国内开发者五类典型落地路径 RN App 群机器人 NPU 教育硬件 跨境电商](https://raw.githubusercontent.com/wangcansunking/ai-daily/main/2026-05-22/hunyuan-hy-mt2-end-side-translation-33lang-2026-05-22/hunyuan-hy-mt2-dev-paths.png)
 
 把这套谱系翻译成国内开发者真正能用的落地方式，大致有五条路径。
 
