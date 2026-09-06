@@ -17,7 +17,7 @@ category: 开源 · 个人云
 
 **这个项目最有意思的不是安装更快，而是把自托管的竞争单位从单个应用改成一个可迁移的个人云。**
 
-![Cloud in a Bottle 官方发布页展示个人云定位与首屏界面。来源：Cloud in a Bottle 官方发布页，2026-09-05](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/07/cloud-bottle-launch-page.png)
+![Cloud in a Bottle 官方发布页展示个人云定位与首屏界面。来源：Cloud in a Bottle 官方发布页，2026-09-05](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/07/cloud-bottle-source-launch-page.png)
 
 ## 自托管缺的不是又一个部署按钮
 
@@ -47,7 +47,7 @@ Cloud in a Bottle 当前架构可以分为四层：
 | 平台 | 通配域名、TLS、路由、统一登录、权限 | 少做重复的认证与反向代理配置 |
 | 应用 | Dockerfile + `cloudinabottle.toml` | 现有 Web 应用可小改或直接接入 |
 
-![Cloud in a Bottle 官方应用开发文档展示 Dockerfile 与短清单的接入方式。来源：Cloud in a Bottle Manual，2026-09-07](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/07/cloud-bottle-app-docs.png)
+![Cloud in a Bottle 官方应用开发文档展示 Dockerfile 与短清单的接入方式。来源：Cloud in a Bottle Manual，2026-09-07](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/07/cloud-bottle-source-app-docs.png)
 
 其中最关键的是 rootless Podman。每个应用在无根容器中运行，容器里的 root 映射成主机上的非特权用户，而不是实际 root。与直接在主机安装多个服务相比，一个应用被攻破后横向影响整台服务器的难度更高。
 
@@ -61,7 +61,7 @@ Cloud in a Bottle 当前架构可以分为四层：
 
 平台还给应用注入稳定身份和每应用随机 token，并提供跨应用服务接口。一个健康数据连接器可以把数据留在本机，再授权给分析工具；一个 LLM 网关可以向多个应用提供 OpenAI 兼容 API，而不必把密钥逐个复制。
 
-![官方应用目录列出健康连接器、备份、LLM 网关、协作与媒体应用。来源：Cloud in a Bottle Apps，2026-09-07](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/07/cloud-bottle-app-catalog.png)
+![官方应用目录列出健康连接器、备份、LLM 网关、协作与媒体应用。来源：Cloud in a Bottle Apps，2026-09-07](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/07/cloud-bottle-source-app-catalog.png)
 
 这种设计更接近手机操作系统：
 
@@ -82,7 +82,7 @@ Cloud in a Bottle 当前架构可以分为四层：
 - 隐私与网络：Vaultwarden、Pi-hole、SearXNG、Miniflux；
 - AI：Open WebUI、Bifrost、代码补全服务、OpenChamber、OpenClaw。
 
-![Cloud in a Bottle 官方社交卡概括其开源个人云定位。来源：Cloud in a Bottle 官方素材，2026-09-07](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/07/cloud-bottle-social-card.png)
+![Cloud in a Bottle 官方社交卡概括其开源个人云定位。来源：Cloud in a Bottle 官方素材，2026-09-07](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/07/cloud-bottle-source-social-card.png)
 
 目录数量还不能证明应用质量。真正需要观察的是三个问题：升级是否会破坏数据；应用能否真正采用统一登录；高权限应用是否给出清楚的授权说明。
 
@@ -98,7 +98,7 @@ Cloud in a Bottle 提供托管 VPS、共享家用机器里的虚拟机、专用�
 | 云 VPS 自建 | Ubuntu 24.04、静态 IPv4、域名 | 熟悉 Linux 与域名管理者 | DNS 委派、防火墙、故障处理 |
 | 家用机器 | x86-64 虚拟机或专用 Ubuntu 主机 | 有 NAS、旧电脑或小主机者 | 内网穿透、供电、磁盘与公网可达性 |
 
-![官方云实例文档要求域名、静态 IPv4、Ubuntu 24.04，并说明 DNS 委派。来源：Cloud in a Bottle Manual，2026-09-07](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/07/cloud-bottle-cloud-setup.png)
+![官方云实例文档要求域名、静态 IPv4、Ubuntu 24.04，并说明 DNS 委派。来源：Cloud in a Bottle Manual，2026-09-07](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/07/cloud-bottle-source-cloud-setup.png)
 
 自建云 VPS 不是“点一次就结束”。公开实例要开放 80、443 和 53 的 TCP/UDP 端口，并把一个域名区域委派给实例自己的权威 DNS。它用通配域名为每个应用自动分配子域名，并通过 DNS-01 申请通配 TLS 证书。
 
@@ -110,7 +110,7 @@ Cloud in a Bottle 提供托管 VPS、共享家用机器里的虚拟机、专用�
 
 Imbue 的托管版给出三档规格：2 GB 内存与 2 个 vCPU 每月 5 美元；4 GB 与 3 个 vCPU 每月 10 美元；8 GB 与 4 个 vCPU 每月 20 美元。计费只发生在实例运行时，新用户有 10 美元额度。
 
-![Imbue 托管版展示三档规格与可迁移承诺。来源：Cloud in a Bottle × Imbue，2026-09-07](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/07/cloud-bottle-managed-pricing.png)
+![Imbue 托管版展示三档规格与可迁移承诺。来源：Cloud in a Bottle × Imbue，2026-09-07](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/07/cloud-bottle-source-managed-pricing.png)
 
 这套商业模式与项目定位相容。Imbue 负责开服务器、指向 DNS、安装系统和维持运行；使用者拿到自己的 SSH key，可以迁到自有硬件，也能安装自己的应用。托管版与开源自建版运行同一套代码，官方承诺自建路径继续是一等公民。
 

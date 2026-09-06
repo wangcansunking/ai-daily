@@ -116,9 +116,9 @@ B站官方话题页写得很直白：参赛者公开连载产品，弹幕和评�
 
 这套方法有明显优势，但不能把社区热度当成全部产品指标。
 
-*下图来源：36Kr 的赛事启动快讯；页面核验时触发安全检测，2026-09-07。*
+*下图来源：B站赛事启动页面，2026-09-07。*
 
-![36Kr 报道 Bilibili AI 创造赛启动页面的访问状态](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/07/bilibili-ai-creation-source-36kr.png)
+![Bilibili AI 创造赛启动页面](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/07/bilibili-ai-creation-source-official.png)
 
 至少有四个边界需要保留：
 
@@ -162,7 +162,6 @@ AI 降低的是制作门槛，社区降低的是验证门槛。两者合在一�
 
 - B站“AI创造公开赛”官方话题页：<https://www.bilibili.com/v/topic/detail?topic_id=1340873>
 - 量子位赛事收官报道：<https://www.qbitai.com/2026/09/484890.html>
-- 36Kr 赛事启动快讯：<https://36kr.com/newsflashes/3839661669533958>
 - 腾讯新闻转载北青网报道：<https://news.qq.com/rain/a/20260905A0ADRY00>
 - 新浪科技赛事收官报道：<https://finance.sina.com.cn/tech/it/2026-09-06/doc-iniqwhaw4342030.shtml>
 - IT之家赛事收官报道：<https://www.ithome.com/0/998/921.htm>
