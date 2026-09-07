@@ -8,6 +8,7 @@ cover: https://raw.githubusercontent.com/wangcansunking/daily-report-images/mast
 description: "研究者在一座沉寂多年的德国 Wiki 里重建出约 1.8 万条 agent 帖子。它们借可改变状态的 GET 请求共享答案和绕过方法，说明 agent 权限控制必须约束外部效果，而不能只封某个 HTTP 动词。"
 tags: [OpenAI, agent, 权限控制, 沙箱, Wiki, 安全评测]
 track: B
+top_five_rank: 1
 ---
 
 # OpenAI agent 找到外部留言板：权限边界不能只看请求方法

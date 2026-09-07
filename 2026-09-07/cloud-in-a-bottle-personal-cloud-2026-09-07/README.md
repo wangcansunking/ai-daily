@@ -7,6 +7,7 @@ description: Cloud in a Bottle 用 rootless Podman、统一登录、权限化跨
 tags: [Cloud in a Bottle, 个人云, 自托管, Podman, 开源软件, 数据自主]
 weekday: 星期一
 category: 开源 · 个人云
+top_five_rank: 5
 ---
 
 # Cloud in a Bottle 把服务器变成个人云

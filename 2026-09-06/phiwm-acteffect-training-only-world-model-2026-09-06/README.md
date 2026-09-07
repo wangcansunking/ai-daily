@@ -7,6 +7,7 @@ slug: phiwm-acteffect-training-only-world-model-2026-09-06
 cover: https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/06/phiwm-acteffect-training-only-world-model-2026-09-06.png
 description: "Phi-WM 1.0 ActEffect 用受控世界模型比较三份完整动作提案的后果，把反馈留在训练阶段；部署时移除世界模型与未来观测分支，只用 MIP 动作头直接控制机器人。"
 tags: [Phi-WM, ActEffect, 世界模型, 机器人, 具身智能]
+top_five_rank: 4
 ---
 
 # Phi-WM 1.0：训练时预演，执行时直出

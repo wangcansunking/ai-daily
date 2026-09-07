@@ -7,6 +7,7 @@ slug: eebench-physics-graded-circuit-design-2026-09-06
 cover: https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/06/eebench-physics-graded-circuit-design-2026-09-06.png
 description: "EEBench V1 用编译、SPICE 仿真、公差角落与真实物料成本，为 AI 电路设计建立一套确定性评分；13 项任务已经能把会说电子学与真正做出可工作的电路区分开。"
 tags: [EEBench, atopile, 电路设计, SPICE, AI工程]
+top_five_rank: 3
 ---
 
 # AI 会画电路了，但 EEBench 要它先过物理这一关

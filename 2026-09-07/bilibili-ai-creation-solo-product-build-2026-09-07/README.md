@@ -9,6 +9,7 @@ description: "首届 build in bilibili AI 创造公开赛里，超八成参赛�
 tags: [B站, AI 创造公开赛, Build in Public, 一人团队, 产品开发]
 track: domestic-hot
 track_score: 5.7
+top_five_rank: 2
 ---
 
 # B站把观众变成产品团队：一人开发的新范式

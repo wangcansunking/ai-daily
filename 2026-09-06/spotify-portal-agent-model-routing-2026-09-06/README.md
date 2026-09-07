@@ -7,6 +7,7 @@ slug: spotify-portal-agent-model-routing-2026-09-06
 cover: https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/06/spotify-portal-agent-model-routing-2026-09-06.png
 description: "Spotify 用 Portal、AiKA Modes 与 Claude Code hooks，把大文件批量读取和样板代码生成交给低价模型；作者在一组 Java monorepo 基准中报告批量读取平均少用约 90% Claude token。"
 tags: [Spotify Portal, AiKA Modes, Claude Code, 模型路由, token成本]
+top_five_rank: 2
 ---
 
 # Spotify 给 Claude Code 加了分流阀

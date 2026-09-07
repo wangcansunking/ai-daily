@@ -8,6 +8,7 @@ cover: https://raw.githubusercontent.com/wangcansunking/daily-report-images/mast
 description: "Jakub Pachocki 在《An Alien Mind》中警告，思维链监控的可靠性正在下降。本文严格区分个人观点、OpenAI 内部结果与独立证据，分析能力增长后监督怎样跟上。"
 tags: [OpenAI, Jakub Pachocki, 可扩展监督, 思维链监控, AI 安全]
 track: overseas-hot
+top_five_rank: 1
 ---
 
 # OpenAI 的“异星心智”：监督为何追不上能力

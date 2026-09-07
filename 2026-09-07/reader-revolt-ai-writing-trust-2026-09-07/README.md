@@ -9,6 +9,7 @@ description: "Bryan Cantrill 认为，未经作者真正消化的 AI 文本正�
 tags: [AI 写作, Bryan Cantrill, Cynthia Dunlop, 技术写作, 读者信任]
 track: arbitrage
 track_score: 5.44
+top_five_rank: 4
 ---
 
 # 读者开始反抗 AI 腔：信任比流畅更稀缺

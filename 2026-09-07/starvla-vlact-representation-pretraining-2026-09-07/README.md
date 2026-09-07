@@ -7,6 +7,7 @@ slug: starvla-vlact-representation-pretraining-2026-09-07
 cover: https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/07/source-starvla-vlact-representation-pretraining-2026-09-07.png
 description: "VLAct 不再只追求收集更多机器人轨迹，而是保护视觉语言先验、引入多动作头联合监督，并在不同机器人之间共享可对齐的动作语义。"
 tags: [StarVLA, VLAct, VLA, 具身智能, 机器人]
+top_five_rank: 3
 ---
 
 # StarVLA 公开 VLAct：机器人能力先练进主干

@@ -7,6 +7,7 @@ category: AI Research
 cover: https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/09/06/mesh-recursive-transformer-memory-2026-09-06.png
 description: MeSH 用显式记忆槽和逐步读写路由，检验并缓解递归 Transformer 的状态过载与循环停滞。
 tags: [Transformer, 递归模型, 阿里, 模型架构]
+top_five_rank: 5
 ---
 
 # MeSH给循环模型分出记忆
