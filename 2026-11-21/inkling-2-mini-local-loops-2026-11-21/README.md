@@ -1,0 +1,73 @@
+---
+title: Inkling 2 Mini 怎样靠循环跑进笔记本
+date: '2026-11-21'
+weekday: 星期六
+slug: inkling-2-mini-local-loops-2026-11-21
+category: model
+description: 从循环计算、低位宽权重和测试口径理解端侧部署。
+cover: https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/11/21/inkling-2-mini-local-loops-2026-11-21.png
+batch: noon
+track: deep-dive
+cover_style: cinematic sci-fi concept
+---
+
+# Inkling 2 Mini 怎样靠循环跑进笔记本
+
+![Inkling 2 Mini 怎样靠循环跑进笔记本的概念封面](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/11/21/inkling-2-mini-local-loops-2026-11-21.png)
+
+Thinking Machines Lab 于 11 月 20 日发布 Inkling 2 Mini，开放模型权重并在 Tinker 提供使用入口。它会对中段网络重复运行三次，尝试让同一组参数完成更多计算。官方给出的约 20 GB 内存占用，让桌面端成为这次发布的另一个观察点。
+
+## 要点速览
+
+- Inkling 2 Mini 有 264 亿总参数、34 亿激活参数，算上循环后每个词元的权重激活量约 54 亿。
+- 官方给出的 DeepSWE v1.1 解题率为 48.2%，图中的速度是指定设置下的理论上限。
+- 官方演示使用配备 48 GB 内存的 M5 Pro MacBook Pro，在飞行模式下生成飞行模拟器。
+
+![Thinking Machines Lab 模型卡结构与参数原文截图](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/11/21/ink-model-card.png)
+
+*图片来源：Thinking Machines Lab 模型卡结构与参数原文截图，2026-11-20。*
+
+## 循环增加的是计算次数
+
+这个模型保存 24 层，重复应用中间块后，每个词元经过 48 次层计算。共享权重的好处是能让模型多做几轮计算，而无需为每轮复制一套独立的中间层参数。部署者仍需要为这些计算和内存访问留预算。
+
+官方给出三个参数口径。总参数涉及权重体量，单次激活参数反映稀疏专家在当前词元的参与规模，循环后的激活量还计入反复使用的权重。比较两个模型时应该同时看三列，尤其是想根据活跃参数推断显存与速度时。
+
+| 指标 | 官方披露 |
+| --- | --- |
+| 总参数 | 264 亿 |
+| 激活参数 | 34 亿 |
+| 循环计入后的权重激活量 | 每词元约 54 亿 |
+| 官方模型内存占用 | 约 20 GB |
+| DeepSWE v1.1 | 48.2% 解题率 |
+
+![Thinking Machines Lab 飞行模拟器演示封面帧](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/11/21/ink-planebench.jpg)
+
+*图片来源：Thinking Machines Lab 飞行模拟器演示封面帧，2026-11-20。*
+
+## 约 20 GB 意味着什么
+
+官方称多数权重采用 NVFP4，末四层为 MXFP8。模型卡给出了权重分发与本地运行入口，并列出配备至少 32 GB 内存的 Apple 芯片设备及 Ollama 等运行框架。第一次试用时可先选择短上下文及单请求任务，记录启动后峰值内存，逐步增加上下文长度，再记录缓存与运行时的增量。
+
+模型发布页上的飞行模式演示用了 48 GB 内存的笔记本。它观察的是能否在离线情况下完成一个完整样例。模型占用之外，还要考虑加载器、上下文缓存与系统开销。如果准备用在开发机上，最好把常用编辑器和测试进程一并开启，再测可维持的吞吐。
+
+![Thinking Machines Lab Thinkyville 演示封面帧](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/11/21/ink-thinkyville.jpg)
+
+*图片来源：Thinking Machines Lab Thinkyville 演示封面帧，2026-11-20。*
+
+## 如何解读官方基准
+
+发布页把部分类似规模模型放到同一张图里，横轴用的是在指定带宽、BF16 权重和单请求批量下计算的理论速度，并考虑重复读取。实际本地运行的量化、后端、设备和提示长度不同，读图时应将解题率与自己的速度测试分开记录。
+
+官方还发布了可改变循环次数的研究变体。它用来比较循环深度与任务表现的关系。把循环从一轮加到多轮，可以观察同一架构的变化。读这些实验时，需要把研究变体的测量值和面向用户发布的固定循环版本分开。
+
+可以用一条小型端侧测试重现自己的使用路径。选几个能自动验收的代码任务，固定提示和工具，记录答对比例、首词元延迟、总用时和峰值内存。再换一组需要长上下文的任务，观察模型是否在内存预算内保持稳定。这样能直接看出所需硬件与收益是否匹配下一次真实工作。
+
+量化格式也关系到能否直接复用已有部署经验。首次下载权重前应确认推理后端支持对应版本，记录转换后的格式与文件体积。测试结果里保留这些信息，方便另一台机器按同样设置复现。
+
+Inkling 2 Mini 让小模型能用共享权重多做几轮计算，本地部署的收益要用目标硬件上的任务耗时和内存实测来衡量。
+
+## 来源
+
+- [Thinking Machines Lab 发布原文](https://thinkingmachines.ai/news/inkling-2-mini/)
+- [Inkling 2 Mini 模型卡](https://thinkingmachines.ai/model-card/inkling-2-mini/)
