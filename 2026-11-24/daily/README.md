@@ -32,11 +32,11 @@ cover_style: photorealistic-editorial
 
 ### 1. 英伟达董事会一致同意黄仁勋复任
 
-SEC 文件载明总裁、首席执行官和董事三项职务于当地时间 11 月 22 日生效，哈维·琼斯继续主持董事会。对云客户，值得把管理变动和机房进度分开核查，尤其是整柜到货后何时能完成上电、网络联调和验收。详见本期英伟达专题。
+SEC 文件载明总裁、首席执行官和董事三项职务于当地时间 11 月 22 日生效，哈维·琼斯继续主持董事会。对云客户，值得把管理变动和机房进度分开核查，尤其是整柜到货后何时能完成上电、网络联调和验收。
 
 ### 2. 弗吉尼亚州和俄勒冈州起诉 Grok 相关公司
 
-两州分别依据消费者保护法起诉 SpaceX 等公司，指控围绕仿真人私密图像的生成与公开防护承诺。SpaceX Super Intelligence 对美联社表示会处置违规账号并通报执法机构，案件将检验不同产品入口的实际执行。详见本期 Grok 专题。
+两州分别依据消费者保护法起诉 SpaceX 等公司，指控围绕仿真人私密图像的生成与公开防护承诺。SpaceX Super Intelligence 对美联社表示会处置违规账号并通报执法机构，案件将检验不同产品入口的实际执行。
 
 ![Grok · 俄勒冈州诉状首页](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/11/24/grok-or-filing.png)
 
@@ -62,7 +62,7 @@ Axios 报道，跟踪亚马逊、Alphabet、微软、Meta 和甲骨文的分析�
 
 ### 6. CrowdStrike 拟以约 439 亿美元企业价值收购 Zscaler
 
-双方董事会通过全股票交易，每股 Zscaler 拟换 1.135 股 CrowdStrike，仍需股东批准等程序。安全团队可关注终端与网络日志能否串到同一个用户或代理身份，以及原有权限能否持续执行。详见本期并购专题。
+双方董事会通过全股票交易，每股 Zscaler 拟换 1.135 股 CrowdStrike，仍需股东批准等程序。安全团队可关注终端与网络日志能否串到同一个用户或代理身份，以及原有权限能否持续执行。
 
 ![CrowdStrike · 交易条款和换股比例](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/11/24/crowdstrike-cr-terms.png)
 
@@ -80,7 +80,7 @@ CrowdStrike 披露 2027 财年第三季度期末年度经常性收入为 62.6 �
 
 ### 9. MiniMax 相关推理请求被提示存在潜在访问风险
 
-Axios 援引客户通知，部分请求及响应可能曾被第三方访问；Novita 单独确认其部分请求被转发到了 MiniMax 官方接口。OpenRouter 公布的 3 家供应商、125 个端点处置覆盖更广的审查，实际暴露情况需要按请求与供应商核对。详见本期推理专题。
+Axios 援引客户通知，部分请求及响应可能曾被第三方访问；Novita 单独确认其部分请求被转发到了 MiniMax 官方接口。OpenRouter 公布的 3 家供应商、125 个端点处置覆盖更广的审查，实际暴露情况需要按请求与供应商核对。
 
 ![OpenRouter · 供应商和端点处置](https://raw.githubusercontent.com/wangcansunking/daily-report-images/master/content/2026/11/24/openrouter-rt-actions.png)
 
